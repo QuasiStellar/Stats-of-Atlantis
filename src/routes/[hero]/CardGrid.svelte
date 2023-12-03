@@ -459,6 +459,7 @@
     greenIIIbCtx = greenIIIb.getContext('2d')!
 
     Promise.all([
+      document.fonts.ready,
       importImages(),
       importCardImages(heroName),
     ])
@@ -1172,6 +1173,8 @@
       </div>
     </div>
   </div>
+
+  <p class="absolute font-modesto"></p>
 </div>
 
 <style>
@@ -1210,5 +1213,14 @@
           top: 7rem;
       }
       z-index: 0;
+  }
+
+   .font-modesto {
+       font-family: "Modesto Poster", serif;
+   }
+
+  @font-face{
+      font-family: "Modesto Poster";
+      src: url("../../lib/fonts/modesto_poster.woff") format("woff");
   }
 </style>

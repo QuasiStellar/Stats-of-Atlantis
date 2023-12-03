@@ -92,7 +92,10 @@
   onMount(() => {
     context = canvas.getContext("2d")!
 
-    importImages()
+    Promise.all([
+      document.fonts.ready,
+      importImages(),
+    ])
       .then(() => {
         imagesLoaded = true
       })
@@ -548,4 +551,17 @@
       </Label>
     </div>
   </div>
+
+  <p class="absolute font-modesto"></p>
 </div>
+
+<style>
+    .font-modesto {
+        font-family: "Modesto Poster", serif;
+    }
+
+    @font-face{
+        font-family: "Modesto Poster";
+        src: url("../../lib/fonts/modesto_poster.woff") format("woff");
+    }
+</style>

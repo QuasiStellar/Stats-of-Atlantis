@@ -143,11 +143,11 @@
 
 <style>
 	.font-modesto {
-		font-family: "modesto", serif;
+		font-family: "Modesto Poster", serif;
 	}
 
 	@font-face{
-		font-family: "modesto";
+		font-family: "Modesto Poster";
 		src: url("../lib/fonts/modesto_poster.woff") format("woff");
 	}
 </style>
