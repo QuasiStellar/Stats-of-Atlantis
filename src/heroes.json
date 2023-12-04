@@ -3514,6 +3514,8 @@
       "initiative": 11,
       "primaryAction": "MOVEMENT",
       "primaryValue": 3,
+      "modifier": "AREA",
+      "modifierValue": 3,
       "secondaryDefense": 4,
       "item": "DEFENSE"
     },
@@ -3884,6 +3886,282 @@
       "item": "INITIATIVE"
     }
   ],
+  "tali": [
+    {
+      "name": "Turn to Ice",
+      "description": "**Choose one —**\n>>A hero in range with an unresolved card\n>may choose to retrieve that card. If they\n>do not, name a color. That hero discards\n>a card of that color, if able.\n>>Defeat an adjacent minion.",
+      "color": "GOLD",
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "RANGE",
+      "modifierValue": 3,
+      "secondaryMovement": 1,
+      "secondaryDefense": 1
+    },
+    {
+      "name": "Cold Touch",
+      "description": "A hero in range with an unresolved card\nmay choose to retrieve that card. If they\ndo not, name a color. That hero discards\na card of that color, if able.",
+      "color": "GOLD",
+      "handicapped": true,
+      "initiative": 9,
+      "primaryAction": "SKILL",
+      "modifier": "RANGE",
+      "modifierValue": 2,
+      "secondaryMovement": 1,
+      "secondaryDefense": 1
+    },
+    {
+      "name": "Commune with Spirits",
+      "description": "The nearest friendly hero names a color,\nyou may then **choose one —**\n>>Discard a card of that color. If you do,\n>perform any one action on that card.\n>>Retrieve a discarded card of that color.",
+      "color": "SILVER",
+      "initiative": 12,
+      "primaryAction": "SKILL",
+      "secondaryDefense": 2
+    },
+    {
+      "name": "Reign of Winter",
+      "description": "Whenever an enemy hero in play\nretrieves a card as a result of an action,\nthat hero discards a card, if able, and\nyou may retrieve your discarded card.",
+      "color": "PURPLE",
+      "level": 4
+    },
+    {
+      "name": "Cold Snap",
+      "description": "The nearest enemy hero in radius discards a\ncard, if able. **Next turn, after playing cards:**\nThat hero may retrieve a discarded card.",
+      "color": "BLUE",
+      "level": 1,
+      "initiative": 9,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 5
+    },
+    {
+      "name": "Frost Dagger",
+      "description": "After the attack: If you target a hero,\nthat hero discards a card, if able.\n**Next turn, after playing cards:**\nThat hero may retrieve that card.",
+      "color": "RED",
+      "level": 1,
+      "initiative": 8,
+      "primaryAction": "ATTACK",
+      "primaryValue": 4,
+      "secondaryMovement": 4,
+      "secondaryDefense": 6
+    },
+    {
+      "name": "Glacial Barrier",
+      "description": "Place an ::ice_token:: ice token in radius, adjacent\nto another ice token, if able. Enemy\nheroes have -1 ::initiative_red:: Initiative penalty for\nevery ice token they are adjacent to.",
+      "color": "GREEN",
+      "level": 1,
+      "initiative": 4,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 2,
+      "secondaryDefense": 3
+    },
+    {
+      "name": "Snowstorm",
+      "description": "Name a color. The nearest enemy hero in\nradius discards a card of that color, if able.\n**Next turn, after playing cards:** That hero\nmay retrieve a discarded card of that color.",
+      "color": "BLUE",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 5,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Frost Spear",
+      "description": "After the attack: If you target a hero, name a\ncolor. That hero discards a card of that color,\nif able. **Next turn, after playing cards:**\nThat hero may retrieve that card.",
+      "color": "RED",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 4,
+      "secondaryMovement": 4,
+      "secondaryDefense": 6,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Wall of Frost",
+      "description": "Place up to 2 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative_red:: Initiative penalty\nfor every ice token they are adjacent to.",
+      "color": "GREEN",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 3,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 2,
+      "secondaryDefense": 3,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Guardian Spirit",
+      "description": "If you have a card in the discard,\na friendly hero in radius may\nretrieve a discarded card.",
+      "color": "BLUE",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 4,
+      "secondaryMovement": 3,
+      "secondaryDefense": 5,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Spirit Wolf",
+      "description": "If your discard is empty, target an\nadjacent unit. Otherwise, target an\nadjacent unit, or a minion in range.",
+      "color": "RED",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 2,
+      "modifier": "RANGE",
+      "modifierValue": 3,
+      "secondaryMovement": 4,
+      "secondaryDefense": 3,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Ancestral Totem",
+      "description": "Place a ::totem_token:: in radius.\nIf a friendly melee minion adjacent\nto a totem would be defeated, you\nmay remove the totem instead.",
+      "color": "GREEN",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 3,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 2,
+      "secondaryMovement": 2,
+      "secondaryDefense": 3,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Blizzard",
+      "description": "Name a color. The nearest enemy hero in\nradius discards a card of that color, if able.\n**End of next turn:** That hero may retrieve\na discarded card of that color.",
+      "color": "BLUE",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 6,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Frost Scepter",
+      "description": "After the attack: If you target a hero,\nname a color. That hero discards a card\nof that color, if able. **End of next turn:**\nThat hero may retrieve that card.",
+      "color": "RED",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 5,
+      "secondaryMovement": 4,
+      "secondaryDefense": 7,
+      "item": "MOVEMENT"
+    },
+    {
+      "name": "Pack Ice",
+      "description": "Place up to 3 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative_red:: Initiative penalty\nfor every ice token they are adjacent to.",
+      "color": "GREEN",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 3,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 2,
+      "secondaryDefense": 4,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Vengeful Spirit",
+      "description": "If you have a card in the discard,\nyou, or a friendly hero in radius,\nmay retrieve a discarded card.",
+      "color": "BLUE",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 4,
+      "secondaryMovement": 3,
+      "secondaryDefense": 6,
+      "item": "RANGE"
+    },
+    {
+      "name": "Spirit Bear",
+      "description": "If your discard is empty, target an adjacent\nunit. Otherwise, target an unit in range.",
+      "color": "RED",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 3,
+      "secondaryMovement": 4,
+      "secondaryDefense": 4,
+      "item": "AREA"
+    },
+    {
+      "name": "Venerated Totem",
+      "description": "Place a ::totem_token:: in radius. If a friendly\nminion adjacent to a totem would be\ndefeated, you may remove the totem instead.\nTotems are immune to enemy actions.",
+      "color": "GREEN",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 3,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 2,
+      "secondaryMovement": 2,
+      "secondaryDefense": 4,
+      "item": "INITIATIVE"
+    }
+  ],
   "tigerclaw": [
     {
       "name": "Blink Strike",
@@ -4144,6 +4422,288 @@
       "secondaryMovement": 3,
       "secondaryDefense": 3,
       "item": "MOVEMENT"
+    }
+  ],
+  "trinkets": [
+    {
+      "name": "Rapid Deployment",
+      "description": "**Choose one —**\n>>You may remove the turret. Move up to\n>3 spaces and place the Turret into an\n>adjacent space. It counts as terrain.\n>>An enemy hero in range of both you and\n>the Turret discards a card, if able.\n>>Defeat an enemy minion in range of both\n>you and the Turret.",
+      "color": "GOLD",
+      "initiative": 12,
+      "primaryAction": "SKILL",
+      "modifier": "RANGE",
+      "modifierValue": 2,
+      "secondaryMovement": 4,
+      "secondaryDefense": 1
+    },
+    {
+      "name": "Ramshackle Turret",
+      "description": "**Choose one —**\n>>You may remove the turret. Move up to\n>2 spaces and place the Turret into an\n>adjacent space. It counts as terrain.\n>>Enemy hero in range of both you and\n>the Turret discards a card, if able.",
+      "color": "GOLD",
+      "handicapped": true,
+      "initiative": 11,
+      "primaryAction": "SKILL",
+      "modifier": "RANGE",
+      "modifierValue": 1,
+      "secondaryMovement": 3,
+      "secondaryDefense": 1
+    },
+    {
+      "name": "Salvage Parts",
+      "description": "**Choose one —**\n>>Place the Turret into an adjacent space.\n>It counts as terrain.\n>>Remove the Turret. If you do, move\n>up to 3 spaces.",
+      "color": "SILVER",
+      "initiative": 5,
+      "primaryAction": "SKILL",
+      "secondaryDefense": 2
+    },
+    {
+      "name": "Fortified Positions",
+      "description": "Whenever you perform an action, barrier\ntokens and friendly minions count as a Turret.",
+      "color": "PURPLE",
+      "level": 4
+    },
+    {
+      "name": "Disruptor Jolt",
+      "description": "**This turn:** Enemy heroes in radius of the\nTurret cannot perform non-basic skills.",
+      "color": "BLUE",
+      "level": 1,
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 3
+    },
+    {
+      "name": "Makeshift Minigun",
+      "description": "Target a unit in range of both you and the\nTurret. After the attack: **Next turn:**\nGain +1 ::range_red:: Range if you target a hero.",
+      "color": "RED",
+      "level": 1,
+      "initiative": 8,
+      "primaryAction": "ATTACK",
+      "primaryValue": 3,
+      "modifier": "RANGE",
+      "modifierValue": 2,
+      "secondaryMovement": 4,
+      "secondaryDefense": 4
+    },
+    {
+      "name": "Early Prototype",
+      "description": "Swap yourself, a friendly unit, or a token,\nin radius of the Turret, with the Turret.",
+      "color": "GREEN",
+      "level": 1,
+      "initiative": 3,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 2,
+      "secondaryMovement": 3,
+      "secondaryDefense": 2
+    },
+    {
+      "name": "Disruptor Pulse",
+      "description": "Cancel skills with active effects of enemies in\nradius of the Turret. **This turn:** Enemy heroes\nin radius of the Turret cannot perform skills.",
+      "color": "BLUE",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 4,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Gatling Gun",
+      "description": "Target a unit in range of both you and the\nTurret. After the attack: **Next turn:**\nGain +1 ::range_red:: Range; if you target a hero\nwith no cards in their hand with your\nbasic skill, defeat that hero, instead.",
+      "color": "RED",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 3,
+      "modifier": "RANGE",
+      "modifierValue": 3,
+      "secondaryMovement": 4,
+      "secondaryDefense": 5,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Teleportation Device",
+      "description": "Swap yourself, a friendly unit, or a token,\nin radius of the Turret, with the Turret.",
+      "color": "GREEN",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 3,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 2,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Deployable Barrier",
+      "description": "Place up to 2 ::barrier_token:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
+      "color": "BLUE",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 10,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 4,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Steam Discharge",
+      "description": "Target a unit in range of both you and the\nTurret. After the attack: One other enemy\nhero in range of you and adjacent to the\nTurret discards a card, if able.",
+      "color": "RED",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 4,
+      "modifier": "RANGE",
+      "modifierValue": 3,
+      "secondaryMovement": 4,
+      "secondaryDefense": 6,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Self-Destruct",
+      "description": "Enemy heroes in radius of the Turret discard\na card, if able. Remove the Turret.",
+      "color": "GREEN",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 4,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 2,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Disruptor Grid",
+      "description": "Cancel skills with active effects of\nenemies in radius of the Turret.\n**This turn and next turn:** Enemies in\nradius of the Turret cannot perform skills.",
+      "color": "BLUE",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 11,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 4,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Repeater Cannon",
+      "description": "Target a unit in range of both you and the\nTurret. After the attack: **Next turn:**\nGain +2 ::range_red:: Range; if you target a hero\nwith no cards in their hand with your\nbasic skill, defeat that hero, instead.",
+      "color": "RED",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 4,
+      "modifier": "RANGE",
+      "modifierValue": 3,
+      "secondaryMovement": 4,
+      "secondaryDefense": 5,
+      "item": "AREA"
+    },
+    {
+      "name": "Perfected Design",
+      "description": "Swap yourself, any unit, or a token,\nin radius of the Turret, with the Turret.",
+      "color": "GREEN",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 2,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 3,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Deployable Bastion",
+      "description": "Place up to 3 ::barrier_token:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
+      "color": "BLUE",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 11,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 4,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Flame Belcher",
+      "description": "Target a unit in range of both you and the\nTurret. After the attack: One other enemy\nhero in range of both you and the Turret\ndiscards a card, if able.",
+      "color": "RED",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "ATTACK",
+      "primaryValue": 5,
+      "secondaryMovement": 4,
+      "secondaryDefense": 6,
+      "item": "MOVEMENT"
+    },
+    {
+      "name": "Emergency Protocol",
+      "description": "Enemy heroes in radius of the Turret discard\na card, or are defeated. Remove the Turret.",
+      "color": "GREEN",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 2,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 3,
+      "item": "RANGE"
     }
   ],
   "ursafar": [
@@ -4966,6 +5526,278 @@
       "modifierValue": 3,
       "secondaryDefense": 4,
       "item": "ATTACK"
+    }
+  ],
+  "wuk": [
+    {
+      "name": "Tree Slam",
+      "description": "If you are adjacent to a tree token, target\na unit in range, otherwise, target a minion\nadjacent to you. After the attack:\nIf the target was adjacent to you, move it\n1 space to a space adjacent to you, if able.",
+      "color": "GOLD",
+      "initiative": 11,
+      "primaryAction": "ATTACK",
+      "primaryValue": 4,
+      "modifier": "RANGE",
+      "modifierValue": 1,
+      "secondaryMovement": 1,
+      "secondaryDefense": 3
+    },
+    {
+      "name": "Makeshift Weapon",
+      "description": "Cannot attack if you are not adjacent to a tree\ntoken. Target a unit in range. After the attack:\nIf the target was adjacent to you, move it 1\nspace to a space adjacent to you, if able.",
+      "color": "GOLD",
+      "handicapped": true,
+      "initiative": 10,
+      "primaryAction": "ATTACK",
+      "primaryValue": 3,
+      "modifier": "RANGE",
+      "modifierValue": 1,
+      "secondaryMovement": 1,
+      "secondaryDefense": 2
+    },
+    {
+      "name": "Mystic Saplings",
+      "description": "Place up to 3 ::tree_token:: tree tokens in radius, not\nadjacent to a tree token. Heroes may move\nthrough a space with a tree token. Do not\nremove the tree tokens at the end of round.",
+      "color": "SILVER",
+      "initiative": 4,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 3,
+      "secondaryDefense": 3
+    },
+    {
+      "name": "March of Nature",
+      "description": "Adjacent Tree tokens in a battle zone count as\nmelee minions immune to ranged attacks.",
+      "color": "PURPLE",
+      "level": 4
+    },
+    {
+      "name": "Gifts of Nature",
+      "description": "If you are adjacent to a tree, you\nmay retrieve a discarded card.",
+      "color": "BLUE",
+      "level": 1,
+      "initiative": 8,
+      "primaryAction": "SKILL",
+      "secondaryMovement": 3,
+      "secondaryDefense": 6
+    },
+    {
+      "name": "Nature's Protector",
+      "description": "Target a unit in range, adjacent to a tree token.",
+      "color": "RED",
+      "level": 1,
+      "initiative": 7,
+      "primaryAction": "ATTACK",
+      "primaryValue": 5,
+      "modifier": "RANGE",
+      "modifierValue": 2,
+      "secondaryMovement": 3,
+      "secondaryDefense": 7
+    },
+    {
+      "name": "Toss Away",
+      "description": "Move up to 1 space. Push an adjacent token\nup to 3 spaces. If the token is pushed 2 or\nmore spaces, an enemy hero adjacent to\nthat token discards a card, if able.    ",
+      "color": "GREEN",
+      "level": 1,
+      "initiative": 4,
+      "primaryAction": "SKILL",
+      "modifier": "RANGE",
+      "modifierValue": 2,
+      "secondaryMovement": 2,
+      "secondaryDefense": 3
+    },
+    {
+      "name": "Tree of Plenty",
+      "description": "Either you, or a hero in radius, may\nretrieve a discarded card if either\nof you are adjacent to a tree.",
+      "color": "BLUE",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 4,
+      "secondaryMovement": 3,
+      "secondaryDefense": 6,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Nature's Guardian",
+      "description": "Target a unit in range, adjacent to a tree token.",
+      "color": "RED",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 7,
+      "primaryAction": "ATTACK",
+      "primaryValue": 5,
+      "modifier": "RANGE",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 7,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Mighty Throw",
+      "description": "Move up to 1 space. Push an adjacent token\nor a minion up to 4 spaces. If it is pushed 2 or\nmore spaces, an enemy hero adjacent to that\ntoken or a minion discards a card, if able.",
+      "color": "GREEN",
+      "level": 2,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 5,
+      "primaryAction": "SKILL",
+      "secondaryMovement": 2,
+      "secondaryDefense": 4,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Claim Dominance",
+      "description": "**This round:** Up to 1 adjacent non-immune\nenemy minion does not count towards the\nminion total during minion battle.",
+      "color": "BLUE",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "SKILL",
+      "secondaryMovement": 3,
+      "secondaryDefense": 6,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Trample",
+      "description": "If you move in a straight line: You may ignore\nunits; if you moved through an enemy hero,\nthat hero discards a card, or is defeated;\ndefeat up to 1 minion you moved through.",
+      "color": "RED",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 7,
+      "primaryAction": "MOVEMENT",
+      "primaryValue": 4,
+      "secondaryDefense": 7,
+      "item": "DEFENSE"
+    },
+    {
+      "name": "Into the Canopy",
+      "description": "Swap places with a tree token in radius.\nYou may then place a minion adjacent to\nthat tree token into a space adjacent to you.",
+      "color": "GREEN",
+      "level": 2,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 5,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 4,
+      "secondaryMovement": 2,
+      "secondaryDefense": 4,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Abundance",
+      "description": "Both you and a friendly hero in radius\nmay retrieve a discarded card if either\nof you are adjacent to a tree.",
+      "color": "BLUE",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "SKILL",
+      "modifier": "AREA",
+      "modifierValue": 4,
+      "secondaryMovement": 3,
+      "secondaryDefense": 7,
+      "item": "RANGE"
+    },
+    {
+      "name": "Nature's Champion",
+      "description": "Target a unit in range, adjacent to a tree token.\nMay repeat once, targeting a different hero.",
+      "color": "RED",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 8,
+      "primaryAction": "ATTACK",
+      "primaryValue": 6,
+      "modifier": "RANGE",
+      "modifierValue": 3,
+      "secondaryMovement": 3,
+      "secondaryDefense": 8,
+      "item": "INITIATIVE"
+    },
+    {
+      "name": "Monstrous Throw",
+      "description": "Move up to 1 space. Push an adjacent unit\nor a token up to 5 spaces. If it is pushed 2\nor more spaces, an enemy hero adjacent to\nthat unit or token discards a card, if able.",
+      "color": "GREEN",
+      "level": 3,
+      "variant": {
+        "first": 1,
+        "second": 2
+      },
+      "initiative": 5,
+      "primaryAction": "SKILL",
+      "secondaryMovement": 2,
+      "secondaryDefense": 4,
+      "item": "MOVEMENT"
+    },
+    {
+      "name": "Assert Dominance",
+      "description": "**This round:** Up to 2 adjacent enemy minion\ndo not count towards the minion total during\nminion battle, regardless of immunity.",
+      "color": "BLUE",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 9,
+      "primaryAction": "SKILL",
+      "secondaryMovement": 3,
+      "secondaryDefense": 7,
+      "item": "ATTACK"
+    },
+    {
+      "name": "Angry Stampede",
+      "description": "If you move in a straight line: You may ignore\nunits; if you moved through an enemy hero,\nthat hero discards a card, or is defeated;\ndefeat up to 2 minion you moved through.",
+      "color": "RED",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 8,
+      "primaryAction": "MOVEMENT",
+      "primaryValue": 4,
+      "secondaryDefense": 8,
+      "item": "AREA"
+    },
+    {
+      "name": "Treetop Ride",
+      "description": "Swap places with a tree token in radius.\nYou may then place a minion adjacent to that\ntree token into a space adjacent to you.",
+      "color": "GREEN",
+      "level": 3,
+      "variant": {
+        "first": 2,
+        "second": 2
+      },
+      "initiative": 5,
+      "primaryAction": "DEFENSE_SKILL",
+      "primaryValue": 4,
+      "modifier": "AREA",
+      "modifierValue": 4,
+      "secondaryMovement": 2,
+      "item": "DEFENSE"
     }
   ],
   "xargatha": [
