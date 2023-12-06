@@ -763,7 +763,7 @@
       },
       "initiative": 4,
       "primaryAction": "SKILL",
-      "modifier": "RANGE",
+      "modifier": "AREA",
       "modifierValue": 2,
       "secondaryMovement": 2,
       "secondaryDefense": 5,
