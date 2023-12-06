@@ -37,7 +37,7 @@ export enum Item {
   MOVEMENT = "MOVEMENT",
 }
 
-class Hero {
+export class Hero {
   name: string
   stats: Array<number>
   title: string
@@ -57,16 +57,28 @@ class Hero {
 }
 
 export const heroes = {
+  "arien": new Hero("Arien", [8, 5, 4, 4, 2, 6, 5, 5], "the Tidemaster", 1),
   "bain": new Hero("Bain", [6, 4, 4, 4, 7, 3, 3, 6], "the Bounty Hunter", 2),
   "brogan": new Hero("Brogan", [6, 8, 2, 2, 1, 7, 6, 6], "the Destroyer", 1),
   "cutter": new Hero("Cutter", [5, 3, 6, 4, 5, 4, 3, 2], "the Skycaptain", 2),
+  "dodger": new Hero("Dodger", [4, 2, 7, 6, 6, 4, 8, 1], "the Warlock", 1),
+  "garrus": new Hero("Garrus", [7, 7, 3, 4, 4, 7, 1, 3], "the Gladiator", 2),
+  "hanu": new Hero("Hanu", [1, 1, 8, 8, 7, 2, 4, 8], "the Trickster", 3),
+  "ignatia": new Hero("Ignatia", [5, 6, 2, 2, 3, 3, 6, 4], "the Mad", 3),
+  "min": new Hero("Min", [1, 3, 8, 4, 6, 3, 2, 4], "the Dragonmonk", 2),
   "misa": new Hero("Misa", [8, 5, 7, 7, 4, 5, 6, 5], "the Sky Ronin", 2),
   "nebkher": new Hero("NebKher", [3, 8, 1, 1, 2, 4, 4, 3], "the Harbinger", 3),
+  "sabina": new Hero("Sabina", [5, 3, 5, 4, 5, 4, 7, 3], "the Gunslinger", 1),
   "silverarrow": new Hero("Silverarrow", [2, 1, 7, 7, 7, 1, 5, 6], "the Pathfinder", 2),
+  "swift": new Hero("Swift", [7, 3, 4, 6, 4, 2, 5, 1], "the Sharpshooter", 3),
   "tali": new Hero("Tali", [3, 4, 5, 4, 5, 6, 7, 7], "the Spiritcaller", 3),
+  "tigerclaw": new Hero("Tigerclaw", [2, 2, 8, 8, 6, 3, 3, 2], "the Cutpurse", 1),
   "trinkets": new Hero("Trinkets", [4, 2, 6, 8, 5, 1, 4, 4], "the Scavenger", 3),
   "ursafar": new Hero("Ursafar", [8, 6, 5, 1, 4, 8, 2, 1], "the Savage", 2),
   "wasp": new Hero("Wasp", [4, 4, 5, 4, 3, 5, 4, 5], "the Warmaiden", 1),
+  "whisper": new Hero("Whisper", [4, 4, 7, 2, 8, 5, 2, 2], "the Outcast", 2),
+  "wuk": new Hero("Wuk", [7, 7, 1, 2, 1, 7, 6, 7], "the Grovekeeper", 3),
+  "xargatha": new Hero("Xargatha", [4, 6, 3, 6, 3, 6, 5, 4], "the Changed", 1),
 }
 
 export const stats: Array<string> = [

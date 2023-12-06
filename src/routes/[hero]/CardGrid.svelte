@@ -1,13 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  import { Color, Item, Modifier, Type, ValueSign } from "../../states"
+  import { Color, Hero, heroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
   import { images, importCardImages, importImages, updateCanvas } from "../../card_painter"
   import heroInfo from "../../heroes.json"
   import BiggerPicture from "bigger-picture/svelte"
   import "bigger-picture/css"
-  import Card from "./Card.svelte"
+  import GoaCard from "./GoaCard.svelte"
   import type { BiggerPictureInstance } from "bigger-picture"
-  import { Checkbox } from "flowbite-svelte"
+  import { Card, Checkbox, Img, Tooltip } from "flowbite-svelte"
 
   export let heroName: string
 
@@ -438,7 +438,18 @@
 
   let bp: BiggerPictureInstance
 
-  onMount(() => {
+  let banner: any
+
+  $: statImages = new Map()
+
+  onMount(async () => {
+    banner = (await import(`../../lib/images/avatars_full/${heroName}.png`)).default
+
+    for (const stat of stats) {
+      statImages.set(stat, (await import(`../../lib/images/stat_icons/${stat}_white.png`)).default)
+    }
+    statImages = statImages
+
     goldCtx = gold.getContext('2d')!
     silverCtx = silver.getContext('2d')!
     purpleCtx = purple.getContext('2d')!
@@ -644,7 +655,7 @@
       items: [{ html: "" }],
       onOpen: (container) => {
         container.querySelector(".bp-x")!!.remove()
-        let card = new Card({
+        let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
@@ -659,7 +670,7 @@
       items: [{ html: "" }],
       onOpen: (container) => {
         container.querySelector(".bp-x")!!.remove()
-        let card = new Card({
+        let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
@@ -674,7 +685,7 @@
       items: [{ html: "" }],
       onOpen: (container) => {
         container.querySelector(".bp-x")!!.remove()
-        let card = new Card({
+        let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
@@ -689,7 +700,7 @@
       items: [{ html: "" }],
       onOpen: (container) => {
         container.querySelector(".bp-x")!!.remove()
-        let card = new Card({
+        let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
@@ -704,7 +715,7 @@
       items: [{ html: "" }],
       onOpen: (container) => {
         container.querySelector(".bp-x")!!.remove()
-        let card = new Card({
+        let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
@@ -719,7 +730,7 @@
       items: [{ html: "" }],
       onOpen: (container) => {
         container.querySelector(".bp-x")!!.remove()
-        let card = new Card({
+        let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
@@ -758,7 +769,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -775,7 +786,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -816,7 +827,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -833,7 +844,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -874,7 +885,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -891,7 +902,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -932,7 +943,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -949,7 +960,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -990,7 +1001,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -1007,7 +1018,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -1048,7 +1059,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -1065,7 +1076,7 @@
         items: [{ html: "" }],
         onOpen: (container) => {
           container.querySelector(".bp-x")!!.remove()
-          let card = new Card({
+          let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
@@ -1075,99 +1086,134 @@
     else
       greenIIIalt = !greenIIIalt
   }
+
+  const hero = heroes[heroName] as Hero
+  const fullName = hero.name + " " + hero.title
+  console.log(hero.stats[0])
 </script>
 
 <div class="flex md:mt-20 mt-16 mb-52">
-  <div class="grid grid-cols-3 m-auto">
-    <div class="col-span-1 w-32 sm:w-80 h-44 sm:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 top-1 absolute">
+  <div class="grid grid-cols-12 m-auto">
+    <div class="col-span-12 w-96 sm:w-239 h-50 sm:h-125 mt-5 sm:mt-10 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl left-0.5 sm:left-1 w-95 sm:w-237 absolute">
+        <Img src={banner} class="rounded-lg sm:rounded-3xl"/>
+        <p class="absolute text-black text-xl sm:text-5xl -top-[14px] sm:-top-[24px] left-[10px] sm:left-[34px] font-modesto">{fullName}</p>
+        <p class="absolute text-black text-xl sm:text-5xl -top-[10px] sm:-top-[16px] left-[6px] sm:left-[26px] font-modesto">{fullName}</p>
+        <p class="absolute text-black text-xl sm:text-5xl -top-[14px] sm:-top-[24px] left-[6px] sm:left-[26px] font-modesto">{fullName}</p>
+        <p class="absolute text-black text-xl sm:text-5xl -top-[10px] sm:-top-[16px] left-[10px] sm:left-[34px] font-modesto">{fullName}</p>
+        <p class="absolute text-white text-xl sm:text-5xl -top-[12px] sm:-top-[20px] left-[8px] sm:left-[30px] font-modesto">{fullName}</p>
+      </div>
+    </div>
+
+    {#each stats as stat, stat_index (stat_index)}
+      <div id="{stat}" class="col-span-3 h-4 sm:h-7 z-20 relative">
+        <div class="left-0.5 sm:left-1 top-0.5 sm:top-1 h-3 sm:h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded sm:rounded-xl bg-dark-900 absolute">
+          <div class="m-0.5 sm:m-1 relative h-full">
+            <Img src={statImages.get(stat)} class="absolute w-2.5 sm:w-5 z-30 -top-0.5 sm:-top-1.25 left-0.5 sm:left-1" />
+            <div class="float-left w-3.5 sm:w-7 h-full bg-transparent" />
+            {#each Array(8) as _, color_index (color_index)}
+              <div class="float-left w-0.5 sm:w-1 h-1" />
+              {#if hero.stats[stat_index] > color_index}
+                <div class="z-40 float-left w-[7px] sm:w-5 h-1.5 sm:h-2.5 rounded-sm sm:rounded-md bg-{heroName}" />
+              {:else}
+                <div class="float-left w-[7px] sm:w-5 h-1 bg-transparent" />
+              {/if}
+            {/each}
+          </div>
+        </div>
+      </div>
+      <Tooltip triggeredBy="#{stat}" placement="top" class="z-50">{stat.charAt(0).toUpperCase() + stat.slice(1)}</Tooltip>
+    {/each}
+
+    <div class="col-span-4 w-32 sm:w-80 h-44 sm:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 top-0.5 sm:top-1 absolute">
         <canvas id="goldCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={gold} on:click={goldClick}/>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-44 sm:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 top-1 absolute">
+    <div class="col-span-4 w-32 sm:w-80 h-44 sm:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 top-0.5 sm:top-1 absolute">
         <canvas id="silverCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={silver} on:click={silverClick}/>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-44 sm:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 top-1 absolute">
+    <div class="col-span-4 w-32 sm:w-80 h-44 sm:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 top-0.5 sm:top-1 absolute">
         <canvas id="purpleCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={purple} on:click={purpleClick}/>
       </div>
     </div>
 
-    <div class="col-span-1 w-32 sm:w-80 h-44 sm:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 top-1 absolute">
+    <div class="col-span-4 w-32 sm:w-80 h-44 sm:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 top-0.5 sm:top-1 absolute">
         <canvas id="blueICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={blueIa} on:click={blueIClick}/>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-44 sm:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 top-1 absolute">
+    <div class="col-span-4 w-32 sm:w-80 h-44 sm:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 top-0.5 sm:top-1 absolute">
         <canvas id="redICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={redIa} on:click={redIClick}/>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-44 sm:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 top-1 absolute">
+    <div class="col-span-4 w-32 sm:w-80 h-44 sm:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 top-0.5 sm:top-1 absolute">
         <canvas id="greenICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={greenIa} on:click={greenIClick}/>
       </div>
     </div>
 
-    <div class="col-span-1 w-32 sm:w-80 h-49 sm:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
+    <div class="col-span-4 w-32 sm:w-80 h-49 sm:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
         <canvas id="blueIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={blueIIb} on:click={blueIIaltClick} on:pointerleave={blueIIaltPointerLeave} on:pointerenter={blueIIaltPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={blueIIaltChecked} on:change={checkBlueIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {!blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {!blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
         <canvas id="blueIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={blueIIa} on:click={blueIImainClick} on:pointerleave={blueIImainPointerLeave} on:pointerenter={blueIImainPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={blueIImainChecked} on:change={checkBlueIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-49 sm:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
+    <div class="col-span-4 w-32 sm:w-80 h-49 sm:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
         <canvas id="redIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={redIIb} on:click={redIIaltClick} on:pointerleave={redIIaltPointerLeave} on:pointerenter={redIIaltPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={redIIaltChecked} on:change={checkRedIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {!redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {!redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
         <canvas id="redIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={redIIa} on:click={redIImainClick} on:pointerleave={redIImainPointerLeave} on:pointerenter={redIImainPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={redIImainChecked} on:change={checkRedIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-49 sm:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
+    <div class="col-span-4 w-32 sm:w-80 h-49 sm:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
         <canvas id="greenIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={greenIIb} on:click={greenIIaltClick} on:pointerleave={greenIIaltPointerLeave} on:pointerenter={greenIIaltPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={greenIIaltChecked} on:change={checkGreenIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {!greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {!greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
         <canvas id="greenIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={greenIIa} on:click={greenIImainClick} on:pointerleave={greenIImainPointerLeave} on:pointerenter={greenIImainPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={greenIImainChecked} on:change={checkGreenIImain}></Checkbox>
       </div>
     </div>
 
-    <div class="col-span-1 w-32 sm:w-80 h-49 sm:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
+    <div class="col-span-4 w-32 sm:w-80 h-49 sm:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="blueIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={blueIIIb} on:click={blueIIIaltClick} on:pointerleave={blueIIIaltPointerLeave} on:pointerenter={blueIIIaltPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={blueIIIaltChecked} on:change={checkBlueIIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {!blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {!blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="blueIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={blueIIIa} on:click={blueIIImainClick} on:pointerleave={blueIIImainPointerLeave} on:pointerenter={blueIIImainPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={blueIIImainChecked} on:change={checkBlueIIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-49 sm:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
+    <div class="col-span-4 w-32 sm:w-80 h-49 sm:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="redIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={redIIIb} on:click={redIIIaltClick} on:pointerleave={redIIIaltPointerLeave} on:pointerenter={redIIIaltPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={redIIIaltChecked} on:change={checkRedIIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {!redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {!redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="redIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={redIIIa} on:click={redIIImainClick} on:pointerleave={redIIImainPointerLeave} on:pointerenter={redIIImainPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={redIIImainChecked} on:change={checkRedIIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-1 w-32 sm:w-80 h-49 sm:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
+    <div class="col-span-4 w-32 sm:w-80 h-49 sm:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="greenIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={greenIIIb} on:click={greenIIIaltClick} on:pointerleave={greenIIIaltPointerLeave} on:pointerenter={greenIIIaltPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={greenIIIaltChecked} on:change={checkGreenIIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-1 absolute duration-500 {!greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl w-31 sm:w-78 left-0.5 sm:left-1 absolute duration-500 {!greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="greenIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={greenIIIa} on:click={greenIIImainClick} on:pointerleave={greenIIImainPointerLeave} on:pointerenter={greenIIImainPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
       </div>
