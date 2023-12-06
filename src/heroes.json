@@ -2,7 +2,7 @@
   "arien": [
     {
       "name": "Noble Blade",
-      "description": "Before the attack: You may move another\nunit that is adjacent to the target 1 space.\n*(\"Another unit\" does not include you).* ",
+      "description": "Before the attack: You may move another\nunit that is adjacent to the target 1 space.\n~(\"Another unit\" does not include you). ",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "ATTACK",
@@ -23,7 +23,7 @@
     },
     {
       "name": "Spell Break",
-      "description": "**This turn:** Enemy heroes in radius\ncannot perform skills.\n*(Spell Break will not stop an attack action).*",
+      "description": "**This turn:** Enemy heroes in radius\ncannot perform skills.\n~(Spell Break will not stop an attack action).",
       "color": "SILVER",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -39,7 +39,7 @@
     },
     {
       "name": "Aspiring Duelist",
-      "description": "Ignore all minion defense modifiers.\n*(This includes your minions, as well as the enemy minions).*",
+      "description": "Ignore all minion defense modifiers.\n~(This includes your minions, as well as the enemy minions).",
       "color": "BLUE",
       "level": 1,
       "initiative": 9,
@@ -49,7 +49,7 @@
     },
     {
       "name": "Gush of Water",
-      "description": "After the attack: You may push every\nadjacent token and enemy unit 1 space.\n*(If you choose this option, push all units that can be pushed).*",
+      "description": "After the attack: You may push every\nadjacent token and enemy unit 1 space.\n~(If you choose this option, push all units that can be pushed).",
       "color": "RED",
       "level": 1,
       "initiative": 8,
@@ -124,7 +124,7 @@
     },
     {
       "name": "Slippery Ground",
-      "description": "**This turn:** Enemies in radius may not move\nmore than 1 space with a movement action.\n*(Enemies who start movement out of radius are unaffected).*",
+      "description": "**This turn:** Enemies in radius may not move\nmore than 1 space with a movement action.\n~(Enemies who start movement out of radius are unaffected).",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -141,7 +141,7 @@
     },
     {
       "name": "Violent Torrent",
-      "description": "Before the attack: One enemy hero in any of\nthe 3 spaces in a straight line directly behind\nthe target discards a card, or is defeated.\n*(You cannot target an empty spcae with an attack).*",
+      "description": "Before the attack: One enemy hero in any of\nthe 3 spaces in a straight line directly behind\nthe target discards a card, or is defeated.\n~(You cannot target an empty spcae with an attack).",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -157,7 +157,7 @@
     },
     {
       "name": "Arcane Swap",
-      "description": "Swap with a minion or a friendly hero in range.\n*(Swap places with the target. This is not movement).*",
+      "description": "Swap with a minion or a friendly hero in range.\n~(Swap places with the target. This is not movement).",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -340,7 +340,7 @@
     },
     {
       "name": "Close Call",
-      "description": "Block the attack. The attacker may swap\ntheir attack card with a card in their hand.\n~~(The card is swapped after the attack card is resolved).",
+      "description": "Block the attack. The attacker may swap\ntheir attack card with a card in their hand.\n~(The card is swapped after the attack card is resolved).",
       "color": "GREEN",
       "level": 1,
       "initiative": 4,
@@ -601,7 +601,7 @@
     },
     {
       "name": "Mad Dash",
-      "description": "Before the attack:\nMove 2 spaces in a straight line.\n*(If you cannot make this move, you cannot attack).*",
+      "description": "Before the attack:\nMove 2 spaces in a straight line.\n~(If you cannot make this move, you cannot attack).",
       "color": "RED",
       "level": 1,
       "initiative": 7,
@@ -856,7 +856,7 @@
     },
     {
       "name": "Barrage",
-      "description": "A enemy hero in radius adjacent to\nanother enemy unit, and not adjacent\nto you, discards a card, if able.\n~~(The target hero must be adjacent to their friendly unit)",
+      "description": "A enemy hero in radius adjacent to\nanother enemy unit, and not adjacent\nto you, discards a card, if able.\n~(The target hero must be adjacent to their friendly unit)",
       "color": "BLUE",
       "level": 1,
       "initiative": 10,
@@ -939,7 +939,7 @@
     },
     {
       "name": "X Marks the Spot",
-      "description": "Place a coin in a space in radius.\n**End of turn:** You may place yourself in\na space with a coin. Any hero in a space\nwith a coin gains 1 coin. Remove the coin.\n~~(A coin is not an obstacle. The space with a coin is empty.)",
+      "description": "Place a coin in a space in radius.\n**End of turn:** You may place yourself in\na space with a coin. Any hero in a space\nwith a coin gains 1 coin. Remove the coin.\n~(A coin is not an obstacle. The space with a coin is empty.)",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -1160,7 +1160,7 @@
     },
     {
       "name": "Dark Ritual",
-      "description": "You may remove a friendly minion in radius.\nIf there are 3 or more empty minion spawn\npoints in radius in the battle zone, gain 1 coin.\n*(Removing the minion is optional!)*",
+      "description": "You may remove a friendly minion in radius.\nIf there are 3 or more empty minion spawn\npoints in radius in the battle zone, gain 1 coin.\n~(Removing the minion is optional!)",
       "color": "GREEN",
       "level": 1,
       "initiative": 3,
@@ -1707,7 +1707,7 @@
     },
     {
       "name": "Helping Hand",
-      "description": "**Choose one —**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent\nto a friendly hero.",
+      "description": "**Choose one —**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent\n>to a friendly hero.",
       "color": "RED",
       "level": 1,
       "initiative": 9,
@@ -2377,6 +2377,8 @@
       "initiative": 9,
       "primaryAction": "ATTACK",
       "primaryValue": 3,
+      "modifier": "AREA",
+      "modifierValue": 3,
       "secondaryMovement": 4,
       "secondaryDefense": 4,
       "item": "INITIATIVE"
@@ -2783,7 +2785,7 @@
     },
     {
       "name": "Diabolical Laughter",
-      "description": "Laugh diabolically. If you do, **choose one —**\n>>You swap with an illusion token in radius.\n>>You swap with a friendly minion in radius.\n>>You are defeated. Enemies gain no coins.\n>>**Next turn:** Gain +2 ::initiative_silver:: Initiative.",
+      "description": "Laugh diabolically. If you do, **choose one —**\n>>You swap with an illusion token in radius.\n>>You swap with a friendly minion in radius.\n>>You are defeated. Enemies gain no coins.\n>>**Next turn:** Gain +2 ::initiative:: Initiative.",
       "color": "SILVER",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -3044,7 +3046,7 @@
   "sabina": [
     {
       "name": "Point Blank Shot",
-      "description": "After the attack: If the target\nis adjacent, push the target 1 space.\n*(A unit pushed into an obstacle will stop. This is a valid push)* ",
+      "description": "After the attack: If the target\nis adjacent, push the target 1 space.\n~(A unit pushed into an obstacle will stop. This is a valid push) ",
       "color": "GOLD",
       "initiative": 12,
       "primaryAction": "ATTACK",
@@ -3108,7 +3110,7 @@
     },
     {
       "name": "Command",
-      "description": "Move any 1 friendly minion in radius up to\n2 spaces; ignore heavy minion immunity.\n*(You may move a heavy minion with this skill).*",
+      "description": "Move any 1 friendly minion in radius up to\n2 spaces; ignore heavy minion immunity.\n~(You may move a heavy minion with this skill).",
       "color": "GREEN",
       "level": 1,
       "initiative": 4,
@@ -3137,7 +3139,7 @@
     },
     {
       "name": "Gunslinger",
-      "description": "Target a non-adjacent unit.\n+2 ::attack_red:: Attack if the target hero\nplayed an attack card this turn.\n*(A revealed card is \"played\" even if it's not resolved yet).*",
+      "description": "Target a non-adjacent unit.\n+2 ::attack_red:: Attack if the target hero\nplayed an attack card this turn.\n~(A revealed card is \"played\" even if it's not resolved yet).",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -3190,7 +3192,7 @@
     },
     {
       "name": "Shootout",
-      "description": "Target a unit in range. After the attack: If you\ndefeated a minion with this attack, and there\nis no enemy hero in range, you may remove\na non-heavy enemy minion adjacent to you.\n*(You gain no coins for removing a minion.)*",
+      "description": "Target a unit in range. After the attack: If you\ndefeated a minion with this attack, and there\nis no enemy hero in range, you may remove\na non-heavy enemy minion adjacent to you.\n~(You gain no coins for removing a minion.)",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -3223,7 +3225,7 @@
     },
     {
       "name": "Field Promotion",
-      "description": "**This round:** Friendly minions in radius,\nincluding the immune ones, reduce the\ndefense total as if they each were both\na ranged minion and a melee minion.\n*(This can reduce the defense total by up to 2 per minion.)*",
+      "description": "**This round:** Friendly minions in radius,\nincluding the immune ones, reduce the\ndefense total as if they each were both\na ranged minion and a melee minion.\n~(This can reduce the defense total by up to 2 per minion.)",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -3377,7 +3379,7 @@
     },
     {
       "name": "Snap Shot",
-      "description": "-2 ::range_red:: Range for every unit adjacent to the\ntarget, including you. Target a hero in range,\nor a minion adjacent to you and in range.\n~~(If your range is below 1, you cannot perform this action).",
+      "description": "-2 ::range_red:: Range for every unit adjacent to the\ntarget, including you. Target a hero in range,\nor a minion adjacent to you and in range.\n~(If your range is below 1, you cannot perform this action).",
       "color": "RED",
       "level": 1,
       "initiative": 9,
@@ -3582,6 +3584,8 @@
       "initiative": 10,
       "primaryAction": "ATTACK",
       "primaryValue": 3,
+      "modifier": "RANGE",
+      "modifierValue": 3,
       "secondaryMovement": 5,
       "secondaryDefense": 5,
       "item": "AREA"
@@ -3949,7 +3953,7 @@
     },
     {
       "name": "Glacial Barrier",
-      "description": "Place an ::ice_token:: ice token in radius, adjacent\nto another ice token, if able. Enemy\nheroes have -1 ::initiative_red:: Initiative penalty for\nevery ice token they are adjacent to.",
+      "description": "Place an ::ice_token:: ice token in radius, adjacent\nto another ice token, if able. Enemy\nheroes have -1 ::initiative:: Initiative penalty for\nevery ice token they are adjacent to.",
       "color": "GREEN",
       "level": 1,
       "initiative": 4,
@@ -3994,7 +3998,7 @@
     },
     {
       "name": "Wall of Frost",
-      "description": "Place up to 2 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative_red:: Initiative penalty\nfor every ice token they are adjacent to.",
+      "description": "Place up to 2 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative:: Initiative penalty\nfor every ice token they are adjacent to.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -4096,7 +4100,7 @@
     },
     {
       "name": "Pack Ice",
-      "description": "Place up to 3 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative_red:: Initiative penalty\nfor every ice token they are adjacent to.",
+      "description": "Place up to 3 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative:: Initiative penalty\nfor every ice token they are adjacent to.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -4140,6 +4144,8 @@
       "initiative": 9,
       "primaryAction": "ATTACK",
       "primaryValue": 3,
+      "modifier": "RANGE",
+      "modifierValue": 3,
       "secondaryMovement": 4,
       "secondaryDefense": 4,
       "item": "AREA"
@@ -4165,7 +4171,7 @@
   "tigerclaw": [
     {
       "name": "Blink Strike",
-      "description": "Before the attack: Move 2 spaces in a straight\nline through an enemy unit; Target that unit.\n*(If you cannot make this move, you cannot attack).* ",
+      "description": "Before the attack: Move 2 spaces in a straight\nline through an enemy unit; Target that unit.\n~(If you cannot make this move, you cannot attack). ",
       "color": "GOLD",
       "initiative": 13,
       "primaryAction": "ATTACK",
@@ -4294,7 +4300,7 @@
     },
     {
       "name": "Backstab",
-      "description": "Target a unit adjacent to you. +2 ::attack_red:: Attack\nif a friendly unit is adjacent to the target.\n*(A \"friendly unit\" is another hero or a minion on your team).*",
+      "description": "Target a unit adjacent to you. +2 ::attack_red:: Attack\nif a friendly unit is adjacent to the target.\n~(A \"friendly unit\" is another hero or a minion on your team).",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -4389,7 +4395,7 @@
     },
     {
       "name": "Backstab with a Ballista",
-      "description": "Target a unit in range. +3 ::attack_red:: Attack\nand this attack cannot be blocked,\nif a friendly unit is adjacent to the target.\n*(\"Block\" is a keyword - the target hero can still defend!)*",
+      "description": "Target a unit in range. +3 ::attack_red:: Attack\nand this attack cannot be blocked,\nif a friendly unit is adjacent to the target.\n~(\"Block\" is a keyword - the target hero can still defend!)",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -4684,6 +4690,8 @@
       "initiative": 9,
       "primaryAction": "ATTACK",
       "primaryValue": 5,
+      "modifier": "RANGE",
+      "modifierValue": 3,
       "secondaryMovement": 4,
       "secondaryDefense": 6,
       "item": "MOVEMENT"
@@ -4744,7 +4752,7 @@
     },
     {
       "name": "Prowling Brute",
-      "description": "If enraged, you may swap with an adjacent\nminion after you perform this action.\n~~(You may choose to move 0 spaces and still swap).",
+      "description": "If enraged, you may swap with an adjacent\nminion after you perform this action.\n~(You may choose to move 0 spaces and still swap).",
       "color": "BLUE",
       "level": 1,
       "initiative": 9,
@@ -4829,7 +4837,7 @@
     },
     {
       "name": "Hulking Menace",
-      "description": "**This round:** While enraged, enemy units\ncannot move through spaces adjacent to you.\n~~(They can move into, or out of those spaces, but not both).",
+      "description": "**This round:** While enraged, enemy units\ncannot move through spaces adjacent to you.\n~(They can move into, or out of those spaces, but not both).",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -5108,7 +5116,7 @@
     },
     {
       "name": "Charged Boomerang",
-      "description": "Cannot target units in a straight line from you.\n~~(Adjacent units are in a straight line as well).",
+      "description": "Cannot target units in a straight line from you.\n~(Adjacent units are in a straight line as well).",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5245,7 +5253,7 @@
   "whisper": [
     {
       "name": "Swift Justice",
-      "description": "**Choose one **\n >>An enemy hero in range discards a card,\n >if able; then, if able, that hero moves the\n >number of spaces equal to that card's\n >printed movement value in a straight line.\n >>Defeat an adjacent minion.",
+      "description": "**Choose one —**\n>>An enemy hero in range discards a card,\n>if able; then, if able, that hero moves the\n>number of spaces equal to that card's\n>printed movement value in a straight line.\n>>Defeat an adjacent minion.",
       "color": "GOLD",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -5302,7 +5310,7 @@
       "initiative": 8,
       "primaryAction": "ATTACK",
       "primaryValue": 4,
-      "modifier": "RANGE",
+      "modifier": "AREA",
       "modifierValue": 1,
       "secondaryMovement": 4,
       "secondaryDefense": 3
@@ -5505,6 +5513,8 @@
       "initiative": 10,
       "primaryAction": "ATTACK",
       "primaryValue": 5,
+      "modifier": "RANGE",
+      "modifierValue": 3,
       "secondaryMovement": 4,
       "secondaryDefense": 7,
       "item": "DEFENSE"
@@ -5803,7 +5813,7 @@
   "xargatha": [
     {
       "name": "Backlash",
-      "description": "**This turn:** After you discard a card for any\nreason, perform the primary action on an\nattack card in your discard, if able.\n~~(First complete the action causing the discard).",
+      "description": "**This turn:** After you discard a card for any\nreason, perform the primary action on an\nattack card in your discard, if able.\n~(First complete the action causing the discard).",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "ATTACK",
@@ -5840,7 +5850,7 @@
     },
     {
       "name": "Stone Gaze",
-      "description": "**This turn:** The nearest enemy heroes\nin radius are immune, cannot perform a\nmovement action, and count as terrain.\n~~(Will affect multiple heroes if they are at the same distance.)",
+      "description": "**This turn:** The nearest enemy heroes\nin radius are immune, cannot perform a\nmovement action, and count as terrain.\n~(Will affect multiple heroes if they are at the same distance.)",
       "color": "BLUE",
       "level": 1,
       "initiative": 9,
@@ -5919,6 +5929,7 @@
       },
       "initiative": 4,
       "primaryAction": "MOVEMENT",
+      "primaryValue": 2,
       "modifier": "AREA",
       "modifierValue": 3,
       "secondaryDefense": 4,
@@ -5959,7 +5970,7 @@
     },
     {
       "name": "Constrict",
-      "description": "**Next turn:** Adjacent enemy heroes cannot\nmove, except when performing a movement\naction on a good card or a red card.",
+      "description": "**Next turn:** Adjacent enemy heroes cannot\nmove, except when performing a movement\naction on a gold card or a red card.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -5968,6 +5979,7 @@
       },
       "initiative": 4,
       "primaryAction": "MOVEMENT",
+      "primaryValue": 2,
       "secondaryDefense": 4,
       "item": "ATTACK"
     },
@@ -6053,11 +6065,11 @@
       "modifierValue": 2,
       "secondaryMovement": 4,
       "secondaryDefense": 4,
-      "item": "INITIATIVE"
+      "item": "MOVEMENT"
     },
     {
       "name": "Deadly Embrace",
-      "description": "**Next turn:** Adjacent enemy heroes\ncannot move, except when performing\na movement action on a good card.",
+      "description": "**Next turn:** Adjacent enemy heroes\ncannot move, except when performing\na movement action on a gold card.",
       "color": "GREEN",
       "level": 3,
       "variant": {
