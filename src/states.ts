@@ -37,6 +37,13 @@ export enum Item {
   MOVEMENT = "MOVEMENT",
 }
 
+export enum Stat {
+  ATTACK = "ATTACK",
+  DEFENSE = "DEFENSE",
+  INITIATIVE = "INITIATIVE",
+  MOVEMENT = "MOVEMENT",
+}
+
 export class Hero {
   name: string
   stats: Array<number>
@@ -80,6 +87,84 @@ export const heroes = {
   "wuk": new Hero("Wuk", [7, 7, 1, 2, 1, 7, 6, 7], "the Grovekeeper", 3),
   "xargatha": new Hero("Xargatha", [4, 6, 3, 6, 3, 6, 5, 4], "the Changed", 1),
 }
+
+export const cardStats = new Map<Color, Map<Stat, Map<string, number[]>>>([
+  [Color.RED, new Map<Stat, Map<string, number[]>>([
+    [Stat.MOVEMENT, new Map<string, number[]>([
+      ["i", [3, 4, 4, 4, 5, 5, 5, 5]],
+      ["ii", [3, 4, 4, 4, 5, 5, 5, 5]],
+      ["iii", [3, 4, 4, 4, 5, 5, 5, 5]],
+    ])],
+    [Stat.INITIATIVE, new Map<string, number[]>([
+      ["i", [7, 7, 7, 8, 8, 8, 9, 9]],
+      ["ii", [7, 7, 8, 8, 9, 9, 9, 9]],
+      ["iii", [8, 8, 8, 9, 9, 9, 10, 10]],
+    ])],
+    [Stat.ATTACK, new Map<string, number[]>([
+      ["i", [4, 4, 5, 5, 5, 6, 6, 6]],
+      ["ii", [4, 5, 5, 5, 6, 6, 6, 7]],
+      ["iii", [5, 5, 6, 6, 6, 7, 7, 7]],
+    ])],
+    [Stat.DEFENSE, new Map<string, number[]>([
+      ["i", [5, 5, 6, 6, 6, 7, 7, 7]],
+      ["ii", [5, 6, 6, 6, 7, 7, 7, 8]],
+      ["iii", [6, 6, 7, 7, 7, 8, 8, 8]],
+    ])],
+  ])],
+  [Color.GOLD, new Map<Stat, Map<string, number[]>>([
+    [Stat.MOVEMENT, new Map<string, number[]>([
+      ["i", [1, 1, 1, 1, 1, 1, 2, 2]],
+    ])],
+    [Stat.INITIATIVE, new Map<string, number[]>([
+      ["i", [11, 11, 11, 11, 12, 12, 12, 13]],
+    ])],
+    [Stat.ATTACK, new Map<string, number[]>([
+      ["i", [1, 2, 2, 3, 3, 3, 4, 4]],
+    ])],
+    [Stat.DEFENSE, new Map<string, number[]>([
+      ["i", [1, 1, 2, 2, 2, 2, 3, 3]],
+    ])],
+  ])],
+  [Color.SILVER, new Map<Stat, Map<string, number[]>>([
+    [Stat.DEFENSE, new Map<string, number[]>([
+      ["i", [1, 2, 2, 2, 3, 3, 3, 4]],
+    ])],
+  ])],
+  [Color.BLUE, new Map<Stat, Map<string, number[]>>([
+    [Stat.MOVEMENT, new Map<string, number[]>([
+      ["i", [2, 2, 3, 3, 3, 3, 3, 3]],
+      ["ii", [2, 2, 3, 3, 3, 3, 3, 3]],
+      ["iii", [2, 2, 3, 3, 3, 3, 3, 3]],
+    ])],
+    [Stat.INITIATIVE, new Map<string, number[]>([
+      ["i", [8, 9, 9, 9, 9, 10, 10, 10]],
+      ["ii", [9, 9, 10, 10, 10, 10, 10, 11]],
+      ["iii", [9, 10, 10, 10, 10, 11, 11, 11]],
+    ])],
+    [Stat.DEFENSE, new Map<string, number[]>([
+      ["i", [4, 4, 4, 5, 5, 5, 6, 6]],
+      ["ii", [4, 5, 5, 5, 6, 6, 6, 7]],
+      ["iii", [5, 5, 5, 6, 6, 6, 7, 7]],
+    ])],
+  ])],
+  [Color.GREEN, new Map<Stat, Map<string, number[]>>([
+    [Stat.MOVEMENT, new Map<string, number[]>([
+      ["i", [2, 2, 2, 2, 2, 2, 2, 3]],
+      ["ii", [2, 2, 2, 2, 2, 2, 2, 3]],
+      ["iii", [2, 2, 2, 2, 2, 2, 2, 3]],
+    ])],
+    [Stat.INITIATIVE, new Map<string, number[]>([
+      ["i", [6, 5, 5, 4, 4, 3, 3, 2]],
+      ["ii", [5, 5, 4, 4, 3, 3, 2, 2]],
+      ["iii", [5, 4, 4, 3, 3, 2, 2, 1]],
+    ])],
+    [Stat.DEFENSE, new Map<string, number[]>([
+      ["i", [1, 2, 2, 3, 3, 3, 3, 4]],
+      ["ii", [2, 2, 3, 3, 3, 4, 4, 4]],
+      ["iii", [2, 3, 3, 4, 4, 4, 4, 5]],
+    ])],
+  ])],
+])
 
 export const stats: Array<string> = [
   "attack",

@@ -2340,7 +2340,7 @@
         "first": 1,
         "second": 2
       },
-      "initiative": 4,
+      "initiative": 2,
       "primaryAction": "DEFENSE_SKILL",
       "primaryValueSign": "EXCLAMATION",
       "modifier": "AREA",

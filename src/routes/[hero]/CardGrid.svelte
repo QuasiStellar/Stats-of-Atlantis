@@ -100,6 +100,7 @@
   $: hoverOverGreenIII = false
 
   let goldCard: any
+  let goldHandicapCard: any
   let silverCard: any
   let purpleCard: any
   let blueIaCard: any
@@ -223,6 +224,8 @@
     redIIImainChecked
     greenIIIaltChecked
     greenIIImainChecked
+    showNumbers
+    showHandicap
 
     let blueIIselection = blueIImainChecked ? true : (blueIIaltChecked ? false : null)
     let redIIselection = redIImainChecked ? true : (redIIaltChecked ? false : null)
@@ -298,7 +301,7 @@
       updateCard(
         gold,
         goldCtx,
-        goldCard,
+        showHandicap ? goldHandicapCard : goldCard,
         goldBg!,
       )
       updateCard(
@@ -406,6 +409,16 @@
     }
   }
 
+  $: showNumbers = false
+  $: showHandicap = false
+
+  const labelColor = (disabled: boolean): string => disabled ? "gray" : "white"
+
+  $: disableShowNumbers = true
+
+  const hero = heroes[heroName] as Hero
+  const fullName = hero.name + " " + hero.title
+
   function updateCard(canvas: HTMLCanvasElement, context: CanvasRenderingContext2D, card: any, image: HTMLImageElement) {
     updateCanvas(
       canvas,
@@ -433,6 +446,11 @@
       areaBonus,
       rangeBonus,
       movementBonus,
+      showNumbers,
+      hero.stats[0],
+      hero.stats[1],
+      hero.stats[2],
+      hero.stats[3],
     )
   }
 
@@ -516,6 +534,7 @@
           item?: Item,
         }[]
         goldCard = hero.find((card) => card.color == Color.GOLD.toUpperCase())!
+        goldHandicapCard = hero.find((card) => card.color == Color.GOLD.toUpperCase() && card.handicapped)!
         silverCard = hero.find((card) => card.color == Color.SILVER.toUpperCase())!
         purpleCard = hero.find((card) => card.color == Color.PURPLE.toUpperCase())!
         blueIaCard = hero.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 1)!
@@ -537,7 +556,7 @@
         updateCard(
           gold,
           goldCtx,
-          goldCard,
+          showHandicap ? goldHandicapCard : goldCard,
           goldBg!,
         )
         updateCard(
@@ -1087,15 +1106,18 @@
       greenIIIalt = !greenIIIalt
   }
 
-  const hero = heroes[heroName] as Hero
-  const fullName = hero.name + " " + hero.title
-  console.log(hero.stats[0])
+  let avatarClickCounter = 0
+
+  function onAvatarClick() {
+    avatarClickCounter++
+    if (avatarClickCounter >= 10) disableShowNumbers = false
+  }
 </script>
 
 <div class="flex md:mt-20 mt-16 mb-52">
   <div class="grid grid-cols-12 m-auto">
     <div class="col-span-12 w-96 sm:w-239 h-50 sm:h-125 mt-5 sm:mt-10 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl left-0.5 sm:left-1 w-95 sm:w-237 absolute">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-3xl left-0.5 sm:left-1 w-95 sm:w-237 absolute" on:click={onAvatarClick}>
         <Img src={banner} class="rounded-lg sm:rounded-3xl"/>
         <p class="absolute text-black text-xl sm:text-5xl -top-[14px] sm:-top-[24px] left-[10px] sm:left-[34px] font-modesto">{fullName}</p>
         <p class="absolute text-black text-xl sm:text-5xl -top-[10px] sm:-top-[16px] left-[6px] sm:left-[26px] font-modesto">{fullName}</p>
@@ -1217,6 +1239,21 @@
         <canvas id="greenIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={greenIIIa} on:click={greenIIImainClick} on:pointerleave={greenIIImainPointerLeave} on:pointerenter={greenIIImainPointerEnter}/>
         <Checkbox class="absolute top-[4px] sm:top-[11px] right-[1px] sm:right-[9px] w-2 sm:w-5 h-2 sm:h-5" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
       </div>
+    </div>
+    <div id="showNumbers" class="col-span-6 flex-col content-center mt-14 flex items-center">
+      <Checkbox bind:checked={showNumbers} disabled={disableShowNumbers}>
+        <div style="color: {labelColor(disableShowNumbers)}">
+          Show Numbers
+        </div>
+      </Checkbox>
+      <Tooltip triggeredBy="#showNumbers" placement="bottom" class="z-50">Disabled by the developer's request</Tooltip>
+    </div>
+    <div class="col-span-6 flex-col content-center mt-14 flex items-center">
+      <Checkbox bind:checked={showHandicap}>
+        <div style="color: white">
+          Show Handicap
+        </div>
+      </Checkbox>
     </div>
   </div>
 
