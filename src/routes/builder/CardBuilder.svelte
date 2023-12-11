@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  import { Button, Checkbox, Fileupload, Input, Kbd, Label, Li, List, Select, Textarea } from "flowbite-svelte"
-  import { Color, defaultEmoji, Item, Modifier, Type, ValueSign } from "../../states"
+  import { Button, Checkbox, Fileupload, Img, Input, Kbd, Label, Li, List, Select, Textarea } from "flowbite-svelte"
+  import { cardStats, Color, defaultEmoji, Item, Modifier, Stat, stats, Type, ValueSign } from "../../states"
   import { importImages, updateCanvas } from "../../card_painter"
+  import { browser } from "$app/environment"
 
   let color = Color.GOLD
   let name = ""
@@ -32,6 +33,15 @@
 
   let customEmoji: Array<[string, HTMLImageElement]> = []
   let tempCustomEmoji: string | null
+
+  $: minAttackStatLevelValue = 0
+  $: maxAttackStatLevelValue = 0
+  $: minDefenseStatLevelValue = 0
+  $: maxDefenseStatLevelValue = 0
+  $: minInitiativeStatLevelValue = 0
+  $: maxInitiativeStatLevelValue = 0
+  $: minMovementStatLevelValue = 0
+  $: maxMovementStatLevelValue = 0
 
   const onFileSelected = (event: Event) => {
     const file = (event.target as HTMLInputElement).files![0]
@@ -84,13 +94,29 @@
     if (imagesLoaded) {
       update()
     }
+
+    minAttackStatLevelValue = minAttackStatLevel()
+    maxAttackStatLevelValue = maxAttackStatLevel()
+    minDefenseStatLevelValue = minDefenseStatLevel()
+    maxDefenseStatLevelValue = maxDefenseStatLevel()
+    minInitiativeStatLevelValue = minInitiativeStatLevel()
+    maxInitiativeStatLevelValue = maxInitiativeStatLevel()
+    minMovementStatLevelValue = minMovementStatLevel()
+    maxMovementStatLevelValue = maxMovementStatLevel()
   }
 
   let canvas: HTMLCanvasElement
   let context: CanvasRenderingContext2D
 
-  onMount(() => {
+  $: statImages = new Map()
+
+  onMount(async () => {
     context = canvas.getContext("2d")!
+
+    for (const stat of stats) {
+      statImages.set(stat, (await import(`../../lib/images/stat_icons/${stat}_white.png`)).default)
+    }
+    statImages = statImages
 
     Promise.all([
       document.fonts.ready,
@@ -205,6 +231,69 @@
     }
   }
 
+  function minAttackStatLevel() {
+    if (primaryActionType == Type.ATTACK)
+      return cardStats.get(color)?.get(Stat.ATTACK)?.get(level)?.findIndex((number) => number == primaryActionValue) ?? -1
+    return -1
+  }
+
+  function maxAttackStatLevel() {
+    if (primaryActionType == Type.ATTACK) {
+      let maxAttack = cardStats.get(color)?.get(Stat.ATTACK)?.get(level)?.findLastIndex((number) => number == primaryActionValue) ?? 8
+      if (maxAttack == -1) return 8
+      return maxAttack
+    }
+    return 8
+  }
+
+  function minDefenseStatLevel() {
+    if (primaryActionType == Type.DEFENSE || primaryActionType == Type.DEFENSE_SKILL)
+      return cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findIndex((number) => number == primaryActionValue) ?? -1
+    if (secondaryDefenseValue != 0)
+      return cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findIndex((number) => number == secondaryDefenseValue) ?? -1
+    return -1
+  }
+
+  function maxDefenseStatLevel() {
+    if (primaryActionType == Type.DEFENSE || primaryActionType == Type.DEFENSE_SKILL)
+      return cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findLastIndex((number) => number == primaryActionValue) ?? 8
+    if (secondaryDefenseValue != 0)
+      return cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findLastIndex((number) => number == secondaryDefenseValue) ?? 8
+    return 8
+  }
+
+  function minInitiativeStatLevel() {
+    return cardStats.get(color)?.get(Stat.INITIATIVE)?.get(level)?.findIndex((number) => number == initiative) ?? -1
+  }
+
+  function maxInitiativeStatLevel() {
+    let maxIni = cardStats.get(color)?.get(Stat.INITIATIVE)?.get(level)?.findLastIndex((number) => number == initiative) ?? 8
+    if (maxIni == -1) return 8
+    return maxIni
+  }
+
+  function minMovementStatLevel() {
+    if (primaryActionType == Type.MOVEMENT)
+      return cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findIndex((number) => number == primaryActionValue) ?? -1
+    if (secondaryMovementValue != 0)
+      return cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findIndex((number) => number == secondaryMovementValue) ?? -1
+    return -1
+  }
+
+  function maxMovementStatLevel() {
+    if (primaryActionType == Type.MOVEMENT)
+      return cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findLastIndex((number) => number == primaryActionValue) ?? 8
+    if (secondaryMovementValue != 0)
+      return cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findLastIndex((number) => number == secondaryMovementValue) ?? 8
+    return 8
+  }
+
+  function getStatPointWidth() {
+    if (browser) {
+      if (window.innerWidth >= 472) return 20
+      else return Math.floor(((window.innerWidth - 16) / 2 - 60) / 8 - 1)
+    } else return 0
+  }
 </script>
 
 <div class="pt-18 md:pt-22">
@@ -373,7 +462,81 @@
         </Label>
       </div>
       <div class="col-span-1 max-w-md pt-8 lg:pt-0 flex flex-col items-center justify-center">
-        <div class="w-full border border-dark-600 bg-transparent hover:bg-transparent rounded-3xl">
+        <div class="grid grid-cols-2 gap-1 lg:gap-2 w-full">
+          <div class="col-span-1 h-7 z-20 relative">
+            <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
+              <div class="m-1 relative h-full">
+                <Img src={statImages.get("attack")} class="absolute w-5 z-30 -top-1.25" />
+                <div class="float-left w-4.5 h-full bg-transparent" />
+                {#each Array(8) as _, color_index (color_index)}
+                  <div class="float-left w-1 h-1" />
+                  {#if minAttackStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-600" style="width: {getStatPointWidth()}px" />
+                  {:else if maxAttackStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-800" style="width: {getStatPointWidth()}px" />
+                  {:else}
+                    <div class="float-left h-1 bg-transparent" style="width: {getStatPointWidth()}px" />
+                  {/if}
+                {/each}
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 h-7 z-20 relative">
+            <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
+              <div class="m-1 relative h-full">
+                <Img src={statImages.get("defense")} class="absolute w-5 z-30 -top-1.25" />
+                <div class="float-left w-4.5 h-full bg-transparent" />
+                {#each Array(8) as _, color_index (color_index)}
+                  <div class="float-left w-1 h-1" />
+                  {#if minDefenseStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-600" style="width: {getStatPointWidth()}px" />
+                  {:else if maxDefenseStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-800" style="width: {getStatPointWidth()}px" />
+                  {:else}
+                    <div class="float-left h-1 bg-transparent" style="width: {getStatPointWidth()}px" />
+                  {/if}
+                {/each}
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 h-7 z-20 relative">
+            <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
+              <div class="m-1 relative h-full">
+                <Img src={statImages.get("initiative")} class="absolute w-5 z-30 -top-1.25" />
+                <div class="float-left w-4.5 h-full bg-transparent" />
+                {#each Array(8) as _, color_index (color_index)}
+                  <div class="float-left w-1 h-1" />
+                  {#if minInitiativeStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-600" style="width: {getStatPointWidth()}px" />
+                  {:else if maxInitiativeStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-800" style="width: {getStatPointWidth()}px" />
+                  {:else}
+                    <div class="float-left h-1 bg-transparent" style="width: {getStatPointWidth()}px" />
+                  {/if}
+                {/each}
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1 h-7 z-20 relative">
+            <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
+              <div class="m-1 relative h-full">
+                <Img src={statImages.get("movement")} class="absolute w-5 z-30 -top-1.25" />
+                <div class="float-left w-4.5 h-full bg-transparent" />
+                {#each Array(8) as _, color_index (color_index)}
+                  <div class="float-left w-1 h-1" />
+                  {#if minMovementStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-600" style="width: {getStatPointWidth()}px" />
+                  {:else if maxMovementStatLevelValue >= color_index}
+                    <div class="z-40 float-left h-2.5 rounded-md bg-amber-800" style="width: {getStatPointWidth()}px" />
+                  {:else}
+                    <div class="float-left h-1 bg-transparent" style="width: {getStatPointWidth()}px" />
+                  {/if}
+                {/each}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full border border-dark-600 bg-transparent hover:bg-transparent rounded-3xl mt-1 md:mt-2">
           <canvas width="1192" height="1664" class="w-full rounded-3xl" bind:this={canvas} />
         </div>
         <div class="flex justify-center">
