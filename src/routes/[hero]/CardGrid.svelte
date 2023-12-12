@@ -1116,29 +1116,29 @@
 
 <div class="flex md:mt-20 mt-16 mb-52">
   <div class="grid grid-cols-12 m-auto">
-    <div class="col-span-12 w-96 sm:w-157 lg:w-239 h-50 sm:h-82 lg:h-125 mt-5 sm:mt-7.5 lg:mt-10 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl left-0.5 sm:left-0.5 lg:left-1 w-95 sm:w-156 lg:w-237 absolute" on:click={onAvatarClick}>
+    <div class="col-span-12 w-78 xs:w-96 sm:w-157 lg:w-239 h-41 xs:h-50 sm:h-82 lg:h-125 mt-4 xs:mt-5 sm:mt-7.5 lg:mt-10 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 w-77.5 xs:w-95 sm:w-156 lg:w-237 absolute" on:click={onAvatarClick}>
         <Img src={banner} class="rounded-lg sm:rounded-xl lg:rounded-3xl"/>
-        <p class="absolute text-black text-xl sm:text-3xl lg:text-5xl -top-[14px] sm:-top-[19px] lg:-top-[24px] left-[10px] sm:left-[22px] lg:left-[34px] font-modesto">{fullName}</p>
-        <p class="absolute text-black text-xl sm:text-3xl lg:text-5xl -top-[10px] sm:-top-[13px] lg:-top-[16px] left-[6px] sm:left-[16px] lg:left-[26px] font-modesto">{fullName}</p>
-        <p class="absolute text-black text-xl sm:text-3xl lg:text-5xl -top-[14px] sm:-top-[19px] lg:-top-[24px] left-[6px] sm:left-[16px] lg:left-[26px] font-modesto">{fullName}</p>
-        <p class="absolute text-black text-xl sm:text-3xl lg:text-5xl -top-[10px] sm:-top-[13px] lg:-top-[16px] left-[10px] sm:left-[22px] lg:left-[34px] font-modesto">{fullName}</p>
-        <p class="absolute text-white text-xl sm:text-3xl lg:text-5xl -top-[12px] sm:-top-[16px] lg:-top-[20px] left-[8px] sm:left-[19px] lg:left-[30px] font-modesto">{fullName}</p>
+        <p class="absolute text-black xs:text-xl sm:text-3xl lg:text-5xl -top-[14px] sm:-top-[19px] lg:-top-[24px] left-[10px] sm:left-[22px] lg:left-[34px] font-modesto">{fullName}</p>
+        <p class="absolute text-black xs:text-xl sm:text-3xl lg:text-5xl -top-[10px] sm:-top-[13px] lg:-top-[16px] left-[6px] sm:left-[16px] lg:left-[26px] font-modesto">{fullName}</p>
+        <p class="absolute text-black xs:text-xl sm:text-3xl lg:text-5xl -top-[14px] sm:-top-[19px] lg:-top-[24px] left-[6px] sm:left-[16px] lg:left-[26px] font-modesto">{fullName}</p>
+        <p class="absolute text-black xs:text-xl sm:text-3xl lg:text-5xl -top-[10px] sm:-top-[13px] lg:-top-[16px] left-[10px] sm:left-[22px] lg:left-[34px] font-modesto">{fullName}</p>
+        <p class="absolute text-white xs:text-xl sm:text-3xl lg:text-5xl -top-[12px] sm:-top-[16px] lg:-top-[20px] left-[8px] sm:left-[19px] lg:left-[30px] font-modesto">{fullName}</p>
       </div>
     </div>
 
     {#each stats as stat, stat_index (stat_index)}
-      <div id="{stat}" class="col-span-3 h-4 sm:h-5.5 lg:h-7 z-20 relative">
-        <div class="left-0.5 sm:left-0.5 lg:left-1 top-0.5 sm:top-0.5 lg:top-1 h-3 sm:h-4 lg:h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded sm:rounded-lg lg:rounded-xl bg-dark-900 absolute">
+      <div id="{stat}" class="col-span-3 h-3 xs:h-4 sm:h-5.5 lg:h-7 z-20 relative">
+        <div class="left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 h-2.5 xs:h-3 sm:h-4 lg:h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded sm:rounded-lg lg:rounded-xl bg-dark-900 absolute">
           <div class="m-0.5 sm:m-0.5 lg:m-1 relative h-full">
-            <Img src={statImages.get(stat)} class="absolute w-2.5 sm:w-3.75 lg:w-5 z-30 -top-0.5 sm:-top-0.75 lg:-top-1.25 left-0.5 sm:left-0.75 lg:left-1" />
-            <div class="float-left w-3.5 sm:w-6 lg:w-7 h-full bg-transparent" />
+            <Img src={statImages.get(stat)} class="absolute w-2 xs:w-2.5 sm:w-3.75 lg:w-5 z-30 -top-0.5 sm:-top-0.75 lg:-top-1.25 xs:left-0.5 sm:left-0.75 lg:left-1" />
+            <div class="float-left w-2 xs:w-3.5 sm:w-6 lg:w-7 h-full bg-transparent" />
             {#each Array(8) as _, color_index (color_index)}
               <div class="float-left w-0.5 sm:w-0.75 lg:w-1 h-1" />
               {#if hero.stats[stat_index] > color_index}
-                <div class="z-40 float-left w-[7px] sm:w-[12px] lg:w-5 h-1.5 sm:h-2 lg:h-2.5 rounded-sm sm:rounded lg:rounded-md bg-{heroName}" />
+                <div class="z-40 float-left w-[5.6px] xs:w-[7px] sm:w-[12px] lg:w-5 h-1 xs:h-1.5 sm:h-2 lg:h-2.5 rounded-sm sm:rounded lg:rounded-md bg-{heroName}" />
               {:else}
-                <div class="float-left w-[7px] sm:w-[12px] lg:w-5 h-1 bg-transparent" />
+                <div class="float-left w-[5.6px] xs:w-[7px] sm:w-[12px] lg:w-5 h-1 bg-transparent" />
               {/if}
             {/each}
           </div>
@@ -1147,100 +1147,100 @@
       <Tooltip triggeredBy="#{stat}" placement="top" class="z-50">{stat.charAt(0).toUpperCase() + stat.slice(1)}</Tooltip>
     {/each}
 
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-44 sm:h-73 lg:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 top-0.5 sm:top-0.5 lg:top-1 absolute">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-36 xs:h-44 sm:h-73 lg:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
         <canvas id="goldCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={gold} on:click={goldClick}/>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-44 sm:h-73 lg:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 top-0.5 sm:top-0.5 lg:top-1 absolute">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-36 xs:h-44 sm:h-73 lg:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
         <canvas id="silverCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={silver} on:click={silverClick}/>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-44 sm:h-73 lg:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 top-0.5 sm:top-0.5 lg:top-1 absolute">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-36 xs:h-44 sm:h-73 lg:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
         <canvas id="purpleCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={purple} on:click={purpleClick}/>
       </div>
     </div>
 
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-44 sm:h-73 lg:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 top-0.5 sm:top-0.5 lg:top-1 absolute">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
         <canvas id="blueICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIa} on:click={blueIClick}/>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-44 sm:h-73 lg:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 top-0.5 sm:top-0.5 lg:top-1 absolute">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
         <canvas id="redICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIa} on:click={redIClick}/>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-44 sm:h-73 lg:h-111 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 top-0.5 sm:top-0.5 lg:top-1 absolute">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
         <canvas id="greenICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIa} on:click={greenIClick}/>
       </div>
     </div>
 
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-49 sm:h-81 lg:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
         <canvas id="blueIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIb} on:click={blueIIaltClick} on:pointerleave={blueIIaltPointerLeave} on:pointerenter={blueIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIaltChecked} on:change={checkBlueIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIaltChecked} on:change={checkBlueIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
         <canvas id="blueIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIa} on:click={blueIImainClick} on:pointerleave={blueIImainPointerLeave} on:pointerenter={blueIImainPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIImainChecked} on:change={checkBlueIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIImainChecked} on:change={checkBlueIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-49 sm:h-81 lg:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
         <canvas id="redIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIb} on:click={redIIaltClick} on:pointerleave={redIIaltPointerLeave} on:pointerenter={redIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIaltChecked} on:change={checkRedIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIaltChecked} on:change={checkRedIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
         <canvas id="redIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIa} on:click={redIImainClick} on:pointerleave={redIImainPointerLeave} on:pointerenter={redIImainPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIImainChecked} on:change={checkRedIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIImainChecked} on:change={checkRedIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-49 sm:h-81 lg:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
         <canvas id="greenIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-3xl" bind:this={greenIIb} on:click={greenIIaltClick} on:pointerleave={greenIIaltPointerLeave} on:pointerenter={greenIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIaltChecked} on:change={checkGreenIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIaltChecked} on:change={checkGreenIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
         <canvas id="greenIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIa} on:click={greenIImainClick} on:pointerleave={greenIImainPointerLeave} on:pointerenter={greenIImainPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIImainChecked} on:change={checkGreenIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIImainChecked} on:change={checkGreenIImain}></Checkbox>
       </div>
     </div>
 
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-49 sm:h-81 lg:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="blueIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIIb} on:click={blueIIIaltClick} on:pointerleave={blueIIIaltPointerLeave} on:pointerenter={blueIIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIIaltChecked} on:change={checkBlueIIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIIaltChecked} on:change={checkBlueIIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="blueIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIIa} on:click={blueIIImainClick} on:pointerleave={blueIIImainPointerLeave} on:pointerenter={blueIIImainPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIImainChecked} on:change={checkBlueIIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIImainChecked} on:change={checkBlueIIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-49 sm:h-81 lg:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="redIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIIb} on:click={redIIIaltClick} on:pointerleave={redIIIaltPointerLeave} on:pointerenter={redIIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIIaltChecked} on:change={checkRedIIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIIaltChecked} on:change={checkRedIIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="redIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIIa} on:click={redIIImainClick} on:pointerleave={redIIImainPointerLeave} on:pointerenter={redIIImainPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIImainChecked} on:change={checkRedIIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIImainChecked} on:change={checkRedIIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-4 w-32 sm:w-52 lg:w-80 h-49 sm:h-81 lg:h-124 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="greenIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIIb} on:click={greenIIIaltClick} on:pointerleave={greenIIIaltPointerLeave} on:pointerenter={greenIIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIIaltChecked} on:change={checkGreenIIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIIaltChecked} on:change={checkGreenIIIalt}></Checkbox>
       </div>
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-31 sm:w-51 lg:w-78 left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
+      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="greenIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIIa} on:click={greenIIImainClick} on:pointerleave={greenIIImainPointerLeave} on:pointerenter={greenIIImainPointerEnter}/>
-        <Checkbox class="absolute top-[4px] sm:top-[7px] lg:top-[11px] right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
       </div>
     </div>
-    <div id="showNumbers" class="col-span-6 flex-col content-center mt-14 flex items-center">
+    <div id="showNumbers" class="col-span-6 flex-col content-center mt-8 xs:mt-10 sm:mt-14 flex items-center">
       <Checkbox bind:checked={showNumbers} disabled={disableShowNumbers}>
         <div style="color: {labelColor(disableShowNumbers)}">
           Show Numbers
@@ -1248,7 +1248,7 @@
       </Checkbox>
       <Tooltip triggeredBy="#showNumbers" placement="bottom" class="z-50">Disabled by the developer's request</Tooltip>
     </div>
-    <div class="col-span-6 flex-col content-center mt-14 flex items-center">
+    <div class="col-span-6 flex-col content-center mt-8 xs:mt-10 sm:mt-14 flex items-center">
       <Checkbox bind:checked={showHandicap}>
         <div style="color: white">
           Show Handicap
@@ -1266,7 +1266,10 @@
       z-index: 30;
   }
   .altCardII {
-      top: 1.5rem;
+      top: 21px;
+      @media (min-width: 400px) {
+          top: 1.5rem;
+      }
       @media (min-width: 640px) {
           top: 36px;
       }
@@ -1276,9 +1279,12 @@
       z-index: 20;
   }
   .downCardII {
-      top: 3rem;
+      top: 2.5rem;
+      @media (min-width: 400px) {
+          top: 3rem;
+      }
       @media (min-width: 640px) {
-          top: 5rem;
+          top: 4.6rem;
       }
       @media (min-width: 1024px) {
           top: 7rem;
@@ -1290,7 +1296,10 @@
       z-index: 10;
   }
   .altCardIII {
-      top: 1.5rem;
+      top: 21px;
+      @media (min-width: 400px) {
+          top: 1.5rem;
+      }
       @media (min-width: 640px) {
           top: 36px;
       }
@@ -1300,9 +1309,12 @@
       z-index: 0;
   }
   .downCardIII {
-      top: 3rem;
+      top: 2.5rem;
+      @media (min-width: 400px) {
+          top: 3rem;
+      }
       @media (min-width: 640px) {
-          top: 5rem;
+          top: 4.6rem;
       }
       @media (min-width: 1024px) {
           top: 7rem;
