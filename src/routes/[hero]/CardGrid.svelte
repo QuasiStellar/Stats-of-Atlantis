@@ -7,7 +7,7 @@
   import "bigger-picture/css"
   import GoaCard from "./GoaCard.svelte"
   import type { BiggerPictureInstance } from "bigger-picture"
-  import { Card, Checkbox, Img, Tooltip } from "flowbite-svelte"
+  import { Checkbox, Img, Tooltip } from "flowbite-svelte"
 
   export let heroName: string
 
