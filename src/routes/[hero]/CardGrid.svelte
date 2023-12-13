@@ -1099,7 +1099,7 @@
 <div class="flex md:mt-20 mt-16 mb-52">
   <div class="grid grid-cols-12 m-auto">
     <div class="col-span-12 w-78 xs:w-96 sm:w-157 lg:w-239 h-41 xs:h-50 sm:h-82 lg:h-125 mt-4 xs:mt-5 sm:mt-7.5 lg:mt-10 relative">
-      <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 w-77.5 xs:w-95 sm:w-156 lg:w-237 absolute" on:click={onAvatarClick}>
+      <div class="border border-dark-600 rounded-lg sm:rounded-xl lg:rounded-3xl left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 w-77.5 xs:w-95 sm:w-156 lg:w-237 absolute" on:click={onAvatarClick}>
         <Img src={banner} class="rounded-lg sm:rounded-xl lg:rounded-3xl"/>
         <p class="absolute text-black xs:text-xl sm:text-3xl lg:text-5xl -top-[14px] sm:-top-[19px] lg:-top-[24px] left-[10px] sm:left-[22px] lg:left-[34px] font-modesto">{fullName}</p>
         <p class="absolute text-black xs:text-xl sm:text-3xl lg:text-5xl -top-[10px] sm:-top-[13px] lg:-top-[16px] left-[6px] sm:left-[16px] lg:left-[26px] font-modesto">{fullName}</p>

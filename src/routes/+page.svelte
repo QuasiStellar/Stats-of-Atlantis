@@ -72,54 +72,52 @@
 		{#each heroList as [name, desc] (name)}
 			<li class="px-3 py-1.5" animate:flip={{duration: 300}}>
 				<a href="/{name}">
-					<div class="w-lg border border-dark-600 rounded-lg sm:rounded-2xl bg-transparent hover:bg-transparent">
-						<div class="relative">
-							<img src={heroImages.get(name)} class="z-0 rounded-lg sm:rounded-2xl transition-all duration-300 cursor-pointer filter md:saturate-50 hover:saturate-150" alt="" />
-							<ul class="absolute top-1 sm:top-2 left-1 sm:left-2 space-y-0.5 sm:space-y-1">
-								{#each stats as stat, stat_index (stat_index)}
-									<li>
-										<Card id="{name}_{stat}" padding="none" class="h-2.5 sm:h-5 z-20 border-dark-600 bg-dark-900">
-											<div class="m-0.5 sm:m-1 relative h-full">
-												<Img src={statImages.get(stat)} class="absolute w-3 sm:w-5 z-30 -top-1 sm:-top-1.25" />
-												<div class="float-left w-3 sm:w-5 h-full bg-transparent" />
-												{#each Array(8) as _, color_index (color_index)}
-													<div class="float-left w-0.5 sm:w-1 h-1" />
-													{#if desc.stats[stat_index] > color_index}
-														<div class="z-40 float-left w-0.5 sm:w-1 h-full bg-{name}" />
-													{:else}
-														<div class="float-left w-0.5 sm:w-1 h-1 bg-transparent" />
-													{/if}
-												{/each}
-												<div class="float-left w-0.5 h-1" />
-											</div>
-										</Card>
-									</li>
-									<Tooltip triggeredBy="#{name}_{stat}" placement="left">{stat.charAt(0).toUpperCase() + stat.slice(1)}</Tooltip>
-								{/each}
-							</ul>
-							<div class="absolute left-15 sm:left-28 top-0 sm:top-1">
-								{#each Array(desc.stars) as _, star_index (star_index)}
-									<div class="w-1 h-1" />
-									<Img src={starImage} size="w-4 sm:w-8"/>
-								{/each}
-							</div>
-							<Img src={logoImages.get(name)} size="w-10 sm:w-20" class="absolute bottom-[3px] left-[5px]"/>
-
-							<p class="absolute text-black text-lg sm:text-4xl bottom-[14px] sm:bottom-[34px] left-[40px] sm:left-[74px] font-modesto">{desc.name}</p>
-							<p class="absolute text-black text-xs sm:text-2xl bottom-[7px] sm:bottom-[12px] left-[39px] sm:left-[72px] font-modesto">{desc.title}</p>
-
-							<p class="absolute text-black text-lg sm:text-4xl bottom-[10px] sm:bottom-[26px] left-[36px] sm:left-[66px] font-modesto">{desc.name}</p>
-							<p class="absolute text-black text-xs sm:text-2xl bottom-[5px] sm:bottom-[8px] left-[37px] sm:left-[68px] font-modesto">{desc.title}</p>
-
-							<p class="absolute text-black text-lg sm:text-4xl bottom-[14px] sm:bottom-[34px] left-[36px] sm:left-[66px] font-modesto">{desc.name}</p>
-							<p class="absolute text-black text-xs sm:text-2xl bottom-[7px] sm:bottom-[12px] left-[37px] sm:left-[68px] font-modesto">{desc.title}</p>
-
-							<p class="absolute text-black text-lg sm:text-4xl bottom-[10px] sm:bottom-[26px] left-[40px] sm:left-[74px] font-modesto">{desc.name}</p>
-							<p class="absolute text-black text-xs sm:text-2xl bottom-[5px] sm:bottom-[8px] left-[39px] sm:left-[72px] font-modesto">{desc.title}</p>
-
-							<p class="absolute text-white text-lg sm:text-4xl bottom-[12px] sm:bottom-[30px] left-[38px] sm:left-[70px] font-modesto">{desc.name}</p>
-							<p class="absolute text-white text-xs sm:text-2xl bottom-[6px] sm:bottom-[10px] left-[38px] sm:left-[70px] font-modesto">{desc.title}</p>
+					<div class="border border-dark-600 rounded-lg sm:rounded-2xl relative w-[300px] xs:w-[360px] sm:w-[560px] md:w-[720px] h-[150px] xs:h-[180px] sm:h-[280px] md:h-[360px]">
+						<Img src={heroImages.get(name)} class="absolute z-0 rounded-lg sm:rounded-2xl transition-all duration-300 cursor-pointer filter md:saturate-50 hover:saturate-150" alt="" />
+						<ul class="absolute top-1 sm:top-2 left-1 sm:left-2 space-y-0.5 sm:space-y-1">
+							{#each stats as stat, stat_index (stat_index)}
+								<li>
+									<Card id="{name}_{stat}" padding="none" class="h-2.5 sm:h-5 z-20 border-dark-600 bg-dark-900">
+										<div class="m-0.5 sm:m-1 relative h-full">
+											<Img src={statImages.get(stat)} class="absolute w-3 sm:w-5 z-30 -top-1 sm:-top-1.25" />
+											<div class="float-left w-3 sm:w-5 h-full bg-transparent" />
+											{#each Array(8) as _, color_index (color_index)}
+												<div class="float-left w-0.5 sm:w-1 h-1" />
+												{#if desc.stats[stat_index] > color_index}
+													<div class="z-40 float-left w-0.5 sm:w-1 h-full bg-{name}" />
+												{:else}
+													<div class="float-left w-0.5 sm:w-1 h-1 bg-transparent" />
+												{/if}
+											{/each}
+											<div class="float-left w-0.5 h-1" />
+										</div>
+									</Card>
+								</li>
+								<Tooltip triggeredBy="#{name}_{stat}" placement="left">{stat.charAt(0).toUpperCase() + stat.slice(1)}</Tooltip>
+							{/each}
+						</ul>
+						<div class="absolute left-15 sm:left-28 top-0 sm:top-1">
+							{#each Array(desc.stars) as _, star_index (star_index)}
+								<div class="w-1 h-1" />
+								<Img src={starImage} size="w-4 sm:w-8"/>
+							{/each}
 						</div>
+						<Img src={logoImages.get(name)} size="w-10 sm:w-20" class="absolute bottom-[3px] left-[5px]"/>
+
+						<p class="absolute text-black text-lg sm:text-4xl bottom-[14px] sm:bottom-[34px] left-[40px] sm:left-[74px] font-modesto">{desc.name}</p>
+						<p class="absolute text-black text-xs sm:text-2xl bottom-[7px] sm:bottom-[12px] left-[39px] sm:left-[72px] font-modesto">{desc.title}</p>
+
+						<p class="absolute text-black text-lg sm:text-4xl bottom-[10px] sm:bottom-[26px] left-[36px] sm:left-[66px] font-modesto">{desc.name}</p>
+						<p class="absolute text-black text-xs sm:text-2xl bottom-[5px] sm:bottom-[8px] left-[37px] sm:left-[68px] font-modesto">{desc.title}</p>
+
+						<p class="absolute text-black text-lg sm:text-4xl bottom-[14px] sm:bottom-[34px] left-[36px] sm:left-[66px] font-modesto">{desc.name}</p>
+						<p class="absolute text-black text-xs sm:text-2xl bottom-[7px] sm:bottom-[12px] left-[37px] sm:left-[68px] font-modesto">{desc.title}</p>
+
+						<p class="absolute text-black text-lg sm:text-4xl bottom-[10px] sm:bottom-[26px] left-[40px] sm:left-[74px] font-modesto">{desc.name}</p>
+						<p class="absolute text-black text-xs sm:text-2xl bottom-[5px] sm:bottom-[8px] left-[39px] sm:left-[72px] font-modesto">{desc.title}</p>
+
+						<p class="absolute text-white text-lg sm:text-4xl bottom-[12px] sm:bottom-[30px] left-[38px] sm:left-[70px] font-modesto">{desc.name}</p>
+						<p class="absolute text-white text-xs sm:text-2xl bottom-[6px] sm:bottom-[10px] left-[38px] sm:left-[70px] font-modesto">{desc.title}</p>
 					</div>
 				</a>
 			</li>
