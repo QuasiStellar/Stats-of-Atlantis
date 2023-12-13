@@ -673,12 +673,11 @@
       intro: "fadeup",
       items: [{ html: "" }],
       onOpen: (container) => {
-        container.querySelector(".bp-x")!!.remove()
         let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
-        card.drawCard(document.getElementById("goldCanvas")!! as HTMLCanvasElement)
+        card.drawCard(document.getElementById("goldCanvas")! as HTMLCanvasElement)
       },
     })
   }
@@ -688,12 +687,11 @@
       intro: "fadeup",
       items: [{ html: "" }],
       onOpen: (container) => {
-        container.querySelector(".bp-x")!!.remove()
         let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
-        card.drawCard(document.getElementById("silverCanvas")!! as HTMLCanvasElement)
+        card.drawCard(document.getElementById("silverCanvas")! as HTMLCanvasElement)
       },
     })
   }
@@ -703,12 +701,11 @@
       intro: "fadeup",
       items: [{ html: "" }],
       onOpen: (container) => {
-        container.querySelector(".bp-x")!!.remove()
         let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
-        card.drawCard(document.getElementById("purpleCanvas")!! as HTMLCanvasElement)
+        card.drawCard(document.getElementById("purpleCanvas")! as HTMLCanvasElement)
       },
     })
   }
@@ -718,12 +715,11 @@
       intro: "fadeup",
       items: [{ html: "" }],
       onOpen: (container) => {
-        container.querySelector(".bp-x")!!.remove()
         let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
-        card.drawCard(document.getElementById("blueICanvas")!! as HTMLCanvasElement)
+        card.drawCard(document.getElementById("blueICanvas")! as HTMLCanvasElement)
       },
     })
   }
@@ -733,12 +729,11 @@
       intro: "fadeup",
       items: [{ html: "" }],
       onOpen: (container) => {
-        container.querySelector(".bp-x")!!.remove()
         let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
-        card.drawCard(document.getElementById("redICanvas")!! as HTMLCanvasElement)
+        card.drawCard(document.getElementById("redICanvas")! as HTMLCanvasElement)
       },
     })
   }
@@ -748,12 +743,11 @@
       intro: "fadeup",
       items: [{ html: "" }],
       onOpen: (container) => {
-        container.querySelector(".bp-x")!!.remove()
         let card = new GoaCard({
           target: container.querySelector(".bp-html") as Element,
           props: { bp }
         });
-        card.drawCard(document.getElementById("greenICanvas")!! as HTMLCanvasElement)
+        card.drawCard(document.getElementById("greenICanvas")! as HTMLCanvasElement)
       },
     })
   }
@@ -787,12 +781,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("blueIImainCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("blueIImainCanvas")! as HTMLCanvasElement)
         },
       })
   }
@@ -804,12 +797,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("blueIIaltCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("blueIIaltCanvas")! as HTMLCanvasElement)
         },
       })
     else
@@ -845,12 +837,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("redIImainCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("redIImainCanvas")! as HTMLCanvasElement)
         },
       })
   }
@@ -862,12 +853,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("redIIaltCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("redIIaltCanvas")! as HTMLCanvasElement)
         },
       })
     else
@@ -903,12 +893,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("greenIImainCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("greenIImainCanvas")! as HTMLCanvasElement)
         },
       })
   }
@@ -920,12 +909,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("greenIIaltCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("greenIIaltCanvas")! as HTMLCanvasElement)
         },
       })
     else
@@ -961,12 +949,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("blueIIImainCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("blueIIImainCanvas")! as HTMLCanvasElement)
         },
       })
   }
@@ -978,12 +965,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("blueIIIaltCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("blueIIIaltCanvas")! as HTMLCanvasElement)
         },
       })
     else
@@ -1019,12 +1005,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("redIIImainCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("redIIImainCanvas")! as HTMLCanvasElement)
         },
       })
   }
@@ -1036,12 +1021,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("redIIIaltCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("redIIIaltCanvas")! as HTMLCanvasElement)
         },
       })
     else
@@ -1077,12 +1061,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("greenIIImainCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("greenIIImainCanvas")! as HTMLCanvasElement)
         },
       })
   }
@@ -1094,12 +1077,11 @@
         intro: "fadeup",
         items: [{ html: "" }],
         onOpen: (container) => {
-          container.querySelector(".bp-x")!!.remove()
           let card = new GoaCard({
             target: container.querySelector(".bp-html") as Element,
             props: { bp }
           });
-          card.drawCard(document.getElementById("greenIIIaltCanvas")!! as HTMLCanvasElement)
+          card.drawCard(document.getElementById("greenIIIaltCanvas")! as HTMLCanvasElement)
         },
       })
     else
