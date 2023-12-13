@@ -14,6 +14,7 @@
   let gold: HTMLCanvasElement
   let goldCtx: CanvasRenderingContext2D
   let goldBg: HTMLImageElement | undefined
+  let handicapBg: HTMLImageElement | undefined
 
   let silver: HTMLCanvasElement
   let silverCtx: CanvasRenderingContext2D
@@ -302,7 +303,7 @@
         gold,
         goldCtx,
         showHandicap ? goldHandicapCard : goldCard,
-        goldBg!,
+        showHandicap ? handicapBg! : goldBg!,
       )
       updateCard(
         silver,
@@ -506,7 +507,7 @@
         greenIIbBg = images.get("GreenIIB")
         greenIIIaBg = images.get("GreenIIIA")
         greenIIIbBg = images.get("GreenIIIB")
-        // handicapBg = images.get("Handicap")
+        handicapBg = images.get("Handicap")
         redIaBg = images.get("RedIA")
         redIIaBg = images.get("RedIIA")
         redIIbBg = images.get("RedIIB")
@@ -557,7 +558,7 @@
           gold,
           goldCtx,
           showHandicap ? goldHandicapCard : goldCard,
-          goldBg!,
+          showHandicap ? handicapBg! : goldBg!,
         )
         updateCard(
           silver,
