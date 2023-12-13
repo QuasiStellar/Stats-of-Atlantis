@@ -72,7 +72,7 @@
 		{#each heroList as [name, desc] (name)}
 			<li class="px-3 py-1.5" animate:flip={{duration: 300}}>
 				<a href="/{name}">
-					<div class="border border-dark-600 rounded-lg sm:rounded-2xl relative w-[300px] xs:w-[360px] sm:w-[560px] md:w-[720px] h-[150px] xs:h-[180px] sm:h-[280px] md:h-[360px]">
+					<div class="border border-dark-600 rounded-lg sm:rounded-2xl relative w-[300px] xs:w-[360px] sm:w-[560px] md:w-[720px] h-[151px] xs:h-[181px] sm:h-[281px] md:h-[361px]">
 						<Img src={heroImages.get(name)} class="absolute z-0 rounded-lg sm:rounded-2xl transition-all duration-300 cursor-pointer filter md:saturate-50 hover:saturate-150" alt="" />
 						<ul class="absolute top-1 sm:top-2 left-1 sm:left-2 space-y-0.5 sm:space-y-1">
 							{#each stats as stat, stat_index (stat_index)}
