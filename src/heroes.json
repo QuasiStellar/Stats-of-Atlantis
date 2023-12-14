@@ -417,7 +417,7 @@
     },
     {
       "name": "Hand Crossbow",
-      "description": "+2 ::range_red:: Range if you target a\nhero with a ::bounty_marker:: bounty marker.",
+      "description": "+2 ::range_red:: Range if you target a\nhero with a ::marker_bounty:: bounty marker.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -518,7 +518,7 @@
     },
     {
       "name": "Hunter-Seeker",
-      "description": "+2 ::range_red:: Range if you target a hero with\na ::bounty_marker:: bounty marker. If you do, may\nrepeat once on a different adjacent unit.",
+      "description": "+2 ::range_red:: Range if you target a hero with\na ::marker_bounty:: bounty marker. If you do, may\nrepeat once on a different adjacent unit.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -1679,7 +1679,7 @@
     },
     {
       "name": "Hurry up!",
-      "description": "If your discard is empty, set the printed\n::initiative_silver:: Initiative value of an unresolved card\nof a hero in range to 11, until it is resolved.\n**This turn:** If that hero performs a\nmovement action, that hero must move in\na straight line and the full distance, if able.",
+      "description": "If your discard is empty, set the printed\n::initiative:: Initiative value of an unresolved card\nof a hero in range to 11, until it is resolved.\n**This turn:** If that hero performs a\nmovement action, that hero must move in\na straight line and the full distance, if able.",
       "color": "SILVER",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -2002,7 +2002,7 @@
     },
     {
       "name": "Path of Ashes",
-      "description": "::tiebreaker_blue::: Move up to 2 spaces in a straight line.\nPlace a ::magma_token:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 2 magma tokens in radius\nadjacent to another magma token, if able.",
+      "description": "::tiebreaker_blue::: Move up to 2 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 2 magma tokens in radius\nadjacent to another magma token, if able.",
       "color": "GREEN",
       "level": 1,
       "initiative": 5,
@@ -2049,7 +2049,7 @@
     },
     {
       "name": "Path of Cinders",
-      "description": "::tiebreaker_blue::: Move up to 3 spaces in a straight line.\nPlace a ::magma_token:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 3 magma tokens in radius\nadjacent to another magma token, if able.",
+      "description": "::tiebreaker_blue::: Move up to 3 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 3 magma tokens in radius\nadjacent to another magma token, if able.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -2153,7 +2153,7 @@
     },
     {
       "name": "Path of Flames",
-      "description": "::tiebreaker_blue::: Move up to 4 spaces in a straight line.\nPlace a ::magma_token:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 4 magma tokens in radius\nadjacent to another magma token, if able.",
+      "description": "::tiebreaker_blue::: Move up to 4 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 4 magma tokens in radius\nadjacent to another magma token, if able.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -2249,7 +2249,7 @@
     },
     {
       "name": "Smoke Bomb",
-      "description": "Place a ::smoke_bomb_token:: smoke bomb token in radius.\nUnits can move through the smoke bomb.\nEnemy heroes cannot target another unit\nif there is a smoke bomb on a straight line\nbetween them and the target.",
+      "description": "Place a ::token_smoke_bomb:: smoke bomb token in radius.\nUnits can move through the smoke bomb.\nEnemy heroes cannot target another unit\nif there is a smoke bomb on a straight line\nbetween them and the target.",
       "color": "SILVER",
       "initiative": 12,
       "primaryAction": "DEFENSE_SKILL",
@@ -2265,7 +2265,7 @@
     },
     {
       "name": "Trip Mine",
-      "description": "Place 2 mine tokens, 1 ::blast_token:: blast and 1 ::dud_token::\ndud, facedown in radius. Units may move\nthrough them. After an enemy hero moves\nthrough a mine, remove it. For every blast\nremoved, that hero discards a card, if able.",
+      "description": "Place 2 mine tokens, 1 ::token_blast:: blast and 1 ::token_dud::\ndud, facedown in radius. Units may move\nthrough them. After an enemy hero moves\nthrough a mine, remove it. For every blast\nremoved, that hero discards a card, if able.",
       "color": "BLUE",
       "level": 1,
       "initiative": 10,
@@ -2300,7 +2300,7 @@
     },
     {
       "name": "Cluster Mine",
-      "description": "Place 3 mine tokens, 1 ::blast_token:: blast and 2 ::dud_token::\nduds, facedown in radius. Units may move\nthrough them. After an enemy hero moves\nthrough a mine, remove it. For every blast\nremoved, that hero discards a card, if able.",
+      "description": "Place 3 mine tokens, 1 ::token_blast:: blast and 2 ::token_dud::\nduds, facedown in radius. Units may move\nthrough them. After an enemy hero moves\nthrough a mine, remove it. For every blast\nremoved, that hero discards a card, if able.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -2350,7 +2350,7 @@
     },
     {
       "name": "Death Grenade",
-      "description": "Place a ::grenade_token:: grenade token into a space in\nrange, not adjacent to you. **End of turn:**\nAn enemy hero adjacent to the grenade\ndiscards a card, if able, remove the grenade.",
+      "description": "Place a ::token_grenade:: grenade token into a space in\nrange, not adjacent to you. **End of turn:**\nAn enemy hero adjacent to the grenade\ndiscards a card, if able, remove the grenade.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -2400,7 +2400,7 @@
     },
     {
       "name": "Mine Field",
-      "description": "Place 3 mine tokens, 2 ::blast_token:: blasts and 1 ::dud_token::\ndud, facedown in radius. Units may move\nthrough them. After an enemy hero moves\nthrough a mine, remove it. For every blast\nremoved, that hero discards a card, if able.",
+      "description": "Place 3 mine tokens, 2 ::token_blast:: blasts and 1 ::token_dud::\ndud, facedown in radius. Units may move\nthrough them. After an enemy hero moves\nthrough a mine, remove it. For every blast\nremoved, that hero discards a card, if able.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -2450,7 +2450,7 @@
     },
     {
       "name": "Holy Death Grenade",
-      "description": "Place a ::grenade_token:: grenade token into a space in\nrange, not adjacent to you. **End of turn:** An\nenemy hero adjacent to the grenade discards\na card, or is defeated, remove the grenade.",
+      "description": "Place a ::token_grenade:: grenade token into a space in\nrange, not adjacent to you. **End of turn:** An\nenemy hero adjacent to the grenade discards\na card, or is defeated, remove the grenade.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -2828,7 +2828,7 @@
     },
     {
       "name": "Fleeting Image",
-      "description": "Place an ::illusion_token:: illusion token in radius.\n**This round:** After an action makes you\ndiscard a card, swap with an illusion token,\nregardless of radius, then remove that token.\n~(Complete the action causing the discard before the swap).",
+      "description": "Place an ::token_illusion:: illusion token in radius.\n**This round:** After an action makes you\ndiscard a card, swap with an illusion token,\nregardless of radius, then remove that token.\n~(Complete the action causing the discard before the swap).",
       "color": "GREEN",
       "level": 1,
       "initiative": 6,
@@ -2875,7 +2875,7 @@
     },
     {
       "name": "Multiple Projections",
-      "description": "Place up to 2 ::illusion_token:: illusion tokens in radius.\n**This round:** After an action makes you\ndiscard a card, swap with an illusion token,\nregardless of radius, then remove that token.",
+      "description": "Place up to 2 ::token_illusion:: illusion tokens in radius.\n**This round:** After an action makes you\ndiscard a card, swap with an illusion token,\nregardless of radius, then remove that token.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -2925,7 +2925,7 @@
     },
     {
       "name": "Phantasmal Warrior",
-      "description": "Place an ::illusion_token:: illusion token in radius. **This**\n**round:** While you are performing actions, the\nillusion tokens count as friendly melee minions.",
+      "description": "Place an ::token_illusion:: illusion token in radius. **This**\n**round:** While you are performing actions, the\nillusion tokens count as friendly melee minions.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -2977,7 +2977,7 @@
     },
     {
       "name": "Master Of Illusions",
-      "description": "Place up to 3 ::illusion_token:: illusion tokens in radius.\n**This round:** After an action makes you\ndiscard a card, swap with an illusion token,\nregardless of radius, then remove that token.",
+      "description": "Place up to 3 ::token_illusion:: illusion tokens in radius.\n**This round:** After an action makes you\ndiscard a card, swap with an illusion token,\nregardless of radius, then remove that token.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -3027,7 +3027,7 @@
     },
     {
       "name": "Phantasmal Colossus",
-      "description": "Place an ::illusion_token:: illusion token in radius. **This**\n**round:** Illusion tokens are immune to enemy\nactions. While you are performing actions, the\nillusion tokens count as friendly melee minions.",
+      "description": "Place an ::token_illusion:: illusion token in radius. **This**\n**round:** Illusion tokens are immune to enemy\nactions. While you are performing actions, the\nillusion tokens count as friendly melee minions.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -3953,7 +3953,7 @@
     },
     {
       "name": "Glacial Barrier",
-      "description": "Place an ::ice_token:: ice token in radius, adjacent\nto another ice token, if able. Enemy\nheroes have -1 ::initiative:: Initiative penalty for\nevery ice token they are adjacent to.",
+      "description": "Place an ::token_ice:: ice token in radius, adjacent\nto another ice token, if able. Enemy\nheroes have -1 ::initiative:: Initiative penalty for\nevery ice token they are adjacent to.",
       "color": "GREEN",
       "level": 1,
       "initiative": 4,
@@ -3998,7 +3998,7 @@
     },
     {
       "name": "Wall of Frost",
-      "description": "Place up to 2 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative:: Initiative penalty\nfor every ice token they are adjacent to.",
+      "description": "Place up to 2 ::token_ice:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative:: Initiative penalty\nfor every ice token they are adjacent to.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -4050,7 +4050,7 @@
     },
     {
       "name": "Ancestral Totem",
-      "description": "Place a ::totem_token:: in radius.\nIf a friendly melee minion adjacent\nto a totem would be defeated, you\nmay remove the totem instead.",
+      "description": "Place a ::token_totem:: in radius.\nIf a friendly melee minion adjacent\nto a totem would be defeated, you\nmay remove the totem instead.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -4100,7 +4100,7 @@
     },
     {
       "name": "Pack Ice",
-      "description": "Place up to 3 ::ice_token:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative:: Initiative penalty\nfor every ice token they are adjacent to.",
+      "description": "Place up to 3 ::token_ice:: ice tokens in radius,\nadjacent to another ice token, if able.\nEnemy heroes have -1 ::initiative:: Initiative penalty\nfor every ice token they are adjacent to.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -4152,7 +4152,7 @@
     },
     {
       "name": "Venerated Totem",
-      "description": "Place a ::totem_token:: in radius. If a friendly\nminion adjacent to a totem would be\ndefeated, you may remove the totem instead.\nTotems are immune to enemy actions.",
+      "description": "Place a ::token_totem:: in radius. If a friendly\nminion adjacent to a totem would be\ndefeated, you may remove the totem instead.\nTotems are immune to enemy actions.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -4317,7 +4317,7 @@
     },
     {
       "name": "Poisoned Dagger",
-      "description": "Give a hero in range a ::marker_poison:: poison marker.\nEach ::item_initiative:: Initiative and ::item_attack:: Attack item of a\nhero with a poison marker reduces that\nvalue by 1, instead of increasing it by 1.",
+      "description": "Give a hero in range a ::marker_poison:: poison marker.\nEach ::initiative:: Initiative and ::attack_silver:: Attack item of a\nhero with a poison marker reduces that\nvalue by 1, instead of increasing it by 1.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -4414,7 +4414,7 @@
     },
     {
       "name": "Poisoned Dart",
-      "description": "Give a hero in range a ::marker_poison:: poison marker.\nEach ::item_initiative:: Initiative, ::item_attack:: Attack, and ::item_defense:: Defense\nitem of a hero with a poison marker reduce\nthat value by 1, instead of increasing it by 1.",
+      "description": "Give a hero in range a ::marker_poison:: poison marker.\nEach ::initiative:: Initiative, ::attack_silver:: Attack, and ::defense_silver:: Defense\nitem of a hero with a poison marker reduce\nthat value by 1, instead of increasing it by 1.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -4559,7 +4559,7 @@
     },
     {
       "name": "Deployable Barrier",
-      "description": "Place up to 2 ::barrier_token:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
+      "description": "Place up to 2 ::token_barrier:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -4663,7 +4663,7 @@
     },
     {
       "name": "Deployable Bastion",
-      "description": "Place up to 3 ::barrier_token:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
+      "description": "Place up to 3 ::token_barrier:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -5566,7 +5566,7 @@
     },
     {
       "name": "Mystic Saplings",
-      "description": "Place up to 3 ::tree_token:: tree tokens in radius, not\nadjacent to a tree token. Heroes may move\nthrough a space with a tree token. Do not\nremove the tree tokens at the end of round.",
+      "description": "Place up to 3 ::token_tree:: tree tokens in radius, not\nadjacent to a tree token. Heroes may move\nthrough a space with a tree token. Do not\nremove the tree tokens at the end of round.",
       "color": "SILVER",
       "initiative": 4,
       "primaryAction": "SKILL",

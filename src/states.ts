@@ -201,6 +201,8 @@ export const defaultEmoji = [
   "defense_skill_silver",
   "initiative",
   "life_counters",
+  "marker_bounty",
+  "marker_poison",
   "movement_blue",
   "movement_gold",
   "movement_green",
@@ -219,6 +221,16 @@ export const defaultEmoji = [
   "skill_silver",
   "tiebreaker_blue",
   "tiebreaker_orange",
+  "token_magma",
+  "token_smoke_bomb",
+  "token_blast",
+  "token_dud",
+  "token_grenade",
+  "token_illusion",
+  "token_ice",
+  "token_totem",
+  "token_barrier",
+  "token_tree",
 ]
 
 export const imageNames = [
@@ -293,6 +305,8 @@ export const imageNames = [
   "level_iv",
   "level_h",
   "life_counters",
+  "marker_bounty",
+  "marker_poison",
   "movement",
   "movement_blue",
   "movement_gold",
@@ -314,6 +328,16 @@ export const imageNames = [
   "tiebreaker_orange",
   "title",
   "title_ultimate",
+  "token_magma",
+  "token_smoke_bomb",
+  "token_blast",
+  "token_dud",
+  "token_grenade",
+  "token_illusion",
+  "token_ice",
+  "token_totem",
+  "token_barrier",
+  "token_tree",
 ]
 
 export const cardImageNames = [

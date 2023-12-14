@@ -1,10 +1,8 @@
 <script lang="ts">
   import CardGrid from "./CardGrid.svelte";
   import type { PageData } from './$types';
-  import { Img, P } from "flowbite-svelte"
   import { heroes } from "../../states"
 
-  import pocImage from "$lib/images/poc.png"
   import { error } from "@sveltejs/kit"
 
   export let data: PageData;
