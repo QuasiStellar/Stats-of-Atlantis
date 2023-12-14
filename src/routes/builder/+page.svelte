@@ -4,7 +4,7 @@
 
 <svelte:head>
   <title>Card Builder</title>
-  <meta name="description" content="GoA II card builder." />
+  <meta name="description" content="Guards of Atlantis II card builder." />
 </svelte:head>
 
 <CardBuilder />

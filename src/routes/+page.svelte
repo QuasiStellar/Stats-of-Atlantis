@@ -64,7 +64,7 @@
 
 <svelte:head>
 	<title>Stats of Atlantis</title>
-	<meta name="description" content="GoA II card collection." />
+	<meta name="description" content="Guards of Atlantis II card builder and catalogue." />
 </svelte:head>
 
 <div class="flex md:mt-20 mt-16">

@@ -728,7 +728,7 @@
     })
 
     importCardImage(heroName, "BlueIIB").then(() => {
-      blueIIbBg = images.get("BlueIB")
+      blueIIbBg = images.get("BlueIIB")
       blueIIbLoaded = true
     })
 

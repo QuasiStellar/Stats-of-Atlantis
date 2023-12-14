@@ -17,7 +17,7 @@
 
 <svelte:head>
   <title>{heroName}</title>
-  <meta name="description" content="GoA II card collection for {heroName}." />
+  <meta name="description" content="Guards of Atlantis II card collection for {heroName}." />
 </svelte:head>
 
 <CardGrid heroName="{hero}" />
