@@ -7,22 +7,22 @@
 		
 		<link href="./_app/immutable/assets/0.475877f5.css" rel="stylesheet">
 		<link href="./_app/immutable/assets/4.2353e946.css" rel="stylesheet">
-		<link rel="modulepreload" href="./_app/immutable/entry/start.ed2b3d62.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.1bcd6833.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/scheduler.b54e3b04.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.6f239ff2.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.20c8d7e2.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.d188a13b.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/control.f5b05b5f.js">
-		<link rel="modulepreload" href="./_app/immutable/entry/app.1cbbc4c9.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.84bfd260.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/preload-helper.a4192956.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.bd67949c.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/0.462ea4fe.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.4faabf9d.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.cbd6daff.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/index.2b48d029.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/tw-merge.dd2125e8.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/Frame.f0a70f22.js">
-		<link rel="modulepreload" href="./_app/immutable/chunks/stores.5145ee9d.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/stores.a9d98dd3.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/small_logo.c201534d.js">
-		<link rel="modulepreload" href="./_app/immutable/nodes/4.233253fe.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/4.24d26e2a.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/states.1c2bb696.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/Button.daf40e9e.js">
 		<link rel="modulepreload" href="./_app/immutable/chunks/card_painter.3d36a860.js">
@@ -78,38 +78,39 @@
                     stats</a>.
                   Two heroes with the same movement stat will <i data-svelte-h="svelte-rdzcrx">generally</i> have the same movement on all of their
                   respective cards.</li>  <li class="">Gold card -
-                  Highest initiative (1-4 -&gt; 11, 5-7 -&gt; 12, 8 -&gt; 13),
-                  lowest defense (1-2 -&gt; 1, 3-6 -&gt; 2, 7-8 -&gt; 3),
-                  lowest movement (1-6 -&gt; 1, 7-8 -&gt; 2),
+                  Highest initiative,
+                  lowest defense,
+                  lowest movement,
                   a low-damage attack with a twist or (for some higher-complexity heroes) a skill that provides an
                   option to discard a card or defeat a minion.
-                  Gold card is usually used to land a hit before the enemy can escape, or dodge such a hit.
-                  Gold card doesn&#39;t receive any direct upgrades throughout the game and doesn&#39;t have an alternative.
+                  The Gold card is usually used to land a hit before the enemy can escape, or dodge such a hit.
+                  The Gold card doesn&#39;t receive any direct upgrades throughout the game and doesn&#39;t have an alternative.
                   It is your hero&#39;s signature attack.</li>  <li class="">Silver card -
                   Any initiative,
-                  low defense (1 -&gt; 1, 2-4 -&gt; 2, 5-7 -&gt; 3, 8 -&gt; 4),
+                  low defense,
                   no movement,
                   a skill or (for some higher-complexity heroes) a defense/skill that can do a lot in some situations
                   and nothing in others, due to its conditional nature and no secondary movement.
-                  Silver cards almost always require some setup in order to bring any value, but when this happens, they
+                  Movement is sometimes present in some form but is always conditional.
+                  The Silver cards almost always require some setup in order to bring any value, but when this happens, they
                   can change the situation drastically.
-                  Silver card doesn&#39;t receive any direct upgrades throughout the game and doesn&#39;t have an alternative.
+                  The Silver card doesn&#39;t receive any direct upgrades throughout the game and doesn&#39;t have an alternative.
                   It is you hero&#39;s signature skill.</li>  <li class="">Blue card -
-                  High initiative (1 -&gt; 8.5, 2 -&gt; 9, 3-5 -&gt; 9.5, 6-7 -&gt; 10, 8 -&gt; 10.5),
-                  high defense (2.5 + stat / 2),
-                  high movement (1-3 -&gt; 2, 4-8 -&gt; 3),
+                  High initiative,
+                  high defense,
+                  high movement,
                   a skill, a movement, or a defense.
-                  Blue card is often used for movement, be it evading the red attack or just a reposition.
+                  The Blue card is often used for movement, be it evading the red attack or just a reposition.
                   It can also restrict enemies&#39; actions, discard a card, place tokens or apply an effect.</li>  <li class="">Red card -
-                  Medium initiative (1 -&gt; 6, 2 -&gt; 7, 3 -&gt; 7.5, 4 -&gt; 8, 5-6 -&gt; 8.5, 7-8 -&gt; 9),
+                  Medium initiative,
                   highest defense,
-                  highest movement (1 -&gt; 3, 2-4 -&gt; 4, 6-8 -&gt; 5),
+                  highest movement,
                   a high-damage attack, the main way to strike through enemies&#39; defenses.
                   The easier it is to land a hit with an attack the weaker the damage is. Extra range is usually
                   compensated by lower defense value.</li>  <li class="">Green card -
-                  Lowest initiative (6 - stat / 2),
-                  medium defense (1 -&gt; 1.5, 2 -&gt; 2, 3 -&gt; 2.5, 4-5 -&gt; 3, 6-7 -&gt; 3.5, 8 -&gt; 4) or a block,
-                  medium movement (1-7 -&gt; 2, 8 -&gt; 3),
+                  Lowest initiative,
+                  medium defense or a block,
+                  medium movement,
                   a skill, a movement, or a block that acts as a control tool, due to its low initiative, allowing you
                   to react to the situation: run away from a potential attack, set up an attack, heal or prepare for the
                   next turn in other ways.</li>  <li class="">Initiative, attack and defense on blue, red and green cards increases by 1 either on level II or on
@@ -117,7 +118,7 @@
 			
 			<script>
 				{
-					__sveltekit_1dshnma = {
+					__sveltekit_xyvfjo = {
 						base: new URL(".", location).pathname.slice(0, -1),
 						env: {}
 					};
@@ -127,8 +128,8 @@
 					const data = [null,null];
 
 					Promise.all([
-						import("./_app/immutable/entry/start.ed2b3d62.js"),
-						import("./_app/immutable/entry/app.1cbbc4c9.js")
+						import("./_app/immutable/entry/start.1bcd6833.js"),
+						import("./_app/immutable/entry/app.84bfd260.js")
 					]).then(([kit, app]) => {
 						kit.start(app, element, {
 							node_ids: [0, 4],
