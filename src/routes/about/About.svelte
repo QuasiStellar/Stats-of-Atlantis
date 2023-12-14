@@ -26,6 +26,10 @@
         <P color="text-white" align="center" class="text-base md:text-2xl">or be defeated.</P>
       </div>
     </a>
+    <P align="center" color="text-white" class="text-base md:text-2xl">
+      If something doesn't work properly or you have a suggestion, open an issue on
+      <a href="https://github.com/QuasiStellar/Stats-of-Atlantis/issues" target="_blank" rel="noopener noreferrer" class="text-primary-500">Github</a>
+    </P>
     <P size="xs" color="text-white" class="mt-14">
       Card design and artwork belong to Wolffdesigna®
     </P>
