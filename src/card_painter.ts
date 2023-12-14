@@ -393,27 +393,30 @@ export function updateCanvas(
 
 		switch (descriptionHeight) {
 			case 1:
-				addImage(context, 'frame_' + lowerColor + '_bottom', 56, 1415);
+				addImage(context, 'frame_empty_bottom', 56, 1415);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1249);
 				addImage(context, 'frame_' + lowerColor + '_top', 56, 1137);
+				addImage(context, 'frame_' + lowerColor + '_middle_cut', 56, 1340);
 				addCardDescription(context, customEmoji, description, 596, 1358);
 				addCardType(context, cardType, 596, 1200);
 				primaryActionHeight = 1137;
 				break;
 			case 2:
-				addImage(context, 'frame_' + lowerColor + '_bottom', 56, 1415);
+				addImage(context, 'frame_empty_bottom', 56, 1415);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1249);
 				addImage(context, 'frame_' + lowerColor + '_top', 56, 1098);
+				addImage(context, 'frame_' + lowerColor + '_middle_cut', 56, 1340);
 				addCardDescription(context, customEmoji, descriptionLines[0], 596, 1311);
 				addCardDescription(context, customEmoji, descriptionLines[1], 596, 1372);
 				addCardType(context, cardType, 596, 1161);
 				primaryActionHeight = 1098;
 				break;
 			case 3:
-				addImage(context, 'frame_' + lowerColor + '_bottom', 56, 1415);
+				addImage(context, 'frame_empty_bottom', 56, 1415);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1249);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1216);
 				addImage(context, 'frame_' + lowerColor + '_top', 56, 1065);
+				addImage(context, 'frame_' + lowerColor + '_middle_cut', 56, 1340);
 				addCardDescription(context, customEmoji, descriptionLines[0], 596, 1262);
 				addCardDescription(context, customEmoji, descriptionLines[1], 596, 1323);
 				addCardDescription(context, customEmoji, descriptionLines[2], 596, 1387);
@@ -421,10 +424,11 @@ export function updateCanvas(
 				primaryActionHeight = 1065;
 				break;
 			case 4:
-				addImage(context, 'frame_' + lowerColor + '_bottom', 56, 1415);
+				addImage(context, 'frame_empty_bottom', 56, 1415);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1249);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1083);
 				addImage(context, 'frame_' + lowerColor + '_top', 56, 1002);
+				addImage(context, 'frame_' + lowerColor + '_middle_cut', 56, 1340);
 				addCardDescription(context, customEmoji, descriptionLines[0], 596, 1198);
 				addCardDescription(context, customEmoji, descriptionLines[1], 596, 1259);
 				addCardDescription(context, customEmoji, descriptionLines[2], 596, 1323);
@@ -433,10 +437,11 @@ export function updateCanvas(
 				primaryActionHeight = 1002;
 				break;
 			case 5:
-				addImage(context, 'frame_' + lowerColor + '_bottom', 56, 1415);
+				addImage(context, 'frame_empty_bottom', 56, 1415);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1249);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1083);
 				addImage(context, 'frame_' + lowerColor + '_top', 56, 937);
+				addImage(context, 'frame_' + lowerColor + '_middle_cut', 56, 1340);
 				addCardDescription(context, customEmoji, descriptionLines[0], 596, 1134);
 				addCardDescription(context, customEmoji, descriptionLines[1], 596, 1198);
 				addCardDescription(context, customEmoji, descriptionLines[2], 596, 1259);
@@ -446,11 +451,12 @@ export function updateCanvas(
 				primaryActionHeight = 937;
 				break;
 			case 6:
-				addImage(context, 'frame_' + lowerColor + '_bottom', 56, 1415);
+				addImage(context, 'frame_empty_bottom', 56, 1415);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1249);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1083);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1015);
 				addImage(context, 'frame_' + lowerColor + '_top', 56, 864);
+				addImage(context, 'frame_' + lowerColor + '_middle_cut', 56, 1340);
 				addCardDescription(context, customEmoji, descriptionLines[0], 596, 1064);
 				addCardDescription(context, customEmoji, descriptionLines[1], 596, 1128);
 				addCardDescription(context, customEmoji, descriptionLines[2], 596, 1189);
@@ -461,12 +467,13 @@ export function updateCanvas(
 				primaryActionHeight = 864;
 				break;
 			default:
-				addImage(context, 'frame_' + lowerColor + '_bottom', 56, 1415);
+				addImage(context, 'frame_empty_bottom', 56, 1415);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1249);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1083);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 1015);
 				addImage(context, 'frame_' + lowerColor + '_middle', 56, 987);
 				addImage(context, 'frame_' + lowerColor + '_top', 56, 836);
+				addImage(context, 'frame_' + lowerColor + '_middle_cut', 56, 1340);
 				addCardDescription(context, customEmoji, descriptionLines[0], 596, 1019);
 				addCardDescription(context, customEmoji, descriptionLines[1], 596, 1083);
 				addCardDescription(context, customEmoji, descriptionLines[2], 596, 1144);
