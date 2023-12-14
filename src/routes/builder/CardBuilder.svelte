@@ -255,10 +255,16 @@
   }
 
   function maxDefenseStatLevel() {
-    if (primaryActionType == Type.DEFENSE || primaryActionType == Type.DEFENSE_SKILL)
-      return cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findLastIndex((number) => number == primaryActionValue) ?? 8
-    if (secondaryDefenseValue != 0)
-      return cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findLastIndex((number) => number == secondaryDefenseValue) ?? 8
+    if (primaryActionType == Type.DEFENSE || primaryActionType == Type.DEFENSE_SKILL) {
+      let maxDefense = cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findLastIndex((number) => number == primaryActionValue) ?? 8
+      if (maxDefense == -1) return 8
+      return maxDefense
+    }
+    if (secondaryDefenseValue != 0) {
+      let maxDefense = cardStats.get(color)?.get(Stat.DEFENSE)?.get(level)?.findLastIndex((number) => number == secondaryDefenseValue) ?? 8
+      if (maxDefense == -1) return 8
+      return maxDefense
+    }
     return 8
   }
 
@@ -281,10 +287,16 @@
   }
 
   function maxMovementStatLevel() {
-    if (primaryActionType == Type.MOVEMENT)
-      return cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findLastIndex((number) => number == primaryActionValue) ?? 8
-    if (secondaryMovementValue != 0)
-      return cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findLastIndex((number) => number == secondaryMovementValue) ?? 8
+    if (primaryActionType == Type.MOVEMENT) {
+      let maxMovement = cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findLastIndex((number) => number == primaryActionValue) ?? 8
+      if (maxMovement == -1) return 8
+      return maxMovement
+    }
+    if (secondaryMovementValue != 0) {
+      let maxMovement = cardStats.get(color)?.get(Stat.MOVEMENT)?.get(level)?.findLastIndex((number) => number == secondaryMovementValue) ?? 8
+      if (maxMovement == -1) return 8
+      return maxMovement
+    }
     return 8
   }
 
@@ -656,50 +668,51 @@
                 </Li>
                 <Li>
                   Gold card -
-                  Highest initiative (1-4 -> 11, 5-7 -> 12, 8 -> 13),
-                  lowest defense (1-2 -> 1, 3-6 -> 2, 7-8 -> 3),
-                  lowest movement (1-6 -> 1, 7-8 -> 2),
+                  Highest initiative,
+                  lowest defense,
+                  lowest movement,
                   a low-damage attack with a twist or (for some higher-complexity heroes) a skill that provides an
                   option to discard a card or defeat a minion.
-                  Gold card is usually used to land a hit before the enemy can escape, or dodge such a hit.
-                  Gold card doesn't receive any direct upgrades throughout the game and doesn't have an alternative.
+                  The Gold card is usually used to land a hit before the enemy can escape, or dodge such a hit.
+                  The Gold card doesn't receive any direct upgrades throughout the game and doesn't have an alternative.
                   It is your hero's signature attack.
                 </Li>
                 <Li>
                   Silver card -
                   Any initiative,
-                  low defense (1 -> 1, 2-4 -> 2, 5-7 -> 3, 8 -> 4),
+                  low defense,
                   no movement,
                   a skill or (for some higher-complexity heroes) a defense/skill that can do a lot in some situations
                   and nothing in others, due to its conditional nature and no secondary movement.
-                  Silver cards almost always require some setup in order to bring any value, but when this happens, they
+                  Movement is sometimes present in some form but is always conditional.
+                  The Silver cards almost always require some setup in order to bring any value, but when this happens, they
                   can change the situation drastically.
-                  Silver card doesn't receive any direct upgrades throughout the game and doesn't have an alternative.
+                  The Silver card doesn't receive any direct upgrades throughout the game and doesn't have an alternative.
                   It is you hero's signature skill.
                 </Li>
                 <Li>
                   Blue card -
-                  High initiative (1 -> 8.5, 2 -> 9, 3-5 -> 9.5, 6-7 -> 10, 8 -> 10.5),
-                  high defense (2.5 + stat / 2),
-                  high movement (1-3 -> 2, 4-8 -> 3),
+                  High initiative,
+                  high defense,
+                  high movement,
                   a skill, a movement, or a defense.
-                  Blue card is often used for movement, be it evading the red attack or just a reposition.
+                  The Blue card is often used for movement, be it evading the red attack or just a reposition.
                   It can also restrict enemies' actions, discard a card, place tokens or apply an effect.
                 </Li>
                 <Li>
                   Red card -
-                  Medium initiative (1 -> 6, 2 -> 7, 3 -> 7.5, 4 -> 8, 5-6 -> 8.5, 7-8 -> 9),
+                  Medium initiative,
                   highest defense,
-                  highest movement (1 -> 3, 2-4 -> 4, 6-8 -> 5),
+                  highest movement,
                   a high-damage attack, the main way to strike through enemies' defenses.
                   The easier it is to land a hit with an attack the weaker the damage is. Extra range is usually
                   compensated by lower defense value.
                 </Li>
                 <Li>
                   Green card -
-                  Lowest initiative (6 - stat / 2),
-                  medium defense (1 -> 1.5, 2 -> 2, 3 -> 2.5, 4-5 -> 3, 6-7 -> 3.5, 8 -> 4) or a block,
-                  medium movement (1-7 -> 2, 8 -> 3),
+                  Lowest initiative,
+                  medium defense or a block,
+                  medium movement,
                   a skill, a movement, or a block that acts as a control tool, due to its low initiative, allowing you
                   to react to the situation: run away from a potential attack, set up an attack, heal or prepare for the
                   next turn in other ways.
