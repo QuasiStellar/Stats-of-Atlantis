@@ -763,6 +763,14 @@ export function importCardImages(name: string) {
   )
 }
 
+export async function importCardImage(hero: string, card: string) {
+	const path = (await import(`./lib/images/cards/${hero}/${card}.png`)).default
+	const image = new Image()
+	image.src = path
+	images.set(card, image)
+	return await new Promise(resolve => image.onload = resolve)
+}
+
 function clear(canvas: HTMLCanvasElement, context: CanvasRenderingContext2D): void {
   context.clearRect(0, 0, canvas.width, canvas.height)
 }

@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte"
   import { Color, Hero, heroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
-  import { images, importCardImages, importImages, updateCanvas } from "../../card_painter"
+  import { images, importCardImage, importCardImages, importImages, updateCanvas } from "../../card_painter"
   import heroInfo from "../../heroes.json"
   import BiggerPicture from "bigger-picture/svelte"
   import "bigger-picture/css"
@@ -85,6 +85,26 @@
   let greenIIIbBg: HTMLImageElement | undefined
 
   let imagesLoaded = false
+
+  let goldLoaded = false
+  let goldHandicapLoaded = false
+  let silverLoaded = false
+  let purpleLoaded = false
+  let blueIaLoaded = false
+  let redIaLoaded = false
+  let greenIaLoaded = false
+  let blueIIaLoaded = false
+  let redIIaLoaded = false
+  let greenIIaLoaded = false
+  let blueIIbLoaded = false
+  let redIIbLoaded = false
+  let greenIIbLoaded = false
+  let blueIIIaLoaded = false
+  let redIIIaLoaded = false
+  let greenIIIaLoaded = false
+  let blueIIIbLoaded = false
+  let redIIIbLoaded = false
+  let greenIIIbLoaded = false
 
   let blueIIalt = false
   let redIIalt = false
@@ -228,6 +248,26 @@
     showNumbers
     showHandicap
 
+    goldLoaded
+    goldHandicapLoaded
+    silverLoaded
+    purpleLoaded
+    blueIaLoaded
+    redIaLoaded
+    greenIaLoaded
+    blueIIaLoaded
+    redIIaLoaded
+    greenIIaLoaded
+    blueIIbLoaded
+    redIIbLoaded
+    greenIIbLoaded
+    blueIIIaLoaded
+    redIIIaLoaded
+    greenIIIaLoaded
+    blueIIIbLoaded
+    redIIIbLoaded
+    greenIIIbLoaded
+
     let blueIIselection = blueIImainChecked ? true : (blueIIaltChecked ? false : null)
     let redIIselection = redIImainChecked ? true : (redIIaltChecked ? false : null)
     let greenIIselection = greenIImainChecked ? true : (greenIIaltChecked ? false : null)
@@ -298,116 +338,132 @@
     rangeBonus = bonuses[Item.RANGE]
     movementBonus = bonuses[Item.MOVEMENT]
 
-    if (imagesLoaded) {
+    if (imagesLoaded && goldLoaded && goldHandicapLoaded)
       updateCard(
         gold,
         goldCtx,
         showHandicap ? goldHandicapCard : goldCard,
         showHandicap ? handicapBg! : goldBg!,
       )
+    if (imagesLoaded && silverLoaded)
       updateCard(
         silver,
         silverCtx,
         silverCard,
         silverBg!,
       )
+    if (imagesLoaded && purpleLoaded)
       updateCard(
         purple,
         purpleCtx,
         purpleCard,
         purpleBg!,
       )
+    if (imagesLoaded && blueIaLoaded)
       updateCard(
         blueIa,
         blueIaCtx,
         blueIaCard,
         blueIaBg!,
       )
+    if (imagesLoaded && redIaLoaded)
       updateCard(
         redIa,
         redIaCtx,
         redIaCard,
         redIaBg!,
       )
+    if (imagesLoaded && greenIaLoaded)
       updateCard(
         greenIa,
         greenIaCtx,
         greenIaCard,
         greenIaBg!,
       )
+    if (imagesLoaded && blueIIaLoaded)
       updateCard(
         blueIIa,
         blueIIaCtx,
         blueIIaCard,
         blueIIaBg!,
       )
+    if (imagesLoaded && redIIaLoaded)
       updateCard(
         redIIa,
         redIIaCtx,
         redIIaCard,
         redIIaBg!,
       )
+    if (imagesLoaded && greenIIaLoaded)
       updateCard(
         greenIIa,
         greenIIaCtx,
         greenIIaCard,
         greenIIaBg!,
       )
+    if (imagesLoaded && blueIIbLoaded)
       updateCard(
         blueIIb,
         blueIIbCtx,
         blueIIbCard,
         blueIIbBg!,
       )
+    if (imagesLoaded && redIIbLoaded)
       updateCard(
         redIIb,
         redIIbCtx,
         redIIbCard,
         redIIbBg!,
       )
+    if (imagesLoaded && greenIIbLoaded)
       updateCard(
         greenIIb,
         greenIIbCtx,
         greenIIbCard,
         greenIIbBg!,
       )
+    if (imagesLoaded && blueIIIaLoaded)
       updateCard(
         blueIIIa,
         blueIIIaCtx,
         blueIIIaCard,
         blueIIIaBg!,
       )
+    if (imagesLoaded && redIIIaLoaded)
       updateCard(
         redIIIa,
         redIIIaCtx,
         redIIIaCard,
         redIIIaBg!,
       )
+    if (imagesLoaded && greenIIIaLoaded)
       updateCard(
         greenIIIa,
         greenIIIaCtx,
         greenIIIaCard,
         greenIIIaBg!,
       )
+    if (imagesLoaded && blueIIIbLoaded)
       updateCard(
         blueIIIb,
         blueIIIbCtx,
         blueIIIbCard,
         blueIIIbBg!,
       )
+    if (imagesLoaded && redIIIbLoaded)
       updateCard(
         redIIIb,
         redIIIbCtx,
         redIIIbCard,
         redIIIbBg!,
       )
+    if (imagesLoaded && greenIIIbLoaded)
       updateCard(
         greenIIIb,
         greenIIIbCtx,
         greenIIIbCard,
         greenIIIbBg!,
       )
-    }
   }
 
   $: showNumbers = false
@@ -491,30 +547,9 @@
     Promise.all([
       document.fonts.ready,
       importImages(),
-      importCardImages(heroName),
     ])
       .then(() => {
         imagesLoaded = true
-
-        blueIaBg = images.get("BlueIA")
-        blueIIaBg = images.get("BlueIIA")
-        blueIIbBg = images.get("BlueIIB")
-        blueIIIaBg = images.get("BlueIIIA")
-        blueIIIbBg = images.get("BlueIIIB")
-        goldBg = images.get("Gold")
-        greenIaBg = images.get("GreenIA")
-        greenIIaBg = images.get("GreenIIA")
-        greenIIbBg = images.get("GreenIIB")
-        greenIIIaBg = images.get("GreenIIIA")
-        greenIIIbBg = images.get("GreenIIIB")
-        handicapBg = images.get("Handicap")
-        redIaBg = images.get("RedIA")
-        redIIaBg = images.get("RedIIA")
-        redIIbBg = images.get("RedIIB")
-        redIIIaBg = images.get("RedIIIA")
-        redIIIbBg = images.get("RedIIIB")
-        silverBg = images.get("Silver")
-        purpleBg = images.get("Ultimate")
 
         const hero = heroInfo[heroName as keyof typeof heroInfo] as {
           name?: string,
@@ -554,115 +589,233 @@
         redIIIbCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
         greenIIIbCard = hero.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
 
-        updateCard(
-          gold,
-          goldCtx,
-          showHandicap ? goldHandicapCard : goldCard,
-          showHandicap ? handicapBg! : goldBg!,
-        )
-        updateCard(
-          silver,
-          silverCtx,
-          silverCard,
-          silverBg!,
-        )
-        updateCard(
-          purple,
-          purpleCtx,
-          purpleCard,
-          purpleBg!,
-        )
-        updateCard(
-          blueIa,
-          blueIaCtx,
-          blueIaCard,
-          blueIaBg!,
-        )
-        updateCard(
-          redIa,
-          redIaCtx,
-          redIaCard,
-          redIaBg!,
-        )
-        updateCard(
-          greenIa,
-          greenIaCtx,
-          greenIaCard,
-          greenIaBg!,
-        )
-        updateCard(
-          blueIIa,
-          blueIIaCtx,
-          blueIIaCard,
-          blueIIaBg!,
-        )
-        updateCard(
-          redIIa,
-          redIIaCtx,
-          redIIaCard,
-          redIIaBg!,
-        )
-        updateCard(
-          greenIIa,
-          greenIIaCtx,
-          greenIIaCard,
-          greenIIaBg!,
-        )
-        updateCard(
-          blueIIb,
-          blueIIbCtx,
-          blueIIbCard,
-          blueIIbBg!,
-        )
-        updateCard(
-          redIIb,
-          redIIbCtx,
-          redIIbCard,
-          redIIbBg!,
-        )
-        updateCard(
-          greenIIb,
-          greenIIbCtx,
-          greenIIbCard,
-          greenIIbBg!,
-        )
-        updateCard(
-          blueIIIa,
-          blueIIIaCtx,
-          blueIIIaCard,
-          blueIIIaBg!,
-        )
-        updateCard(
-          redIIIa,
-          redIIIaCtx,
-          redIIIaCard,
-          redIIIaBg!,
-        )
-        updateCard(
-          greenIIIa,
-          greenIIIaCtx,
-          greenIIIaCard,
-          greenIIIaBg!,
-        )
-        updateCard(
-          blueIIIb,
-          blueIIIbCtx,
-          blueIIIbCard,
-          blueIIIbBg!,
-        )
-        updateCard(
-          redIIIb,
-          redIIIbCtx,
-          redIIIbCard,
-          redIIIbBg!,
-        )
-        updateCard(
-          greenIIIb,
-          greenIIIbCtx,
-          greenIIIbCard,
-          greenIIIbBg!,
-        )
+        if (goldLoaded && goldHandicapLoaded)
+          updateCard(
+            gold,
+            goldCtx,
+            showHandicap ? goldHandicapCard : goldCard,
+            showHandicap ? handicapBg! : goldBg!,
+          )
+        if (silverLoaded)
+          updateCard(
+            silver,
+            silverCtx,
+            silverCard,
+            silverBg!,
+          )
+        if (purpleLoaded)
+          updateCard(
+            purple,
+            purpleCtx,
+            purpleCard,
+            purpleBg!,
+          )
+        if (blueIaLoaded)
+          updateCard(
+            blueIa,
+            blueIaCtx,
+            blueIaCard,
+            blueIaBg!,
+          )
+        if (redIaLoaded)
+          updateCard(
+            redIa,
+            redIaCtx,
+            redIaCard,
+            redIaBg!,
+          )
+        if (greenIaLoaded)
+          updateCard(
+            greenIa,
+            greenIaCtx,
+            greenIaCard,
+            greenIaBg!,
+          )
+        if (blueIIaLoaded)
+          updateCard(
+            blueIIa,
+            blueIIaCtx,
+            blueIIaCard,
+            blueIIaBg!,
+          )
+        if (redIIaLoaded)
+          updateCard(
+            redIIa,
+            redIIaCtx,
+            redIIaCard,
+            redIIaBg!,
+          )
+        if (greenIIaLoaded)
+          updateCard(
+            greenIIa,
+            greenIIaCtx,
+            greenIIaCard,
+            greenIIaBg!,
+          )
+        if (blueIIbLoaded)
+          updateCard(
+            blueIIb,
+            blueIIbCtx,
+            blueIIbCard,
+            blueIIbBg!,
+          )
+        if (redIIbLoaded)
+          updateCard(
+            redIIb,
+            redIIbCtx,
+            redIIbCard,
+            redIIbBg!,
+          )
+        if (greenIIbLoaded)
+          updateCard(
+            greenIIb,
+            greenIIbCtx,
+            greenIIbCard,
+            greenIIbBg!,
+          )
+        if (blueIIIaLoaded)
+          updateCard(
+            blueIIIa,
+            blueIIIaCtx,
+            blueIIIaCard,
+            blueIIIaBg!,
+          )
+        if (redIIIaLoaded)
+          updateCard(
+            redIIIa,
+            redIIIaCtx,
+            redIIIaCard,
+            redIIIaBg!,
+          )
+        if (greenIIIaLoaded)
+          updateCard(
+            greenIIIa,
+            greenIIIaCtx,
+            greenIIIaCard,
+            greenIIIaBg!,
+          )
+        if (blueIIIbLoaded)
+          updateCard(
+            blueIIIb,
+            blueIIIbCtx,
+            blueIIIbCard,
+            blueIIIbBg!,
+          )
+        if (redIIIbLoaded)
+          updateCard(
+            redIIIb,
+            redIIIbCtx,
+            redIIIbCard,
+            redIIIbBg!,
+          )
+        if (greenIIIbLoaded)
+          updateCard(
+            greenIIIb,
+            greenIIIbCtx,
+            greenIIIbCard,
+            greenIIIbBg!,
+          )
       })
+
+    importCardImage(heroName, "BlueIA").then(() => {
+      blueIaBg = images.get("BlueIA")
+      blueIaLoaded = true
+    })
+
+    importCardImage(heroName, "BlueIIA").then(() => {
+      blueIIaBg = images.get("BlueIIA")
+      blueIIaLoaded = true
+    })
+
+    importCardImage(heroName, "BlueIIB").then(() => {
+      blueIIbBg = images.get("BlueIB")
+      blueIIbLoaded = true
+    })
+
+    importCardImage(heroName, "BlueIIIA").then(() => {
+      blueIIIaBg = images.get("BlueIIIA")
+      blueIIIaLoaded = true
+    })
+
+    importCardImage(heroName, "BlueIIIA").then(() => {
+      blueIIIaBg = images.get("BlueIIIA")
+      blueIIIaLoaded = true
+    })
+
+    importCardImage(heroName, "BlueIIIB").then(() => {
+      blueIIIbBg = images.get("BlueIIIB")
+      blueIIIbLoaded = true
+    })
+
+    importCardImage(heroName, "Gold").then(() => {
+      goldBg = images.get("Gold")
+      goldLoaded = true
+    })
+
+    importCardImage(heroName, "GreenIA").then(() => {
+      greenIaBg = images.get("GreenIA")
+      greenIaLoaded = true
+    })
+
+    importCardImage(heroName, "GreenIIA").then(() => {
+      greenIIaBg = images.get("GreenIIA")
+      greenIIaLoaded = true
+    })
+
+    importCardImage(heroName, "GreenIIB").then(() => {
+      greenIIbBg = images.get("GreenIIB")
+      greenIIbLoaded = true
+    })
+
+    importCardImage(heroName, "GreenIIIA").then(() => {
+      greenIIIaBg = images.get("GreenIIIA")
+      greenIIIaLoaded = true
+    })
+
+    importCardImage(heroName, "GreenIIIB").then(() => {
+      greenIIIbBg = images.get("GreenIIIB")
+      greenIIIbLoaded = true
+    })
+
+    importCardImage(heroName, "Handicap").then(() => {
+      handicapBg = images.get("Handicap")
+      goldHandicapLoaded = true
+    })
+
+    importCardImage(heroName, "RedIA").then(() => {
+      redIaBg = images.get("RedIA")
+      redIaLoaded = true
+    })
+
+    importCardImage(heroName, "RedIIA").then(() => {
+      redIIaBg = images.get("RedIIA")
+      redIIaLoaded = true
+    })
+
+    importCardImage(heroName, "RedIIB").then(() => {
+      redIIbBg = images.get("RedIIB")
+      redIIbLoaded = true
+    })
+
+    importCardImage(heroName, "RedIIIA").then(() => {
+      redIIIaBg = images.get("RedIIIA")
+      redIIIaLoaded = true
+    })
+
+    importCardImage(heroName, "RedIIIB").then(() => {
+      redIIIbBg = images.get("RedIIIB")
+      redIIIbLoaded = true
+    })
+
+    importCardImage(heroName, "Silver").then(() => {
+      silverBg = images.get("Silver")
+      silverLoaded = true
+    })
+
+    importCardImage(heroName, "Ultimate").then(() => {
+      purpleBg = images.get("Ultimate")
+      purpleLoaded = true
+    })
 
     bp = BiggerPicture({
       target: document.body
