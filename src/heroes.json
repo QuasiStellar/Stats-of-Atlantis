@@ -1938,7 +1938,7 @@
   "ignatia": [
     {
       "name": "Chaos Bolt",
-      "description": "::tiebreaker_blue::: Target a non-adjacent minion in range.\n---\n::tiebreaker_orange:: Target a non-adjacent hero in range.\n~(Effect is based on the visible side of the Tie Breaker coin).",
+      "description": "::tiebreaker_blue::: Target a non-adjacent minion in range.\n---\n::tiebreaker_orange:: Target a non-adjacent hero in range.\n\n~(Effect is based on the visible side of the Tie Breaker coin).",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "ATTACK",
