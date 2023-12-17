@@ -5,6 +5,373 @@
   import { importImages, updateCanvas } from "../../card_painter"
   import { browser } from "$app/environment"
 
+  const cardValues = new Map<string, Map<string, any>>([
+    ["gold", new Map<string, any>([
+      ["color", Color.GOLD],
+      ["name", ""],
+      ["description", ""],
+      ["level", "i"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.ATTACK],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["silver", new Map<string, any>([
+      ["color", Color.SILVER],
+      ["name", ""],
+      ["description", ""],
+      ["level", "i"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["purple", new Map<string, any>([
+      ["color", Color.PURPLE],
+      ["name", ""],
+      ["description", ""],
+      ["level", "i"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.ATTACK],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["blueIa", new Map<string, any>([
+      ["color", Color.BLUE],
+      ["name", ""],
+      ["description", ""],
+      ["level", "i"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["blueIIa", new Map<string, any>([
+      ["color", Color.BLUE],
+      ["name", ""],
+      ["description", ""],
+      ["level", "ii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["blueIIb", new Map<string, any>([
+      ["color", Color.BLUE],
+      ["name", ""],
+      ["description", ""],
+      ["level", "ii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["blueIIIa", new Map<string, any>([
+      ["color", Color.BLUE],
+      ["name", ""],
+      ["description", ""],
+      ["level", "iii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["blueIIIb", new Map<string, any>([
+      ["color", Color.BLUE],
+      ["name", ""],
+      ["description", ""],
+      ["level", "iii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["redIa", new Map<string, any>([
+      ["color", Color.RED],
+      ["name", ""],
+      ["description", ""],
+      ["level", "i"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.ATTACK],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["redIIa", new Map<string, any>([
+      ["color", Color.RED],
+      ["name", ""],
+      ["description", ""],
+      ["level", "ii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.ATTACK],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["redIIb", new Map<string, any>([
+      ["color", Color.RED],
+      ["name", ""],
+      ["description", ""],
+      ["level", "ii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.ATTACK],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["redIIIa", new Map<string, any>([
+      ["color", Color.RED],
+      ["name", ""],
+      ["description", ""],
+      ["level", "iii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.ATTACK],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["redIIIb", new Map<string, any>([
+      ["color", Color.RED],
+      ["name", ""],
+      ["description", ""],
+      ["level", "iii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.ATTACK],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["greenIa", new Map<string, any>([
+      ["color", Color.GREEN],
+      ["name", ""],
+      ["description", ""],
+      ["level", "i"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["greenIIa", new Map<string, any>([
+      ["color", Color.GREEN],
+      ["name", ""],
+      ["description", ""],
+      ["level", "ii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["greenIIb", new Map<string, any>([
+      ["color", Color.GREEN],
+      ["name", ""],
+      ["description", ""],
+      ["level", "ii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["greenIIIa", new Map<string, any>([
+      ["color", Color.GREEN],
+      ["name", ""],
+      ["description", ""],
+      ["level", "iii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+    ["greenIIIb", new Map<string, any>([
+      ["color", Color.GREEN],
+      ["name", ""],
+      ["description", ""],
+      ["level", "iii"],
+      ["handicap", false],
+      ["item", Item.ATTACK],
+      ["initiativeField", "0"],
+      ["primaryActionType", Type.SKILL],
+      ["primaryActionValueField", "0"],
+      ["primaryActionValueSign", ValueSign.NONE],
+      ["modifier", Modifier.NONE],
+      ["modifierValueField", "0"],
+      ["modifierValueSign", ValueSign.NONE],
+      ["secondaryDefenseValueField", "0"],
+      ["secondaryMovementValueField", "0"],
+      ["background", undefined],
+    ])],
+  ])
+
+  let currentCard = "gold"
+
+  function switchCurrentCard(newCard: string) {
+    cardValues.get(currentCard)!.set("color", color)
+    cardValues.get(currentCard)!.set("name", name)
+    cardValues.get(currentCard)!.set("description", description)
+    cardValues.get(currentCard)!.set("level", level)
+    cardValues.get(currentCard)!.set("handicap", handicap)
+    cardValues.get(currentCard)!.set("item", item)
+    cardValues.get(currentCard)!.set("initiativeField", initiativeField)
+    cardValues.get(currentCard)!.set("primaryActionType", primaryActionType)
+    cardValues.get(currentCard)!.set("primaryActionValueField", primaryActionValueField)
+    cardValues.get(currentCard)!.set("primaryActionValueSign", primaryActionValueSign)
+    cardValues.get(currentCard)!.set("modifier", modifier)
+    cardValues.get(currentCard)!.set("modifierValueField", modifierValueField)
+    cardValues.get(currentCard)!.set("modifierValueSign", modifierValueSign)
+    cardValues.get(currentCard)!.set("secondaryDefenseValueField", secondaryDefenseValueField)
+    cardValues.get(currentCard)!.set("secondaryMovementValueField", secondaryMovementValueField)
+    cardValues.get(currentCard)!.set("background", background)
+
+    currentCard = newCard
+
+    color = cardValues.get(currentCard)!.get("color")!
+    name = cardValues.get(currentCard)!.get("name")!
+    description = cardValues.get(currentCard)!.get("description")!
+    level = cardValues.get(currentCard)!.get("level")!
+    handicap = cardValues.get(currentCard)!.get("handicap")!
+    item = cardValues.get(currentCard)!.get("item")!
+    initiativeField = cardValues.get(currentCard)!.get("initiativeField")!
+    primaryActionType = cardValues.get(currentCard)!.get("primaryActionType")!
+    primaryActionValueField = cardValues.get(currentCard)!.get("primaryActionValueField")!
+    primaryActionValueSign = cardValues.get(currentCard)!.get("primaryActionValueSign")!
+    modifier = cardValues.get(currentCard)!.get("modifier")!
+    modifierValueField = cardValues.get(currentCard)!.get("modifierValueField")!
+    modifierValueSign = cardValues.get(currentCard)!.get("modifierValueSign")!
+    secondaryDefenseValueField = cardValues.get(currentCard)!.get("secondaryDefenseValueField")!
+    secondaryMovementValueField = cardValues.get(currentCard)!.get("secondaryMovementValueField")!
+    background = cardValues.get(currentCard)!.get("background")!
+  }
+
   let color = Color.GOLD
   let name = ""
   let description = ""
@@ -21,11 +388,15 @@
   let secondaryDefenseValueField = "0"
   let secondaryMovementValueField = "0"
 
-  $: initiative = +initiativeField.replace(/[^0-9]/, "")
-  $: primaryActionValue = +primaryActionValueField.replace(/[^0-9]/, "")
-  $: modifierValue = +modifierValueField.replace(/[^0-9]/, "")
-  $: secondaryDefenseValue = +secondaryDefenseValueField.replace(/[^0-9]/, "")
-  $: secondaryMovementValue = +secondaryMovementValueField.replace(/[^0-9]/, "")
+  $: initiative = fieldToNumber(initiativeField)
+  $: primaryActionValue = fieldToNumber(primaryActionValueField)
+  $: modifierValue = fieldToNumber(modifierValueField)
+  $: secondaryDefenseValue = fieldToNumber(secondaryDefenseValueField)
+  $: secondaryMovementValue = fieldToNumber(secondaryMovementValueField)
+
+  function fieldToNumber(field: string) {
+    return +field.replace(/[^0-9]/, "")
+  }
 
   let imagesLoaded = false
 
@@ -153,20 +524,20 @@
     rows: 4,
   }
 
-  const colors = [
-    { value: Color.GOLD, name: "Gold" },
-    { value: Color.SILVER, name: "Silver" },
-    { value: Color.RED, name: "Red" },
-    { value: Color.BLUE, name: "Blue" },
-    { value: Color.GREEN, name: "Green" },
-    { value: Color.PURPLE, name: "Purple" },
-  ]
-
-  const levels = [
-    { value: "i", name: "I" },
-    { value: "ii", name: "II" },
-    { value: "iii", name: "III" },
-  ]
+  // const colors = [
+  //   { value: Color.GOLD, name: "Gold" },
+  //   { value: Color.SILVER, name: "Silver" },
+  //   { value: Color.RED, name: "Red" },
+  //   { value: Color.BLUE, name: "Blue" },
+  //   { value: Color.GREEN, name: "Green" },
+  //   { value: Color.PURPLE, name: "Purple" },
+  // ]
+  //
+  // const levels = [
+  //   { value: "i", name: "I" },
+  //   { value: "ii", name: "II" },
+  //   { value: "iii", name: "III" },
+  // ]
 
   const items = [
     { value: Item.ATTACK, name: "Attack" },
@@ -207,7 +578,7 @@
   const labelColor = (disabled: boolean): string => disabled ? "gray" : "white"
 
   $: disableHandicap = color !== Color.GOLD
-  $: disableLevel = color !== Color.RED && color !== Color.BLUE && color !== Color.GREEN
+  // $: disableLevel = color !== Color.RED && color !== Color.BLUE && color !== Color.GREEN
   $: disableItem = (level !== "ii" && level !== "iii") || (color !== Color.RED && color !== Color.BLUE && color !== Color.GREEN)
   $: disableInitiative = color === Color.PURPLE
   $: disablePrimaryActionType = color === Color.PURPLE
@@ -219,7 +590,56 @@
   $: disableSecondaryMovementValue = color === Color.PURPLE || primaryActionType === Type.MOVEMENT || color === Color.SILVER
 
   function downloadCard() {
-    const filename = "card.png"
+    downloadCanvas(canvas, "card.png")
+  }
+
+  function downloadEverything() {
+    const heroCanvas = document.createElement('canvas')
+    heroCanvas.width = 7152
+    heroCanvas.height = 4992
+    const heroContext = heroCanvas.getContext('2d')!
+
+    const tempCanvas = document.createElement('canvas')
+    tempCanvas.width = 1192
+    tempCanvas.height = 1664
+    const tempContext = tempCanvas.getContext('2d')!
+
+    const cards = [
+      "gold", "blueIa", "blueIIa", "blueIIb", "blueIIIa", "blueIIIb",
+      "silver", "redIa", "redIIa", "redIIb", "redIIIa", "redIIIb",
+      "purple", "greenIa", "greenIIa", "greenIIb", "greenIIIa", "greenIIIb",
+    ]
+
+    for (let i = 0; i < 18; i++) {
+      updateCanvas(
+        tempCanvas,
+        tempContext,
+        customEmoji,
+        cardValues.get(cards[i])!.get("background"),
+        cardValues.get(cards[i])!.get("color"),
+        cardValues.get(cards[i])!.get("handicap"),
+        cardValues.get(cards[i])!.get("name"),
+        cardValues.get(cards[i])!.get("description"),
+        cardValues.get(cards[i])!.get("level"),
+        cardValues.get(cards[i])!.get("item"),
+        fieldToNumber(cardValues.get(cards[i])!.get("initiativeField")),
+        cardValues.get(cards[i])!.get("primaryActionType"),
+        fieldToNumber(cardValues.get(cards[i])!.get("primaryActionValueField")),
+        cardValues.get(cards[i])!.get("primaryActionValueSign"),
+        cardValues.get(cards[i])!.get("modifier"),
+        fieldToNumber(cardValues.get(cards[i])!.get("modifierValueField")),
+        cardValues.get(cards[i])!.get("modifierValueSign"),
+        fieldToNumber(cardValues.get(cards[i])!.get("secondaryMovementValueField")),
+        fieldToNumber(cardValues.get(cards[i])!.get("secondaryDefenseValueField")),
+      )
+      heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, 1192 * (i % 6), 1664 * Math.floor(i / 6), 1192, 1664)
+      tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height)
+    }
+
+    downloadCanvas(heroCanvas, "hero.png")
+  }
+
+  function downloadCanvas(canvas: HTMLCanvasElement, filename: string) {
     let anchor = document.createElement("a"), event
     anchor.download = filename
     anchor.href = canvas.toDataURL("image/png;base64")
@@ -306,30 +726,31 @@
       else return Math.floor(((window.innerWidth - 16) / 2 - 60) / 8 - 1)
     } else return 0
   }
+
+  $: activeBorderGold = currentCard == "gold" ? "bg-yellow-500" : "bg-yellow-300"
+  $: activeBorderSilver = currentCard == "silver" ? "bg-gray-700" : "bg-gray-500"
+  $: activeBorderPurple = currentCard == "purple" ? "bg-purple-800" : "bg-purple-600"
+  $: activeBorderBlueIa = currentCard == "blueIa" ? "bg-blue-800" : "bg-blue-600"
+  $: activeBorderBlueIIa = currentCard == "blueIIa" ? "bg-blue-800" : "bg-blue-600"
+  $: activeBorderBlueIIb = currentCard == "blueIIb" ? "bg-blue-800" : "bg-blue-600"
+  $: activeBorderBlueIIIa = currentCard == "blueIIIa" ? "bg-blue-800" : "bg-blue-600"
+  $: activeBorderBlueIIIb = currentCard == "blueIIIb" ? "bg-blue-800" : "bg-blue-600"
+  $: activeBorderRedIa = currentCard == "redIa" ? "bg-red-800" : "bg-red-600"
+  $: activeBorderRedIIa = currentCard == "redIIa" ? "bg-red-800" : "bg-red-600"
+  $: activeBorderRedIIb = currentCard == "redIIb" ? "bg-red-800" : "bg-red-600"
+  $: activeBorderRedIIIa = currentCard == "redIIIa" ? "bg-red-800" : "bg-red-600"
+  $: activeBorderRedIIIb = currentCard == "redIIIb" ? "bg-red-800" : "bg-red-600"
+  $: activeBorderGreenIa = currentCard == "greenIa" ? "bg-green-800" : "bg-green-600"
+  $: activeBorderGreenIIa = currentCard == "greenIIa" ? "bg-green-800" : "bg-green-600"
+  $: activeBorderGreenIIb = currentCard == "greenIIb" ? "bg-green-800" : "bg-green-600"
+  $: activeBorderGreenIIIa = currentCard == "greenIIIa" ? "bg-green-800" : "bg-green-600"
+  $: activeBorderGreenIIIb = currentCard == "greenIIIb" ? "bg-green-800" : "bg-green-600"
 </script>
 
 <div class="pt-18 md:pt-22">
   <div class="flex items-center flex-col">
     <div class="lg:grid lg:grid-cols-2 lg:gap-6 px-3 lg:px-0">
       <div class="col-span-1 grid grid-cols-6 gap-3 lg:gap-6 max-w-md">
-        <div class="col-span-4">
-          <Label style="color: white">
-            Color
-            <Select items={colors} class="bg-dark-800 border-dark-600 text-white disabled:bg-dark-900"
-                    bind:value={color} />
-          </Label>
-        </div>
-
-        <div class="col-span-2 flex">
-          <div class="m-auto">
-            <Checkbox bind:checked={handicap} disabled={disableHandicap}>
-              <div style="color: {labelColor(disableHandicap)}">
-                Handicap
-              </div>
-            </Checkbox>
-          </div>
-        </div>
-
         <div class="col-span-6">
           <Label style="color: white">
             Name
@@ -345,22 +766,23 @@
           </Label>
         </div>
 
-        <div class="col-span-3">
-          <Label style="color: {labelColor(disableLevel)}">
-            Level
-            <Select items={levels}
-                    class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
-                    bind:value={level} disabled={disableLevel} />
-          </Label>
-        </div>
-
-        <div class="col-span-3">
+        <div class="col-span-4">
           <Label style="color: {labelColor(disableItem)}">
             Item
             <Select items={items}
                     class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
                     bind:value={item} disabled={disableItem} />
           </Label>
+        </div>
+
+        <div class="col-span-2 flex">
+          <div class="m-auto">
+            <Checkbox bind:checked={handicap} disabled={disableHandicap}>
+              <div style="color: {labelColor(disableHandicap)}">
+                Handicap
+              </div>
+            </Checkbox>
+          </div>
         </div>
 
         <div class="col-span-6">
@@ -474,7 +896,29 @@
         </Label>
       </div>
       <div class="col-span-1 max-w-md pt-8 lg:pt-0 flex flex-col items-center justify-center">
-        <div class="grid grid-cols-2 gap-1 lg:gap-2 w-full">
+        <div class="grid grid-cols-6 gap-1">
+          <Button class="col-span-1 p-1 hover:bg-yellow-400 {activeBorderGold}" on:click={() => switchCurrentCard("gold")}>D</Button>
+          <Button class="col-span-1 p-1 hover:bg-blue-700 {activeBorderBlueIa}" on:click={() => switchCurrentCard("blueIa")}>B1</Button>
+          <Button class="col-span-1 p-1 hover:bg-blue-700 {activeBorderBlueIIa}" on:click={() => switchCurrentCard("blueIIa")}>B2A</Button>
+          <Button class="col-span-1 p-1 hover:bg-blue-700 {activeBorderBlueIIb}" on:click={() => switchCurrentCard("blueIIb")}>B2B</Button>
+          <Button class="col-span-1 p-1 hover:bg-blue-700 {activeBorderBlueIIIa}" on:click={() => switchCurrentCard("blueIIIa")}>B3A</Button>
+          <Button class="col-span-1 p-1 hover:bg-blue-700 {activeBorderBlueIIIb}" on:click={() => switchCurrentCard("blueIIIb")}>B3B</Button>
+
+          <Button class="col-span-1 p-1 hover:bg-gray-600 {activeBorderSilver}" on:click={() => switchCurrentCard("silver")}>S</Button>
+          <Button class="col-span-1 p-1 hover:bg-red-700 {activeBorderRedIa}" on:click={() => switchCurrentCard("redIa")}>R1</Button>
+          <Button class="col-span-1 p-1 hover:bg-red-700 {activeBorderRedIIa}" on:click={() => switchCurrentCard("redIIa")}>R2A</Button>
+          <Button class="col-span-1 p-1 hover:bg-red-700 {activeBorderRedIIb}" on:click={() => switchCurrentCard("redIIb")}>R2B</Button>
+          <Button class="col-span-1 p-1 hover:bg-red-700 {activeBorderRedIIIa}" on:click={() => switchCurrentCard("redIIIa")}>R3A</Button>
+          <Button class="col-span-1 p-1 hover:bg-red-700 {activeBorderRedIIIb}" on:click={() => switchCurrentCard("redIIIb")}>R3B</Button>
+
+          <Button class="col-span-1 p-1 hover:bg-purple-700 {activeBorderPurple}" on:click={() => switchCurrentCard("purple")}>P</Button>
+          <Button class="col-span-1 p-1 hover:bg-green-700 {activeBorderGreenIa}" on:click={() => switchCurrentCard("greenIa")}>G1</Button>
+          <Button class="col-span-1 p-1 hover:bg-green-700 {activeBorderGreenIIa}" on:click={() => switchCurrentCard("greenIIa")}>G2A</Button>
+          <Button class="col-span-1 p-1 hover:bg-green-700 {activeBorderGreenIIb}" on:click={() => switchCurrentCard("greenIIb")}>G2B</Button>
+          <Button class="col-span-1 p-1 hover:bg-green-700 {activeBorderGreenIIIa}" on:click={() => switchCurrentCard("greenIIIa")}>G3A</Button>
+          <Button class="col-span-1 p-1 hover:bg-green-700 {activeBorderGreenIIIb}" on:click={() => switchCurrentCard("greenIIIb")}>G3B</Button>
+        </div>
+        <div class="grid grid-cols-2 gap-1 lg:gap-2 w-full mt-4">
           <div class="col-span-1 h-7 z-20 relative">
             <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
               <div class="m-1 relative h-full">
@@ -548,11 +992,16 @@
             </div>
           </div>
         </div>
-        <div class="w-full border border-dark-600 bg-transparent hover:bg-transparent rounded-3xl mt-1 md:mt-2">
+        <div class="w-full border border-dark-600 rounded-3xl mt-1 md:mt-2">
           <canvas width="1192" height="1664" class="w-full rounded-3xl" bind:this={canvas} />
         </div>
-        <div class="flex justify-center">
-          <Button class="m-5" on:click={downloadCard}>Download</Button>
+        <div class="grid grid-cols-2">
+          <div class="col-span-1 flex justify-center">
+            <Button class="m-5" on:click={downloadCard}>Download Card</Button>
+          </div>
+          <div class="col-span-1 flex justify-center">
+            <Button class="m-5" on:click={downloadEverything}>Download Full Set</Button>
+          </div>
         </div>
       </div>
       <Label class="col-span-2" style="color: white">
