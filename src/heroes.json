@@ -796,6 +796,9 @@
       "initiative": 8,
       "primaryAction": "ATTACK",
       "primaryValue": 4,
+      "modifier": "RANGE",
+      "modifierValue": 1,
+      "modifierValueSign": "PLUS",
       "secondaryMovement": 4,
       "secondaryDefense": 6,
       "item": "AREA"
