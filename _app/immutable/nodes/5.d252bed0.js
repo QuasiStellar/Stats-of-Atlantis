@@ -118,7 +118,7 @@ would be defeated, you may discard a card.
 If you do, the minion is not defeated.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:5,item:"INITIATIVE"},{name:"Counterattack",description:`An enemy hero adjacent to you, who
 has played an attack card this turn
 discards a card, or is defeated.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:7,item:"RANGE"},{name:"Throwing Spear",description:`Before the attack: You may discard a card.
-+2 ::range_red:: Range if you have a card in the discard.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:6,item:"AREA"},{name:"Master Skald",description:`A friendly hero in range may retrieve a
++2 ::range_red:: Range if you have a card in the discard.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:1,modifierValueSign:"PLUS",secondaryMovement:4,secondaryDefense:6,item:"AREA"},{name:"Master Skald",description:`A friendly hero in range may retrieve a
 resolved or discarded card if either you,
 or that hero, is adjacent to an enemy unit.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:4,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:5,item:"DEFENSE"}],cr=[{name:"Walk the Plank",description:`**Choose one —**
 >>Push an enemy hero adjacent to you up
