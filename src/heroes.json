@@ -5310,13 +5310,13 @@
       "description": "Before the attack: Move up to 1 space for\nevery empty minion spawn point in radius in\nthe battle zone, up to a maximum of 2 spaces.",
       "color": "RED",
       "level": 1,
-      "initiative": 8,
+      "initiative": 9,
       "primaryAction": "ATTACK",
       "primaryValue": 4,
       "modifier": "AREA",
       "modifierValue": 1,
       "secondaryMovement": 4,
-      "secondaryDefense": 3
+      "secondaryDefense": 6
     },
     {
       "name": "Shadow Step",
