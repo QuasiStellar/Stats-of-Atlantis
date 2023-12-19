@@ -1,12 +1,25 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  import { Button, Checkbox, Fileupload, Img, Input, Kbd, Label, Li, List, Select, Textarea } from "flowbite-svelte"
+  import {
+    Button,
+    Checkbox,
+    Fileupload,
+    Img,
+    Input,
+    Kbd,
+    Label,
+    Li,
+    List,
+    Select,
+    Textarea,
+  } from "flowbite-svelte"
   import { cardStats, Color, defaultEmoji, Item, Modifier, Stat, stats, Type, ValueSign } from "../../states"
   import { importImages, updateCanvas } from "../../card_painter"
   import { browser } from "$app/environment"
+  import { TSMap } from "typescript-map"
 
-  const cardValues = new Map<string, Map<string, any>>([
-    ["gold", new Map<string, any>([
+  let cardValues = new TSMap<string, TSMap<string, any>>([
+    ["gold", new TSMap<string, any>([
       ["color", Color.GOLD],
       ["name", ""],
       ["description", ""],
@@ -24,7 +37,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["silver", new Map<string, any>([
+    ["silver", new TSMap<string, any>([
       ["color", Color.SILVER],
       ["name", ""],
       ["description", ""],
@@ -42,7 +55,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["purple", new Map<string, any>([
+    ["purple", new TSMap<string, any>([
       ["color", Color.PURPLE],
       ["name", ""],
       ["description", ""],
@@ -60,7 +73,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["blueIa", new Map<string, any>([
+    ["blueIa", new TSMap<string, any>([
       ["color", Color.BLUE],
       ["name", ""],
       ["description", ""],
@@ -78,7 +91,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["blueIIa", new Map<string, any>([
+    ["blueIIa", new TSMap<string, any>([
       ["color", Color.BLUE],
       ["name", ""],
       ["description", ""],
@@ -96,7 +109,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["blueIIb", new Map<string, any>([
+    ["blueIIb", new TSMap<string, any>([
       ["color", Color.BLUE],
       ["name", ""],
       ["description", ""],
@@ -114,7 +127,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["blueIIIa", new Map<string, any>([
+    ["blueIIIa", new TSMap<string, any>([
       ["color", Color.BLUE],
       ["name", ""],
       ["description", ""],
@@ -132,7 +145,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["blueIIIb", new Map<string, any>([
+    ["blueIIIb", new TSMap<string, any>([
       ["color", Color.BLUE],
       ["name", ""],
       ["description", ""],
@@ -150,7 +163,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["redIa", new Map<string, any>([
+    ["redIa", new TSMap<string, any>([
       ["color", Color.RED],
       ["name", ""],
       ["description", ""],
@@ -168,7 +181,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["redIIa", new Map<string, any>([
+    ["redIIa", new TSMap<string, any>([
       ["color", Color.RED],
       ["name", ""],
       ["description", ""],
@@ -186,7 +199,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["redIIb", new Map<string, any>([
+    ["redIIb", new TSMap<string, any>([
       ["color", Color.RED],
       ["name", ""],
       ["description", ""],
@@ -204,7 +217,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["redIIIa", new Map<string, any>([
+    ["redIIIa", new TSMap<string, any>([
       ["color", Color.RED],
       ["name", ""],
       ["description", ""],
@@ -222,7 +235,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["redIIIb", new Map<string, any>([
+    ["redIIIb", new TSMap<string, any>([
       ["color", Color.RED],
       ["name", ""],
       ["description", ""],
@@ -240,7 +253,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["greenIa", new Map<string, any>([
+    ["greenIa", new TSMap<string, any>([
       ["color", Color.GREEN],
       ["name", ""],
       ["description", ""],
@@ -258,7 +271,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["greenIIa", new Map<string, any>([
+    ["greenIIa", new TSMap<string, any>([
       ["color", Color.GREEN],
       ["name", ""],
       ["description", ""],
@@ -276,7 +289,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["greenIIb", new Map<string, any>([
+    ["greenIIb", new TSMap<string, any>([
       ["color", Color.GREEN],
       ["name", ""],
       ["description", ""],
@@ -294,7 +307,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["greenIIIa", new Map<string, any>([
+    ["greenIIIa", new TSMap<string, any>([
       ["color", Color.GREEN],
       ["name", ""],
       ["description", ""],
@@ -312,7 +325,7 @@
       ["secondaryMovementValueField", "0"],
       ["background", undefined],
     ])],
-    ["greenIIIb", new Map<string, any>([
+    ["greenIIIb", new TSMap<string, any>([
       ["color", Color.GREEN],
       ["name", ""],
       ["description", ""],
@@ -335,41 +348,9 @@
   let currentCard = "gold"
 
   function switchCurrentCard(newCard: string) {
-    cardValues.get(currentCard)!.set("color", color)
-    cardValues.get(currentCard)!.set("name", name)
-    cardValues.get(currentCard)!.set("description", description)
-    cardValues.get(currentCard)!.set("level", level)
-    cardValues.get(currentCard)!.set("handicap", handicap)
-    cardValues.get(currentCard)!.set("item", item)
-    cardValues.get(currentCard)!.set("initiativeField", initiativeField)
-    cardValues.get(currentCard)!.set("primaryActionType", primaryActionType)
-    cardValues.get(currentCard)!.set("primaryActionValueField", primaryActionValueField)
-    cardValues.get(currentCard)!.set("primaryActionValueSign", primaryActionValueSign)
-    cardValues.get(currentCard)!.set("modifier", modifier)
-    cardValues.get(currentCard)!.set("modifierValueField", modifierValueField)
-    cardValues.get(currentCard)!.set("modifierValueSign", modifierValueSign)
-    cardValues.get(currentCard)!.set("secondaryDefenseValueField", secondaryDefenseValueField)
-    cardValues.get(currentCard)!.set("secondaryMovementValueField", secondaryMovementValueField)
-    cardValues.get(currentCard)!.set("background", background)
-
+    updateCurrentCard()
     currentCard = newCard
-
-    color = cardValues.get(currentCard)!.get("color")!
-    name = cardValues.get(currentCard)!.get("name")!
-    description = cardValues.get(currentCard)!.get("description")!
-    level = cardValues.get(currentCard)!.get("level")!
-    handicap = cardValues.get(currentCard)!.get("handicap")!
-    item = cardValues.get(currentCard)!.get("item")!
-    initiativeField = cardValues.get(currentCard)!.get("initiativeField")!
-    primaryActionType = cardValues.get(currentCard)!.get("primaryActionType")!
-    primaryActionValueField = cardValues.get(currentCard)!.get("primaryActionValueField")!
-    primaryActionValueSign = cardValues.get(currentCard)!.get("primaryActionValueSign")!
-    modifier = cardValues.get(currentCard)!.get("modifier")!
-    modifierValueField = cardValues.get(currentCard)!.get("modifierValueField")!
-    modifierValueSign = cardValues.get(currentCard)!.get("modifierValueSign")!
-    secondaryDefenseValueField = cardValues.get(currentCard)!.get("secondaryDefenseValueField")!
-    secondaryMovementValueField = cardValues.get(currentCard)!.get("secondaryMovementValueField")!
-    background = cardValues.get(currentCard)!.get("background")!
+    getCurrentCard()
   }
 
   function updateCurrentCard() {
@@ -389,6 +370,25 @@
     cardValues.get(currentCard)!.set("secondaryDefenseValueField", secondaryDefenseValueField)
     cardValues.get(currentCard)!.set("secondaryMovementValueField", secondaryMovementValueField)
     cardValues.get(currentCard)!.set("background", background)
+  }
+
+  function getCurrentCard() {
+    color = cardValues.get(currentCard)!.get("color")!
+    name = cardValues.get(currentCard)!.get("name")!
+    description = cardValues.get(currentCard)!.get("description")!
+    level = cardValues.get(currentCard)!.get("level")!
+    handicap = cardValues.get(currentCard)!.get("handicap")!
+    item = cardValues.get(currentCard)!.get("item")!
+    initiativeField = cardValues.get(currentCard)!.get("initiativeField")!
+    primaryActionType = cardValues.get(currentCard)!.get("primaryActionType")!
+    primaryActionValueField = cardValues.get(currentCard)!.get("primaryActionValueField")!
+    primaryActionValueSign = cardValues.get(currentCard)!.get("primaryActionValueSign")!
+    modifier = cardValues.get(currentCard)!.get("modifier")!
+    modifierValueField = cardValues.get(currentCard)!.get("modifierValueField")!
+    modifierValueSign = cardValues.get(currentCard)!.get("modifierValueSign")!
+    secondaryDefenseValueField = cardValues.get(currentCard)!.get("secondaryDefenseValueField")!
+    secondaryMovementValueField = cardValues.get(currentCard)!.get("secondaryMovementValueField")!
+    background = cardValues.get(currentCard)!.get("background")!
   }
 
   let oldAttackStat = 0
@@ -443,7 +443,7 @@
   $: minMovementStatLevelValue = 0
   $: maxMovementStatLevelValue = 0
 
-  const onFileSelected = (event: Event) => {
+  const onBgSelected = (event: Event) => {
     const file = (event.target as HTMLInputElement).files![0]
     const reader = new FileReader()
     reader.readAsDataURL(file)
@@ -470,6 +470,28 @@
           customEmoji[i][1] = image
         tempCustomEmoji = null
       }
+    }
+  }
+
+  const onJsonSelected = (event: Event) => {
+    const file = (event.target as HTMLInputElement).files![0]
+    const reader = new FileReader()
+    reader.readAsText(file)
+    reader.onload = event => {
+      const info = new TSMap().fromJSON(JSON.parse(event.target!.result), true)
+
+      oldAttackStat = info.get("attackStat")
+      oldDefenseStat = info.get("defenseStat")
+      oldInitiativeStat = info.get("initiativeStat")
+      oldMovementStat = info.get("movementStat")
+      attackStat = oldAttackStat
+      defenseStat = oldDefenseStat
+      initiativeStat = oldInitiativeStat
+      movementStat = oldMovementStat
+
+      cardValues = info.get("cardValues")
+
+      getCurrentCard()
     }
   }
 
@@ -903,6 +925,28 @@
     }
   }
 
+  function exportIntoJson() {
+
+    const json = new TSMap<string, any>([
+      ["cardValues", cardValues],
+      ["attackStat", attackStat],
+      ["defenseStat", defenseStat],
+      ["initiativeStat", initiativeStat],
+      ["movementStat", movementStat],
+    ])
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(json.toJSON()))
+    const anchor = document.createElement("a")
+    anchor.setAttribute("href", dataStr)
+    anchor.setAttribute("download", "hero" + ".json")
+    document.body.appendChild(anchor)
+    anchor.click()
+    anchor.remove()
+  }
+
+  function loadFromJson() {
+    document.getElementById("inputJson").click()
+  }
+
   function minAttackStatLevel() {
     if (primaryActionType == Type.ATTACK)
       return cardStats.get(color)?.get(Stat.ATTACK)?.get(level)?.findIndex((number) => number == primaryActionValue) ?? -1
@@ -1198,7 +1242,7 @@
           <div class="col-span-6">
             <Label style="color: white">
               Background (1192×1664)
-              <Fileupload class="bg-dark-800 border-dark-600 text-white" on:change={event => onFileSelected(event)} />
+              <Fileupload class="bg-dark-800 border-dark-600 text-white" on:change={event => onBgSelected(event)} />
             </Label>
           </div>
 
@@ -1212,7 +1256,7 @@
                 </div>
                 <div class="col-span-1">
                   <Fileupload accept="image/*" class="bg-dark-800 border-dark-600 text-white"
-                              on:change={event => onFileSelected(event)} />
+                              on:change={event => onEmojiSelected(event, i)} />
                 </div>
               {/each}
               <div class="col-span-2">
@@ -1325,12 +1369,19 @@
         <div class="w-full border border-dark-600 rounded-3xl mt-2 md:mt-4">
           <canvas width="1192" height="1664" class="w-full rounded-3xl" bind:this={canvas} />
         </div>
-        <div class="grid grid-cols-2">
+        <div class="grid grid-cols-2 gap-4 mt-4 mb-4">
           <div class="col-span-1 flex justify-center">
-            <Button class="m-5" on:click={downloadCard}>Download Card</Button>
+            <Button class="w-40" on:click={downloadCard}>Download Card</Button>
           </div>
           <div class="col-span-1 flex justify-center">
-            <Button class="m-5" on:click={downloadEverything}>Download Full Set</Button>
+            <Button class="w-40" on:click={downloadEverything}>Download Full Set</Button>
+          </div>
+          <div class="col-span-1 flex justify-center">
+            <Button class="w-40" on:click={exportIntoJson}>Export into JSON</Button>
+          </div>
+          <div class="col-span-1 flex justify-center">
+            <Button class="w-40" on:click={loadFromJson}>Load from JSON</Button>
+            <input id="inputJson" class="absolute w-0" type="file" on:change={event => onJsonSelected(event)}>
           </div>
         </div>
       </div>

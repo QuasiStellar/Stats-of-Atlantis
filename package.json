@@ -49,6 +49,7 @@
 		"bigger-picture": "^1.1.12",
 		"canvas": "^2.11.2",
 		"flowbite-svelte-icons": "^0.4.4",
-		"material-dynamic-colors": "^1.0.5"
+		"material-dynamic-colors": "^1.0.5",
+		"typescript-map": "^0.1.0"
 	}
 }
