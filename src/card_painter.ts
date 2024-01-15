@@ -32,7 +32,7 @@ export function updateCanvas(
 ): void {
 	clear(canvas, context);
 
-	if (background instanceof HTMLCanvasElement) {
+	if (background instanceof HTMLImageElement) {
 		context.drawImage(background, 0, 0, 1192, 1664);
 	}
 
