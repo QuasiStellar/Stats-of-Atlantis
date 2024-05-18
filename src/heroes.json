@@ -2,7 +2,7 @@
   "arien": [
     {
       "name": "Noble Blade",
-      "description": "Before the attack: You may move another\nunit that is adjacent to the target 1 space.\n~(\"Another unit\" does not include you). ",
+      "description": "Target a unit adjacent to you. Before the\nattack: You may move another unit that\nis adjacent to the target 1 space.\n~(\\\"Another unit\\\" does not include you).",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "ATTACK",
@@ -49,7 +49,7 @@
     },
     {
       "name": "Gush of Water",
-      "description": "After the attack: You may push every\nadjacent token and enemy unit 1 space.\n~(If you choose this option, push all units that can be pushed).",
+      "description": "Target a unit in range. After the attack:\nPush up to one token, or an enemy\nunit, adjacent to you 1 space.",
       "color": "RED",
       "level": 1,
       "initiative": 8,
@@ -74,7 +74,7 @@
     },
     {
       "name": "Expert Duelist",
-      "description": "Ignore all minion defense modifiers.\n**This turn:** You are immune\nto all other enemy attacks.",
+      "description": "Ignore all minion defense modifiers.\n**This turn:** You are immune\nto all other enemy attack actions.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -89,7 +89,7 @@
     },
     {
       "name": "High Tide",
-      "description": "After the attack: You may push every\nadjacent token and enemy unit 1 space.",
+      "description": "Target a unit in range. After the attack:\nPush up to one token, or an enemy\nunit, adjacent to you 1 space.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -124,7 +124,7 @@
     },
     {
       "name": "Slippery Ground",
-      "description": "**This turn:** Enemies in radius may not move\nmore than 1 space with a movement action.\n~(Enemies who start movement out of radius are unaffected).",
+      "description": "**This turn:** Enemies in radius cannot move\nmore than 1 space with a movement action.\n~(Enemies who start movement out of radius are unaffected).",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -141,7 +141,7 @@
     },
     {
       "name": "Violent Torrent",
-      "description": "Before the attack: One enemy hero in any of\nthe 3 spaces in a straight line directly behind\nthe target discards a card, or is defeated.\n~(You cannot target an empty spcae with an attack).",
+      "description": "Target a unit adjacent to you. Before the\nattack: One enemy hero in any of the 3\nspaces in a straight line directly behind\nthe target discards a card, or is defeated.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -189,7 +189,7 @@
     },
     {
       "name": "Rogue Wave",
-      "description": "After the attack: Move the target 1 space.\nYou may push every token and enemy\nunit adjacent to you 1 space.",
+      "description": "Target a unit in range. After the attack:\nMove the target up to 1 space.\nPush up to one token, or an enemy\nunit, adjacent to you 1 space.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -224,7 +224,7 @@
     },
     {
       "name": "Deluge",
-      "description": "**This turn and next turn:**\nEnemies in radius may not move more\nthan 1 space with a movement action.",
+      "description": "**This turn and next turn:**\nEnemies in radius cannot move more\nthan 1 space with a movement action.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -241,7 +241,7 @@
     },
     {
       "name": "Raging Waters",
-      "description": "Before the attack: One enemy hero in any of\nthe 5 spaces in a straight line directly behind\nthe target discards a card, or is defeated.\nMay repeat once on a different target.",
+      "description": "Target a unit adjacent to you. Before the\nattack: One enemy hero in any of the 5\nspaces in a straight line directly behind\nthe target discards a card, or is defeated.\nMay repeat once on a different target.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -276,7 +276,7 @@
   "bain": [
     {
       "name": "Dead or Alive",
-      "description": "You may give a hero in radius a ::marker_bounty:: bounty\nmarker. The hero with a bounty marker\nspends 1 additional ::life_counters:: life counter when\ndefeated. You may then **choose one —**\n>>Defeat an adjacent enemy minion.\n>>Adjacent enemy hero discards a card, if able.",
+      "description": "You may give a hero in radius a ::marker_bounty:: bounty\nmarker. The hero with a bounty marker\nspends 1 additional ::life_counters:: life counter when\ndefeated. You may then **choose one —**\n>>An enemy hero adjacent to you discards\n>a card, if able.\n>>Defeat a minion adjacent to you.",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "SKILL",
@@ -299,7 +299,7 @@
     },
     {
       "name": "Get over here!",
-      "description": "Target a unit in a straight line, with no\nobstacles between you. Then, if able,\nmove that unit towards you by the\nshortest valid path, until it is adjacent.\n**This turn:** If it's an enemy unit, it can't move.",
+      "description": "Target a unit in a straight line and in range,\nwith no obstacles between you. Then move\nthat unit towards you by the shortest valid\npath, until it is adjacent to you. **This turn:**\nIf it is an enemy unit, it cannot move.",
       "color": "SILVER",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -309,7 +309,7 @@
     },
     {
       "name": "A Complicated Profession",
-      "description": "After you perform a basic skill, an adjacent\nenemy hero discards a card, or is defeated.",
+      "description": "After you perform a basic skill,\nan enemy hero adjacent to you\ndiscards a card, or is defeated.",
       "color": "PURPLE",
       "level": 4
     },
@@ -327,7 +327,7 @@
     },
     {
       "name": "Light Crossbow",
-      "description": "Target a minion adjacent to you, or a\nhero in a straight line, with no other\nunits, or terrain, between you.",
+      "description": "Target a minion adjacent to you, or a hero\nin range, and in a straight line, with no\nother units, or terrain, between you.",
       "color": "RED",
       "level": 1,
       "initiative": 8,
@@ -417,7 +417,7 @@
     },
     {
       "name": "Hand Crossbow",
-      "description": "+2 ::range_red:: Range if you target a\nhero with a ::marker_bounty:: bounty marker.",
+      "description": "+2 ::range_red:: Range if you target a hero with a\n::marker_bounty:: bounty marker. target a unit in range.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -436,7 +436,7 @@
     },
     {
       "name": "Vantage Point",
-      "description": "**Next turn:** You may ignore obstacles when\nchoosing targets of attacks and skills.",
+      "description": "**Next turn:** You may ignore restrictions to\nhave no obstacles between you and the\ntarget when performing attacks and skills.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -468,7 +468,7 @@
     },
     {
       "name": "Impaler",
-      "description": "Target a unit in a straight line, with no friendly\nunits, or terrain between you. Before the\nattack: Up to one enemy hero between you\nand the target discards a card, or is defeated.",
+      "description": "Target a unit in range, and in a straight\nline, with no friendly units, or terrain,\nbetween you. Before the attack: Up to\none enemy hero between you and the\ntarget discards a card, or is defeated.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -518,7 +518,7 @@
     },
     {
       "name": "Hunter-Seeker",
-      "description": "+2 ::range_red:: Range if you target a hero with\na ::marker_bounty:: bounty marker. If you do, may\nrepeat once on a different adjacent unit.",
+      "description": "+2 ::range_red:: Range if you target a hero with a\n::marker_bounty:: bounty marker. Target a unit in range.\nIf the target has a bounty marker, you may\nrepeat once on a different unit adjacent to you.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -537,7 +537,7 @@
     },
     {
       "name": "High Ground",
-      "description": "You may ignore obstacles. **Next turn:**\nYou may ignore obstacles for movement and\nwhen choosing targets of attacks and skills.",
+      "description": "You may ignore obstacles.\n**Next turn:** You may ignore restrictions to\nhave no obstacles between you can the\ntarget when performing attacks and skills.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -554,7 +554,7 @@
   "brogan": [
     {
       "name": "Onslaught",
-      "description": "After the attack: If the target was defeated,\nmove into the space it occupied, if able.",
+      "description": "Target a unit adjacent to you. After the attack:\nMove into the space it occupied.",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "ATTACK",
@@ -601,7 +601,7 @@
     },
     {
       "name": "Mad Dash",
-      "description": "Before the attack:\nMove 2 spaces in a straight line.\n~(If you cannot make this move, you cannot attack).",
+      "description": "Before the attack: Move 2 spaces in\na straight line to a space adjacent to\nan enemy unit, then target that unit.\n~(If you cannot make this move, you cannot attack).",
       "color": "RED",
       "level": 1,
       "initiative": 7,
@@ -639,7 +639,7 @@
     },
     {
       "name": "Bullrush",
-      "description": "Before the attack: Move 2 or 3\nspaces in a straight line.",
+      "description": "Before the attack: Move 2 or 3 spaces in\na straight line to a space adjacent to an\nenemy unit, then target that unit.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -687,7 +687,7 @@
     },
     {
       "name": "Throwing Axe",
-      "description": "Before the attack: You may discard a card.\nIf you do, +2 ::range_red:: Range.",
+      "description": "Before the attack: You may discard a card.\nIf you do, +2 ::range_red:: Range. Target a unit in range.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -738,7 +738,7 @@
     },
     {
       "name": "Furious Charge",
-      "description": "Before the attack: Move 2, 3 or 4\nspaces in a straight line.",
+      "description": "Before the attack: Move 2, 3, or 4 spaces\nin a straight line to a space adjacent to an\nenemy unit, then target that unit.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -786,7 +786,7 @@
     },
     {
       "name": "Throwing Spear",
-      "description": "Before the attack: You may discard a card.\n+2 ::range_red:: Range if you have a card in the discard.",
+      "description": "Before the attack: You may discard a card.\n+2 ::range_red:: Range if you have a card in the\ndiscard. target a unit in range.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -796,9 +796,6 @@
       "initiative": 8,
       "primaryAction": "ATTACK",
       "primaryValue": 4,
-      "modifier": "RANGE",
-      "modifierValue": 1,
-      "modifierValueSign": "PLUS",
       "secondaryMovement": 4,
       "secondaryDefense": 6,
       "item": "AREA"
@@ -1264,7 +1261,7 @@
     },
     {
       "name": "Necromancy",
-      "description": "If an enemy hero in radius has a card in\nthe discard, respawn a friendly minion in\nan adjacent spawn point in the battle zone.",
+      "description": "If an enemy hero in radius has a card in\nthe discard, respawn a friendly minion in a\nspawn point adjacent to you in the battle zone.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -1611,7 +1608,7 @@
     },
     {
       "name": "Form Testudo!",
-      "description": "**This round:** You and friendly units in\nradius are immune to ranged actions\nof enemy heroes outside of radius.\nCancel this effect if you fast travel, or\nmove more than 2 spaces in a single turn.",
+      "description": "**This round:** You and friendly units in\nradius are immune to ranged actions\nof enemy heroes outside of radius.\nCancel this effect if you move more than\n2 spaces in a single turn, or fast travel.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -1698,7 +1695,7 @@
     },
     {
       "name": "Unexpected Journey",
-      "description": "Swap with an enemy hero in radius.\n**This turn:** That hero is immune.\n**End of turn:** Swap with that hero,\nregardless of radius, if able.",
+      "description": "Swap with an enemy hero in radius.\n**This turn:** That hero is immune to all other\nactions. **End of turn:** Swap with that hero,\nregardless of radius, if able.",
       "color": "BLUE",
       "level": 1,
       "initiative": 10,
@@ -1710,7 +1707,7 @@
     },
     {
       "name": "Helping Hand",
-      "description": "**Choose one —**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent\n>to a friendly hero.",
+      "description": "**Choose one —**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent to your\n>friendly hero.",
       "color": "RED",
       "level": 1,
       "initiative": 9,
@@ -1733,7 +1730,7 @@
     },
     {
       "name": "There and Back Again",
-      "description": "Swap with an enemy unit in radius.\n**This turn:** That unit is immune.\n**End of turn:** Swap with that unit,\nregardless of radius, if able.",
+      "description": "Swap with an enemy unit in radius.\n**This turn:** That unit is immune to all other\nactions. **End of turn:** Swap with that unit,\nregardless of radius, if able.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -1750,7 +1747,7 @@
     },
     {
       "name": "Even the Odds",
-      "description": "**Choose one —**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent\n>to a friendly hero.",
+      "description": "**Choose one —**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent to your\n>friendly hero.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -1783,7 +1780,7 @@
     },
     {
       "name": "This Way!",
-      "description": "A friendly hero in radius chooses a distance\nof 1 or 2. You choose a direction. You both\nmove that number of spaces in the chosen\ndirection, if able; stop if you reach an obstacle.",
+      "description": "A friendly hero in radius chooses a distance\nof 1 or 2. You choose a direction. You both\nmove that number of spaces in the chosen\ndirection, stopping if an obstacle is reached.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -1800,7 +1797,7 @@
     },
     {
       "name": "Outnumber",
-      "description": "+1 ::attack_red:: Attack for each friendly\nunit adjacent to you.",
+      "description": "Target a unit in range. +1 ::attack_red:: Attack for\neach friendly unit adjacent to you.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -1836,7 +1833,7 @@
     },
     {
       "name": "Safe Travels",
-      "description": "Swap with an enemy unit in radius.\n**This turn:** You and that unit are immune.\n**End of turn:** Swap with that unit,\nregardless of radius, if able.",
+      "description": "Swap with an enemy unit in radius.\n**This turn:** You and that unit are immune to\nall other actions. **End of turn:** Swap with\nthat unit, regardless of radius, if able.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -1853,7 +1850,7 @@
     },
     {
       "name": "Trusted Sidekick",
-      "description": "**Choose one, or both —**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent\n>to a friendly hero.",
+      "description": "**Choose one, or both,** in any order **—**\n>>Target a unit adjacent to you.\n>>Target a hero in range, adjacent to your\n>friendly hero and not adjacent to you.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -1886,7 +1883,7 @@
     },
     {
       "name": "That Way!",
-      "description": "A friendly hero in radius chooses a distance\nof 1, 2, or 3. You choose a direction. You both\nmove that number of spaces in the chosen\ndirection; stop if you reach an obstacle.",
+      "description": "A friendly hero in radius chooses a distance\nof 1, 2, or 3. You choose a direction. You both\nmove that number of spaces in the chosen\ndirection, stopping if an obstacle is reached.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -1903,7 +1900,7 @@
     },
     {
       "name": "Pile On",
-      "description": "+1 ::attack_red:: Attack for each friendly unit\nadjacent to you. If you target a hero,\nmay repeat once on a different target.",
+      "description": "Target a unit in range. +1 ::attack_red:: Attack for each\nfriendly unit adjacent to you. If you target a\nhero, may repeat once on a different target.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -1941,7 +1938,7 @@
   "ignatia": [
     {
       "name": "Chaos Bolt",
-      "description": "::tiebreaker_blue::: Target a non-adjacent minion in range.\n---\n::tiebreaker_orange:: Target a non-adjacent hero in range.\n\n~(Effect is based on the visible side of the Tie Breaker coin).",
+      "description": "::tiebreaker_blue::: Target a minion in range,\nnot adjacent to you.\n---\n::tiebreaker_orange::: Target a hero in range,\nnot adjacent to you.\n~(Effect is based on the visible side of the Tie Breaker coin).",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "ATTACK",
@@ -1953,7 +1950,7 @@
     },
     {
       "name": "Unreliable Jolt",
-      "description": "::tiebreaker_blue::: Target an adjacent hero in range.\n---\n::tiebreaker_orange:: Target a non-adjacent hero in range.",
+      "description": "::tiebreaker_blue::: Target an adjacent hero in range.\n---\n::tiebreaker_orange::: Target a non-adjacent hero in range.",
       "color": "GOLD",
       "handicapped": true,
       "initiative": 10,
@@ -1966,7 +1963,7 @@
     },
     {
       "name": "Moment of Equilibrium",
-      "description": "Flip the Tie Breaker coin to a side of your\nchoice. **This turn and next turn:**\nThe coin is not flipped after a tie.",
+      "description": "Flip the Tie Breaker coin to a side of your\nchoice. **This turn and next turn:**\nDo not flip the Tie Breaker coin after a tie.",
       "color": "SILVER",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -1980,7 +1977,7 @@
     },
     {
       "name": "Abrupt Combustion",
-      "description": "::tiebreaker_blue::: An enemy hero in radius, adjacent to a\ntoken, or a minion, discards a card, If able.\n---\n::tiebreaker_orange:: An adjacent enemy hero\ndiscards a card, if able.",
+      "description": "::tiebreaker_blue::: An enemy hero in radius, adjacent to a\ntoken, or a minion, discards a card, If able.\n---\n::tiebreaker_orange::: An enemy hero adjacent to you\ndiscards a card, if able.",
       "color": "BLUE",
       "level": 1,
       "initiative": 9,
@@ -1992,7 +1989,7 @@
     },
     {
       "name": "Playing with Fire",
-      "description": "::tiebreaker_blue::: Target a hero in a straight line.\n---\n::tiebreaker_orange:: Target a hero not in a straight line.",
+      "description": "::tiebreaker_blue::: Target a hero in range, in a straight line.\n---\n::tiebreaker_orange::: Target a hero in range, not in a straight line.",
       "color": "RED",
       "level": 1,
       "initiative": 7,
@@ -2005,7 +2002,7 @@
     },
     {
       "name": "Path of Ashes",
-      "description": "::tiebreaker_blue::: Move up to 2 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 2 magma tokens in radius\nadjacent to another magma token, if able.",
+      "description": "::tiebreaker_blue::: Move up to 2 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange::: Place up to 2 magma tokens in radius\nadjacent to another magma token, if able.",
       "color": "GREEN",
       "level": 1,
       "initiative": 5,
@@ -2017,7 +2014,7 @@
     },
     {
       "name": "Spontaneous Immolation",
-      "description": "::tiebreaker_blue::: An enemy hero in radius, adjacent to a\ntoken, or a minion, discards a card, If able.\n---\n::tiebreaker_orange:: An adjacent enemy hero\ndiscards a card, if able.",
+      "description": "::tiebreaker_blue::: An enemy hero in radius, adjacent to a\ntoken, or a minion, discards a card, If able.\n---\n::tiebreaker_orange::: An enemy hero adjacent to you\ndiscards a card, if able.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -2034,7 +2031,7 @@
     },
     {
       "name": "Erratic Fireblast",
-      "description": "::tiebreaker_blue::: Target a unit in a straight line.\n---\n::tiebreaker_orange:: Target a unit not in a straight line.",
+      "description": "::tiebreaker_blue::: Target a unit in range, in a straight line.\n---\n::tiebreaker_orange::: Target a unit in range, not in a straight line.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -2052,7 +2049,7 @@
     },
     {
       "name": "Path of Cinders",
-      "description": "::tiebreaker_blue::: Move up to 3 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 3 magma tokens in radius\nadjacent to another magma token, if able.",
+      "description": "::tiebreaker_blue::: Move up to 3 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange::: Place up to 3 magma tokens in radius\nadjacent to another magma token, if able.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -2069,7 +2066,7 @@
     },
     {
       "name": "Searing Heat",
-      "description": "::tiebreaker_blue::: Move an adjacent enemy\nunit up to 3 spaces.\n---\n::tiebreaker_orange:: Move a non-adjacent enemy\nunit in radius up to 1 spaces.",
+      "description": "::tiebreaker_blue::: Move an enemy unit adjacent\nto you up to 3 spaces.\n---\n::tiebreaker_orange::: Move an enemy unit in radius, and not\nadjacent to you, up to 1 spaces.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -2086,7 +2083,7 @@
     },
     {
       "name": "Crack of Doom",
-      "description": "::tiebreaker_blue::: Target a unit at a maximum range.\n---\n::tiebreaker_orange:: Target an adjacent unit.",
+      "description": "::tiebreaker_blue::: Target a unit at a maximum range.\n---\n::tiebreaker_orange::: Target a unit adjacent to you.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -2104,7 +2101,7 @@
     },
     {
       "name": "Unstable Portal",
-      "description": "::tiebreaker_blue::: You swap with a friendly unit in radius.\n---\n::tiebreaker_orange:: You swap with an enemy unit in radius.",
+      "description": "::tiebreaker_blue::: Swap with a friendly unit in radius.\n---\n::tiebreaker_orange::: Swap with an enemy unit in radius.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -2121,7 +2118,7 @@
     },
     {
       "name": "Violent Conflagration",
-      "description": "::tiebreaker_blue::: An enemy hero in radius,\nadjacent to a token, or a minion,\ndiscards a card, or is defeated.\n---\n::tiebreaker_orange:: An adjacent enemy hero\ndiscards a card, or is defeated.",
+      "description": "::tiebreaker_blue::: An enemy hero in radius,\nadjacent to a token, or a minion,\ndiscards a card, or is defeated.\n---\n::tiebreaker_orange::: An enemy hero adjacent to you\ndiscards a card, or is defeated.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -2138,7 +2135,7 @@
     },
     {
       "name": "Loosely-Aimed Firebolts",
-      "description": "::tiebreaker_blue::: Target a unit in a straight line.\nRepeat once on a different hero.\n---\n::tiebreaker_orange:: Target a unit not in a straight line.",
+      "description": "::tiebreaker_blue::: Target a unit in range, in a straight line.\nMay repeat once on a different hero.\n---\n::tiebreaker_orange::: Target a unit in range, not in a straight line.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -2156,7 +2153,7 @@
     },
     {
       "name": "Path of Flames",
-      "description": "::tiebreaker_blue::: Move up to 4 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange:: Place up to 4 magma tokens in radius\nadjacent to another magma token, if able.",
+      "description": "::tiebreaker_blue::: Move up to 4 spaces in a straight line.\nPlace a ::token_magma:: magma token in each empty\nspace you moved through, or out of.\n---\n::tiebreaker_orange::: Place up to 4 magma tokens in radius\nadjacent to another magma token, if able.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -2173,7 +2170,7 @@
     },
     {
       "name": "Scorching Blaze",
-      "description": "::tiebreaker_blue::: Move an adjacent enemy unit up to 4\nspaces. Repeat once on a different target.\n---\n::tiebreaker_orange:: Move a non-adjacent enemy\nunit in radius up to 2 spaces.",
+      "description": "::tiebreaker_blue::: Move an enemy unit adjacent to you\nup to 4 spaces. May repeat once.\n---\n::tiebreaker_orange::: Move an enemy unit in radius, and not\nadjacent to you, up to 2 spaces.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -2190,7 +2187,7 @@
     },
     {
       "name": "Imminent Eruption",
-      "description": "::tiebreaker_blue::: Target a unit at a maximum range.\n---\n::tiebreaker_orange:: Target an adjacent unit.\nRepeat once on a minion.",
+      "description": "::tiebreaker_blue::: Target a unit at a maximum range.\n---\n::tiebreaker_orange::: Target a unit adjacent to you.\nMay repeat once on a minion.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -2208,7 +2205,7 @@
     },
     {
       "name": "Chaos Gate",
-      "description": "::tiebreaker_blue::: You swap with a friendly unit in radius.\n---\n::tiebreaker_orange:: You swap with an enemy unit in radius.",
+      "description": "::tiebreaker_blue::: Swap with a friendly unit in radius.\n---\n::tiebreaker_orange::: Swap with an enemy unit in radius.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -2227,7 +2224,7 @@
   "min": [
     {
       "name": "Fast as Lightning",
-      "description": "After the attack: You may swap this card\nwith a resolved or discarded attack card\nand apply that card's text.",
+      "description": "Target a unit in range. After the attack:\nApply the \"After the attack\" text of your\nresolved or discarded non-basic attack\ncard, using that card's values.\n~(In case of a repeat, repeat the action on the other card).",
       "color": "GOLD",
       "initiative": 13,
       "primaryAction": "ATTACK",
@@ -2262,7 +2259,7 @@
     },
     {
       "name": "Flurry of blows",
-      "description": "After you perform a movement action,\nall adjacent enemy heroes discard\na card, if able.",
+      "description": "After you perform a movement action,\nall enemy heroes adjacent to you\ndiscard a card, if able.",
       "color": "PURPLE",
       "level": 4
     },
@@ -2280,7 +2277,7 @@
     },
     {
       "name": "Crane Stance",
-      "description": "After the attack: Push an adjacent\nenemy hero up to 1 space.",
+      "description": "Target a unit adjacent to you.\nAfter the attack: Push an enemy\nhero adjacent to you up to 1 space.",
       "color": "RED",
       "level": 1,
       "initiative": 9,
@@ -2320,7 +2317,7 @@
     },
     {
       "name": "Tiger Stance",
-      "description": "After the attack: Push an adjacent\nenemy hero up to 2 spaces.",
+      "description": "Target a unit adjacent to you.\nAfter the attack: Push an enemy hero\nadjacent to you up to 2 spaces.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -2370,7 +2367,7 @@
     },
     {
       "name": "Viper Stance",
-      "description": "After the attack: You may swap with a\nsmoke bomb or a mine in radius.",
+      "description": "Target a unit adjacent to you. After the\nattack: You may swap with a smoke\nbomb or a mine in radius.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -2388,7 +2385,7 @@
     },
     {
       "name": "Inner Strength",
-      "description": "If your discard is empty, **This round:** Double\nyour item bonuses. If you discard a card,\ncancel this effect after the action is resolved.",
+      "description": "**This round:** While you have no cards in\nthe discard, double your item bonuses.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -2420,7 +2417,7 @@
     },
     {
       "name": "Dragon Stance",
-      "description": "After the attack: Move up to 1 space to a\nspace adjacent to the target, if able. Push\nan adjacent enemy hero up to 3 spaces.",
+      "description": "Target a unit adjacent to you. After the\nattack: Move up to 1 space to a space\nadjacent to the target, if able. Push an\nenemy hero adjacent to you up to 2 spaces.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -2470,7 +2467,7 @@
     },
     {
       "name": "Cobra Stance",
-      "description": "After the attack: You may swap with\na smoke bomb or a mine in radius.\nIf you do, repeat once on a different hero.",
+      "description": "Target a unit adjacent to you. After the\nattack: You may swap with a smoke\nbomb or a mine in radius. If you do,\nmay repeat once, on a different hero.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -2488,7 +2485,7 @@
     },
     {
       "name": "Perfect Self",
-      "description": "You may retrieve a discarded card. If your\ndiscard is empty, **This round:** Double your\nitem bonuses. If you discard a card, cancel\nthis effect after the action is resolved.",
+      "description": "You may retrieve a discarded card.\n**This round:** While you have no cards in\nthe discard, double your item bonuses.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -3049,7 +3046,7 @@
   "sabina": [
     {
       "name": "Point Blank Shot",
-      "description": "After the attack: If the target\nis adjacent, push the target 1 space.\n~(A unit pushed into an obstacle will stop. This is a valid push) ",
+      "description": "Target a unit in range. After the attack: Push\nthe target 1 space if it is adjacent to you.\n~(A unit pushed into an obstacle will stop. This is a valid push.) ",
       "color": "GOLD",
       "initiative": 12,
       "primaryAction": "ATTACK",
@@ -3088,7 +3085,7 @@
     },
     {
       "name": "Basic Drill",
-      "description": "**This round:** When you, or a friendly hero\nperforms a basic attack, friendly minions in\nradius, including the immune ones, reduce the\ndefense total as if they were ranged minions.",
+      "description": "**This round:** When you, or a friendly\nhero, performs a basic attack, count all\nfriendly minions in radius, including\nthe immune ones, as ranged.",
       "color": "BLUE",
       "level": 1,
       "initiative": 9,
@@ -3100,7 +3097,7 @@
     },
     {
       "name": "Quickdraw",
-      "description": "Target a non-adjacent unit.",
+      "description": "Target a unit in range, not adjacent to you.",
       "color": "RED",
       "level": 1,
       "initiative": 8,
@@ -3125,7 +3122,7 @@
     },
     {
       "name": "Battle Drill",
-      "description": "**This round:** Friendly minions in radius,\nincluding the immune ones, reduce the\ndefense total as if they were ranged minions.",
+      "description": "**This round:** When you, or a friendly hero,\nperforms an attack, count all friendly minions in\nradius, including the immune ones, as ranged.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -3142,7 +3139,7 @@
     },
     {
       "name": "Gunslinger",
-      "description": "Target a non-adjacent unit.\n+2 ::attack_red:: Attack if the target hero\nplayed an attack card this turn.\n~(A revealed card is \"played\" even if it's not resolved yet).",
+      "description": "Target a unit in range, not adjacent to you.\n+2 ::attack_red:: Attack if the target hero\nplayed an attack card this turn.\n~(A revealed card is \"played\" even if it's not resolved yet.)",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -3228,7 +3225,7 @@
     },
     {
       "name": "Field Promotion",
-      "description": "**This round:** Friendly minions in radius,\nincluding the immune ones, reduce the\ndefense total as if they each were both\na ranged minion and a melee minion.\n~(This can reduce the defense total by up to 2 per minion.)",
+      "description": "**This round:** When you, or a friendly hero,\nperforms an attack, count all friendly minions\nin radius, including the immune ones,\nas both melee and ranged.\n~(This can reduce the defense total by up to 2 per minion.)",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -3245,7 +3242,7 @@
     },
     {
       "name": "Dead Shot",
-      "description": "+2 ::attack_red:: Attack if the target hero\nplayed an attack card this turn.",
+      "description": "Target a unit in range. +2 ::attack_red:: Attack if the\ntarget hero played an attack card this turn.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -3333,7 +3330,7 @@
   "silverarrow": [
     {
       "name": "Hit and Run",
-      "description": "Cannot attack if adjacent to an enemy unit.\nAfter the attack: You may fast travel, if able.",
+      "description": "Cannot attack if adjacent to\nan enemy unit. Target a unit in range.\nAfter the attack: You may fast travel, if able.",
       "color": "GOLD",
       "initiative": 12,
       "primaryAction": "ATTACK",
@@ -3356,7 +3353,7 @@
     },
     {
       "name": "Trailblazer",
-      "description": "If not adjacent to an enemy unit, you may\nmove up to 4 spaces in a straight line to a\nspace not adjacent to an enemy unit, if able.",
+      "description": "If you are not adjacent to an enemy unit, you\nmay move up to 4 spaces in a straight line to\na space not adjacent to an enemy unit.",
       "color": "SILVER",
       "initiative": 13,
       "primaryAction": "SKILL",
@@ -3396,7 +3393,7 @@
     },
     {
       "name": "Disorient",
-      "description": "Move an adjacent enemy unit up to\n1 space. If you do, move up to that\nnumber of spaces in a straight line.",
+      "description": "Move an enemy unit adjacent to you up\nto 1 space. If you do, move up to that\nnumber of spaces in a straight line.",
       "color": "GREEN",
       "level": 1,
       "initiative": 3,
@@ -3423,7 +3420,7 @@
     },
     {
       "name": "Opportunity Shot",
-      "description": "-2 ::range_red:: Range for every unit adjacent\nto the target, including you.",
+      "description": "-2 ::range_red:: Range for every unit adjacent to the\ntarget, including you. Target a unit in range.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -3442,7 +3439,7 @@
     },
     {
       "name": "Divert Attention",
-      "description": "Move an adjacent enemy unit up to\n2 spaces. If you do, move up to that\nnumber of spaces in a straight line.",
+      "description": "Move an enemy unit adjacent to you up\nto 2 spaces. If you do, move up to that\nnumber of spaces in a straight line.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -3457,7 +3454,7 @@
     },
     {
       "name": "Warning Shot",
-      "description": "If not adjacent to an enemy unit,\n**End of turn:** An enemy hero in radius,\ndiscards a card, if able.",
+      "description": "If you are not adjacent to an enemy unit,\n**End of turn:** An enemy hero in radius,\ndiscards a card, if able.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -3526,7 +3523,7 @@
     },
     {
       "name": "Clear Shot",
-      "description": "-2 ::range_red:: Range for every unit adjacent\nto the target, including you.",
+      "description": "-2 ::range_red:: Range for every unit adjacent to the\ntarget, including you. target a unit in range.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -3545,7 +3542,7 @@
     },
     {
       "name": "Lead Astray",
-      "description": "Move an adjacent enemy unit up to\n3 spaces. If you do, move up to that\nnumber of spaces in a straight line.",
+      "description": "Move an enemy unit adjacent to you up\nto 3 spaces. If you do, move up to that\nnumber of spaces in a straight line.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -3560,7 +3557,7 @@
     },
     {
       "name": "Treetop Sentinel",
-      "description": "If not adjacent to an enemy unit,\n**End of turn:** An enemy hero in radius,\ndiscards a card or is defeated.",
+      "description": "If you are not adjacent to an enemy unit,\n**End of turn:** An enemy hero in radius,\ndiscards a card or is defeated.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -3614,9 +3611,9 @@
   "swift": [
     {
       "name": "Reload!",
-      "description": "**Choose one —**\n>>Defeat a minion adjacent to you.\n>>Perform the primary action of the resolved\n>card in your previous turn slot.",
+      "description": "Perform the primary action of the\nresolved card in your previous turn slot.",
       "color": "GOLD",
-      "initiative": 6,
+      "initiative": 5,
       "primaryAction": "SKILL",
       "secondaryMovement": 2,
       "secondaryDefense": 1
@@ -3641,7 +3638,7 @@
     },
     {
       "name": "Bullet Time",
-      "description": "After you perform any action on your Gold\ncard, you may perform an action on your\nGold card again; it can be the same action.\nCannot target the same enemy hero twice.",
+      "description": "After you perform any action on your gold\ncard, you may perform an action on your\ngold card again; it can be the same action.\nCannot target the same enemy hero twice.",
       "color": "PURPLE",
       "level": 4
     },
@@ -3659,7 +3656,7 @@
     },
     {
       "name": "Snipe",
-      "description": "Target a unit in a straight line\nand at maximum range.",
+      "description": "Target a unit at maximum range,\nand in a straight line.",
       "color": "RED",
       "level": 1,
       "initiative": 8,
@@ -3672,7 +3669,7 @@
     },
     {
       "name": "Suppress",
-      "description": "A non-adjacent enemy hero in radius,\nwho is not adjacent to terrain, or a\ntoken, discards a card, if able.",
+      "description": "An enemy hero in radius, not adjacent\nto you and not adjacent to terrain, or a\ntoken, discards a card, if able.",
       "color": "GREEN",
       "level": 1,
       "initiative": 4,
@@ -3701,7 +3698,7 @@
     },
     {
       "name": "Prepared Shot",
-      "description": "Target a non-adjacent unit in a straight line.",
+      "description": "Target a unit in range, in a straight\nline, and not adjacent to you.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -3719,7 +3716,7 @@
     },
     {
       "name": "Pin Down",
-      "description": "A non-adjacent enemy hero in radius,\nwho is not adjacent to terrain, or a\ntoken, discards a card, if able.",
+      "description": "An enemy hero in radius, not adjacent\nto you and not adjacent to terrain, or a\ntoken, discards a card, if able.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -3753,7 +3750,7 @@
     },
     {
       "name": "Shotgun",
-      "description": "+3 ::attack_red:: Attack if you target an adjacent unit.\nBefore the attack: Up to one enemy hero\nadjacent to the target discards a card, if able.",
+      "description": "Target a unit in range. +3 ::attack_red:: Attack if you\ntarget a unit adjacent to you. Before the\nattack: Up to one enemy hero adjacent to\nthe target discards a card, if able.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -3772,7 +3769,7 @@
     },
     {
       "name": "Steam Shroud",
-      "description": "Move an enemy minion in radius 1 space.",
+      "description": "**Next turn:** Before you perform an action, you\nmay swap any two of your resolved cards.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -3780,10 +3777,8 @@
         "second": 2
       },
       "initiative": 4,
-      "primaryAction": "SKILL",
-      "modifier": "AREA",
-      "modifierValue": 4,
-      "secondaryMovement": 2,
+      "primaryAction": "MOVEMENT",
+      "primaryValue": 2,
       "secondaryDefense": 3,
       "item": "INITIATIVE"
     },
@@ -3806,7 +3801,7 @@
     },
     {
       "name": "Killshot",
-      "description": "Target a non-adjacent unit in a straight line.",
+      "description": "Target a unit in range, in a straight\nline, and not adjacent to you.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -3824,7 +3819,7 @@
     },
     {
       "name": "Killing Ground",
-      "description": "Non-adjacent enemy hero in radius,\nwho is not adjacent to terrain, or a\ntoken, discards a card, or is defeated.",
+      "description": "An enemy hero in radius, not adjacent to\nyou and not adjacent to terrain, or a token,\ndiscards a card, or is defeated.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -3858,7 +3853,7 @@
     },
     {
       "name": "Super-Shotgun",
-      "description": "+3 ::attack_red:: Attack if you target an adjacent unit.\nBefore the attack: Up to one enemy\nhero adjacent to the target discards\na card, or is defeated.",
+      "description": "Target a unit in range. +3 ::attack_red:: Attack if you\ntarget a unit adjacent to you. Before the\nattack: Up to one enemy hero adjacent to\nthe target discards a card, or is defeated.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -3877,7 +3872,7 @@
     },
     {
       "name": "Steam Cloud",
-      "description": "Move an enemy minion in\nradius up to 2 spaces.",
+      "description": "**Next turn:** Before or After you perform\nan action, you may swap any two\nof your resolved cards.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -3885,18 +3880,16 @@
         "second": 2
       },
       "initiative": 3,
-      "primaryAction": "SKILL",
-      "modifier": "AREA",
-      "modifierValue": 4,
-      "secondaryMovement": 2,
+      "primaryAction": "MOVEMENT",
+      "primaryValue": 2,
       "secondaryDefense": 3,
       "item": "INITIATIVE"
     }
   ],
-  "tali": [
+  "heroes.getTali": [
     {
       "name": "Turn to Ice",
-      "description": "**Choose one —**\n>>A hero in range with an unresolved card\n>may choose to retrieve that card. If they\n>do not, name a color. That hero discards\n>a card of that color, if able.\n>>Defeat an adjacent minion.",
+      "description": "**Choose one —**\n>>A hero in range with an unresolved card\n>may choose to retrieve that card. If they\n>do not, name a color. That hero discards\n>a card of that color, if able.\n>>Defeat a minion adjacent to you.",
       "color": "GOLD",
       "initiative": 10,
       "primaryAction": "SKILL",
@@ -3945,7 +3938,7 @@
     },
     {
       "name": "Frost Dagger",
-      "description": "After the attack: If you target a hero,\nthat hero discards a card, if able.\n**Next turn, after playing cards:**\nThat hero may retrieve that card.",
+      "description": "Target a unit adjacent to you. After the attack:\nIf you target a hero, that hero discards a card,\nif able. **Next turn, after playing cards:**\nThat hero may retrieve that card.",
       "color": "RED",
       "level": 1,
       "initiative": 8,
@@ -3985,7 +3978,7 @@
     },
     {
       "name": "Frost Spear",
-      "description": "After the attack: If you target a hero, name a\ncolor. That hero discards a card of that color,\nif able. **Next turn, after playing cards:**\nThat hero may retrieve that card.",
+      "description": "Target a unit adjacent to you. After the\nattack: If you target a hero, name a color.\nThat hero discards a card of that color,\nif able. **Next turn, after playing cards:**\nThat hero may retrieve that card.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -4035,7 +4028,7 @@
     },
     {
       "name": "Spirit Wolf",
-      "description": "If your discard is empty, target an\nadjacent unit. Otherwise, target an\nadjacent unit, or a minion in range.",
+      "description": "If you have a card in the discard, target a\nminion in range, or a hero adjacent to you.\nOtherwise, target a unit adjacent to you.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -4087,7 +4080,7 @@
     },
     {
       "name": "Frost Scepter",
-      "description": "After the attack: If you target a hero,\nname a color. That hero discards a card\nof that color, if able. **End of next turn:**\nThat hero may retrieve that card.",
+      "description": "Target a unit adjacent to you. After the attack:\nIf you target a hero, name a color. That hero\ndiscards a card of that color, if able. **End of**\n**next turn:** That hero may retrieve that card.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -4137,7 +4130,7 @@
     },
     {
       "name": "Spirit Bear",
-      "description": "If your discard is empty, target an adjacent\nunit. Otherwise, target an unit in range.",
+      "description": "If you have a card in the discard,\ntarget a unit in range. Otherwise,\ntarget a unit adjacent to you.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -4155,7 +4148,7 @@
     },
     {
       "name": "Venerated Totem",
-      "description": "Place a ::token_totem:: in radius. If a friendly\nminion adjacent to a totem would be\ndefeated, you may remove the totem instead.\nTotems are immune to enemy actions.",
+      "description": "Place a ::token_totem:: in radius. If a\nfriendly minion adjacent to a totem would be\ndefeated, you may remove the totem instead.\nTotems are immune to enemy actions.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -4174,7 +4167,7 @@
   "tigerclaw": [
     {
       "name": "Blink Strike",
-      "description": "Before the attack: Move 2 spaces in a straight\nline through an enemy unit; Target that unit.\n~(If you cannot make this move, you cannot attack). ",
+      "description": "Before the attack: Move 2 spaces in a straight\nline through an enemy unit; target that unit.\n~(If you cannot make this move, you cannot attack). ",
       "color": "GOLD",
       "initiative": 13,
       "primaryAction": "ATTACK",
@@ -4195,7 +4188,7 @@
     },
     {
       "name": "Blend Into Shadows",
-      "description": "If adjacent to an obstacle, place yourself into\na space in radius not adjacent to an enemy\nunit. If you do, **Next turn:** You are immune,\nand may move through units.",
+      "description": "If you are adjacent to an obstacle, place\nyourself into a space in radius not adjacent\nto an enemy unit. If you do, **Next turn:** You\nare immune, and may move through units.",
       "color": "SILVER",
       "initiative": 3,
       "primaryAction": "SKILL",
@@ -4221,7 +4214,7 @@
     },
     {
       "name": "Hit and Run",
-      "description": "After the attack: Move up to 1 space.",
+      "description": "Target a unit adjacent to you.\nAfter the attack: You may move 1 space.",
       "color": "RED",
       "level": 1,
       "initiative": 9,
@@ -4257,7 +4250,7 @@
     },
     {
       "name": "Combat Reflexes",
-      "description": "Before or After the attack:\nMove up to 1 space.",
+      "description": "Before the attack: You may move 1 space.\nTarget a unit adjacent to you.\nAfter the attack: If you did not move before\nthe attack, you may move 1 space.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -4352,7 +4345,7 @@
     },
     {
       "name": "Leaping Strike",
-      "description": "Before the attack: Move up to 1 space.\nAfter the attack: Move up to 1 space.",
+      "description": "Before the attack: Move up to 1 space.\nTarget a unit adjacent to you.\nAfter the attack: Move up to 1 space.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -4417,7 +4410,7 @@
     },
     {
       "name": "Poisoned Dart",
-      "description": "Give a hero in range a ::marker_poison:: poison marker.\nEach ::initiative:: Initiative, ::attack_silver:: Attack, and ::defense_silver:: Defense\nitem of a hero with a poison marker reduce\nthat value by 1, instead of increasing it by 1.",
+      "description": "Give a hero in range a ::marker_poison:: poison marker.\nEach ::initiative:: Initiative, ::item_attack:: Attack, and ::item_defense:: Defense\nitem of a hero with a poison marker reduce\nthat value by 1, instead of increasing it by 1.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -4436,7 +4429,7 @@
   "trinkets": [
     {
       "name": "Rapid Deployment",
-      "description": "**Choose one —**\n>>You may remove the turret. Move up to\n>3 spaces and place the Turret into an\n>adjacent space. It counts as terrain.\n>>An enemy hero in range of both you and\n>the Turret discards a card, if able.\n>>Defeat an enemy minion in range of both\n>you and the Turret.",
+      "description": "**Choose one —**\n>>You may remove the turret. Move up to 3\n>spaces and place the Turret into a space\n>adjacent to you. It counts as terrain.\n>>An enemy hero in range of both you and\n>the Turret discards a card, if able.\n>>Defeat a minion in range of both you and\n>the Turret.",
       "color": "GOLD",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -4459,7 +4452,7 @@
     },
     {
       "name": "Salvage Parts",
-      "description": "**Choose one —**\n>>Place the Turret into an adjacent space.\n>It counts as terrain.\n>>Remove the Turret. If you do, move\n>up to 3 spaces.",
+      "description": "**Choose one —**\n>>You may remove the Turret. Place the\n>Turret into a space adjacent to you.\n>It counts as terrain.\n>>Remove the Turret. Move up to 3 spaces.",
       "color": "SILVER",
       "initiative": 5,
       "primaryAction": "SKILL",
@@ -4467,7 +4460,7 @@
     },
     {
       "name": "Fortified Positions",
-      "description": "Whenever you perform an action, barrier\ntokens and friendly minions count as a Turret.",
+      "description": "Whenever you perform an action,\nyou can count any barrier token, or a\nfriendly minion, in play count as the Turret.",
       "color": "PURPLE",
       "level": 4
     },
@@ -4510,7 +4503,7 @@
     },
     {
       "name": "Disruptor Pulse",
-      "description": "Cancel skills with active effects of enemies in\nradius of the Turret. **This turn:** Enemy heroes\nin radius of the Turret cannot perform skills.",
+      "description": "You may cancel skills with active effects\nof enemies in radius of the Turret.\n**This turn:** Enemy heroes in radius of\nthe Turret cannot perform skills.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -4604,7 +4597,7 @@
         "first": 2,
         "second": 2
       },
-      "initiative": 4,
+      "initiative": 3,
       "primaryAction": "SKILL",
       "modifier": "AREA",
       "modifierValue": 3,
@@ -4614,7 +4607,7 @@
     },
     {
       "name": "Disruptor Grid",
-      "description": "Cancel skills with active effects of\nenemies in radius of the Turret.\n**This turn and next turn:** Enemies in\nradius of the Turret cannot perform skills.",
+      "description": "You may cancel skills with active effects\nof enemies in radius of the Turret.\n**This turn and next turn:** Enemies in\nradius of the Turret cannot perform skills.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -4741,7 +4734,7 @@
     },
     {
       "name": "Angry Roar",
-      "description": "Push adjacent enemy minions up\nto 1 space. If enraged, you may\nretrieve a resolved attack card.\n**This round:** You are enraged.",
+      "description": "Push enemy minions adjacent to\nyou up to 1 space. If enraged, you\nmay retrieve a resolved attack card.\n**This round:** You are enraged.",
       "color": "SILVER",
       "initiative": 11,
       "primaryAction": "DEFENSE_SKILL",
@@ -4749,13 +4742,13 @@
     },
     {
       "name": "Unbound Fury",
-      "description": "You are always enraged. While an active\neffect on another card is also making you\nenraged, gain +2 ::movement_silver:: Movement.",
+      "description": "You are always enraged. While an active\neffect of one or more other cards is also\nmaking you enraged, gain +2 ::movement_silver:: Movement.",
       "color": "PURPLE",
       "level": 4
     },
     {
       "name": "Prowling Brute",
-      "description": "If enraged, you may swap with an adjacent\nminion after you perform this action.\n~(You may choose to move 0 spaces and still swap).",
+      "description": "If enraged, after you perform this action, you\nmay swap with a minion adjacent to you.\n~(You may choose to move 0 spaces and still swap).",
       "color": "BLUE",
       "level": 1,
       "initiative": 9,
@@ -4790,7 +4783,7 @@
     },
     {
       "name": "Rampaging Beast",
-      "description": "If enraged, you may swap with an adjacent\nunit, or a token, after you perform this action.",
+      "description": "If enraged, after you perform this\naction, you may swap with a unit\nor a token adjacent to you.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -4840,7 +4833,7 @@
     },
     {
       "name": "Hulking Menace",
-      "description": "**This round:** While enraged, enemy units\ncannot move through spaces adjacent to you.\n~(They can move into, or out of those spaces, but not both).",
+      "description": "If enraged, **this round:** Enemy units cannot\nmove through spaces adjacent to you.\n~(They can move into, or out of those spaces, but not both).",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -4855,7 +4848,7 @@
     },
     {
       "name": "Rip",
-      "description": "After the attack: If you are enraged, and\nthe target is defeated, gain 1 extra coin.\n**This round:** you are enraged.",
+      "description": "Target a unit adjacent to you. After the\nattack: If you are enraged, and the\ntarget was defeated, gain 1 extra coin.\n**This round:** you are enraged.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -4886,7 +4879,7 @@
     },
     {
       "name": "Unstoppable Force",
-      "description": "If enraged, you may swap with an\nadjacent unit, or a token, before\nor after you perform this action.",
+      "description": "If enraged, before or after you\nperform this action, you may swap\nwith a unit or a token adjacent to you.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -4936,7 +4929,7 @@
     },
     {
       "name": "Immovable Object",
-      "description": "**This round:** While enraged, enemy units\ncannot move through spaces adjacent to you.\nYou cannot be made to leave your space by\nenemy heroes. Ignore any effects that limit,\nreduce, or prevent movement.",
+      "description": "If enraged, **this round:** Enemy units cannot\nmove through spaces adjacent to you. You\ncannot be placed, pushed, moved, swapped,\nor forced to move by enemy heroes. Ignore the\neffects that limit, reduce, or prevent movement.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -4951,7 +4944,7 @@
     },
     {
       "name": "Tear",
-      "description": "After the attack: If you are enraged, and\nthe target is defeated, gain 3 extra coins; If you\ndefeat a hero, that hero spends 1 extra ::life_counters::\nLife counter. **This round:** you are enraged.",
+      "description": "Target a unit adjacent to you. After the attack:\nIf you are enraged, and the target was\ndefeated, gain 3 extra coins; If a hero was\ndefeated, that hero spends 1 extra ::life_counters:: Life\ncounter. **This round:** you are enraged.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -4961,8 +4954,8 @@
       "initiative": 9,
       "primaryAction": "ATTACK",
       "primaryValue": 7,
-      "secondaryMovement": 4,
-      "secondaryDefense": 7,
+      "secondaryMovement": 3,
+      "secondaryDefense": 8,
       "item": "INITIATIVE"
     },
     {
@@ -5021,7 +5014,7 @@
     },
     {
       "name": "Lift Up",
-      "description": "Move a non-adjacent unit or a token in\nradius up to 1 space, without moving\nit away from you, or closer to you.",
+      "description": "Move a unit or a token not adjacent to\nyou and in radius, up to 1 space, without\nmoving it away from you, or closer to you.",
       "color": "BLUE",
       "level": 1,
       "initiative": 9,
@@ -5033,7 +5026,7 @@
     },
     {
       "name": "Shock",
-      "description": "Target an adjacent unit. Before the attack:\nUp to one adjacent enemy hero, except the\ntarget, discards a card, if able.",
+      "description": "Target a unit adjacent to you. Before the\nattack: Up to one enemy hero adjacent to you,\nexcept the target, discards a card, if able.",
       "color": "RED",
       "level": 1,
       "initiative": 8,
@@ -5044,7 +5037,7 @@
     },
     {
       "name": "Stop Projectiles",
-      "description": "If the attacker is not adjacent,\nblock the attack.",
+      "description": "If the attacker is not adjacent\nto you, block a ranged attack.",
       "color": "GREEN",
       "level": 1,
       "initiative": 4,
@@ -5054,7 +5047,7 @@
     },
     {
       "name": "Control Gravity",
-      "description": "Move a non-adjacent unit or a token in radius\nup to 1 space, without moving it away from\nyou, or closer to you. May repeat once.",
+      "description": "Move a unit or a token not adjacent to\nyou and in radius, up to 1 space, without\nmoving it away from you, or closer to you.\nMay repeat once.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -5071,7 +5064,7 @@
     },
     {
       "name": "Electrocute",
-      "description": "Target an adjacent unit. Before the attack:\nUp to one enemy hero in radius, except the\ntarget, discards a card, if able.",
+      "description": " Target a unit adjacent to you. Before the\n attack: Up to one enemy hero in radius,\n except the target, discards a card, if able.\n~(Even though there is a radius icon, this is a non-ranged attack\n~and the original target of the attack must be adjacent to you.)",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5089,7 +5082,7 @@
     },
     {
       "name": "Deflect Projectiles",
-      "description": "If the attacker is not adjacent, block\nthe attack. If you do, the attacker\ndiscards a card, if able.",
+      "description": "If the attacker is not adjacent to you,\nblock a ranged the attack. If you do, the\nattacker discards a card, if able.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -5104,7 +5097,7 @@
     },
     {
       "name": "Kinetic Repulse",
-      "description": "Push every adjacent enemy unit 2 spaces;\neach enemy hero that was stopped by an\nobstacle discards a card, if able.",
+      "description": "Push every enemy unit adjacent to you 2\nspaces; each enemy hero that was stopped\nby an obstacle discards a card, if able.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -5119,7 +5112,7 @@
     },
     {
       "name": "Charged Boomerang",
-      "description": "Cannot target units in a straight line from you.\n~(Adjacent units are in a straight line as well).",
+      "description": "Target a unit in range, not in a straight line.\n~(Adjacent units are in a straight line as well).",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5154,7 +5147,7 @@
     },
     {
       "name": "Center of Mass",
-      "description": "Move a non-adjacent unit or a token in radius\nup to 1 space, without moving it away from\nyou, or closer to you. Repeat up to two times.",
+      "description": "Move a unit or a token not adjacent to\nyou and in radius, up to 1 space, without\nmoving it away from you, or closer to you.\nMay repeat up to two times.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -5171,7 +5164,7 @@
     },
     {
       "name": "Electroblast",
-      "description": "Target an adjacent unit. Before the attack:\nUp to one enemy hero in radius, except the\ntarget, discards a card, or is defeated.",
+      "description": "Target a unit adjacent to you. Before the attack:\nUp to one enemy hero in radius, except the\ntarget, discards a card, or is defeated.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -5189,7 +5182,7 @@
     },
     {
       "name": "Reflect Projectiles",
-      "description": "If the attacker is not adjacent to you, block\nthe attack. If you do, the attacker discards\na card, if able, **This turn:** Only heroes\nadjacent to you can target you with an attack.",
+      "description": "If the attacker is not adjacent to you, block a\nranged attack. If you do, the attacker discards\na card, if able, **This turn:** You are immune to\nranged attacks of heroes not adjacent to you.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -5204,7 +5197,7 @@
     },
     {
       "name": "Kinetic Blast",
-      "description": "Push every adjacent enemy unit 3 spaces;\neach enemy hero that was stopped by an\nobstacle discards a card, if able.",
+      "description": "Push every enemy unit adjacent to you\n3 spaces; each enemy hero that was stopped\nby an obstacle discards a card, if able.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -5219,7 +5212,7 @@
     },
     {
       "name": "Thunder Boomerang",
-      "description": "Cannot target units in a straight line from you.\nIf you defeat an enemy hero, may repeat once.",
+      "description": "Target a unit in range, not in a straight line.\nIf you defeat an enemy hero, may repeat once.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -5256,7 +5249,7 @@
   "whisper": [
     {
       "name": "Swift Justice",
-      "description": "**Choose one —**\n>>An enemy hero in range discards a card,\n>if able; then, if able, that hero moves the\n>number of spaces equal to that card's\n>printed movement value in a straight line.\n>>Defeat an adjacent minion.",
+      "description": "**Choose one —**\n>>An enemy hero in range discards a card,\n>if able; then, if able, that hero moves the\n>number of spaces equal to that card's\n>printed movement value in a straight line.\n>>Defeat a minion adjacent to you.",
       "color": "GOLD",
       "initiative": 12,
       "primaryAction": "SKILL",
@@ -5295,7 +5288,7 @@
     },
     {
       "name": "Cause Fear",
-      "description": "Move up to 3 enemy minions in radius\nup to 1 space in the same direction;\nthey can be moved through obstacles.",
+      "description": "Move up to 3 enemy minions in radius\nup to 1 space in the same direction.",
       "color": "BLUE",
       "level": 1,
       "initiative": 10,
@@ -5307,16 +5300,16 @@
     },
     {
       "name": "Blood Trail",
-      "description": "Before the attack: Move up to 1 space for\nevery empty minion spawn point in radius in\nthe battle zone, up to a maximum of 2 spaces.",
+      "description": "Before the attack: Move up to 1 space for\nevery empty minion spawn point in radius\nin the battle zone, up to a maximum of\n2 spaces, then target a unit adjacent to you.",
       "color": "RED",
       "level": 1,
-      "initiative": 9,
+      "initiative": 8,
       "primaryAction": "ATTACK",
       "primaryValue": 4,
       "modifier": "AREA",
       "modifierValue": 1,
       "secondaryMovement": 4,
-      "secondaryDefense": 6
+      "secondaryDefense": 3
     },
     {
       "name": "Shadow Step",
@@ -5384,7 +5377,7 @@
     },
     {
       "name": "Lesser Evil",
-      "description": "An enemy hero in range **chooses one —**\n>>That hero discards a card, if able.\n>>You may defeat an adjacent minion.",
+      "description": "An enemy hero in range **chooses one —**\n>>That hero discards a card, if able.\n>>You defeat a minion adjacent to you.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -5401,7 +5394,7 @@
     },
     {
       "name": "Sense Blood",
-      "description": "If able, target a hero in range\nwith a card in their discard.\nOtherwise, target an adjacent unit.",
+      "description": "Target a hero in range with a card in the\ndiscard, or a unit adjacent to you.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5454,7 +5447,7 @@
     },
     {
       "name": "Sanguine Fury",
-      "description": "Before the attack: Move up to 1 space for\nevery empty minion spawn point in radius\nin the battle zone, up to a maximum of\n3 spaces, then target a unit adjacent to you.",
+      "description": "Before the attack: Move up to 2 spaces for\nevery empty minion spawn point in radius\nin the battle zone, up to a maximum of\n4 spaces, then target a unit adjacent to you.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -5489,7 +5482,7 @@
     },
     {
       "name": "Greater Good",
-      "description": "An enemy hero in range **chooses one —**\n>>That hero discards a card, or is defeated.\n>>You may defeat up to 3 adjacent minions.",
+      "description": "An enemy hero in range **chooses one —**\n>>That hero discards a card, or is defeated.\n>>You defeat up to 3 minions adjacent to you.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -5506,7 +5499,7 @@
     },
     {
       "name": "Blind Frenzy",
-      "description": "If able, target a hero in range with a card in\ntheir discard. Otherwise, target an adjacent\nunit. May repeat once on an different hero.",
+      "description": "Target a hero in range with a card in the\ndiscard, or a unit adjacent to you.\nMay repeat once on an different hero.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -5579,7 +5572,7 @@
     },
     {
       "name": "March of Nature",
-      "description": "Adjacent Tree tokens in a battle zone count as\nmelee minions immune to ranged attacks.",
+      "description": "Tree tokens in the battle zone count as\nmelee minions immune to ranged attacks\nas long as they are adjacent to you.",
       "color": "PURPLE",
       "level": 4
     },
@@ -5595,7 +5588,7 @@
     },
     {
       "name": "Nature's Protector",
-      "description": "Target a unit in range, adjacent to a tree token.",
+      "description": "Target a unit in range,\nadjacent to a tree token.",
       "color": "RED",
       "level": 1,
       "initiative": 7,
@@ -5608,7 +5601,7 @@
     },
     {
       "name": "Toss Away",
-      "description": "Move up to 1 space. Push an adjacent token\nup to 3 spaces. If the token is pushed 2 or\nmore spaces, an enemy hero adjacent to\nthat token discards a card, if able.    ",
+      "description": "Move up to 1 space. Push token adjacent\nto you up to 3 spaces. If the token is pushed\n2 or more spaces, an enemy hero adjacent\nto that token discards a card, if able.    ",
       "color": "GREEN",
       "level": 1,
       "initiative": 4,
@@ -5637,7 +5630,7 @@
     },
     {
       "name": "Nature's Guardian",
-      "description": "Target a unit in range, adjacent to a tree token.",
+      "description": "Target a unit in range,\nadjacent to a tree token.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5655,7 +5648,7 @@
     },
     {
       "name": "Mighty Throw",
-      "description": "Move up to 1 space. Push an adjacent token\nor a minion up to 4 spaces. If it is pushed 2 or\nmore spaces, an enemy hero adjacent to that\ntoken or a minion discards a card, if able.",
+      "description": "Move up to 1 space. Push a token or a minion\nadjacent to you up to 4 spaces. If it is pushed\n2 or more spaces, an enemy hero adjacent to\nthat token or a minion discards a card, if able.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -5670,7 +5663,7 @@
     },
     {
       "name": "Claim Dominance",
-      "description": "**This round:** Up to 1 adjacent non-immune\nenemy minion does not count towards the\nminion total during minion battle.",
+      "description": "**This round:** Up to 1 non-immune enemy\nminion adjacent to you does not count\ntowards the minion total during minion battle.",
       "color": "BLUE",
       "level": 2,
       "variant": {
@@ -5685,7 +5678,7 @@
     },
     {
       "name": "Trample",
-      "description": "If you move in a straight line: You may ignore\nunits; if you moved through an enemy hero,\nthat hero discards a card, or is defeated;\ndefeat up to 1 minion you moved through.",
+      "description": "If you move in a straight line: You may ignore\nobstacles; if you moved through an enemy\nhero, that hero discards a card, or is defeated;\ndefeat up to 1 minion you moved through.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5694,13 +5687,13 @@
       },
       "initiative": 7,
       "primaryAction": "MOVEMENT",
-      "primaryValue": 4,
+      "primaryValue": 3,
       "secondaryDefense": 7,
       "item": "DEFENSE"
     },
     {
       "name": "Into the Canopy",
-      "description": "Swap places with a tree token in radius.\nYou may then place a minion adjacent to\nthat tree token into a space adjacent to you.",
+      "description": "Swap with a tree token in radius.\nYou may then place a minion adjacent to\nthat tree token into a space adjacent to you.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -5734,7 +5727,7 @@
     },
     {
       "name": "Nature's Champion",
-      "description": "Target a unit in range, adjacent to a tree token.\nMay repeat once, targeting a different hero.",
+      "description": "Target a unit in range, adjacent to a tree\ntoken. May repeat once, on a different hero.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -5752,7 +5745,7 @@
     },
     {
       "name": "Monstrous Throw",
-      "description": "Move up to 1 space. Push an adjacent unit\nor a token up to 5 spaces. If it is pushed 2\nor more spaces, an enemy hero adjacent to\nthat unit or token discards a card, if able.",
+      "description": "Move up to 1 space. Push a unit or a token\nadjacent to you up to 5 spaces. If it is pushed\n2 or more spaces, an enemy hero adjacent\nto that unit or token discards a card, if able.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -5767,7 +5760,7 @@
     },
     {
       "name": "Assert Dominance",
-      "description": "**This round:** Up to 2 adjacent enemy minion\ndo not count towards the minion total during\nminion battle, regardless of immunity.",
+      "description": "**This round:** Up to 2 enemy minion adjacent\nto you do not count towards the minion total\nduring minion battle, regardless of immunity.",
       "color": "BLUE",
       "level": 3,
       "variant": {
@@ -5782,7 +5775,7 @@
     },
     {
       "name": "Angry Stampede",
-      "description": "If you move in a straight line: You may ignore\nunits; if you moved through an enemy hero,\nthat hero discards a card, or is defeated;\ndefeat up to 2 minion you moved through.",
+      "description": "If you move in a straight line: You may ignore\nobstacles; if you moved through an enemy\nhero, that hero discards a card, or is defeated;\ndefeat up to 2 minion you moved through.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -5791,13 +5784,13 @@
       },
       "initiative": 8,
       "primaryAction": "MOVEMENT",
-      "primaryValue": 4,
+      "primaryValue": 3,
       "secondaryDefense": 8,
       "item": "AREA"
     },
     {
       "name": "Treetop Ride",
-      "description": "Swap places with a tree token in radius.\nYou may then place a minion adjacent to that\ntree token into a space adjacent to you.",
+      "description": "Swap with a tree token in radius.\nYou may then place a minion adjacent to that\ntree token into a space adjacent to you.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -5816,7 +5809,7 @@
   "xargatha": [
     {
       "name": "Backlash",
-      "description": "**This turn:** After you discard a card for any\nreason, perform the primary action on an\nattack card in your discard, if able.\n~(First complete the action causing the discard).",
+      "description": "Target a unit adjacent to you. After the attack:\n**This turn:** After you discard a card for any\nreason, perform the primary action on an\nattack card in your discard, if able.\n~(First complete the action causing the discard).",
       "color": "GOLD",
       "initiative": 11,
       "primaryAction": "ATTACK",
@@ -5847,7 +5840,7 @@
     },
     {
       "name": "Metamorphosis",
-      "description": "You may move through obstacles.\nBefore you perform an action, one adjacent\nenemy hero discards a card, if able.",
+      "description": "You may move through obstacles.\nBefore you perform an action, one enemy\nhero adjacent to you discards a card, if able.",
       "color": "PURPLE",
       "level": 4
     },
@@ -5865,7 +5858,7 @@
     },
     {
       "name": "Dangerous Slash",
-      "description": "+1 ::attack_red:: Attack for every enemy\nunit adjacent to you.",
+      "description": "Target a unit adjacent to you. +1 ::attack_red:: Attack\nfor every enemy unit adjacent to you.\n~(Count all enemy units, including the target).",
       "color": "RED",
       "level": 1,
       "initiative": 7,
@@ -5877,7 +5870,7 @@
     },
     {
       "name": "Charming Aura",
-      "description": "**This round:** Enemy melee minions in\nradius count as if on your team for the\npurpose of defense modifiers.",
+      "description": "**This round:** Enemy melee minions\nin radius count as friendly when\ncalculating the defense totals.",
       "color": "GREEN",
       "level": 1,
       "initiative": 5,
@@ -5906,7 +5899,7 @@
     },
     {
       "name": "Deadly Swipe",
-      "description": "+2 ::attack_red:: Attack for every enemy\nunit adjacent to you.",
+      "description": "Target a unit adjacent to you. +2 ::attack_red:: Attack\nfor every enemy unit adjacent to you.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5923,7 +5916,7 @@
     },
     {
       "name": "Aura of Control",
-      "description": "**This round:** Enemy ranged and melee\nminions in radius count as if on your team\nfor the purpose of defense modifiers.",
+      "description": "**This round:** Enemy ranged and melee\nminions in radius count as friendly when\ncalculating the defense totals.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -5955,7 +5948,7 @@
     },
     {
       "name": "Long Thrust",
-      "description": "Target a unit not adjacent to you.",
+      "description": "Target a unit in range, not adjacent to you.",
       "color": "RED",
       "level": 2,
       "variant": {
@@ -5973,7 +5966,7 @@
     },
     {
       "name": "Constrict",
-      "description": "**Next turn:** Adjacent enemy heroes cannot\nmove, except when performing a movement\naction on a gold card or a red card.",
+      "description": "**Next turn:** Enemy heroes adjacent to you\ncannot move, except when performing a\nmovement action on a gold card or a red card.",
       "color": "GREEN",
       "level": 2,
       "variant": {
@@ -6005,7 +5998,7 @@
     },
     {
       "name": "Lethal Spin",
-      "description": "+3 ::attack_red:: Attack for every enemy\nunit adjacent to you.",
+      "description": "Target a unit adjacent to you. +3 ::attack_red:: Attack\nfor every enemy unit adjacent to you.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -6022,7 +6015,7 @@
     },
     {
       "name": "Aura of Domination",
-      "description": "**This round:** All enemy minions, including the\nimmune ones, in radius count as if on your\nteam for the purpose of defense modifiers.",
+      "description": "**This round:** All enemy minions in radius,\nincluding the immune ones, count as\nfriendly when calculating the defense totals.",
       "color": "GREEN",
       "level": 3,
       "variant": {
@@ -6054,7 +6047,7 @@
     },
     {
       "name": "Rapid Thrusts",
-      "description": "Target a unit not adjacent to you. After the\nattack: If you are adjacent to an enemy hero,\nmay repeat once on a different target.",
+      "description": "Target a unit in range, not adjacent to you.\nAfter the attack: If you are adjacent to\nan enemy hero, may repeat once\non a different target unit.",
       "color": "RED",
       "level": 3,
       "variant": {
@@ -6072,7 +6065,7 @@
     },
     {
       "name": "Deadly Embrace",
-      "description": "**Next turn:** Adjacent enemy heroes\ncannot move, except when performing\na movement action on a gold card.",
+      "description": "**Next turn:** Enemy heroes adjacent to you\ncannot move, except when performing a\nmovement action on a gold card.",
       "color": "GREEN",
       "level": 3,
       "variant": {
