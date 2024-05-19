@@ -3886,7 +3886,7 @@
       "item": "INITIATIVE"
     }
   ],
-  "heroes.getTali": [
+  "tali": [
     {
       "name": "Turn to Ice",
       "description": "**Choose one —**\n>>A hero in range with an unresolved card\n>may choose to retrieve that card. If they\n>do not, name a color. That hero discards\n>a card of that color, if able.\n>>Defeat a minion adjacent to you.",
