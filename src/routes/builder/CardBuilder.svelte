@@ -913,6 +913,98 @@
     downloadCanvas(heroCanvas, "hero.png")
   }
 
+  function downloadForPrintPt1() {
+    const heroCanvas = document.createElement("canvas")
+    heroCanvas.width = 3975
+    heroCanvas.height = 5622
+    const heroContext = heroCanvas.getContext("2d")!
+
+    const tempCanvas = document.createElement("canvas")
+    tempCanvas.width = 1192
+    tempCanvas.height = 1664
+    const tempContext = tempCanvas.getContext("2d")!
+
+    const cards = [
+      "gold", "blueIa", "blueIIa",
+      "silver", "redIa", "redIIa",
+      "purple", "greenIa", "greenIIa",
+    ]
+
+    for (let i = 0; i < 9; i++) {
+      updateCanvas(
+        tempCanvas,
+        tempContext,
+        customEmoji,
+        cardValues.get(cards[i])!.get("background"),
+        cardValues.get(cards[i])!.get("color"),
+        cardValues.get(cards[i])!.get("handicap"),
+        cardValues.get(cards[i])!.get("name"),
+        cardValues.get(cards[i])!.get("description"),
+        cardValues.get(cards[i])!.get("level"),
+        cardValues.get(cards[i])!.get("item"),
+        fieldToNumber(cardValues.get(cards[i])!.get("initiativeField")),
+        cardValues.get(cards[i])!.get("primaryActionType"),
+        fieldToNumber(cardValues.get(cards[i])!.get("primaryActionValueField")),
+        cardValues.get(cards[i])!.get("primaryActionValueSign"),
+        cardValues.get(cards[i])!.get("modifier"),
+        fieldToNumber(cardValues.get(cards[i])!.get("modifierValueField")),
+        cardValues.get(cards[i])!.get("modifierValueSign"),
+        fieldToNumber(cardValues.get(cards[i])!.get("secondaryMovementValueField")),
+        fieldToNumber(cardValues.get(cards[i])!.get("secondaryDefenseValueField")),
+      )
+      heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, (100 + 1192) * (i % 3), (210 + 1664) * Math.floor(i / 3), 1192, 1664)
+      tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height)
+    }
+
+    downloadCanvas(heroCanvas, "hero4print_1.png")
+  }
+
+  function downloadForPrintPt2() {
+    const heroCanvas = document.createElement("canvas")
+    heroCanvas.width = 3975
+    heroCanvas.height = 5622
+    const heroContext = heroCanvas.getContext("2d")!
+
+    const tempCanvas = document.createElement("canvas")
+    tempCanvas.width = 1192
+    tempCanvas.height = 1664
+    const tempContext = tempCanvas.getContext("2d")!
+
+    const cards = [
+      "blueIIb", "blueIIIa", "blueIIIb",
+      "redIIb", "redIIIa", "redIIIb",
+      "greenIIb", "greenIIIa", "greenIIIb",
+    ]
+
+    for (let i = 0; i < 9; i++) {
+      updateCanvas(
+        tempCanvas,
+        tempContext,
+        customEmoji,
+        cardValues.get(cards[i])!.get("background"),
+        cardValues.get(cards[i])!.get("color"),
+        cardValues.get(cards[i])!.get("handicap"),
+        cardValues.get(cards[i])!.get("name"),
+        cardValues.get(cards[i])!.get("description"),
+        cardValues.get(cards[i])!.get("level"),
+        cardValues.get(cards[i])!.get("item"),
+        fieldToNumber(cardValues.get(cards[i])!.get("initiativeField")),
+        cardValues.get(cards[i])!.get("primaryActionType"),
+        fieldToNumber(cardValues.get(cards[i])!.get("primaryActionValueField")),
+        cardValues.get(cards[i])!.get("primaryActionValueSign"),
+        cardValues.get(cards[i])!.get("modifier"),
+        fieldToNumber(cardValues.get(cards[i])!.get("modifierValueField")),
+        cardValues.get(cards[i])!.get("modifierValueSign"),
+        fieldToNumber(cardValues.get(cards[i])!.get("secondaryMovementValueField")),
+        fieldToNumber(cardValues.get(cards[i])!.get("secondaryDefenseValueField")),
+      )
+      heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, (100 + 1192) * (i % 3), (210 + 1664) * Math.floor(i / 3), 1192, 1664)
+      tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height)
+    }
+
+    downloadCanvas(heroCanvas, "hero4print_2.png")
+  }
+
   function downloadCanvas(canvas: HTMLCanvasElement, filename: string) {
     let anchor = document.createElement("a"), event
     anchor.download = filename
@@ -1382,6 +1474,12 @@
           <div class="col-span-1 flex justify-center">
             <Button class="w-40" on:click={loadFromJson}>Load from JSON</Button>
             <input id="inputJson" class="absolute w-0" type="file" on:change={event => onJsonSelected(event)}>
+          </div>
+          <div class="col-span-1 flex justify-center">
+            <Button class="w-40" on:click={downloadForPrintPt1}>Download for Print (Part 1)</Button>
+          </div>
+          <div class="col-span-1 flex justify-center">
+            <Button class="w-40" on:click={downloadForPrintPt2}>Download for Print (Part 2)</Button>
           </div>
         </div>
       </div>
