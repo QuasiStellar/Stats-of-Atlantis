@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e29e8208-8b5b-49af-84b5-5a579579a1c4" name="Changes" comment="Add download for print buttons in hero builder">
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scale" />
+        <option value="+card_builder" />
+        <option value="+page" />
+        <option value="CardGrid" />
+        <option value="Images" />
+        <option value="TypeScript File" />
+        <option value="About" />
+        <option value="JavaScript File" />
+        <option value="+error" />
+        <option value="HTML File" />
+        <option value="Dialog" />
+        <option value="Card" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="SOFT" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;QuasiStellar&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="master" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/QuasiStellar/Stats-of-Atlantis.git&quot;,
+    &quot;accountId&quot;: &quot;431bbc36-12d7-48c5-88f3-e2e52ff6ea6d&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2VUGrbmLynTxORlVKmKgXYjZZ3o" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Projects/WebstormProjects/StatsOfAtlantis&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.gh-pages.executor&quot;: &quot;Run&quot;,
+    &quot;prettier.import.notification.dismissed&quot;: &quot;true&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;D:\\Projects\\WebstormProjects\\StatsOfAtlantis\\node_modules\\prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;consents&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\Projects\\WebstormProjects\\StatsOfAtlantis\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;TEXT&quot;,
+      &quot;JSON&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\xargatha" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\wuk" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\whisper" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\wasp" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\ursafar" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\xargatha" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\wuk" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\whisper" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\wasp" />
+      <recent name="D:\Projects\WebstormProjects\StatsOfAtlantis\src\lib\images\cards\ursafar" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.gh-pages">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="check" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="gh-pages" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="gh-pages" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="preview" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="preview" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.gh-pages" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.preview" />
+        <item itemvalue="npm.check" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-822845ee3bb5-JavaScript-WS-243.23654.157" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e29e8208-8b5b-49af-84b5-5a579579a1c4" name="Changes" comment="" />
+      <created>1694883446418</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1694883446418</updated>
+      <workItem from="1694883448612" duration="9083000" />
+      <workItem from="1694951842129" duration="12446000" />
+      <workItem from="1695050655529" duration="4143000" />
+      <workItem from="1695054846435" duration="11743000" />
+      <workItem from="1695153715738" duration="3807000" />
+      <workItem from="1695245557245" duration="6186000" />
+      <workItem from="1695311444553" duration="14910000" />
+      <workItem from="1695411864517" duration="4638000" />
+      <workItem from="1695468247701" duration="34773000" />
+      <workItem from="1695568812675" duration="18368000" />
+      <workItem from="1695666767962" duration="1045000" />
+      <workItem from="1695667832951" duration="11476000" />
+      <workItem from="1695928023134" duration="9246000" />
+      <workItem from="1696005870001" duration="4162000" />
+      <workItem from="1696158443336" duration="1375000" />
+      <workItem from="1696264543277" duration="591000" />
+      <workItem from="1696689886518" duration="18235000" />
+      <workItem from="1696782029051" duration="3912000" />
+      <workItem from="1697059219087" duration="85679000" />
+      <workItem from="1698178524085" duration="10329000" />
+      <workItem from="1698264312833" duration="178611000" />
+      <workItem from="1699571269026" duration="2832000" />
+      <workItem from="1699647155653" duration="12841000" />
+      <workItem from="1699800777570" duration="639000" />
+      <workItem from="1700399951052" duration="31722000" />
+      <workItem from="1701125489895" duration="33086000" />
+      <workItem from="1701557836377" duration="283000" />
+      <workItem from="1701558123607" duration="32000" />
+      <workItem from="1701558156499" duration="62359000" />
+      <workItem from="1702204766658" duration="17841000" />
+      <workItem from="1702291342598" duration="97611000" />
+      <workItem from="1702948035161" duration="12709000" />
+      <workItem from="1704651348215" duration="2236000" />
+      <workItem from="1705251913380" duration="2788000" />
+      <workItem from="1706528179276" duration="599000" />
+      <workItem from="1707611878303" duration="2719000" />
+      <workItem from="1710542332752" duration="1507000" />
+      <workItem from="1712774019856" duration="5845000" />
+      <workItem from="1713391476344" duration="1200000" />
+      <workItem from="1714571454203" duration="5492000" />
+      <workItem from="1715968781215" duration="38850000" />
+      <workItem from="1716154620796" duration="6485000" />
+      <workItem from="1716808512039" duration="16609000" />
+      <workItem from="1731163646747" duration="3850000" />
+      <workItem from="1737836403164" duration="35000" />
+      <workItem from="1737842813372" duration="2553000" />
+      <workItem from="1737845434876" duration="416000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <option name="closed" value="true" />
+      <created>1701531142275</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701531142275</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add relative path setting">
+      <option name="closed" value="true" />
+      <created>1701544701079</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701544701079</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add --nojekyll option to gh-pages">
+      <option name="closed" value="true" />
+      <created>1701564052346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701564052346</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Remove base path from config">
+      <option name="closed" value="true" />
+      <created>1701564101059</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701564101059</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Fix font loading">
+      <option name="closed" value="true" />
+      <created>1701636283910</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701636283910</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Update heroes.json with fixes">
+      <option name="closed" value="true" />
+      <created>1701730324735</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1701730324735</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Add remaining heroes &amp; add avatars and stats to hero pages">
+      <option name="closed" value="true" />
+      <created>1701825128294</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1701825128294</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fix hero info and avatars">
+      <option name="closed" value="true" />
+      <created>1701899243595</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1701899243595</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Update 404 error image">
+      <option name="closed" value="true" />
+      <created>1701899508971</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1701899508971</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Fix Fortify card modifier">
+      <option name="closed" value="true" />
+      <created>1701899672185</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1701899672185</updated>
+    </task>
+    <task id="LOCAL-00011" summary="No-numbers mode">
+      <option name="closed" value="true" />
+      <created>1702238214155</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1702238214155</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Stat preview in card builder">
+      <option name="closed" value="true" />
+      <created>1702305955707</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1702305955707</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Adaptive design for tablets">
+      <option name="closed" value="true" />
+      <created>1702338050336</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1702338050336</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Adaptive card grid design for tablets">
+      <option name="closed" value="true" />
+      <created>1702338106205</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1702338106205</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Adaptive card grid design for phones">
+      <option name="closed" value="true" />
+      <created>1702414659620</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1702414659620</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Fix big picture display">
+      <option name="closed" value="true" />
+      <created>1702496842986</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1702496842986</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Add close button to bigger picture">
+      <option name="closed" value="true" />
+      <created>1702497226983</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1702497226983</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Fix broken card backgrounds">
+      <option name="closed" value="true" />
+      <created>1702503182897</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1702503182897</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fix main page loading template">
+      <option name="closed" value="true" />
+      <created>1702506617573</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1702506617573</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fix main page loading template">
+      <option name="closed" value="true" />
+      <created>1702506646657</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1702506646657</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Fix main page banner border">
+      <option name="closed" value="true" />
+      <created>1702509104250</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1702509104250</updated>
+    </task>
+    <task id="LOCAL-00022" summary="Fix handicap card display">
+      <option name="closed" value="true" />
+      <created>1702509357250</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1702509357250</updated>
+    </task>
+    <task id="LOCAL-00023" summary="Gradual card display upon download">
+      <option name="closed" value="true" />
+      <created>1702512550571</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1702512550571</updated>
+    </task>
+    <task id="LOCAL-00024" summary="Fix stat viewer in card builder">
+      <option name="closed" value="true" />
+      <created>1702514497203</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1702514497203</updated>
+    </task>
+    <task id="LOCAL-00025" summary="Add a github link">
+      <option name="closed" value="true" />
+      <created>1702517708267</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1702517708267</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Add hero tokens and markers as emoji">
+      <option name="closed" value="true" />
+      <created>1702522537648</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1702522537648</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Remove colored outlines from bottom parts of level-2/3 cards">
+      <option name="closed" value="true" />
+      <created>1702524602798</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1702524602798</updated>
+    </task>
+    <task id="LOCAL-00028" summary="Add idea inspection profile">
+      <option name="closed" value="true" />
+      <created>1702524694436</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1702524694436</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Header info fixes">
+      <option name="closed" value="true" />
+      <created>1702590206036</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1702590206037</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Use old images for cards">
+      <option name="closed" value="true" />
+      <created>1702748022270</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1702748022270</updated>
+    </task>
+    <task id="LOCAL-00031" summary="Fix Ignatia Gold card text">
+      <option name="closed" value="true" />
+      <created>1702748083917</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1702748083917</updated>
+    </task>
+    <task id="LOCAL-00032" summary="Add missing Misa's handicap">
+      <option name="closed" value="true" />
+      <created>1702772655203</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1702772655203</updated>
+    </task>
+    <task id="LOCAL-00033" summary="Add missing range on Throwing Spear">
+      <option name="closed" value="true" />
+      <created>1702774592784</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1702774592784</updated>
+    </task>
+    <task id="LOCAL-00034" summary="Add full set editing functionality to card builder">
+      <option name="closed" value="true" />
+      <created>1702776480728</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1702776480728</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Fix card rounding">
+      <option name="closed" value="true" />
+      <created>1702858755654</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1702858755654</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Fix Blood Trail card stats">
+      <option name="closed" value="true" />
+      <created>1702859014856</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1702859014856</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Hero stats selection in card builder">
+      <option name="closed" value="true" />
+      <created>1702945280259</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1702945280259</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Json export/import">
+      <option name="closed" value="true" />
+      <created>1702954440893</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1702954440893</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Fix a crash related to backgrounds in json">
+      <option name="closed" value="true" />
+      <created>1704653594757</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1704653594757</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Fix blank backgrounds in catalogue">
+      <option name="closed" value="true" />
+      <created>1705338917521</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1705338917521</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Revert &quot;Use old images for cards&quot;&#10;&#10;This reverts commit 299af534">
+      <option name="closed" value="true" />
+      <created>1707613262271</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1707613262271</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fix various card errors">
+      <option name="closed" value="true" />
+      <created>1716063933875</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1716063933875</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Tali name fixed in heroes config">
+      <option name="closed" value="true" />
+      <created>1716155175650</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1716155175650</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Add download for print buttons in hero builder">
+      <option name="closed" value="true" />
+      <created>1737844195584</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1737844195584</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix handicap card display" />
+    <MESSAGE value="Gradual card display upon download" />
+    <MESSAGE value="Fix stat viewer in card builder" />
+    <MESSAGE value="Add a github link" />
+    <MESSAGE value="Add hero tokens and markers as emoji" />
+    <MESSAGE value="Remove colored outlines from bottom parts of level-2/3 cards" />
+    <MESSAGE value="Add idea inspection profile" />
+    <MESSAGE value="Header info fixes" />
+    <MESSAGE value="Use old images for cards" />
+    <MESSAGE value="Fix Ignatia Gold card text" />
+    <MESSAGE value="Add missing Misa's handicap" />
+    <MESSAGE value="multicard edit" />
+    <MESSAGE value="Add missing range on Throwing Spear" />
+    <MESSAGE value="Add full set editing functionality to card builder" />
+    <MESSAGE value="Fix card rounding" />
+    <MESSAGE value="Fix Blood Trail card stats" />
+    <MESSAGE value="Hero stats selection in card builder" />
+    <MESSAGE value="Json export/import" />
+    <MESSAGE value="Fix a crash related to backgrounds in json" />
+    <MESSAGE value="Fix blank backgrounds in catalogue" />
+    <MESSAGE value="Revert &quot;Use old images for cards&quot;&#10;&#10;This reverts commit 299af534" />
+    <MESSAGE value="Fix various card errors" />
+    <MESSAGE value="GRAPHICS UPGRADE" />
+    <MESSAGE value="Tali name fixed in heroes config" />
+    <MESSAGE value="Add download for print buttons in hero builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add download for print buttons in hero builder" />
+  </component>
+</project>

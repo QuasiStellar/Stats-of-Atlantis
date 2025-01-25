@@ -1,0 +1,16 @@
+{
+	"/": [
+		"src/routes/+page.ts",
+		"src/routes/+layout.ts",
+		"src/routes/+layout.ts"
+	],
+	"/about": [
+		"src/routes/+layout.ts"
+	],
+	"/builder": [
+		"src/routes/+layout.ts"
+	],
+	"/[hero]": [
+		"src/routes/+layout.ts"
+	]
+}

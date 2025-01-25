@@ -1,0 +1,2583 @@
+{
+  ".svelte-kit/generated/server/internal.js": {
+    "file": "internal.js",
+    "imports": [
+      "_internal.js"
+    ],
+    "isEntry": true,
+    "src": ".svelte-kit/generated/server/internal.js"
+  },
+  "_Button.js": {
+    "file": "chunks/Button.js",
+    "imports": [
+      "_ssr.js",
+      "_names.js"
+    ]
+  },
+  "_Card.js": {
+    "file": "chunks/Card.js",
+    "imports": [
+      "_ssr.js",
+      "_Frame.js"
+    ]
+  },
+  "_Checkbox.js": {
+    "file": "chunks/Checkbox.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_Frame.js": {
+    "file": "chunks/Frame.js",
+    "imports": [
+      "_ssr.js",
+      "_names.js"
+    ]
+  },
+  "_Img.js": {
+    "file": "chunks/Img.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_Tooltip.js": {
+    "file": "chunks/Tooltip.js",
+    "imports": [
+      "_ssr.js",
+      "_Frame.js"
+    ]
+  },
+  "_index.js": {
+    "file": "chunks/index.js"
+  },
+  "_index2.js": {
+    "file": "chunks/index2.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_internal.js": {
+    "file": "chunks/internal.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "_names.js": {
+    "file": "chunks/names.js"
+  },
+  "_ssr.js": {
+    "file": "chunks/ssr.js"
+  },
+  "_states.js": {
+    "file": "chunks/states.js"
+  },
+  "_stores.js": {
+    "file": "chunks/stores.js",
+    "imports": [
+      "_ssr.js"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/server/index.js": {
+    "file": "index.js",
+    "imports": [
+      "_internal.js",
+      "_index.js",
+      "_index2.js"
+    ],
+    "isEntry": true,
+    "src": "node_modules/@sveltejs/kit/src/runtime/server/index.js"
+  },
+  "src/lib/fonts/modesto_poster.woff": {
+    "file": "_app/immutable/assets/modesto_poster.50b150e0.woff",
+    "src": "src/lib/fonts/modesto_poster.woff"
+  },
+  "src/lib/images/area_blue.png": {
+    "file": "_app/immutable/assets/area_blue.a17f5715.png",
+    "src": "src/lib/images/area_blue.png"
+  },
+  "src/lib/images/area_gold.png": {
+    "file": "_app/immutable/assets/area_gold.65e79db3.png",
+    "src": "src/lib/images/area_gold.png"
+  },
+  "src/lib/images/area_green.png": {
+    "file": "_app/immutable/assets/area_green.e23e79f0.png",
+    "src": "src/lib/images/area_green.png"
+  },
+  "src/lib/images/area_purple.png": {
+    "file": "_app/immutable/assets/area_purple.5f38f93b.png",
+    "src": "src/lib/images/area_purple.png"
+  },
+  "src/lib/images/area_red.png": {
+    "file": "_app/immutable/assets/area_red.63bceeb5.png",
+    "src": "src/lib/images/area_red.png"
+  },
+  "src/lib/images/area_silver.png": {
+    "file": "_app/immutable/assets/area_silver.bf142951.png",
+    "src": "src/lib/images/area_silver.png"
+  },
+  "src/lib/images/attack_blue.png": {
+    "file": "_app/immutable/assets/attack_blue.a8aef151.png",
+    "src": "src/lib/images/attack_blue.png"
+  },
+  "src/lib/images/attack_gold.png": {
+    "file": "_app/immutable/assets/attack_gold.b65d4b04.png",
+    "src": "src/lib/images/attack_gold.png"
+  },
+  "src/lib/images/attack_green.png": {
+    "file": "_app/immutable/assets/attack_green.f3d0c1a0.png",
+    "src": "src/lib/images/attack_green.png"
+  },
+  "src/lib/images/attack_red.png": {
+    "file": "_app/immutable/assets/attack_red.077425e1.png",
+    "src": "src/lib/images/attack_red.png"
+  },
+  "src/lib/images/attack_silver.png": {
+    "file": "_app/immutable/assets/attack_silver.f695c31f.png",
+    "src": "src/lib/images/attack_silver.png"
+  },
+  "src/lib/images/avatars/arien.png": {
+    "file": "_app/immutable/assets/arien.f31bfd23.png",
+    "src": "src/lib/images/avatars/arien.png"
+  },
+  "src/lib/images/avatars/bain.png": {
+    "file": "_app/immutable/assets/bain.b8e6a83f.png",
+    "src": "src/lib/images/avatars/bain.png"
+  },
+  "src/lib/images/avatars/brogan.png": {
+    "file": "_app/immutable/assets/brogan.843e72f9.png",
+    "src": "src/lib/images/avatars/brogan.png"
+  },
+  "src/lib/images/avatars/cutter.png": {
+    "file": "_app/immutable/assets/cutter.d72a1877.png",
+    "src": "src/lib/images/avatars/cutter.png"
+  },
+  "src/lib/images/avatars/dodger.png": {
+    "file": "_app/immutable/assets/dodger.908df38c.png",
+    "src": "src/lib/images/avatars/dodger.png"
+  },
+  "src/lib/images/avatars/garrus.png": {
+    "file": "_app/immutable/assets/garrus.09dedee3.png",
+    "src": "src/lib/images/avatars/garrus.png"
+  },
+  "src/lib/images/avatars/hanu.png": {
+    "file": "_app/immutable/assets/hanu.51cc661a.png",
+    "src": "src/lib/images/avatars/hanu.png"
+  },
+  "src/lib/images/avatars/ignatia.png": {
+    "file": "_app/immutable/assets/ignatia.2b9a46a9.png",
+    "src": "src/lib/images/avatars/ignatia.png"
+  },
+  "src/lib/images/avatars/min.png": {
+    "file": "_app/immutable/assets/min.48807c3f.png",
+    "src": "src/lib/images/avatars/min.png"
+  },
+  "src/lib/images/avatars/misa.png": {
+    "file": "_app/immutable/assets/misa.e7e9e527.png",
+    "src": "src/lib/images/avatars/misa.png"
+  },
+  "src/lib/images/avatars/nebkher.png": {
+    "file": "_app/immutable/assets/nebkher.5f45ac1a.png",
+    "src": "src/lib/images/avatars/nebkher.png"
+  },
+  "src/lib/images/avatars/sabina.png": {
+    "file": "_app/immutable/assets/sabina.907a64c0.png",
+    "src": "src/lib/images/avatars/sabina.png"
+  },
+  "src/lib/images/avatars/silverarrow.png": {
+    "file": "_app/immutable/assets/silverarrow.1adc1679.png",
+    "src": "src/lib/images/avatars/silverarrow.png"
+  },
+  "src/lib/images/avatars/swift.png": {
+    "file": "_app/immutable/assets/swift.2ec8be9d.png",
+    "src": "src/lib/images/avatars/swift.png"
+  },
+  "src/lib/images/avatars/tali.png": {
+    "file": "_app/immutable/assets/tali.ea745023.png",
+    "src": "src/lib/images/avatars/tali.png"
+  },
+  "src/lib/images/avatars/tigerclaw.png": {
+    "file": "_app/immutable/assets/tigerclaw.342fdbf6.png",
+    "src": "src/lib/images/avatars/tigerclaw.png"
+  },
+  "src/lib/images/avatars/trinkets.png": {
+    "file": "_app/immutable/assets/trinkets.2e582384.png",
+    "src": "src/lib/images/avatars/trinkets.png"
+  },
+  "src/lib/images/avatars/ursafar.png": {
+    "file": "_app/immutable/assets/ursafar.ef382f79.png",
+    "src": "src/lib/images/avatars/ursafar.png"
+  },
+  "src/lib/images/avatars/wasp.png": {
+    "file": "_app/immutable/assets/wasp.37d1e368.png",
+    "src": "src/lib/images/avatars/wasp.png"
+  },
+  "src/lib/images/avatars/whisper.png": {
+    "file": "_app/immutable/assets/whisper.e4f35aa4.png",
+    "src": "src/lib/images/avatars/whisper.png"
+  },
+  "src/lib/images/avatars/wuk.png": {
+    "file": "_app/immutable/assets/wuk.af33ce96.png",
+    "src": "src/lib/images/avatars/wuk.png"
+  },
+  "src/lib/images/avatars/xargatha.png": {
+    "file": "_app/immutable/assets/xargatha.ac1aff91.png",
+    "src": "src/lib/images/avatars/xargatha.png"
+  },
+  "src/lib/images/avatars_full/arien.png": {
+    "file": "_app/immutable/assets/arien.5485c4f6.png",
+    "src": "src/lib/images/avatars_full/arien.png"
+  },
+  "src/lib/images/avatars_full/bain.png": {
+    "file": "_app/immutable/assets/bain.9377aed4.png",
+    "src": "src/lib/images/avatars_full/bain.png"
+  },
+  "src/lib/images/avatars_full/brogan.png": {
+    "file": "_app/immutable/assets/brogan.63aaf2ce.png",
+    "src": "src/lib/images/avatars_full/brogan.png"
+  },
+  "src/lib/images/avatars_full/cutter.png": {
+    "file": "_app/immutable/assets/cutter.7aef2cd3.png",
+    "src": "src/lib/images/avatars_full/cutter.png"
+  },
+  "src/lib/images/avatars_full/dodger.png": {
+    "file": "_app/immutable/assets/dodger.897eb767.png",
+    "src": "src/lib/images/avatars_full/dodger.png"
+  },
+  "src/lib/images/avatars_full/garrus.png": {
+    "file": "_app/immutable/assets/garrus.4d3d748d.png",
+    "src": "src/lib/images/avatars_full/garrus.png"
+  },
+  "src/lib/images/avatars_full/hanu.png": {
+    "file": "_app/immutable/assets/hanu.d36f5211.png",
+    "src": "src/lib/images/avatars_full/hanu.png"
+  },
+  "src/lib/images/avatars_full/ignatia.png": {
+    "file": "_app/immutable/assets/ignatia.5c873c47.png",
+    "src": "src/lib/images/avatars_full/ignatia.png"
+  },
+  "src/lib/images/avatars_full/min.png": {
+    "file": "_app/immutable/assets/min.c280bad4.png",
+    "src": "src/lib/images/avatars_full/min.png"
+  },
+  "src/lib/images/avatars_full/misa.png": {
+    "file": "_app/immutable/assets/misa.d226beeb.png",
+    "src": "src/lib/images/avatars_full/misa.png"
+  },
+  "src/lib/images/avatars_full/nebkher.png": {
+    "file": "_app/immutable/assets/nebkher.ee0982af.png",
+    "src": "src/lib/images/avatars_full/nebkher.png"
+  },
+  "src/lib/images/avatars_full/sabina.png": {
+    "file": "_app/immutable/assets/sabina.3fbd23fa.png",
+    "src": "src/lib/images/avatars_full/sabina.png"
+  },
+  "src/lib/images/avatars_full/silverarrow.png": {
+    "file": "_app/immutable/assets/silverarrow.10e5c693.png",
+    "src": "src/lib/images/avatars_full/silverarrow.png"
+  },
+  "src/lib/images/avatars_full/swift.png": {
+    "file": "_app/immutable/assets/swift.0e995e2d.png",
+    "src": "src/lib/images/avatars_full/swift.png"
+  },
+  "src/lib/images/avatars_full/tali.png": {
+    "file": "_app/immutable/assets/tali.90c0a77f.png",
+    "src": "src/lib/images/avatars_full/tali.png"
+  },
+  "src/lib/images/avatars_full/tigerclaw.png": {
+    "file": "_app/immutable/assets/tigerclaw.094a901a.png",
+    "src": "src/lib/images/avatars_full/tigerclaw.png"
+  },
+  "src/lib/images/avatars_full/trinkets.png": {
+    "file": "_app/immutable/assets/trinkets.db52f36a.png",
+    "src": "src/lib/images/avatars_full/trinkets.png"
+  },
+  "src/lib/images/avatars_full/ursafar.png": {
+    "file": "_app/immutable/assets/ursafar.2b7ed006.png",
+    "src": "src/lib/images/avatars_full/ursafar.png"
+  },
+  "src/lib/images/avatars_full/wasp.png": {
+    "file": "_app/immutable/assets/wasp.1ece2e7a.png",
+    "src": "src/lib/images/avatars_full/wasp.png"
+  },
+  "src/lib/images/avatars_full/whisper.png": {
+    "file": "_app/immutable/assets/whisper.95e5cbe0.png",
+    "src": "src/lib/images/avatars_full/whisper.png"
+  },
+  "src/lib/images/avatars_full/wuk.png": {
+    "file": "_app/immutable/assets/wuk.9f650602.png",
+    "src": "src/lib/images/avatars_full/wuk.png"
+  },
+  "src/lib/images/avatars_full/xargatha.png": {
+    "file": "_app/immutable/assets/xargatha.44790281.png",
+    "src": "src/lib/images/avatars_full/xargatha.png"
+  },
+  "src/lib/images/banner_blue_bottom.png": {
+    "file": "_app/immutable/assets/banner_blue_bottom.24e27677.png",
+    "src": "src/lib/images/banner_blue_bottom.png"
+  },
+  "src/lib/images/banner_blue_top.png": {
+    "file": "_app/immutable/assets/banner_blue_top.0850ab18.png",
+    "src": "src/lib/images/banner_blue_top.png"
+  },
+  "src/lib/images/banner_gold_bottom.png": {
+    "file": "_app/immutable/assets/banner_gold_bottom.acb10754.png",
+    "src": "src/lib/images/banner_gold_bottom.png"
+  },
+  "src/lib/images/banner_gold_top.png": {
+    "file": "_app/immutable/assets/banner_gold_top.1267a6ce.png",
+    "src": "src/lib/images/banner_gold_top.png"
+  },
+  "src/lib/images/banner_green_bottom.png": {
+    "file": "_app/immutable/assets/banner_green_bottom.fb5a01ab.png",
+    "src": "src/lib/images/banner_green_bottom.png"
+  },
+  "src/lib/images/banner_green_top.png": {
+    "file": "_app/immutable/assets/banner_green_top.bdf9a0bf.png",
+    "src": "src/lib/images/banner_green_top.png"
+  },
+  "src/lib/images/banner_red_bottom.png": {
+    "file": "_app/immutable/assets/banner_red_bottom.e7aa9041.png",
+    "src": "src/lib/images/banner_red_bottom.png"
+  },
+  "src/lib/images/banner_red_top.png": {
+    "file": "_app/immutable/assets/banner_red_top.9d999088.png",
+    "src": "src/lib/images/banner_red_top.png"
+  },
+  "src/lib/images/banner_silver_bottom.png": {
+    "file": "_app/immutable/assets/banner_silver_bottom.f6f3eda3.png",
+    "src": "src/lib/images/banner_silver_bottom.png"
+  },
+  "src/lib/images/banner_silver_top.png": {
+    "file": "_app/immutable/assets/banner_silver_top.18c51a6e.png",
+    "src": "src/lib/images/banner_silver_top.png"
+  },
+  "src/lib/images/bottom_long.png": {
+    "file": "_app/immutable/assets/bottom_long.93b4d18f.png",
+    "src": "src/lib/images/bottom_long.png"
+  },
+  "src/lib/images/bottom_short.png": {
+    "file": "_app/immutable/assets/bottom_short.f9349327.png",
+    "src": "src/lib/images/bottom_short.png"
+  },
+  "src/lib/images/cards/arien/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.a5b0d122.png",
+    "src": "src/lib/images/cards/arien/BlueIA.png"
+  },
+  "src/lib/images/cards/arien/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.e0b66c52.png",
+    "src": "src/lib/images/cards/arien/BlueIIA.png"
+  },
+  "src/lib/images/cards/arien/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.0d1e4f4a.png",
+    "src": "src/lib/images/cards/arien/BlueIIB.png"
+  },
+  "src/lib/images/cards/arien/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.0a520fff.png",
+    "src": "src/lib/images/cards/arien/BlueIIIA.png"
+  },
+  "src/lib/images/cards/arien/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.f5a3289c.png",
+    "src": "src/lib/images/cards/arien/BlueIIIB.png"
+  },
+  "src/lib/images/cards/arien/Gold.png": {
+    "file": "_app/immutable/assets/Gold.5f6f7e35.png",
+    "src": "src/lib/images/cards/arien/Gold.png"
+  },
+  "src/lib/images/cards/arien/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.601ded73.png",
+    "src": "src/lib/images/cards/arien/GreenIA.png"
+  },
+  "src/lib/images/cards/arien/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.06d0e6ac.png",
+    "src": "src/lib/images/cards/arien/GreenIIA.png"
+  },
+  "src/lib/images/cards/arien/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.283d204a.png",
+    "src": "src/lib/images/cards/arien/GreenIIB.png"
+  },
+  "src/lib/images/cards/arien/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.c29478d7.png",
+    "src": "src/lib/images/cards/arien/GreenIIIA.png"
+  },
+  "src/lib/images/cards/arien/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.3700a8cb.png",
+    "src": "src/lib/images/cards/arien/GreenIIIB.png"
+  },
+  "src/lib/images/cards/arien/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.7c08d702.png",
+    "src": "src/lib/images/cards/arien/Handicap.png"
+  },
+  "src/lib/images/cards/arien/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.401865f7.png",
+    "src": "src/lib/images/cards/arien/RedIA.png"
+  },
+  "src/lib/images/cards/arien/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.4255dea0.png",
+    "src": "src/lib/images/cards/arien/RedIIA.png"
+  },
+  "src/lib/images/cards/arien/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.7611476d.png",
+    "src": "src/lib/images/cards/arien/RedIIB.png"
+  },
+  "src/lib/images/cards/arien/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.2c89e5dc.png",
+    "src": "src/lib/images/cards/arien/RedIIIA.png"
+  },
+  "src/lib/images/cards/arien/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.af504f89.png",
+    "src": "src/lib/images/cards/arien/RedIIIB.png"
+  },
+  "src/lib/images/cards/arien/Silver.png": {
+    "file": "_app/immutable/assets/Silver.6ab56e50.png",
+    "src": "src/lib/images/cards/arien/Silver.png"
+  },
+  "src/lib/images/cards/arien/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.5fa947ce.png",
+    "src": "src/lib/images/cards/arien/Ultimate.png"
+  },
+  "src/lib/images/cards/bain/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.e5a1851a.png",
+    "src": "src/lib/images/cards/bain/BlueIA.png"
+  },
+  "src/lib/images/cards/bain/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.e5bc2b12.png",
+    "src": "src/lib/images/cards/bain/BlueIIA.png"
+  },
+  "src/lib/images/cards/bain/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.45a04bdb.png",
+    "src": "src/lib/images/cards/bain/BlueIIB.png"
+  },
+  "src/lib/images/cards/bain/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.9be45673.png",
+    "src": "src/lib/images/cards/bain/BlueIIIA.png"
+  },
+  "src/lib/images/cards/bain/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.677c31a7.png",
+    "src": "src/lib/images/cards/bain/BlueIIIB.png"
+  },
+  "src/lib/images/cards/bain/Gold.png": {
+    "file": "_app/immutable/assets/Gold.d4d039b6.png",
+    "src": "src/lib/images/cards/bain/Gold.png"
+  },
+  "src/lib/images/cards/bain/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.7912c03a.png",
+    "src": "src/lib/images/cards/bain/GreenIA.png"
+  },
+  "src/lib/images/cards/bain/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.51cad2f4.png",
+    "src": "src/lib/images/cards/bain/GreenIIA.png"
+  },
+  "src/lib/images/cards/bain/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.a580882b.png",
+    "src": "src/lib/images/cards/bain/GreenIIB.png"
+  },
+  "src/lib/images/cards/bain/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.7bdae31d.png",
+    "src": "src/lib/images/cards/bain/GreenIIIA.png"
+  },
+  "src/lib/images/cards/bain/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.1252771e.png",
+    "src": "src/lib/images/cards/bain/GreenIIIB.png"
+  },
+  "src/lib/images/cards/bain/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.360a2713.png",
+    "src": "src/lib/images/cards/bain/Handicap.png"
+  },
+  "src/lib/images/cards/bain/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.a2e81dc8.png",
+    "src": "src/lib/images/cards/bain/RedIA.png"
+  },
+  "src/lib/images/cards/bain/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.b6d0992c.png",
+    "src": "src/lib/images/cards/bain/RedIIA.png"
+  },
+  "src/lib/images/cards/bain/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.1747385a.png",
+    "src": "src/lib/images/cards/bain/RedIIB.png"
+  },
+  "src/lib/images/cards/bain/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.cfe69499.png",
+    "src": "src/lib/images/cards/bain/RedIIIA.png"
+  },
+  "src/lib/images/cards/bain/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.900de058.png",
+    "src": "src/lib/images/cards/bain/RedIIIB.png"
+  },
+  "src/lib/images/cards/bain/Silver.png": {
+    "file": "_app/immutable/assets/Silver.b9beb5de.png",
+    "src": "src/lib/images/cards/bain/Silver.png"
+  },
+  "src/lib/images/cards/bain/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.1dc4c7b6.png",
+    "src": "src/lib/images/cards/bain/Ultimate.png"
+  },
+  "src/lib/images/cards/brogan/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.4d719126.png",
+    "src": "src/lib/images/cards/brogan/BlueIA.png"
+  },
+  "src/lib/images/cards/brogan/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.c54f94b9.png",
+    "src": "src/lib/images/cards/brogan/BlueIIA.png"
+  },
+  "src/lib/images/cards/brogan/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.f389c95a.png",
+    "src": "src/lib/images/cards/brogan/BlueIIB.png"
+  },
+  "src/lib/images/cards/brogan/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.4dc5fdf0.png",
+    "src": "src/lib/images/cards/brogan/BlueIIIA.png"
+  },
+  "src/lib/images/cards/brogan/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.aca61b38.png",
+    "src": "src/lib/images/cards/brogan/BlueIIIB.png"
+  },
+  "src/lib/images/cards/brogan/Gold.png": {
+    "file": "_app/immutable/assets/Gold.81e24877.png",
+    "src": "src/lib/images/cards/brogan/Gold.png"
+  },
+  "src/lib/images/cards/brogan/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.ad6c58f7.png",
+    "src": "src/lib/images/cards/brogan/GreenIA.png"
+  },
+  "src/lib/images/cards/brogan/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.f8b2411e.png",
+    "src": "src/lib/images/cards/brogan/GreenIIA.png"
+  },
+  "src/lib/images/cards/brogan/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.26a4ddb8.png",
+    "src": "src/lib/images/cards/brogan/GreenIIB.png"
+  },
+  "src/lib/images/cards/brogan/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.e2d48ca3.png",
+    "src": "src/lib/images/cards/brogan/GreenIIIA.png"
+  },
+  "src/lib/images/cards/brogan/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.4da02651.png",
+    "src": "src/lib/images/cards/brogan/GreenIIIB.png"
+  },
+  "src/lib/images/cards/brogan/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.b0947ee0.png",
+    "src": "src/lib/images/cards/brogan/Handicap.png"
+  },
+  "src/lib/images/cards/brogan/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.d4dad7ca.png",
+    "src": "src/lib/images/cards/brogan/RedIA.png"
+  },
+  "src/lib/images/cards/brogan/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.1b60c91b.png",
+    "src": "src/lib/images/cards/brogan/RedIIA.png"
+  },
+  "src/lib/images/cards/brogan/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.e76ec04a.png",
+    "src": "src/lib/images/cards/brogan/RedIIB.png"
+  },
+  "src/lib/images/cards/brogan/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.c56a9a06.png",
+    "src": "src/lib/images/cards/brogan/RedIIIA.png"
+  },
+  "src/lib/images/cards/brogan/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.ade19ee5.png",
+    "src": "src/lib/images/cards/brogan/RedIIIB.png"
+  },
+  "src/lib/images/cards/brogan/Silver.png": {
+    "file": "_app/immutable/assets/Silver.eb15af2e.png",
+    "src": "src/lib/images/cards/brogan/Silver.png"
+  },
+  "src/lib/images/cards/brogan/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.5c60563c.png",
+    "src": "src/lib/images/cards/brogan/Ultimate.png"
+  },
+  "src/lib/images/cards/cutter/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.8b9ec1e4.png",
+    "src": "src/lib/images/cards/cutter/BlueIA.png"
+  },
+  "src/lib/images/cards/cutter/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.5d1fdad1.png",
+    "src": "src/lib/images/cards/cutter/BlueIIA.png"
+  },
+  "src/lib/images/cards/cutter/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.7d2d586b.png",
+    "src": "src/lib/images/cards/cutter/BlueIIB.png"
+  },
+  "src/lib/images/cards/cutter/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.bd04cd7f.png",
+    "src": "src/lib/images/cards/cutter/BlueIIIA.png"
+  },
+  "src/lib/images/cards/cutter/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.ea0fecf7.png",
+    "src": "src/lib/images/cards/cutter/BlueIIIB.png"
+  },
+  "src/lib/images/cards/cutter/Gold.png": {
+    "file": "_app/immutable/assets/Gold.3f418088.png",
+    "src": "src/lib/images/cards/cutter/Gold.png"
+  },
+  "src/lib/images/cards/cutter/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.08c11a8a.png",
+    "src": "src/lib/images/cards/cutter/GreenIA.png"
+  },
+  "src/lib/images/cards/cutter/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.36204302.png",
+    "src": "src/lib/images/cards/cutter/GreenIIA.png"
+  },
+  "src/lib/images/cards/cutter/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.8823ddd4.png",
+    "src": "src/lib/images/cards/cutter/GreenIIB.png"
+  },
+  "src/lib/images/cards/cutter/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.3cc296fa.png",
+    "src": "src/lib/images/cards/cutter/GreenIIIA.png"
+  },
+  "src/lib/images/cards/cutter/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.4b0552c6.png",
+    "src": "src/lib/images/cards/cutter/GreenIIIB.png"
+  },
+  "src/lib/images/cards/cutter/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.f6b525a0.png",
+    "src": "src/lib/images/cards/cutter/Handicap.png"
+  },
+  "src/lib/images/cards/cutter/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.c41306d7.png",
+    "src": "src/lib/images/cards/cutter/RedIA.png"
+  },
+  "src/lib/images/cards/cutter/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.1765d199.png",
+    "src": "src/lib/images/cards/cutter/RedIIA.png"
+  },
+  "src/lib/images/cards/cutter/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.33d8758a.png",
+    "src": "src/lib/images/cards/cutter/RedIIB.png"
+  },
+  "src/lib/images/cards/cutter/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.2a4138aa.png",
+    "src": "src/lib/images/cards/cutter/RedIIIA.png"
+  },
+  "src/lib/images/cards/cutter/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.a1860344.png",
+    "src": "src/lib/images/cards/cutter/RedIIIB.png"
+  },
+  "src/lib/images/cards/cutter/Silver.png": {
+    "file": "_app/immutable/assets/Silver.b0044567.png",
+    "src": "src/lib/images/cards/cutter/Silver.png"
+  },
+  "src/lib/images/cards/cutter/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.0bdfd5a5.png",
+    "src": "src/lib/images/cards/cutter/Ultimate.png"
+  },
+  "src/lib/images/cards/dodger/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.3683a1c9.png",
+    "src": "src/lib/images/cards/dodger/BlueIA.png"
+  },
+  "src/lib/images/cards/dodger/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.2663a2eb.png",
+    "src": "src/lib/images/cards/dodger/BlueIIA.png"
+  },
+  "src/lib/images/cards/dodger/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.cc64210a.png",
+    "src": "src/lib/images/cards/dodger/BlueIIB.png"
+  },
+  "src/lib/images/cards/dodger/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.b2a81ef6.png",
+    "src": "src/lib/images/cards/dodger/BlueIIIA.png"
+  },
+  "src/lib/images/cards/dodger/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.1cc6ed37.png",
+    "src": "src/lib/images/cards/dodger/BlueIIIB.png"
+  },
+  "src/lib/images/cards/dodger/Gold.png": {
+    "file": "_app/immutable/assets/Gold.d6e01fc6.png",
+    "src": "src/lib/images/cards/dodger/Gold.png"
+  },
+  "src/lib/images/cards/dodger/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.51c0ebf0.png",
+    "src": "src/lib/images/cards/dodger/GreenIA.png"
+  },
+  "src/lib/images/cards/dodger/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.82613e9c.png",
+    "src": "src/lib/images/cards/dodger/GreenIIA.png"
+  },
+  "src/lib/images/cards/dodger/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.055b9455.png",
+    "src": "src/lib/images/cards/dodger/GreenIIB.png"
+  },
+  "src/lib/images/cards/dodger/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.708d9e0a.png",
+    "src": "src/lib/images/cards/dodger/GreenIIIA.png"
+  },
+  "src/lib/images/cards/dodger/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.c42abcee.png",
+    "src": "src/lib/images/cards/dodger/GreenIIIB.png"
+  },
+  "src/lib/images/cards/dodger/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.c5c45534.png",
+    "src": "src/lib/images/cards/dodger/Handicap.png"
+  },
+  "src/lib/images/cards/dodger/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.962a4c34.png",
+    "src": "src/lib/images/cards/dodger/RedIA.png"
+  },
+  "src/lib/images/cards/dodger/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.a7f8a2ed.png",
+    "src": "src/lib/images/cards/dodger/RedIIA.png"
+  },
+  "src/lib/images/cards/dodger/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.9d10d5ef.png",
+    "src": "src/lib/images/cards/dodger/RedIIB.png"
+  },
+  "src/lib/images/cards/dodger/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.6398ea21.png",
+    "src": "src/lib/images/cards/dodger/RedIIIA.png"
+  },
+  "src/lib/images/cards/dodger/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.8750d4c2.png",
+    "src": "src/lib/images/cards/dodger/RedIIIB.png"
+  },
+  "src/lib/images/cards/dodger/Silver.png": {
+    "file": "_app/immutable/assets/Silver.3a489e23.png",
+    "src": "src/lib/images/cards/dodger/Silver.png"
+  },
+  "src/lib/images/cards/dodger/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.f0a5a6d4.png",
+    "src": "src/lib/images/cards/dodger/Ultimate.png"
+  },
+  "src/lib/images/cards/garrus/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.2012283a.png",
+    "src": "src/lib/images/cards/garrus/BlueIA.png"
+  },
+  "src/lib/images/cards/garrus/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.7a26a5fc.png",
+    "src": "src/lib/images/cards/garrus/BlueIIA.png"
+  },
+  "src/lib/images/cards/garrus/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.6dbc005d.png",
+    "src": "src/lib/images/cards/garrus/BlueIIB.png"
+  },
+  "src/lib/images/cards/garrus/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.223678ad.png",
+    "src": "src/lib/images/cards/garrus/BlueIIIA.png"
+  },
+  "src/lib/images/cards/garrus/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.254da222.png",
+    "src": "src/lib/images/cards/garrus/BlueIIIB.png"
+  },
+  "src/lib/images/cards/garrus/Gold.png": {
+    "file": "_app/immutable/assets/Gold.3221422d.png",
+    "src": "src/lib/images/cards/garrus/Gold.png"
+  },
+  "src/lib/images/cards/garrus/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.1706ea88.png",
+    "src": "src/lib/images/cards/garrus/GreenIA.png"
+  },
+  "src/lib/images/cards/garrus/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.832bee7d.png",
+    "src": "src/lib/images/cards/garrus/GreenIIA.png"
+  },
+  "src/lib/images/cards/garrus/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.07181b00.png",
+    "src": "src/lib/images/cards/garrus/GreenIIB.png"
+  },
+  "src/lib/images/cards/garrus/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.a9790675.png",
+    "src": "src/lib/images/cards/garrus/GreenIIIA.png"
+  },
+  "src/lib/images/cards/garrus/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.70ac34a9.png",
+    "src": "src/lib/images/cards/garrus/GreenIIIB.png"
+  },
+  "src/lib/images/cards/garrus/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.b91314e2.png",
+    "src": "src/lib/images/cards/garrus/Handicap.png"
+  },
+  "src/lib/images/cards/garrus/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.7b357a45.png",
+    "src": "src/lib/images/cards/garrus/RedIA.png"
+  },
+  "src/lib/images/cards/garrus/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.e4dba920.png",
+    "src": "src/lib/images/cards/garrus/RedIIA.png"
+  },
+  "src/lib/images/cards/garrus/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.81fae341.png",
+    "src": "src/lib/images/cards/garrus/RedIIB.png"
+  },
+  "src/lib/images/cards/garrus/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.4e0c16c8.png",
+    "src": "src/lib/images/cards/garrus/RedIIIA.png"
+  },
+  "src/lib/images/cards/garrus/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.025c67a7.png",
+    "src": "src/lib/images/cards/garrus/RedIIIB.png"
+  },
+  "src/lib/images/cards/garrus/Silver.png": {
+    "file": "_app/immutable/assets/Silver.469cda01.png",
+    "src": "src/lib/images/cards/garrus/Silver.png"
+  },
+  "src/lib/images/cards/garrus/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.ba31f245.png",
+    "src": "src/lib/images/cards/garrus/Ultimate.png"
+  },
+  "src/lib/images/cards/hanu/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.d2abcb67.png",
+    "src": "src/lib/images/cards/hanu/BlueIA.png"
+  },
+  "src/lib/images/cards/hanu/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.11ab6d3a.png",
+    "src": "src/lib/images/cards/hanu/BlueIIA.png"
+  },
+  "src/lib/images/cards/hanu/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.86c70a09.png",
+    "src": "src/lib/images/cards/hanu/BlueIIB.png"
+  },
+  "src/lib/images/cards/hanu/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.5b5424f7.png",
+    "src": "src/lib/images/cards/hanu/BlueIIIA.png"
+  },
+  "src/lib/images/cards/hanu/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.335eb738.png",
+    "src": "src/lib/images/cards/hanu/BlueIIIB.png"
+  },
+  "src/lib/images/cards/hanu/Gold.png": {
+    "file": "_app/immutable/assets/Gold.408043fa.png",
+    "src": "src/lib/images/cards/hanu/Gold.png"
+  },
+  "src/lib/images/cards/hanu/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.2a7ecb96.png",
+    "src": "src/lib/images/cards/hanu/GreenIA.png"
+  },
+  "src/lib/images/cards/hanu/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.26bc034e.png",
+    "src": "src/lib/images/cards/hanu/GreenIIA.png"
+  },
+  "src/lib/images/cards/hanu/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.a0f0093d.png",
+    "src": "src/lib/images/cards/hanu/GreenIIB.png"
+  },
+  "src/lib/images/cards/hanu/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.bf5f147c.png",
+    "src": "src/lib/images/cards/hanu/GreenIIIA.png"
+  },
+  "src/lib/images/cards/hanu/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.0ee24f4f.png",
+    "src": "src/lib/images/cards/hanu/GreenIIIB.png"
+  },
+  "src/lib/images/cards/hanu/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.2e84c733.png",
+    "src": "src/lib/images/cards/hanu/Handicap.png"
+  },
+  "src/lib/images/cards/hanu/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.965b164f.png",
+    "src": "src/lib/images/cards/hanu/RedIA.png"
+  },
+  "src/lib/images/cards/hanu/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.b97d4cbc.png",
+    "src": "src/lib/images/cards/hanu/RedIIA.png"
+  },
+  "src/lib/images/cards/hanu/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.05234345.png",
+    "src": "src/lib/images/cards/hanu/RedIIB.png"
+  },
+  "src/lib/images/cards/hanu/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.689e6acc.png",
+    "src": "src/lib/images/cards/hanu/RedIIIA.png"
+  },
+  "src/lib/images/cards/hanu/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.a316d967.png",
+    "src": "src/lib/images/cards/hanu/RedIIIB.png"
+  },
+  "src/lib/images/cards/hanu/Silver.png": {
+    "file": "_app/immutable/assets/Silver.afcefff3.png",
+    "src": "src/lib/images/cards/hanu/Silver.png"
+  },
+  "src/lib/images/cards/hanu/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.457f7813.png",
+    "src": "src/lib/images/cards/hanu/Ultimate.png"
+  },
+  "src/lib/images/cards/ignatia/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.e84fda43.png",
+    "src": "src/lib/images/cards/ignatia/BlueIA.png"
+  },
+  "src/lib/images/cards/ignatia/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.f1631556.png",
+    "src": "src/lib/images/cards/ignatia/BlueIIA.png"
+  },
+  "src/lib/images/cards/ignatia/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.6e5b4fb4.png",
+    "src": "src/lib/images/cards/ignatia/BlueIIB.png"
+  },
+  "src/lib/images/cards/ignatia/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.6fe37825.png",
+    "src": "src/lib/images/cards/ignatia/BlueIIIA.png"
+  },
+  "src/lib/images/cards/ignatia/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.05a1126f.png",
+    "src": "src/lib/images/cards/ignatia/BlueIIIB.png"
+  },
+  "src/lib/images/cards/ignatia/Gold.png": {
+    "file": "_app/immutable/assets/Gold.f23c56fd.png",
+    "src": "src/lib/images/cards/ignatia/Gold.png"
+  },
+  "src/lib/images/cards/ignatia/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.c7a38328.png",
+    "src": "src/lib/images/cards/ignatia/GreenIA.png"
+  },
+  "src/lib/images/cards/ignatia/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.33953320.png",
+    "src": "src/lib/images/cards/ignatia/GreenIIA.png"
+  },
+  "src/lib/images/cards/ignatia/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.3d2469ef.png",
+    "src": "src/lib/images/cards/ignatia/GreenIIB.png"
+  },
+  "src/lib/images/cards/ignatia/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.24756596.png",
+    "src": "src/lib/images/cards/ignatia/GreenIIIA.png"
+  },
+  "src/lib/images/cards/ignatia/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.4aab570e.png",
+    "src": "src/lib/images/cards/ignatia/GreenIIIB.png"
+  },
+  "src/lib/images/cards/ignatia/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.146351d7.png",
+    "src": "src/lib/images/cards/ignatia/Handicap.png"
+  },
+  "src/lib/images/cards/ignatia/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.80afbc4f.png",
+    "src": "src/lib/images/cards/ignatia/RedIA.png"
+  },
+  "src/lib/images/cards/ignatia/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.444cfad3.png",
+    "src": "src/lib/images/cards/ignatia/RedIIA.png"
+  },
+  "src/lib/images/cards/ignatia/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.c5315dff.png",
+    "src": "src/lib/images/cards/ignatia/RedIIB.png"
+  },
+  "src/lib/images/cards/ignatia/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.0a4e45eb.png",
+    "src": "src/lib/images/cards/ignatia/RedIIIA.png"
+  },
+  "src/lib/images/cards/ignatia/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.8a1b7612.png",
+    "src": "src/lib/images/cards/ignatia/RedIIIB.png"
+  },
+  "src/lib/images/cards/ignatia/Silver.png": {
+    "file": "_app/immutable/assets/Silver.d4e7e2ad.png",
+    "src": "src/lib/images/cards/ignatia/Silver.png"
+  },
+  "src/lib/images/cards/ignatia/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.f0b9f299.png",
+    "src": "src/lib/images/cards/ignatia/Ultimate.png"
+  },
+  "src/lib/images/cards/min/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.c1ffdf7e.png",
+    "src": "src/lib/images/cards/min/BlueIA.png"
+  },
+  "src/lib/images/cards/min/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.802ab277.png",
+    "src": "src/lib/images/cards/min/BlueIIA.png"
+  },
+  "src/lib/images/cards/min/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.b14b2dae.png",
+    "src": "src/lib/images/cards/min/BlueIIB.png"
+  },
+  "src/lib/images/cards/min/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.95604a98.png",
+    "src": "src/lib/images/cards/min/BlueIIIA.png"
+  },
+  "src/lib/images/cards/min/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.77a2bf3d.png",
+    "src": "src/lib/images/cards/min/BlueIIIB.png"
+  },
+  "src/lib/images/cards/min/Gold.png": {
+    "file": "_app/immutable/assets/Gold.a8b7944a.png",
+    "src": "src/lib/images/cards/min/Gold.png"
+  },
+  "src/lib/images/cards/min/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.8df1aa15.png",
+    "src": "src/lib/images/cards/min/GreenIA.png"
+  },
+  "src/lib/images/cards/min/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.8f6eb606.png",
+    "src": "src/lib/images/cards/min/GreenIIA.png"
+  },
+  "src/lib/images/cards/min/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.96ee4ef3.png",
+    "src": "src/lib/images/cards/min/GreenIIB.png"
+  },
+  "src/lib/images/cards/min/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.cba6e4eb.png",
+    "src": "src/lib/images/cards/min/GreenIIIA.png"
+  },
+  "src/lib/images/cards/min/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.48603c73.png",
+    "src": "src/lib/images/cards/min/GreenIIIB.png"
+  },
+  "src/lib/images/cards/min/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.9e69a18c.png",
+    "src": "src/lib/images/cards/min/Handicap.png"
+  },
+  "src/lib/images/cards/min/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.71dcf7f1.png",
+    "src": "src/lib/images/cards/min/RedIA.png"
+  },
+  "src/lib/images/cards/min/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.8569ad12.png",
+    "src": "src/lib/images/cards/min/RedIIA.png"
+  },
+  "src/lib/images/cards/min/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.830ea610.png",
+    "src": "src/lib/images/cards/min/RedIIB.png"
+  },
+  "src/lib/images/cards/min/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.b74ef905.png",
+    "src": "src/lib/images/cards/min/RedIIIA.png"
+  },
+  "src/lib/images/cards/min/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.a36c2060.png",
+    "src": "src/lib/images/cards/min/RedIIIB.png"
+  },
+  "src/lib/images/cards/min/Silver.png": {
+    "file": "_app/immutable/assets/Silver.3bf7cbde.png",
+    "src": "src/lib/images/cards/min/Silver.png"
+  },
+  "src/lib/images/cards/min/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.804a7d54.png",
+    "src": "src/lib/images/cards/min/Ultimate.png"
+  },
+  "src/lib/images/cards/misa/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.86783421.png",
+    "src": "src/lib/images/cards/misa/BlueIA.png"
+  },
+  "src/lib/images/cards/misa/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.b2bd7b6f.png",
+    "src": "src/lib/images/cards/misa/BlueIIA.png"
+  },
+  "src/lib/images/cards/misa/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.1b3251c9.png",
+    "src": "src/lib/images/cards/misa/BlueIIB.png"
+  },
+  "src/lib/images/cards/misa/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.674f4a8b.png",
+    "src": "src/lib/images/cards/misa/BlueIIIA.png"
+  },
+  "src/lib/images/cards/misa/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.b5cc48c0.png",
+    "src": "src/lib/images/cards/misa/BlueIIIB.png"
+  },
+  "src/lib/images/cards/misa/Gold.png": {
+    "file": "_app/immutable/assets/Gold.ef21f451.png",
+    "src": "src/lib/images/cards/misa/Handicap.png"
+  },
+  "src/lib/images/cards/misa/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.5ca5dc1d.png",
+    "src": "src/lib/images/cards/misa/GreenIA.png"
+  },
+  "src/lib/images/cards/misa/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.f6665e3d.png",
+    "src": "src/lib/images/cards/misa/GreenIIA.png"
+  },
+  "src/lib/images/cards/misa/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.12ef0bc2.png",
+    "src": "src/lib/images/cards/misa/GreenIIB.png"
+  },
+  "src/lib/images/cards/misa/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.26fc51c6.png",
+    "src": "src/lib/images/cards/misa/GreenIIIA.png"
+  },
+  "src/lib/images/cards/misa/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.8d145738.png",
+    "src": "src/lib/images/cards/misa/GreenIIIB.png"
+  },
+  "src/lib/images/cards/misa/Handicap.png": {
+    "file": "_app/immutable/assets/Gold.ef21f451.png",
+    "src": "src/lib/images/cards/misa/Handicap.png"
+  },
+  "src/lib/images/cards/misa/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.02646596.png",
+    "src": "src/lib/images/cards/misa/RedIA.png"
+  },
+  "src/lib/images/cards/misa/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.ddbb58d1.png",
+    "src": "src/lib/images/cards/misa/RedIIA.png"
+  },
+  "src/lib/images/cards/misa/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.74e76db6.png",
+    "src": "src/lib/images/cards/misa/RedIIB.png"
+  },
+  "src/lib/images/cards/misa/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.a9ad4b2d.png",
+    "src": "src/lib/images/cards/misa/RedIIIA.png"
+  },
+  "src/lib/images/cards/misa/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.fe57835a.png",
+    "src": "src/lib/images/cards/misa/RedIIIB.png"
+  },
+  "src/lib/images/cards/misa/Silver.png": {
+    "file": "_app/immutable/assets/Silver.d4af6638.png",
+    "src": "src/lib/images/cards/misa/Silver.png"
+  },
+  "src/lib/images/cards/misa/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.c1343c97.png",
+    "src": "src/lib/images/cards/misa/Ultimate.png"
+  },
+  "src/lib/images/cards/nebkher/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.6b111a77.png",
+    "src": "src/lib/images/cards/nebkher/BlueIA.png"
+  },
+  "src/lib/images/cards/nebkher/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.66c50152.png",
+    "src": "src/lib/images/cards/nebkher/BlueIIA.png"
+  },
+  "src/lib/images/cards/nebkher/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.77af0420.png",
+    "src": "src/lib/images/cards/nebkher/BlueIIB.png"
+  },
+  "src/lib/images/cards/nebkher/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.382a01f8.png",
+    "src": "src/lib/images/cards/nebkher/BlueIIIA.png"
+  },
+  "src/lib/images/cards/nebkher/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.424cdcfa.png",
+    "src": "src/lib/images/cards/nebkher/BlueIIIB.png"
+  },
+  "src/lib/images/cards/nebkher/Gold.png": {
+    "file": "_app/immutable/assets/Gold.bba2aaca.png",
+    "src": "src/lib/images/cards/nebkher/Gold.png"
+  },
+  "src/lib/images/cards/nebkher/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.b638b928.png",
+    "src": "src/lib/images/cards/nebkher/GreenIA.png"
+  },
+  "src/lib/images/cards/nebkher/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.7834f8c1.png",
+    "src": "src/lib/images/cards/nebkher/GreenIIA.png"
+  },
+  "src/lib/images/cards/nebkher/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.be18606b.png",
+    "src": "src/lib/images/cards/nebkher/GreenIIB.png"
+  },
+  "src/lib/images/cards/nebkher/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.88ed68aa.png",
+    "src": "src/lib/images/cards/nebkher/GreenIIIA.png"
+  },
+  "src/lib/images/cards/nebkher/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.5973d2ca.png",
+    "src": "src/lib/images/cards/nebkher/GreenIIIB.png"
+  },
+  "src/lib/images/cards/nebkher/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.778d66e2.png",
+    "src": "src/lib/images/cards/nebkher/Handicap.png"
+  },
+  "src/lib/images/cards/nebkher/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.66f6556b.png",
+    "src": "src/lib/images/cards/nebkher/RedIA.png"
+  },
+  "src/lib/images/cards/nebkher/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.52b8c554.png",
+    "src": "src/lib/images/cards/nebkher/RedIIA.png"
+  },
+  "src/lib/images/cards/nebkher/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.9ce33989.png",
+    "src": "src/lib/images/cards/nebkher/RedIIB.png"
+  },
+  "src/lib/images/cards/nebkher/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.939608cf.png",
+    "src": "src/lib/images/cards/nebkher/RedIIIA.png"
+  },
+  "src/lib/images/cards/nebkher/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.1d8445d1.png",
+    "src": "src/lib/images/cards/nebkher/RedIIIB.png"
+  },
+  "src/lib/images/cards/nebkher/Silver.png": {
+    "file": "_app/immutable/assets/Silver.8977682f.png",
+    "src": "src/lib/images/cards/nebkher/Silver.png"
+  },
+  "src/lib/images/cards/nebkher/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.a97db9da.png",
+    "src": "src/lib/images/cards/nebkher/Ultimate.png"
+  },
+  "src/lib/images/cards/sabina/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.72c952f4.png",
+    "src": "src/lib/images/cards/sabina/BlueIA.png"
+  },
+  "src/lib/images/cards/sabina/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.b0478dbd.png",
+    "src": "src/lib/images/cards/sabina/BlueIIA.png"
+  },
+  "src/lib/images/cards/sabina/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.07615092.png",
+    "src": "src/lib/images/cards/sabina/BlueIIB.png"
+  },
+  "src/lib/images/cards/sabina/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.b8b6843a.png",
+    "src": "src/lib/images/cards/sabina/BlueIIIA.png"
+  },
+  "src/lib/images/cards/sabina/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.ef927f0f.png",
+    "src": "src/lib/images/cards/sabina/BlueIIIB.png"
+  },
+  "src/lib/images/cards/sabina/Gold.png": {
+    "file": "_app/immutable/assets/Gold.15d20b12.png",
+    "src": "src/lib/images/cards/sabina/Gold.png"
+  },
+  "src/lib/images/cards/sabina/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.952b51a3.png",
+    "src": "src/lib/images/cards/sabina/GreenIA.png"
+  },
+  "src/lib/images/cards/sabina/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.39f0a7ef.png",
+    "src": "src/lib/images/cards/sabina/GreenIIA.png"
+  },
+  "src/lib/images/cards/sabina/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.4300d3c4.png",
+    "src": "src/lib/images/cards/sabina/GreenIIB.png"
+  },
+  "src/lib/images/cards/sabina/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.b1e9c4ae.png",
+    "src": "src/lib/images/cards/sabina/GreenIIIA.png"
+  },
+  "src/lib/images/cards/sabina/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.72614472.png",
+    "src": "src/lib/images/cards/sabina/GreenIIIB.png"
+  },
+  "src/lib/images/cards/sabina/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.8bc75ffb.png",
+    "src": "src/lib/images/cards/sabina/Handicap.png"
+  },
+  "src/lib/images/cards/sabina/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.c61f84d4.png",
+    "src": "src/lib/images/cards/sabina/RedIA.png"
+  },
+  "src/lib/images/cards/sabina/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.48dd46be.png",
+    "src": "src/lib/images/cards/sabina/RedIIA.png"
+  },
+  "src/lib/images/cards/sabina/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.1decda5d.png",
+    "src": "src/lib/images/cards/sabina/RedIIB.png"
+  },
+  "src/lib/images/cards/sabina/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.4e88119a.png",
+    "src": "src/lib/images/cards/sabina/RedIIIA.png"
+  },
+  "src/lib/images/cards/sabina/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.cadc4b86.png",
+    "src": "src/lib/images/cards/sabina/RedIIIB.png"
+  },
+  "src/lib/images/cards/sabina/Silver.png": {
+    "file": "_app/immutable/assets/Silver.ed15533a.png",
+    "src": "src/lib/images/cards/sabina/Silver.png"
+  },
+  "src/lib/images/cards/sabina/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.3ce78f6c.png",
+    "src": "src/lib/images/cards/sabina/Ultimate.png"
+  },
+  "src/lib/images/cards/silverarrow/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.87f113af.png",
+    "src": "src/lib/images/cards/silverarrow/BlueIA.png"
+  },
+  "src/lib/images/cards/silverarrow/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.9c0d3190.png",
+    "src": "src/lib/images/cards/silverarrow/BlueIIA.png"
+  },
+  "src/lib/images/cards/silverarrow/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.a87c8d96.png",
+    "src": "src/lib/images/cards/silverarrow/BlueIIB.png"
+  },
+  "src/lib/images/cards/silverarrow/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.abfa507a.png",
+    "src": "src/lib/images/cards/silverarrow/BlueIIIA.png"
+  },
+  "src/lib/images/cards/silverarrow/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.e60f937e.png",
+    "src": "src/lib/images/cards/silverarrow/BlueIIIB.png"
+  },
+  "src/lib/images/cards/silverarrow/Gold.png": {
+    "file": "_app/immutable/assets/Gold.767c2d24.png",
+    "src": "src/lib/images/cards/silverarrow/Gold.png"
+  },
+  "src/lib/images/cards/silverarrow/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.7446c79e.png",
+    "src": "src/lib/images/cards/silverarrow/GreenIA.png"
+  },
+  "src/lib/images/cards/silverarrow/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.0d322232.png",
+    "src": "src/lib/images/cards/silverarrow/GreenIIA.png"
+  },
+  "src/lib/images/cards/silverarrow/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.adf90a55.png",
+    "src": "src/lib/images/cards/silverarrow/GreenIIB.png"
+  },
+  "src/lib/images/cards/silverarrow/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.afa2b029.png",
+    "src": "src/lib/images/cards/silverarrow/GreenIIIA.png"
+  },
+  "src/lib/images/cards/silverarrow/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.8789de65.png",
+    "src": "src/lib/images/cards/silverarrow/GreenIIIB.png"
+  },
+  "src/lib/images/cards/silverarrow/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.9c132ce6.png",
+    "src": "src/lib/images/cards/silverarrow/Handicap.png"
+  },
+  "src/lib/images/cards/silverarrow/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.df3fc60c.png",
+    "src": "src/lib/images/cards/silverarrow/RedIA.png"
+  },
+  "src/lib/images/cards/silverarrow/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.692047bb.png",
+    "src": "src/lib/images/cards/silverarrow/RedIIA.png"
+  },
+  "src/lib/images/cards/silverarrow/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.280d7209.png",
+    "src": "src/lib/images/cards/silverarrow/RedIIB.png"
+  },
+  "src/lib/images/cards/silverarrow/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.0f91e174.png",
+    "src": "src/lib/images/cards/silverarrow/RedIIIA.png"
+  },
+  "src/lib/images/cards/silverarrow/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.ea9c47ac.png",
+    "src": "src/lib/images/cards/silverarrow/RedIIIB.png"
+  },
+  "src/lib/images/cards/silverarrow/Silver.png": {
+    "file": "_app/immutable/assets/Silver.27305427.png",
+    "src": "src/lib/images/cards/silverarrow/Silver.png"
+  },
+  "src/lib/images/cards/silverarrow/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.564273aa.png",
+    "src": "src/lib/images/cards/silverarrow/Ultimate.png"
+  },
+  "src/lib/images/cards/swift/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.df66a8d1.png",
+    "src": "src/lib/images/cards/swift/BlueIA.png"
+  },
+  "src/lib/images/cards/swift/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.deddfc51.png",
+    "src": "src/lib/images/cards/swift/BlueIIA.png"
+  },
+  "src/lib/images/cards/swift/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.68feef67.png",
+    "src": "src/lib/images/cards/swift/BlueIIB.png"
+  },
+  "src/lib/images/cards/swift/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.2e96fab4.png",
+    "src": "src/lib/images/cards/swift/BlueIIIA.png"
+  },
+  "src/lib/images/cards/swift/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.d61b3f63.png",
+    "src": "src/lib/images/cards/swift/BlueIIIB.png"
+  },
+  "src/lib/images/cards/swift/Gold.png": {
+    "file": "_app/immutable/assets/Gold.10d2596e.png",
+    "src": "src/lib/images/cards/swift/Gold.png"
+  },
+  "src/lib/images/cards/swift/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.936ea495.png",
+    "src": "src/lib/images/cards/swift/GreenIA.png"
+  },
+  "src/lib/images/cards/swift/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.5348a7a2.png",
+    "src": "src/lib/images/cards/swift/GreenIIA.png"
+  },
+  "src/lib/images/cards/swift/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.fc96ace2.png",
+    "src": "src/lib/images/cards/swift/GreenIIB.png"
+  },
+  "src/lib/images/cards/swift/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.30c4704b.png",
+    "src": "src/lib/images/cards/swift/GreenIIIA.png"
+  },
+  "src/lib/images/cards/swift/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.670f3f91.png",
+    "src": "src/lib/images/cards/swift/GreenIIIB.png"
+  },
+  "src/lib/images/cards/swift/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.4c0a3a88.png",
+    "src": "src/lib/images/cards/swift/Handicap.png"
+  },
+  "src/lib/images/cards/swift/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.5bf1d767.png",
+    "src": "src/lib/images/cards/swift/RedIA.png"
+  },
+  "src/lib/images/cards/swift/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.7d642c8e.png",
+    "src": "src/lib/images/cards/swift/RedIIA.png"
+  },
+  "src/lib/images/cards/swift/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.900ce147.png",
+    "src": "src/lib/images/cards/swift/RedIIB.png"
+  },
+  "src/lib/images/cards/swift/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.afb99da3.png",
+    "src": "src/lib/images/cards/swift/RedIIIA.png"
+  },
+  "src/lib/images/cards/swift/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.a4784a98.png",
+    "src": "src/lib/images/cards/swift/RedIIIB.png"
+  },
+  "src/lib/images/cards/swift/Silver.png": {
+    "file": "_app/immutable/assets/Silver.6e13d707.png",
+    "src": "src/lib/images/cards/swift/Silver.png"
+  },
+  "src/lib/images/cards/swift/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.ddf4038c.png",
+    "src": "src/lib/images/cards/swift/Ultimate.png"
+  },
+  "src/lib/images/cards/tali/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.e6627db6.png",
+    "src": "src/lib/images/cards/tali/BlueIA.png"
+  },
+  "src/lib/images/cards/tali/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.d660734d.png",
+    "src": "src/lib/images/cards/tali/BlueIIA.png"
+  },
+  "src/lib/images/cards/tali/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.77d14187.png",
+    "src": "src/lib/images/cards/tali/BlueIIB.png"
+  },
+  "src/lib/images/cards/tali/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.75aeb002.png",
+    "src": "src/lib/images/cards/tali/BlueIIIA.png"
+  },
+  "src/lib/images/cards/tali/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.71e25305.png",
+    "src": "src/lib/images/cards/tali/BlueIIIB.png"
+  },
+  "src/lib/images/cards/tali/Gold.png": {
+    "file": "_app/immutable/assets/Gold.7764a1c8.png",
+    "src": "src/lib/images/cards/tali/Gold.png"
+  },
+  "src/lib/images/cards/tali/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.1c2934d9.png",
+    "src": "src/lib/images/cards/tali/GreenIA.png"
+  },
+  "src/lib/images/cards/tali/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.485452e9.png",
+    "src": "src/lib/images/cards/tali/GreenIIA.png"
+  },
+  "src/lib/images/cards/tali/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.552ec3b9.png",
+    "src": "src/lib/images/cards/tali/GreenIIB.png"
+  },
+  "src/lib/images/cards/tali/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.050bbd55.png",
+    "src": "src/lib/images/cards/tali/GreenIIIA.png"
+  },
+  "src/lib/images/cards/tali/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.1cb773eb.png",
+    "src": "src/lib/images/cards/tali/GreenIIIB.png"
+  },
+  "src/lib/images/cards/tali/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.f2ad8a37.png",
+    "src": "src/lib/images/cards/tali/Handicap.png"
+  },
+  "src/lib/images/cards/tali/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.6e074cec.png",
+    "src": "src/lib/images/cards/tali/RedIA.png"
+  },
+  "src/lib/images/cards/tali/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.68ed0989.png",
+    "src": "src/lib/images/cards/tali/RedIIA.png"
+  },
+  "src/lib/images/cards/tali/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.de4d45cd.png",
+    "src": "src/lib/images/cards/tali/RedIIB.png"
+  },
+  "src/lib/images/cards/tali/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.1e33260e.png",
+    "src": "src/lib/images/cards/tali/RedIIIA.png"
+  },
+  "src/lib/images/cards/tali/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.1401b24f.png",
+    "src": "src/lib/images/cards/tali/RedIIIB.png"
+  },
+  "src/lib/images/cards/tali/Silver.png": {
+    "file": "_app/immutable/assets/Silver.72f5df6b.png",
+    "src": "src/lib/images/cards/tali/Silver.png"
+  },
+  "src/lib/images/cards/tali/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.1d67f70b.png",
+    "src": "src/lib/images/cards/tali/Ultimate.png"
+  },
+  "src/lib/images/cards/tigerclaw/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.d885aa01.png",
+    "src": "src/lib/images/cards/tigerclaw/BlueIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.fc42f1d1.png",
+    "src": "src/lib/images/cards/tigerclaw/BlueIIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.e45d9dc0.png",
+    "src": "src/lib/images/cards/tigerclaw/BlueIIB.png"
+  },
+  "src/lib/images/cards/tigerclaw/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.f339d1a6.png",
+    "src": "src/lib/images/cards/tigerclaw/BlueIIIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.4e9077af.png",
+    "src": "src/lib/images/cards/tigerclaw/BlueIIIB.png"
+  },
+  "src/lib/images/cards/tigerclaw/Gold.png": {
+    "file": "_app/immutable/assets/Gold.92fe3d69.png",
+    "src": "src/lib/images/cards/tigerclaw/Gold.png"
+  },
+  "src/lib/images/cards/tigerclaw/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.669f914c.png",
+    "src": "src/lib/images/cards/tigerclaw/GreenIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.f3d83cb5.png",
+    "src": "src/lib/images/cards/tigerclaw/GreenIIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.16c80d59.png",
+    "src": "src/lib/images/cards/tigerclaw/GreenIIB.png"
+  },
+  "src/lib/images/cards/tigerclaw/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.b83f63ce.png",
+    "src": "src/lib/images/cards/tigerclaw/GreenIIIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.e217b774.png",
+    "src": "src/lib/images/cards/tigerclaw/GreenIIIB.png"
+  },
+  "src/lib/images/cards/tigerclaw/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.03e49713.png",
+    "src": "src/lib/images/cards/tigerclaw/Handicap.png"
+  },
+  "src/lib/images/cards/tigerclaw/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.757f4add.png",
+    "src": "src/lib/images/cards/tigerclaw/RedIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.ca23afc2.png",
+    "src": "src/lib/images/cards/tigerclaw/RedIIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.b4686b2e.png",
+    "src": "src/lib/images/cards/tigerclaw/RedIIB.png"
+  },
+  "src/lib/images/cards/tigerclaw/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.a7574185.png",
+    "src": "src/lib/images/cards/tigerclaw/RedIIIA.png"
+  },
+  "src/lib/images/cards/tigerclaw/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.ae2c9831.png",
+    "src": "src/lib/images/cards/tigerclaw/RedIIIB.png"
+  },
+  "src/lib/images/cards/tigerclaw/Silver.png": {
+    "file": "_app/immutable/assets/Silver.3a483000.png",
+    "src": "src/lib/images/cards/tigerclaw/Silver.png"
+  },
+  "src/lib/images/cards/tigerclaw/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.2ce41732.png",
+    "src": "src/lib/images/cards/tigerclaw/Ultimate.png"
+  },
+  "src/lib/images/cards/trinkets/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.472cea00.png",
+    "src": "src/lib/images/cards/trinkets/BlueIA.png"
+  },
+  "src/lib/images/cards/trinkets/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.33f11ca4.png",
+    "src": "src/lib/images/cards/trinkets/BlueIIA.png"
+  },
+  "src/lib/images/cards/trinkets/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.f816bcac.png",
+    "src": "src/lib/images/cards/trinkets/BlueIIB.png"
+  },
+  "src/lib/images/cards/trinkets/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.db7b9383.png",
+    "src": "src/lib/images/cards/trinkets/BlueIIIA.png"
+  },
+  "src/lib/images/cards/trinkets/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.729f9c49.png",
+    "src": "src/lib/images/cards/trinkets/BlueIIIB.png"
+  },
+  "src/lib/images/cards/trinkets/Gold.png": {
+    "file": "_app/immutable/assets/Gold.e6ef3e01.png",
+    "src": "src/lib/images/cards/trinkets/Gold.png"
+  },
+  "src/lib/images/cards/trinkets/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.fabf0cbf.png",
+    "src": "src/lib/images/cards/trinkets/GreenIA.png"
+  },
+  "src/lib/images/cards/trinkets/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.dbce29f3.png",
+    "src": "src/lib/images/cards/trinkets/GreenIIA.png"
+  },
+  "src/lib/images/cards/trinkets/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.38ea99d8.png",
+    "src": "src/lib/images/cards/trinkets/GreenIIB.png"
+  },
+  "src/lib/images/cards/trinkets/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.82c13a02.png",
+    "src": "src/lib/images/cards/trinkets/GreenIIIA.png"
+  },
+  "src/lib/images/cards/trinkets/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.51d375be.png",
+    "src": "src/lib/images/cards/trinkets/GreenIIIB.png"
+  },
+  "src/lib/images/cards/trinkets/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.e5c53779.png",
+    "src": "src/lib/images/cards/trinkets/Handicap.png"
+  },
+  "src/lib/images/cards/trinkets/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.0e337144.png",
+    "src": "src/lib/images/cards/trinkets/RedIA.png"
+  },
+  "src/lib/images/cards/trinkets/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.0da7eab6.png",
+    "src": "src/lib/images/cards/trinkets/RedIIA.png"
+  },
+  "src/lib/images/cards/trinkets/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.ae1f798d.png",
+    "src": "src/lib/images/cards/trinkets/RedIIB.png"
+  },
+  "src/lib/images/cards/trinkets/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.5477f10c.png",
+    "src": "src/lib/images/cards/trinkets/RedIIIA.png"
+  },
+  "src/lib/images/cards/trinkets/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.c3cb30dc.png",
+    "src": "src/lib/images/cards/trinkets/RedIIIB.png"
+  },
+  "src/lib/images/cards/trinkets/Silver.png": {
+    "file": "_app/immutable/assets/Silver.a0f243d7.png",
+    "src": "src/lib/images/cards/trinkets/Silver.png"
+  },
+  "src/lib/images/cards/trinkets/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.9c9d9d62.png",
+    "src": "src/lib/images/cards/trinkets/Ultimate.png"
+  },
+  "src/lib/images/cards/ursafar/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.20a25a0e.png",
+    "src": "src/lib/images/cards/ursafar/BlueIA.png"
+  },
+  "src/lib/images/cards/ursafar/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.43547f1c.png",
+    "src": "src/lib/images/cards/ursafar/BlueIIA.png"
+  },
+  "src/lib/images/cards/ursafar/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.252b989c.png",
+    "src": "src/lib/images/cards/ursafar/BlueIIB.png"
+  },
+  "src/lib/images/cards/ursafar/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.4e10fcfa.png",
+    "src": "src/lib/images/cards/ursafar/BlueIIIA.png"
+  },
+  "src/lib/images/cards/ursafar/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.9d56f274.png",
+    "src": "src/lib/images/cards/ursafar/BlueIIIB.png"
+  },
+  "src/lib/images/cards/ursafar/Gold.png": {
+    "file": "_app/immutable/assets/Gold.04131cd4.png",
+    "src": "src/lib/images/cards/ursafar/Gold.png"
+  },
+  "src/lib/images/cards/ursafar/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.9cdd5cd6.png",
+    "src": "src/lib/images/cards/ursafar/GreenIA.png"
+  },
+  "src/lib/images/cards/ursafar/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.9d574f00.png",
+    "src": "src/lib/images/cards/ursafar/GreenIIA.png"
+  },
+  "src/lib/images/cards/ursafar/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.ddd19ea6.png",
+    "src": "src/lib/images/cards/ursafar/GreenIIB.png"
+  },
+  "src/lib/images/cards/ursafar/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.400629ab.png",
+    "src": "src/lib/images/cards/ursafar/GreenIIIA.png"
+  },
+  "src/lib/images/cards/ursafar/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.1719428e.png",
+    "src": "src/lib/images/cards/ursafar/GreenIIIB.png"
+  },
+  "src/lib/images/cards/ursafar/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.c9c47b5b.png",
+    "src": "src/lib/images/cards/ursafar/Handicap.png"
+  },
+  "src/lib/images/cards/ursafar/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.0560d0c5.png",
+    "src": "src/lib/images/cards/ursafar/RedIA.png"
+  },
+  "src/lib/images/cards/ursafar/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.c6d0d552.png",
+    "src": "src/lib/images/cards/ursafar/RedIIA.png"
+  },
+  "src/lib/images/cards/ursafar/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.028b47d7.png",
+    "src": "src/lib/images/cards/ursafar/RedIIB.png"
+  },
+  "src/lib/images/cards/ursafar/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.e9b5dba6.png",
+    "src": "src/lib/images/cards/ursafar/RedIIIA.png"
+  },
+  "src/lib/images/cards/ursafar/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.56e3409b.png",
+    "src": "src/lib/images/cards/ursafar/RedIIIB.png"
+  },
+  "src/lib/images/cards/ursafar/Silver.png": {
+    "file": "_app/immutable/assets/Silver.6bba359c.png",
+    "src": "src/lib/images/cards/ursafar/Silver.png"
+  },
+  "src/lib/images/cards/ursafar/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.15483050.png",
+    "src": "src/lib/images/cards/ursafar/Ultimate.png"
+  },
+  "src/lib/images/cards/wasp/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.7506cf89.png",
+    "src": "src/lib/images/cards/wasp/BlueIA.png"
+  },
+  "src/lib/images/cards/wasp/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.70a3d859.png",
+    "src": "src/lib/images/cards/wasp/BlueIIA.png"
+  },
+  "src/lib/images/cards/wasp/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.f217b9dc.png",
+    "src": "src/lib/images/cards/wasp/BlueIIB.png"
+  },
+  "src/lib/images/cards/wasp/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.2585c982.png",
+    "src": "src/lib/images/cards/wasp/BlueIIIA.png"
+  },
+  "src/lib/images/cards/wasp/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.71b5ec6b.png",
+    "src": "src/lib/images/cards/wasp/BlueIIIB.png"
+  },
+  "src/lib/images/cards/wasp/Gold.png": {
+    "file": "_app/immutable/assets/Gold.eeee9074.png",
+    "src": "src/lib/images/cards/wasp/Gold.png"
+  },
+  "src/lib/images/cards/wasp/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.00f10014.png",
+    "src": "src/lib/images/cards/wasp/GreenIA.png"
+  },
+  "src/lib/images/cards/wasp/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.3c172af6.png",
+    "src": "src/lib/images/cards/wasp/GreenIIA.png"
+  },
+  "src/lib/images/cards/wasp/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.3d53ecc2.png",
+    "src": "src/lib/images/cards/wasp/GreenIIB.png"
+  },
+  "src/lib/images/cards/wasp/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.f8d7cd90.png",
+    "src": "src/lib/images/cards/wasp/GreenIIIA.png"
+  },
+  "src/lib/images/cards/wasp/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.c3a54023.png",
+    "src": "src/lib/images/cards/wasp/GreenIIIB.png"
+  },
+  "src/lib/images/cards/wasp/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.00e72e98.png",
+    "src": "src/lib/images/cards/wasp/Handicap.png"
+  },
+  "src/lib/images/cards/wasp/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.37e420b8.png",
+    "src": "src/lib/images/cards/wasp/RedIA.png"
+  },
+  "src/lib/images/cards/wasp/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.953615f6.png",
+    "src": "src/lib/images/cards/wasp/RedIIA.png"
+  },
+  "src/lib/images/cards/wasp/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.69eb41d0.png",
+    "src": "src/lib/images/cards/wasp/RedIIB.png"
+  },
+  "src/lib/images/cards/wasp/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.497cd477.png",
+    "src": "src/lib/images/cards/wasp/RedIIIA.png"
+  },
+  "src/lib/images/cards/wasp/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.270f57f8.png",
+    "src": "src/lib/images/cards/wasp/RedIIIB.png"
+  },
+  "src/lib/images/cards/wasp/Silver.png": {
+    "file": "_app/immutable/assets/Silver.9f8b5aa4.png",
+    "src": "src/lib/images/cards/wasp/Silver.png"
+  },
+  "src/lib/images/cards/wasp/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.abf43d2a.png",
+    "src": "src/lib/images/cards/wasp/Ultimate.png"
+  },
+  "src/lib/images/cards/whisper/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.9e183c51.png",
+    "src": "src/lib/images/cards/whisper/BlueIA.png"
+  },
+  "src/lib/images/cards/whisper/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.6aa6f898.png",
+    "src": "src/lib/images/cards/whisper/BlueIIA.png"
+  },
+  "src/lib/images/cards/whisper/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.a1ee3e06.png",
+    "src": "src/lib/images/cards/whisper/BlueIIB.png"
+  },
+  "src/lib/images/cards/whisper/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.b55c940a.png",
+    "src": "src/lib/images/cards/whisper/BlueIIIA.png"
+  },
+  "src/lib/images/cards/whisper/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.6e6d5864.png",
+    "src": "src/lib/images/cards/whisper/BlueIIIB.png"
+  },
+  "src/lib/images/cards/whisper/Gold.png": {
+    "file": "_app/immutable/assets/Gold.51764396.png",
+    "src": "src/lib/images/cards/whisper/Gold.png"
+  },
+  "src/lib/images/cards/whisper/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.5a719fed.png",
+    "src": "src/lib/images/cards/whisper/GreenIA.png"
+  },
+  "src/lib/images/cards/whisper/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.f6a0f654.png",
+    "src": "src/lib/images/cards/whisper/GreenIIA.png"
+  },
+  "src/lib/images/cards/whisper/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.0062a9cb.png",
+    "src": "src/lib/images/cards/whisper/GreenIIB.png"
+  },
+  "src/lib/images/cards/whisper/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.93a3cd12.png",
+    "src": "src/lib/images/cards/whisper/GreenIIIA.png"
+  },
+  "src/lib/images/cards/whisper/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.c1a0b179.png",
+    "src": "src/lib/images/cards/whisper/GreenIIIB.png"
+  },
+  "src/lib/images/cards/whisper/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.ba4eaa38.png",
+    "src": "src/lib/images/cards/whisper/Handicap.png"
+  },
+  "src/lib/images/cards/whisper/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.034c0fb8.png",
+    "src": "src/lib/images/cards/whisper/RedIA.png"
+  },
+  "src/lib/images/cards/whisper/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.fa4226b5.png",
+    "src": "src/lib/images/cards/whisper/RedIIA.png"
+  },
+  "src/lib/images/cards/whisper/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.b2ff5b71.png",
+    "src": "src/lib/images/cards/whisper/RedIIB.png"
+  },
+  "src/lib/images/cards/whisper/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.e1bfb7ab.png",
+    "src": "src/lib/images/cards/whisper/RedIIIA.png"
+  },
+  "src/lib/images/cards/whisper/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.1f37c5c3.png",
+    "src": "src/lib/images/cards/whisper/RedIIIB.png"
+  },
+  "src/lib/images/cards/whisper/Silver.png": {
+    "file": "_app/immutable/assets/Silver.959f32ec.png",
+    "src": "src/lib/images/cards/whisper/Silver.png"
+  },
+  "src/lib/images/cards/whisper/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.0ef4b42a.png",
+    "src": "src/lib/images/cards/whisper/Ultimate.png"
+  },
+  "src/lib/images/cards/wuk/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.21363ae8.png",
+    "src": "src/lib/images/cards/wuk/BlueIA.png"
+  },
+  "src/lib/images/cards/wuk/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.e058929c.png",
+    "src": "src/lib/images/cards/wuk/BlueIIA.png"
+  },
+  "src/lib/images/cards/wuk/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.f7d403de.png",
+    "src": "src/lib/images/cards/wuk/BlueIIB.png"
+  },
+  "src/lib/images/cards/wuk/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.5b255b04.png",
+    "src": "src/lib/images/cards/wuk/BlueIIIA.png"
+  },
+  "src/lib/images/cards/wuk/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.643af5d0.png",
+    "src": "src/lib/images/cards/wuk/BlueIIIB.png"
+  },
+  "src/lib/images/cards/wuk/Gold.png": {
+    "file": "_app/immutable/assets/Gold.9342a7ac.png",
+    "src": "src/lib/images/cards/wuk/Gold.png"
+  },
+  "src/lib/images/cards/wuk/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.a28e46bc.png",
+    "src": "src/lib/images/cards/wuk/GreenIA.png"
+  },
+  "src/lib/images/cards/wuk/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.a6d8045e.png",
+    "src": "src/lib/images/cards/wuk/GreenIIA.png"
+  },
+  "src/lib/images/cards/wuk/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.8e2117cb.png",
+    "src": "src/lib/images/cards/wuk/GreenIIB.png"
+  },
+  "src/lib/images/cards/wuk/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.0ca03c1a.png",
+    "src": "src/lib/images/cards/wuk/GreenIIIA.png"
+  },
+  "src/lib/images/cards/wuk/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.ce5af9ad.png",
+    "src": "src/lib/images/cards/wuk/GreenIIIB.png"
+  },
+  "src/lib/images/cards/wuk/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.b2199b07.png",
+    "src": "src/lib/images/cards/wuk/Handicap.png"
+  },
+  "src/lib/images/cards/wuk/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.9e85ed9b.png",
+    "src": "src/lib/images/cards/wuk/RedIA.png"
+  },
+  "src/lib/images/cards/wuk/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.155c4a45.png",
+    "src": "src/lib/images/cards/wuk/RedIIA.png"
+  },
+  "src/lib/images/cards/wuk/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.0d9cf1f6.png",
+    "src": "src/lib/images/cards/wuk/RedIIB.png"
+  },
+  "src/lib/images/cards/wuk/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.1a2d015f.png",
+    "src": "src/lib/images/cards/wuk/RedIIIA.png"
+  },
+  "src/lib/images/cards/wuk/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.5c4e08cd.png",
+    "src": "src/lib/images/cards/wuk/RedIIIB.png"
+  },
+  "src/lib/images/cards/wuk/Silver.png": {
+    "file": "_app/immutable/assets/Silver.b6e1caae.png",
+    "src": "src/lib/images/cards/wuk/Silver.png"
+  },
+  "src/lib/images/cards/wuk/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.5070fb37.png",
+    "src": "src/lib/images/cards/wuk/Ultimate.png"
+  },
+  "src/lib/images/cards/xargatha/BlueIA.png": {
+    "file": "_app/immutable/assets/BlueIA.32d0ae2a.png",
+    "src": "src/lib/images/cards/xargatha/BlueIA.png"
+  },
+  "src/lib/images/cards/xargatha/BlueIIA.png": {
+    "file": "_app/immutable/assets/BlueIIA.b62d2ed9.png",
+    "src": "src/lib/images/cards/xargatha/BlueIIA.png"
+  },
+  "src/lib/images/cards/xargatha/BlueIIB.png": {
+    "file": "_app/immutable/assets/BlueIIB.07923d9b.png",
+    "src": "src/lib/images/cards/xargatha/BlueIIB.png"
+  },
+  "src/lib/images/cards/xargatha/BlueIIIA.png": {
+    "file": "_app/immutable/assets/BlueIIIA.6e804164.png",
+    "src": "src/lib/images/cards/xargatha/BlueIIIA.png"
+  },
+  "src/lib/images/cards/xargatha/BlueIIIB.png": {
+    "file": "_app/immutable/assets/BlueIIIB.2095b40c.png",
+    "src": "src/lib/images/cards/xargatha/BlueIIIB.png"
+  },
+  "src/lib/images/cards/xargatha/Gold.png": {
+    "file": "_app/immutable/assets/Gold.a6a3384e.png",
+    "src": "src/lib/images/cards/xargatha/Gold.png"
+  },
+  "src/lib/images/cards/xargatha/GreenIA.png": {
+    "file": "_app/immutable/assets/GreenIA.eb57fa02.png",
+    "src": "src/lib/images/cards/xargatha/GreenIA.png"
+  },
+  "src/lib/images/cards/xargatha/GreenIIA.png": {
+    "file": "_app/immutable/assets/GreenIIA.1bc7aad4.png",
+    "src": "src/lib/images/cards/xargatha/GreenIIA.png"
+  },
+  "src/lib/images/cards/xargatha/GreenIIB.png": {
+    "file": "_app/immutable/assets/GreenIIB.bae6f5e0.png",
+    "src": "src/lib/images/cards/xargatha/GreenIIB.png"
+  },
+  "src/lib/images/cards/xargatha/GreenIIIA.png": {
+    "file": "_app/immutable/assets/GreenIIIA.83b29ef0.png",
+    "src": "src/lib/images/cards/xargatha/GreenIIIA.png"
+  },
+  "src/lib/images/cards/xargatha/GreenIIIB.png": {
+    "file": "_app/immutable/assets/GreenIIIB.da811195.png",
+    "src": "src/lib/images/cards/xargatha/GreenIIIB.png"
+  },
+  "src/lib/images/cards/xargatha/Handicap.png": {
+    "file": "_app/immutable/assets/Handicap.5acfa3e0.png",
+    "src": "src/lib/images/cards/xargatha/Handicap.png"
+  },
+  "src/lib/images/cards/xargatha/RedIA.png": {
+    "file": "_app/immutable/assets/RedIA.ad1f1988.png",
+    "src": "src/lib/images/cards/xargatha/RedIA.png"
+  },
+  "src/lib/images/cards/xargatha/RedIIA.png": {
+    "file": "_app/immutable/assets/RedIIA.c87f8542.png",
+    "src": "src/lib/images/cards/xargatha/RedIIA.png"
+  },
+  "src/lib/images/cards/xargatha/RedIIB.png": {
+    "file": "_app/immutable/assets/RedIIB.6cfed634.png",
+    "src": "src/lib/images/cards/xargatha/RedIIB.png"
+  },
+  "src/lib/images/cards/xargatha/RedIIIA.png": {
+    "file": "_app/immutable/assets/RedIIIA.60dc31ef.png",
+    "src": "src/lib/images/cards/xargatha/RedIIIA.png"
+  },
+  "src/lib/images/cards/xargatha/RedIIIB.png": {
+    "file": "_app/immutable/assets/RedIIIB.ef848758.png",
+    "src": "src/lib/images/cards/xargatha/RedIIIB.png"
+  },
+  "src/lib/images/cards/xargatha/Silver.png": {
+    "file": "_app/immutable/assets/Silver.d871552c.png",
+    "src": "src/lib/images/cards/xargatha/Silver.png"
+  },
+  "src/lib/images/cards/xargatha/Ultimate.png": {
+    "file": "_app/immutable/assets/Ultimate.4ec4a56b.png",
+    "src": "src/lib/images/cards/xargatha/Ultimate.png"
+  },
+  "src/lib/images/defense.png": {
+    "file": "_app/immutable/assets/defense.e7eecfc1.png",
+    "src": "src/lib/images/defense.png"
+  },
+  "src/lib/images/defense_blue.png": {
+    "file": "_app/immutable/assets/defense_blue.0951693d.png",
+    "src": "src/lib/images/defense_blue.png"
+  },
+  "src/lib/images/defense_gold.png": {
+    "file": "_app/immutable/assets/defense_gold.c13a2f9f.png",
+    "src": "src/lib/images/defense_gold.png"
+  },
+  "src/lib/images/defense_green.png": {
+    "file": "_app/immutable/assets/defense_green.1a814696.png",
+    "src": "src/lib/images/defense_green.png"
+  },
+  "src/lib/images/defense_red.png": {
+    "file": "_app/immutable/assets/defense_red.a0fa12a9.png",
+    "src": "src/lib/images/defense_red.png"
+  },
+  "src/lib/images/defense_silver.png": {
+    "file": "_app/immutable/assets/defense_silver.047d2115.png",
+    "src": "src/lib/images/defense_silver.png"
+  },
+  "src/lib/images/defense_skill_blue.png": {
+    "file": "_app/immutable/assets/defense_skill_blue.29301475.png",
+    "src": "src/lib/images/defense_skill_blue.png"
+  },
+  "src/lib/images/defense_skill_gold.png": {
+    "file": "_app/immutable/assets/defense_skill_gold.a82c3db9.png",
+    "src": "src/lib/images/defense_skill_gold.png"
+  },
+  "src/lib/images/defense_skill_green.png": {
+    "file": "_app/immutable/assets/defense_skill_green.b573e0db.png",
+    "src": "src/lib/images/defense_skill_green.png"
+  },
+  "src/lib/images/defense_skill_red.png": {
+    "file": "_app/immutable/assets/defense_skill_red.7f7e4b23.png",
+    "src": "src/lib/images/defense_skill_red.png"
+  },
+  "src/lib/images/defense_skill_silver.png": {
+    "file": "_app/immutable/assets/defense_skill_silver.fe25c463.png",
+    "src": "src/lib/images/defense_skill_silver.png"
+  },
+  "src/lib/images/discord.png": {
+    "file": "_app/immutable/assets/discord.44d09cc5.png",
+    "src": "src/lib/images/discord.png"
+  },
+  "src/lib/images/error.png": {
+    "file": "_app/immutable/assets/error.f9752b0b.png",
+    "src": "src/lib/images/error.png"
+  },
+  "src/lib/images/frame_blue_bottom.png": {
+    "file": "_app/immutable/assets/frame_blue_bottom.f71d390f.png",
+    "src": "src/lib/images/frame_blue_bottom.png"
+  },
+  "src/lib/images/frame_blue_middle.png": {
+    "file": "_app/immutable/assets/frame_blue_middle.6ff9aee4.png",
+    "src": "src/lib/images/frame_blue_middle.png"
+  },
+  "src/lib/images/frame_blue_top.png": {
+    "file": "_app/immutable/assets/frame_blue_top.2f28b727.png",
+    "src": "src/lib/images/frame_blue_top.png"
+  },
+  "src/lib/images/frame_empty_bottom.png": {
+    "file": "_app/immutable/assets/frame_empty_bottom.7c246fd5.png",
+    "src": "src/lib/images/frame_empty_bottom.png"
+  },
+  "src/lib/images/frame_gold_bottom.png": {
+    "file": "_app/immutable/assets/frame_gold_bottom.b5d97256.png",
+    "src": "src/lib/images/frame_gold_bottom.png"
+  },
+  "src/lib/images/frame_gold_middle.png": {
+    "file": "_app/immutable/assets/frame_gold_middle.231701c3.png",
+    "src": "src/lib/images/frame_gold_middle.png"
+  },
+  "src/lib/images/frame_gold_top.png": {
+    "file": "_app/immutable/assets/frame_gold_top.7338ccf7.png",
+    "src": "src/lib/images/frame_gold_top.png"
+  },
+  "src/lib/images/frame_green_bottom.png": {
+    "file": "_app/immutable/assets/frame_green_bottom.3f1a6670.png",
+    "src": "src/lib/images/frame_green_bottom.png"
+  },
+  "src/lib/images/frame_green_middle.png": {
+    "file": "_app/immutable/assets/frame_green_middle.65f98656.png",
+    "src": "src/lib/images/frame_green_middle.png"
+  },
+  "src/lib/images/frame_green_top.png": {
+    "file": "_app/immutable/assets/frame_green_top.ff0c8574.png",
+    "src": "src/lib/images/frame_green_top.png"
+  },
+  "src/lib/images/frame_purple_bottom.png": {
+    "file": "_app/immutable/assets/frame_purple_bottom.ed5d5f9c.png",
+    "src": "src/lib/images/frame_purple_bottom.png"
+  },
+  "src/lib/images/frame_purple_top.png": {
+    "file": "_app/immutable/assets/frame_purple_top.9e7be905.png",
+    "src": "src/lib/images/frame_purple_top.png"
+  },
+  "src/lib/images/frame_red_bottom.png": {
+    "file": "_app/immutable/assets/frame_red_bottom.2de662da.png",
+    "src": "src/lib/images/frame_red_bottom.png"
+  },
+  "src/lib/images/frame_red_middle.png": {
+    "file": "_app/immutable/assets/frame_red_middle.61a38dd3.png",
+    "src": "src/lib/images/frame_red_middle.png"
+  },
+  "src/lib/images/frame_red_top.png": {
+    "file": "_app/immutable/assets/frame_red_top.9ea760b4.png",
+    "src": "src/lib/images/frame_red_top.png"
+  },
+  "src/lib/images/frame_silver_bottom.png": {
+    "file": "_app/immutable/assets/frame_silver_bottom.3944c643.png",
+    "src": "src/lib/images/frame_silver_bottom.png"
+  },
+  "src/lib/images/frame_silver_middle.png": {
+    "file": "_app/immutable/assets/frame_silver_middle.6f5db989.png",
+    "src": "src/lib/images/frame_silver_middle.png"
+  },
+  "src/lib/images/frame_silver_top.png": {
+    "file": "_app/immutable/assets/frame_silver_top.4e5648da.png",
+    "src": "src/lib/images/frame_silver_top.png"
+  },
+  "src/lib/images/initiative.png": {
+    "file": "_app/immutable/assets/initiative.26191565.png",
+    "src": "src/lib/images/initiative.png"
+  },
+  "src/lib/images/item_area.png": {
+    "file": "_app/immutable/assets/item_area.6028226d.png",
+    "src": "src/lib/images/item_area.png"
+  },
+  "src/lib/images/item_attack.png": {
+    "file": "_app/immutable/assets/item_attack.695dd844.png",
+    "src": "src/lib/images/item_attack.png"
+  },
+  "src/lib/images/item_defense.png": {
+    "file": "_app/immutable/assets/item_defense.76668188.png",
+    "src": "src/lib/images/item_defense.png"
+  },
+  "src/lib/images/item_initiative.png": {
+    "file": "_app/immutable/assets/item_initiative.eeb02177.png",
+    "src": "src/lib/images/item_initiative.png"
+  },
+  "src/lib/images/item_movement.png": {
+    "file": "_app/immutable/assets/item_movement.f20636de.png",
+    "src": "src/lib/images/item_movement.png"
+  },
+  "src/lib/images/item_range.png": {
+    "file": "_app/immutable/assets/item_range.22a7666f.png",
+    "src": "src/lib/images/item_range.png"
+  },
+  "src/lib/images/level_h.png": {
+    "file": "_app/immutable/assets/level_h.dbdcdd58.png",
+    "src": "src/lib/images/level_h.png"
+  },
+  "src/lib/images/level_ii.png": {
+    "file": "_app/immutable/assets/level_ii.6ce30a33.png",
+    "src": "src/lib/images/level_ii.png"
+  },
+  "src/lib/images/level_iii.png": {
+    "file": "_app/immutable/assets/level_iii.d731c4d8.png",
+    "src": "src/lib/images/level_iii.png"
+  },
+  "src/lib/images/level_iv.png": {
+    "file": "_app/immutable/assets/level_iv.9d5a514c.png",
+    "src": "src/lib/images/level_iv.png"
+  },
+  "src/lib/images/life_counter_blue_back.png": {
+    "file": "_app/immutable/assets/life_counter_blue_back.e61cd769.png",
+    "src": "src/lib/images/life_counter_blue_back.png"
+  },
+  "src/lib/images/life_counter_blue_front.png": {
+    "file": "_app/immutable/assets/life_counter_blue_front.dadbc5c4.png",
+    "src": "src/lib/images/life_counter_blue_front.png"
+  },
+  "src/lib/images/life_counter_orange_back.png": {
+    "file": "_app/immutable/assets/life_counter_orange_back.1f37e35d.png",
+    "src": "src/lib/images/life_counter_orange_back.png"
+  },
+  "src/lib/images/life_counter_orange_front.png": {
+    "file": "_app/immutable/assets/life_counter_orange_front.c4f84457.png",
+    "src": "src/lib/images/life_counter_orange_front.png"
+  },
+  "src/lib/images/life_counters.png": {
+    "file": "_app/immutable/assets/life_counters.ee8046cc.png",
+    "src": "src/lib/images/life_counters.png"
+  },
+  "src/lib/images/logo.png": {
+    "file": "_app/immutable/assets/logo.a972e7b6.png",
+    "src": "src/lib/images/logo.png"
+  },
+  "src/lib/images/logos/arien.png": {
+    "file": "_app/immutable/assets/arien.7231b0be.png",
+    "src": "src/lib/images/logos/arien.png"
+  },
+  "src/lib/images/logos/bain.png": {
+    "file": "_app/immutable/assets/bain.fc3ae2a6.png",
+    "src": "src/lib/images/logos/bain.png"
+  },
+  "src/lib/images/logos/brogan.png": {
+    "file": "_app/immutable/assets/brogan.c79f500d.png",
+    "src": "src/lib/images/logos/brogan.png"
+  },
+  "src/lib/images/logos/cutter.png": {
+    "file": "_app/immutable/assets/cutter.a898a4f1.png",
+    "src": "src/lib/images/logos/cutter.png"
+  },
+  "src/lib/images/logos/dodger.png": {
+    "file": "_app/immutable/assets/dodger.2e4da8aa.png",
+    "src": "src/lib/images/logos/dodger.png"
+  },
+  "src/lib/images/logos/garrus.png": {
+    "file": "_app/immutable/assets/garrus.364c7d00.png",
+    "src": "src/lib/images/logos/garrus.png"
+  },
+  "src/lib/images/logos/hanu.png": {
+    "file": "_app/immutable/assets/hanu.4e15a87a.png",
+    "src": "src/lib/images/logos/hanu.png"
+  },
+  "src/lib/images/logos/ignatia.png": {
+    "file": "_app/immutable/assets/ignatia.98eec341.png",
+    "src": "src/lib/images/logos/ignatia.png"
+  },
+  "src/lib/images/logos/min.png": {
+    "file": "_app/immutable/assets/min.7e9b1fed.png",
+    "src": "src/lib/images/logos/min.png"
+  },
+  "src/lib/images/logos/misa.png": {
+    "file": "_app/immutable/assets/misa.1ed1704f.png",
+    "src": "src/lib/images/logos/misa.png"
+  },
+  "src/lib/images/logos/nebkher.png": {
+    "file": "_app/immutable/assets/nebkher.03625aaf.png",
+    "src": "src/lib/images/logos/nebkher.png"
+  },
+  "src/lib/images/logos/sabina.png": {
+    "file": "_app/immutable/assets/sabina.162c2152.png",
+    "src": "src/lib/images/logos/sabina.png"
+  },
+  "src/lib/images/logos/silverarrow.png": {
+    "file": "_app/immutable/assets/silverarrow.3259c14d.png",
+    "src": "src/lib/images/logos/silverarrow.png"
+  },
+  "src/lib/images/logos/swift.png": {
+    "file": "_app/immutable/assets/swift.36d0c426.png",
+    "src": "src/lib/images/logos/swift.png"
+  },
+  "src/lib/images/logos/tali.png": {
+    "file": "_app/immutable/assets/tali.0689638f.png",
+    "src": "src/lib/images/logos/tali.png"
+  },
+  "src/lib/images/logos/tigerclaw.png": {
+    "file": "_app/immutable/assets/tigerclaw.fe5e28d1.png",
+    "src": "src/lib/images/logos/tigerclaw.png"
+  },
+  "src/lib/images/logos/trinkets.png": {
+    "file": "_app/immutable/assets/trinkets.58b60e01.png",
+    "src": "src/lib/images/logos/trinkets.png"
+  },
+  "src/lib/images/logos/ursafar.png": {
+    "file": "_app/immutable/assets/ursafar.8bbb9452.png",
+    "src": "src/lib/images/logos/ursafar.png"
+  },
+  "src/lib/images/logos/wasp.png": {
+    "file": "_app/immutable/assets/wasp.dbbc3927.png",
+    "src": "src/lib/images/logos/wasp.png"
+  },
+  "src/lib/images/logos/whisper.png": {
+    "file": "_app/immutable/assets/whisper.144c8c2a.png",
+    "src": "src/lib/images/logos/whisper.png"
+  },
+  "src/lib/images/logos/wuk.png": {
+    "file": "_app/immutable/assets/wuk.d834c453.png",
+    "src": "src/lib/images/logos/wuk.png"
+  },
+  "src/lib/images/logos/xargatha.png": {
+    "file": "_app/immutable/assets/xargatha.cf46a656.png",
+    "src": "src/lib/images/logos/xargatha.png"
+  },
+  "src/lib/images/marker_bounty.png": {
+    "file": "_app/immutable/assets/marker_bounty.844d2b3e.png",
+    "src": "src/lib/images/marker_bounty.png"
+  },
+  "src/lib/images/marker_poison.png": {
+    "file": "_app/immutable/assets/marker_poison.299beac0.png",
+    "src": "src/lib/images/marker_poison.png"
+  },
+  "src/lib/images/movement.png": {
+    "file": "_app/immutable/assets/movement.5004c1c6.png",
+    "src": "src/lib/images/movement.png"
+  },
+  "src/lib/images/movement_blue.png": {
+    "file": "_app/immutable/assets/movement_blue.42301f6d.png",
+    "src": "src/lib/images/movement_blue.png"
+  },
+  "src/lib/images/movement_gold.png": {
+    "file": "_app/immutable/assets/movement_gold.9d7c4c6a.png",
+    "src": "src/lib/images/movement_gold.png"
+  },
+  "src/lib/images/movement_green.png": {
+    "file": "_app/immutable/assets/movement_green.985a06fc.png",
+    "src": "src/lib/images/movement_green.png"
+  },
+  "src/lib/images/movement_red.png": {
+    "file": "_app/immutable/assets/movement_red.62d3c644.png",
+    "src": "src/lib/images/movement_red.png"
+  },
+  "src/lib/images/movement_silver.png": {
+    "file": "_app/immutable/assets/movement_silver.10eca8c5.png",
+    "src": "src/lib/images/movement_silver.png"
+  },
+  "src/lib/images/range_blue.png": {
+    "file": "_app/immutable/assets/range_blue.d047b457.png",
+    "src": "src/lib/images/range_blue.png"
+  },
+  "src/lib/images/range_gold.png": {
+    "file": "_app/immutable/assets/range_gold.b5e6d47c.png",
+    "src": "src/lib/images/range_gold.png"
+  },
+  "src/lib/images/range_green.png": {
+    "file": "_app/immutable/assets/range_green.bc576195.png",
+    "src": "src/lib/images/range_green.png"
+  },
+  "src/lib/images/range_purple.png": {
+    "file": "_app/immutable/assets/range_purple.c6db591d.png",
+    "src": "src/lib/images/range_purple.png"
+  },
+  "src/lib/images/range_red.png": {
+    "file": "_app/immutable/assets/range_red.64d77c36.png",
+    "src": "src/lib/images/range_red.png"
+  },
+  "src/lib/images/range_silver.png": {
+    "file": "_app/immutable/assets/range_silver.05f17778.png",
+    "src": "src/lib/images/range_silver.png"
+  },
+  "src/lib/images/skill_blue.png": {
+    "file": "_app/immutable/assets/skill_blue.efa22636.png",
+    "src": "src/lib/images/skill_blue.png"
+  },
+  "src/lib/images/skill_gold.png": {
+    "file": "_app/immutable/assets/skill_gold.1560168e.png",
+    "src": "src/lib/images/skill_gold.png"
+  },
+  "src/lib/images/skill_green.png": {
+    "file": "_app/immutable/assets/skill_green.2db45dd4.png",
+    "src": "src/lib/images/skill_green.png"
+  },
+  "src/lib/images/skill_red.png": {
+    "file": "_app/immutable/assets/skill_red.1d5798a5.png",
+    "src": "src/lib/images/skill_red.png"
+  },
+  "src/lib/images/skill_silver.png": {
+    "file": "_app/immutable/assets/skill_silver.5b2e9d15.png",
+    "src": "src/lib/images/skill_silver.png"
+  },
+  "src/lib/images/small_logo.png": {
+    "file": "_app/immutable/assets/small_logo.3e62f691.png",
+    "src": "src/lib/images/small_logo.png"
+  },
+  "src/lib/images/star.png": {
+    "file": "_app/immutable/assets/star.95464613.png",
+    "src": "src/lib/images/star.png"
+  },
+  "src/lib/images/tiebreaker_blue.png": {
+    "file": "_app/immutable/assets/tiebreaker_blue.ad632cbf.png",
+    "src": "src/lib/images/tiebreaker_blue.png"
+  },
+  "src/lib/images/tiebreaker_orange.png": {
+    "file": "_app/immutable/assets/tiebreaker_orange.fb6c0ae5.png",
+    "src": "src/lib/images/tiebreaker_orange.png"
+  },
+  "src/lib/images/title.png": {
+    "file": "_app/immutable/assets/title.93cc735c.png",
+    "src": "src/lib/images/title.png"
+  },
+  "src/lib/images/title_ultimate.png": {
+    "file": "_app/immutable/assets/title_ultimate.5a85d048.png",
+    "src": "src/lib/images/title_ultimate.png"
+  },
+  "src/lib/images/token_barrier.png": {
+    "file": "_app/immutable/assets/token_barrier.b87130da.png",
+    "src": "src/lib/images/token_barrier.png"
+  },
+  "src/lib/images/token_blast.png": {
+    "file": "_app/immutable/assets/token_blast.4a21df91.png",
+    "src": "src/lib/images/token_blast.png"
+  },
+  "src/lib/images/token_dud.png": {
+    "file": "_app/immutable/assets/token_dud.19f2893f.png",
+    "src": "src/lib/images/token_dud.png"
+  },
+  "src/lib/images/token_grenade.png": {
+    "file": "_app/immutable/assets/token_grenade.0c45285a.png",
+    "src": "src/lib/images/token_grenade.png"
+  },
+  "src/lib/images/token_ice.png": {
+    "file": "_app/immutable/assets/token_ice.5a4f0838.png",
+    "src": "src/lib/images/token_ice.png"
+  },
+  "src/lib/images/token_illusion.png": {
+    "file": "_app/immutable/assets/token_illusion.df5b48ae.png",
+    "src": "src/lib/images/token_illusion.png"
+  },
+  "src/lib/images/token_magma.png": {
+    "file": "_app/immutable/assets/token_magma.abe3419d.png",
+    "src": "src/lib/images/token_magma.png"
+  },
+  "src/lib/images/token_smoke_bomb.png": {
+    "file": "_app/immutable/assets/token_smoke_bomb.4d1e964f.png",
+    "src": "src/lib/images/token_smoke_bomb.png"
+  },
+  "src/lib/images/token_totem.png": {
+    "file": "_app/immutable/assets/token_totem.e6934a4f.png",
+    "src": "src/lib/images/token_totem.png"
+  },
+  "src/lib/images/token_tree.png": {
+    "file": "_app/immutable/assets/token_tree.8e7ac9f4.png",
+    "src": "src/lib/images/token_tree.png"
+  },
+  "src/routes/+error.svelte": {
+    "assets": [
+      "_app/immutable/assets/error.f9752b0b.png"
+    ],
+    "file": "entries/pages/_error.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_Card.js",
+      "_Img.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+error.svelte"
+  },
+  "src/routes/+layout.css": {
+    "file": "_app/immutable/assets/_layout.4070a99d.css",
+    "src": "src/routes/+layout.css"
+  },
+  "src/routes/+layout.svelte": {
+    "assets": [
+      "_app/immutable/assets/small_logo.3e62f691.png"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout.4070a99d.css"
+    ],
+    "file": "entries/pages/_layout.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_Frame.js",
+      "_index2.js",
+      "_names.js",
+      "_stores.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+layout.svelte"
+  },
+  "src/routes/+layout.ts": {
+    "file": "entries/pages/_layout.ts.js",
+    "isEntry": true,
+    "src": "src/routes/+layout.ts"
+  },
+  "src/routes/+page.css": {
+    "file": "_app/immutable/assets/_page.da44de54.css",
+    "src": "src/routes/+page.css"
+  },
+  "src/routes/+page.svelte": {
+    "assets": [
+      "_app/immutable/assets/star.95464613.png",
+      "_app/immutable/assets/modesto_poster.50b150e0.woff"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.da44de54.css"
+    ],
+    "file": "entries/pages/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_stores.js",
+      "_Card.js",
+      "_Button.js",
+      "_Tooltip.js",
+      "_Img.js",
+      "_states.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/+page.svelte"
+  },
+  "src/routes/+page.ts": {
+    "file": "entries/pages/_page.ts.js",
+    "isEntry": true,
+    "src": "src/routes/+page.ts"
+  },
+  "src/routes/[hero]/+page.css": {
+    "file": "_app/immutable/assets/_page.31c08302.css",
+    "src": "src/routes/[hero]/+page.css"
+  },
+  "src/routes/[hero]/+page.svelte": {
+    "assets": [
+      "_app/immutable/assets/modesto_poster.50b150e0.woff"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.31c08302.css"
+    ],
+    "file": "entries/pages/_hero_/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_states.js",
+      "_Checkbox.js",
+      "_Tooltip.js",
+      "_Img.js",
+      "_index.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/[hero]/+page.svelte"
+  },
+  "src/routes/about/+page.svelte": {
+    "assets": [
+      "_app/immutable/assets/discord.44d09cc5.png",
+      "_app/immutable/assets/logo.a972e7b6.png"
+    ],
+    "file": "entries/pages/about/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_Img.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/about/+page.svelte"
+  },
+  "src/routes/builder/+page.css": {
+    "file": "_app/immutable/assets/_page.b1d04f17.css",
+    "src": "src/routes/builder/+page.css"
+  },
+  "src/routes/builder/+page.svelte": {
+    "assets": [
+      "_app/immutable/assets/modesto_poster.50b150e0.woff"
+    ],
+    "css": [
+      "_app/immutable/assets/_page.b1d04f17.css"
+    ],
+    "file": "entries/pages/builder/_page.svelte.js",
+    "imports": [
+      "_ssr.js",
+      "_Button.js",
+      "_Checkbox.js",
+      "_names.js",
+      "_Img.js",
+      "_states.js"
+    ],
+    "isEntry": true,
+    "src": "src/routes/builder/+page.svelte"
+  }
+}
