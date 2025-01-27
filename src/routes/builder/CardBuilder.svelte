@@ -952,7 +952,7 @@
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryMovementValueField")),
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryDefenseValueField")),
       )
-      heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, (100 + 1192) * (i % 3), (210 + 1664) * Math.floor(i / 3), 1192, 1664)
+      heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, 100 + (100 + 1192) * (i % 3), 100 + (210 + 1664) * Math.floor(i / 3), 1192, 1664)
       tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height)
     }
 
