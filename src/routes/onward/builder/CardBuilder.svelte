@@ -4,12 +4,9 @@
     Button,
     Checkbox,
     Fileupload,
-    Img,
     Input,
     Kbd,
     Label,
-    Li,
-    List,
     Select,
     Textarea,
   } from "flowbite-svelte"
@@ -738,16 +735,26 @@
     </div>
   </div>
 
-  <p class="absolute font-modesto"></p>
+  <p class="absolute font-atlantis"></p>
+  <p class="absolute font-itc"></p>
 </div>
 
 <style>
-    .font-modesto {
-        font-family: "Modesto Poster", serif;
+    .font-atlantis {
+        font-family: "Atlantis Regular", serif;
     }
 
     @font-face {
-        font-family: "Modesto Poster";
-        src: url("../../../lib/fonts/modesto_poster.woff") format("woff");
+        font-family: "Atlantis Regular";
+        src: url("../../../lib/fonts/atlantis_regular.woff") format("woff");
+    }
+
+    .font-itc {
+        font-family: "ITC Charter", serif;
+    }
+
+    @font-face {
+        font-family: "ITC Charter";
+        src: url("../../../lib/fonts/itc_charter_bold.woff") format("woff");
     }
 </style>

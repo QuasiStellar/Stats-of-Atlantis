@@ -376,7 +376,7 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
     for (const token of tokens) {
       const width = measureToken(token, false);
 
-      if (currentWidth + width > maxLineWidth) {
+      if (currentWidth + width > maxLineWidth && (token.type === 'image' || token.value != ' ')) {
         lines.push({ tokens: currentLine });
         currentLine = [];
         currentWidth = 0;
