@@ -1,3 +1,5 @@
+import heroInfo from "./onward_heroes.json"
+
 export function updateCanvas(
 	canvas: HTMLCanvasElement,
 	context: CanvasRenderingContext2D,
@@ -8,14 +10,14 @@ export function updateCanvas(
   color: HeroColor,
   range: AttackRange,
   type: CardType,
-): void {
+): number {
 	clear(canvas, context);
 
 	if (background instanceof HTMLImageElement) {
 		context.drawImage(background, 0, 0, 750, 1050);
 	}
 
-  addDescription(context, description, 89)
+  const descHeight = addDescription(context, description, 89)
   addImage(context, type == 'ultimate' ? 'frame_ult' : 'frame', 0, 0);
   addImage(context, getName(color), 25, 925);
   addImage(context, getPlan(type, range, color), 50, 47);
@@ -23,6 +25,7 @@ export function updateCanvas(
     addImage(context, getDamageImage(type), 600, 60);
   }
   addTitle(context, name, 375, 993, isQuick, 46, 32.5, true);
+  return descHeight + 163
 }
 
 export function updateHeroCanvas(
@@ -38,14 +41,14 @@ export function updateHeroCanvas(
   abilityName: string,
   abilityDescription: string,
   isUpgraded: boolean,
-) {
+): number {
   clear(canvas, context);
 
   if (background instanceof HTMLImageElement) {
     context.drawImage(background, 0, 0, 1407, 1407);
   }
 
-  addAbility(context, abilityName, abilityDescription, 105)
+  const descHeight = addAbility(context, abilityName, abilityDescription, 105)
 
   if (heroIcon instanceof HTMLImageElement) {
     context.save()
@@ -64,11 +67,10 @@ export function updateHeroCanvas(
   addImage(context, getSidePanel(color), 1250, 61);
   addImage(context, getFallbackPlan(attackRange, color, isUpgraded), 56, 63);
   addHeroTitle(context, name, fraction, role, title, 566, 1337);
+  return descHeight + 320
 }
 
-import {
-	onwardImageNames,
-} from './states';
+import { onwardImageNames } from "./states"
 
 export const images: Map<string, HTMLImageElement> = new Map();
 
@@ -203,7 +205,7 @@ function addTitle(context: CanvasRenderingContext2D, text: string, x: number, y:
 }
 
 function addHeroTitle(context: CanvasRenderingContext2D, name: string, fraction: Fraction, role: HeroRole, title: string, x: number, y: number) {
-  const fullTitle = title.substring(0, 2) == 'of' ? role + ' ' + title : title + ' ' + role
+  const fullTitle = title.substring(0, 2) == 'of' ? role + ' ' + title : (title.length == 0 ? role : title + ' ' + role)
 
   const nameParts = splitCapitalized(name, 66, 48)
   const fullTitleParts = splitCapitalized(fullTitle, 43, 32)
@@ -293,14 +295,14 @@ function splitCapitalized(s: string, uppercaseSize: number, lowercaseNumber: num
 }
 
 function isUpperCase(c: string): boolean {
-  return /^[A-Z ]$/.test(c);
+  return /^[A-Z ]$/.test(c)
 }
 
-function addDescription(context: CanvasRenderingContext2D, text: string, x: number) {
-  const lineHeight = 38;
-  const extraParagraphSpacing = 12;
-  const maxLineWidth = 574;
-  const specialWords = ['BURN', 'DISARM', 'STUN', 'FREEZE', 'SILENCE'];
+function addDescription(context: CanvasRenderingContext2D, text: string, x: number): number {
+  const lineHeight = 38
+  const extraParagraphSpacing = 12
+  const maxLineWidth = 574
+  const specialWords = ['BURN', 'DISARM', 'STUN', 'FREEZE', 'SILENCE']
   const targetImage = <CanvasImageSource>images.get("target") as HTMLImageElement
   const targetItalicsImage = <CanvasImageSource>images.get("target_italics") as HTMLImageElement
   const fontSize = '30px'
@@ -312,31 +314,38 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
   tempCanvas.height = 1050
   const ctx = tempCanvas.getContext("2d")!
 
-  ctx.font = fontSize + ' ' + fontName;
-  ctx.textBaseline = 'top';
+  ctx.font = fontSize + ' ' + fontName
+  ctx.textBaseline = 'top'
 
-  const paragraphs = text.split('\n');
+  const paragraphs = text.split('\n')
   let currentY = 0;
 
   for (const paragraph of paragraphs) {
-    currentY = processParagraph(paragraph, x, currentY);
-    currentY += extraParagraphSpacing;
+    currentY = processParagraph(paragraph, x, currentY)
+    if (paragraph.length == 0 || paragraph[0] != '-') {
+      currentY += extraParagraphSpacing
+    }
   }
 
-  const gradient = ctx.createLinearGradient(0, 920 - currentY, 0, 920 - currentY - 70); // Vertical gradient
-  gradient.addColorStop(0, 'rgba(36, 26, 25, 0.827)');    // Solid color at bottom
-  gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');        // Transparent at top
-  context.fillStyle = gradient;
-  context.fillRect(0, 920 - currentY - 70, 750, 920 - currentY);
+  const descHeight = currentY
+
+  const gradient = ctx.createLinearGradient(0, 920 - currentY, 0, 920 - currentY - 70)
+  gradient.addColorStop(0, 'rgba(36, 26, 25, 0.827)')
+  gradient.addColorStop(1, 'rgba(0, 0, 0, 0)')
+  context.fillStyle = gradient
+  context.fillRect(0, 920 - currentY - 70, 750, 920 - currentY)
   context.drawImage(tempCanvas, 0, 0, 750, 1050, 0, 920 - currentY, 750, 1050)
+  
+  return descHeight
 
   function processParagraph(text: string, x: number, y: number): number {
     const tokens = tokenize(text);
     const lines = splitLines(tokens);
+    const startsWithTilde = lines[0]?.tokens[0]?.type === 'text' && lines[0].tokens[0].value.startsWith('~');
     let currentY = y;
 
     for (const line of lines) {
-      currentY = drawLine(line, x, currentY);
+      currentY = drawLine(line, x, currentY, startsWithTilde);
     }
 
     return currentY;
@@ -405,8 +414,7 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
     return width;
   }
 
-  function drawLine(line: Line, x: number, y: number): number {
-    const startsWithTilde = line.tokens[0]?.type === 'text' && line.tokens[0].value.startsWith('~');
+  function drawLine(line: Line, x: number, y: number, startsWithTilde: boolean): number {
     if (line.tokens[0]?.type === 'text') {
       line.tokens[0].value = line.tokens[0].value.replace(/~/g, '')
     }
@@ -448,10 +456,10 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
   }
 }
 
-function addAbility(context: CanvasRenderingContext2D, abilityName: string, abilityDescription: string, x: number) {
+function addAbility(context: CanvasRenderingContext2D, abilityName: string, abilityDescription: string, x: number): number {
   const lineHeight = 42;
   const extraParagraphSpacing = 12;
-  const maxLineWidth = 1000;
+  const extraEmptyParagraphSpacing = -12;
   const specialWords = ['BURN', 'DISARM', 'STUN', 'FREEZE', 'SILENCE'];
   const targetImage = <CanvasImageSource>images.get("target_large") as HTMLImageElement
   const targetItalicsImage = <CanvasImageSource>images.get("target_italics") as HTMLImageElement
@@ -461,8 +469,8 @@ function addAbility(context: CanvasRenderingContext2D, abilityName: string, abil
   const lowerBorder = 1209
 
   const tempCanvas = document.createElement("canvas")
-  tempCanvas.width = 1409
-  tempCanvas.height = 1409
+  tempCanvas.width = 1407
+  tempCanvas.height = 1407
   const ctx = tempCanvas.getContext("2d")!
 
   ctx.font = fontSize + ' ' + fontName;
@@ -473,17 +481,25 @@ function addAbility(context: CanvasRenderingContext2D, abilityName: string, abil
 
   for (const paragraph of paragraphs) {
     currentY = processParagraph(paragraph, x, currentY);
-    currentY += extraParagraphSpacing;
+    if (paragraph.length == 0) {
+      currentY += extraEmptyParagraphSpacing;
+    } else {
+      currentY += extraParagraphSpacing;
+    }
   }
+  
+  const descHeight = currentY
 
   const gradient = ctx.createLinearGradient(0, lowerBorder - currentY - 70, 0, lowerBorder - currentY - 270);
   gradient.addColorStop(0, 'rgba(36, 26, 25, 0.927)');
   gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
   context.fillStyle = gradient;
-  context.fillRect(0, lowerBorder - currentY - 270, 1409, lowerBorder - currentY - 70);
-  context.drawImage(tempCanvas, 0, 0, 1409, 1409, 0, lowerBorder - currentY, 1409, 1409)
+  context.fillRect(0, lowerBorder - currentY - 270, 1407, lowerBorder - currentY - 70);
+  context.drawImage(tempCanvas, 0, 0, 1407, 1407, 0, lowerBorder - currentY, 1407, 1407)
 
   addTitle(context, abilityName, x, lowerBorder - 47 - currentY, false, 55, 38, false)
+  
+  return descHeight
 
   function processParagraph(text: string, x: number, y: number): number {
     const tokens = tokenize(text);
@@ -525,26 +541,7 @@ function addAbility(context: CanvasRenderingContext2D, abilityName: string, abil
 
   function splitLines(tokens: Token[]): Line[] {
     const lines: Line[] = [];
-    let currentLine: Token[] = [];
-    let currentWidth = 0;
-
-    for (const token of tokens) {
-      const width = measureToken(token, false);
-
-      if (currentWidth + width > maxLineWidth) {
-        lines.push({ tokens: currentLine });
-        currentLine = [];
-        currentWidth = 0;
-      }
-
-      currentLine.push(token);
-      currentWidth += width;
-    }
-
-    if (currentLine.length > 0) {
-      lines.push({ tokens: currentLine });
-    }
-
+    lines.push({ tokens: tokens });
     return lines;
   }
 
@@ -601,6 +598,179 @@ function addAbility(context: CanvasRenderingContext2D, abilityName: string, abil
 
     return y + lineHeight;
   }
+}
+
+export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
+  const context = canvas.getContext('2d')!
+  context.clearRect(0, 0, canvas.width, canvas.height);
+
+  const hero = heroInfo[heroName[0].toUpperCase() + heroName.slice(1).toLowerCase() as keyof typeof heroInfo] as {
+    name: string,
+    fraction: string,
+    role: string,
+    title: string,
+    range: string,
+    abilityName: string,
+    abilityDescription: string,
+    upgradedAbilityName: string,
+    upgradedAbilityDescription: string,
+    ultimate: { name: string, description: string, isQuick?: boolean },
+    zeroThreeCard: { name: string, description: string, isQuick?: boolean },
+    twoTwoCard: { name: string, description: string, isQuick?: boolean },
+    threeOneCard: { name: string, description: string, isQuick?: boolean },
+    fourOneCard: { name: string, description: string, isQuick?: boolean },
+  }
+
+  const blackImage = await createPixelImage()
+
+  const heroCanvas = document.createElement("canvas")
+  heroCanvas.width = 1407
+  heroCanvas.height = 1407
+  const heroContext = heroCanvas.getContext("2d")!
+  updateHeroCanvas(
+    heroCanvas,
+    heroContext,
+    blackImage,
+    blackImage,
+    hero.name,
+    hero.fraction[0].toUpperCase() + hero.fraction.slice(1).toLowerCase() as Fraction,
+    hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole,
+    hero.title,
+    hero.range.toLowerCase() as AttackRange,
+    hero.abilityName,
+    hero.abilityDescription,
+    false,
+  )
+
+  const heroUpgradedCanvas = document.createElement("canvas")
+  heroUpgradedCanvas.width = 1407
+  heroUpgradedCanvas.height = 1407
+  const heroUpgradedContext = heroUpgradedCanvas.getContext("2d")!
+  const upgradedHeight = updateHeroCanvas(
+    heroUpgradedCanvas,
+    heroUpgradedContext,
+    blackImage,
+    blackImage,
+    hero.name,
+    hero.fraction[0].toUpperCase() + hero.fraction.slice(1).toLowerCase() as Fraction,
+    hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole,
+    hero.title,
+    hero.range.toLowerCase() as AttackRange,
+    hero.upgradedAbilityName,
+    hero.upgradedAbilityDescription,
+    true,
+  )
+
+  const ultimateCanvas = document.createElement("canvas")
+  ultimateCanvas.width = 750
+  ultimateCanvas.height = 1050
+  const ultimateContext = ultimateCanvas.getContext("2d")!
+  const ultimateHeight = updateCanvas(
+    ultimateCanvas,
+    ultimateContext,
+    blackImage,
+    hero.ultimate.name,
+    hero.ultimate.description,
+    hero.ultimate.isQuick,
+    getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
+    hero.range.toLowerCase() as AttackRange,
+    "ultimate",
+  )
+
+  const zeroThreeCanvas = document.createElement("canvas")
+  zeroThreeCanvas.width = 750
+  zeroThreeCanvas.height = 1050
+  const zeroThreeContext = zeroThreeCanvas.getContext("2d")!
+  const zeroThreeHeight = updateCanvas(
+    zeroThreeCanvas,
+    zeroThreeContext,
+    blackImage,
+    hero.zeroThreeCard.name,
+    hero.zeroThreeCard.description,
+    hero.zeroThreeCard.isQuick,
+    getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
+    hero.range.toLowerCase() as AttackRange,
+    "zeroThree",
+  )
+
+  const twoTwoCanvas = document.createElement("canvas")
+  twoTwoCanvas.width = 750
+  twoTwoCanvas.height = 1050
+  const twoTwoContext = twoTwoCanvas.getContext("2d")!
+  const twoTwoHeight = updateCanvas(
+    twoTwoCanvas,
+    twoTwoContext,
+    blackImage,
+    hero.twoTwoCard.name,
+    hero.twoTwoCard.description,
+    hero.twoTwoCard.isQuick,
+    getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
+    hero.range.toLowerCase() as AttackRange,
+    "twoTwo",
+  )
+
+  const threeOneCanvas = document.createElement("canvas")
+  threeOneCanvas.width = 750
+  threeOneCanvas.height = 1050
+  const threeOneContext = threeOneCanvas.getContext("2d")!
+  const threeOneHeight = updateCanvas(
+    threeOneCanvas,
+    threeOneContext,
+    blackImage,
+    hero.threeOneCard.name,
+    hero.threeOneCard.description,
+    hero.threeOneCard.isQuick,
+    getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
+    hero.range.toLowerCase() as AttackRange,
+    "threeOne",
+  )
+
+  const fourOneCanvas = document.createElement("canvas")
+  fourOneCanvas.width = 750
+  fourOneCanvas.height = 1050
+  const fourOneContext = fourOneCanvas.getContext("2d")!
+  const fourOneHeight = updateCanvas(
+    fourOneCanvas,
+    fourOneContext,
+    blackImage,
+    hero.fourOneCard.name,
+    hero.fourOneCard.description,
+    hero.fourOneCard.isQuick,
+    getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
+    hero.range.toLowerCase() as AttackRange,
+    "fourOne",
+  )
+
+  context.drawImage(fourOneCanvas, 0, 0, 750, 1050, 328, fourOneHeight + threeOneHeight + twoTwoHeight + zeroThreeHeight + ultimateHeight + upgradedHeight + 357, 750, 1050)
+  context.drawImage(threeOneCanvas, 0, 0, 750, 1050, 328, threeOneHeight + twoTwoHeight + zeroThreeHeight + ultimateHeight + upgradedHeight + 357, 750, 1050)
+  context.drawImage(twoTwoCanvas, 0, 0, 750, 1050, 328, twoTwoHeight + zeroThreeHeight + ultimateHeight + upgradedHeight + 357, 750, 1050)
+  context.drawImage(zeroThreeCanvas, 0, 0, 750, 1050, 328, zeroThreeHeight + ultimateHeight + upgradedHeight + 357, 750, 1050)
+  context.drawImage(ultimateCanvas, 0, 0, 750, 1050, 328, ultimateHeight + upgradedHeight + 357, 750, 1050)
+  context.drawImage(heroUpgradedCanvas, 0, 0, 1407, 1407, 0, upgradedHeight, 1407, 1407)
+  context.drawImage(heroCanvas, 0, 0, 1407, 1407, 0, 0, 1407, 1407)
+}
+
+function createPixelImage(): Promise<HTMLImageElement> {
+  return new Promise((resolve, reject) => {
+    const canvas = document.createElement('canvas')
+    canvas.width = 1
+    canvas.height = 1
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) {
+      reject(new Error('Could not get canvas context'))
+      return
+    }
+
+    ctx.fillStyle = '#111827'
+    ctx.fillRect(0, 0, 1, 1)
+
+    const img = new Image()
+    img.onload = () => resolve(img)
+    img.onerror = reject
+
+    img.src = canvas.toDataURL()
+  })
 }
 
 type Token = { type: 'text', value: string } | { type: 'keyword', value: string } | { type: 'image' };

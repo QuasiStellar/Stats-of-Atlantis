@@ -2,12 +2,21 @@
   import { onMount } from "svelte"
   import {
     Button,
-    Img,
   } from "flowbite-svelte"
+  import { importImages, paintHero } from "../../onward_card_painter"
 
   $: heroImages = new Map()
   $: heroPortraitImages = new Map()
   $: heroPortraitSelectedImages = new Map()
+
+  let canvas: HTMLCanvasElement
+
+  let mountPromise: Promise<void>;
+  let resolveMount: () => void;
+
+  mountPromise = new Promise((resolve) => {
+    resolveMount = resolve;
+  });
 
   onMount(async () => {
     for (const hero of heroes) {
@@ -18,13 +27,21 @@
       heroPortraitSelectedImages.set(hero, (await import(`../../lib/images/onward/portraits/portrait_selected_${hero}.png`)).default)
     }
     heroPortraitSelectedImages = heroPortraitSelectedImages
+
+    await Promise.all([
+      document.fonts.ready,
+      importImages(),
+    ])
+
+    resolveMount()
   })
 
-  let selectedHero = "akimo"
+  let selectedHero = ""
 
-  function selectHero(hero: string) {
-    console.log("clicked " + hero)
+  async function selectHero(hero: string) {
     selectedHero = hero
+    await mountPromise
+    await paintHero(hero, canvas)
   }
 
   async function getHeroImage(hero: string) {
@@ -43,30 +60,30 @@
     "sakoshi",
     "kumaya",
     "yami",
-    // "brylvar",
-    // "freyhel",
-    // "corjof",
-    // "astryda",
-    // "shyllavi",
-    // "vorhild",
-    // "heraal",
-    // "gulbjarn",
-    // "cotlic",
-    // "tlakali",
-    // "nelaclen",
-    // "kohai",
-    // "nantaca",
-    // "achla",
-    // "ixatosk",
-    // "zacoal",
-    // "shaidrus",
-    // "akhuti",
-    // "setheru",
-    // "ekhrit",
-    // "haburat",
-    // "khepiax",
-    // "shafathi",
-    // "khenui",
+    "brylvar",
+    "freyhel",
+    "corjof",
+    "astryda",
+    "shyllavi",
+    "vorhild",
+    "heraal",
+    "gulbjarn",
+    "cotlic",
+    "tlakali",
+    "nelaclen",
+    "kohai",
+    "nantaca",
+    "achla",
+    "ixatosk",
+    "zacoal",
+    "shaidrus",
+    "akhuti",
+    "setheru",
+    "ekhrit",
+    "haburat",
+    "khepiax",
+    "shafathi",
+    "khenui",
   ]
 </script>
 
@@ -87,13 +104,14 @@
     </div>
 
     {#if selectedHero !== ''}
-      {#await getHeroImage(selectedHero)}
-        <p>Loading image...</p>
-      {:then url}
-        <img src={url} alt={selectedHero} class="w-124 py-5" />
-      {:catch error}
-        <p>Failed to load image</p>
-      {/await}
+      <canvas width="1407" height="11407" class="w-160 py-5" bind:this={canvas} />
+      <!--{#await getHeroImage(selectedHero)}-->
+      <!--  <p>Loading image...</p>-->
+      <!--{:then url}-->
+      <!--  <img src={url} alt={selectedHero} class="w-124 py-5" />-->
+      <!--{:catch error}-->
+      <!--  <p>Failed to load image</p>-->
+      <!--{/await}-->
     {/if}
   </div>
 </div>

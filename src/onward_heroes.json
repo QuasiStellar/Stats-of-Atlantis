@@ -1,0 +1,1062 @@
+{
+  "Akimo": {
+    "name": "Akimo",
+    "fraction": "KURUMO",
+    "role": "SLAYER",
+    "title": "Blazing",
+    "range": "MELEE",
+    "abilityName": "Blade of the Everking",
+    "abilityDescription": "Akimo has +3 strength if he has BURN.\nAction: Akimo gains BURN.",
+    "upgradedAbilityName": "Champion of the Everking",
+    "upgradedAbilityDescription": "Akimo has +5 strength if he has BURN.\nAction: Akimo gains BURN.",
+    "ultimate": {
+      "name": "Akimo's Oath",
+      "description": "~Attach to 1 nearby enemy hero.\nDouble Akimo's strength while he is attacking the attached hero.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Scorching Dive",
+      "description": "Move to 1 ::target:: adjacent area.\nIf you do, you may deal 2 DMG and BURN 1 enemy hero or outsider there."
+    },
+    "twoTwoCard": {
+      "name": "Kurumo's Brand",
+      "description": "Deal 3 DMG and BURN 1 ::target:: nearby enemy hero or outsider.\nThe next time that enemy enters an area this turn, teleport Akimo there."
+    },
+    "threeOneCard": {
+      "name": "Ishiro Unleashed",
+      "description": "~Additional cost: 1 HP.\nAkimo's next attack this turn has +5 strength and also deals BURN."
+    },
+    "fourOneCard": {
+      "name": "Bloodthirst",
+      "description": "~Cast only during your shop phase.\nAkimo has +3 initiative and +1 strength this round.\nThe next minion phase is delayed until the end of this round."
+    }
+  },
+  "Shyllavi": {
+    "name": "Shyllavi",
+    "fraction": "LIOTHAN",
+    "role": "SLAYER",
+    "title": "Feral",
+    "range": "MELEE",
+    "abilityName": "Restless Wildcat",
+    "abilityDescription": "Shyllavi has +3 strength if she has 7 or more HP.",
+    "upgradedAbilityName": "Restless Killer",
+    "upgradedAbilityDescription": "Shyllavi has +4 strength if she has 5 or more HP.",
+    "ultimate": {
+      "name": "Dance of the Predator",
+      "description": "~Additional cost: 1 AP.\nMove to 1 ::target:: area within 2 areas.\nIf you do, attack targeting each enemy hero and each enemy minion there."
+    },
+    "zeroThreeCard": {
+      "name": "Freezing Dive",
+      "description": "Move to 1 ::target:: adjacent area.\nIf you do, you may deal 2 DMG and FREEZE 1 enemy hero or outsider there."
+    },
+    "twoTwoCard": {
+      "name": "Panther Form",
+      "description": "~Attach to Shyllavi until she is defeated.\nShe has +1 armor and \"Retaliate: DISARM\"."
+    },
+    "threeOneCard": {
+      "name": "Biding Time",
+      "description": "~Cast only during your shop phase.\nHeal 3 HP to her.\nShe has +3 initiative this round.\nThe next minion phase is delayed until the end of this round."
+    },
+    "fourOneCard": {
+      "name": "Feline Pounce",
+      "description": "Teleport to 1 ::target:: area exactly 2 areas away.\nIf you do, SILENCE 1 hero there and prevent their next cast action this turn."
+    }
+  },
+  "Nantaca": {
+    "name": "Nantaca",
+    "fraction": "TAULOT",
+    "role": "SLAYER",
+    "title": "Unliving",
+    "range": "MELEE",
+    "abilityName": "Sepulchral Tendrils",
+    "abilityDescription": "Nantaca has +1 Strength for each nearby friendly\nminion, while she is in a jungle or river.",
+    "upgradedAbilityName": "Deathly Tendrils",
+    "upgradedAbilityDescription": "Nantaca has +2 strength for each nearby friendly\nminion, while she is in a jungle or river.",
+    "ultimate": {
+      "name": "Obey the Monarch",
+      "description": "Place 2 friendly minions in 1 ::target:: nearby contested area.\nAll areas are jungles this turn."
+    },
+    "zeroThreeCard": {
+      "name": "Withering Pull",
+      "description": "Deal 2 DMG, DISARM, and pull 1 ::target:: adjacent enemy hero ignoring the jungle targeting restriction."
+    },
+    "twoTwoCard": {
+      "name": "Unburial Rite",
+      "description": "~Additional cost: 1 MP.\nIf Nantaca is in a contested area, place 1 friendly minion there.\nAll contested areas are jungles this turn."
+    },
+    "threeOneCard": {
+      "name": "Sinkhole",
+      "description": "Deal 1 DMG, STUN, and pull each nearby enemy hero.\nPrevent the \"move\", \"teleport\", and \"displace\" effects in their spells this turn."
+    },
+    "fourOneCard": {
+      "name": "Living Jungle",
+      "description": "~Cast only during your shop phase and only if Nantaca is in a jungle.\nTeleport to 1 ::target:: jungle area anywhere without enemy heroes.\nShe has +2 initiative this round.\nThe next minion phase is delayed until the end of this round."
+    }
+  },
+  "Haburat": {
+    "name": "Haburat",
+    "fraction": "NUPTEN",
+    "role": "SLAYER",
+    "title": "Ruthless",
+    "range": "MELEE",
+    "abilityName": "Executioner",
+    "abilityDescription": "Haburat has +X strength where X is equal to\nthe number of AP on his plan card.",
+    "upgradedAbilityName": "First Executioner",
+    "upgradedAbilityDescription": "Haburat has +X strength where X is equal to\nthe sum of the AP and MP on his plan card.",
+    "ultimate": {
+      "name": "Lightning Blades",
+      "description": "~Cast only during your shop phase.\nDouble the AP on Haburat's plan card this round."
+    },
+    "zeroThreeCard": {
+      "name": "Shining Dive",
+      "description": "Move to 1 ::target:: adjacent area.\nIf you do, you may deal 2 DMG and SILENCE 1 enemy hero or outsider there."
+    },
+    "twoTwoCard": {
+      "name": "Haburat Shadow",
+      "description": "~Attach to 1 nearby enemy hero until either Haburat or that hero is defeated.\nThe attached hero is always within attack range of Haburat (jungle rule applies)."
+    },
+    "threeOneCard": {
+      "name": "Overdue Execution",
+      "description": "~Cast only during your shop phase.\nHaburat has +X initiative and +X strength this round, where X is the Day number.\nChoose 1 enemy hero anywhere, Haburat can only attack them this round."
+    },
+    "fourOneCard": {
+      "name": "Weave",
+      "description": "Choose 1 ::target:: nearby enemy.\nHaburat's next attack this turn ignores the \"Weak Enemies\" rule and deals any excess DMG to the chosen enemy.\nExcess DMG is any DMG beyond what is needed to defeat the target."
+    }
+  },
+  "Sakoshi": {
+    "name": "Sakoshi",
+    "fraction": "KURUMO",
+    "role": "MARKSMAN",
+    "title": "Lava",
+    "range": "RANGED",
+    "abilityName": "Run and Hide",
+    "abilityDescription": "When Sakoshi loses 1 or more HP, he may move\nto 1 ::target:: adjacent area.",
+    "upgradedAbilityName": "Hit and Run",
+    "upgradedAbilityDescription": "When Sakoshi deals 1 or more DMG or loses\n1 or more HP, he may move to 1 ::target:: adjacent area.",
+    "ultimate": {
+      "name": "Shuriken Storm",
+      "description": "~Cast only during your shop phase.\nSakoshi gains 3 AP.\nThis round, he can take attack actions, but may only target heroes and/or outsiders."
+    },
+    "zeroThreeCard": {
+      "name": "Quick Shot",
+      "description": "Attack 1 ::target:: enemy in Sakoshi's area.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Bouncy Shurikens",
+      "description": "~Additional cost: 1 MP and 1 AP.\nAttack up to 3 ::target:: nearby enemies."
+    },
+    "threeOneCard": {
+      "name": "Airship Drop",
+      "description": "~Additional cost: 1 MP and 1 HP.\nTeleport to 1 ::target:: area anywhere.\nIf you do, you may deal 1 piercing DMG to 1 enemy there. Then, lose all MP and AP."
+    },
+    "fourOneCard": {
+      "name": "Counterfeits",
+      "description": "~Cast only during your shop phase.\nPurchase an item costing up to 12 gold without paying its cost. Equip it to Sakoshi ignoring the limit of 1 item per color."
+    }
+  },
+  "Vorhild": {
+    "name": "Vorhild",
+    "fraction": "LIOTHAN",
+    "role": "MARKSMAN",
+    "title": "Ice",
+    "range": "RANGED",
+    "abilityName": "Icy Shade",
+    "abilityDescription": "Vorhild's attacks target enemies in adjacent\nareas and exactly 2 areas away.",
+    "upgradedAbilityName": "Frozen Shade",
+    "upgradedAbilityDescription": "Vorhild's attacks target enemies within 2 areas.\nHer attacks also FREEZE.",
+    "ultimate": {
+      "name": "The Ermine's Eye",
+      "description": "~Additional cost: all AP.\nChoose 1 enemy hero in 1 ::target:: area anywhere and attack them with +3 strength for each AP spent to cast this."
+    },
+    "zeroThreeCard": {
+      "name": "Precise Shot",
+      "description": "Attack 1 ::target:: enemy 2 areas away."
+    },
+    "twoTwoCard": {
+      "name": "Ermine Form",
+      "description": "~Attach to Vorhild until she declares an attack or cast action.\nShe has Tough during any hero's turn.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Long Shot",
+      "description": "~Additional cost: 1 MP.\nChoose 1 ::target:: area not nearby.\nDeal 1 DMG and FREEZE 1 ::target:: enemy hero or minion there."
+    },
+    "fourOneCard": {
+      "name": "Barrage",
+      "description": "~Additional cost: 1 AP.\nAttack ::target:: each nearby enemy hero."
+    }
+  },
+  "Achla": {
+    "name": "Achla",
+    "fraction": "TAULOT",
+    "role": "MARKSMAN",
+    "title": "Venom",
+    "range": "RANGED",
+    "abilityName": "Poisoned Traps",
+    "abilityDescription": "When 1 ::target:: nearby enemy hero loses HP during\nany hero's turn, they lose 1 more.",
+    "upgradedAbilityName": "Deadly Traps",
+    "upgradedAbilityDescription": "When 1 ::target:: nearby enemy hero loses HP during\nany hero's turn, they lose 2 more.",
+    "ultimate": {
+      "name": "Coma Toxin",
+      "description": "Deal 8 piercing DMG to 1 ::target:: nearby enemy hero ignoring the jungle targeting restriction."
+    },
+    "zeroThreeCard": {
+      "name": "Guerrilla Shot",
+      "description": "Attack 1 ::target:: nearby enemy in a jungle, ignoring the jungle targeting restriction."
+    },
+    "twoTwoCard": {
+      "name": "Spiked Bait",
+      "description": "Choose 1 ::target:: jungle area anywhere.\nDeal 1 DMG and STUN 1 enemy there."
+    },
+    "threeOneCard": {
+      "name": "Poison Sting",
+      "description": "~Attach to 1 enemy hero within 2 areas until they either exhaust or are healed.\nWhen the attached hero finishes resolving an action, deal 1 piercing DMG to them.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Ambush",
+      "description": "~Additional cost: 2 MP.\nAttack 1 ::target:: adjacent enemy hero ignoring the jungle targeting restriction.\nAttack the same target again."
+    }
+  },
+  "Khepiax": {
+    "name": "Khepiax",
+    "fraction": "NUPTEN",
+    "role": "MARKSMAN",
+    "title": "Lightning",
+    "range": "RANGED",
+    "abilityName": "Lady of Lightning",
+    "abilityDescription": "Add the following effect to the end of each\nfriendly hero's spell: \"Khepiax deals 1 DMG\nto up to 1 ::target:: enemy hero nearby to Khepiax.\"",
+    "upgradedAbilityName": "Lady of the Storm",
+    "upgradedAbilityDescription": "Add the following effect to the end of each\nfriendly hero's spell: \"Khepiax deals 2 DMG\nto up to 1 ::target:: enemy hero nearby to Khepiax.\"",
+    "ultimate": {
+      "name": "Become the Storm",
+      "description": "~Additional cost: defeat 2 nearby friendly minions.\nDeal 4 piercing DMG split among up to 4 ::target:: enemies anywhere (even in different areas)."
+    },
+    "zeroThreeCard": {
+      "name": "Lightning Shot",
+      "description": "Attack 1 ::target:: nearby enemy in a lane."
+    },
+    "twoTwoCard": {
+      "name": "Chain Lightning",
+      "description": "~Additional cost: discard 1 card from hand.\nKhepiax's next attack this turn may target up to 3 additional enemies in her area."
+    },
+    "threeOneCard": {
+      "name": "Gathering Storm",
+      "description": "~Cast only when Khepiax starts her turn.\n~Additional cost: all AP and all MP.\nDraw 4 card."
+    },
+    "fourOneCard": {
+      "name": "Thunderclap",
+      "description": "Choose 1 ::target:: lane area not nearby.\nDeal 1 piercing DMG and SILENCE 1 ::target:: enemy hero there.",
+      "isQuick": true
+    }
+  },
+  "Kichie": {
+    "name": "Kichie",
+    "fraction": "KURUMO",
+    "role": "MAGE",
+    "title": "Flaming",
+    "range": "RANGED",
+    "abilityName": "Rejuvenating Fire",
+    "abilityDescription": "When Kichie deals DMG, heal 1 HP to him for\neach unit he damaged.",
+    "upgradedAbilityName": "Revival Fire",
+    "upgradedAbilityDescription": "When Kichie deals DMG, heal 2 HP to him\nfor each unit he damaged.",
+    "ultimate": {
+      "name": "Mindfulness",
+      "description": "Draw 4 cards and then place 2 cards from your hand on top of your deck.\nDeal 1 piercing DMG and BURN up to 2 ::target:: nearby enemies.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Burning Bolts",
+      "description": "Deal 1 piercing DMG and BURN up to 2 ::target:: non-monster enemies in 1 ::target:: nearby area."
+    },
+    "twoTwoCard": {
+      "name": "Flaming Star",
+      "description": "Choose 1 ::target:: area within 2 areas.\nDeal 1 piercing DMG and BURN each enemy hero nearby to the chosen area.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Fireball",
+      "description": "~Additional cost: 1 AP.\nDeal 1 piercing DMG and BURN up to 5 ::target:: enemies in 1 ::target:: nearby area."
+    },
+    "fourOneCard": {
+      "name": "Blazing Dart",
+      "description": "Deal 3 piercing DMG and BURN 1 ::target:: nearby enemy hero.",
+      "isQuick": true
+    }
+  },
+  "Corjof": {
+    "name": "Corjof",
+    "fraction": "LIOTHAN",
+    "role": "MAGE",
+    "title": "Frost",
+    "range": "RANGED",
+    "abilityName": "Gathering Scryer",
+    "abilityDescription": "Action: spend 1 MP to draw 1 card.\n(Once per Corjof's turn.)",
+    "upgradedAbilityName": "Channeling Scryer",
+    "upgradedAbilityDescription": "Action: spend 1 MP to draw 2 cards.\n(Once per Corjof's turn.)",
+    "ultimate": {
+      "name": "Rain of Shards",
+      "description": "~Additional cost: discard 1 card from hand.\nTeleport to 1 ::target:: other area anywhere.\nIf you do, deal 2 piercing DMG and FREEZE each enemy there."
+    },
+    "zeroThreeCard": {
+      "name": "Ice Bolts",
+      "description": "Deal 1 piercing DMG and FREEZE up to 2 ::target:: non-monster enemies in 1 ::target:: nearby area."
+    },
+    "twoTwoCard": {
+      "name": "Blizzard",
+      "description": "~Additional cost: discard 1 card from hand.\nDeal 1 piercing DMG and FREEZE up to 5 ::target:: enemies in 1 ::target:: nearby area."
+    },
+    "threeOneCard": {
+      "name": "Disarming Darts",
+      "description": "~Additional cost: discard 1 card from hand.\nDeal 2 piercing DMG and DISARM up to 2 nearby enemies.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Icewall",
+      "description": "~Additional cost: discard 1 card from hand.\nDeal 4 piercing DMG and FREEZE all enemy heroes in 1 ::target:: nearby area.\nThe next time one of them would leave that area this turn, prevent it.",
+      "isQuick": true
+    }
+  },
+  "Nelaclen": {
+    "name": "Nelaclen",
+    "fraction": "TAULOT",
+    "role": "MAGE",
+    "title": "Depths",
+    "range": "RANGED",
+    "abilityName": "Eldritch Whispers",
+    "abilityDescription": "Nelaclen may cast any spell in your hand.\nIf he does, replace all hero names in those\nspells with \"Nelaclen\".",
+    "upgradedAbilityName": "Eldritch Consultation",
+    "upgradedAbilityDescription": "Nelaclen may cast any spell in your hand. If he does,\nreplace all hero names in those spells with \"Nelaclen\".\n\nHe also copies the abilities on all friendly hero sheets,\nreplacing each hero's name with \"Nelaclen\".",
+    "ultimate": {
+      "name": "Heart of Taulot",
+      "description": "Deal 8 DMG to 1 ::target:: nearby outsider ignoring its Tough and Retaliate abilities."
+    },
+    "zeroThreeCard": {
+      "name": "Abyssal Bolts",
+      "description": "Deal 1 piercing DMG and DISARM up to 2 ::target:: non-monster enemies in 1 ::target:: nearby area."
+    },
+    "twoTwoCard": {
+      "name": "Mask Darts",
+      "description": "Choose BURN, FREEZE, STUN, or SILENCE.\nDeal 2 piercing DMG and the chosen status to 1 ::target:: nearby enemy.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Totem of Void",
+      "description": "Choose 1 non-ultimate card in your discard pile. If able, cast it with Nelaclen as if it were in your hand."
+    },
+    "fourOneCard": {
+      "name": "Earthquake",
+      "description": "~Additional cost: 2 MP.\nDeal 1 piercing DMG and DISARM up to 5 ::target:: enemies in 1 ::target:: nearby area."
+    }
+  },
+  "Setheru": {
+    "name": "Setheru",
+    "fraction": "NUPTEN",
+    "role": "MAGE",
+    "title": "Mind",
+    "range": "RANGED",
+    "abilityName": "Skytear Master",
+    "abilityDescription": "To channel a spell, place it face-up next to the board.\nAt the start of each plan phase, add 1 gold token from\nthe reserve as a \"charge\" on each channeled spell.\n\n\nSetheru may cast a channeled spell discarding that\ncard and all its charges. When Setheru is defeated,\ndiscard all charges.",
+    "upgradedAbilityName": "Skytear Overlord",
+    "upgradedAbilityDescription": "To channel a spell, place it face-up next to the board.\nAt the start of each plan phase, add 2 gold tokens from the\nreserve as \"charges\" on each channeled spell. Setheru may     \ncast a channeled spell discarding that card and all its charges.\nWhen Setheru is defeated, discard all charges.\n\nAction: channel 1 Setheru's spell from the\ndiscard pile. (Once per Setheru's turn.)",
+    "ultimate": {
+      "name": "The Last Word",
+      "description": "Double the charges on 1 ::target:: channeled spell. Then, cast it without discarding neither that card nor its charges.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Skytear Bolts",
+      "description": "Deal 1 piercing DMG and SILENCE up to 2 ::target:: non-monster enemies in 1 ::target:: nearby area."
+    },
+    "twoTwoCard": {
+      "name": "Word of Darts",
+      "description": "~Channel only during your shop phase.\nDeal X piercing DMG and SILENCE to 1 ::target:: nearby enemy hero, where X is the number of charge tokens on this.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Word of Void",
+      "description": "~Channel only during your shop phase.\nDeal 1 piercing DMG and STUN up to X ::target:: enemies in 1 ::target:: nearby area, where X is the number of charges on this.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Word of Command",
+      "description": "~Channel only during your shop phase.\nFor every 2 charges on this, choose one, same or different effect:\n- Draw 1 card.\n- Setheru has +1 momentum this round.\n- Displace 1 ::target:: nearby hero.",
+      "isQuick": true
+    }
+  },
+  "Doomies": {
+    "name": "Doomies",
+    "fraction": "KURUMO",
+    "role": "LANER",
+    "title": "Overwhelming",
+    "range": "MELEE",
+    "abilityName": "Lost Legion",
+    "abilityDescription": "Doomies have +1 momentum for every 4 HP\nthey have.",
+    "upgradedAbilityName": "Endless Legion",
+    "upgradedAbilityDescription": "Doomies have +1 momentum for every 2 HP\nthey have.",
+    "ultimate": {
+      "name": "BOOM!!!",
+      "description": "~Cast only during your shop phase.\nImmediately after this round, deal 4 DMG to 1 enemy nexus or tower within 3 areas ignoring its Tough and Retaliate abilities."
+    },
+    "zeroThreeCard": {
+      "name": "Summon Scatter",
+      "description": "~Additional cost: 1 HP.\nPlace 1 friendly minion in 1 ::target:: nearby contested area."
+    },
+    "twoTwoCard": {
+      "name": "Siege Masters",
+      "description": "~Cast only during your shop phase.\nImmediately after this round, push with the friendly minions in Doomies' area."
+    },
+    "threeOneCard": {
+      "name": "Join Us",
+      "description": "~Attach to Doomies until they are defeated.\nWhen a nearby enemy minion is defeated, heal 2 HP to Doomies."
+    },
+    "fourOneCard": {
+      "name": "Rocket Jump",
+      "description": "~Additional cost: deal 3 DMG to 1 nearby friendly minion.\nTeleport to 1 ::target:: contested area anywhere.\nIf you do, deal 1 DMG and DISARM up to 2 ::target:: enemies there."
+    }
+  },
+  "Astryda": {
+    "name": "Astryda",
+    "fraction": "LIOTHAN",
+    "role": "LANER",
+    "title": "Summoning",
+    "range": "RANGED",
+    "abilityName": "Voice of the Tide",
+    "abilityDescription": "When Astryda defeats an enemy minion, she\nmay lose 1 HP to place 1 friendly minion in 1 ::target::\nnearby contested area. (Once per Astryda's turn.)",
+    "upgradedAbilityName": "Voice of the Deeps",
+    "upgradedAbilityDescription": "When Astryda defeats an enemy minion, she\nmay lose 1 HP to place 2 friendly minions in 1 ::target::\nnearby contested area. (Once per Astryda's turn.)",
+    "ultimate": {
+      "name": "Song of the Siren",
+      "description": "SILENCE 1 ::target:: enemy hero within 2 areas ignoring the jungle targeting restriction.\nThey also lose 1 MP, 1 AP, and cannot declare cast actions this turn.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Summon Wave",
+      "description": "~Additional cost: 1 AP.\nIf Astryda is in a contested area, place 2 friendly minions there."
+    },
+    "twoTwoCard": {
+      "name": "Freeze Push",
+      "description": "~Cast only during your shop phase and attach to Astryda until the end of this round.\nPrevent the push of all nearby minions."
+    },
+    "threeOneCard": {
+      "name": "Lullaby",
+      "description": "Heal 3 HP to Astryda and DISARM up to 1 enemy hero in 1 ::target:: nearby area.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Gaze",
+      "description": "Prevent 1 ::target:: enemy hero within 2 areas from resolving their next cast action this turn.",
+      "isQuick": true
+    }
+  },
+  "Kohai": {
+    "name": "Kohai",
+    "fraction": "TAULOT",
+    "role": "LANER",
+    "title": "Hunting",
+    "range": "RANGED",
+    "abilityName": "Barbed Hooks",
+    "abilityDescription": "Action: pull and STUN 1 ::target:: enemy hero within\n2 areas. (Once per Kohai's turn.)",
+    "upgradedAbilityName": "Barbed Harpoons",
+    "upgradedAbilityDescription": "Action: pull and STUN 1 ::target:: enemy hero within\n3 areas. (Twice per Kohai's turn.)",
+    "ultimate": {
+      "name": "Tower Reel",
+      "description": "~Additional cost: 1 HP.\nTeleport to 1 ::target:: other area with a tower or nexus.\nIf you do, deal 1 DMG and STUN up to 6 enemies there."
+    },
+    "zeroThreeCard": {
+      "name": "Summon Ancestors",
+      "description": "~Additional cost: discard 1 card from hand.\nIf Kohai is in a contested area, place 2 friendly minions there."
+    },
+    "twoTwoCard": {
+      "name": "Hooked Prey",
+      "description": "Pull and DISARM 1 ::target:: enemy hero within 2 areas.\nThey cannot declare cast actions this turn."
+    },
+    "threeOneCard": {
+      "name": "Grit and Grin",
+      "description": "Heal 4 HP to Kohai.\nThis turn, he has +1 armor and when an opponent chooses a target for an attack they must target Kohai, if possible.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Quick Call",
+      "description": "Pull and DISARM 1 ::target:: friendly hero within 2 areas.",
+      "isQuick": true
+    }
+  },
+  "Ekhrit": {
+    "name": "Ekhrit",
+    "fraction": "NUPTEN",
+    "role": "LANER",
+    "title": "Gale",
+    "range": "RANGED",
+    "abilityName": "Winds Gather",
+    "abilityDescription": "Prevent ANY hero from entering Ekhrit's area.",
+    "upgradedAbilityName": "Winds Obey",
+    "upgradedAbilityDescription": "Enemies cannot target Ekhrit's area or any units\nin it, except for Ekhrit herself.\n\nWhen a hero enters Ekhrit's area, displace them.",
+    "ultimate": {
+      "name": "Windblast",
+      "description": "Displace, deal 2 DMG, and SILENCE up to 4 nearby enemies."
+    },
+    "zeroThreeCard": {
+      "name": "Summon Gale",
+      "description": "~Additional cost: 1 MP.\nPlace 1 friendly minion in 1 ::target:: nearby contested area."
+    },
+    "twoTwoCard": {
+      "name": "Stasis Push",
+      "description": "~Cast only during your shop phase and attach to Ekhrit until the end of this round.\nThis round, prevent the push of minions NOT nearby to Ekhrit."
+    },
+    "threeOneCard": {
+      "name": "Windborne",
+      "description": "Move 1 ::target:: other friendly hero within 2 areas up to 2 times.\nThey get +1 momentum this turn."
+    },
+    "fourOneCard": {
+      "name": "Tornado",
+      "description": "Displace and FREEZE ::target:: all other heroes in Ekhrit's area.",
+      "isQuick": true
+    }
+  },
+  "Kumaya": {
+    "name": "Kumaya",
+    "fraction": "KURUMO",
+    "role": "JUNGLER",
+    "title": "Ember",
+    "range": "MELEE",
+    "abilityName": "Ashen Maiden",
+    "abilityDescription": "When an enemy hero leaves Kumaya's area,\nshe may deal 2 DMG and BURN them.",
+    "upgradedAbilityName": "Cinder Maiden",
+    "upgradedAbilityDescription": "When an enemy hero leaves Kumaya's area, she\nmay deal 2 piercing DMG and BURN them.\n\n\nShe has +3 Armor against heroes without BURN.",
+    "ultimate": {
+      "name": "Ahasan Mark",
+      "description": "Move to 1 ::target:: adjacent area.\nIf you do, you may deal 5 piercing DMG and SILENCE 1 enemy there.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Shroud Smite",
+      "description": "Kumaya has +2 armor this turn.\nThen, attack with +2 strength up to 1 ::target:: outsider or monster in her area.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Smokescreen",
+      "description": "~Attach to Kumaya until she is defeated.\nEnemies outside of Kumaya's area cannot target units in her area or the area itself."
+    },
+    "threeOneCard": {
+      "name": "Explosive Resolve",
+      "description": "Kumaya has +2 armor this turn.\nDeal 2 DMG and BURN up to 2 ::target:: enemy heroes in her area.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Ashen Gank",
+      "description": "~Cast only if Kumaya is in a jungle without enemy heroes.\nMove to 1 ::target:: adjacent lane area.\nIf you do, attack 1 enemy hero there with +2 strength."
+    }
+  },
+  "Heraal": {
+    "name": "Heraal",
+    "fraction": "LIOTHAN",
+    "role": "JUNGLER",
+    "title": "Wild",
+    "range": "RANGED",
+    "abilityName": "Jungle Runner",
+    "abilityDescription": "Heraal ignores the jungle targeting restriction.\n\nAction: if Heraal is in a jungle, teleport to 1 ::target::\njungle within 2 areas. (Once per Heraal's turn.)",
+    "upgradedAbilityName": "Jungle Hunter",
+    "upgradedAbilityDescription": "Heraal ignores the jungle targeting restriction.\nAction: if Heraal is in a jungle, teleport to 1 ::target:: other\njungle anywhere. He has +2 strength against enemy\nheroes in lanes this turn. (Once per Heraal's turn.)",
+    "ultimate": {
+      "name": "The Wilds Ride",
+      "description": "~Cast only during your shop phase.\nImmediately after Heraal passes this round, deal X DMG to 1 enemy in Heraal's area, where X are the MP he spent this turn. This DMG ignores the Tough ability."
+    },
+    "zeroThreeCard": {
+      "name": "Ironwood Smite",
+      "description": "Heraal has +2 armor this turn.\nDeal 3 DMG to up to 1 ::target:: nearby monster or outsider.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Elk Form",
+      "description": "~Attach to Heraal until he is defeated.\nWhen Heraal enters an area, he may deal 2 DMG to 1 ::target:: monster or outsider there. (Once per Heraal's turn.)"
+    },
+    "threeOneCard": {
+      "name": "Vital Rebound",
+      "description": "Heal 3 HP to Heraal.\nDeal 2 DMG and STUN up to 1 ::target:: nearby enemy hero.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Hunting Gank",
+      "description": "~Cast only if Heraal is in a jungle without enemy heroes.\nTeleport to 1 ::target:: other jungle area without enemy heroes. Then, attack 1 ::target:: nearby enemy hero in a lane."
+    }
+  },
+  "Ixatosk": {
+    "name": "Ixatosk",
+    "fraction": "TAULOT",
+    "role": "JUNGLER",
+    "title": "Tunnel",
+    "range": "MELEE",
+    "abilityName": "Underworld Dweller",
+    "abilityDescription": "Action: teleport 1 ::target:: adjacent friendly hero to 1 ::target::\narea adjacent to Ixatosk. (Once per Ixatosk's turn.)",
+    "upgradedAbilityName": "Abyssal Dweller",
+    "upgradedAbilityDescription": "Action: teleport 1 ::target:: adjacent friendly hero to 1 ::target::\narea adjacent to Ixatosk. (Twice per Ixatosk's turn.)",
+    "ultimate": {
+      "name": "Skytear Predator",
+      "description": "~Cast only during your shop phase and if Ixatosk is ready.\nIxatosk has +X strength and +X armor this round, where X are the MP on its plan.\nIxatosk's attacks can only target the outsider this round, ignoring its Tough ability."
+    },
+    "zeroThreeCard": {
+      "name": "Burrowing Smite",
+      "description": "If Ixatosk is not a target, move to 1 ::target:: adjacent area with a monster or outsider.\nIf you do, deal 2 piercing DMG to it and ignore its Retaliate and Tough abilities.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Split Form",
+      "description": "~Attach to Ixatosk until he is defeated.\nWhen the jungling phase ends, you may deal 1 DMG to 1 ::target:: monster or outsider within 2 areas."
+    },
+    "threeOneCard": {
+      "name": "Counterstrike",
+      "description": "Ixatosk has +2 armor this turn.\nDeal 2 DMG to up to 1 ::target:: enemy hero in Ixatosk's area.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Tunnel Gank",
+      "description": "Teleport 1 ::target:: nearby friendly hero to 1 ::target:: jungle area without enemy heroes.\nThat hero has +1 strength this turn."
+    }
+  },
+  "Shafathi": {
+    "name": "Shafathi",
+    "fraction": "NUPTEN",
+    "role": "JUNGLER",
+    "title": "Time",
+    "range": "MELEE",
+    "abilityName": "Shadow Over Space",
+    "abilityDescription": "Shafathi has +3 initiative.\nNearby enemies have -1 initiative.",
+    "upgradedAbilityName": "Shadow Over Time",
+    "upgradedAbilityDescription": "Shafathi has +5 initiative.\nNearby enemies have -2 initiative.",
+    "ultimate": {
+      "name": "Split Second",
+      "description": "~Cast only during your shop phase.\nTeleport to 1 ::target:: contested area anywhere.\nIf you do, deal 2 DMG and SILENCE up to 2 enemies there."
+    },
+    "zeroThreeCard": {
+      "name": "Smite Stasis",
+      "description": "Choose 1 monster or outsider anywhere.\nThe next time it would be dealt DMG this turn, prevent all the DMG.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Shafathi Shadow",
+      "description": "~Attach to Shafathi until he is defeated.\nWhen he defeats a monster, earn 3 gold.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Dematerialize",
+      "description": "Shafathi has Tough this turn.\nDeal 1 piercing DMG and SILENCE up to 1 ::target:: enemy hero in his area.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Echo Gank",
+      "description": "~Cast only if Shafathi is in a jungle without enemy heroes.\n~Additional cost: discard 3 cards from hand.\nReady Shafathi."
+    }
+  },
+  "Yami": {
+    "name": "Yami",
+    "fraction": "KURUMO",
+    "role": "WARRIOR",
+    "title": "Vengeful",
+    "range": "MELEE",
+    "abilityName": "Harbinger of Revenge",
+    "abilityDescription": "When Yami enters an area during her turn,\nshe may displace 1 ::target:: enemy hero from there.",
+    "upgradedAbilityName": "Harbinger of Doom",
+    "upgradedAbilityDescription": "When Yami enters an area, she may displace\nup to 2 ::target:: enemy heroes from there.",
+    "ultimate": {
+      "name": "Kneel Before Me",
+      "description": "Move to 1 ::target:: area within 2 areas.\nIf you do, deal 1 piercing DMG and FREEZE up to 3 enemies there.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Haunting Lead",
+      "description": "The next time enemy minions in 1 ::target:: nearby area push, they lose a total of 3 momentum (down to a minimum of 0)."
+    },
+    "twoTwoCard": {
+      "name": "Flame Swipe",
+      "description": "Deal 2 DMG and BURN 2 enemies in Yami's area.\nIf there are 4 or more enemies there when you cast this, target 3 enemies instead."
+    },
+    "threeOneCard": {
+      "name": "Ghost Walk",
+      "description": "Yami gains 2 MP.\nThis turn, she can take move actions, and she has Tough."
+    },
+    "fourOneCard": {
+      "name": "Get Over Here",
+      "description": "Pull and STUN 1 ::target:: nearby enemy hero.",
+      "isQuick": true
+    }
+  },
+  "Gulbjarn": {
+    "name": "Gulbjarn",
+    "fraction": "LIOTHAN",
+    "role": "WARRIOR",
+    "title": "Savage",
+    "range": "MELEE",
+    "abilityName": "Rabid Brawl",
+    "abilityDescription": "Gulbjarn's attacks may target 1 additional\nnon-minion enemy.",
+    "upgradedAbilityName": "Furious Brawl",
+    "upgradedAbilityDescription": "Gulbjarn's attacks may target nearby enemies\nand also 1 additional enemy.",
+    "ultimate": {
+      "name": "Feral Brawl",
+      "description": "Heal 4 HP to Gulbjarn.\nPull and FREEZE up to 2 enemy heroes within 2 areas.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Fearless Lead",
+      "description": "~Attach to Gulbjarn until the end of this round.\nGulbjarn has +2 momentum."
+    },
+    "twoTwoCard": {
+      "name": "Bear Form",
+      "description": "~Attach to Gulbjarn until he is defeated.\nGulbjarn has +1 armor.\nPrevent the \"move\", \"teleport\", and \"displace\" effects of the spells and abilities of ::target:: nearby enemy heroes."
+    },
+    "threeOneCard": {
+      "name": "Iron Grasp",
+      "description": "Deal 3 DMG, DISARM, and pull 1 ::target:: nearby enemy hero.\nNeither Gulbjarn nor the target can declare cast actions this turn."
+    },
+    "fourOneCard": {
+      "name": "Feral Grapple",
+      "description": "Deal 3 DMG and pull 1 nearby enemy.\nIf you dealt DMG, heal 3 HP to Gulbjarn."
+    }
+  },
+  "Zacoal": {
+    "name": "Zacoal",
+    "fraction": "TAULOT",
+    "role": "WARRIOR",
+    "title": "Brutal",
+    "range": "MELEE",
+    "abilityName": "*Kradoom*",
+    "abilityDescription": "Zacoal's attacks may also teleport the target hero\nto 1 ::target:: area within 2 areas from Zacoal.",
+    "upgradedAbilityName": "*Whamf*",
+    "upgradedAbilityDescription": "Zacoal's attacks also DISARM and may teleport\nthe target hero to 1 ::target:: area within 3 areas\nfrom Zacoal.",
+    "ultimate": {
+      "name": "*Slam*",
+      "description": "Attack 1 ::target:: enemy in Zacoal's area with +2 strength.\nIf the attack hits a hero, you may teleport them to any area except Zacoal's nexus.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Towering Lead",
+      "description": "~Attach to Zacoal until the end of this turn.\nNearby friendly minions have +3 armor.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "*Whheeeeee*",
+      "description": "Teleport and FREEZE 1 nearby hero to an area adjacent to them.\nThey cannot declare cast actions this turn."
+    },
+    "threeOneCard": {
+      "name": "*Thud* *Thud*",
+      "description": "This turn, when Zacoal teleports a unit to an area, he may deal 1 DMG and DISARM up to 2 ::target:: enemies there."
+    },
+    "fourOneCard": {
+      "name": "*Clonk*",
+      "description": "Zacoal has +2 armor this turn.\nDeal 3 DMG to up to 1 ::target:: nearby enemy hero.",
+      "isQuick": true
+    }
+  },
+  "Khenui": {
+    "name": "Khenui",
+    "fraction": "NUPTEN",
+    "role": "WARRIOR",
+    "title": "Echoed",
+    "range": "MELEE",
+    "abilityName": "Refraction Dance",
+    "abilityDescription": "While Khenui is in a lane, she has Tough against\nattacks (including the ones from Retaliate).",
+    "upgradedAbilityName": "Echo Dance",
+    "upgradedAbilityDescription": "While Khenui is in a lane, she has Tough against\nattacks (including the ones from Retaliate).\n\nWhen an opponent chooses a target for a spell or\nattack they must target Khenui, if possible.",
+    "ultimate": {
+      "name": "Echo Dance",
+      "description": "~Cast only during your shop phase.\nKhenui has +2 initiative this round and may teleport to 1 ::target:: other area anywhere.\nIf you do, deal 2 DMG and DISARM 1 enemy hero there.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Deceptive Lead",
+      "description": "~Attach to Khenui until the end of this round.\nPrevent the Retaliate ability of nearby enemies.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Pirouette Blow",
+      "description": "~Additional cost: 1 MP.\nDeal 1 DMG and FREEZE up to 3 ::target:: nearby enemies."
+    },
+    "threeOneCard": {
+      "name": "Elusive Spin",
+      "description": "Khenui has +3 armor this turn.\nSILENCE or STUN up to 1 ::target:: nearby enemy hero.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Magnetic Presence",
+      "description": "~Cast only during your shop phase.\nThis round, enemy heroes within 3 areas of Khenui who declare a move action must move closer to her.\nThose heroes cannot attack unless they are nearby to Khenui or have 0 MP left."
+    }
+  },
+  "Hogosai": {
+    "name": "Hogosai",
+    "fraction": "KURUMO",
+    "role": "TANK",
+    "title": "Scorching",
+    "range": "MELEE",
+    "abilityName": "Igneous Body",
+    "abilityDescription": "Hogosai has +1 armor.\nEnemy minions must assault it, if able.",
+    "upgradedAbilityName": "Magmatic Body",
+    "upgradedAbilityDescription": "Hogosai has +3 armor.\nEnemy minions must assault it, if able.",
+    "ultimate": {
+      "name": "Supernova",
+      "description": "Deal 3 piercing DMG and BURN each enemy in 1 ::target:: nearby area."
+    },
+    "zeroThreeCard": {
+      "name": "Brimstone Shield",
+      "description": "1 ::target:: nearby unit has +3 armor and \"Retaliate: BURN\" this turn.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Infernal Taunt",
+      "description": "~Attach to Hogosai until it is defeated.\nIt has +1 armor and \"Retaliate: BURN\".\nWhen an opponent chooses a target for a spell or ability they must target Hogosai, if possible.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Burst",
+      "description": "~Additional cost: choose X to be 1, 2, or 3. Deal X DMG to Hogosai.\nDeal 1 DMG and STUN X ::target:: enemies in 1 ::target:: nearby area.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Scorching Shove",
+      "description": "Displace and BURN 1 ::target:: enemy hero in 1 ::target:: nearby area. If you displaced them, move to the target area.",
+      "isQuick": true
+    }
+  },
+  "Brylvar": {
+    "name": "Brylvar",
+    "fraction": "LIOTHAN",
+    "role": "TANK",
+    "title": "Impervious",
+    "range": "MELEE",
+    "abilityName": "Stoic Defender",
+    "abilityDescription": "Nearby friendly heroes have +1 armor.\n(Including Brylvar.)",
+    "upgradedAbilityName": "Dauntless Defender",
+    "upgradedAbilityDescription": "Nearby friendly heroes have +2 armor.\n(Including Brylvar.)",
+    "ultimate": {
+      "name": "Spiked Scales",
+      "description": "This turn, 1 ::target:: nearby unit has +4 armor and \"Retaliate: X DMG\", where X is their armor.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Frost Shield",
+      "description": "1 ::target:: nearby unit has +3 armor and \"Retaliate: FREEZE\" this turn.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Pangolin Form",
+      "description": "~Attach to Brylvar until he is defeated.\nHe has +1 armor.\nIf nearby heroes would take DMG, Brylvar may take any amount of it instead.\n(Both Brylvar and the friendly hero use their own armor.)"
+    },
+    "threeOneCard": {
+      "name": "Tail Slam",
+      "description": "Deal 2 DMG and SILENCE up to X ::target:: enemies in 1 ::target:: nearby area, where X is equal to Brylvar's armor.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Rolling Shove",
+      "description": "Displace and FREEZE 1 ::target:: enemy hero in 1 ::target:: nearby area.\nIf you displaced them, move to the target area.",
+      "isQuick": true
+    }
+  },
+  "Cotlic": {
+    "name": "Cotlic",
+    "fraction": "TAULOT",
+    "role": "TANK",
+    "title": "Leading",
+    "range": "MELEE",
+    "abilityName": "Xotlan Protects",
+    "abilityDescription": "Nearby friendly minions have +2 armor against\nspells, attacks, and abilities.",
+    "upgradedAbilityName": "Taulot Protects",
+    "upgradedAbilityDescription": "Cotlic and nearby friendly minions have\n+2 armor against spells, attacks, and abilities.",
+    "ultimate": {
+      "name": "My Kingdom!",
+      "description": "Immediately after this turn, push with the friendly minions in Cotlic's area with +2 momentum."
+    },
+    "zeroThreeCard": {
+      "name": "Bone Shield",
+      "description": "1 ::target:: nearby unit has +3 armor and \"Retaliate: DISARM\" this turn.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Flesh to Stone",
+      "description": "~Attach to Cotlic until he is defeated.\nHe has +2 armor and loses 1 AP each time he starts a turn.\nWhen an opponent chooses a target for an attack or cast action they must target Cotlic, if possible."
+    },
+    "threeOneCard": {
+      "name": "Totem of Pain",
+      "description": "Deal 2 DMG and DISARM up to 2 ::target:: enemies in Cotlic's area.\nIf there are 3 or more friendly minions there when you cast this, target 3 enemies instead.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Shield Shove",
+      "description": "Displace and DISARM 1 ::target:: enemy hero in 1 ::target:: nearby area. If you displaced them, move to the target area.",
+      "isQuick": true
+    }
+  },
+  "Shaidrus": {
+    "name": "Shaidrus",
+    "fraction": "NUPTEN",
+    "role": "TANK",
+    "title": "Immovable",
+    "range": "MELEE",
+    "abilityName": "Last Protector",
+    "abilityDescription": "Shaidrus has +3 armor and -2 strength.",
+    "upgradedAbilityName": "Last Bastion",
+    "upgradedAbilityDescription": "Shaidrus has +3 armor.",
+    "ultimate": {
+      "name": "None Shall Enter",
+      "description": "Teleport Shaidrus and all minions in 1 ::target:: nearby area to the area marked with \"M\" in the same lane.\nThen, place back all destroyed friendly towers in that same lane.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Void Shield",
+      "description": "1 ::target:: nearby unit has +3 armor and \"Retaliate: SILENCE\" this turn.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Shaidrus Shadow",
+      "description": "~Attach to 1 ::target:: friendly hero within 2 areas until Shaidrus is defeated.\nIf the attached hero would take DMG, Shaidrus must take it instead.\n(Both Shaidrus and the attached hero use their own armor.)"
+    },
+    "threeOneCard": {
+      "name": "Shields Whirlwind",
+      "description": "Deal 1 DMG and BURN up to 2 ::target:: enemies in Shaidrus' area.\nIf there are 5 or more enemy minions there when you cast this, target 3 enemies instead."
+    },
+    "fourOneCard": {
+      "name": "Judgement Shove",
+      "description": "Displace and SILENCE 1 ::target:: enemy hero in 1 ::target:: nearby area. If you displaced them, move to the target area.",
+      "isQuick": true
+    }
+  },
+  "Miyuki": {
+    "name": "Miyuki",
+    "fraction": "KURUMO",
+    "role": "CONTROLLER",
+    "title": "of Spirits",
+    "range": "RANGED",
+    "abilityName": "Spiritual Wake",
+    "abilityDescription": "Nearby enemy heroes must take 2 DMG and\nBURN as an additional cost to cast a spell.",
+    "upgradedAbilityName": "Spiritual Conjuring",
+    "upgradedAbilityDescription": "Nearby enemy heroes must take 4 DMG and\nBURN as an additional cost to cast a spell.",
+    "ultimate": {
+      "name": "Soul Guide",
+      "description": "If 1 ::target:: outsider or friendly hero within 3 areas would be defeated this turn, set their HP to 5 instead.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Spirit Heal",
+      "description": "Heal 3 HP to 1 ::target:: unit within 2 areas.\nIf the target has a status, you may transfer it to 1 ::target:: other hero nearby to Miyuki.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Choking Sparks",
+      "description": "~Deal BURN and attach to 1 enemy hero within 2 areas until either Miyuki or that hero is defeated.\nIf the attached hero would lose 1 HP because of BURN, they lose 2 HP instead."
+    },
+    "threeOneCard": {
+      "name": "Lifesteal Touch",
+      "description": "~Attach to 1 ::target:: friendly hero within 3 areas until they are defeated.\nWhen the attached hero deals 1 or more DMG with an attack, heal 2 HP to them."
+    },
+    "fourOneCard": {
+      "name": "Crippling Ray",
+      "description": "Choose two different statuses: DISARM, SILENCE, STUN, or BURN.\nDeal the chosen statuses to 1 enemy hero within 2 areas.",
+      "isQuick": true
+    }
+  },
+  "Freyhel": {
+    "name": "Freyhel",
+    "fraction": "LIOTHAN",
+    "role": "CONTROLLER",
+    "title": "of Life",
+    "range": "RANGED",
+    "abilityName": "Enduring Queen",
+    "abilityDescription": "Action: heal 3 HP to 1 ::target:: nearby hero.\n(Once per Freyhel's turn.)",
+    "upgradedAbilityName": "Eternal Queen",
+    "upgradedAbilityDescription": "Action: heal 4 HP to 1 ::target:: hero within 2 areas.\n(Once per Freyhel's turn.)",
+    "ultimate": {
+      "name": "Glacial Rebirth",
+      "description": "Heal 3 HP and remove all statuses from 1 ::target:: unit anywhere.\nIf that unit is friendly, heal 8 HP instead.",
+      "isQuick": true
+    },
+    "zeroThreeCard": {
+      "name": "Nourish Heal",
+      "description": "Heal 3 HP to 1 ::target:: unit within 2 areas.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Breezing Nova",
+      "description": "Choose either \"friendly\" or \"enemy\".\nHeal 2 HP to each nearby hero of the chosen type.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Withering Gift",
+      "description": "~Attach to Freyhel until she is defeated.\nIf she would heal a unit, she may deal the same amount of DMG instead."
+    },
+    "fourOneCard": {
+      "name": "Life Drain",
+      "description": "Deal 2 DMG and FREEZE 1 ::target:: nearby enemy hero or minion.\nIf you deal DMG, heal 2 HP to 1 ::target:: other nearby unit.",
+      "isQuick": true
+    }
+  },
+  "Tlakali": {
+    "name": "Tlakali",
+    "fraction": "TAULOT",
+    "role": "CONTROLLER",
+    "title": "of Rituals",
+    "range": "RANGED",
+    "abilityName": "Ritual of Sacrifice",
+    "abilityDescription": "If a nearby friendly minion would be defeated,\nTlakali may lose 1 HP instead. (Max once during\neach hero's turn.)",
+    "upgradedAbilityName": "Ritual of Undeath",
+    "upgradedAbilityDescription": "If a friendly minion anywhere would be defeated,\nTlakali may prevent that instead. (Max once during\neach hero's turn.)",
+    "ultimate": {
+      "name": "The Call of Taulot",
+      "description": "Choose one:\n- Ready 1 respawning hero.\n- Ready 1 exhausted hero that was defeated this day.\n- Remove 1 outsider token from a lane."
+    },
+    "zeroThreeCard": {
+      "name": "Ritual Heal",
+      "description": "Heal 3 HP to 1 ::target:: nearby unit and remove 1 of their statuses.\nIf Tlakali is in a contested area, the unit also has +1 armor this turn.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Scarifier's Curse",
+      "description": "~Attach to 1 nearby enemy hero until either Tlakali or that hero is defeated.\nDISARM the attached hero. When they lose that status, DISARM them again.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Ritual of Sacrifice",
+      "description": "~Additional cost: deal 2 piercing DMG to 1 friendly hero within 2 areas.\nHeal 6 HP to 1 ::target:: nearby unit and remove 1 status from them.\nYou cannot target the unit you dealt DMG to as a cost.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Twisted Allegiance",
+      "description": "~Additional cost: deal 2 piercing DMG to 1 friendly hero within 2 areas.\nHeal 8 HP to Tlakali."
+    }
+  },
+  "Akhuti": {
+    "name": "Akhuti",
+    "fraction": "NUPTEN",
+    "role": "CONTROLLER",
+    "title": "of Light",
+    "range": "RANGED",
+    "abilityName": "Radiant Silence",
+    "abilityDescription": "When an enemy hero enters a nearby area,\nSILENCE and FREEZE them.",
+    "upgradedAbilityName": "Radiant Essence",
+    "upgradedAbilityDescription": "When an enemy hero enters a nearby area,\nSILENCE and FREEZE them.\n\nWhen a friendly hero enters a nearby area,\nheal 1 HP to them.",
+    "ultimate": {
+      "name": "Nupten Touch",
+      "description": "Level up, heal 8 HP, and remove all statuses from 1 ::target:: friendly hero within 3 areas."
+    },
+    "zeroThreeCard": {
+      "name": "Radiant Healing",
+      "description": "Heal 2 HP to up to 2 ::target:: nearby units and remove 1 of their statuses.\nAny of those units not at their starting HP level has +1 armor this turn.",
+      "isQuick": true
+    },
+    "twoTwoCard": {
+      "name": "Flash Ray",
+      "description": "Move 1 ::target:: other friendly hero within 3 areas to 1 ::target:: area adjacent to them.",
+      "isQuick": true
+    },
+    "threeOneCard": {
+      "name": "Silence Ray",
+      "description": "FREEZE and BURN 1 hero within 2 areas.\nThey cannot declare cast actions this turn.",
+      "isQuick": true
+    },
+    "fourOneCard": {
+      "name": "Peacekeeping Ray",
+      "description": "You may remove 1 status from 1 ::target:: unit within 2 areas.\nPrevent the next time they would lose HP this turn.",
+      "isQuick": true
+    }
+  }
+}
