@@ -959,6 +959,64 @@
     downloadCanvas(heroCanvas, "hero4print_1.png")
   }
 
+  type FileDialogOptions = {
+    suggestedName: string;
+    types: Array<{
+      description: string;
+      accept: Record<string, Array<string>>; // MIME type
+    }>;
+  }
+
+
+  async function saveFileWithDialog(content: Blob, suggestedName: string, description: string) {
+    try {
+      // check if File System Access API is supported
+      if ('showSaveFilePicker' in window) {
+        const options: FileDialogOptions = {
+          suggestedName: suggestedName,
+          types: [
+            {
+              description: description,
+              accept: {
+                'image/png': ['.png'],
+              },
+            },
+          ],
+        };
+        
+        // json
+        if (suggestedName.endsWith('.json')) {
+          options.types[0].accept = {
+            'application/json': ['.json'],
+          };
+        }
+
+        // sorry for this
+        const fileHandle = await (window.showSaveFilePicker as unknown as (options: FileDialogOptions) => Promise<FileSystemFileHandle>)(options);
+        const writable = await fileHandle.createWritable();
+        await writable.write(content);
+        await writable.close();
+        
+        return true;
+      } else {
+        // fall back to the old method if File System Access API is not supported
+        const url = URL.createObjectURL(content);
+        const anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.download = suggestedName;
+        document.body.appendChild(anchor);
+        anchor.click();
+        document.body.removeChild(anchor);
+        URL.revokeObjectURL(url);
+        
+        return true;
+      }
+    } catch (err) {
+      console.error('Error saving file:', err);
+      return false;
+    }
+  }
+
   function downloadForPrintPt2() {
     const heroCanvas = document.createElement("canvas")
     heroCanvas.width = 3975
@@ -1005,38 +1063,34 @@
     downloadCanvas(heroCanvas, "hero4print_2.png")
   }
 
-  function downloadCanvas(canvas: HTMLCanvasElement, filename: string) {
-    let anchor = document.createElement("a"), event
-    anchor.download = filename
-    anchor.href = canvas.toDataURL("image/png;base64")
-    if (document.createEvent) {
-      event = document.createEvent("MouseEvents")
-      // ¯\_(ツ)_/¯
-      event.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-      anchor.dispatchEvent(event)
-    }
+  async function downloadCanvas(canvas: HTMLCanvasElement, filename: string) {
+    return new Promise<void>((resolve) => {
+      canvas.toBlob(async (blob) => {
+        if (blob) {
+          await saveFileWithDialog(blob, filename, 'PNG Image');
+        }
+        resolve();
+      }, 'image/png');
+    });
   }
 
-  function exportIntoJson() {
-
+  async function exportIntoJson() {
     const json = new TSMap<string, any>([
       ["cardValues", cardValues],
       ["attackStat", attackStat],
       ["defenseStat", defenseStat],
       ["initiativeStat", initiativeStat],
       ["movementStat", movementStat],
-    ])
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(json.toJSON()))
-    const anchor = document.createElement("a")
-    anchor.setAttribute("href", dataStr)
-    anchor.setAttribute("download", "hero" + ".json")
-    document.body.appendChild(anchor)
-    anchor.click()
-    anchor.remove()
+    ]);
+    
+    const jsonString = JSON.stringify(json.toJSON());
+    const blob = new Blob([jsonString], { type: 'application/json' });
+    
+    await saveFileWithDialog(blob, "hero.json", "JSON Data");
   }
-
+  
   function loadFromJson() {
-    document.getElementById("inputJson").click()
+    document.getElementById("inputJson")?.click() ?? null
   }
 
   function minAttackStatLevel() {
