@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  import { Color, Hero, heroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
+  import { Color, OldHero, oldHeroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
   import { images, importCardImage, importCardImages, importImages, updateCanvas } from "../../card_painter"
   import heroInfo from "../../heroes.json"
   import BiggerPicture from "bigger-picture/svelte"
@@ -473,7 +473,7 @@
 
   $: disableShowNumbers = true
 
-  const hero = heroes[heroName] as Hero
+  const hero = oldHeroes[heroName] as OldHero
   const fullName = hero.name + " " + hero.title
 
   function updateCard(canvas: HTMLCanvasElement, context: CanvasRenderingContext2D, card: any, image: HTMLImageElement) {

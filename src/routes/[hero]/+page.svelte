@@ -1,18 +1,18 @@
 <script lang="ts">
   import CardGrid from "./CardGrid.svelte";
   import type { PageData } from './$types';
-  import { heroes } from "../../states"
+  import { oldHeroes } from "../../states"
 
   import { error } from "@sveltejs/kit"
 
   export let data: PageData;
 
-  if (!(data.url.substring(1) in heroes)) {
+  if (!(data.url.substring(1) in oldHeroes)) {
     throw error(404)
   }
 
   const hero = data.url.substring(1)
-  const heroName = heroes[hero as keyof typeof heroes].name
+  const heroName = oldHeroes[hero as keyof typeof oldHeroes].name
 </script>
 
 <svelte:head>

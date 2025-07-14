@@ -5,7 +5,7 @@
 	import { SortOutline } from "flowbite-svelte-icons"
 	import { goto } from "$app/navigation"
 	import { browser } from "$app/environment"
-	import { heroes, stats } from "../states"
+	import { oldHeroes, stats } from "../states"
 	import { onMount } from "svelte"
 
 	import starImage from "$lib/images/star.png"
@@ -17,7 +17,7 @@
 	const heroImageLoadingPromises: Map<string, Promise<unknown>> = new Map()
 
 	onMount(async () => {
-		for (const hero of Object.keys(heroes)) {
+		for (const hero of Object.keys(oldHeroes)) {
 			const path = (await import(`../lib/images/avatars/${hero}.png`)).default
 			heroImages.set(hero, path)
 			const image = new Image()
@@ -28,7 +28,7 @@
 		}
 		heroImages = heroImages
 
-		for (const hero of Object.keys(heroes)) {
+		for (const hero of Object.keys(oldHeroes)) {
 			logoImages.set(hero, (await import(`../lib/images/logos/${hero}.png`)).default)
 		}
 		logoImages = logoImages
@@ -39,7 +39,7 @@
 		statImages = statImages
 	})
 
-	let heroList = Object.entries(heroes)
+	let heroList = Object.entries(oldHeroes)
 	const sortParam = browser ? $page.url.searchParams.get("sort") : null
 	if (sortParam != null && stats.includes(sortParam)) {
 		sortBy(stats.indexOf(sortParam))
