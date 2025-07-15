@@ -32,7 +32,9 @@ export function updateCanvas(
 	}
 
 	if (background instanceof HTMLImageElement) {
-		context.drawImage(background, 0, 0, 808, 1226);
+		const descHeight = description.split(/\r\n|\r|\n/).length
+		const shift = descHeight > 4 ? (descHeight - 4) * 67 : 0;
+		context.drawImage(background, 50, 120, 708, 700 - shift);
 	}
 }
 
@@ -70,6 +72,12 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
 	const fireImage = <CanvasImageSource>images.get("fire") as HTMLImageElement
 	const waterImage = <CanvasImageSource>images.get("water") as HTMLImageElement
 	const deathImage = <CanvasImageSource>images.get("death") as HTMLImageElement
+	const rd4Image = <CanvasImageSource>images.get("rd4") as HTMLImageElement
+	const rd6Image = <CanvasImageSource>images.get("rd6") as HTMLImageElement
+	const bkd6Image = <CanvasImageSource>images.get("bkd6") as HTMLImageElement
+	const wd6Image = <CanvasImageSource>images.get("wd6") as HTMLImageElement
+	const bld6Image = <CanvasImageSource>images.get("bld6") as HTMLImageElement
+	const gd6Image = <CanvasImageSource>images.get("gd6") as HTMLImageElement
   const fontSize = '45px'
   const spaceFontSize = '27px'
   const fontName = 'ITC Charter'
@@ -125,7 +133,7 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
 
   function tokenize(text: string): Token[] {
     const tokens: Token[] = [];
-    const regex = /(\b(LIFE|FIRE|WATER|DEATH)\b|\s+|\S+)/gi;
+    const regex = /(\b(LIFE|FIRE|WATER|DEATH|RD4|RD6|BKD6|WD6|BLD6|GD6)\b|\s+|\S+)/gi;
 
     let match;
     while ((match = regex.exec(text)) !== null) {
@@ -139,6 +147,18 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
 				tokens.push({ type: 'image', value: 'water' });
 			} else if (fullMatch.match(/Death/gi)) {
 				tokens.push({ type: 'image', value: 'death' });
+			} else if (fullMatch.match(/rd4/gi)) {
+				tokens.push({ type: 'image', value: 'rd4' });
+			} else if (fullMatch.match(/rd6/gi)) {
+				tokens.push({ type: 'image', value: 'rd6' });
+			} else if (fullMatch.match(/bkd6/gi)) {
+				tokens.push({ type: 'image', value: 'bkd6' });
+			} else if (fullMatch.match(/wd6/gi)) {
+				tokens.push({ type: 'image', value: 'wd6' });
+			} else if (fullMatch.match(/bld6/gi)) {
+				tokens.push({ type: 'image', value: 'bld6' });
+			} else if (fullMatch.match(/gd6/gi)) {
+				tokens.push({ type: 'image', value: 'gd6' });
       } else if (fullMatch.trim() === '') {
         // Handle whitespace as separate token
         tokens.push({ type: 'text', value: fullMatch });
@@ -200,6 +220,24 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
 						break;
 					case "death":
 						image = deathImage;
+						break;
+					case "rd4":
+						image = rd4Image;
+						break;
+					case "rd6":
+						image = rd6Image;
+						break;
+					case "bkd6":
+						image = bkd6Image;
+						break;
+					case "wd6":
+						image = wd6Image;
+						break;
+					case "bld6":
+						image = bld6Image;
+						break;
+					case "gd6":
+						image = gd6Image;
 						break;
 				}
 				lineCtx.drawImage(image, currentX, y - 35);
@@ -274,6 +312,12 @@ const imageNames = [
 	"fire",
 	"water",
 	"death",
+	"rd4",
+	"rd6",
+	"bkd6",
+	"wd6",
+	"bld6",
+	"gd6",
 	"description_frame_top",
 	"description_frame_inside",
 ]

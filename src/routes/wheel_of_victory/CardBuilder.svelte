@@ -508,7 +508,7 @@
         Formatting rules
         <div class="max-w-md lg:max-w-4xl border border-dark-600 rounded-2xl p-3">
           <p class="text-white">
-            <Kbd class="px-1 py-0 text-white bg-dark-700 border-dark-600">life / fire / water / death</Kbd> - insert the corresponding symbol
+            <Kbd class="px-1 py-0 text-white bg-dark-700 border-dark-600">life / fire / water / death / rd4 / rd6 / bkd6 / wd6 / bld6 / gd6</Kbd> - insert the corresponding symbol
             <br>
             Line breaks should be set manually.
           </p>
