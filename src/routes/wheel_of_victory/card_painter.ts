@@ -14,6 +14,13 @@ export function updateCanvas(
 
 	addImage(context, "frame", 0, 0);
 
+	if (background instanceof HTMLImageElement) {
+		const descHeight = description.split(/\r\n|\r|\n/).length
+		const shift = descHeight > 4 ? (descHeight - 4) * 67 : 0;
+		context.drawImage(background, 50, 120, 708, 710 - shift);
+		addImage(context, "frame_top", 0, 0);
+	}
+
   addDescription(context, description, 89)
 
 	addTitle(context, name, 404, 95, 420);
@@ -29,12 +36,6 @@ export function updateCanvas(
 	}
 	if (death > 0) {
 		addSquishedOutlinedText(context, death.toString(), 733, 1183, 100, 10, 0.92);
-	}
-
-	if (background instanceof HTMLImageElement) {
-		const descHeight = description.split(/\r\n|\r|\n/).length
-		const shift = descHeight > 4 ? (descHeight - 4) * 67 : 0;
-		context.drawImage(background, 50, 120, 708, 700 - shift);
 	}
 }
 
@@ -89,6 +90,8 @@ function addDescription(context: CanvasRenderingContext2D, text: string, x: numb
 			}
 		}
 		addImage(context, "description_frame_top", 62, 809 - 67 * (paragraphs.length - 4))
+	} else {
+		addImage(context, "description_frame_top", 62, 809)
 	}
 
   const tempCanvas = document.createElement("canvas")
@@ -308,6 +311,7 @@ type Line = { tokens: Token[] };
 
 const imageNames = [
 	"frame",
+	"frame_top",
 	"life",
 	"fire",
 	"water",
