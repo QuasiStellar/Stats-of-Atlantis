@@ -412,10 +412,6 @@ export const onwardImageNames = [
   "fallback_plan_yellow_melee_two_one",
   "fallback_plan_yellow_ranged_three_one",
   "fallback_plan_yellow_ranged_two_one",
-  "frame",
-  "frame_ult",
-  "hero_frame",
-  "hero_frame_upgraded",
   "kurumo",
   "liothan",
   "name_blue",
@@ -461,6 +457,20 @@ export const onwardImageNames = [
   "target_large",
   "taulot",
 	"timed",
+]
+
+export const onwardHeavyImageNames = [
+	"frame",
+	"frame_ult",
+	"hero_frame",
+	"hero_frame_upgraded",
+]
+
+export const onwardLightImageNames = [
+	"frame_light",
+	"frame_ult_light",
+	"hero_frame_light",
+	"hero_frame_upgraded_light",
 ]
 
 export const cardImageNames = [

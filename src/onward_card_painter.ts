@@ -11,6 +11,7 @@ export function updateCanvas(
   color: HeroColor,
   range: AttackRange,
   type: CardType,
+	isLowQuality: boolean = false,
 ): number {
 	clear(canvas, context);
 
@@ -19,7 +20,7 @@ export function updateCanvas(
 	}
 
   const descHeight = addDescription(context, description, 89)
-  addImage(context, type == 'ultimate' ? 'frame_ult' : 'frame', 0, 0);
+  addImage(context, type == 'ultimate' ? (isLowQuality ? 'frame_ult_light' : 'frame_ult') : (isLowQuality ? 'frame_light' : 'frame'), 0, 0);
   addImage(context, getName(color), 25, 925);
   addImage(context, getPlan(type, range, color), 50, 47);
   if (type != 'ultimate') {
@@ -42,6 +43,7 @@ export function updateHeroCanvas(
   abilityName: string,
   abilityDescription: string,
   isUpgraded: boolean,
+	isLowQuality: boolean = false,
 ): number {
   clear(canvas, context);
 
@@ -63,7 +65,7 @@ export function updateHeroCanvas(
 
   const color = getColor(role)
 
-  addImage(context, isUpgraded ? 'hero_frame_upgraded' : 'hero_frame', 0, 0);
+  addImage(context, isUpgraded ? (isLowQuality ? 'hero_frame_upgraded_light' : 'hero_frame_upgraded') : (isLowQuality ? 'hero_frame_light' : 'hero_frame'), 0, 0);
   addImage(context, getBottomPanel(color), 18, 1238);
   addImage(context, getSidePanel(color), 1250, 61);
   addImage(context, getFallbackPlan(attackRange, color, isUpgraded), 56, 63);
@@ -71,13 +73,14 @@ export function updateHeroCanvas(
   return descHeight + 320
 }
 
-import { onwardImageNames } from "./states"
+import { onwardHeavyImageNames, onwardImageNames, onwardLightImageNames } from './states';
 
 export const images: Map<string, HTMLImageElement> = new Map();
 
-export function importImages() {
+export function importImages(isLowQuality: boolean = false) {
+	const names = onwardImageNames.concat(isLowQuality ? onwardLightImageNames : onwardHeavyImageNames)
   return Promise.all(
-    onwardImageNames.map(async (imageName: string) => {
+		names.map(async (imageName: string) => {
       const path = (await import(`./lib/images/onward/${imageName}.png`)).default
       const image = new Image()
       image.src = path
@@ -644,6 +647,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     hero.abilityName,
     hero.abilityDescription,
     false,
+		true,
   )
 
   const heroUpgradedCanvas = document.createElement("canvas")
@@ -663,6 +667,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     hero.upgradedAbilityName,
     hero.upgradedAbilityDescription,
     true,
+		true,
   )
 
   const ultimateCanvas = document.createElement("canvas")
@@ -680,6 +685,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "ultimate",
+		true,
   )
 
   const zeroThreeCanvas = document.createElement("canvas")
@@ -697,6 +703,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "zeroThree",
+		true,
   )
 
   const twoTwoCanvas = document.createElement("canvas")
@@ -714,6 +721,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "twoTwo",
+		true,
   )
 
   const threeOneCanvas = document.createElement("canvas")
@@ -731,6 +739,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "threeOne",
+		true,
   )
 
   const fourOneCanvas = document.createElement("canvas")
@@ -748,6 +757,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "fourOne",
+		true,
   )
 
   context.drawImage(fourOneCanvas, 0, 0, 750, 1050, 328, fourOneHeight + threeOneHeight + twoTwoHeight + zeroThreeHeight + ultimateHeight + upgradedHeight + 357, 750, 1050)

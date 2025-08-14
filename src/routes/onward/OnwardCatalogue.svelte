@@ -30,7 +30,7 @@
 
     await Promise.all([
       document.fonts.ready,
-      importImages(),
+      importImages(true),
     ])
 
     resolveMount()
