@@ -28,7 +28,8 @@
     },
     "fourOneCard": {
       "name": "Bloodthirst",
-      "description": "~Cast only during your shop phase.\nAkimo has +3 initiative and +1 strength this round.\nThe next minion phase is delayed until the end of this round."
+      "description": "~Cast only during your shop phase.\nAkimo has +3 initiative and +1 strength this round.\nThe next minion phase is delayed until the end of this round.",
+      "isTimed": true
     }
   },
   "Shyllavi": {
@@ -55,7 +56,8 @@
     },
     "threeOneCard": {
       "name": "Biding Time",
-      "description": "~Cast only during your shop phase.\nHeal 3 HP to her.\nShe has +3 initiative this round.\nThe next minion phase is delayed until the end of this round."
+      "description": "~Cast only during your shop phase.\nHeal 3 HP to her.\nShe has +3 initiative this round.\nThe next minion phase is delayed until the end of this round.",
+      "isTimed": true
     },
     "fourOneCard": {
       "name": "Feline Pounce",
@@ -90,7 +92,8 @@
     },
     "fourOneCard": {
       "name": "Living Jungle",
-      "description": "~Cast only during your shop phase and only if Nantaca is in a jungle.\nTeleport to 1 ::target:: jungle area anywhere without enemy heroes.\nShe has +2 initiative this round.\nThe next minion phase is delayed until the end of this round."
+      "description": "~Cast only during your shop phase and only if Nantaca is in a jungle.\nTeleport to 1 ::target:: jungle area anywhere without enemy heroes.\nShe has +2 initiative this round.\nThe next minion phase is delayed until the end of this round.",
+      "isTimed": true
     }
   },
   "Haburat": {
@@ -105,7 +108,8 @@
     "upgradedAbilityDescription": "Haburat has +X strength where X is equal to\nthe sum of the AP and MP on his plan card.",
     "ultimate": {
       "name": "Lightning Blades",
-      "description": "~Cast only during your shop phase.\nDouble the AP on Haburat's plan card this round."
+      "description": "~Cast only during your shop phase.\nDouble the AP on Haburat's plan card this round.",
+      "isTimed": true
     },
     "zeroThreeCard": {
       "name": "Shining Dive",
@@ -117,7 +121,8 @@
     },
     "threeOneCard": {
       "name": "Overdue Execution",
-      "description": "~Cast only during your shop phase.\nHaburat has +X initiative and +X strength this round, where X is the Day number.\nChoose 1 enemy hero anywhere, Haburat can only attack them this round."
+      "description": "~Cast only during your shop phase.\nHaburat has +X initiative and +X strength this round, where X is the Day number.\nChoose 1 enemy hero anywhere, Haburat can only attack them this round.",
+      "isTimed": true
     },
     "fourOneCard": {
       "name": "Weave",
@@ -136,7 +141,8 @@
     "upgradedAbilityDescription": "When Sakoshi deals 1 or more DMG or loses\n1 or more HP, he may move to 1 ::target:: adjacent area.",
     "ultimate": {
       "name": "Shuriken Storm",
-      "description": "~Cast only during your shop phase.\nSakoshi gains 3 AP.\nThis round, he can take attack actions, but may only target heroes and/or outsiders."
+      "description": "~Cast only during your shop phase.\nSakoshi gains 3 AP.\nThis round, he can take attack actions, but may only target heroes and/or outsiders.",
+      "isTimed": true
     },
     "zeroThreeCard": {
       "name": "Quick Shot",
@@ -153,7 +159,8 @@
     },
     "fourOneCard": {
       "name": "Counterfeits",
-      "description": "~Cast only during your shop phase.\nPurchase an item costing up to 12 gold without paying its cost. Equip it to Sakoshi ignoring the limit of 1 item per color."
+      "description": "~Cast only during your shop phase.\nPurchase an item costing up to 12 gold without paying its cost. Equip it to Sakoshi ignoring the limit of 1 item per color.",
+      "isTimed": true
     }
   },
   "Vorhild": {
@@ -232,7 +239,8 @@
     "upgradedAbilityDescription": "Add the following effect to the end of each\nfriendly hero's spell: \"Khepiax deals 2 DMG\nto up to 1 ::target:: enemy hero nearby to Khepiax.\"",
     "ultimate": {
       "name": "Become the Storm",
-      "description": "~Additional cost: defeat 2 nearby friendly minions.\nDeal 4 piercing DMG split among up to 4 ::target:: enemies anywhere (even in different areas)."
+      "description": "~Additional cost: defeat 2 nearby friendly minions.\nDeal 4 piercing DMG split among up to 4 ::target:: enemies anywhere (even in different areas).",
+      "isQuick": true
     },
     "zeroThreeCard": {
       "name": "Lightning Shot",
@@ -244,7 +252,8 @@
     },
     "threeOneCard": {
       "name": "Gathering Storm",
-      "description": "~Cast only when Khepiax starts her turn.\n~Additional cost: all AP and all MP.\nDraw 4 card."
+      "description": "~Cast only when Khepiax starts her turn.\n~Additional cost: all AP and all MP.\nDraw 4 card.",
+      "isTimed": true
     },
     "fourOneCard": {
       "name": "Thunderclap",
@@ -360,7 +369,7 @@
     "abilityName": "Skytear Master",
     "abilityDescription": "To channel a spell, place it face-up next to the board.\nAt the start of each plan phase, add 1 gold token from\nthe reserve as a \"charge\" on each channeled spell.\n\n\nSetheru may cast a channeled spell discarding that\ncard and all its charges. When Setheru is defeated,\ndiscard all charges.",
     "upgradedAbilityName": "Skytear Overlord",
-    "upgradedAbilityDescription": "To channel a spell, place it face-up next to the board.\nAt the start of each plan phase, add 2 gold tokens from the\nreserve as \"charges\" on each channeled spell. Setheru may     \ncast a channeled spell discarding that card and all its charges.\nWhen Setheru is defeated, discard all charges.\n\nAction: channel 1 Setheru's spell from the\ndiscard pile. (Once per Setheru's turn.)",
+    "upgradedAbilityDescription": "To channel a spell, place it face-up next to the board.\nAt the start of each plan phase, add 2 gold tokens from the\nreserve as \"charges\" on each channeled spell. Setheru may     \ncast a channeled spell discarding that card and all its charges.\nWhen Setheru is defeated, discard all charges.\n\nAction: channel 1 Setheru's spell from the discard\npile. (Once per Setheru's turn.)",
     "ultimate": {
       "name": "The Last Word",
       "description": "Double the charges on 1 ::target:: channeled spell. Then, cast it without discarding neither that card nor its charges.",
@@ -398,7 +407,8 @@
     "upgradedAbilityDescription": "Doomies have +1 momentum for every 2 HP\nthey have.",
     "ultimate": {
       "name": "BOOM!!!",
-      "description": "~Cast only during your shop phase.\nImmediately after this round, deal 4 DMG to 1 enemy nexus or tower within 3 areas ignoring its Tough and Retaliate abilities."
+      "description": "~Cast only during your shop phase.\nImmediately after this round, deal 4 DMG to 1 enemy nexus or tower within 3 areas ignoring its Tough and Retaliate abilities.",
+      "isTimed": true
     },
     "zeroThreeCard": {
       "name": "Summon Scatter",
@@ -406,7 +416,8 @@
     },
     "twoTwoCard": {
       "name": "Siege Masters",
-      "description": "~Cast only during your shop phase.\nImmediately after this round, push with the friendly minions in Doomies' area."
+      "description": "~Cast only during your shop phase.\nImmediately after this round, push with the friendly minions in Doomies' area.",
+      "isTimed": true
     },
     "threeOneCard": {
       "name": "Join Us",
@@ -438,7 +449,8 @@
     },
     "twoTwoCard": {
       "name": "Freeze Push",
-      "description": "~Cast only during your shop phase and attach to Astryda until the end of this round.\nPrevent the push of all nearby minions."
+      "description": "~Cast only during your shop phase and attach to Astryda until the end of this round.\nPrevent the push of all nearby minions.",
+      "isTimed": true
     },
     "threeOneCard": {
       "name": "Lullaby",
@@ -504,7 +516,8 @@
     },
     "twoTwoCard": {
       "name": "Stasis Push",
-      "description": "~Cast only during your shop phase and attach to Ekhrit until the end of this round.\nThis round, prevent the push of minions NOT nearby to Ekhrit."
+      "description": "~Cast only during your shop phase and attach to Ekhrit until the end of this round.\nThis round, prevent the push of minions NOT nearby to Ekhrit.",
+      "isTimed": true
     },
     "threeOneCard": {
       "name": "Windborne",
@@ -547,7 +560,8 @@
     },
     "fourOneCard": {
       "name": "Ashen Gank",
-      "description": "~Cast only if Kumaya is in a jungle without enemy heroes.\nMove to 1 ::target:: adjacent lane area.\nIf you do, attack 1 enemy hero there with +2 strength."
+      "description": "~Cast only if Kumaya is in a jungle without enemy heroes.\nMove to 1 ::target:: adjacent lane area.\nIf you do, attack 1 enemy hero there with +2 strength.",
+      "isTimed": true
     }
   },
   "Heraal": {
@@ -557,12 +571,13 @@
     "title": "Wild",
     "range": "RANGED",
     "abilityName": "Jungle Runner",
-    "abilityDescription": "Heraal ignores the jungle targeting restriction.\n\nAction: if Heraal is in a jungle, teleport to 1 ::target::\njungle within 2 areas. (Once per Heraal's turn.)",
+    "abilityDescription": "Heraal ignores the jungle targeting restriction.\n\n\nAction: if Heraal is in a jungle, teleport to 1 ::target::\njungle within 2 areas. (Once per Heraal's turn.)",
     "upgradedAbilityName": "Jungle Hunter",
-    "upgradedAbilityDescription": "Heraal ignores the jungle targeting restriction.\nAction: if Heraal is in a jungle, teleport to 1 ::target:: other\njungle anywhere. He has +2 strength against enemy\nheroes in lanes this turn. (Once per Heraal's turn.)",
+    "upgradedAbilityDescription": "Heraal ignores the jungle targeting restriction.\n\nAction: if Heraal is in a jungle, teleport to 1 ::target:: other\njungle anywhere. He has +2 strength against enemy\nheroes in lanes this turn. (Once per Heraal's turn.)",
     "ultimate": {
       "name": "The Wilds Ride",
-      "description": "~Cast only during your shop phase.\nImmediately after Heraal passes this round, deal X DMG to 1 enemy in Heraal's area, where X are the MP he spent this turn. This DMG ignores the Tough ability."
+      "description": "~Cast only during your shop phase.\nImmediately after Heraal passes this round, deal X DMG to 1 enemy in Heraal's area, where X are the MP he spent this turn. This DMG ignores the Tough ability.",
+      "isTimed": true
     },
     "zeroThreeCard": {
       "name": "Ironwood Smite",
@@ -580,7 +595,8 @@
     },
     "fourOneCard": {
       "name": "Hunting Gank",
-      "description": "~Cast only if Heraal is in a jungle without enemy heroes.\nTeleport to 1 ::target:: other jungle area without enemy heroes. Then, attack 1 ::target:: nearby enemy hero in a lane."
+      "description": "~Cast only if Heraal is in a jungle without enemy heroes.\nTeleport to 1 ::target:: other jungle area without enemy heroes. Then, attack 1 ::target:: nearby enemy hero in a lane.",
+      "isTimed": true
     }
   },
   "Ixatosk": {
@@ -595,7 +611,8 @@
     "upgradedAbilityDescription": "Action: teleport 1 ::target:: adjacent friendly hero to 1 ::target::\narea adjacent to Ixatosk. (Twice per Ixatosk's turn.)",
     "ultimate": {
       "name": "Skytear Predator",
-      "description": "~Cast only during your shop phase and if Ixatosk is ready.\nIxatosk has +X strength and +X armor this round, where X are the MP on its plan.\nIxatosk's attacks can only target the outsider this round, ignoring its Tough ability."
+      "description": "~Cast only during your shop phase and if Ixatosk is ready.\nIxatosk has +X strength and +X armor this round, where X are the MP on its plan.\nIxatosk's attacks can only target the outsider this round, ignoring its Tough ability.",
+      "isTimed": true
     },
     "zeroThreeCard": {
       "name": "Burrowing Smite",
@@ -628,7 +645,8 @@
     "upgradedAbilityDescription": "Shafathi has +5 initiative.\nNearby enemies have -2 initiative.",
     "ultimate": {
       "name": "Split Second",
-      "description": "~Cast only during your shop phase.\nTeleport to 1 ::target:: contested area anywhere.\nIf you do, deal 2 DMG and SILENCE up to 2 enemies there."
+      "description": "~Cast only during your shop phase.\nTeleport to 1 ::target:: contested area anywhere.\nIf you do, deal 2 DMG and SILENCE up to 2 enemies there.",
+      "isTimed": true
     },
     "zeroThreeCard": {
       "name": "Smite Stasis",
@@ -647,7 +665,8 @@
     },
     "fourOneCard": {
       "name": "Echo Gank",
-      "description": "~Cast only if Shafathi is in a jungle without enemy heroes.\n~Additional cost: discard 3 cards from hand.\nReady Shafathi."
+      "description": "~Cast only if Shafathi is in a jungle without enemy heroes.\n~Additional cost: discard 3 cards from hand.\nReady Shafathi.",
+      "isTimed": true
     }
   },
   "Yami": {
@@ -757,12 +776,12 @@
     "range": "MELEE",
     "abilityName": "Refraction Dance",
     "abilityDescription": "While Khenui is in a lane, she has Tough against\nattacks (including the ones from Retaliate).",
-    "upgradedAbilityName": "Echo Dance",
+    "upgradedAbilityName": "Prismatic Dance",
     "upgradedAbilityDescription": "While Khenui is in a lane, she has Tough against\nattacks (including the ones from Retaliate).\n\nWhen an opponent chooses a target for a spell or\nattack they must target Khenui, if possible.",
     "ultimate": {
       "name": "Echo Dance",
       "description": "~Cast only during your shop phase.\nKhenui has +2 initiative this round and may teleport to 1 ::target:: other area anywhere.\nIf you do, deal 2 DMG and DISARM 1 enemy hero there.",
-      "isQuick": true
+      "isTimed": true
     },
     "zeroThreeCard": {
       "name": "Deceptive Lead",
@@ -780,7 +799,8 @@
     },
     "fourOneCard": {
       "name": "Magnetic Presence",
-      "description": "~Cast only during your shop phase.\nThis round, enemy heroes within 3 areas of Khenui who declare a move action must move closer to her.\nThose heroes cannot attack unless they are nearby to Khenui or have 0 MP left."
+      "description": "~Cast only during your shop phase.\nThis round, enemy heroes within 3 areas of Khenui who declare a move action must move closer to her.\nThose heroes cannot attack unless they are nearby to Khenui or have 0 MP left.",
+      "isTimed": true
     }
   },
   "Hogosai": {
@@ -878,8 +898,7 @@
     },
     "threeOneCard": {
       "name": "Totem of Pain",
-      "description": "Deal 2 DMG and DISARM up to 2 ::target:: enemies in Cotlic's area.\nIf there are 3 or more friendly minions there when you cast this, target 3 enemies instead.",
-      "isQuick": true
+      "description": "Deal 2 DMG and DISARM up to 2 ::target:: enemies in Cotlic's area.\nIf there are 3 or more friendly minions there when you cast this, target 3 enemies instead."
     },
     "fourOneCard": {
       "name": "Shield Shove",

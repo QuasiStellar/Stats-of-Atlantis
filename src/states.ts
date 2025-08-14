@@ -460,6 +460,7 @@ export const onwardImageNames = [
   "target_italics",
   "target_large",
   "taulot",
+	"timed",
 ]
 
 export const cardImageNames = [

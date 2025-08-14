@@ -7,6 +7,7 @@ export function updateCanvas(
 	name: string,
 	description: string,
 	isQuick: boolean = false,
+	isTimed: boolean = false,
   color: HeroColor,
   range: AttackRange,
   type: CardType,
@@ -24,7 +25,7 @@ export function updateCanvas(
   if (type != 'ultimate') {
     addImage(context, getDamageImage(type), 600, 60);
   }
-  addTitle(context, name, 375, 993, isQuick, 46, 32.5, true);
+  addTitle(context, name, 375, 993, isQuick, isTimed, 46, 32.5, true);
   return descHeight + 163
 }
 
@@ -163,7 +164,7 @@ function addImage(context: CanvasRenderingContext2D, name: string, x: number, y:
   context.drawImage(<CanvasImageSource>images.get(name), x, y)
 }
 
-function addTitle(context: CanvasRenderingContext2D, text: string, x: number, y: number, isQuick: boolean, uppercaseSize: number, lowercaseSize: number, shouldCenter: boolean) {
+function addTitle(context: CanvasRenderingContext2D, text: string, x: number, y: number, isQuick: boolean, isTimed: boolean, uppercaseSize: number, lowercaseSize: number, shouldCenter: boolean) {
   const textParts = splitCapitalized(text, uppercaseSize, lowercaseSize)
 
   const startX = x;
@@ -173,7 +174,7 @@ function addTitle(context: CanvasRenderingContext2D, text: string, x: number, y:
   context.textAlign = 'left'
   context.lineJoin = 'round'
 
-  let width = isQuick ? 53 : 0
+  let width = isQuick || isTimed ? 53 : 0
 
   textParts.forEach(segment => {
     context.font = `${segment.size}px Atlantis Regular`;
@@ -185,7 +186,10 @@ function addTitle(context: CanvasRenderingContext2D, text: string, x: number, y:
   if (isQuick) {
     context.drawImage(<CanvasImageSource>images.get("quick"), currentX, startY - 36, 28, 45)
     currentX += 53;
-  }
+  } else if (isTimed) {
+		context.drawImage(<CanvasImageSource>images.get("timed"), currentX, startY - 36, 39, 45)
+		currentX += 64;
+	}
 
   textParts.forEach(segment => {
     context.font = `${segment.size}px Atlantis Regular`;
@@ -497,7 +501,7 @@ function addAbility(context: CanvasRenderingContext2D, abilityName: string, abil
   context.fillRect(0, lowerBorder - currentY - 270, 1407, lowerBorder - currentY - 70);
   context.drawImage(tempCanvas, 0, 0, 1407, 1407, 0, lowerBorder - currentY, 1407, 1407)
 
-  addTitle(context, abilityName, x, lowerBorder - 47 - currentY, false, 55, 38, false)
+  addTitle(context, abilityName, x, lowerBorder - 47 - currentY, false, false, 55, 38, false)
   
   return descHeight
 
@@ -614,11 +618,11 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     abilityDescription: string,
     upgradedAbilityName: string,
     upgradedAbilityDescription: string,
-    ultimate: { name: string, description: string, isQuick?: boolean },
-    zeroThreeCard: { name: string, description: string, isQuick?: boolean },
-    twoTwoCard: { name: string, description: string, isQuick?: boolean },
-    threeOneCard: { name: string, description: string, isQuick?: boolean },
-    fourOneCard: { name: string, description: string, isQuick?: boolean },
+    ultimate: { name: string, description: string, isQuick?: boolean, isTimed?: boolean },
+    zeroThreeCard: { name: string, description: string, isQuick?: boolean, isTimed?: boolean },
+    twoTwoCard: { name: string, description: string, isQuick?: boolean, isTimed?: boolean },
+    threeOneCard: { name: string, description: string, isQuick?: boolean, isTimed?: boolean },
+    fourOneCard: { name: string, description: string, isQuick?: boolean, isTimed?: boolean },
   }
 
   const blackImage = await createPixelImage()
@@ -672,6 +676,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     hero.ultimate.name,
     hero.ultimate.description,
     hero.ultimate.isQuick,
+		hero.ultimate.isTimed,
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "ultimate",
@@ -688,6 +693,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     hero.zeroThreeCard.name,
     hero.zeroThreeCard.description,
     hero.zeroThreeCard.isQuick,
+		hero.zeroThreeCard.isTimed,
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "zeroThree",
@@ -704,6 +710,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     hero.twoTwoCard.name,
     hero.twoTwoCard.description,
     hero.twoTwoCard.isQuick,
+		hero.twoTwoCard.isTimed,
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "twoTwo",
@@ -720,6 +727,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     hero.threeOneCard.name,
     hero.threeOneCard.description,
     hero.threeOneCard.isQuick,
+		hero.threeOneCard.isTimed,
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "threeOne",
@@ -736,6 +744,7 @@ export async function paintHero(heroName: string, canvas: HTMLCanvasElement) {
     hero.fourOneCard.name,
     hero.fourOneCard.description,
     hero.fourOneCard.isQuick,
+		hero.fourOneCard.isTimed,
     getColor(hero.role[0].toUpperCase() + hero.role.slice(1).toLowerCase() as HeroRole),
     hero.range.toLowerCase() as AttackRange,
     "fourOne",

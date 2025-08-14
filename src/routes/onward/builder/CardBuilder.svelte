@@ -32,36 +32,42 @@
       ["name", ""],
       ["description", ""],
       ["isQuick", false],
+      ["isTimed", false],
       ["background", undefined],
     ])],
     ["zeroThree", new TSMap<string, any>([
       ["name", ""],
       ["description", ""],
       ["isQuick", false],
+      ["isTimed", false],
       ["background", undefined],
     ])],
     ["twoTwo", new TSMap<string, any>([
       ["name", ""],
       ["description", ""],
       ["isQuick", false],
+      ["isTimed", false],
       ["background", undefined],
     ])],
     ["threeOne", new TSMap<string, any>([
       ["name", ""],
       ["description", ""],
       ["isQuick", false],
+      ["isTimed", false],
       ["background", undefined],
     ])],
     ["fourOne", new TSMap<string, any>([
       ["name", ""],
       ["description", ""],
       ["isQuick", false],
+      ["isTimed", false],
       ["background", undefined],
     ])],
     ["flash", new TSMap<string, any>([
       ["name", "Flash"],
       ["description", "Move to ::target::1 adjacent area."],
       ["isQuick", true],
+      ["isTimed", false],
       ["background", undefined],
     ])],
   ])
@@ -95,6 +101,7 @@
     cardValues.get(currentCard)!.set("name", name)
     cardValues.get(currentCard)!.set("description", description)
     cardValues.get(currentCard)!.set("isQuick", isQuick)
+    cardValues.get(currentCard)!.set("isTimed", isTimed)
     cardValues.get(currentCard)!.set("background", background)
   }
 
@@ -115,6 +122,7 @@
     name = cardValues.get(currentCard)!.get("name")!
     description = cardValues.get(currentCard)!.get("description")!
     isQuick = cardValues.get(currentCard)!.get("isQuick")!
+    isTimed = cardValues.get(currentCard)!.get("isTimed")!
     background = cardValues.get(currentCard)!.get("background")!
   }
 
@@ -134,6 +142,7 @@
   let name = ""
   let description = ""
   let isQuick = false
+  let isTimed = false
   let cardType = "ultimate" as CardType
   let color = "red" as HeroColor
   let isRanged = false
@@ -221,6 +230,7 @@
     name
     description
     isQuick
+    isTimed
     background
     heroIcon
     color
@@ -289,12 +299,15 @@
         name,
         description,
         isQuick,
+        isTimed,
         color,
         attackRange,
         cardType,
       )
     }
   }
+
+  const labelColor = (disabled: boolean): string => disabled ? "gray" : "white"
 
   const descriptionProps = {
     rows: 4,
@@ -332,6 +345,7 @@
         cardValues.get(cards[i])!.get("name"),
         cardValues.get(cards[i])!.get("description"),
         cardValues.get(cards[i])!.get("isQuick"),
+        cardValues.get(cards[i])!.get("isTimed"),
         color,
         attackRange,
         cards[i] as CardType,
@@ -405,6 +419,7 @@
   //       cardValues.get(cards[i])!.get("name"),
   //       cardValues.get(cards[i])!.get("description"),
   //       cardValues.get(cards[i])!.get("isQuick"),
+  //       cardValues.get(cards[i])!.get("isTimed"),
   //       color,
   //       attackRange,
   //       cardType,
@@ -440,6 +455,7 @@
   //       cardValues.get(cards[i])!.get("name"),
   //       cardValues.get(cards[i])!.get("description"),
   //       cardValues.get(cards[i])!.get("isQuick"),
+  //       cardValues.get(cards[i])!.get("isTimed"),
   //       color,
   //       attackRange,
   //       cardType,
@@ -643,9 +659,19 @@
 
             <div class="col-span-2 flex">
               <div class="m-auto">
-                <Checkbox bind:checked={isQuick}>
-                  <div style="color: white">
+                <Checkbox bind:checked={isQuick} disabled={isTimed}>
+                  <div style="color: {labelColor(isTimed)}">
                     Quick
+                  </div>
+                </Checkbox>
+              </div>
+            </div>
+
+            <div class="col-span-2 flex">
+              <div class="m-auto">
+                <Checkbox bind:checked={isTimed} disabled={isQuick}>
+                  <div style="color: {labelColor(isQuick)}">
+                    Timed
                   </div>
                 </Checkbox>
               </div>
