@@ -51,12 +51,12 @@
       "description": "Move to 1 ::target:: adjacent area.\nIf you do, you may deal 2 DMG and FREEZE 1 enemy hero or outsider there."
     },
     "twoTwoCard": {
-      "name": "Panther Form",
+      "name": "Wildcat Form",
       "description": "~Attach to Shyllavi until she is defeated.\nShe has +1 armor and \"Retaliate: DISARM\"."
     },
     "threeOneCard": {
       "name": "Biding Time",
-      "description": "~Cast only during your shop phase.\nHeal 3 HP to her.\nShe has +3 initiative this round.\nThe next minion phase is delayed until the end of this round.",
+      "description": "~Cast only during your shop phase.\nHeal 3 HP to Shyllavi.\nShe has +3 initiative this round.\nThe next minion phase is delayed until the end of this round.",
       "isTimed": true
     },
     "fourOneCard": {
@@ -224,7 +224,7 @@
     },
     "fourOneCard": {
       "name": "Ambush",
-      "description": "~Additional cost: 2 MP.\nAttack 1 ::target:: adjacent enemy hero ignoring the jungle targeting restriction.\nAttack the same target again."
+      "description": "~Additional cost: 2 MP.\nAttack twice 1 ::target:: adjacent enemy hero ignoring the jungle targeting restriction."
     }
   },
   "Khepiax": {
@@ -239,7 +239,7 @@
     "upgradedAbilityDescription": "Add the following effect to the end of each\nfriendly hero's spell: \"Khepiax deals 2 DMG\nto up to 1 ::target:: enemy hero nearby to Khepiax.\"",
     "ultimate": {
       "name": "Become the Storm",
-      "description": "~Additional cost: defeat 2 nearby friendly minions.\nDeal 4 piercing DMG split among up to 4 ::target:: enemies anywhere (even in different areas).",
+      "description": "~Additional cost: defeat 1 nearby friendly minions.\nDeal 4 piercing DMG split among up to 4 enemies anywhere (even in different areas).",
       "isQuick": true
     },
     "zeroThreeCard": {
@@ -252,7 +252,7 @@
     },
     "threeOneCard": {
       "name": "Gathering Storm",
-      "description": "~Cast only when Khepiax starts her turn.\n~Additional cost: all AP and all MP.\nDraw 4 card.",
+      "description": "~Cast only when Khepiax starts her turn.\n~Additional cost: all AP and all MP.\nDraw 4 cards.",
       "isTimed": true
     },
     "fourOneCard": {
@@ -391,7 +391,7 @@
     },
     "fourOneCard": {
       "name": "Word of Command",
-      "description": "~Channel only during your shop phase.\nFor every 2 charges on this, choose one, same or different effect:\n- Draw 1 card.\n- Setheru has +1 momentum this round.\n- Displace 1 ::target:: nearby hero.",
+      "description": "~Channel only during your shop phase.\nFor every 2 charges on this, choose one, same or different effect:\n- Draw 1 card.\n- Displace 1 ::target:: nearby hero.\n- Setheru has +1 momentum this round.",
       "isQuick": true
     }
   },
@@ -611,7 +611,7 @@
     "upgradedAbilityDescription": "Action: teleport 1 ::target:: adjacent friendly hero to 1 ::target::\narea adjacent to Ixatosk. (Twice per Ixatosk's turn.)",
     "ultimate": {
       "name": "Skytear Predator",
-      "description": "~Cast only during your shop phase and if Ixatosk is ready.\nIxatosk has +X strength and +X armor this round, where X are the MP on its plan.\nIxatosk's attacks can only target the outsider this round, ignoring its Tough ability.",
+      "description": "~Cast only during your shop phase.\nIxatosk has +X strength and +X armor this round, where X are the MP on its plan.\nIxatosk's attacks can only target the outsider this round, ignoring its Tough ability.",
       "isTimed": true
     },
     "zeroThreeCard": {
@@ -681,7 +681,7 @@
     "upgradedAbilityDescription": "When Yami enters an area, she may displace\nup to 2 ::target:: enemy heroes from there.",
     "ultimate": {
       "name": "Kneel Before Me",
-      "description": "Move to 1 ::target:: area within 2 areas.\nIf you do, deal 1 piercing DMG and FREEZE up to 3 enemies there.",
+      "description": "Teleport to 1 ::target:: area within 2 areas.\nIf you do, deal 1 piercing DMG and FREEZE up to 3 enemies there.",
       "isQuick": true
     },
     "zeroThreeCard": {
@@ -723,7 +723,7 @@
     },
     "twoTwoCard": {
       "name": "Bear Form",
-      "description": "~Attach to Gulbjarn until he is defeated.\nGulbjarn has +1 armor.\nPrevent the \"move\", \"teleport\", and \"displace\" effects of the spells and abilities of ::target:: nearby enemy heroes."
+      "description": "~Attach to Gulbjarn until he is defeated.\nGulbjarn has +1 armor.\nPrevent the \"move\", \"teleport\", and \"displace\" effects of spells and abilities of ::target:: nearby enemy heroes."
     },
     "threeOneCard": {
       "name": "Iron Grasp",
@@ -731,7 +731,7 @@
     },
     "fourOneCard": {
       "name": "Feral Grapple",
-      "description": "Deal 3 DMG and pull 1 nearby enemy.\nIf you dealt DMG, heal 3 HP to Gulbjarn."
+      "description": "Deal 3 DMG and pull 1 nearby enemy.\nIf you dealt 1 or more DMG, heal 3 HP to Gulbjarn."
     }
   },
   "Zacoal": {
@@ -756,7 +756,7 @@
     },
     "twoTwoCard": {
       "name": "*Whheeeeee*",
-      "description": "Teleport and FREEZE 1 nearby hero to an area adjacent to them.\nThey cannot declare cast actions this turn."
+      "description": "FREEZE and teleport 1 nearby hero to an area adjacent to them.\nThey cannot declare cast actions this turn."
     },
     "threeOneCard": {
       "name": "*Thud* *Thud*",
@@ -799,7 +799,7 @@
     },
     "fourOneCard": {
       "name": "Magnetic Presence",
-      "description": "~Cast only during your shop phase.\nThis round, enemy heroes within 3 areas of Khenui who declare a move action must move closer to her.\nThose heroes cannot attack unless they are nearby to Khenui or have 0 MP left.",
+      "description": "~Cast only during your shop phase.\n~Attach to Khenui until the end of the round.\nEnemy heroes within 3 areas cannot attack unless they are nearby to Khenui or have 0 MP left.\nIf those heroes declare a move action, they must move closer to her. (Does not apply to movement from spells such as Flash.)",
       "isTimed": true
     }
   },
@@ -1055,7 +1055,7 @@
     "upgradedAbilityDescription": "When an enemy hero enters a nearby area,\nSILENCE and FREEZE them.\n\nWhen a friendly hero enters a nearby area,\nheal 1 HP to them.",
     "ultimate": {
       "name": "Nupten Touch",
-      "description": "Level up, heal 8 HP, and remove all statuses from 1 ::target:: friendly hero within 3 areas."
+      "description": "Heal 8 HP, remove all statuses, and level up 1 ::target:: friendly hero within 3 areas."
     },
     "zeroThreeCard": {
       "name": "Radiant Healing",
