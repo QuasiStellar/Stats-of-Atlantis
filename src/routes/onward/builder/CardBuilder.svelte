@@ -508,6 +508,7 @@
     { value: "Liothan", name: "Liothan" },
     { value: "Taulot", name: "Taulot" },
     { value: "Nupten", name: "Nupten" },
+    { value: "Outsider", name: "Outsider" },
   ]
 
   const roles = [
@@ -519,6 +520,7 @@
     { value: "Laner", name: "Laner" },
     { value: "Jungler", name: "Jungler" },
     { value: "Warrior", name: "Warrior" },
+    { value: "Outsider", name: "Outsider" },
   ]
 
   $: activeBorderHero = currentCard == "hero" ? "bg-blue-800" : "bg-blue-600"
@@ -761,8 +763,8 @@
     </div>
   </div>
 
-  <p class="absolute font-atlantis"></p>
-  <p class="absolute font-itc"></p>
+  <p class="font-atlantis invisible">a</p>
+  <p class="font-itc invisible">a</p>
 </div>
 
 <style>

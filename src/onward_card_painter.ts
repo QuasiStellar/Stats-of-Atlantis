@@ -119,19 +119,21 @@ function getSidePanel(color: HeroColor): string {
 
 function getColor(role: HeroRole): HeroColor {
   switch (role) {
-    case "Slayer":
-    case "Marksman":
-      return 'red'
-    case "Tank":
-    case "Controller":
-      return 'blue'
-    case "Mage":
-    case "Laner":
-      return 'green'
-    case "Jungler":
-    case "Warrior":
-      return 'yellow'
-  }
+		case 'Slayer':
+		case 'Marksman':
+			return 'red';
+		case 'Tank':
+		case 'Controller':
+			return 'blue';
+		case 'Mage':
+		case 'Laner':
+			return 'green';
+		case 'Jungler':
+		case 'Warrior':
+			return 'yellow';
+		case 'Outsider':
+			return 'purple';
+	}
 }
 
 function getPlan(type: CardType, attackRange: AttackRange, color: HeroColor): string {
@@ -795,8 +797,8 @@ function createPixelImage(): Promise<HTMLImageElement> {
 type Token = { type: 'text', value: string } | { type: 'keyword', value: string } | { type: 'image' };
 type Line = { tokens: Token[] };
 
-export type HeroColor = "red" | "blue" | "green" | "yellow"
+export type HeroColor = "red" | "blue" | "green" | "yellow" | "purple"
 export type AttackRange = "melee" | "ranged"
 export type CardType = "ultimate" | "zeroThree" | "twoTwo" | "threeOne" | "fourOne" | "flash"
-export type HeroRole = "Slayer" | "Marksman" | "Tank" | "Controller" | "Mage" | "Laner" | "Jungler" | "Warrior"
-export type Fraction = "Kurumo" | "Liothan" | "Taulot" | "Nupten"
+export type HeroRole = "Slayer" | "Marksman" | "Tank" | "Controller" | "Mage" | "Laner" | "Jungler" | "Warrior" | "Outsider"
+export type Fraction = "Kurumo" | "Liothan" | "Taulot" | "Nupten" | "Outsider"

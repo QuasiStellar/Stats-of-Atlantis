@@ -88,7 +88,7 @@
 </script>
 
 <div class="pt-18 md:pt-22">
-  <div class="flex items-center flex-col">
+  <div class="flex items-center flex-col w-full">
     <div class="flex justify-center pb-5">
       <a href="/onward/builder">
         <Button class="w-40 text-xl">Card Builder</Button>
@@ -104,7 +104,9 @@
     </div>
 
     {#if selectedHero !== ''}
-      <canvas width="1407" height="11407" class="w-160 py-5" bind:this={canvas} />
+      <div class="w-full max-w-[800px]">
+        <canvas width="1407" height="11407" class="py-5 w-full max-w-[1407px]" bind:this={canvas} />
+      </div>
       <!--{#await getHeroImage(selectedHero)}-->
       <!--  <p>Loading image...</p>-->
       <!--{:then url}-->
@@ -113,5 +115,28 @@
       <!--  <p>Failed to load image</p>-->
       <!--{/await}-->
     {/if}
+
+    <p class="font-itc invisible">a</p>
+    <p class="font-atlantis invisible">a</p>
   </div>
 </div>
+
+<style>
+    .font-atlantis {
+        font-family: "Atlantis Regular", serif;
+    }
+
+    @font-face {
+        font-family: "Atlantis Regular";
+        src: url("../../lib/fonts/atlantis_regular.woff") format("woff");
+    }
+
+    .font-itc {
+        font-family: "ITC Charter", serif;
+    }
+
+    @font-face {
+        font-family: "ITC Charter";
+        src: url("../../lib/fonts/itc_charter_bold.woff") format("woff");
+    }
+</style>
