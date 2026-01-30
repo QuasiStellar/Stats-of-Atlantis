@@ -1,0 +1,296 @@
+[
+    {
+       "name":"Magic Missile",
+       "description":"Target a unit in range\nand not adjacent to you.",
+       "color":"GOLD",
+       "school":"CANTRIP",
+       "variant":{
+          "first":1,
+          "second":3
+       },
+       "primaryAction":"ATTACK",
+       "primaryValue":1,
+       "modifier":"RANGE",
+       "modifierValue":3
+    },
+    {
+       "name":"Shocking Grasp",
+       "description":"Target a unit adjacent to you.\nAfter the attack: Move the\ntarget up to 1 space.",
+       "color":"GOLD",
+       "school":"CANTRIP",
+       "variant":{
+          "first":2,
+          "second":3
+       },
+       "primaryAction":"ATTACK",
+       "primaryValue":3
+    },
+    {
+       "name":"Expeditious Retreat",
+       "description":"Move only in a straight line.",
+       "color":"GOLD",
+       "school":"CANTRIP",
+       "variant":{
+          "first":3,
+          "second":3
+       },
+       "primaryAction":"MOVEMENT",
+       "primaryValue":5
+    },
+    {
+       "name":"Burning Hands",
+       "description":"Target a unit adjacent to you.\nBefore the attack: Up to  enemy\nhero adjacent to the target\ndiscards a card, if able.",
+       "color":"RED",
+       "school":"EVOCATION",
+       "level":1,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"ATTACK",
+       "primaryValue":5
+    },
+    {
+       "name":"Fireball",
+       "description":"Target a unit in range,\nnot adjacent to you or\nto your friendly unit.",
+       "color":"RED",
+       "school":"EVOCATION",
+       "level":2,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"ATTACK",
+       "primaryValue":5,
+       "modifier":"RANGE",
+       "modifierValue":3
+    },
+    {
+       "name":"Sunburst",
+       "description":"Target a unit at maximum range.\n+1 ::attack_red:: Attack and +1 ::range_red:: Range\nfor each other spell card\nremoved from the spellbook.",
+       "color":"RED",
+       "school":"EVOCATION",
+       "level":3,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"ATTACK",
+       "primaryValue":0,
+       "primaryValueSign":"PLUS",
+       "modifier":"RANGE",
+       "modifierValue":0,
+       "modifierValueSign":"PLUS"
+    },
+    {
+       "name":"Vampiric Touch",
+       "description":"Target a unit adjacent to you.\nAfter the attack: You may\nretrieve a discarded card.",
+       "color":"RED",
+       "school":"NECROMANCY",
+       "level":2,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"ATTACK",
+       "primaryValue":5
+    },
+    {
+       "name":"Create Undead",
+       "description":"Respawn a friendly minion in an\nempty friendly spawn point in\nrange in the battle zone.",
+       "color":"RED",
+       "school":"NECROMANCY",
+       "level":2,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"RANGE",
+       "modifierValue":3
+    },
+    {
+       "name":"Energy Drain",
+       "description":"An enemy hero in range discards a\nnon-basic card, if able. Your team\nregains 1 spent ::life_counters:: Life counter.",
+       "color":"RED",
+       "school":"NECROMANCY",
+       "level":3,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"RANGE",
+       "modifierValue":3
+    },
+    {
+       "name":"Shield",
+       "description":"**This round:** You are\nimmune to basic attacks.\n~(Cancelled if the spell is returned to she spellbook.)",
+       "color":"GREEN",
+       "school":"ABJURATION",
+       "level":1,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"SKILL"
+    },
+    {
+       "name":"Banishment",
+       "description":"Place a unit or a token adjacent\nto you into a space in radius.",
+       "color":"GREEN",
+       "school":"ABJURATION",
+       "level":2,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":3
+    },
+    {
+       "name":"Invulnerability",
+       "description":"**This Round:** You are immune\nto non-basic attacks.",
+       "color":"GREEN",
+       "school":"ABJURATION",
+       "level":3,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"SKILL"
+    },
+    {
+       "name":"Dimension Door",
+       "description":"Place yourself into a space\nat maximum radius.\n+1 ::area_green:: Radius for each other spell\ncard removed from the spellbook.",
+       "color":"GREEN",
+       "school":"CONJURATION",
+       "level":2,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":0,
+       "modifierValueSign":"PLUS"
+    },
+    {
+       "name":"Find Familiar",
+       "description":"Place a ::token_familiar:: Familiar token in radius.\nYou may remove up to three other spell\ncards from the spellbook faceup.",
+       "color":"GREEN",
+       "school":"CONJURATION",
+       "level":2,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":3
+    },
+    {
+       "name":"Cloud Kill",
+       "description":"An enemy hero in radius\ndiscards a basic card, if able.",
+       "color":"GREEN",
+       "school":"CONJURATION",
+       "level":3,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":3
+    },
+    {
+       "name":"Suggestion",
+       "description":"If able, an enemy hero in radius\nmoves 3 spaces in a straight line.",
+       "color":"BLUE",
+       "school":"ENCHANTMENT",
+       "level":1,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":3
+    },
+    {
+       "name":"Dominate Person",
+       "description":"Target an enemy hero in radius.\nDefeat an enemy minion in\nradius adjacent to the target.",
+       "color":"BLUE",
+       "school":"ENCHANTMENT",
+       "level":2,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":3
+    },
+    {
+       "name":"Power Word Kill",
+       "description":"Defeate an enemy hero in\nradius with no cards in hand.",
+       "color":"BLUE",
+       "school":"ENCHANTMENT",
+       "level":3,
+       "variant":{
+          "first":1,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":3
+    },
+    {
+       "name":"Midas' Touch",
+       "description":"Gain 1 coin for every two other spell\ncards removed from the spellbook.",
+       "color":"BLUE",
+       "school":"TRANSMUTATION",
+       "level":2,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL"
+    },
+    {
+       "name":"Disintegrate",
+       "description":"Remove a token or an enemy\nnon-heavy minion adjacent to you.",
+       "color":"BLUE",
+       "school":"TRANSMUTATION",
+       "level":2,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL"
+    },
+    {
+       "name":"Polymorph",
+       "description":"Swap an enemy hero in radius\nwith a token in radius or with\nan enemy minion in radius.",
+       "color":"BLUE",
+       "school":"TRANSMUTATION",
+       "level":3,
+       "variant":{
+          "first":2,
+          "second":2
+       },
+       "primaryAction":"SKILL",
+       "modifier":"AREA",
+       "modifierValue":3
+    },
+    {
+       "name":"Wish",
+       "description":"Cast any spell in the Spellbook.\nAfter you cast the \"Wish\" spell three\ntimes your team wins the game.",
+       "color":"PURPLE",
+       "school":"WISH",
+       "level":4,
+       "primaryAction":"SKILL"
+    }
+ ]
+ 
