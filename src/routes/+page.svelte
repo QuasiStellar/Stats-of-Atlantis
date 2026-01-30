@@ -57,6 +57,10 @@
 	const newPrintingStats = stats.slice(0, 4)
 	$: activeStats = useNewPrinting ? newPrintingStats : stats
 
+	if (browser) {
+		useNewPrinting = $page.url.searchParams.get("printing") !== "old"
+	}
+
 	const sortParam = browser ? $page.url.searchParams.get("sort") : null
 	if (sortParam != null && stats.includes(sortParam)) {
 		sortBy(stats.indexOf(sortParam), false)
@@ -88,17 +92,42 @@
 		return { min: statValue, max: statValue }
 	}
 
+	function setSearchParam(key: string, value: string | null) {
+		if (!browser) {
+			return
+		}
+		const url = new URL($page.url)
+		if (value == null) {
+			url.searchParams.delete(key)
+		} else {
+			url.searchParams.set(key, value)
+		}
+		goto(`${url.pathname}${url.search}${url.hash}`, {
+			replaceState: true,
+			noScroll: true,
+			keepFocus: true,
+		})
+	}
+
 	function sortBy(statIndex: number, updateUrl = true) {
 		sortIndex = statIndex
 		if (browser && updateUrl) {
-			goto("?sort=" + stats[statIndex])
+			setSearchParam("sort", stats[statIndex])
 		}
 	}
 
 	function sortByComplexity(updateUrl = true) {
 		sortIndex = null
 		if (browser && updateUrl) {
-			goto("?sort=complexity")
+			setSearchParam("sort", "complexity")
+		}
+	}
+
+	$: if (browser) {
+		const current = $page.url.searchParams.get("printing")
+		const desired = useNewPrinting ? null : "old"
+		if (current !== desired) {
+			setSearchParam("printing", desired)
 		}
 	}
 </script>
