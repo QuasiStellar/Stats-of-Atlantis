@@ -497,6 +497,7 @@
       card.modifierValueSign ?? ValueSign.NONE,
       card.secondaryMovement ?? 0,
       card.secondaryDefense ?? 0,
+      card.secondaryAttack ?? null,
       initiativeBonus,
       attackBonus,
       defenseBonus,
@@ -567,6 +568,7 @@
           modifierValueSign?: ValueSign,
           secondaryMovement?: number,
           secondaryDefense?: number,
+          secondaryAttack?: number,
           item?: Item,
         }[]
         goldCard = hero.find((card) => card.color == Color.GOLD.toUpperCase())!

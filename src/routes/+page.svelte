@@ -16,7 +16,7 @@
 
 	const heroImageLoadingPromises: Map<string, Promise<unknown>> = new Map()
 
-	const emptyImage = "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw=="
+	const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
 
 	onMount(async () => {
 		const heroKeys = new Set([...Object.keys(oldHeroes), ...Object.keys(heroes)])

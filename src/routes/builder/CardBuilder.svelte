@@ -369,6 +369,8 @@
     cardValues.get(currentCard)!.set("modifierValueSign", modifierValueSign)
     cardValues.get(currentCard)!.set("secondaryDefenseValueField", secondaryDefenseValueField)
     cardValues.get(currentCard)!.set("secondaryMovementValueField", secondaryMovementValueField)
+    cardValues.get(currentCard)!.set("secondaryAttackEnabled", secondaryAttackEnabled)
+    cardValues.get(currentCard)!.set("secondaryAttackValueField", secondaryAttackValueField)
     cardValues.get(currentCard)!.set("background", background)
   }
 
@@ -388,6 +390,8 @@
     modifierValueSign = cardValues.get(currentCard)!.get("modifierValueSign")!
     secondaryDefenseValueField = cardValues.get(currentCard)!.get("secondaryDefenseValueField")!
     secondaryMovementValueField = cardValues.get(currentCard)!.get("secondaryMovementValueField")!
+    secondaryAttackEnabled = cardValues.get(currentCard)!.get("secondaryAttackEnabled") ?? false
+    secondaryAttackValueField = cardValues.get(currentCard)!.get("secondaryAttackValueField") ?? "0"
     background = cardValues.get(currentCard)!.get("background")!
   }
 
@@ -416,12 +420,15 @@
   let modifierValueSign = ValueSign.NONE
   let secondaryDefenseValueField = "0"
   let secondaryMovementValueField = "0"
+  let secondaryAttackEnabled = false
+  let secondaryAttackValueField = "0"
 
   $: initiative = fieldToNumber(initiativeField)
   $: primaryActionValue = fieldToNumber(primaryActionValueField)
   $: modifierValue = fieldToNumber(modifierValueField)
   $: secondaryDefenseValue = fieldToNumber(secondaryDefenseValueField)
   $: secondaryMovementValue = fieldToNumber(secondaryMovementValueField)
+  $: secondaryAttackValue = secondaryAttackEnabled ? fieldToNumber(secondaryAttackValueField) : null
 
   function fieldToNumber(field: string) {
     return +field.replace(/[^0-9]/, "")
@@ -721,6 +728,8 @@
     modifierValueSign
     secondaryDefenseValue
     secondaryMovementValue
+    secondaryAttackValue
+    secondaryAttackEnabled
     background
 
     if (imagesLoaded) {
@@ -781,6 +790,7 @@
     modifierValueSign,
     secondaryMovementValue,
     secondaryDefenseValue,
+    secondaryAttackValue,
   )
 
   const descriptionProps = {
@@ -862,6 +872,12 @@
   $: disableModifierValueSign = modifier === Modifier.NONE
   $: disableSecondaryDefenseValue = color === Color.PURPLE || primaryActionType === Type.DEFENSE || primaryActionType === Type.DEFENSE_SKILL
   $: disableSecondaryMovementValue = color === Color.PURPLE || primaryActionType === Type.MOVEMENT || color === Color.SILVER
+  $: disableSecondaryAttack = color === Color.PURPLE || primaryActionType === Type.ATTACK
+  $: disableSecondaryAttackValue = disableSecondaryAttack || !secondaryAttackEnabled
+
+  $: if (disableSecondaryAttack && secondaryAttackEnabled) {
+    secondaryAttackEnabled = false
+  }
 
   function downloadCard() {
     downloadCanvas(canvas, "card.png")
@@ -905,6 +921,9 @@
         cardValues.get(cards[i])!.get("modifierValueSign"),
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryMovementValueField")),
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryDefenseValueField")),
+        (cardValues.get(cards[i])!.get("secondaryAttackEnabled") ?? false)
+          ? fieldToNumber(cardValues.get(cards[i])!.get("secondaryAttackValueField") ?? "0")
+          : null,
       )
       heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, 1192 * (i % 6), 1664 * Math.floor(i / 6), 1192, 1664)
       tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height)
@@ -951,6 +970,9 @@
         cardValues.get(cards[i])!.get("modifierValueSign"),
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryMovementValueField")),
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryDefenseValueField")),
+        (cardValues.get(cards[i])!.get("secondaryAttackEnabled") ?? false)
+          ? fieldToNumber(cardValues.get(cards[i])!.get("secondaryAttackValueField") ?? "0")
+          : null,
       )
       heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, 100 + (100 + 1192) * (i % 3), 100 + (210 + 1664) * Math.floor(i / 3), 1192, 1664)
       tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height)
@@ -997,6 +1019,9 @@
         cardValues.get(cards[i])!.get("modifierValueSign"),
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryMovementValueField")),
         fieldToNumber(cardValues.get(cards[i])!.get("secondaryDefenseValueField")),
+        (cardValues.get(cards[i])!.get("secondaryAttackEnabled") ?? false)
+          ? fieldToNumber(cardValues.get(cards[i])!.get("secondaryAttackValueField") ?? "0")
+          : null,
       )
       heroContext.drawImage(tempCanvas, 0, 0, 1192, 1664, (100 + 1192) * (i % 3), (210 + 1664) * Math.floor(i / 3), 1192, 1664)
       tempContext.clearRect(0, 0, tempCanvas.width, tempCanvas.height)
@@ -1328,6 +1353,25 @@
               <Input type="text"
                      class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
                      bind:value={secondaryMovementValueField} disabled={disableSecondaryMovementValue} />
+            </Label>
+          </div>
+
+          <div class="col-span-3 flex">
+            <div class="m-auto">
+              <Checkbox bind:checked={secondaryAttackEnabled} disabled={disableSecondaryAttack}>
+                <div style="color: {labelColor(disableSecondaryAttack)}">
+                  Secondary attack
+                </div>
+              </Checkbox>
+            </div>
+          </div>
+
+          <div class="col-span-3">
+            <Label style="color: {labelColor(disableSecondaryAttackValue)}">
+              Attack value
+              <Input type="text"
+                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                     bind:value={secondaryAttackValueField} disabled={disableSecondaryAttackValue} />
             </Label>
           </div>
 

@@ -294,6 +294,7 @@ export const imageNames = [
   "area_purple",
   "area_red",
   "area_silver",
+  "attack",
   "attack_blue",
   "attack_gold",
   "attack_green",

@@ -18,6 +18,7 @@ export function updateCanvas(
 	modifierValueSign: ValueSign,
 	secondaryMovementValue: number,
 	secondaryDefenseValue: number,
+	secondaryAttackValue: number | null,
 	initiativeBonus: number = 0,
 	attackBonus: number = 0,
 	defenseBonus: number = 0,
@@ -49,13 +50,33 @@ export function updateCanvas(
 	context.font = '49px Arial';
 
 	function placeSecondary(inset: number) {
+		const hasSecondaryAttack = secondaryAttackValue !== null;
+		const adjustedInset = hasSecondaryAttack ? inset - 209 + 20 : inset;
+		const attackInset = inset + 20;
+
+		function addSecondaryAttack(atInset: number) {
+			addImage(context, 'attack', 35, atInset - 25);
+			addSecondaryValue(
+				context,
+				secondaryAttackValue! + attackBonus,
+				143,
+				atInset + 121,
+				attackBonus,
+				showNumbers,
+				color,
+				level,
+				Stat.ATTACK,
+				attackStat,
+			);
+		}
+
 		if (primaryActionType == Type.DEFENSE || primaryActionType == Type.DEFENSE_SKILL) {
-			addImage(context, 'movement', 64, inset);
+			addImage(context, 'movement', 64, adjustedInset);
 			addSecondaryValue(
 				context,
 				secondaryMovementValue + movementBonus,
 				143,
-				inset + 121,
+				adjustedInset + 121,
 				movementBonus,
 				showNumbers,
 				color,
@@ -63,13 +84,16 @@ export function updateCanvas(
 				Stat.MOVEMENT,
 				movementStat,
 			);
+			if (hasSecondaryAttack) {
+				addSecondaryAttack(attackInset);
+			}
 		} else if (primaryActionType == Type.MOVEMENT) {
-			addImage(context, 'defense', 70, inset);
+			addImage(context, 'defense', 70, adjustedInset);
 			addSecondaryValue(
 				context,
 				secondaryDefenseValue + defenseBonus,
 				143,
-				inset + 131,
+				adjustedInset + 131,
 				defenseBonus,
 				showNumbers,
 				color,
@@ -77,14 +101,17 @@ export function updateCanvas(
 				Stat.DEFENSE,
 				defenseStat,
 			);
+			if (hasSecondaryAttack) {
+				addSecondaryAttack(attackInset);
+			}
 		} else {
-			addImage(context, 'movement', 64, inset);
-			addImage(context, 'defense', 70, inset - 209);
+			addImage(context, 'movement', 64, adjustedInset);
+			addImage(context, 'defense', 70, adjustedInset - 209);
 			addSecondaryValue(
 				context,
 				secondaryMovementValue + movementBonus,
 				143,
-				inset + 121,
+				adjustedInset + 121,
 				movementBonus,
 				showNumbers,
 				color,
@@ -96,7 +123,7 @@ export function updateCanvas(
 				context,
 				secondaryDefenseValue + defenseBonus,
 				143,
-				inset - 79,
+				adjustedInset - 79,
 				defenseBonus,
 				showNumbers,
 				color,
@@ -104,17 +131,24 @@ export function updateCanvas(
 				Stat.DEFENSE,
 				defenseStat,
 			);
+			if (hasSecondaryAttack) {
+				addSecondaryAttack(attackInset);
+			}
 		}
 	}
 
 	function placeSecondaryOnSilver(inset: number) {
 		if (primaryActionType != Type.DEFENSE && primaryActionType != Type.DEFENSE_SKILL) {
-			addImage(context, 'defense', 70, inset);
+			const hasSecondaryAttack = secondaryAttackValue !== null;
+			const adjustedInset = hasSecondaryAttack ? inset - 209 : inset;
+			const attackInset = inset;
+
+			addImage(context, 'defense', 70, adjustedInset);
 			addSecondaryValue(
 				context,
 				secondaryDefenseValue + defenseBonus,
 				143,
-				inset + 131,
+				adjustedInset + 131,
 				defenseBonus,
 				showNumbers,
 				color,
@@ -122,6 +156,21 @@ export function updateCanvas(
 				Stat.DEFENSE,
 				defenseStat,
 			);
+			if (hasSecondaryAttack) {
+				addImage(context, 'attack', 35, attackInset);
+				addSecondaryValue(
+					context,
+					secondaryAttackValue! + attackBonus,
+					143,
+					attackInset + 121,
+					attackBonus,
+					showNumbers,
+					color,
+					level,
+					Stat.ATTACK,
+					attackStat,
+				);
+			}
 		}
 	}
 
