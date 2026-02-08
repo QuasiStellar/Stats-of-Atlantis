@@ -455,9 +455,6 @@ export function updateCanvas(
 		case Modifier.RANGE:
 			cardType += ' - Ranged';
 			break;
-		case Modifier.AREA:
-			cardType += ' - Area';
-			break;
 	}
 
 	let primaryActionHeight;
