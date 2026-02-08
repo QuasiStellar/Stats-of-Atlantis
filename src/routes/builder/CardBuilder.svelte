@@ -359,6 +359,7 @@
     cardValues.get(currentCard)!.set("description", description)
     cardValues.get(currentCard)!.set("level", level)
     cardValues.get(currentCard)!.set("handicap", handicap)
+    cardValues.get(currentCard)!.set("extra", extra)
     cardValues.get(currentCard)!.set("item", item)
     cardValues.get(currentCard)!.set("initiativeField", initiativeField)
     cardValues.get(currentCard)!.set("primaryActionType", primaryActionType)
@@ -379,7 +380,10 @@
     name = cardValues.get(currentCard)!.get("name")!
     description = cardValues.get(currentCard)!.get("description")!
     level = cardValues.get(currentCard)!.get("level")!
-    handicap = cardValues.get(currentCard)!.get("handicap")!
+    const storedHandicap = cardValues.get(currentCard)!.get("handicap") ?? false
+    const storedExtra = cardValues.get(currentCard)!.get("extra") ?? false
+    handicap = storedHandicap
+    extra = storedExtra
     item = cardValues.get(currentCard)!.get("item")!
     initiativeField = cardValues.get(currentCard)!.get("initiativeField")!
     primaryActionType = cardValues.get(currentCard)!.get("primaryActionType")!
@@ -393,6 +397,10 @@
     secondaryAttackEnabled = cardValues.get(currentCard)!.get("secondaryAttackEnabled") ?? false
     secondaryAttackValueField = cardValues.get(currentCard)!.get("secondaryAttackValueField") ?? "0"
     background = cardValues.get(currentCard)!.get("background")!
+
+    if (storedExtra) cardType = "extra"
+    else if (storedHandicap) cardType = "handicap"
+    else cardType = ""
   }
 
   let oldAttackStat = 0
@@ -410,6 +418,8 @@
   let description = ""
   let level = "i"
   let handicap = false
+  let extra = false
+  let cardType = ""
   let item = Item.ATTACK
   let initiativeField = "0"
   let primaryActionType = Type.ATTACK
@@ -718,6 +728,7 @@
     description
     level
     handicap
+    extra
     item
     initiative
     primaryActionType
@@ -777,6 +788,7 @@
     background,
     color,
     handicap,
+    extra,
     name,
     description,
     level,
@@ -819,6 +831,12 @@
     { value: Item.RANGE, name: "Range" },
     { value: Item.AREA, name: "Area" },
     { value: Item.MOVEMENT, name: "Movement" },
+  ]
+
+  const cardTypes = [
+    { value: "", name: "" },
+    { value: "handicap", name: "Handicap" },
+    { value: "extra", name: "Extra" },
   ]
 
   const actionTypes = [
@@ -875,6 +893,25 @@
   $: disableSecondaryAttack = color === Color.PURPLE || primaryActionType === Type.ATTACK
   $: disableSecondaryAttackValue = disableSecondaryAttack || !secondaryAttackEnabled
 
+  $: if (disableHandicap && (handicap || extra || cardType !== "")) {
+    cardType = ""
+    handicap = false
+    extra = false
+  }
+
+  function applyCardTypeSelection(selection: string) {
+    if (selection === "handicap") {
+      handicap = true
+      extra = false
+    } else if (selection === "extra") {
+      handicap = false
+      extra = true
+    } else {
+      handicap = false
+      extra = false
+    }
+  }
+
   $: if (disableSecondaryAttack && secondaryAttackEnabled) {
     secondaryAttackEnabled = false
   }
@@ -908,6 +945,7 @@
         cardValues.get(cards[i])!.get("background"),
         cardValues.get(cards[i])!.get("color"),
         cardValues.get(cards[i])!.get("handicap"),
+        cardValues.get(cards[i])!.get("extra") ?? false,
         cardValues.get(cards[i])!.get("name"),
         cardValues.get(cards[i])!.get("description"),
         cardValues.get(cards[i])!.get("level"),
@@ -957,6 +995,7 @@
         cardValues.get(cards[i])!.get("background"),
         cardValues.get(cards[i])!.get("color"),
         cardValues.get(cards[i])!.get("handicap"),
+        cardValues.get(cards[i])!.get("extra") ?? false,
         cardValues.get(cards[i])!.get("name"),
         cardValues.get(cards[i])!.get("description"),
         cardValues.get(cards[i])!.get("level"),
@@ -1006,6 +1045,7 @@
         cardValues.get(cards[i])!.get("background"),
         cardValues.get(cards[i])!.get("color"),
         cardValues.get(cards[i])!.get("handicap"),
+        cardValues.get(cards[i])!.get("extra") ?? false,
         cardValues.get(cards[i])!.get("name"),
         cardValues.get(cards[i])!.get("description"),
         cardValues.get(cards[i])!.get("level"),
@@ -1266,14 +1306,16 @@
             </Label>
           </div>
 
-          <div class="col-span-2 flex">
-            <div class="m-auto">
-              <Checkbox bind:checked={handicap} disabled={disableHandicap}>
-                <div style="color: {labelColor(disableHandicap)}">
-                  Handicap
-                </div>
-              </Checkbox>
-            </div>
+          <div class="col-span-2">
+            <Label style="color: {labelColor(disableHandicap)}">
+              Type
+              <Select items={cardTypes}
+                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                      bind:value={cardType}
+                      on:change={() => applyCardTypeSelection(cardType)}
+                      placeholder=""
+                      disabled={disableHandicap} />
+            </Label>
           </div>
 
           <div class="col-span-6">

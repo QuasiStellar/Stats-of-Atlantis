@@ -5,6 +5,7 @@ export function updateCanvas(
 	background: HTMLImageElement | undefined,
 	color: Color,
 	handicap: boolean,
+	extra: boolean,
 	name: string,
 	description: string,
 	level: string,
@@ -715,8 +716,12 @@ export function updateCanvas(
 		if (level == 'ii' || level == 'iii') addImage(context, `item_${item.toLowerCase()}`, 476, 1484);
 	}
 
-	if ((color == Color.GOLD || color == Color.SILVER) && handicap) {
-		addImage(context, 'level_h', 1008, 85);
+	if (color == Color.GOLD || color == Color.SILVER) {
+		if (extra) {
+			addExtraMarker(context);
+		} else if (handicap) {
+			addImage(context, 'level_h', 1008, 85);
+		}
 	}
 
 	if (color == Color.PURPLE) {
@@ -937,6 +942,13 @@ function addOutlinedText(context: CanvasRenderingContext2D, text: string, x: num
   context.fillStyle = "white"
   context.fillText(text, x, y, widthLimit)
   context.fillStyle = "black"
+}
+
+function addExtraMarker(context: CanvasRenderingContext2D) {
+	const previousAlign = context.textAlign
+	context.textAlign = "center"
+	addOutlinedText(context, ">", 1060, 150, 90, 8)
+	context.textAlign = previousAlign
 }
 
 function addTitle(context: CanvasRenderingContext2D, text: string, x: number, y: number, widthLimit?: number) {

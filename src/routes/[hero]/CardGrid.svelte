@@ -487,6 +487,7 @@
       image,
       card.color ?? Color.GOLD,
       card.handicapped ?? false,
+      false,
       card.name ?? "",
       card.description ?? "",
       "i".repeat(card.level ?? 1),
