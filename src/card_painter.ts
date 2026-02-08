@@ -47,10 +47,13 @@ export function updateCanvas(
 
 	const descriptionLines = description.split(/\r\n|\r|\n/);
 	const descriptionHeight = descriptionLines.length;
+	const hasSecondaryAttack = secondaryAttackValue !== null;
+	const hasSecondaryMovement = primaryActionType != Type.MOVEMENT && color != Color.SILVER;
+	const hasSecondaryDefense = primaryActionType != Type.DEFENSE && primaryActionType != Type.DEFENSE_SKILL;
+	const secondaryBannerOffset = hasSecondaryAttack && hasSecondaryMovement && hasSecondaryDefense ? 50 : 0;
 	context.font = '49px Arial';
 
 	function placeSecondary(inset: number) {
-		const hasSecondaryAttack = secondaryAttackValue !== null;
 		const adjustedInset = hasSecondaryAttack ? inset - 209 + 20 : inset;
 		const attackInset = inset + 20;
 
@@ -138,11 +141,11 @@ export function updateCanvas(
 	}
 
 	function placeSecondaryOnSilver(inset: number) {
-		if (primaryActionType != Type.DEFENSE && primaryActionType != Type.DEFENSE_SKILL) {
-			const hasSecondaryAttack = secondaryAttackValue !== null;
-			const adjustedInset = hasSecondaryAttack ? inset - 209 : inset;
-			const attackInset = inset;
+		const hasSecondaryAttack = secondaryAttackValue !== null;
+		const adjustedInset = hasSecondaryAttack ? inset - 209 + 20 : inset;
+		const attackInset = inset + 20;
 
+		if (primaryActionType != Type.DEFENSE && primaryActionType != Type.DEFENSE_SKILL) {
 			addImage(context, 'defense', 70, adjustedInset);
 			addSecondaryValue(
 				context,
@@ -156,21 +159,21 @@ export function updateCanvas(
 				Stat.DEFENSE,
 				defenseStat,
 			);
-			if (hasSecondaryAttack) {
-				addImage(context, 'attack', 35, attackInset);
-				addSecondaryValue(
-					context,
-					secondaryAttackValue! + attackBonus,
-					143,
-					attackInset + 121,
-					attackBonus,
-					showNumbers,
-					color,
-					level,
-					Stat.ATTACK,
-					attackStat,
-				);
-			}
+		}
+		if (hasSecondaryAttack) {
+			addImage(context, 'attack', 35, attackInset - 25);
+			addSecondaryValue(
+				context,
+				secondaryAttackValue! + attackBonus,
+				143,
+				attackInset + 121,
+				attackBonus,
+				showNumbers,
+				color,
+				level,
+				Stat.ATTACK,
+				attackStat,
+			);
 		}
 	}
 
@@ -183,19 +186,22 @@ export function updateCanvas(
 				case 4:
 				case 5:
 				case 6:
-					addImage(context, 'banner_gold_bottom', 50, 278);
+					if (secondaryBannerOffset > 0) addImage(context, 'banner_gold_bottom', 50, 278);
+					addImage(context, 'banner_gold_bottom', 50, 278 + secondaryBannerOffset);
 					addImage(context, 'banner_gold_top', 50, 0);
-					placeSecondary(645);
+					placeSecondary(645 + secondaryBannerOffset);
 					break;
 				case 7:
-					addImage(context, 'banner_gold_bottom', 50, 219);
+					if (secondaryBannerOffset > 0) addImage(context, 'banner_gold_bottom', 50, 219);
+					addImage(context, 'banner_gold_bottom', 50, 219 + secondaryBannerOffset);
 					addImage(context, 'banner_gold_top', 50, 0);
-					placeSecondary(586);
+					placeSecondary(586 + secondaryBannerOffset);
 					break;
 				default:
-					addImage(context, 'banner_gold_bottom', 50, 158);
+					if (secondaryBannerOffset > 0) addImage(context, 'banner_gold_bottom', 50, 158);
+					addImage(context, 'banner_gold_bottom', 50, 158 + secondaryBannerOffset);
 					addImage(context, 'banner_gold_top', 50, 0);
-					placeSecondary(525);
+					placeSecondary(525 + secondaryBannerOffset);
 					break;
 			}
 			break;
@@ -207,19 +213,22 @@ export function updateCanvas(
 				case 4:
 				case 5:
 				case 6:
-					addImage(context, 'banner_silver_bottom', 50, 318);
+					if (secondaryBannerOffset > 0) addImage(context, 'banner_silver_bottom', 50, 318);
+					addImage(context, 'banner_silver_bottom', 50, 318 + secondaryBannerOffset);
 					addImage(context, 'banner_silver_top', 50, 0);
-					placeSecondaryOnSilver(637);
+					placeSecondaryOnSilver(637 + secondaryBannerOffset);
 					break;
 				case 7:
-					addImage(context, 'banner_silver_bottom', 50, 259);
+					if (secondaryBannerOffset > 0) addImage(context, 'banner_silver_bottom', 50, 259);
+					addImage(context, 'banner_silver_bottom', 50, 259 + secondaryBannerOffset);
 					addImage(context, 'banner_silver_top', 50, 0);
-					placeSecondaryOnSilver(578);
+					placeSecondaryOnSilver(578 + secondaryBannerOffset);
 					break;
 				default:
-					addImage(context, 'banner_silver_bottom', 50, 198);
+					if (secondaryBannerOffset > 0) addImage(context, 'banner_silver_bottom', 50, 198);
+					addImage(context, 'banner_silver_bottom', 50, 198 + secondaryBannerOffset);
 					addImage(context, 'banner_silver_top', 50, 0);
-					placeSecondaryOnSilver(517);
+					placeSecondaryOnSilver(517 + secondaryBannerOffset);
 					break;
 			}
 			break;
@@ -230,24 +239,28 @@ export function updateCanvas(
 					case 2:
 					case 3:
 					case 4:
-						addImage(context, 'banner_red_bottom', 50, 330);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_red_bottom', 50, 330);
+						addImage(context, 'banner_red_bottom', 50, 330 + secondaryBannerOffset);
 						addImage(context, 'banner_red_top', 50, 0);
-						placeSecondary(645);
+						placeSecondary(645 + secondaryBannerOffset);
 						break;
 					case 5:
-						addImage(context, 'banner_red_bottom', 50, 271);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_red_bottom', 50, 271);
+						addImage(context, 'banner_red_bottom', 50, 271 + secondaryBannerOffset);
 						addImage(context, 'banner_red_top', 50, 0);
-						placeSecondary(586);
+						placeSecondary(586 + secondaryBannerOffset);
 						break;
 					case 6:
-						addImage(context, 'banner_red_bottom', 50, 210);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_red_bottom', 50, 210);
+						addImage(context, 'banner_red_bottom', 50, 210 + secondaryBannerOffset);
 						addImage(context, 'banner_red_top', 50, 0);
-						placeSecondary(525);
+						placeSecondary(525 + secondaryBannerOffset);
 						break;
 					default:
-						addImage(context, 'banner_red_bottom', 50, 150);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_red_bottom', 50, 150);
+						addImage(context, 'banner_red_bottom', 50, 150 + secondaryBannerOffset);
 						addImage(context, 'banner_red_top', 50, 0);
-						placeSecondary(465);
+						placeSecondary(465 + secondaryBannerOffset);
 						break;
 				}
 			} else {
@@ -258,19 +271,22 @@ export function updateCanvas(
 					case 4:
 					case 5:
 					case 6:
-						addImage(context, 'banner_red_bottom', 50, 330);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_red_bottom', 50, 330);
+						addImage(context, 'banner_red_bottom', 50, 330 + secondaryBannerOffset);
 						addImage(context, 'banner_red_top', 50, 0);
-						placeSecondary(645);
+						placeSecondary(645 + secondaryBannerOffset);
 						break;
 					case 7:
-						addImage(context, 'banner_red_bottom', 50, 271);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_red_bottom', 50, 271);
+						addImage(context, 'banner_red_bottom', 50, 271 + secondaryBannerOffset);
 						addImage(context, 'banner_red_top', 50, 0);
-						placeSecondary(586);
+						placeSecondary(586 + secondaryBannerOffset);
 						break;
 					default:
-						addImage(context, 'banner_red_bottom', 50, 210);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_red_bottom', 50, 210);
+						addImage(context, 'banner_red_bottom', 50, 210 + secondaryBannerOffset);
 						addImage(context, 'banner_red_top', 50, 0);
-						placeSecondary(525);
+						placeSecondary(525 + secondaryBannerOffset);
 						break;
 				}
 			}
@@ -282,24 +298,28 @@ export function updateCanvas(
 					case 2:
 					case 3:
 					case 4:
-						addImage(context, 'banner_blue_bottom', 50, 318);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_blue_bottom', 50, 318);
+						addImage(context, 'banner_blue_bottom', 50, 318 + secondaryBannerOffset);
 						addImage(context, 'banner_blue_top', 50, 0);
-						placeSecondary(645);
+						placeSecondary(645 + secondaryBannerOffset);
 						break;
 					case 5:
-						addImage(context, 'banner_blue_bottom', 50, 259);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_blue_bottom', 50, 259);
+						addImage(context, 'banner_blue_bottom', 50, 259 + secondaryBannerOffset);
 						addImage(context, 'banner_blue_top', 50, 0);
-						placeSecondary(586);
+						placeSecondary(586 + secondaryBannerOffset);
 						break;
 					case 6:
-						addImage(context, 'banner_blue_bottom', 50, 198);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_blue_bottom', 50, 198);
+						addImage(context, 'banner_blue_bottom', 50, 198 + secondaryBannerOffset);
 						addImage(context, 'banner_blue_top', 50, 0);
-						placeSecondary(525);
+						placeSecondary(525 + secondaryBannerOffset);
 						break;
 					default:
-						addImage(context, 'banner_blue_bottom', 50, 138);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_blue_bottom', 50, 138);
+						addImage(context, 'banner_blue_bottom', 50, 138 + secondaryBannerOffset);
 						addImage(context, 'banner_blue_top', 50, 0);
-						placeSecondary(465);
+						placeSecondary(465 + secondaryBannerOffset);
 						break;
 				}
 			} else {
@@ -310,19 +330,22 @@ export function updateCanvas(
 					case 4:
 					case 5:
 					case 6:
-						addImage(context, 'banner_blue_bottom', 50, 318);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_blue_bottom', 50, 318);
+						addImage(context, 'banner_blue_bottom', 50, 318 + secondaryBannerOffset);
 						addImage(context, 'banner_blue_top', 50, 0);
-						placeSecondary(645);
+						placeSecondary(645 + secondaryBannerOffset);
 						break;
 					case 7:
-						addImage(context, 'banner_blue_bottom', 50, 259);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_blue_bottom', 50, 259);
+						addImage(context, 'banner_blue_bottom', 50, 259 + secondaryBannerOffset);
 						addImage(context, 'banner_blue_top', 50, 0);
-						placeSecondary(586);
+						placeSecondary(586 + secondaryBannerOffset);
 						break;
 					default:
-						addImage(context, 'banner_blue_bottom', 50, 198);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_blue_bottom', 50, 198);
+						addImage(context, 'banner_blue_bottom', 50, 198 + secondaryBannerOffset);
 						addImage(context, 'banner_blue_top', 50, 0);
-						placeSecondary(525);
+						placeSecondary(525 + secondaryBannerOffset);
 						break;
 				}
 			}
@@ -334,24 +357,28 @@ export function updateCanvas(
 					case 2:
 					case 3:
 					case 4:
-						addImage(context, 'banner_green_bottom', 50, 325);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_green_bottom', 50, 325);
+						addImage(context, 'banner_green_bottom', 50, 325 + secondaryBannerOffset);
 						addImage(context, 'banner_green_top', 50, 0);
-						placeSecondary(645);
+						placeSecondary(645 + secondaryBannerOffset);
 						break;
 					case 5:
-						addImage(context, 'banner_green_bottom', 50, 266);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_green_bottom', 50, 266);
+						addImage(context, 'banner_green_bottom', 50, 266 + secondaryBannerOffset);
 						addImage(context, 'banner_green_top', 50, 0);
-						placeSecondary(586);
+						placeSecondary(586 + secondaryBannerOffset);
 						break;
 					case 6:
-						addImage(context, 'banner_green_bottom', 50, 205);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_green_bottom', 50, 205);
+						addImage(context, 'banner_green_bottom', 50, 205 + secondaryBannerOffset);
 						addImage(context, 'banner_green_top', 50, 0);
-						placeSecondary(525);
+						placeSecondary(525 + secondaryBannerOffset);
 						break;
 					default:
-						addImage(context, 'banner_green_bottom', 50, 145);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_green_bottom', 50, 145);
+						addImage(context, 'banner_green_bottom', 50, 145 + secondaryBannerOffset);
 						addImage(context, 'banner_green_top', 50, 0);
-						placeSecondary(465);
+						placeSecondary(465 + secondaryBannerOffset);
 						break;
 				}
 			} else {
@@ -362,19 +389,22 @@ export function updateCanvas(
 					case 4:
 					case 5:
 					case 6:
-						addImage(context, 'banner_green_bottom', 50, 325);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_green_bottom', 50, 325);
+						addImage(context, 'banner_green_bottom', 50, 325 + secondaryBannerOffset);
 						addImage(context, 'banner_green_top', 50, 0);
-						placeSecondary(645);
+						placeSecondary(645 + secondaryBannerOffset);
 						break;
 					case 7:
-						addImage(context, 'banner_green_bottom', 50, 266);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_green_bottom', 50, 266);
+						addImage(context, 'banner_green_bottom', 50, 266 + secondaryBannerOffset);
 						addImage(context, 'banner_green_top', 50, 0);
-						placeSecondary(586);
+						placeSecondary(586 + secondaryBannerOffset);
 						break;
 					default:
-						addImage(context, 'banner_green_bottom', 50, 205);
+						if (secondaryBannerOffset > 0) addImage(context, 'banner_green_bottom', 50, 205);
+						addImage(context, 'banner_green_bottom', 50, 205 + secondaryBannerOffset);
 						addImage(context, 'banner_green_top', 50, 0);
-						placeSecondary(525);
+						placeSecondary(525 + secondaryBannerOffset);
 						break;
 				}
 			}
