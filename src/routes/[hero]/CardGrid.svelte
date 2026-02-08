@@ -89,6 +89,7 @@
   let goldLoaded = false
   let goldHandicapLoaded = false
   let silverLoaded = false
+  let silverHandicapLoaded = false
   let purpleLoaded = false
   let blueIaLoaded = false
   let redIaLoaded = false
@@ -123,6 +124,7 @@
   let goldCard: any
   let goldHandicapCard: any
   let silverCard: any
+  let silverHandicapCard: any
   let purpleCard: any
   let blueIaCard: any
   let redIaCard: any
@@ -251,6 +253,7 @@
     goldLoaded
     goldHandicapLoaded
     silverLoaded
+    silverHandicapLoaded
     purpleLoaded
     blueIaLoaded
     redIaLoaded
@@ -338,19 +341,19 @@
     rangeBonus = bonuses[Item.RANGE]
     movementBonus = bonuses[Item.MOVEMENT]
 
-    if (imagesLoaded && goldLoaded && goldHandicapLoaded)
+    if (imagesLoaded && (goldLoaded || goldHandicapLoaded))
       updateCard(
         gold,
         goldCtx,
-        showHandicap ? goldHandicapCard : goldCard,
-        showHandicap ? handicapBg! : goldBg!,
+        showHandicap && goldHandicapCard ? goldHandicapCard : goldCard,
+        showHandicap && goldHandicapCard ? handicapBg! : goldBg!,
       )
-    if (imagesLoaded && silverLoaded)
+    if (imagesLoaded && (silverLoaded || silverHandicapLoaded))
       updateCard(
         silver,
         silverCtx,
-        silverCard,
-        silverBg!,
+        showHandicap && silverHandicapCard ? silverHandicapCard : silverCard,
+        showHandicap && silverHandicapCard ? handicapBg! : silverBg!,
       )
     if (imagesLoaded && purpleLoaded)
       updateCard(
@@ -574,6 +577,7 @@
         goldCard = hero.find((card) => card.color == Color.GOLD.toUpperCase())!
         goldHandicapCard = hero.find((card) => card.color == Color.GOLD.toUpperCase() && card.handicapped)!
         silverCard = hero.find((card) => card.color == Color.SILVER.toUpperCase())!
+        silverHandicapCard = hero.find((card) => card.color == Color.SILVER.toUpperCase() && card.handicapped)
         purpleCard = hero.find((card) => card.color == Color.PURPLE.toUpperCase())!
         blueIaCard = hero.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 1)!
         redIaCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 1)!
@@ -591,19 +595,19 @@
         redIIIbCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
         greenIIIbCard = hero.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
 
-        if (goldLoaded && goldHandicapLoaded)
+        if (goldLoaded || (showHandicap && goldHandicapLoaded))
           updateCard(
             gold,
             goldCtx,
-            showHandicap ? goldHandicapCard : goldCard,
-            showHandicap ? handicapBg! : goldBg!,
+            showHandicap && goldHandicapCard ? goldHandicapCard : goldCard,
+            showHandicap && goldHandicapCard ? handicapBg! : goldBg!,
           )
-        if (silverLoaded)
+        if (silverLoaded || (showHandicap && silverHandicapCard))
           updateCard(
             silver,
             silverCtx,
-            silverCard,
-            silverBg!,
+            showHandicap && silverHandicapCard ? silverHandicapCard : silverCard,
+            showHandicap && silverHandicapCard ? handicapBg! : silverBg!,
           )
         if (purpleLoaded)
           updateCard(
@@ -781,7 +785,10 @@
 
     importCardImage(heroName, "Handicap").then(() => {
       handicapBg = images.get("Handicap")
-      goldHandicapLoaded = true
+      if (silverHandicapCard != null)
+        silverHandicapLoaded = true
+      else
+        goldHandicapLoaded = true
     })
 
     importCardImage(heroName, "RedIA").then(() => {

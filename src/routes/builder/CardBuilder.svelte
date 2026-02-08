@@ -861,7 +861,7 @@
 
   const labelColor = (disabled: boolean): string => disabled ? "gray" : "white"
 
-  $: disableHandicap = color !== Color.GOLD
+  $: disableHandicap = color !== Color.GOLD && color !== Color.SILVER
   // $: disableLevel = color !== Color.RED && color !== Color.BLUE && color !== Color.GREEN
   $: disableItem = (level !== "ii" && level !== "iii") || (color !== Color.RED && color !== Color.BLUE && color !== Color.GREEN)
   $: disableInitiative = color === Color.PURPLE

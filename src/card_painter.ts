@@ -718,7 +718,7 @@ export function updateCanvas(
 		if (level == 'ii' || level == 'iii') addImage(context, `item_${item.toLowerCase()}`, 476, 1484);
 	}
 
-	if (color == Color.GOLD && handicap) {
+	if ((color == Color.GOLD || color == Color.SILVER) && handicap) {
 		addImage(context, 'level_h', 1008, 85);
 	}
 
