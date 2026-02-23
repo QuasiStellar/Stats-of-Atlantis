@@ -1,8 +1,9 @@
 <script lang="ts">
   import { onMount } from "svelte"
-  import { Color, OldHero, oldHeroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
+  import { Color, Hero, OldHero, heroes, oldHeroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
   import { images, importCardImage, importCardImages, importImages, updateCanvas } from "../../card_painter"
-  import heroInfo from "../../heroes.json"
+  import oldHeroInfo from "../../heroes.json"
+  import newHeroInfo from "../../new_heroes.json"
   import BiggerPicture from "bigger-picture/svelte"
   import "bigger-picture/css"
   import GoaCard from "./GoaCard.svelte"
@@ -10,6 +11,7 @@
   import { Checkbox, Img, Tooltip } from "flowbite-svelte"
 
   export let heroName: string
+  export let useNewPrinting = true
 
   let gold: HTMLCanvasElement
   let goldCtx: CanvasRenderingContext2D
@@ -476,8 +478,24 @@
 
   $: disableShowNumbers = true
 
-  const hero = oldHeroes[heroName] as OldHero
+  $: activeStats = useNewPrinting ? stats.slice(0, 4) : stats
+  const hero = (useNewPrinting ? heroes[heroName as keyof typeof heroes] : oldHeroes[heroName as keyof typeof oldHeroes]) as Hero | OldHero
   const fullName = hero.name + " " + hero.title
+
+  function getStatRange(statValue: number | Array<number> | undefined) {
+    if (statValue == null) {
+      return { min: 0, max: 0 }
+    }
+    if (Array.isArray(statValue)) {
+      return { min: statValue[0], max: statValue[1] }
+    }
+    return { min: statValue, max: statValue }
+  }
+
+  function getPrimaryStat(statIndex: number): number {
+    const { max } = getStatRange(hero.stats[statIndex])
+    return max
+  }
 
   function updateCard(canvas: HTMLCanvasElement, context: CanvasRenderingContext2D, card: any, image: HTMLImageElement) {
     updateCanvas(
@@ -509,10 +527,10 @@
       rangeBonus,
       movementBonus,
       showNumbers,
-      hero.stats[0],
-      hero.stats[1],
-      hero.stats[2],
-      hero.stats[3],
+      getPrimaryStat(0),
+      getPrimaryStat(1),
+      getPrimaryStat(2),
+      getPrimaryStat(3),
     )
   }
 
@@ -523,7 +541,7 @@
   $: statImages = new Map()
 
   onMount(async () => {
-    banner = (await import(`../../lib/images/avatars_full/${heroName}.png`)).default
+    banner = (await import(`../../lib/images/avatars_full/${heroName}.webp`)).default
 
     for (const stat of stats) {
       statImages.set(stat, (await import(`../../lib/images/stat_icons/${stat}_white.png`)).default)
@@ -556,7 +574,7 @@
       .then(() => {
         imagesLoaded = true
 
-        const hero = heroInfo[heroName as keyof typeof heroInfo] as {
+        const cardInfo = (useNewPrinting ? newHeroInfo : oldHeroInfo)[heroName as keyof typeof oldHeroInfo] as {
           name?: string,
           description?: string,
           color?: Color,
@@ -575,26 +593,26 @@
           secondaryAttack?: number,
           item?: Item,
         }[]
-        goldCard = hero.find((card) => card.color == Color.GOLD.toUpperCase())!
-        goldHandicapCard = hero.find((card) => card.color == Color.GOLD.toUpperCase() && card.handicapped)!
-        silverCard = hero.find((card) => card.color == Color.SILVER.toUpperCase())!
-        silverHandicapCard = hero.find((card) => card.color == Color.SILVER.toUpperCase() && card.handicapped)
-        purpleCard = hero.find((card) => card.color == Color.PURPLE.toUpperCase())!
-        blueIaCard = hero.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 1)!
-        redIaCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 1)!
-        greenIaCard = hero.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 1)!
-        blueIIaCard = hero.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 2 && card.variant?.first == 1)!
-        redIIaCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 2 && card.variant?.first == 1)!
-        greenIIaCard = hero.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 2 && card.variant?.first == 1)!
-        blueIIbCard = hero.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 2 && card.variant?.first == 2)!
-        redIIbCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 2 && card.variant?.first == 2)!
-        greenIIbCard = hero.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 2 && card.variant?.first == 2)!
-        blueIIIaCard = hero.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 3 && card.variant?.first == 1)!
-        redIIIaCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 3 && card.variant?.first == 1)!
-        greenIIIaCard = hero.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 3 && card.variant?.first == 1)!
-        blueIIIbCard = hero.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
-        redIIIbCard = hero.find((card) => card.color == Color.RED.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
-        greenIIIbCard = hero.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
+        goldCard = cardInfo.find((card) => card.color == Color.GOLD.toUpperCase())!
+        goldHandicapCard = cardInfo.find((card) => card.color == Color.GOLD.toUpperCase() && card.handicapped)!
+        silverCard = cardInfo.find((card) => card.color == Color.SILVER.toUpperCase())!
+        silverHandicapCard = cardInfo.find((card) => card.color == Color.SILVER.toUpperCase() && card.handicapped)
+        purpleCard = cardInfo.find((card) => card.color == Color.PURPLE.toUpperCase())!
+        blueIaCard = cardInfo.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 1)!
+        redIaCard = cardInfo.find((card) => card.color == Color.RED.toUpperCase() && card.level == 1)!
+        greenIaCard = cardInfo.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 1)!
+        blueIIaCard = cardInfo.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 2 && card.variant?.first == 1)!
+        redIIaCard = cardInfo.find((card) => card.color == Color.RED.toUpperCase() && card.level == 2 && card.variant?.first == 1)!
+        greenIIaCard = cardInfo.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 2 && card.variant?.first == 1)!
+        blueIIbCard = cardInfo.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 2 && card.variant?.first == 2)!
+        redIIbCard = cardInfo.find((card) => card.color == Color.RED.toUpperCase() && card.level == 2 && card.variant?.first == 2)!
+        greenIIbCard = cardInfo.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 2 && card.variant?.first == 2)!
+        blueIIIaCard = cardInfo.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 3 && card.variant?.first == 1)!
+        redIIIaCard = cardInfo.find((card) => card.color == Color.RED.toUpperCase() && card.level == 3 && card.variant?.first == 1)!
+        greenIIIaCard = cardInfo.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 3 && card.variant?.first == 1)!
+        blueIIIbCard = cardInfo.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
+        redIIIbCard = cardInfo.find((card) => card.color == Color.RED.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
+        greenIIIbCard = cardInfo.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
 
         if (goldLoaded || (showHandicap && goldHandicapLoaded))
           updateCard(
@@ -1273,7 +1291,8 @@
       </div>
     </div>
 
-    {#each stats as stat, stat_index (stat_index)}
+    {#each activeStats as stat, stat_index (stat_index)}
+      {@const range = getStatRange(hero.stats[stat_index])}
       <div id="{stat}" class="col-span-3 h-3 xs:h-4 sm:h-5.5 lg:h-7 z-20 relative">
         <div class="left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 h-2.5 xs:h-3 sm:h-4 lg:h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded sm:rounded-lg lg:rounded-xl bg-dark-900 absolute">
           <div class="m-0.5 sm:m-0.5 lg:m-1 relative h-full">
@@ -1281,8 +1300,10 @@
             <div class="float-left w-2 xs:w-3.5 sm:w-6 lg:w-7 h-full bg-transparent" />
             {#each Array(8) as _, color_index (color_index)}
               <div class="float-left w-0.5 sm:w-0.75 lg:w-1 h-1" />
-              {#if hero.stats[stat_index] > color_index}
+              {#if range.min > color_index}
                 <div class="z-40 float-left w-[5.6px] xs:w-[7px] sm:w-[12px] lg:w-5 h-1 xs:h-1.5 sm:h-2 lg:h-2.5 rounded-sm sm:rounded lg:rounded-md bg-{heroName}" />
+              {:else if range.max > color_index}
+                <div class="z-40 float-left w-[5.6px] xs:w-[7px] sm:w-[12px] lg:w-5 h-1 xs:h-1.5 sm:h-2 lg:h-2.5 rounded-sm sm:rounded lg:rounded-md bg-{heroName} opacity-50" />
               {:else}
                 <div class="float-left w-[5.6px] xs:w-[7px] sm:w-[12px] lg:w-5 h-1 bg-transparent" />
               {/if}

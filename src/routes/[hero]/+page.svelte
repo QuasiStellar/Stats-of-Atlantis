@@ -1,18 +1,27 @@
 <script lang="ts">
   import CardGrid from "./CardGrid.svelte";
   import type { PageData } from './$types';
-  import { oldHeroes } from "../../states"
+  import { page } from "$app/stores";
+  import { heroes, oldHeroes } from "../../states"
 
   import { error } from "@sveltejs/kit"
 
   export let data: PageData;
 
-  if (!(data.url.substring(1) in oldHeroes)) {
+  const hero = data.url.substring(1)
+  $: useNewPrinting = $page.url.searchParams.get("printing") !== "old"
+
+  $: if (useNewPrinting && !(hero in heroes)) {
     throw error(404)
   }
 
-  const hero = data.url.substring(1)
-  const heroName = oldHeroes[hero as keyof typeof oldHeroes].name
+  $: if (!useNewPrinting && !(hero in oldHeroes)) {
+    throw error(404)
+  }
+
+  $: heroName = useNewPrinting
+    ? heroes[hero as keyof typeof heroes].name
+    : oldHeroes[hero as keyof typeof oldHeroes].name
 </script>
 
 <svelte:head>
@@ -20,4 +29,4 @@
   <meta name="description" content="Guards of Atlantis II card collection for {heroName}." />
 </svelte:head>
 
-<CardGrid heroName="{hero}" />
+<CardGrid heroName="{hero}" {useNewPrinting} />
