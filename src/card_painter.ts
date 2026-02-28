@@ -842,7 +842,7 @@ export function importImages() {
 export function importCardImages(name: string) {
   return Promise.all(
     cardImageNames.map(async (imageName: string) => {
-      const path = (await import(`./lib/images/cards/${name}/${imageName}.png`)).default
+      const path = (await import(`./lib/images/cards/${name}/${imageName}.webp`)).default
       const image = new Image()
       image.src = path
       images.set(imageName, image)
@@ -852,7 +852,7 @@ export function importCardImages(name: string) {
 }
 
 export async function importCardImage(hero: string, card: string) {
-	const path = (await import(`./lib/images/cards/${hero}/${card}.png`)).default
+	const path = (await import(`./lib/images/cards/${hero}/${card}.webp`)).default
 	const image = new Image()
 	image.src = path
 	images.set(card, image)

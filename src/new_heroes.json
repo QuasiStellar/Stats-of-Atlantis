@@ -6074,6 +6074,10 @@
          "description":"Target a unit at maximum range.\nAfter the attack: Swap this card with\na different gold card in your deck.\n~(This card starts the game in your deck.)",
          "color":"GOLD",
          "extra":true,
+         "variant":{
+            "first":1,
+            "second":2
+         },
          "initiative":7,
          "primaryAction":"ATTACK",
          "primaryValue":5,
@@ -6087,6 +6091,10 @@
          "description":"Target a unit adjacent to you.\nAfter the attack: Swap this card with\na different gold card in your deck.\n~(This card starts the game in your deck.)",
          "color":"GOLD",
          "extra":true,
+         "variant":{
+            "first":2,
+            "second":2
+         },
          "initiative":9,
          "primaryAction":"ATTACK",
          "primaryValue":7,

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { onMount } from "svelte"
+  import { onMount, tick } from "svelte"
   import { Color, Hero, OldHero, heroes, oldHeroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
-  import { images, importCardImage, importCardImages, importImages, updateCanvas } from "../../card_painter"
+  import { images, importCardImage, importImages, updateCanvas } from "../../card_painter"
   import oldHeroInfo from "../../heroes.json"
   import newHeroInfo from "../../new_heroes.json"
   import BiggerPicture from "bigger-picture/svelte"
@@ -85,6 +85,12 @@
   let greenIIIb: HTMLCanvasElement
   let greenIIIbCtx: CanvasRenderingContext2D
   let greenIIIbBg: HTMLImageElement | undefined
+
+  let extraCards: any[] = []
+  let extraCardCanvases: Array<HTMLCanvasElement | undefined> = []
+  let extraCardContexts: Array<CanvasRenderingContext2D | undefined> = []
+  let extraCardBackgrounds: Array<HTMLImageElement | undefined> = []
+  let extraCardsLoaded: boolean[] = []
 
   let imagesLoaded = false
 
@@ -469,6 +475,21 @@
         greenIIIbCard,
         greenIIIbBg!,
       )
+
+    for (let index = 0; index < extraCards.length; index++) {
+      const extraCanvas = extraCardCanvases[index]
+      const extraContext = extraCardContexts[index]
+      const extraBackground = extraCardBackgrounds[index]
+
+      if (imagesLoaded && extraCardsLoaded[index] && extraCanvas && extraContext && extraBackground) {
+        updateCard(
+          extraCanvas,
+          extraContext,
+          extraCards[index],
+          extraBackground,
+        )
+      }
+    }
   }
 
   $: showNumbers = false
@@ -497,6 +518,35 @@
     return max
   }
 
+  async function cropCardBackground(image: HTMLImageElement): Promise<HTMLImageElement> {
+    const sourceWidth = Math.min(744, image.width)
+    const sourceHeight = Math.min(1039, image.height)
+    const sourceX = (image.width - sourceWidth) / 2
+    const sourceY = (image.height - sourceHeight) / 2
+
+    const croppedCanvas = document.createElement("canvas")
+    croppedCanvas.width = sourceWidth
+    croppedCanvas.height = sourceHeight
+    const croppedContext = croppedCanvas.getContext("2d")
+    if (croppedContext == null) return image
+
+    croppedContext.drawImage(image, sourceX, sourceY, sourceWidth, sourceHeight, 0, 0, sourceWidth, sourceHeight)
+
+    const croppedImage = new Image()
+    croppedImage.src = croppedCanvas.toDataURL()
+    return await new Promise((resolve) => {
+      croppedImage.onload = () => resolve(croppedImage)
+      croppedImage.onerror = () => resolve(image)
+    })
+  }
+
+  async function loadCardBackground(card: string): Promise<HTMLImageElement | undefined> {
+    await importCardImage(heroName, card)
+    const image = images.get(card)
+    if (!(image instanceof HTMLImageElement)) return undefined
+    return await cropCardBackground(image)
+  }
+
   function updateCard(canvas: HTMLCanvasElement, context: CanvasRenderingContext2D, card: any, image: HTMLImageElement) {
     updateCanvas(
       canvas,
@@ -505,7 +555,7 @@
       image,
       card.color ?? Color.GOLD,
       card.handicapped ?? false,
-      false,
+      card.extra ?? false,
       card.name ?? "",
       card.description ?? "",
       "i".repeat(card.level ?? 1),
@@ -579,6 +629,7 @@
           description?: string,
           color?: Color,
           handicapped?: boolean,
+          extra?: boolean,
           level?: number,
           variant?: { first: number, second: number },
           initiative?: number,
@@ -613,6 +664,23 @@
         blueIIIbCard = cardInfo.find((card) => card.color == Color.BLUE.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
         redIIIbCard = cardInfo.find((card) => card.color == Color.RED.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
         greenIIIbCard = cardInfo.find((card) => card.color == Color.GREEN.toUpperCase() && card.level == 3 && card.variant?.first == 2)!
+        extraCards = cardInfo
+          .filter((card) => card.extra)
+          .sort((firstCard, secondCard) => (firstCard.variant?.first ?? 0) - (secondCard.variant?.first ?? 0))
+        extraCardCanvases = extraCards.map(() => undefined)
+        extraCardContexts = extraCards.map(() => undefined)
+        extraCardBackgrounds = extraCards.map(() => undefined)
+        extraCardsLoaded = extraCards.map(() => false)
+        tick().then(() => {
+          extraCardContexts = extraCardCanvases.map((canvas) => canvas?.getContext("2d") ?? undefined)
+        })
+        extraCards.forEach((_, index) => {
+          loadCardBackground(`Extra${index + 1}`).then((image) => {
+            extraCardBackgrounds[index] = image
+            extraCardsLoaded[index] = true
+            extraCardsLoaded = [...extraCardsLoaded]
+          })
+        })
 
         if (goldLoaded || (showHandicap && goldHandicapLoaded))
           updateCard(
@@ -742,106 +810,101 @@
           )
       })
 
-    importCardImage(heroName, "BlueIA").then(() => {
-      blueIaBg = images.get("BlueIA")
+    loadCardBackground("BlueIA").then((image) => {
+      blueIaBg = image
       blueIaLoaded = true
     })
 
-    importCardImage(heroName, "BlueIIA").then(() => {
-      blueIIaBg = images.get("BlueIIA")
+    loadCardBackground("BlueIIA").then((image) => {
+      blueIIaBg = image
       blueIIaLoaded = true
     })
 
-    importCardImage(heroName, "BlueIIB").then(() => {
-      blueIIbBg = images.get("BlueIIB")
+    loadCardBackground("BlueIIB").then((image) => {
+      blueIIbBg = image
       blueIIbLoaded = true
     })
 
-    importCardImage(heroName, "BlueIIIA").then(() => {
-      blueIIIaBg = images.get("BlueIIIA")
+    loadCardBackground("BlueIIIA").then((image) => {
+      blueIIIaBg = image
       blueIIIaLoaded = true
     })
 
-    importCardImage(heroName, "BlueIIIA").then(() => {
-      blueIIIaBg = images.get("BlueIIIA")
-      blueIIIaLoaded = true
-    })
-
-    importCardImage(heroName, "BlueIIIB").then(() => {
-      blueIIIbBg = images.get("BlueIIIB")
+    loadCardBackground("BlueIIIB").then((image) => {
+      blueIIIbBg = image
       blueIIIbLoaded = true
     })
 
-    importCardImage(heroName, "Gold").then(() => {
-      goldBg = images.get("Gold")
+    loadCardBackground("Gold").then((image) => {
+      goldBg = image
       goldLoaded = true
     })
 
-    importCardImage(heroName, "GreenIA").then(() => {
-      greenIaBg = images.get("GreenIA")
+    loadCardBackground("GreenIA").then((image) => {
+      greenIaBg = image
       greenIaLoaded = true
     })
 
-    importCardImage(heroName, "GreenIIA").then(() => {
-      greenIIaBg = images.get("GreenIIA")
+    loadCardBackground("GreenIIA").then((image) => {
+      greenIIaBg = image
       greenIIaLoaded = true
     })
 
-    importCardImage(heroName, "GreenIIB").then(() => {
-      greenIIbBg = images.get("GreenIIB")
+    loadCardBackground("GreenIIB").then((image) => {
+      greenIIbBg = image
       greenIIbLoaded = true
     })
 
-    importCardImage(heroName, "GreenIIIA").then(() => {
-      greenIIIaBg = images.get("GreenIIIA")
+    loadCardBackground("GreenIIIA").then((image) => {
+      greenIIIaBg = image
       greenIIIaLoaded = true
     })
 
-    importCardImage(heroName, "GreenIIIB").then(() => {
-      greenIIIbBg = images.get("GreenIIIB")
+    loadCardBackground("GreenIIIB").then((image) => {
+      greenIIIbBg = image
       greenIIIbLoaded = true
     })
 
-    importCardImage(heroName, "Handicap").then(() => {
-      handicapBg = images.get("Handicap")
+    loadCardBackground("Handicap").then((image) => {
+      handicapBg = image
       if (silverHandicapCard != null)
         silverHandicapLoaded = true
       else
         goldHandicapLoaded = true
     })
 
-    importCardImage(heroName, "RedIA").then(() => {
-      redIaBg = images.get("RedIA")
+    loadCardBackground("RedIA").then((image) => {
+      redIaBg = image
       redIaLoaded = true
     })
 
-    importCardImage(heroName, "RedIIA").then(() => {
-      redIIaBg = images.get("RedIIA")
+    loadCardBackground("RedIIA").then((image) => {
+      redIIaBg = image
       redIIaLoaded = true
     })
 
-    importCardImage(heroName, "RedIIB").then(() => {
-      redIIbBg = images.get("RedIIB")
+    loadCardBackground("RedIIB").then((image) => {
+      redIIbBg = image
       redIIbLoaded = true
     })
 
-    importCardImage(heroName, "RedIIIA").then(() => {
-      redIIIaBg = images.get("RedIIIA")
+    loadCardBackground("RedIIIA").then((image) => {
+      redIIIaBg = image
       redIIIaLoaded = true
     })
 
-    importCardImage(heroName, "RedIIIB").then(() => {
-      redIIIbBg = images.get("RedIIIB")
+    loadCardBackground("RedIIIB").then((image) => {
+      redIIIbBg = image
       redIIIbLoaded = true
     })
 
-    importCardImage(heroName, "Silver").then(() => {
-      silverBg = images.get("Silver")
+    loadCardBackground("Silver").then((image) => {
+      silverBg = image
       silverLoaded = true
     })
 
-    importCardImage(heroName, "Ultimate").then(() => {
-      purpleBg = images.get("Ultimate")
+    loadCardBackground("Ultimate").then((image) => {
+      purpleBg = image
       purpleLoaded = true
     })
 
@@ -1276,11 +1339,28 @@
     avatarClickCounter++
     if (avatarClickCounter >= 10) disableShowNumbers = false
   }
+
+  function extraCardClick(index: number) {
+    bp.open({
+      intro: "fadeup",
+      items: [{ html: "" }],
+      onOpen: (container) => {
+        let card = new GoaCard({
+          target: container.querySelector(".bp-html") as Element,
+          props: { bp }
+        });
+        const extraCanvas = extraCardCanvases[index]
+        if (extraCanvas) {
+          card.drawCard(extraCanvas)
+        }
+      },
+    })
+  }
 </script>
 
 <div class="flex md:mt-20 mt-16 mb-52">
   <div class="grid grid-cols-12 m-auto">
-    <div class="col-span-12 w-78 xs:w-96 sm:w-157 lg:w-239 h-41 xs:h-50 sm:h-82 lg:h-125 mt-4 xs:mt-5 sm:mt-7.5 lg:mt-10 relative">
+    <div class="col-span-12 w-78 xs:w-96 sm:w-157 lg:w-239 h-[155px] xs:h-[190px] sm:h-[313px] lg:h-[473px] mt-4 xs:mt-5 sm:mt-7.5 lg:mt-10 relative">
       <div class="border border-dark-600 rounded-lg sm:rounded-xl lg:rounded-3xl left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 w-77.5 xs:w-95 sm:w-156 lg:w-237 absolute" on:click={onAvatarClick}>
         <Img src={banner} class="rounded-lg sm:rounded-xl lg:rounded-3xl"/>
         <p class="absolute text-black xs:text-xl sm:text-3xl lg:text-5xl -top-[14px] sm:-top-[19px] lg:-top-[24px] left-[10px] sm:left-[22px] lg:left-[34px] font-modesto">{fullName}</p>
@@ -1346,7 +1426,7 @@
       </div>
     </div>
 
-    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative z-10">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
         <canvas id="blueIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIb} on:click={blueIIaltClick} on:pointerleave={blueIIaltPointerLeave} on:pointerenter={blueIIaltPointerEnter}/>
         <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIaltChecked} on:change={checkBlueIIalt}></Checkbox>
@@ -1356,7 +1436,7 @@
         <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIImainChecked} on:change={checkBlueIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative z-10">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
         <canvas id="redIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIb} on:click={redIIaltClick} on:pointerleave={redIIaltPointerLeave} on:pointerenter={redIIaltPointerEnter}/>
         <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIaltChecked} on:change={checkRedIIalt}></Checkbox>
@@ -1366,7 +1446,7 @@
         <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIImainChecked} on:change={checkRedIImain}></Checkbox>
       </div>
     </div>
-    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
+    <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative z-10">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
         <canvas id="greenIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIb} on:click={greenIIaltClick} on:pointerleave={greenIIaltPointerLeave} on:pointerenter={greenIIaltPointerEnter}/>
         <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIaltChecked} on:change={checkGreenIIalt}></Checkbox>
@@ -1407,6 +1487,17 @@
         <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
       </div>
     </div>
+    {#if extraCards.length > 0}
+      <div class="col-span-12 mt-[3px] xs:mt-[2px] sm:mt-[2px] lg:mt-[0px] flex justify-center gap-2 xs:gap-3 sm:gap-4 lg:gap-6 relative z-0">
+        {#each extraCards as _, index (index)}
+          <div class="w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
+            <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
+              <canvas width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={extraCardCanvases[index]} on:click={() => extraCardClick(index)}/>
+            </div>
+          </div>
+        {/each}
+      </div>
+    {/if}
     <div id="showNumbers" class="col-span-6 flex-col content-center mt-8 xs:mt-10 sm:mt-14 flex items-center">
       <Checkbox bind:checked={showNumbers} disabled={disableShowNumbers}>
         <div style="color: {labelColor(disableShowNumbers)}">
