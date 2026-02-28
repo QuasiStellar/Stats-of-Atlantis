@@ -5,18 +5,19 @@
 	import { SortOutline } from "flowbite-svelte-icons"
 	import { goto } from "$app/navigation"
 	import { browser } from "$app/environment"
-	import { heroes, oldHeroes, stats } from "../states"
+	import { Trait, heroes, oldHeroes, stats } from "../states"
 	import { onMount } from "svelte"
 
 	import starImage from "$lib/images/star.png"
 
-	$: heroImages = new Map()
-	$: statImages = new Map()
-	$: logoImages = new Map()
+	let heroImages = new Map()
+	let statImages = new Map()
+	let logoImages = new Map()
 
 	const heroImageLoadingPromises: Map<string, Promise<unknown>> = new Map()
 
 	const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+	const traitImageModules = import.meta.glob("../lib/images/trait_*.png", { eager: true, import: "default" }) as Record<string, string>
 
 	onMount(async () => {
 		const heroKeys = new Set([...Object.keys(oldHeroes), ...Object.keys(heroes)])
@@ -90,6 +91,28 @@
 			return { min: statValue[0], max: statValue[1] }
 		}
 		return { min: statValue, max: statValue }
+	}
+
+	function getHeroTraits(desc: typeof heroes[keyof typeof heroes] | typeof oldHeroes[keyof typeof oldHeroes]) {
+		if ("traits" in desc) {
+			return desc.traits
+		}
+		return []
+	}
+
+	function getTraitImageKey(heroName: string, trait: Trait) {
+		if (trait === Trait.TOKENS) {
+			return `tokens_${heroName}`
+		}
+		return trait
+	}
+
+	function getTraitImage(heroName: string, trait: Trait) {
+		return traitImageModules[`../lib/images/trait_${getTraitImageKey(heroName, trait)}.png`] ?? emptyImage
+	}
+
+	function getTraitLabel(trait: Trait) {
+		return trait.charAt(0).toUpperCase() + trait.slice(1)
 	}
 
 	function setSearchParam(key: string, value: string | null) {
@@ -174,6 +197,32 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 								<Tooltip triggeredBy="#{name}_{stat}" placement="left">{stat.charAt(0).toUpperCase() + stat.slice(1)}</Tooltip>
 							{/each}
 						</ul>
+						{#if useNewPrinting}
+							{@const heroTraits = getHeroTraits(desc)}
+							{#if heroTraits.length > 0}
+								<ul class="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 flex items-end -space-x-2 z-20">
+									{#each heroTraits as trait, traitIndex (traitIndex)}
+										<li class="w-12 sm:w-16 md:w-20">
+											<div class="relative mx-auto w-6 sm:w-10 md:w-12">
+												<div class="absolute inset-0 rounded-full trait-image-gradient" />
+												<img
+													src={getTraitImage(name, trait)}
+													class={`relative z-10 w-6 sm:w-10 md:w-12 ${trait === Trait.TOKENS ? "" : "trait-image-brightness"}`}
+													alt=""
+												/>
+											</div>
+											<div class="relative mt-0.5 sm:mt-1 h-2.5 sm:h-4 md:h-5">
+												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+												<p class="absolute text-white text-[7px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+											</div>
+										</li>
+									{/each}
+								</ul>
+							{/if}
+						{/if}
 						<div class="absolute left-15 sm:left-28 top-0 sm:top-1">
 							{#each Array(desc.stars) as _, star_index (star_index)}
 								<div class="w-1 h-1" />
@@ -225,5 +274,19 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 	@font-face{
 		font-family: "Modesto Poster";
 		src: url("../lib/fonts/modesto_poster.woff") format("woff");
+	}
+
+	.trait-image-gradient {
+		background: radial-gradient(
+			circle closest-side,
+			rgba(0, 0, 0, 1) 0%,
+			rgba(0, 0, 0, 1) 50%,
+			rgba(0, 0, 0, 0) 100%
+		);
+		transform: scale(1.2);
+	}
+
+	.trait-image-brightness {
+		filter: brightness(1.2);
 	}
 </style>

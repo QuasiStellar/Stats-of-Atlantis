@@ -44,22 +44,38 @@ export enum Stat {
   MOVEMENT = "MOVEMENT",
 }
 
+export enum Trait {
+	DAMAGER = "damager",
+	DISABLER = "disabler",
+	DURABLE = "durable",
+	FARMING = "farming",
+	HEALER = "healer",
+	MELEE = "melee",
+	PUSHER = "pusher",
+	SNIPER = "sniper",
+	TACTICIAN = "tactician",
+	TOKENS = "tokens",
+}
+
 export class Hero {
 	name: string
 	stats: Array<Array<number>>
 	title: string
 	stars: number
+	traits: Array<Trait>
 
 	constructor(
 		name: string,
 		stats: Array<Array<number>>,
 		title: string,
 		stars: number,
+		traits: Array<Trait>,
 	) {
 		this.name = name
 		this.stats = stats
 		this.title = title
 		this.stars = stars
+		this.traits = traits
 	}
 }
 
@@ -83,38 +99,38 @@ export class OldHero {
 }
 
 export const heroes = {
-  "arien": new Hero("Arien", [[8, 8], [5, 6], [4, 4], [5, 6]], "the Tidemaster", 1),
-  "brogan": new Hero("Brogan", [[7, 7], [8, 8], [1, 1], [2, 4]], "the Destroyer", 1),
-  "dodger": new Hero("Dodger", [[3, 3], [2, 5], [7, 7], [5, 5]], "the Warlock", 1),
-  "sabina": new Hero("Sabina", [[1, 7], [3, 3], [5, 5], [5, 6]], "the Commander", 1),
-  "tigerclaw": new Hero("Tigerclaw", [[4, 8], [1, 4], [8, 8], [7, 8]], "the Cutpurse", 1),
-  "wasp": new Hero("Wasp", [[5, 5], [4, 5], [6, 6], [5, 5]], "the Warmaiden", 1),
-  "xargatha": new Hero("Xargatha", [[5, 8], [6, 6], [3, 3], [6, 6]], "the Changed", 1),
-  "bain": new Hero("Bain", [[5, 5], [4, 6], [4, 4], [5, 6]], "the Bounty Hunter", 2),
-  "garrus": new Hero("Garrus", [[8, 8], [7, 7], [3, 3], [5, 6]], "the Gladiator", 2),
-  "min": new Hero("Min", [[4, 8], [3, 8], [8, 8], [6, 6]], "the Dragonmonk", 2),
-  "misa": new Hero("Misa", [[6, 6], [5, 5], [7, 7], [1, 8]], "the Samurai", 2),
-  "rowenna": new Hero("Rowenna", [[8, 8], [7, 7], [4, 4], [3, 5]], "the Vanguard", 2),
-  "silverarrow": new Hero("Silverarrow", [[2, 2], [1, 1], [7, 7], [6, 7]], "the Pathfinder", 2),
-  "ursafar": new Hero("Ursafar", [[6, 6], [6, 6], [5, 5], [1, 5]], "the Savage", 2),
-  "whisper": new Hero("Whisper", [[7, 7], [4, 4], [7, 7], [3, 5]], "the Outcast", 2),
-  "brynn": new Hero("Brynn", [[4, 8], [4, 4], [7, 7], [5, 6]], "the Seeker", 3),
-  "cutter": new Hero("Cutter", [[4, 8], [4, 4], [6, 6], [4, 8]], "the Sky Pirate", 3),
-  "hanu": new Hero("Hanu", [[4, 4], [1, 1], [8, 8], [8, 8]], "the Trickster", 3),
-  "mortimer": new Hero("Mortimer", [[8, 8], [7, 7], [2, 2], [4, 4]], "the Awakener", 3),
-  "mrak": new Hero("Mrak", [[8, 8], [8, 8], [1, 1], [2, 4]], "the Rockshaper", 3),
-  "swift": new Hero("Swift", [[5, 5], [2, 2], [4, 4], [3, 7]], "the Sharpshooter", 3),
-  "tali": new Hero("Tali", [[4, 6], [4, 4], [5, 8], [5, 5]], "the Spiritcaller", 3),
-  "trinkets": new Hero("Trinkets", [[3, 5], [2, 4], [6, 6], [7, 8]], "the Scavenger", 3),
-  "widget": new Hero("Widget", [[5, 5], [4, 4], [4, 4], [5, 6]], "and Pyro", 3),
-  "wuk": new Hero("Wuk", [[5, 5], [8, 8], [1, 1], [3, 4]], "the Grove Keeper", 3),
-  "emmitt": new Hero("Emmitt", [[5, 8], [6, 6], [1, 1], [2, 4]], "the Traveller", 4),
-  "gydion": new Hero("Gydion", [[5, 6], [3, 5], [3, 3], [1, 4]], "the Archwizard", 4),
-  "ignatia": new Hero("Ignatia", [[5, 5], [6, 6], [2, 2], [4, 5]], "the Mad", 4),
-  "nebkher": new Hero("NebKher", [[2, 3], [5, 6], [1, 1], [2, 5]], "the Harbinger", 4),
-  "razzle": new Hero("Razzle", [[3, 3], [1, 4], [8, 8], [5, 6]], "the Ringmaster", 4),
-  "snorri": new Hero("Snorri", [[5, 6], [5, 6], [2, 2], [4, 5]], "the Runescribe", 4),
-  "takahide": new Hero("Takahide", [[5, 7], [4, 7], [3, 5], [1, 4]], "the Warlord", 4),
+  "arien": new Hero("Arien", [[8, 8], [5, 6], [4, 4], [5, 6]], "the Tidemaster", 1, [Trait.TACTICIAN, Trait.DISABLER, Trait.DURABLE, Trait.PUSHER]),
+  "brogan": new Hero("Brogan", [[7, 7], [8, 8], [1, 1], [2, 4]], "the Destroyer", 1, [Trait.DURABLE, Trait.DISABLER, Trait.PUSHER, Trait.FARMING]),
+  "dodger": new Hero("Dodger", [[3, 3], [2, 5], [7, 7], [5, 5]], "the Warlock", 1, [Trait.DAMAGER, Trait.SNIPER, Trait.PUSHER, Trait.FARMING, Trait.DISABLER]),
+  "sabina": new Hero("Sabina", [[1, 7], [3, 3], [5, 5], [5, 6]], "the Commander", 1, [Trait.TACTICIAN, Trait.PUSHER]),
+  "tigerclaw": new Hero("Tigerclaw", [[4, 8], [1, 4], [8, 8], [7, 8]], "the Cutpurse", 1, [Trait.MELEE, Trait.DISABLER, Trait.FARMING]),
+  "wasp": new Hero("Wasp", [[5, 5], [4, 5], [6, 6], [5, 5]], "the Warmaiden", 1, [Trait.DISABLER, Trait.TACTICIAN, Trait.SNIPER]),
+  "xargatha": new Hero("Xargatha", [[5, 8], [6, 6], [3, 3], [6, 6]], "the Changed", 1, [Trait.TACTICIAN, Trait.PUSHER, Trait.DISABLER, Trait.DURABLE, Trait.SNIPER]),
+  "bain": new Hero("Bain", [[5, 5], [4, 6], [4, 4], [5, 6]], "the Bounty Hunter", 2, [Trait.TACTICIAN, Trait.SNIPER, Trait.HEALER, Trait.FARMING, Trait.DURABLE]),
+  "garrus": new Hero("Garrus", [[8, 8], [7, 7], [3, 3], [5, 6]], "the Gladiator", 2, [Trait.DISABLER, Trait.DURABLE, Trait.TACTICIAN]),
+  "min": new Hero("Min", [[4, 8], [3, 8], [8, 8], [6, 6]], "the Dragonmonk", 2, [Trait.TOKENS, Trait.DISABLER, Trait.DAMAGER, Trait.MELEE]),
+  "misa": new Hero("Misa", [[6, 6], [5, 5], [7, 7], [1, 8]], "the Samurai", 2, [Trait.TACTICIAN, Trait.DURABLE, Trait.DAMAGER]),
+  "rowenna": new Hero("Rowenna", [[8, 8], [7, 7], [4, 4], [3, 5]], "the Vanguard", 2, [Trait.MELEE, Trait.DURABLE, Trait.HEALER, Trait.FARMING, Trait.PUSHER, Trait.TACTICIAN]),
+  "silverarrow": new Hero("Silverarrow", [[2, 2], [1, 1], [7, 7], [6, 7]], "the Pathfinder", 2, [Trait.SNIPER, Trait.DAMAGER, Trait.DISABLER, Trait.HEALER, Trait.FARMING]),
+  "ursafar": new Hero("Ursafar", [[6, 6], [6, 6], [5, 5], [1, 5]], "the Savage", 2, [Trait.DURABLE, Trait.PUSHER, Trait.FARMING, Trait.MELEE]),
+  "whisper": new Hero("Whisper", [[7, 7], [4, 4], [7, 7], [3, 5]], "the Outcast", 2, [Trait.DAMAGER, Trait.DURABLE, Trait.TACTICIAN, Trait.PUSHER]),
+  "brynn": new Hero("Brynn", [[4, 8], [4, 4], [7, 7], [5, 6]], "the Seeker", 3, [Trait.TACTICIAN, Trait.DAMAGER, Trait.DURABLE]),
+  "cutter": new Hero("Cutter", [[4, 8], [4, 4], [6, 6], [4, 8]], "the Sky Pirate", 3, [Trait.TACTICIAN, Trait.DAMAGER, Trait.FARMING]),
+  "hanu": new Hero("Hanu", [[4, 4], [1, 1], [8, 8], [8, 8]], "the Trickster", 3, [Trait.TACTICIAN, Trait.SNIPER, Trait.PUSHER]),
+  "mortimer": new Hero("Mortimer", [[8, 8], [7, 7], [2, 2], [4, 4]], "the Awakener", 3, [Trait.MELEE, Trait.TOKENS, Trait.FARMING, Trait.DURABLE, Trait.PUSHER]),
+  "mrak": new Hero("Mrak", [[8, 8], [8, 8], [1, 1], [2, 4]], "the Rockshaper", 3, [Trait.MELEE, Trait.TOKENS, Trait.DURABLE, Trait.DISABLER, Trait.TACTICIAN]),
+  "swift": new Hero("Swift", [[5, 5], [2, 2], [4, 4], [3, 7]], "the Sharpshooter", 3, [Trait.SNIPER, Trait.FARMING, Trait.TACTICIAN]),
+  "tali": new Hero("Tali", [[4, 6], [4, 4], [5, 8], [5, 5]], "the Spiritcaller", 3, [Trait.DAMAGER, Trait.PUSHER, Trait.HEALER, Trait.DURABLE, Trait.TOKENS]),
+  "trinkets": new Hero("Trinkets", [[3, 5], [2, 4], [6, 6], [7, 8]], "the Scavenger", 3, [Trait.SNIPER, Trait.DAMAGER, Trait.PUSHER, Trait.TOKENS]),
+  "widget": new Hero("Widget", [[5, 5], [4, 4], [4, 4], [5, 6]], "and Pyro", 3, [Trait.TACTICIAN, Trait.PUSHER, Trait.DAMAGER]),
+  "wuk": new Hero("Wuk", [[5, 5], [8, 8], [1, 1], [3, 4]], "the Grove Keeper", 3, [Trait.TOKENS, Trait.PUSHER, Trait.DURABLE, Trait.SNIPER, Trait.TACTICIAN, Trait.HEALER]),
+  "emmitt": new Hero("Emmitt", [[5, 8], [6, 6], [1, 1], [2, 4]], "the Traveller", 4, [Trait.MELEE, Trait.TACTICIAN, Trait.DURABLE, Trait.DISABLER, Trait.TOKENS]),
+  "gydion": new Hero("Gydion", [[5, 6], [3, 5], [3, 3], [1, 4]], "the Archwizard", 4, [Trait.SNIPER, Trait.TACTICIAN, Trait.FARMING, Trait.DAMAGER, Trait.PUSHER, Trait.TOKENS]),
+  "ignatia": new Hero("Ignatia", [[5, 5], [6, 6], [2, 2], [4, 5]], "the Mad", 4, [Trait.SNIPER, Trait.DAMAGER, Trait.TOKENS, Trait.TACTICIAN, Trait.PUSHER]),
+  "nebkher": new Hero("NebKher", [[2, 3], [5, 6], [1, 1], [2, 5]], "the Harbinger", 4, [Trait.DISABLER, Trait.TOKENS, Trait.SNIPER]),
+  "razzle": new Hero("Razzle", [[3, 3], [1, 4], [8, 8], [5, 6]], "the Ringmaster", 4, [Trait.TACTICIAN, Trait.MELEE]),
+  "snorri": new Hero("Snorri", [[5, 6], [5, 6], [2, 2], [4, 5]], "the Runescribe", 4, [Trait.SNIPER, Trait.FARMING, Trait.DURABLE, Trait.DAMAGER, Trait.PUSHER, Trait.HEALER]),
+  "takahide": new Hero("Takahide", [[5, 7], [4, 7], [3, 5], [1, 4]], "the Warlord", 4, [Trait.DURABLE, Trait.SNIPER, Trait.TACTICIAN, Trait.DAMAGER, Trait.FARMING]),
 }
 
 export const oldHeroes = {
@@ -268,6 +284,14 @@ export const defaultEmoji = [
   "range_purple",
   "range_red",
   "range_silver",
+  "rune_bird",
+  "rune_bird_marker",
+  "rune_axe",
+  "rune_axe_marker",
+  "rune_anvil",
+  "rune_anvil_marker",
+  "rune_horn",
+  "rune_horn_marker",
   "skill_blue",
   "skill_gold",
   "skill_green",
@@ -275,16 +299,19 @@ export const defaultEmoji = [
   "skill_silver",
   "tiebreaker_blue",
   "tiebreaker_orange",
-  "token_magma",
-  "token_smoke_bomb",
+  "token_barrier",
   "token_blast",
   "token_dud",
+  "token_glitch",
   "token_grenade",
-  "token_illusion",
   "token_ice",
+  "token_illusion",
+  "token_magma",
+  "token_rock",
+  "token_smoke_bomb",
   "token_totem",
-  "token_barrier",
   "token_tree",
+  "token_zombie",
 ]
 
 export const imageNames = [
@@ -378,6 +405,14 @@ export const imageNames = [
   "range_purple",
   "range_red",
   "range_silver",
+  "rune_bird",
+  "rune_bird_marker",
+  "rune_axe",
+  "rune_axe_marker",
+  "rune_anvil",
+  "rune_anvil_marker",
+  "rune_horn",
+  "rune_horn_marker",
   "skill_blue",
   "skill_gold",
   "skill_green",
@@ -387,16 +422,19 @@ export const imageNames = [
   "tiebreaker_orange",
   "title",
   "title_ultimate",
-  "token_magma",
-  "token_smoke_bomb",
+  "token_barrier",
   "token_blast",
   "token_dud",
+  "token_glitch",
   "token_grenade",
-  "token_illusion",
   "token_ice",
+  "token_illusion",
+  "token_magma",
+  "token_rock",
+  "token_smoke_bomb",
   "token_totem",
-  "token_barrier",
   "token_tree",
+  "token_zombie",
 ]
 
 export const onwardImageNames = [

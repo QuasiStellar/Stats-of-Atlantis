@@ -514,8 +514,8 @@
   }
 
   function getPrimaryStat(statIndex: number): number {
-    const { max } = getStatRange(hero.stats[statIndex])
-    return max
+    const { min, max } = getStatRange(hero.stats[statIndex])
+    return useNewPrinting ? min : max
   }
 
   async function cropCardBackground(image: HTMLImageElement): Promise<HTMLImageElement> {

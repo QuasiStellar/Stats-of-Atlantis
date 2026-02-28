@@ -883,8 +883,6 @@ function addCardDescription(context: CanvasRenderingContext2D, customEmoji: Arra
     context.lineTo(x + 381, y - 11)
     context.lineWidth = 2
     context.stroke()
-  } else if (text.startsWith("~")) {
-    addTextItalic(context, text.substring(1), x, y)
   } else if (text.startsWith(">>")) {
     addTextWithBold(context, customEmoji, "•  " + text.substring(2), x - 490, y, true)
   } else if (text.startsWith(">")) {
@@ -894,41 +892,81 @@ function addCardDescription(context: CanvasRenderingContext2D, customEmoji: Arra
 }
 
 function addTextWithBold(context: CanvasRenderingContext2D, customEmoji: Array<[string, HTMLImageElement]>, text: string, x: number, y: number, left: boolean = false): void {
-  context.font = "49px Arial"
   context.textAlign = "left"
-  const tempText = "@" + text + "@"
-  const parts = tempText.split("**")
-  const fullTextWidth = context.measureText(text.replaceAll("**", "").split("::").reduce((sum, val, i) => i % 2 == 0 ? sum + val : sum, "")).width
-    + text.replaceAll("**", "").split("::").reduce((sum, _, i) => i % 2 ? sum + 64 : sum, 0)
-  let indent = 0
-  parts.forEach((part, index) => {
-    part = part.replaceAll("@", "")
-    if (index % 2)
-      context.font = "bold 49px Arial"
-    else
-      context.font = "49px Arial"
-    const emojiParts = ("@" + part + "@").split("::")
-    emojiParts.forEach((emojiPart, i) => {
-      emojiPart = emojiPart.replaceAll("@", "")
-      if (i % 2) {
-        if (defaultEmoji.includes(emojiPart))
-          addEmoji(context, emojiPart, x - (left ? 0 : (fullTextWidth / 2)) + indent, y - 50)
-        if (customEmoji.find((item => item[0] == emojiPart)))
-          addCustomEmoji(context, customEmoji, emojiPart, x - (left ? 0 : (fullTextWidth / 2)) + indent, y - 50)
-        indent += 64
-      } else {
-        const partWidth = context.measureText(emojiPart).width
-        context.fillText(emojiPart, x - (left ? 0 : (fullTextWidth / 2)) + indent, y)
-        indent += partWidth
+  type Segment = { type: "text", value: string, bold: boolean, italic: boolean } | { type: "emoji", value: string }
+  const segments: Segment[] = []
+  let isBold = false
+  let isItalic = false
+  let index = 0
+  let buffer = ""
+
+  const flushBuffer = () => {
+    if (buffer.length > 0) {
+      segments.push({ type: "text", value: buffer, bold: isBold, italic: isItalic })
+      buffer = ""
+    }
+  }
+
+  while (index < text.length) {
+    if (text.startsWith("**", index)) {
+      flushBuffer()
+      isBold = !isBold
+      index += 2
+      continue
+    }
+    if (text[index] == "~") {
+      flushBuffer()
+      isItalic = !isItalic
+      index += 1
+      continue
+    }
+    if (text.startsWith("::", index)) {
+      const closingIndex = text.indexOf("::", index + 2)
+      if (closingIndex != -1) {
+        flushBuffer()
+        segments.push({ type: "emoji", value: text.slice(index + 2, closingIndex) })
+        index = closingIndex + 2
+        continue
       }
-    })
+    }
+    buffer += text[index]
+    index += 1
+  }
+  flushBuffer()
+
+  const getFont = (bold: boolean, italic: boolean): string => {
+    if (bold && italic)
+      return "italic bold 36px Arial"
+    if (bold)
+      return "bold 49px Arial"
+    if (italic)
+      return "italic 36px Arial"
+    return "49px Arial"
+  }
+
+  const fullTextWidth = segments.reduce((sum, segment) => {
+    if (segment.type == "emoji")
+      return sum + 64
+    context.font = getFont(segment.bold, segment.italic)
+    return sum + context.measureText(segment.value).width
+  }, 0)
+
+  let indent = 0
+  segments.forEach(segment => {
+    if (segment.type == "emoji") {
+      if (defaultEmoji.includes(segment.value))
+        addEmoji(context, segment.value, x - (left ? 0 : (fullTextWidth / 2)) + indent, y - 50)
+      if (customEmoji.find(item => item[0] == segment.value))
+        addCustomEmoji(context, customEmoji, segment.value, x - (left ? 0 : (fullTextWidth / 2)) + indent, y - 50)
+      indent += 64
+    } else {
+      context.font = getFont(segment.bold, segment.italic)
+      const partWidth = context.measureText(segment.value).width
+      context.fillText(segment.value, x - (left ? 0 : (fullTextWidth / 2)) + indent, y)
+      indent += partWidth
+    }
   })
   context.textAlign = "center"
-}
-
-function addTextItalic(context: CanvasRenderingContext2D, text: string, x: number, y: number): void {
-  context.font = "italic 36px Arial"
-  context.fillText(text, x, y)
 }
 
 function addCardType(context: CanvasRenderingContext2D, text: string, x: number, y: number): void {

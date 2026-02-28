@@ -1075,7 +1075,7 @@
          "item":"AREA"
       },
       {
-         "name":"Split Attack",
+         "name":"Split Throw",
          "description":"Target a unit in range. If you target a hero\nwho is adjacent to 3 or more obstacles,\nmay repeat once on a different unit.",
          "color":"RED",
          "level":3,
@@ -4482,19 +4482,21 @@
          "secondaryDefense":1
       },
       {
-         "name":"Magic Trick",
-         "description":"Push an unit adjacent to you up to 2 spaces;\nfor every space the target moved, move this\none of you one space in the opposite direction.",
+         "name":"Group Performance",
+         "description":"Swap with a friendly hero in range.\nMove another one of you up to 2 spaces.",
          "color":"BLUE",
          "level":2,
          "variant":{
-            "first":2,
+            "first":1,
             "second":2
          },
          "initiative":11,
          "primaryAction":"SKILL",
+         "modifier":"RANGE",
+         "modifierValue":4,
          "secondaryMovement":3,
          "secondaryDefense":3,
-         "item":"DEFENSE"
+         "item":"ATTACK"
       },
       {
          "name":"Hit and Gone",
@@ -4526,6 +4528,21 @@
          "primaryValue":2,
          "secondaryDefense":2,
          "item":"INITIATIVE"
+      },
+      {
+         "name":"Magic Trick",
+         "description":"Push an unit adjacent to you up to 2 spaces;\nfor every space the target moved, move this\none of you one space in the opposite direction.",
+         "color":"BLUE",
+         "level":2,
+         "variant":{
+            "first":2,
+            "second":2
+         },
+         "initiative":11,
+         "primaryAction":"SKILL",
+         "secondaryMovement":3,
+         "secondaryDefense":3,
+         "item":"DEFENSE"
       },
       {
          "name":"Rummage",
@@ -5539,7 +5556,7 @@
       },
       {
          "name":"Inscribe the Runes",
-         "description":"Give yourself 4 ::rune_axe::::rune_bird::::rune_anvil::::rune_horn:: Rune markers\nand place one below each of your turn slots.\nA rune is active as long as it is below the\nturn slot matching the current turn.\nRune markers are not removed at the\nend of round, nor if you are defeated.",
+         "description":"Give yourself 4 ::rune_axe_marker::::rune_bird_marker::::rune_anvil_marker::::rune_horn_marker:: Rune markers\nand place one below each of your turn slots.\nA rune is active as long as it is below the\nturn slot matching the current turn.\nRune markers are not removed at the\nend of round, nor if you are defeated.",
          "color":"SILVER",
          "initiative":1,
          "primaryAction":"SKILL",
@@ -6074,10 +6091,6 @@
          "description":"Target a unit at maximum range.\nAfter the attack: Swap this card with\na different gold card in your deck.\n~(This card starts the game in your deck.)",
          "color":"GOLD",
          "extra":true,
-         "variant":{
-            "first":1,
-            "second":2
-         },
          "initiative":7,
          "primaryAction":"ATTACK",
          "primaryValue":5,
@@ -6091,10 +6104,6 @@
          "description":"Target a unit adjacent to you.\nAfter the attack: Swap this card with\na different gold card in your deck.\n~(This card starts the game in your deck.)",
          "color":"GOLD",
          "extra":true,
-         "variant":{
-            "first":2,
-            "second":2
-         },
          "initiative":9,
          "primaryAction":"ATTACK",
          "primaryValue":7,
