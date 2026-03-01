@@ -1,0 +1,1 @@
+import{d as r}from"./singletons.1d6d843a.js";function u(s){const e=s-1;return e*e*e+1}function c(s){return--s*s*s*s*s+1}const t=()=>{const s=r;return{page:{subscribe:s.page.subscribe},navigating:{subscribe:s.navigating.subscribe},updated:s.updated}},i={subscribe(s){return t().page.subscribe(s)}};export{u as c,i as p,c as q};
