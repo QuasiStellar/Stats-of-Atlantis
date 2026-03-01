@@ -49,9 +49,12 @@ export function updateCanvas(
 	const descriptionLines = description.split(/\r\n|\r|\n/);
 	const descriptionHeight = descriptionLines.length;
 	const hasSecondaryAttack = secondaryAttackValue !== null;
-	const hasSecondaryMovement = primaryActionType != Type.MOVEMENT && color != Color.SILVER;
+	const hasSecondaryMovement = color != Color.SILVER && secondaryMovementValue !== 0;
 	const hasSecondaryDefense = primaryActionType != Type.DEFENSE && primaryActionType != Type.DEFENSE_SKILL;
-	const secondaryBannerOffset = hasSecondaryAttack && hasSecondaryMovement && hasSecondaryDefense ? 50 : 0;
+	const secondaryBannerOffset =
+		hasSecondaryAttack && hasSecondaryMovement && hasSecondaryDefense && primaryActionType != Type.MOVEMENT
+			? 50
+			: 0;
 	context.font = '49px Arial';
 
 	function placeSecondary(inset: number) {
@@ -72,6 +75,28 @@ export function updateCanvas(
 				Stat.ATTACK,
 				attackStat,
 			);
+		}
+
+		if (!hasSecondaryMovement) {
+			if (primaryActionType != Type.DEFENSE && primaryActionType != Type.DEFENSE_SKILL) {
+				addImage(context, 'defense', 70, adjustedInset);
+				addSecondaryValue(
+					context,
+					secondaryDefenseValue + defenseBonus,
+					143,
+					adjustedInset + 131,
+					defenseBonus,
+					showNumbers,
+					color,
+					level,
+					Stat.DEFENSE,
+					defenseStat,
+				);
+			}
+			if (hasSecondaryAttack) {
+				addSecondaryAttack(attackInset);
+			}
+			return;
 		}
 
 		if (primaryActionType == Type.DEFENSE || primaryActionType == Type.DEFENSE_SKILL) {

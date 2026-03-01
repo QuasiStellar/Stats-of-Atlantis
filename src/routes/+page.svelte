@@ -248,9 +248,9 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 							{@const heroTraits = getHeroTraits(desc)}
 							{#if heroTraits.length > 0}
 								{@const traitRows = getTraitRows(heroTraits)}
-								<div class="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 flex flex-col items-end gap-y-0.5 sm:gap-y-1 z-20">
+								<div class="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 flex flex-col items-end gap-y-0.5 sm:gap-y-1 z-0">
 									{#if traitRows.top.length > 0}
-										<ul class="flex items-end -space-x-2">
+										<ul class="flex items-end space-x-0 xs:-space-x-1 sm:-space-x-2">
 											{#each traitRows.top as trait, traitIndex (traitIndex)}
 												<li class="w-10 xs:w-12 sm:w-16 md:w-20">
 													<div class="relative mx-auto w-5 xs:w-6 sm:w-10 md:w-12">
@@ -261,18 +261,18 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 															alt=""
 														/>
 													</div>
-													<div class="relative mt-0.5 sm:mt-1 h-2 sm:h-4 md:h-5">
-														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-														<p class="absolute text-white text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<div class="relative mt-0.5 sm:mt-1 h-1.5 xs:h-2 sm:h-4 md:h-5">
+														<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-white text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
 													</div>
 												</li>
 											{/each}
 										</ul>
 									{/if}
-									<ul class="flex items-end -space-x-2">
+									<ul class="flex items-end space-x-0 xs:-space-x-1 sm:-space-x-2">
 										{#each traitRows.bottom as trait, traitIndex (traitIndex)}
 											<li class="w-10 xs:w-12 sm:w-16 md:w-20">
 												<div class="relative mx-auto w-5 xs:w-6 sm:w-10 md:w-12">
@@ -283,12 +283,12 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 														alt=""
 													/>
 												</div>
-												<div class="relative mt-0.5 sm:mt-1 h-2 sm:h-4 md:h-5">
-													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-													<p class="absolute text-white text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+												<div class="relative mt-0.5 sm:mt-1 h-1.5 xs:h-2 sm:h-4 md:h-5">
+													<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-white text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
 												</div>
 											</li>
 										{/each}

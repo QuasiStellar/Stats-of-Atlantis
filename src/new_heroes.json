@@ -83,7 +83,7 @@
          "primaryAction":"DEFENSE",
          "primaryValue":6,
          "secondaryMovement":3,
-         "item":"DEFENSE"
+         "item":"INITIATIVE"
       },
       {
          "name":"Rogue Wave",
@@ -131,6 +131,7 @@
          },
          "initiative":10,
          "primaryAction":"MOVEMENT",
+         "primaryValue":3,
          "secondaryDefense":6,
          "item":"ATTACK"
       },
@@ -226,6 +227,7 @@
          },
          "initiative":10,
          "primaryAction":"MOVEMENT",
+         "primaryValue":3,
          "modifier":"AREA",
          "modifierValue":1,
          "secondaryDefense":6,
@@ -412,7 +414,7 @@
       },
       {
          "name":"Hand Crossbow",
-         "description":"**Choose one —**\n>>Target a hero in range with\n>a ::marker_bounty:: Bounty marker.\n>>Target a hero adjacent to you.",
+         "description":"**Choose one —**\n>>Target a hero in range with\n>a ::marker_bounty:: Bounty marker.\n>>Target a unit adjacent to you.",
          "color":"RED",
          "level":2,
          "variant":{
@@ -513,7 +515,7 @@
       },
       {
          "name":"Hunter-Seeker",
-         "description":"**Choose one, or both,** on different targets —\n>>Target a hero in range with\n>a ::marker_bounty:: Bounty marker.\n>>Target a hero adjacent to you.",
+         "description":"**Choose one, or both,** on different targets —\n>>Target a hero in range with\n>a ::marker_bounty:: Bounty marker.\n>>Target a unit adjacent to you.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -793,7 +795,7 @@
          "modifier":"RANGE",
          "modifierValue":2,
          "secondaryMovement":4,
-         "secondaryDefense":6,
+         "secondaryDefense":7,
          "item":"AREA"
       },
       {
@@ -842,7 +844,7 @@
       },
       {
          "name":"Decoy",
-         "description":"**Choose up to two times,**, on different targets —\n>> Move an enemy minion in radius 1 space.\n>> Move an enemy hero in radius who is\nadjacent to 3 or more obstacles 2 space.",
+         "description":"**Choose up to two times,**, on different targets —\n>>Move an enemy minion in radius 1 space.\n>>Move an enemy hero in radius who is\nadjacent to 3 or more obstacles 2 space.",
          "color":"SILVER",
          "initiative":1,
          "primaryAction":"SKILL",
@@ -1149,7 +1151,7 @@
       },
       {
          "name":"Daring Strike",
-         "description":"**Choose one —**\n>> Before the attack: Move 1 space.\nTarget a unit adjacent to you in the\ndirection of the move; +2 ::attack_red:: Attack.\n>> Target a unit adjacent to you.",
+         "description":"**Choose one —**\n>>Before the attack: Move 1 space.\nTarget a unit adjacent to you in the\ndirection of the move; +2 ::attack_red:: Attack.\n>>Target a unit adjacent to you.",
          "color":"RED",
          "level":1,
          "initiative":8,
@@ -1188,7 +1190,7 @@
       },
       {
          "name":"Bold Thrust",
-         "description":"**Choose one —**\n>> Before the attack: Move 1 or 2 spaces in a\nstraight line. Target a unit adjacent to you\nin the direction of the move; +2 ::attack_red:: Attack.\n>> Target a unit adjacent to you.",
+         "description":"**Choose one —**\n>>Before the attack: Move 1 or 2 spaces in a\nstraight line. Target a unit adjacent to you\nin the direction of the move; +2 ::attack_red:: Attack.\n>>Target a unit adjacent to you.",
          "color":"RED",
          "level":2,
          "variant":{
@@ -1220,7 +1222,7 @@
       },
       {
          "name":"X Marks the Spot",
-         "description":"An enemy hero in radius **chooses one —**\n>> You place that hero in a space in radius.\n>> You gain 2 coins.",
+         "description":"An enemy hero in radius **chooses one —**\n>>You place that hero in a space in radius.\n>>You gain 2 coins.",
          "color":"BLUE",
          "level":2,
          "variant":{
@@ -1264,6 +1266,8 @@
          },
          "initiative":3,
          "primaryAction":"SKILL",
+         "modifier":"AREA",
+         "modifierValue":3,
          "secondaryMovement":2,
          "secondaryDefense":3,
          "item":"DEFENSE"
@@ -1287,7 +1291,7 @@
       },
       {
          "name":"Fearless Lunge",
-         "description":"**Choose one —**\n>> Before the attack: Move 1, 2 or 3 spaces in\n>a straight line. Target a unit adjacent to you\n>in the direction of the move; +2 ::attack_red:: Attack.\n>> Target a unit adjacent to you.",
+         "description":"**Choose one —**\n>>Before the attack: Move 1, 2 or 3 spaces in\n>a straight line. Target a unit adjacent to you\n>in the direction of the move; +2 ::attack_red:: Attack.\n>>Target a unit adjacent to you.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -1319,7 +1323,7 @@
       },
       {
          "name":"A Fistful of Coins",
-         "description":"An enemy hero in radius **chooses one —**\n>> You place that hero in a space in radius.\n>> You gain 3 coins. If you have 13 or more\n>coins, you alone win the game.",
+         "description":"An enemy hero in radius **chooses one —**\n>>You place that hero in a space in radius.\n>>You gain 3 coins. If you have 13 or more\n>coins, you alone win the game.",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -1435,8 +1439,8 @@
          "primaryValue":4,
          "modifier":"RANGE",
          "modifierValue":2,
-         "secondaryMovement":5,
-         "secondaryDefense":4
+         "secondaryMovement":4,
+         "secondaryDefense":5
       },
       {
          "name":"Dark Ritual",
@@ -1687,6 +1691,7 @@
          "color":"SILVER",
          "initiative":1,
          "primaryAction":"DEFENSE_SKILL",
+         "primaryValue":6,
          "modifier":"AREA",
          "modifierValue":4
       },
@@ -1990,7 +1995,7 @@
       },
       {
          "name":"Trace",
-         "description":"**Choose one —**\n>> Before the attack: If you have one or more\ncards in the discard, you may move 1 space.\n>Target a hero adjacent to you.\n>>Target a hero adjacent to you.",
+         "description":"**Choose one —**\n>>Before the attack: If you have one or more\ncards in the discard, you may move 1 space.\n>Target a hero adjacent to you.\n>>Target a hero adjacent to you.",
          "color":"RED",
          "level":1,
          "initiative":7,
@@ -2030,7 +2035,7 @@
       },
       {
          "name":"Chase",
-         "description":"**Choose one —**\n>> Before the attack: If you have one or more\ncards in the discard, move up to 2 spaces.\n>Target a hero adjacent to you.\n>>Target a hero adjacent to you.",
+         "description":"**Choose one —**\n>>Before the attack: If you have one or more\ncards in the discard, move up to 2 spaces.\n>Target a hero adjacent to you.\n>>Target a hero adjacent to you.",
          "color":"RED",
          "level":2,
          "variant":{
@@ -2055,7 +2060,7 @@
          },
          "initiative":4,
          "primaryAction":"SKILL",
-         "modifier":"RANGE",
+         "modifier":"AREA",
          "modifierValue":4,
          "secondaryMovement":2,
          "secondaryDefense":4,
@@ -2089,7 +2094,7 @@
          },
          "initiative":8,
          "primaryAction":"ATTACK",
-         "primaryValue":6,
+         "primaryValue":7,
          "secondaryMovement":4,
          "secondaryDefense":7,
          "item":"INITIATIVE"
@@ -2130,7 +2135,7 @@
       },
       {
          "name":"Hunt Down",
-         "description":"**Choose one —**\n>> Before the attack: If you have one or more\ncards in the discard, move up to 3 spaces.\n>Target a hero adjacent to you.\n>>Target a hero adjacent to you.",
+         "description":"**Choose one —**\n>>Before the attack: If you have one or more\ncards in the discard, move up to 3 spaces.\n>Target a hero adjacent to you.\n>>Target a hero adjacent to you.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -2155,7 +2160,7 @@
          },
          "initiative":4,
          "primaryAction":"SKILL",
-         "modifier":"RANGE",
+         "modifier":"AREA",
          "modifierValue":4,
          "secondaryMovement":2,
          "secondaryDefense":4,
@@ -2215,7 +2220,7 @@
    "gydion":[
       {
          "name":"Cantrip",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Shocking Grasp\" ~(To repel a foe!)\n>> \"Magic Missile\" ~(To blast at range!)\n>> \"Expeditious Retreat\" ~(To dart a great distance!)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Shocking Grasp\" ~(To repel a foe!)\n>>\"Magic Missile\" ~(To blast at range!)\n>>\"Expeditious Retreat\" ~(To dart a great distance!)",
          "color":"GOLD",
          "initiative":11,
          "primaryAction":"SKILL",
@@ -2270,7 +2275,7 @@
       },
       {
          "name":"Lesser Evocation",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Burning Hands\"\n>> \"Fireball\"\n~(Wait for your allies to clear the area before hurling a fireball!)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Burning Hands\"\n>>\"Fireball\"\n~(Wait for your allies to clear the area before hurling a fireball!)",
          "color":"RED",
          "level":2,
          "variant":{
@@ -2285,7 +2290,7 @@
       },
       {
          "name":"Lesser Necromancy",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Vampiric Touch\"\n>> \"Create Undead\"\n~(Harm your foe to heal yourself. Raise an undead servant.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Vampiric Touch\"\n>>\"Create Undead\"\n~(Harm your foe to heal yourself. Raise an undead servant.)",
          "color":"RED",
          "level":2,
          "variant":{
@@ -2300,7 +2305,7 @@
       },
       {
          "name":"Greater Evocation",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Burning Hands\"\n>> \"Fireball\"\n>> \"Sunburst\"\n~(Sunburst's reach and power grows with every cast spell.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Burning Hands\"\n>>\"Fireball\"\n>>\"Sunburst\"\n~(Sunburst's reach and power grows with every cast spell.)",
          "color":"RED",
          "level":3,
          "variant":{
@@ -2315,7 +2320,7 @@
       },
       {
          "name":"Greater Necromancy",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Vampiric Touch\"\n>> \"Create Undead\"\n>> \"Energy Drain\"\n~(Drain energy from a foe in sight to restore your vitality.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Vampiric Touch\"\n>>\"Create Undead\"\n>>\"Energy Drain\"\n~(Drain energy from a foe in sight to restore your vitality.)",
          "color":"RED",
          "level":3,
          "variant":{
@@ -2330,7 +2335,7 @@
       },
       {
          "name":"Lesser Enchantment",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Suggestion\"\n>> \"Dominate Person\"\n~(Turn the dominated person against their own troops.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Suggestion\"\n>>\"Dominate Person\"\n~(Turn the dominated person against their own troops.)",
          "color":"BLUE",
          "level":2,
          "variant":{
@@ -2345,7 +2350,7 @@
       },
       {
          "name":"Lesser Transmutation",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Midas Touch\"\n>> \"Disintegrate\"\n~(Create gold. Turn objects and lesser creatures into dust.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Midas Touch\"\n>>\"Disintegrate\"\n~(Create gold. Turn objects and lesser creatures into dust.)",
          "color":"BLUE",
          "level":2,
          "variant":{
@@ -2360,7 +2365,7 @@
       },
       {
          "name":"Greater Enchantment",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Suggestion\"\n>> \"Dominate Person\"\n>> \"Power Word Kill\"\n~(Command a weakened foe within earshot to perish instantly.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Suggestion\"\n>>\"Dominate Person\"\n>>\"Power Word Kill\"\n~(Command a weakened foe within earshot to perish instantly.)",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -2375,7 +2380,7 @@
       },
       {
          "name":"Greater Transmutation",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Midas Touch\"\n>> \"Disintegrate\"\n>> \"Polymorph\"\n~(Polymorph enemies into creatures or objects and vice versa.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Midas Touch\"\n>>\"Disintegrate\"\n>>\"Polymorph\"\n~(Polymorph enemies into creatures or objects and vice versa.)",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -2390,7 +2395,7 @@
       },
       {
          "name":"Lesser Abjuration",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Shield\"\n>> \"Banishment\"\n~(Touch anything to have it banished where you please.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Shield\"\n>>\"Banishment\"\n~(Touch anything to have it banished where you please.)",
          "color":"GREEN",
          "level":2,
          "variant":{
@@ -2405,7 +2410,7 @@
       },
       {
          "name":"Lesser Conjuration",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Find Familiar\"\n>> \"Dimension Door\"\n~(Summon a familiar to assist you. Travel to a faraway place.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Find Familiar\"\n>>\"Dimension Door\"\n~(Summon a familiar to assist you. Travel to a faraway place.)",
          "color":"GREEN",
          "level":2,
          "variant":{
@@ -2420,7 +2425,7 @@
       },
       {
          "name":"Greater Abjuration",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Shield\"\n>> \"Banishment\"\n>> \"Invulnerability\"\n~(Invulnerability makes you impervious to deadly perils.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Shield\"\n>>\"Banishment\"\n>>\"Invulnerability\"\n~(Invulnerability makes you impervious to deadly perils.)",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -2435,7 +2440,7 @@
       },
       {
          "name":"Greater Conjuration",
-         "description":"**Choose and cast one** spell in the spellbook —\n>> \"Find Familiar\"\n>> \"Dimension Door\"\n>> \"Cloud Kill\"\n~(Create a deadly cloud within distance to weaken your foe.)",
+         "description":"**Choose and cast one** spell in the spellbook —\n>>\"Find Familiar\"\n>>\"Dimension Door\"\n>>\"Cloud Kill\"\n~(Create a deadly cloud within distance to weaken your foe.)",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -2462,6 +2467,7 @@
          "color":"GOLD",
          "initiative":13,
          "primaryAction":"ATTACK",
+         "primaryValue":2,
          "secondaryMovement":2,
          "secondaryDefense":1
       },
@@ -2575,6 +2581,8 @@
          },
          "initiative":2,
          "primaryAction":"SKILL",
+         "modifier":"AREA",
+         "modifierValue":2,
          "secondaryMovement":2,
          "secondaryDefense":2,
          "item":"DEFENSE"
@@ -2677,6 +2685,8 @@
          },
          "initiative":1,
          "primaryAction":"SKILL",
+         "modifier":"AREA",
+         "modifierValue":2,
          "secondaryMovement":2,
          "secondaryDefense":2,
          "item":"DEFENSE"
@@ -2737,7 +2747,7 @@
    "ignatia":[
       {
          "name":"Chaos Bolt",
-         "description":"::tiebreaker_blue::: Target a minion adjacent to you.\n---\n::tiebreaker_orange:: Target a hero in range.",
+         "description":"::tiebreaker_blue::: Target a minion adjacent to you.\n---\n::tiebreaker_orange:: Target a hero in range.\n~(Apply the text matching the symbol on the Tie Breaker coin.)",
          "color":"GOLD",
          "initiative":11,
          "primaryAction":"ATTACK",
@@ -2762,7 +2772,7 @@
       },
       {
          "name":"Equilibrium",
-         "description":"**This round:** Each time you perform or repeat\na primary action, you may apply either ::tiebreaker_blue:: or ::tiebreaker_orange::\ncard text, regardless of the Tie Breaker coin.",
+         "description":"**This round:** Each time you perform or repeat a\nprimary action, you may apply either ::tiebreaker_blue:: or ::tiebreaker_orange::\ncard text, regardless of the Tie Breaker coin.",
          "color":"SILVER",
          "initiative":1,
          "primaryAction":"SKILL",
@@ -3054,7 +3064,7 @@
          "primaryAction":"SKILL",
          "modifier":"AREA",
          "modifierValue":3,
-         "secondaryMovement":1
+         "secondaryDefense":1
       },
       {
          "name":"Flurry of blows",
@@ -3284,7 +3294,7 @@
       },
       {
          "name":"Perfect Self",
-         "description":"**Choose one, or both —**\n>> **This round:** Double your item bonuses.\n>> Take a Tier II card from your deck and add\nit to your dashboard as a permanent item.",
+         "description":"**Choose one, or both —**\n>>**This round:** Double your item bonuses.\n>>Take a Tier II card from your deck and add\nit to your dashboard as a permanent item.",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -3293,7 +3303,7 @@
          },
          "initiative":1,
          "primaryAction":"SKILL",
-         "secondaryMovement":2,
+         "secondaryMovement":3,
          "secondaryDefense":3,
          "item":"RANGE"
       }
@@ -3564,7 +3574,7 @@
    "mortimer":[
       {
          "name":"Knife of the Living Dead",
-         "description":"Target a unit adjacent to you.\nBefore the attack: **Choose up to three times —**\n>>Move a ::token_zombie:: Zombie token in radius 1 space.\n>>Remove a Zombie token adjacent to the\n>target; if you do, gain +1 ::gold_attack:: Attack.",
+         "description":"Target a unit adjacent to you.\nBefore the attack: **Choose up to three times —**\n>>Move a ::token_zombie:: Zombie token in radius 1 space.\n>>Remove a Zombie token adjacent to the\n>target; if you do, gain +1 ::attack_gold:: Attack.",
          "color":"GOLD",
          "initiative":11,
          "primaryAction":"ATTACK",
@@ -3577,7 +3587,7 @@
       },
       {
          "name":"Shallow Graves",
-         "description":"Target a unit adjacent to you.\nBefore the attack: **Choose up to two times —**\n>>Move a ::token_zombie:: Zombie token in radius 1 space.\n>>Remove a Zombie token adjacent to the\n>target; if you do, gain +1 ::gold_attack:: Attack.",
+         "description":"Target a unit adjacent to you.\nBefore the attack: **Choose up to two times —**\n>>Move a ::token_zombie:: Zombie token in radius 1 space.\n>>Remove a Zombie token adjacent to the\n>target; if you do, gain +1 ::attack_gold:: Attack.",
          "color":"GOLD",
          "handicapped":true,
          "initiative":10,
@@ -3932,8 +3942,8 @@
          "modifier":"AREA",
          "modifierValue":4,
          "secondaryMovement":3,
-         "secondaryDefense":7,
-         "secondaryAttack":6,
+         "secondaryDefense":8,
+         "secondaryAttack":7,
          "item":"INITIATIVE"
       },
       {
@@ -4453,12 +4463,12 @@
          "description":"Swap with a friendly hero in range.\nMove another one of you up to 1 space.",
          "color":"BLUE",
          "level":1,
-         "initiative":9,
+         "initiative":10,
          "primaryAction":"SKILL",
          "modifier":"RANGE",
          "modifierValue":3,
-         "secondaryMovement":2,
-         "secondaryDefense":3
+         "secondaryMovement":3,
+         "secondaryDefense":2
       },
       {
          "name":"Phantom Strike",
@@ -4556,7 +4566,7 @@
          "initiative":9,
          "primaryAction":"ATTACK",
          "primaryValue":4,
-         "modifier":"RANGE",
+         "modifier":"AREA",
          "modifierValue":3,
          "secondaryMovement":4,
          "secondaryDefense":4,
@@ -4654,7 +4664,7 @@
          "initiative":10,
          "primaryAction":"ATTACK",
          "primaryValue":5,
-         "modifier":"RANGE",
+         "modifier":"AREA",
          "modifierValue":3,
          "secondaryMovement":4,
          "secondaryDefense":4,
@@ -4687,7 +4697,7 @@
          "primaryAction":"ATTACK",
          "primaryValue":4,
          "secondaryMovement":1,
-         "secondaryDefense":1
+         "secondaryDefense":2
       },
       {
          "name":"Earn the Spurs",
@@ -4706,7 +4716,29 @@
          "color":"SILVER",
          "initiative":5,
          "primaryAction":"SKILL",
+         "modifier":"RANGE",
+         "modifierValue":4,
          "secondaryDefense":3
+      },
+      {
+         "name":"Fabled Lance",
+         "description":"All of your attack actions gain the \"Ranged\"\nsubtype, target a unit in range, and count\nas having a printed ::range_purple:: Range value of 2.",
+         "color":"PURPLE",
+         "level":4,
+         "modifier":"RANGE",
+         "modifierValue":2
+      },
+      {
+         "name":"Stand Guard",
+         "description":"Swap with a friendly unit in range\nwhich is adjacent to an enemy hero,\nor who has a card in the disacrd.",
+         "color":"BLUE",
+         "level":1,
+         "initiative":9,
+         "primaryAction":"SKILL",
+         "modifier":"RANGE",
+         "modifierValue":3,
+         "secondaryMovement":2,
+         "secondaryDefense":6
       },
       {
          "name":"Token of Gratitude",
@@ -4723,7 +4755,7 @@
       },
       {
          "name":"Close Quarters",
-         "description":"After movement, if yhou are adjacent to\nan enemy hero, you may **Choose one —**\n>> Place a friendly minion in radius into a\n>space adjacent to that enemy hero.\n>> Place an enemy minion in radius into a\n>space adjacent to you.",
+         "description":"After movement, if yhou are adjacent to\nan enemy hero, you may **Choose one —**\n>>Place a friendly minion in radius into a\n>space adjacent to that enemy hero.\n>>Place an enemy minion in radius into a\n>space adjacent to you.",
          "color":"GREEN",
          "level":1,
          "initiative":4,
@@ -4732,18 +4764,6 @@
          "modifier":"AREA",
          "modifierValue":2,
          "secondaryDefense":3
-      },
-      {
-         "name":"Stand Guard",
-         "description":"Swap with a friendly unit in range\nwhich is adjacent to an enemy hero,\nor who has a card in the disacrd.",
-         "color":"BLUE",
-         "level":1,
-         "initiative":9,
-         "primaryAction":"SKILL",
-         "modifier":"RANGE",
-         "modifierValue":3,
-         "secondaryMovement":2,
-         "secondaryDefense":6
       },
       {
          "name":"Fair Share",
@@ -4783,7 +4803,7 @@
       },
       {
          "name":"Melee",
-         "description":"After movement, if you are adjacent to\nan enemy hero, you may **Choose one —**\n>> Place a friendly minion in radius into a\n>space adjacent to that enemy hero.\n>> Place an enemy minion in radius into a\n>space adjacent to you.",
+         "description":"After movement, if you are adjacent to\nan enemy hero, you may **Choose one —**\n>>Place a friendly minion in radius into a\n>space adjacent to that enemy hero.\n>>Place an enemy minion in radius into a\n>space adjacent to you.",
          "color":"GREEN",
          "level":2,
          "variant":{
@@ -4795,8 +4815,7 @@
          "primaryValue":2,
          "modifier":"AREA",
          "modifierValue":3,
-         "secondaryMovement":1,
-         "secondaryDefense":2,
+         "secondaryDefense":4,
          "item":"ATTACK"
       },
       {
@@ -4850,7 +4869,7 @@
       },
       {
          "name":"Grand Melee",
-         "description":"After movement, if you are adjacent to\nan enemy hero, you may **Choose one —**\n>> Place a friendly minion in radius into a\n>space adjacent to that enemy hero.\n>> Place an enemy minion in radius into a\n>space adjacent to you.",
+         "description":"After movement, if you are adjacent to\nan enemy hero, you may **Choose one —**\n>>Place a friendly minion in radius into a\n>space adjacent to that enemy hero.\n>>Place an enemy minion in radius into a\n>space adjacent to you.",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -4926,6 +4945,8 @@
          "initiative":9,
          "primaryAction":"ATTACK",
          "primaryValue":6,
+         "modifier":"AREA",
+         "modifierValue":3,
          "secondaryMovement":4,
          "secondaryDefense":7,
          "item":"RANGE"
@@ -4942,17 +4963,11 @@
          "initiative":9,
          "primaryAction":"ATTACK",
          "primaryValue":7,
+         "modifier":"AREA",
+         "modifierValue":4,
          "secondaryMovement":4,
          "secondaryDefense":8,
          "item":"DEFENSE"
-      },
-      {
-         "name":"Fabled Lance",
-         "description":"All of your attack actions gain the \"Ranged\"\nsubtype, target a unit in range, and count\nas having a printed ::range_purple:: Range value of 2.",
-         "color":"PURPLE",
-         "level":4,
-         "modifier":"RANGE",
-         "modifierValue":2
       }
    ],
    "sabina":[
@@ -5259,7 +5274,7 @@
       },
       {
          "name":"Keep the Distance",
-         "description":"Target a hero at maximum range.\nAfter the attack: If able, you may\nfast travel up to an adjacent zone.",
+         "description":"Target a hero at maximum range.\nAfter the attack: If able, you may\nfast travel to an adjacent zone.",
          "color":"GOLD",
          "handicapped":true,
          "initiative":11,
@@ -5300,7 +5315,7 @@
       },
       {
          "name":"Snap Shot",
-         "description":"**Choose one —**\n>>Target a unit in range, which is not\nadjacent to any other unit.\n>>Target a hero adjacent to you.",
+         "description":"**Choose one —**\n>>Target a unit in range, which is not\n>adjacent to any other unit.\n>>Target a hero adjacent to you.",
          "color":"RED",
          "level":1,
          "initiative":9,
@@ -5595,7 +5610,7 @@
          "color":"GREEN",
          "level":1,
          "initiative":5,
-         "primaryAction":"SKILL",
+         "primaryAction":"DEFENSE",
          "primaryValueSign":"EXCLAMATION",
          "secondaryMovement":2
       },
@@ -6124,7 +6139,8 @@
          "color":"SILVER",
          "handicapped":true,
          "initiative":5,
-         "primaryAction":"DEFENSE"
+         "primaryAction":"DEFENSE",
+         "primaryValueSign":"EXCLAMATION"
       },
       {
          "name":"Set an Example",
@@ -6217,7 +6233,7 @@
       },
       {
          "name":"Blade Helix",
-         "description":"Target a unit adjacent to you.\nAfter the attack: **This turn:** Empty spaces in\nradius to you count as obstacles for enemy units.",
+         "description":"Target a unit adjacent to you.\nAfter the attack: **This turn:** Empty spaces in\nradius count as obstacles for enemy units.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -6926,12 +6942,10 @@
    "trinkets":[
       {
          "name":"Rapid Redeployment",
-         "description":"**Choose one —**\n>>You may remove the turret. Move up to\n>3 spaces and place the Turret into an\n>adjacent space. It counts as terrain.\n>>An enemy hero in range of both you and\n>the Turret discards a card, if able.\n>>Defeat an enemy minion in range of both\n>you and the Turret.",
+         "description":"**Choose one —**\n>>Move up to 3 spaces and place the\n>Turret into a space adjacent to you;\n>it counts as an obstacle.\n>>Defeat a minion adjacent to you.",
          "color":"GOLD",
          "initiative":12,
          "primaryAction":"SKILL",
-         "modifier":"RANGE",
-         "modifierValue":2,
          "secondaryMovement":4,
          "secondaryDefense":1
       },
@@ -6947,7 +6961,7 @@
       },
       {
          "name":"Salvage Parts",
-         "description":"**Choose one —**\n>>Place the Turret into an adjacent space.\n>It counts as terrain.\n>>Remove the Turret. If you do, move\n>up to 3 spaces.",
+         "description":"**Choose one —**\n>>Place the Turret into a space adjacent\n>to you; it counts as an obstacle.\n>>Remove the Turret; move up to 3 spaces.\n>>Remove the Turret; you may retrieve a\n>discarded card.",
          "color":"SILVER",
          "initiative":5,
          "primaryAction":"SKILL",
@@ -6955,13 +6969,13 @@
       },
       {
          "name":"Unlimited Firepower",
-         "description":"Whenever you perform an action, barrier\ntokens and friendly minions count as a Turret.",
+         "description":"Gain +1 ::range_silver:: Range and +1 ::radius_silver:: Radius.",
          "color":"PURPLE",
          "level":4
       },
       {
          "name":"Disruptor Jolt",
-         "description":"**This turn:** Enemy heroes in radius of the\nTurret cannot perform non-basic skills.",
+         "description":"**This turn:** Before any enemy hero in radius\nof the Turret performs a primary action,\nthat hero discards a card, if able;\nif they discard a card, deactivate this effect.",
          "color":"BLUE",
          "level":1,
          "initiative":10,
@@ -6973,32 +6987,33 @@
       },
       {
          "name":"Makeshift Minigun",
-         "description":"Target a unit in range of both you and the\nTurret. After the attack: **Next turn:**\nGain +1 ::range_red:: Range if you target a hero.",
+         "description":"Target a unit in range of both you and the\nTurret. If the target is in a straight line from\nyou, and in a straight line from the Turret,\ngain +2 ::attack_red:: Attack.",
          "color":"RED",
          "level":1,
          "initiative":8,
          "primaryAction":"ATTACK",
          "primaryValue":3,
+         "primaryValueSign":"PLUS",
          "modifier":"RANGE",
          "modifierValue":2,
          "secondaryMovement":4,
-         "secondaryDefense":4
+         "secondaryDefense":5
       },
       {
          "name":"Early Prototype",
-         "description":"Swap yourself, a friendly unit, or a token,\nin radius of the Turret, with the Turret.",
+         "description":"If you are in radius of the Turret, swap with\na unit or a token in radius of the Turret,\nthen remove the Turret.",
          "color":"GREEN",
          "level":1,
          "initiative":3,
          "primaryAction":"SKILL",
          "modifier":"AREA",
          "modifierValue":2,
-         "secondaryMovement":3,
+         "secondaryMovement":2,
          "secondaryDefense":2
       },
       {
          "name":"Disruptor Pulse",
-         "description":"Cancel skills with active effects of enemies in\nradius of the Turret. **This turn:** Enemy heroes\nin radius of the Turret cannot perform skills.",
+         "description":"**This turn:** Before any enemy hero in radius\nof the Turret performs a primary action,\nthat hero discards a card, if able;\nif they discard a card, deactivate this effect.",
          "color":"BLUE",
          "level":2,
          "variant":{
@@ -7008,14 +7023,14 @@
          "initiative":10,
          "primaryAction":"SKILL",
          "modifier":"AREA",
-         "modifierValue":3,
+         "modifierValue":4,
          "secondaryMovement":3,
          "secondaryDefense":4,
-         "item":"DEFENSE"
+         "item":"ATTACK"
       },
       {
          "name":"Gatling Gun",
-         "description":"Target a unit in range of both you and the\nTurret. After the attack: **Next turn:**\nGain +1 ::range_red:: Range; if you target a hero\nwith no cards in their hand with your\nbasic skill, defeat that hero, instead.",
+         "description":"Target a unit in range of both you and the\nTurret. If the target is in a straight line from\nyou, and in a straight line from the Turret,\ngain +2 ::attack_red:: Attack.",
          "color":"RED",
          "level":2,
          "variant":{
@@ -7025,15 +7040,16 @@
          "initiative":9,
          "primaryAction":"ATTACK",
          "primaryValue":3,
+         "primaryValueSign":"PLUS",
          "modifier":"RANGE",
          "modifierValue":3,
          "secondaryMovement":4,
-         "secondaryDefense":5,
+         "secondaryDefense":6,
          "item":"DEFENSE"
       },
       {
          "name":"Updated Design",
-         "description":"Swap yourself, a friendly unit, or a token,\nin radius of the Turret, with the Turret.",
+         "description":"If you are in radius of the Turret, swap with\na unit or a token in radius of the Turret.",
          "color":"GREEN",
          "level":2,
          "variant":{
@@ -7043,14 +7059,14 @@
          "initiative":3,
          "primaryAction":"SKILL",
          "modifier":"AREA",
-         "modifierValue":3,
-         "secondaryMovement":3,
+         "modifierValue":2,
+         "secondaryMovement":2,
          "secondaryDefense":2,
          "item":"ATTACK"
       },
       {
          "name":"Deployable Barrier",
-         "description":"Place up to 2 ::token_barrier:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
+         "description":"Place up to 2 ::token_barrier:: Barrier tokens in radius, with\nat least one of them adjacent to the Turret;\nyou and friendly heroes gain +1 ::defense_silver:: Defense\nfor each Barrier token they are adjacent to.",
          "color":"BLUE",
          "level":2,
          "variant":{
@@ -7063,11 +7079,11 @@
          "modifierValue":3,
          "secondaryMovement":3,
          "secondaryDefense":4,
-         "item":"ATTACK"
+         "item":"INITIATIVE"
       },
       {
          "name":"Steam Discharge",
-         "description":"Target a unit in range of both you and the\nTurret. After the attack: One other enemy\nhero in range of you and adjacent to the\nTurret discards a card, if able.",
+         "description":"Target a unit in range adjacent to the Turret.\nMay repeat once on a different enemy unit.",
          "color":"RED",
          "level":2,
          "variant":{
@@ -7078,31 +7094,31 @@
          "primaryAction":"ATTACK",
          "primaryValue":4,
          "modifier":"RANGE",
-         "modifierValue":3,
+         "modifierValue":4,
          "secondaryMovement":4,
          "secondaryDefense":6,
          "item":"INITIATIVE"
       },
       {
          "name":"Self-Destruct",
-         "description":"Enemy heroes in radius of the Turret discard\na card, if able. Remove the Turret.",
+         "description":"Up to two enemy heroes in radius of the Turret\ndiscard a card, if able. Remove the Turret.",
          "color":"GREEN",
          "level":2,
          "variant":{
             "first":2,
             "second":2
          },
-         "initiative":4,
+         "initiative":3,
          "primaryAction":"SKILL",
          "modifier":"AREA",
          "modifierValue":3,
          "secondaryMovement":3,
          "secondaryDefense":2,
-         "item":"INITIATIVE"
+         "item":"DEFENSE"
       },
       {
          "name":"Disruptor Grid",
-         "description":"Cancel skills with active effects of\nenemies in radius of the Turret.\n**This turn and next turn:** Enemies in\nradius of the Turret cannot perform skills.",
+         "description":"**This turn:** Before any enemy hero in radius\nof the Turret performs a primary action,\nthat hero discards a card, or is defeated;\nif they discard a card, deactivate this effect.",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -7112,14 +7128,14 @@
          "initiative":11,
          "primaryAction":"SKILL",
          "modifier":"AREA",
-         "modifierValue":3,
+         "modifierValue":4,
          "secondaryMovement":3,
          "secondaryDefense":4,
-         "item":"DEFENSE"
+         "item":"MOVEMENT"
       },
       {
          "name":"Supercharged Cannon",
-         "description":"Target a unit in range of both you and the\nTurret. After the attack: **Next turn:**\nGain +2 ::range_red:: Range; if you target a hero\nwith no cards in their hand with your\nbasic skill, defeat that hero, instead.",
+         "description":"Target a unit in range of both you and the\nTurret. If the target is in a straight line from\nyou, and in a straight line from the Turret,\ngain +3 ::attack_red:: Attack.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -7129,15 +7145,16 @@
          "initiative":9,
          "primaryAction":"ATTACK",
          "primaryValue":4,
+         "primaryValueSign":"PLUS",
          "modifier":"RANGE",
          "modifierValue":3,
          "secondaryMovement":4,
-         "secondaryDefense":5,
-         "item":"AREA"
+         "secondaryDefense":6,
+         "item":"DEFENSE"
       },
       {
          "name":"Perfected Design",
-         "description":"Swap yourself, any unit, or a token,\nin radius of the Turret, with the Turret.",
+         "description":"If you are in radius of the Turret,\n**Choose one —**\n>>Swap with a unit or a token in radius\n>of the Turret.\n>>Place yourself into a space in radius\n>of the Turret.",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -7147,14 +7164,14 @@
          "initiative":2,
          "primaryAction":"SKILL",
          "modifier":"AREA",
-         "modifierValue":3,
-         "secondaryMovement":3,
+         "modifierValue":2,
+         "secondaryMovement":2,
          "secondaryDefense":3,
          "item":"ATTACK"
       },
       {
          "name":"Deployable Bastion",
-         "description":"Place up to 3 ::token_barrier:: barrier tokens in radius of\nthe Turret and adjacent to another barrier\ntoken, if able. You and friendly heroes gain\n+1 ::defense_silver:: Defense for each adjacent barrier token.",
+         "description":"Place up to 3 ::token_barrier:: Barrier tokens in radius, with\nat least one of them adjacent to the Turret;\nyou and friendly heroes gain +1 ::defense_silver:: Defense\nfor each Barrier token they are adjacent to.",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -7171,7 +7188,7 @@
       },
       {
          "name":"Flame Belcher",
-         "description":"Target a unit in range of both you and the\nTurret. After the attack: One other enemy\nhero in range of both you and the Turret\ndiscards a card, if able.",
+         "description":"Target a unit in range adjacent to the Turret.\nMay repeat up to two times on\ndifferent enemy units.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -7182,14 +7199,14 @@
          "primaryAction":"ATTACK",
          "primaryValue":5,
          "modifier":"RANGE",
-         "modifierValue":3,
+         "modifierValue":4,
          "secondaryMovement":4,
          "secondaryDefense":6,
-         "item":"MOVEMENT"
+         "item":"AREA"
       },
       {
          "name":"Emergency Protocol",
-         "description":"Enemy heroes in radius of the Turret discard\na card, or are defeated. Remove the Turret.",
+         "description":"Up to two enemy heroes in radius of the\nTurret discard a card, or are defeated.\nRemove the Turret.",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -7200,7 +7217,7 @@
          "primaryAction":"SKILL",
          "modifier":"AREA",
          "modifierValue":3,
-         "secondaryMovement":3,
+         "secondaryMovement":2,
          "secondaryDefense":3,
          "item":"RANGE"
       }
@@ -7457,7 +7474,7 @@
       },
       {
          "name":"Evolutionary Response",
-         "description":"If enraged, **choose one, or both —**\n>> Perform the primary action on one\n>of your discarded cards.\n>> You may retrieve a discarded card.",
+         "description":"If enraged, **choose one, or both —**\n>>Perform the primary action on one\n>of your discarded cards.\n>>You may retrieve a discarded card.",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -7535,6 +7552,8 @@
          "initiative":8,
          "primaryAction":"ATTACK",
          "primaryValue":5,
+         "modifier":"AREA",
+         "modifierValue":2,
          "secondaryMovement":4,
          "secondaryDefense":6
       },
@@ -7598,7 +7617,7 @@
          "modifier":"RANGE",
          "modifierValue":3,
          "secondaryMovement":2,
-         "item":"ATTACK"
+         "item":"INITIATIVE"
       },
       {
          "name":"Kinetic Repulse",
@@ -7990,7 +8009,7 @@
       },
       {
          "name":"Greater Good",
-         "description":"An enemy hero in range **chooses one —**\n>>That hero discards a card, or is defeated.\n>>You may defeat up to 3 minions adjacent to you.",
+         "description":"An enemy hero in range **chooses one —**\n>>That hero discards a card, or is defeated.\n>>You defeat up to 3 minions adjacent to you.",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -8318,13 +8337,13 @@
    "wuk":[
       {
          "name":"Tree Slam",
-         "description":"If you are adjacent to a tree token, target\na unit in range, otherwise, target a minion\nadjacent to you. After the attack:\nIf the target was adjacent to you, move it\n1 space to a space adjacent to you, if able.",
+         "description":"**Choose one —**\n>>Target a minion adjacent to you.\n>>Remove a ::token_tree:: Tree token adjacent to you.\n>Target a unit in range.",
          "color":"GOLD",
          "initiative":11,
          "primaryAction":"ATTACK",
          "primaryValue":4,
          "modifier":"RANGE",
-         "modifierValue":1,
+         "modifierValue":2,
          "secondaryMovement":1,
          "secondaryDefense":3
       },
@@ -8343,33 +8362,37 @@
       },
       {
          "name":"Mystic Saplings",
-         "description":"Place up to 3 ::token_tree:: tree tokens in radius, not\nadjacent to a tree token. Heroes may move\nthrough a space with a tree token. Do not\nremove the tree tokens at the end of round.",
+         "description":"Place up to 3 ::token_tree:: Tree tokens in radius; Tree\ntokens are not removed at the end of round.",
          "color":"SILVER",
          "initiative":4,
          "primaryAction":"SKILL",
          "modifier":"AREA",
          "modifierValue":3,
-         "secondaryDefense":3
+         "secondaryDefense":4
       },
       {
          "name":"March of Nature",
-         "description":"Adjacent Tree tokens in a battle zone count as\nmelee minions immune to ranged attacks.",
+         "description":"Each time after you resolve a card, you\nmay place a ::token_tree:: Tree token in radius.",
          "color":"PURPLE",
-         "level":4
+         "level":4,
+         "modifier":"AREA",
+         "modifierValue":3
       },
       {
          "name":"Gifts of Nature",
-         "description":"If you are adjacent to a tree, you\nmay retrieve a discarded card.",
+         "description":"Remove a ::token_tree:: Tree token in radius.\nYou may retrieve a discarded card.",
          "color":"BLUE",
          "level":1,
          "initiative":8,
          "primaryAction":"SKILL",
-         "secondaryMovement":3,
-         "secondaryDefense":6
+         "modifier":"AREA",
+         "modifierValue":3,
+         "secondaryMovement":2,
+         "secondaryDefense":5
       },
       {
          "name":"Nature's Protector",
-         "description":"Target a unit in range, adjacent to a tree token.",
+         "description":"**Choose one —**\n>>Target a hero adjacent to you.\n>>Target a unit in range adjacent\nto a ::token_tree:: Tree token.",
          "color":"RED",
          "level":1,
          "initiative":7,
@@ -8377,24 +8400,24 @@
          "primaryValue":5,
          "modifier":"RANGE",
          "modifierValue":2,
-         "secondaryMovement":3,
+         "secondaryMovement":4,
          "secondaryDefense":7
       },
       {
          "name":"Toss Away",
-         "description":"Move up to 1 space. Push an adjacent token\nup to 3 spaces. If the token is pushed 2 or\nmore spaces, an enemy hero adjacent to\nthat token discards a card, if able.",
+         "description":"Place a token, or an enemy unit,\nadjacent to you into a space in range.",
          "color":"GREEN",
          "level":1,
-         "initiative":4,
+         "initiative":6,
          "primaryAction":"SKILL",
          "modifier":"RANGE",
-         "modifierValue":2,
+         "modifierValue":3,
          "secondaryMovement":2,
-         "secondaryDefense":3
+         "secondaryDefense":4
       },
       {
          "name":"Tree of Plenty",
-         "description":"Either you, or a hero in radius, may\nretrieve a discarded card if either\nof you are adjacent to a tree.",
+         "description":"Remove a ::token_tree:: Tree token in radius.\n**Choose one —**\n>>You may retrieve a discarded card.\n>>A friendly hero in radius may retrieve a\n>discarded card.",
          "color":"BLUE",
          "level":2,
          "variant":{
@@ -8405,13 +8428,13 @@
          "primaryAction":"SKILL",
          "modifier":"AREA",
          "modifierValue":4,
-         "secondaryMovement":3,
+         "secondaryMovement":2,
          "secondaryDefense":6,
-         "item":"DEFENSE"
+         "item":"ATTACK"
       },
       {
          "name":"Nature's Guardian",
-         "description":"Target a unit in range, adjacent to a tree token.",
+         "description":"**Choose one —**\n>>Target a hero adjacent to you.\n>>Target a unit in range adjacent\nto a ::token_tree:: Tree token.",
          "color":"RED",
          "level":2,
          "variant":{
@@ -8423,13 +8446,13 @@
          "primaryValue":5,
          "modifier":"RANGE",
          "modifierValue":3,
-         "secondaryMovement":3,
-         "secondaryDefense":7,
+         "secondaryMovement":4,
+         "secondaryDefense":8,
          "item":"INITIATIVE"
       },
       {
          "name":"Mighty Throw",
-         "description":"Move up to 1 space. Push an adjacent token\nor a minion up to 4 spaces. If it is pushed 2 or\nmore spaces, an enemy hero adjacent to that\ntoken or a minion discards a card, if able.",
+         "description":"Place a token, or an enemy unit,\nadjacent to you into a space in range.",
          "color":"GREEN",
          "level":2,
          "variant":{
@@ -8438,13 +8461,15 @@
          },
          "initiative":5,
          "primaryAction":"SKILL",
+         "modifier":"RANGE",
+         "modifierValue":3,
          "secondaryMovement":2,
          "secondaryDefense":4,
          "item":"ATTACK"
       },
       {
          "name":"Claim Dominance",
-         "description":"**This round:** Up to 1 adjacent non-immune\nenemy minion does not count towards the\nminion total during minion battle.",
+         "description":"**This round:** Up to 1 enemy minion adjacent\nto you does not count towards the minion total\nduring minion battle, regardless of immunity.",
          "color":"BLUE",
          "level":2,
          "variant":{
@@ -8453,13 +8478,13 @@
          },
          "initiative":9,
          "primaryAction":"SKILL",
-         "secondaryMovement":3,
+         "secondaryMovement":2,
          "secondaryDefense":6,
-         "item":"ATTACK"
+         "item":"INITIATIVE"
       },
       {
          "name":"Trample",
-         "description":"If you move in a straight line: You may ignore\nunits; if you moved through an enemy hero,\nthat hero discards a card, or is defeated;\ndefeat up to 1 minion you moved through.",
+         "description":"If you move in a straight line: You may ignore\nobstacles; each enemy hero you moved\nthrough discards a card, or is defeated;\ndefeat up to one minion you moved through.",
          "color":"RED",
          "level":2,
          "variant":{
@@ -8474,7 +8499,7 @@
       },
       {
          "name":"Into the Canopy",
-         "description":"Swap places with a tree token in radius.\nYou may then place a minion adjacent to\nthat tree token into a space adjacent to you.",
+         "description":"**Choose one —**\n>>Swap with a ::token_tree:: Tree token in radius.\n>>Swap a friendly unit in radius with\n>a Tree token in radius.",
          "color":"GREEN",
          "level":2,
          "variant":{
@@ -8484,14 +8509,14 @@
          "initiative":5,
          "primaryAction":"SKILL",
          "modifier":"AREA",
-         "modifierValue":4,
+         "modifierValue":2,
          "secondaryMovement":2,
          "secondaryDefense":4,
-         "item":"INITIATIVE"
+         "item":"DEFENSE"
       },
       {
          "name":"Abundance",
-         "description":"Both you and a friendly hero in radius\nmay retrieve a discarded card if either\nof you are adjacent to a tree.",
+         "description":"Remove a ::token_tree:: Tree token in radius.\n**Choose one or both —**\n>>You may retrieve a discarded card.\n>>A friendly hero in radius may retrieve a\n>discarded card.",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -8502,13 +8527,13 @@
          "primaryAction":"SKILL",
          "modifier":"AREA",
          "modifierValue":4,
-         "secondaryMovement":3,
-         "secondaryDefense":7,
+         "secondaryMovement":2,
+         "secondaryDefense":6,
          "item":"RANGE"
       },
       {
          "name":"Nature's Champion",
-         "description":"Target a unit in range, adjacent to a tree token.\nMay repeat once, targeting a different hero.",
+         "description":"**Choose one, or both,** on different targets **—**\n>>Target a hero adjacent to you.\n>>Target a unit in range adjacent to\na ::token_tree:: Tree token.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -8520,13 +8545,13 @@
          "primaryValue":6,
          "modifier":"RANGE",
          "modifierValue":3,
-         "secondaryMovement":3,
+         "secondaryMovement":4,
          "secondaryDefense":8,
          "item":"INITIATIVE"
       },
       {
          "name":"Monstrous Throw",
-         "description":"Move up to 1 space. Push an adjacent unit\nor a token up to 5 spaces. If it is pushed 2\nor more spaces, an enemy hero adjacent to\nthat unit or token discards a card, if able.",
+         "description":"Place a token, or an enemy unit,\nadjacent to you into a space in range.\nMay repeat once.",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -8535,13 +8560,15 @@
          },
          "initiative":5,
          "primaryAction":"SKILL",
+         "modifier":"RANGE",
+         "modifierValue":4,
          "secondaryMovement":2,
-         "secondaryDefense":4,
-         "item":"MOVEMENT"
+         "secondaryDefense":5,
+         "item":"ATTACK"
       },
       {
          "name":"Assert Dominance",
-         "description":"**This round:** Up to 2 adjacent enemy minion\ndo not count towards the minion total during\nminion battle, regardless of immunity.",
+         "description":"**This round:** Up to 1 enemy minion adjacent\nto you does not count towards the minion total\nduring minion battle, regardless of immunity.",
          "color":"BLUE",
          "level":3,
          "variant":{
@@ -8550,13 +8577,13 @@
          },
          "initiative":9,
          "primaryAction":"SKILL",
-         "secondaryMovement":3,
-         "secondaryDefense":7,
-         "item":"ATTACK"
+         "secondaryMovement":2,
+         "secondaryDefense":6,
+         "item":"MOVEMENT"
       },
       {
          "name":"Angry Stampede",
-         "description":"If you move in a straight line: You may ignore\nunits; if you moved through an enemy hero,\nthat hero discards a card, or is defeated;\ndefeat up to 2 minion you moved through.",
+         "description":"If you move in a straight line: You may ignore\nobstacles; each enemy hero you moved\nthrough discards a card, or is defeated;\ndefeat up to two minions you moved through.",
          "color":"RED",
          "level":3,
          "variant":{
@@ -8566,12 +8593,12 @@
          "initiative":8,
          "primaryAction":"MOVEMENT",
          "primaryValue":4,
-         "secondaryDefense":8,
+         "secondaryDefense":7,
          "item":"AREA"
       },
       {
          "name":"Treetop Ride",
-         "description":"Swap places with a tree token in radius.\nYou may then place a minion adjacent to that\ntree token into a space adjacent to you.",
+         "description":"**Choose up to two times —**\n>>Swap with a ::token_tree:: Tree token in radius.\n>>Swap a friendly unit in radius with\n>a Tree token in radius.",
          "color":"GREEN",
          "level":3,
          "variant":{
@@ -8579,11 +8606,11 @@
             "second":2
          },
          "initiative":5,
-         "primaryAction":"DEFENSE_SKILL",
-         "primaryValue":4,
+         "primaryAction":"SKILL",
          "modifier":"AREA",
-         "modifierValue":4,
+         "modifierValue":2,
          "secondaryMovement":2,
+         "secondaryDefense":5,
          "item":"DEFENSE"
       }
    ],
@@ -8741,6 +8768,7 @@
          "primaryValue":3,
          "modifier":"RANGE",
          "modifierValue":1,
+         "modifierValueSign":"PLUS",
          "secondaryMovement":4,
          "secondaryDefense":4,
          "item":"DEFENSE"
