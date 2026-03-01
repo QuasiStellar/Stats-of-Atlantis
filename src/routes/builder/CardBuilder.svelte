@@ -1579,6 +1579,9 @@
             <Kbd class="px-1 py-0 text-white bg-dark-700 border-dark-600">~italic</Kbd> - use this for notes at the
             bottom (only works at the start of the line)
             <br>
+            <Kbd class="px-1 py-0 text-white bg-dark-700 border-dark-600">~italic~</Kbd> - use this for inline notes
+            when absolutely required
+            <br>
             <Kbd class="px-1 py-0 text-white bg-dark-700 border-dark-600">>>List option</Kbd> - use this after "Choose
             one:" or similar conditions (only works at the start of the line)
             <br>

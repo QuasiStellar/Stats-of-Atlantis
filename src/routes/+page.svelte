@@ -19,47 +19,60 @@
 	const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
 	const traitImageModules = import.meta.glob("../lib/images/trait_*.png", { eager: true, import: "default" }) as Record<string, string>
 
-	onMount(async () => {
-		const heroKeys = new Set([...Object.keys(oldHeroes), ...Object.keys(heroes)])
+	onMount(() => {
+		const updateViewportWidth = () => {
+			viewportWidth = window.innerWidth
+		}
+		updateViewportWidth()
+		window.addEventListener("resize", updateViewportWidth)
+		void (async () => {
+			const heroKeys = new Set([...Object.keys(oldHeroes), ...Object.keys(heroes)])
 
-		for (const hero of heroKeys) {
-			try {
-				const path = (await import(`../lib/images/avatars/${hero}.webp`)).default
-				heroImages.set(hero, path)
-				const image = new Image()
-				image.src = path
-				heroImageLoadingPromises.set(hero, new Promise(resolve => image.onload = (a) => {
-					return resolve(a)
-				}))
-			} catch {
-				heroImages.set(hero, emptyImage)
+			for (const hero of heroKeys) {
+				try {
+					const path = (await import(`../lib/images/avatars/${hero}.webp`)).default
+					heroImages.set(hero, path)
+					const image = new Image()
+					image.src = path
+					heroImageLoadingPromises.set(hero, new Promise(resolve => image.onload = (a) => {
+						return resolve(a)
+					}))
+				} catch {
+					heroImages.set(hero, emptyImage)
+				}
 			}
-		}
-		heroImages = heroImages
+			heroImages = heroImages
 
-		for (const hero of heroKeys) {
-			try {
-				logoImages.set(hero, (await import(`../lib/images/logos/${hero}.png`)).default)
-			} catch {
-				logoImages.set(hero, emptyImage)
+			for (const hero of heroKeys) {
+				try {
+					logoImages.set(hero, (await import(`../lib/images/logos/${hero}.png`)).default)
+				} catch {
+					logoImages.set(hero, emptyImage)
+				}
 			}
-		}
-		logoImages = logoImages
+			logoImages = logoImages
 
-		for (const stat of stats) {
-			statImages.set(stat, (await import(`../lib/images/stat_icons/${stat}_white.png`)).default)
+			for (const stat of stats) {
+				statImages.set(stat, (await import(`../lib/images/stat_icons/${stat}_white.png`)).default)
+			}
+			statImages = statImages
+		})()
+
+		return () => {
+			window.removeEventListener("resize", updateViewportWidth)
 		}
-		statImages = statImages
 	})
 
 	let useNewPrinting = true
 	let sortIndex: number | null = null
+	let viewportWidth = 1024
 	let heroList: Array<[string, typeof heroes[keyof typeof heroes] | typeof oldHeroes[keyof typeof oldHeroes]]> = []
 	const newPrintingStats = stats.slice(0, 4)
 	$: activeStats = useNewPrinting ? newPrintingStats : stats
 
 	if (browser) {
 		useNewPrinting = $page.url.searchParams.get("printing") !== "old"
+		viewportWidth = window.innerWidth
 	}
 
 	const sortParam = browser ? $page.url.searchParams.get("sort") : null
@@ -113,6 +126,40 @@
 
 	function getTraitLabel(trait: Trait) {
 		return trait.charAt(0).toUpperCase() + trait.slice(1)
+	}
+
+	function getResponsiveTraitLayout(width: number) {
+		if (width >= 768) {
+			return { threshold: 0.6, bannerWidth: 720, traitSlotWidth: 80 }
+		}
+		if (width >= 640) {
+			return { threshold: 0.4, bannerWidth: 560, traitSlotWidth: 64 }
+		}
+		if (width >= 420) {
+			return { threshold: 0.6, bannerWidth: 360, traitSlotWidth: 48 }
+		}
+		return { threshold: 0.5, bannerWidth: 300, traitSlotWidth: 40 }
+	}
+
+	function getTraitRows(heroTraits: Array<Trait>) {
+		if (heroTraits.length <= 1) {
+			return { top: [] as Array<Trait>, bottom: heroTraits }
+		}
+
+		const { threshold, bannerWidth, traitSlotWidth } = getResponsiveTraitLayout(viewportWidth)
+		const overlapPx = 8
+		const oneRowWidth = traitSlotWidth + (heroTraits.length - 1) * (traitSlotWidth - overlapPx)
+		const shouldWrap = oneRowWidth > bannerWidth * threshold
+
+		if (!shouldWrap) {
+			return { top: [] as Array<Trait>, bottom: heroTraits }
+		}
+
+		const splitIndex = Math.floor(heroTraits.length / 2)
+		return {
+			top: heroTraits.slice(0, splitIndex),
+			bottom: heroTraits.slice(splitIndex),
+		}
 	}
 
 	function setSearchParam(key: string, value: string | null) {
@@ -200,27 +247,53 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 						{#if useNewPrinting}
 							{@const heroTraits = getHeroTraits(desc)}
 							{#if heroTraits.length > 0}
-								<ul class="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 flex items-end -space-x-2 z-20">
-									{#each heroTraits as trait, traitIndex (traitIndex)}
-										<li class="w-12 sm:w-16 md:w-20">
-											<div class="relative mx-auto w-6 sm:w-10 md:w-12">
-												<div class="absolute inset-0 rounded-full trait-image-gradient" />
-												<img
-													src={getTraitImage(name, trait)}
-													class={`relative z-10 w-6 sm:w-10 md:w-12 ${trait === Trait.TOKENS ? "" : "trait-image-brightness"}`}
-													alt=""
-												/>
-											</div>
-											<div class="relative mt-0.5 sm:mt-1 h-2.5 sm:h-4 md:h-5">
-												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-												<p class="absolute text-black text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-												<p class="absolute text-white text-[7px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
-											</div>
-										</li>
-									{/each}
-								</ul>
+								{@const traitRows = getTraitRows(heroTraits)}
+								<div class="absolute bottom-1 sm:bottom-2 right-1 sm:right-2 flex flex-col items-end gap-y-0.5 sm:gap-y-1 z-20">
+									{#if traitRows.top.length > 0}
+										<ul class="flex items-end -space-x-2">
+											{#each traitRows.top as trait, traitIndex (traitIndex)}
+												<li class="w-10 xs:w-12 sm:w-16 md:w-20">
+													<div class="relative mx-auto w-5 xs:w-6 sm:w-10 md:w-12">
+														<div class="absolute inset-0 rounded-full trait-image-gradient" />
+														<img
+															src={getTraitImage(name, trait)}
+															class={`relative z-10 w-5 xs:w-6 sm:w-10 md:w-12 ${trait === Trait.TOKENS ? "" : "trait-image-brightness"}`}
+															alt=""
+														/>
+													</div>
+													<div class="relative mt-0.5 sm:mt-1 h-2 sm:h-4 md:h-5">
+														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+														<p class="absolute text-white text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													</div>
+												</li>
+											{/each}
+										</ul>
+									{/if}
+									<ul class="flex items-end -space-x-2">
+										{#each traitRows.bottom as trait, traitIndex (traitIndex)}
+											<li class="w-10 xs:w-12 sm:w-16 md:w-20">
+												<div class="relative mx-auto w-5 xs:w-6 sm:w-10 md:w-12">
+													<div class="absolute inset-0 rounded-full trait-image-gradient" />
+													<img
+														src={getTraitImage(name, trait)}
+														class={`relative z-10 w-5 xs:w-6 sm:w-10 md:w-12 ${trait === Trait.TOKENS ? "" : "trait-image-brightness"}`}
+														alt=""
+													/>
+												</div>
+												<div class="relative mt-0.5 sm:mt-1 h-2 sm:h-4 md:h-5">
+													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-black text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+													<p class="absolute text-white text-[6px] xs:text-[7px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-center font-modesto whitespace-nowrap">{getTraitLabel(trait)}</p>
+												</div>
+											</li>
+										{/each}
+									</ul>
+								</div>
 							{/if}
 						{/if}
 						<div class="absolute left-15 sm:left-28 top-0 sm:top-1">
