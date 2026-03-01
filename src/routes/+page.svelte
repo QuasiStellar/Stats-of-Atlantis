@@ -5,7 +5,7 @@
 	import { SortOutline } from "flowbite-svelte-icons"
 	import { goto } from "$app/navigation"
 	import { browser } from "$app/environment"
-	import { Trait, heroes, oldHeroes, stats } from "../states"
+	import { Pack, Trait, heroes, oldHeroes, stats } from "../states"
 	import { onMount } from "svelte"
 
 	import starImage from "$lib/images/star.png"
@@ -64,9 +64,17 @@
 	})
 
 	let useNewPrinting = true
+	let displayTraits = true
+	let showBaseGame = true
+	let showDevotedPack = true
+	let showRenownedPack = true
+	let showDefiantPack = true
+	let showArcanePack = true
+	let showWaywardPack = true
 	let sortIndex: number | null = null
 	let viewportWidth = 1024
 	let heroList: Array<[string, typeof heroes[keyof typeof heroes] | typeof oldHeroes[keyof typeof oldHeroes]]> = []
+	let filteredHeroList: Array<[string, typeof heroes[keyof typeof heroes] | typeof oldHeroes[keyof typeof oldHeroes]]> = []
 	const newPrintingStats = stats.slice(0, 4)
 	$: activeStats = useNewPrinting ? newPrintingStats : stats
 
@@ -93,6 +101,21 @@
 				return getStatRange(second[1], statIndex).max - getStatRange(first[1], statIndex).max
 			})
 		}
+	}
+
+	$: {
+		const packVisibility = {
+			base: showBaseGame,
+			devoted: showDevotedPack,
+			renowned: showRenownedPack,
+			defiant: showDefiantPack,
+			arcane: showArcanePack,
+			wayward: showWaywardPack,
+		}
+		filteredHeroList = heroList.filter(([name, desc]) => {
+			void packVisibility
+			return isPackVisible(name, desc)
+		})
 	}
 
 	function getStatRange(desc: { stats: Array<number | Array<number>> }, statIndex: number) {
@@ -126,6 +149,41 @@
 
 	function getTraitLabel(trait: Trait) {
 		return trait.charAt(0).toUpperCase() + trait.slice(1)
+	}
+
+	function getHeroPackName(name: string, desc: typeof heroes[keyof typeof heroes] | typeof oldHeroes[keyof typeof oldHeroes]) {
+		if ("pack" in desc) {
+			return desc.pack
+		}
+		const pack = heroes[name as keyof typeof heroes]?.pack
+		return pack ?? null
+	}
+
+	function isPackVisible(name: string, desc: typeof heroes[keyof typeof heroes] | typeof oldHeroes[keyof typeof oldHeroes]) {
+		const packName = getHeroPackName(name, desc)
+		if (packName == null) {
+			return true
+		}
+		switch (packName) {
+			case Pack.BASE:
+				return showBaseGame
+			case Pack.DEVOTED:
+				return showDevotedPack
+			case Pack.RENOWNED:
+				return showRenownedPack
+			case Pack.DEFIANT:
+				return showDefiantPack
+			case Pack.ARCANE:
+				return showArcanePack
+			case Pack.WAYWARD:
+				return showWaywardPack
+			default:
+				return true
+		}
+	}
+
+	function getPackLabel(packName: string) {
+		return packName.charAt(0) + packName.slice(1).toLowerCase()
 	}
 
 	function getResponsiveTraitLayout(width: number) {
@@ -207,14 +265,46 @@
 	<meta name="description" content="Guards of Atlantis II card builder and catalogue." />
 </svelte:head>
 bg-dark-700 hover:bg-dark-800 border-dark-600
-<div class="flex flex-col items-center md:mt-20 mt-16">
-	<label class="inline-flex items-center cursor-pointer mb-4 sm:mb-6 text-white text-sm sm:text-base">
-		<input type="checkbox" class="sr-only peer" bind:checked={useNewPrinting} />
-		<div class="relative w-11 h-6 bg-dark-700 peer-focus:outline-none rounded-full peer peer-checked:bg-amber-600 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
-		<span class="ml-3">New Printing</span>
-	</label>
+<div class="flex flex-col items-center md:mt-16 mt-16">
+	<div class="mb-4 sm:mb-6 flex flex-col gap-y-2 text-white text-sm sm:text-base xl:fixed xl:top-24 xl:left-[calc(50%+380px)] xl:z-30 xl:mb-0 xl:w-56 xl:rounded-lg xl:border xl:border-dark-600 xl:bg-dark-900/80 xl:p-4 xl:backdrop-blur-sm">
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="sr-only peer" bind:checked={useNewPrinting} />
+			<div class="relative w-11 h-6 bg-dark-700 peer-focus:outline-none rounded-full peer peer-checked:bg-amber-600 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+			<span class="ml-3">New Printing</span>
+		</label>
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="sr-only peer" bind:checked={displayTraits} />
+			<div class="relative w-11 h-6 bg-dark-700 peer-focus:outline-none rounded-full peer peer-checked:bg-amber-600 after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+			<span class="ml-3">Display traits</span>
+		</label>
+		<div class="h-px bg-dark-600 my-1" />
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="mr-2" bind:checked={showBaseGame} />
+			<span>Base game</span>
+		</label>
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="mr-2" bind:checked={showDevotedPack} />
+			<span>Devoted pack</span>
+		</label>
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="mr-2" bind:checked={showRenownedPack} />
+			<span>Renowned pack</span>
+		</label>
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="mr-2" bind:checked={showDefiantPack} />
+			<span>Defiant pack</span>
+		</label>
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="mr-2" bind:checked={showArcanePack} />
+			<span>Arcane pack</span>
+		</label>
+		<label class="inline-flex items-center cursor-pointer">
+			<input type="checkbox" class="mr-2" bind:checked={showWaywardPack} />
+			<span>Wayward pack</span>
+		</label>
+	</div>
 	<ul class="max-w-full m-auto">
-		{#each heroList as [name, desc] (name)}
+		{#each filteredHeroList as [name, desc] (name)}
 			<li class="px-3 py-1.5" animate:flip={{duration: 300}}>
 				<a href={useNewPrinting ? `/${name}` : `/${name}?printing=old`}>
 					<div class="border border-dark-600 rounded-lg sm:rounded-2xl relative w-[300px] xs:w-[360px] sm:w-[560px] md:w-[720px] h-[151px] xs:h-[181px] sm:h-[281px] md:h-[361px]">
@@ -244,7 +334,7 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 								<Tooltip triggeredBy="#{name}_{stat}" placement="left">{stat.charAt(0).toUpperCase() + stat.slice(1)}</Tooltip>
 							{/each}
 						</ul>
-						{#if useNewPrinting}
+						{#if useNewPrinting && displayTraits}
 							{@const heroTraits = getHeroTraits(desc)}
 							{#if heroTraits.length > 0}
 								{@const traitRows = getTraitRows(heroTraits)}
@@ -303,6 +393,18 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 							{/each}
 						</div>
 						<Img src={logoImages.get(name) ?? emptyImage} size="w-10 sm:w-20" class="absolute bottom-[3px] left-[5px]"/>
+						{#if getHeroPackName(name, desc) != null}
+							{@const packName = getHeroPackName(name, desc)}
+							<div class="absolute top-1 sm:top-2 right-1 sm:right-2 z-10">
+								<div class="relative h-1.5 xs:h-2 sm:h-4 md:h-5 w-16 xs:w-20 sm:w-28 md:w-32 text-right">
+									<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[1px] top-[1px] w-full text-right font-modesto whitespace-nowrap">{getPackLabel(packName)}</p>
+									<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[-1px] top-[-1px] w-full text-right font-modesto whitespace-nowrap">{getPackLabel(packName)}</p>
+									<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[-1px] top-[1px] w-full text-right font-modesto whitespace-nowrap">{getPackLabel(packName)}</p>
+									<p class="absolute text-black text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-[1px] top-[-1px] w-full text-right font-modesto whitespace-nowrap">{getPackLabel(packName)}</p>
+									<p class="absolute text-white text-[5px] xs:text-[6px] sm:text-[10px] md:text-xs left-0 top-0 w-full text-right font-modesto whitespace-nowrap">{getPackLabel(packName)}</p>
+								</div>
+							</div>
+						{/if}
 
 						<p class="absolute text-black text-lg sm:text-4xl bottom-[14px] sm:bottom-[34px] left-[40px] sm:left-[74px] font-modesto">{desc.name}</p>
 						<p class="absolute text-black text-xs sm:text-2xl bottom-[7px] sm:bottom-[12px] left-[39px] sm:left-[72px] font-modesto">{desc.title}</p>
