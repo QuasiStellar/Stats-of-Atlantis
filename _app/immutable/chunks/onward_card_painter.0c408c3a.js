@@ -1,4 +1,4 @@
-import{_ as t}from"./preload-helper.a4192956.js";import{_ as K,j as Z,k as X,l as Y}from"./states.1be2c94e.js";const J={name:"Akimo",fraction:"KURUMO",role:"SLAYER",title:"Blazing",range:"MELEE",abilityName:"Blade of the Everking",abilityDescription:`Akimo has +3 strength if he has BURN.
+import{_ as t}from"./preload-helper.a4192956.js";import{_ as K,j as Z,k as X,l as Y}from"./states.af20d078.js";const J={name:"Akimo",fraction:"KURUMO",role:"SLAYER",title:"Blazing",range:"MELEE",abilityName:"Blade of the Everking",abilityDescription:`Akimo has +3 strength if he has BURN.
 Action: Akimo gains BURN.`,upgradedAbilityName:"Champion of the Everking",upgradedAbilityDescription:`Akimo has +5 strength if he has BURN.
 Action: Akimo gains BURN.`,ultimate:{name:"Akimo's Oath",description:`~Attach to 1 nearby enemy hero.
 Double Akimo's strength while he is attacking the attached hero.`,isQuick:!0},zeroThreeCard:{name:"Scorching Dive",description:`Move to 1 ::target:: adjacent area.
