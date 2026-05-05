@@ -1,4 +1,4 @@
-import{v as Dt,S as yr,s as Zi,a as w,e as Vi,c as N,i as W,d as l,F as Xi,f as v,g as A,h as E,j as d,A as u,M as Mn,P as Wt,k as Le,X as gn,Y as qa,B as V,O as ga,Z as pr,_ as Lt,$ as Xt,a0 as kt,I as ft,K as yt,p as Z,l as Ri,m as bi,T as vn,o as hr,t as vr,n as Ar,Q as Er,V as gr}from"../chunks/scheduler.d5bf4467.js";import{n as Ir,l as Tr,S as Ni,i as Ci,a as j,g as Si,t as F,c as Mi,j as Aa,h as Zt,b as te,d as re,m as oe,e as se,p as An}from"../chunks/index.b4472927.js";import{_ as O}from"../chunks/preload-helper.a4192956.js";import{e as Ea,u as pt,a as Dr,h as mt,o as lt,_ as Rt,s as ct,C as ve,I as Sn,d as qt,V as bt,M as Lr,b as kr}from"../chunks/states.af20d078.js";import{g as Rr}from"../chunks/globals.7f7f1b26.js";import{i as br,a as Vr,b as Sr,u as Mr}from"../chunks/card_painter.e724ac15.js";import{f as wi}from"../chunks/index.c6f2435a.js";import{c as Jt,p as wr}from"../chunks/stores.13510f14.js";import{w as ht}from"../chunks/singletons.501ade12.js";import{C as En}from"../chunks/Checkbox.2b569c37.js";import{T as Qt}from"../chunks/Tooltip.4393f263.js";import{I as $t}from"../chunks/Img.a01fe4f7.js";import{H as Nr}from"../chunks/control.f5b05b5f.js";function Vt(n){return Object.prototype.toString.call(n)==="[object Date]"}function ut(n,i){if(n===i||n!==n)return()=>n;const e=typeof n;if(e!==typeof i||Array.isArray(n)!==Array.isArray(i))throw new Error("Cannot interpolate values of different type");if(Array.isArray(n)){const a=i.map((t,c)=>ut(n[c],t));return t=>a.map(c=>c(t))}if(e==="object"){if(!n||!i)throw new Error("Object cannot be null");if(Vt(n)&&Vt(i)){n=n.getTime(),i=i.getTime();const c=i-n;return m=>new Date(n+m*c)}const a=Object.keys(i),t={};return a.forEach(c=>{t[c]=ut(n[c],i[c])}),c=>{const m={};return a.forEach(o=>{m[o]=t[o](c)}),m}}if(e==="number"){const a=i-n;return t=>n+t*a}throw new Error(`Cannot interpolate ${e} values`)}function St(n,i={}){const e=ht(n);let a,t=n;function c(m,o){if(n==null)return e.set(n=m),Promise.resolve();t=m;let s=a,y=!1,{delay:h=0,duration:S=400,easing:K=yr,interpolate:C=ut}=Dt(Dt({},i),o);if(S===0)return s&&(s.abort(),s=null),e.set(n=t),Promise.resolve();const D=Ir()+h;let g;return a=Tr(I=>{if(I<D)return!0;y||(g=C(n,m),typeof S=="function"&&(S=S(n,m)),y=!0),s&&(s.abort(),s=null);const L=I-D;return L>S?(e.set(n=m),!1):(e.set(n=g(K(L/S))),!0)}),a.promise}return{set:c,update:(m,o)=>c(m(t,n),o),subscribe:e.subscribe}}const Cr=[{name:"Noble Blade",description:`Before the attack: You may move another
+import{v as Dt,S as yr,s as Zi,a as w,e as Vi,c as N,i as W,d as l,F as Xi,f as v,g as A,h as E,j as d,A as u,M as Mn,P as Wt,k as Le,a3 as gn,Z as qa,B as V,O as ga,a4 as pr,a5 as Lt,a6 as Xt,a7 as kt,I as ft,K as yt,p as Z,l as Ri,m as bi,T as vn,o as hr,t as vr,n as Ar,Q as Er,V as gr}from"../chunks/scheduler.13adf2cf.js";import{n as Ir,l as Tr,S as Ni,i as Ci,a as j,g as Si,t as F,c as Mi,j as Aa,h as Zt,b as te,d as re,m as oe,e as se,p as An}from"../chunks/index.1e204772.js";import{_ as O}from"../chunks/preload-helper.a4192956.js";import{e as Ea,u as pt,a as Dr,h as mt,o as lt,_ as Rt,s as ct,C as ve,I as Sn,d as qt,V as bt,M as Lr,b as kr}from"../chunks/states.a8ef42de.js";import{g as Rr}from"../chunks/globals.7f7f1b26.js";import{i as br,a as Vr,b as Sr,u as Mr}from"../chunks/card_painter.abc0e0d7.js";import{f as wi}from"../chunks/index.9f740b01.js";import{c as Jt,p as wr}from"../chunks/stores.25747a70.js";import{w as ht}from"../chunks/singletons.eeafdbfa.js";import{C as En}from"../chunks/Checkbox.4a4432c8.js";import{T as Qt}from"../chunks/Tooltip.1f005bba.js";import{I as $t}from"../chunks/Img.303d74e1.js";import{H as Nr}from"../chunks/control.f5b05b5f.js";function Vt(n){return Object.prototype.toString.call(n)==="[object Date]"}function ut(n,i){if(n===i||n!==n)return()=>n;const e=typeof n;if(e!==typeof i||Array.isArray(n)!==Array.isArray(i))throw new Error("Cannot interpolate values of different type");if(Array.isArray(n)){const a=i.map((t,c)=>ut(n[c],t));return t=>a.map(c=>c(t))}if(e==="object"){if(!n||!i)throw new Error("Object cannot be null");if(Vt(n)&&Vt(i)){n=n.getTime(),i=i.getTime();const c=i-n;return m=>new Date(n+m*c)}const a=Object.keys(i),t={};return a.forEach(c=>{t[c]=ut(n[c],i[c])}),c=>{const m={};return a.forEach(o=>{m[o]=t[o](c)}),m}}if(e==="number"){const a=i-n;return t=>n+t*a}throw new Error(`Cannot interpolate ${e} values`)}function St(n,i={}){const e=ht(n);let a,t=n;function c(m,o){if(n==null)return e.set(n=m),Promise.resolve();t=m;let s=a,y=!1,{delay:h=0,duration:S=400,easing:K=yr,interpolate:C=ut}=Dt(Dt({},i),o);if(S===0)return s&&(s.abort(),s=null),e.set(n=t),Promise.resolve();const D=Ir()+h;let g;return a=Tr(I=>{if(I<D)return!0;y||(g=C(n,m),typeof S=="function"&&(S=S(n,m)),y=!0),s&&(s.abort(),s=null);const L=I-D;return L>S?(e.set(n=m),!1):(e.set(n=g(K(L/S))),!0)}),a.promise}return{set:c,update:(m,o)=>c(m(t,n),o),subscribe:e.subscribe}}const Cr=[{name:"Noble Blade",description:`Before the attack: You may move another
 unit that is adjacent to the target 1 space.
 ~("Another unit" does not include you). `,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:1,secondaryDefense:2},{name:"Ceremonial Blade",description:`Cannot target minions.
 Before the attack: You may move a minion
@@ -1005,7 +1005,7 @@ that is adjacent to the target 1 space.`,color:"GOLD",handicapped:!0,initiative:
 perform skill actions, except on gold cards.
 ~(Skill ::skill_silver:: is an action type. Other action types are unaffected.)`,color:"SILVER",initiative:13,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryDefense:3},{name:"Living Tsunami",description:`Once per turn, before performing an
 Attack action, you may move 1 space.`,color:"PURPLE",level:4},{name:"Aspiring Duelist",description:`Ignore all minion defense modifiers.
-~(This includes your minions, as well as the enemy minions.)`,color:"BLUE",level:1,initiative:9,primaryAction:"DEFENSE",primaryValue:5,secondaryMovement:3},{name:"Dangerous Current",description:`Target a unit adjacent to you. Before the
+~(This includes your minions, as well as enemy minions.)`,color:"BLUE",level:1,initiative:9,primaryAction:"DEFENSE",primaryValue:5,secondaryMovement:3},{name:"Dangerous Current",description:`Target a unit adjacent to you. Before the
 attack: Up to 1 enemy hero in any of the
 2 spaces in a straight line directly behind
 the target discards a card, or is defeated.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:6,secondaryMovement:4,secondaryDefense:6},{name:"Liquid Leap",description:`Place yourself into a space in range
@@ -1013,10 +1013,10 @@ without a spawn point and not adjacent
 to an empty spawn point.`,color:"GREEN",level:1,initiative:4,primaryAction:"SKILL",modifier:"RANGE",modifierValue:2,secondaryMovement:2,secondaryDefense:3},{name:"Expert Duelist",description:`Ignore all minion defense modifiers.
 **This turn:** You are immune to attack actions
 of all enemy heroes, except this attacker.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"DEFENSE",primaryValue:6,secondaryMovement:3,item:"INITIATIVE"},{name:"Rogue Wave",description:`Target a unit in range.
-After the attack: You may an enemy
+After the attack: You may push an enemy
 unit adjacent to you up to 2 spaces.`,color:"RED",level:2,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:4,item:"DEFENSE"},{name:"Magical Current",description:`Place yourself into a space in range
 without a spawn point and not adjacent
-to an empty spawn point.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:4,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Slippery Ground",description:`**This turn:** Enemies heroes adjacent
+to an empty spawn point.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:4,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Slippery Ground",description:`**This turn:** Enemy heroes adjacent
 to you cannot fast travel, or move more
 than 1 space with a movement action.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"MOVEMENT",primaryValue:3,secondaryDefense:6,item:"ATTACK"},{name:"Raging Stream",description:`Target a unit adjacent to you. Before the
 attack: Up to 1 enemy hero in any of the
@@ -1029,29 +1029,29 @@ attack: Up to 1 enemy hero in any of the 5
 spaces in a straight line directly behind the
 target discards a card, or is defeated.
 May repeat once on a different unit.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:7,secondaryMovement:4,secondaryDefense:7,item:"INITIATIVE"},{name:"Stranger Tide",description:`Place yourself into a space in
-range without a spawn point.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"AREA"},{name:"Deluge",description:`**This turn:** Enemies in radius
+range without a spawn point.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"AREA"},{name:"Deluge",description:`**This turn:** Enemy heroes in radius
 cannot fast travel, or move more than
 1 space with a movement action.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"MOVEMENT",primaryValue:3,modifier:"AREA",modifierValue:1,secondaryDefense:6,item:"ATTACK"},{name:"Tidal Blast",description:`Target a unit in range.
 After the attack: You may push an enemy
-unit adjacent to you up to 3 spaces.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:4,item:"MOVEMENT"},{name:"Ebb and Flow",description:`Swap with aan enemy minion in range;
-if it was adjacent to you, may repeact once.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"DEFENSE"}],ao=[{name:"Dead or Alive",description:`Target a unit adjacent to you.
+unit adjacent to you up to 3 spaces.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:4,item:"MOVEMENT"},{name:"Ebb and Flow",description:`Swap with an enemy minion in range;
+if it was adjacent to you, may repeat once.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"DEFENSE"}],ao=[{name:"Dead or Alive",description:`Target a unit adjacent to you.
 After the attack: You may give an enemy
 hero in radius the ::marker_bounty:: Bounty marker.
 A hero with the Bounty marker spends
-1 additional ::life_counters:: life counter when defeated.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:2},{name:"Side Quest",description:`If you are adjacent to an enemy unit,
-give a hero in radius a ::marker_bounty:: Bounty marker.
+1 additional ::life_counters:: Life counter when defeated.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:2},{name:"Side Quest",description:`If you are adjacent to an enemy unit,
+give a hero in radius the ::marker_bounty:: Bounty marker.
 A hero with the Bounty marker spends
-1 additional ::life_counters:: life counter when defeated.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:1},{name:"Get over here!",description:`Target a unit or a token in range and in a
+1 additional ::life_counters:: Life counter when defeated.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:1},{name:"Get over here!",description:`Target a unit or a token in range and in a
 straight line, with no obstacles between you
-and the target. Move that target towards you
+and the target. Move the target towards you
 in a straight line, until you are adjacent.`,color:"SILVER",initiative:13,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryDefense:2},{name:"A Complicated Profession",description:`After you give a hero the ::marker_bounty:: Bounty marker,
-that hero discards a card.`,color:"PURPLE",level:4},{name:"A Game of Chance",description:`An enemy hero in radius with two or more
+that hero discards a card, if able.`,color:"PURPLE",level:4},{name:"A Game of Chance",description:`An enemy hero in radius with two or more
 cards in hand chooses one of those cards.
 Guess that card's color, then reveal it.
 If you guessed correctly, discard that card;
 otherwise you gain 1 coin.
 ~(You can only guess colors that could be in that player's hand.)`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:4},{name:"Light Crossbow",description:`Target a unit in range and in a straight line
-with no other units or terrain between you.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:5},{name:"Close Call",description:`If the hero in play has a ::marker_bounty:: Bounty marker,
+with no units or terrain between you.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:5},{name:"Close Call",description:`If a hero in play has a ::marker_bounty:: Bounty marker,
 block the attack and that hero
 gives the marker to you.
 ~(The marker's effect is applied to you.)`,color:"GREEN",level:1,initiative:4,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",secondaryMovement:2},{name:"Dead Man's Hand",description:`An enemy hero in radius with two or more
@@ -1059,7 +1059,7 @@ cards in hand chooses one of those cards.
 Guess that card's color, then reveal it.
 If you guessed correctly, discard that card;
 otherwise you gain 2 coins.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Heavy Crossbow",description:`Target a unit in range and in a straight line
-with no units or terrain between you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:3,secondaryMovement:4,secondaryDefense:5,item:"DEFENSE"},{name:"Narrow Escape",description:`If the hero in play has a ::marker_bounty:: Bounty marker,
+with no units or terrain between you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:3,secondaryMovement:4,secondaryDefense:5,item:"DEFENSE"},{name:"Narrow Escape",description:`If a hero in play has a ::marker_bounty:: Bounty marker,
 block the attack and retrieve the marker.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:4,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",secondaryMovement:2,item:"INITIATIVE"},{name:"Drinking Buddies",description:`You may have a hero in radius retrieve a
 discarded card. If they do, you may
 also retrieve a discarded card.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"ATTACK"},{name:"Hand Crossbow",description:`**Choose one —**
@@ -1071,7 +1071,7 @@ cards in hand chooses one of those cards.
 Guess that card's color, then reveal it.
 If you guessed correctly, discard that card;
 otherwise may repeat once or gain 2 coins.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"RANGE"},{name:"Arbalest",description:`Target a unit in range and in a straight line
-with no units or terrain between you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:6,modifier:"RANGE",modifierValue:4,secondaryMovement:4,secondaryDefense:6,item:"DEFENSE"},{name:"Perfect Getaway",description:`If the hero in play has a ::marker_bounty:: Bounty marker,
+with no units or terrain between you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:6,modifier:"RANGE",modifierValue:4,secondaryMovement:4,secondaryDefense:6,item:"DEFENSE"},{name:"Perfect Getaway",description:`If a hero in play has a ::marker_bounty:: Bounty marker,
 block the attack.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",secondaryMovement:2,item:"INITIATIVE"},{name:"Another One!",description:`You may have a hero in radius retrieve a
 discarded card. If they do, you may
 also retrieve a discarded card.
@@ -1101,34 +1101,34 @@ is defeated you may discard a silver card.
 If you do, the minion is not removed.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:5,item:"ATTACK"},{name:"Shield Bash",description:`An enemy hero adjacent to you who
 has played an attack card this turn
 discards a card, if able.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:6,item:"ATTACK"},{name:"Throwing Axe",description:`**Choose one —**
->>Target a hero adjacent to you.
+>>Target a unit adjacent to you.
 >>You may discard a card;
 if you do, target a unit in range.`,color:"RED",level:2,variant:{first:2,second:2},initiative:7,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:7,item:"DEFENSE"},{name:"War Drummer",description:`A friendly hero in range gains 1 coin;
 if any hero was defeated this round,
 that friendly hero gains 3 coins instead.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:5,item:"DEFENSE"},{name:"Savage Kick",description:`Move up to 2 spaces. Push an enemy unit
-or a token adjacent to you up to 2 spaces.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:6,item:"INITIATIVE"},{name:"Furious Charge",description:`Before the attack: Move 2, 3 or 4 spaces
+or a token adjacent to you up to 2 spaces.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:6,item:"INITIATIVE"},{name:"Furious Charge",description:`Before the attack: Move 2, 3, or 4 spaces
 in a straight line to a space adjacent to an
 enemy unit, then target that unit.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:7,secondaryMovement:3,secondaryDefense:8,item:"MOVEMENT"},{name:"Fortify",description:`**This round:** When any friendly minion in radius
 is defeated you may discard a basic card.
 If you do, the minion is not removed.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:5,item:"ATTACK"},{name:"Counterattack",description:`An enemy hero adjacent to you who
 has played an attack card this turn
 discards a card, or is defeated.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:6,item:"RANGE"},{name:"Throwing Spear",description:`**Choose one —**
->>Target a hero adjacent to you.
+>>Target a unit adjacent to you.
 >>You may discard a card. If you have a card
-in the discard, target a unit in range.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:7,item:"AREA"},{name:"Master Skald",description:`A friendly hero in range gains 2 coin2;
+in the discard, target a unit in range.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:7,item:"AREA"},{name:"Master Skald",description:`A friendly hero in range gains 2 coins;
 if any hero was defeated this round,
 that friendly hero gains 4 coins instead.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:5,item:"DEFENSE"}],ro=[{name:"Familiar Ground",description:`**Choose one —**
 >>Target a unit adjacent to you.
 >>Target a hero in range who is
 >adjacent to 3 or more obstacles.
-~(You, other heroes, minions, tokens and terrain are obstacles.)`,color:"GOLD",initiative:12,primaryAction:"ATTACK",primaryValue:2,modifier:"RANGE",modifierValue:3,secondaryMovement:1,secondaryDefense:2},{name:"Home Turf",description:`**Choose one —**
+~(You, other heroes, minions, tokens, and terrain are obstacles.)`,color:"GOLD",initiative:12,primaryAction:"ATTACK",primaryValue:2,modifier:"RANGE",modifierValue:3,secondaryMovement:1,secondaryDefense:2},{name:"Home Turf",description:`**Choose one —**
 >>Target a hero adjacent to you.
 >>Target a hero in range who is
 >adjacent to 3 or more obstacles.
-~(You, other heroes, minions, tokens and terrain are obstacles.)`,color:"GOLD",handicapped:!0,initiative:11,primaryAction:"ATTACK",primaryValue:2,modifier:"RANGE",modifierValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Decoy",description:`**Choose up to two times,**, on different targets —
+~(You, other heroes, minions, tokens, and terrain are obstacles.)`,color:"GOLD",handicapped:!0,initiative:11,primaryAction:"ATTACK",primaryValue:2,modifier:"RANGE",modifierValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Decoy",description:`**Choose up to two times,** on different targets —
 >>Move an enemy minion in radius 1 space.
 >>Move an enemy hero in radius who is
-adjacent to 3 or more obstacles 2 space.`,color:"SILVER",initiative:1,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryDefense:2},{name:"High Ground",description:`Target a unit adjacent to you.
+adjacent to 3 or more obstacles 1 space.`,color:"SILVER",initiative:1,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryDefense:2},{name:"High Ground",description:`Target a unit adjacent to you.
 If you target a hero adjacent to
 3 or more obstacles, +2 ::attack_red:: attack.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",secondaryMovement:4,secondaryDefense:6},{name:"Tread Lightly",description:`Swap with either a unit adjacent to you,
 or with an enemy hero in radius who is
@@ -1151,7 +1151,7 @@ If an enemy hero in radius is adjacent to
 or with an enemy hero in radius who is
 adjacent to 3 or more obstacles.
 You may move 1 space.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"DEFENSE"},{name:"Mountain Guide",description:`You may move a friendly unit, which is adjacent
-to you, up to 3 spaces. If an enemy hero in
+to you, up to 2 spaces. If an enemy hero in
 radius is adjacent to 3 or more obstacles, move
 a different friendly unit in radius up to 2 spaces.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:5,item:"ATTACK"},{name:"Deadfall Trap",description:`**Choose one —**
 >>An enemy hero adjacent to you discards
@@ -1185,40 +1185,40 @@ line, with no obstacles between you; ignore
 immunity. Move in a straight line towards
 that obstacle until you are adjacent to it.`,color:"SILVER",initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:5,secondaryDefense:2},{name:"Legend of the Skies",description:`The first time each turn after you perform a
 primary action, you may perform the primary
-action of a card in the previous turn slot.`,color:"PURPLE",level:4},{name:"Bombardment",description:`A enemy hero in radius, adjacent to
+action of a card in the previous turn slot.`,color:"PURPLE",level:4},{name:"Bombardment",description:`An enemy hero in radius, adjacent to
 another enemy unit and not adjacent
 to you, discards a card, if able.`,color:"BLUE",level:1,initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5},{name:"Daring Strike",description:`**Choose one —**
 >>Before the attack: Move 1 space.
-Target a unit adjacent to you in the
+Target a hero adjacent to you in the
 direction of the move; +2 ::attack_red:: Attack.
 >>Target a unit adjacent to you.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",secondaryMovement:3,secondaryDefense:6},{name:"Brace for Impact",description:`Move 3 spaces in a straight line, ignoring
 obstacles, to a space adjacent to an enemy
-hero; that hero discards a card, if able.`,color:"GREEN",level:1,initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3},{name:"Barrage",description:`A enemy hero in radius, adjacent to
+hero; that hero discards a card, if able.`,color:"GREEN",level:1,initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3},{name:"Barrage",description:`An enemy hero in radius, adjacent to
 another enemy unit and not adjacent
 to you, discards a card, if able.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:5,item:"INITIATIVE"},{name:"Bold Thrust",description:`**Choose one —**
 >>Before the attack: Move 1 or 2 spaces in a
-straight line. Target a unit adjacent to you
+straight line. Target a hero adjacent to you
 in the direction of the move; +2 ::attack_red:: Attack.
 >>Target a unit adjacent to you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,primaryValueSign:"PLUS",secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Ramming Speed",description:`Move 3 or 4 spaces in a straight line, ignoring
 obstacles, to a space adjacent to an enemy
 hero; that hero discards a card, if able.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"X Marks the Spot",description:`An enemy hero in radius **chooses one —**
 >>You place that hero in a space in radius.
->>You gain 2 coins.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"ATTACK"},{name:"Evasive Shot",description:`Target a unit in range in a straight line
+>>You gain 2 coins.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"ATTACK"},{name:"Evasive Shot",description:`Target a unit in range and in a straight line.
 After the attack: Move up to 2 spaces
 in the opposite direction.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Outmaneuver",description:`Swap with an enemy minion in radius;
-you may move that minion up to 2 spaces.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"DEFENSE"},{name:"Broadside",description:`A enemy hero in radius, adjacent to
+you may move that minion up to 2 spaces.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"DEFENSE"},{name:"Broadside",description:`An enemy hero in radius, adjacent to
 another enemy unit and not adjacent
 to you, discards a card, if able.
 May repeat once on a different target.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Fearless Lunge",description:`**Choose one —**
 >>Before the attack: Move 1, 2 or 3 spaces in
->a straight line. Target a unit adjacent to you
+>a straight line. Target a hero adjacent to you
 >in the direction of the move; +2 ::attack_red:: Attack.
 >>Target a unit adjacent to you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,primaryValueSign:"PLUS",secondaryMovement:3,secondaryDefense:7,item:"MOVEMENT"},{name:"Crashland",description:`Move 3, 4 or 5 spaces in a straight line,
 ignoring obstacles, to a space adjacent to an
 enemy hero; that hero discards a card, if able.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:4,item:"RANGE"},{name:"A Fistful of Coins",description:`An enemy hero in radius **chooses one —**
 >>You place that hero in a space in radius.
 >>You gain 3 coins. If you have 13 or more
->coins, you alone win the game.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:6,item:"ATTACK"},{name:"Tumble Shot",description:`Target a unit in range in a straight line.
+>coins, you alone win the game.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:6,item:"ATTACK"},{name:"Tumble Shot",description:`Target a unit in range and in a straight line.
 After the attack: Move up to 3 spaces
 in the opposite direction.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:3,secondaryDefense:5,item:"AREA"},{name:"Outsmart",description:`Swap with an enemy minion in radius;
 you may move that minion up to 3 spaces.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"DEFENSE"}],so=[{name:"Dread Razor",description:`**Choose one —**
@@ -1229,16 +1229,16 @@ you may move that minion up to 3 spaces.`,color:"GREEN",level:3,variant:{first:2
 >>If you are adjacent to an empty spawn point
 >in the battle zone, target a hero in range.`,color:"GOLD",handicapped:!0,initiative:11,primaryAction:"ATTACK",primaryValue:1,modifier:"RANGE",modifierValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Death Trap",description:`An enemy hero in radius who is
 adjacent to an empty spawn point in
-the battle zone, discards a card, if able.`,color:"SILVER",initiative:7,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryDefense:1},{name:"Tide of Darkness",description:`While you are performing an action, all spaces
-count as if they are in the battle zone and
-havd a friendly minion spawn point.`,color:"PURPLE",level:4},{name:"Shield of Decay",description:`+2 ::defense_blue:: Defense if there are 2 or more empty
+the battle zone discards a card, if able.`,color:"SILVER",initiative:7,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryDefense:1},{name:"Tide of Darkness",description:`While you are performing an action, all spaces
+count as if they were in the battle zone and
+had a friendly minion spawn point.`,color:"PURPLE",level:4},{name:"Shield of Decay",description:`+2 ::defense_blue:: Defense if there are 2 or more empty
 spawn points in radius in the battle zone.`,color:"BLUE",level:1,initiative:10,primaryAction:"DEFENSE",primaryValue:3,primaryValueSign:"PLUS",modifier:"AREA",modifierValue:2,secondaryMovement:3},{name:"Littlefinger of Death",description:`**Choose one —**
->>Target a hero adjacent to you.
+>>Target a unit adjacent to you.
 >>Target a hero in range who has one or
 >more cards in the discard.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:5},{name:"Dark Ritual",description:`If there are 2 or more empty spawn points
 in radius in the battle zone, gain 1 coin.`,color:"GREEN",level:1,initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:2},{name:"Vampiric Shield",description:`+2 ::defense_blue:: Defense if there are 2 or more empty
-minion spawn points in radius in the battle zone.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"DEFENSE",primaryValue:4,primaryValueSign:"PLUS",modifier:"AREA",modifierValue:2,secondaryMovement:3,item:"INITIATIVE"},{name:"Finger of Death",description:`**Choose one —**
->>Target a hero adjacent to you.
+spawn points in radius in the battle zone.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"DEFENSE",primaryValue:4,primaryValueSign:"PLUS",modifier:"AREA",modifierValue:2,secondaryMovement:3,item:"INITIATIVE"},{name:"Finger of Death",description:`**Choose one —**
+>>Target a unit adjacent to you.
 >>Target a hero in range who has one or
 >more cards in the discard.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:3,secondaryMovement:4,secondaryDefense:6,item:"INITIATIVE"},{name:"Darker Ritual",description:`If there are 2 or more empty spawn points
 in radius in the battle zone, gain 2 coins.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:2,item:"DEFENSE"},{name:"Weakness",description:`**This turn:** Enemy heroes
@@ -1246,9 +1246,9 @@ in radius have -4 ::attack_silver:: Attack.
 ~(They can still attack, even with a negative attack value.)`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:4,item:"ATTACK"},{name:"Burning Skull",description:`Target a unit in range. After the attack:
 Move up to 1 minion adjacent to you
 1 space, to a space not adjacent to you.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:5,item:"DEFENSE"},{name:"Necromancy",description:`Respawn a friendly minion in an empty friendly
-spawn point adjacent to you in the battle zone.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:2,item:"ATTACK"},{name:"Aegis of Doom",description:`+4 ::defense_blue:: if there are 2 or more empty
-spawn points in radius in a battle zone.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"DEFENSE",primaryValue:4,primaryValueSign:"PLUS",modifier:"AREA",modifierValue:2,secondaryMovement:3,item:"INITIATIVE"},{name:"Middlefinger of Death",description:`**Choose one, or both, on different targets —**
->>Target a hero adjacent to you.
+spawn point adjacent to you in the battle zone.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:2,item:"ATTACK"},{name:"Aegis of Doom",description:`+4 ::defense_blue:: Defense if there are 2 or more empty
+spawn points in radius in the battle zone.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"DEFENSE",primaryValue:4,primaryValueSign:"PLUS",modifier:"AREA",modifierValue:2,secondaryMovement:3,item:"INITIATIVE"},{name:"Middlefinger of Death",description:`**Choose one, or both, on different targets —**
+>>Target a unit adjacent to you.
 >>Target a hero in range who has one or 
 >more cards in the discard.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:3,secondaryMovement:4,secondaryDefense:6,item:"MOVEMENT"},{name:"Darkest Ritual",description:`If there are 2 or more empty spawn points in
 radius in the battle zone, gain 2 coins. If you
@@ -1261,7 +1261,7 @@ spawn point in radius in the battle zone.`,color:"GREEN",level:3,variant:{first:
 **Next turn:** Heroes with lower initiative act
 before heroes with higher initiative;
 this effect ignores immunity.
-~(Resolve ties as normal.)`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:1,secondaryDefense:2},{name:"Tear in Time",description:`Target a unit adjacent to you.
+~(Resolve ties as normal.)`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:1,secondaryDefense:2},{name:"Tear in Time",description:`Target a hero adjacent to you.
 After the attack: **Next turn:** Heroes with
 lower initiative act before heroes with higher
 initiative. This effect ignores immunity.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:1,secondaryDefense:1},{name:"Unstable Timeline",description:`Place 2 ::token_glitch:: Glitch tokens in radius, with at
@@ -1300,10 +1300,10 @@ discards a card, or is defeated.`,color:"BLUE",level:3,variant:{first:1,second:2
 >has already resolved a card this turn.
 >>An enemy hero in range swaps their
 >unresolved card with one of their
->resolved cards of their choice.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"AREA"},{name:"Temporal Judgement",description:`Target a unit adjacent to you; when defending,
+>resolved cards of their choice.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"AREA"},{name:"Temporal Judgment",description:`Target a unit adjacent to you; when defending,
 the enemy hero must use the ::initiative:: Initiative
 value of their card and items instead of the
-::defense_silver:: Defense value of their card and items.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:12,secondaryMovement:3,secondaryDefense:8,item:"RANGE"},{name:"Deja Vu",description:`Target a unit adjacent to you. After the attack:
+::defense_silver:: Defense value of their card and items.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:12,secondaryMovement:3,secondaryDefense:8,item:"RANGE"},{name:"Déjà Vu",description:`Target a unit adjacent to you. After the attack:
 You may place 2 ::token_glitch:: Glitch tokens in radius,
 with at least two spaces between each token;
 if you do, up to 1 enemy hero in radius
@@ -1317,8 +1317,8 @@ that unit was at the start of this turn.
 >>You, and friendly heroes in radius, may
 >retrieve all cards discarded this turn.
 >>**This turn:** Friendly heroes in radius
-are immune to enemy actions.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:3,item:"INITIATIVE"}],mo=[{name:"Angry Strike",description:`Target a hero adjacent to you.
-+1 ::attack_gold:: Attack for every card in your discard.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",secondaryMovement:1,secondaryDefense:3},{name:"Angry Swipe",description:`Target a hero adjacent to you.
+are immune to enemy actions.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:3,item:"INITIATIVE"}],mo=[{name:"Angry Strike",description:`Target a unit adjacent to you;
++1 ::attack_gold:: Attack for every card in your discard.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",secondaryMovement:1,secondaryDefense:3},{name:"Angry Swipe",description:`Target a hero adjacent to you;
 +1 ::attack_gold:: Attack for every card in your discard.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:3,primaryValueSign:"PLUS",secondaryMovement:1,secondaryDefense:2},{name:"Chilling Howl",description:`You may discard one of your resolved cards.
 **This round:** Enemy heroes in radius
 cannot fast travel, or move more than
@@ -1328,14 +1328,14 @@ to a space farther away from you.`,color:"BLUE",level:1,initiative:9,primaryActi
 >>Before the attack: If you have one or more
 cards in the discard, you may move 1 space.
 >Target a hero adjacent to you.
->>Target a hero adjacent to you.`,color:"RED",level:1,initiative:7,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:4,secondaryDefense:5},{name:"Hold Ground",description:`If there at least two enemy heroes in
+>>Target a unit adjacent to you.`,color:"RED",level:1,initiative:7,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:4,secondaryDefense:5},{name:"Hold Ground",description:`If there are at least two enemy heroes in
 radius, you may retrieve a discarded card.`,color:"GREEN",level:1,initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3},{name:"Threaten",description:`Move an enemy unit in range 1 space
 to a space farther away from you.
 May repeat once.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"RANGE",modifierValue:2,secondaryMovement:3,secondaryDefense:6,item:"DEFENSE"},{name:"Chase",description:`**Choose one —**
 >>Before the attack: If you have one or more
 cards in the discard, move up to 2 spaces.
 >Target a hero adjacent to you.
->>Target a hero adjacent to you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:5,item:"DEFENSE"},{name:"Make a Stand",description:`If there are at least two enemy heroes in
+>>Target a unit adjacent to you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:5,item:"DEFENSE"},{name:"Make a Stand",description:`If there are at least two enemy heroes in
 radius, you may retrieve a discarded card.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Form Up!",description:`Move a friendly unit in range 1 space
 to a space closer to you.
 May repeat once.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:6,item:"ATTACK"},{name:"Blunt Force",description:`Target a unit adjacent to you.
@@ -1348,12 +1348,12 @@ May repeat up to two times.`,color:"BLUE",level:3,variant:{first:1,second:2},ini
 >>Before the attack: If you have one or more
 cards in the discard, move up to 3 spaces.
 >Target a hero adjacent to you.
->>Target a hero adjacent to you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:6,item:"RANGE"},{name:"Battle Ready",description:`If there are at least two enemy heroes
+>>Target a unit adjacent to you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:6,item:"RANGE"},{name:"Battle Ready",description:`If there are at least two enemy heroes
 in radius, you may retrieve up to
 two discarded cards.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Testudo!",description:`Move a friendly unit in range 1 space
 to a space closer to you.
 May repeat up to two times.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:7,item:"ATTACK"},{name:"Send Flying",description:`Target a unit adjacent to you. After the attack:
-you may move up to 2 spaces to a space
+You may move up to 2 spaces to a space
 adjacent to an enemy hero; if you do, push
 that hero 3 spaces, ignoring obstacles.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:7,secondaryMovement:4,secondaryDefense:8,item:"AREA"},{name:"Heavy Pilum",description:`An enemy hero in range discards a card,
 or is defeated. You may move up to 2 spaces.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:4,primaryAction:"SKILL",modifier:"RANGE",modifierValue:2,secondaryMovement:2,secondaryDefense:4,item:"MOVEMENT"}],lo=[{name:"Cantrip",description:`**Choose and cast one** spell in the spellbook —
@@ -1433,9 +1433,10 @@ regardless of radius and immunity.`,color:"BLUE",level:1,initiative:10,primaryAc
 regardless of radius and immunity.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"ATTACK"},{name:"Even the Odds",description:`**Choose one —**
 >>Target a unit adjacent to you.
 >>Target a hero in range, adjacent to your
->friendly hero.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:4,item:"INITIATIVE"},{name:"Monkey Twist",description:"Swap two friendly heroes in radius.",color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:2,item:"DEFENSE"},{name:"This Way!",description:`A friendly hero in radius chooses a distance
+>friendly hero.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:4,item:"INITIATIVE"},{name:"Monkey Twist",description:"Swap two friendly units in radius.",color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:2,item:"DEFENSE"},{name:"This Way!",description:`A friendly hero in radius chooses a distance
 of 1 or 2; move both of you that number of
-spaces in the same direction of your choice.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"INITIATIVE"},{name:"Outnumber",description:`**Choose one —**
+spaces in the same direction of your choice.
+~(Both must be moved the full distance, or neither one moves.)`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"INITIATIVE"},{name:"Outnumber",description:`**Choose one —**
 >>Target a unit adjacent to you.
 >>Target a minion in range, adjacent to your
 >friendly hero.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:5,item:"DEFENSE"},{name:"Hear Nothing",description:"Swap with an enemy hero in radius.",color:"GREEN",level:2,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:2,item:"ATTACK"},{name:"Safe Travels",description:`Swap with an enemy hero in radius.
@@ -1446,115 +1447,115 @@ of radius and immunity. You may move 1 space.`,color:"BLUE",level:3,variant:{fir
 >>Target a hero in range, adjacent to your
 >friendly hero and not adjacent to you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:5,item:"MOVEMENT"},{name:"Monkey Business",description:`Swap two friendly units in radius.
 You may move 1 space.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:1,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:2,item:"DEFENSE"},{name:"That Way!",description:`A friendly hero in radius chooses a distance
-of 1, 2, or 3; move both of you that number of
+of 1, 2 or 3; move both of you that number of
 spaces in the same direction of your choice.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"INITIATIVE"},{name:"Pile On",description:`**Choose one, or both,** in any order —
 >>Target a unit adjacent to you.
 >>Target a minion in range, adjacent to your
->friendly.`,color:"RED",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:6,item:"AREA"},{name:"See Nothing",description:`Swap with an enemy hero in radius.
+>friendly hero.`,color:"RED",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:6,item:"AREA"},{name:"See Nothing",description:`Swap with an enemy hero in radius.
 You may move 1 space.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:1,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:2,item:"RANGE"}],fo=[{name:"Chaos Bolt",description:`::tiebreaker_blue::: Target a minion adjacent to you.
 ---
-::tiebreaker_orange:: Target a hero in range.
+::tiebreaker_orange::: Target a hero in range.
 ~(Apply the text matching the symbol on the Tie Breaker coin.)`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:2,modifier:"RANGE",modifierValue:3,secondaryMovement:1,secondaryDefense:2},{name:"Unreliable Jolt",description:`::tiebreaker_blue::: Target a hero adjacent to you.
 ---
-::tiebreaker_orange:: Target a hero in range not adjacent to you.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:1,modifier:"RANGE",modifierValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Equilibrium",description:`**This round:** Each time you perform or repeat a
+::tiebreaker_orange::: Target a hero in range not adjacent to you.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:1,modifier:"RANGE",modifierValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Equilibrium",description:`**This round:** Each time you perform or repeat a
 primary action, you may apply either ::tiebreaker_blue:: or ::tiebreaker_orange::
-card text, regardless of the Tie Breaker coin.`,color:"SILVER",initiative:1,primaryAction:"SKILL",secondaryDefense:7},{name:"Chaos Incarnate",description:`The first time each turn after youy perform
-a primary actionm you may flip the Tie Breaker
+card text, regardless of the Tie Breaker coin.`,color:"SILVER",initiative:1,primaryAction:"SKILL",secondaryDefense:7},{name:"Chaos Incarnate",description:`The first time each turn after you perform
+a primary action, you may flip the Tie Breaker
 coin; if you do, you may perform that action
-again, choosing different targets.`,color:"PURPLE",level:4},{name:"Abrupt Combustion",description:`::tiebreaker_blue::: An enemy hero in radius, adjacent to a
-token or a minion discards a card, if able.
+again, choosing different targets.`,color:"PURPLE",level:4},{name:"Abrupt Combustion",description:`::tiebreaker_blue::: An enemy hero in radius adjacent to a
+token or to a minion discards a card, if able.
 ---
-::tiebreaker_orange:: Remove an enemy minion in radius
+::tiebreaker_orange::: Remove an enemy minion in radius
 adjacent to an enemy hero.`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:3},{name:"Playing with Fire",description:`::tiebreaker_blue::: Target a unit in range not in a straight line.
 ---
-::tiebreaker_orange:: Target a unit in range in a straight line.`,color:"RED",level:1,initiative:7,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:3,secondaryDefense:4},{name:"Path of Ashes",description:`::tiebreaker_blue::: Move up to 2 spaces in a straight line.
-Place a ::token_magma:: magma token in each empty
+::tiebreaker_orange::: Target a unit in range in a straight line.`,color:"RED",level:1,initiative:7,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:3,secondaryDefense:4},{name:"Path of Ashes",description:`::tiebreaker_blue::: Move up to 2 spaces in a straight line.
+Place a ::token_magma:: Magma token in each empty
 space you moved through, or out of.
 ---
-::tiebreaker_orange:: Place up to 2 magma tokens in radius.`,color:"GREEN",level:1,initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:2},{name:"Spontaneous Immolation",description:`::tiebreaker_blue::: An enemy hero in radius adjacent to a
-token or a minion discards a card, if able.
+::tiebreaker_orange::: Place up to 2 Magma tokens in radius.`,color:"GREEN",level:1,initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:2},{name:"Spontaneous Immolation",description:`::tiebreaker_blue::: An enemy hero in radius adjacent to a
+token or to a minion discards a card, if able.
 ---
-::tiebreaker_orange:: Remove an enemy minion in radius
+::tiebreaker_orange::: Remove an enemy minion in radius
 adjacent to an enemy hero.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:4,item:"ATTACK"},{name:"Erratic Fireblast",description:`::tiebreaker_blue::: Target a unit in range not in a straight line.
 ---
-::tiebreaker_orange:: Target a unit in range in a straight line.`,color:"RED",level:2,variant:{first:1,second:2},initiative:7,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"DEFENSE"},{name:"Path of Cinders",description:`::tiebreaker_blue::: Move up to 3 spaces in a straight line.
-Place a ::token_magma:: magma token in each empty
+::tiebreaker_orange::: Target a unit in range in a straight line.`,color:"RED",level:2,variant:{first:1,second:2},initiative:7,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"DEFENSE"},{name:"Path of Cinders",description:`::tiebreaker_blue::: Move up to 3 spaces in a straight line.
+Place a ::token_magma:: Magma token in each empty
 space you moved through, or out of.
 ---
-::tiebreaker_orange:: Place up to 3 magma tokens in radius.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:2,item:"DEFENSE"},{name:"Searing Heat",description:`::tiebreaker_blue::: Move a friendly hero in radius
+::tiebreaker_orange::: Place up to 3 Magma tokens in radius.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:2,item:"DEFENSE"},{name:"Searing Heat",description:`::tiebreaker_blue::: Move a friendly hero in radius
 2 spaces in a straight line.
 ---
-::tiebreaker_orange:: Move an enemy hero in radius
-2 spaces in a straight line.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"INITIATIVE"},{name:"Crack of Doom",description:`::tiebreaker_blue:: Target a unit adjacent to you.
+::tiebreaker_orange::: Move an enemy hero in radius
+2 spaces in a straight line.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"INITIATIVE"},{name:"Crack of Doom",description:`::tiebreaker_blue::: Target a unit adjacent to you.
 ---
-::tiebreaker_orange::: Target a unit at a maximum range.`,color:"RED",level:2,variant:{first:2,second:2},initiative:7,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:5,secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Unstable Portal",description:`::tiebreaker_blue::: Swap with a friendly unit in radius.
+::tiebreaker_orange::: Target a unit at maximum range.`,color:"RED",level:2,variant:{first:2,second:2},initiative:7,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:5,secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Unstable Portal",description:`::tiebreaker_blue::: Swap with a friendly unit in radius.
 ---
-::tiebreaker_orange:: Swap with an enemy unit in radius.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:2,item:"ATTACK"},{name:"Violent Conflagration",description:`::tiebreaker_blue::: An enemy hero in radius adjacent to a
-token or a minion discards a card, or is defeated.
+::tiebreaker_orange::: Swap with an enemy unit in radius.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:2,item:"ATTACK"},{name:"Violent Conflagration",description:`::tiebreaker_blue::: An enemy hero in radius adjacent to a
+token or to a minion discards a card, or is defeated.
 ---
-::tiebreaker_orange:: Defeat an enemy minion in radius
+::tiebreaker_orange::: Defeat an enemy minion in radius
 adjacent to an enemy hero.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:4,item:"RANGE"},{name:"Loosely-Aimed Firebolts",description:`::tiebreaker_blue::: Target a unit in range not in a straight line.
 ---
-::tiebreaker_orange:: Target a unit in range in a straight line.
+::tiebreaker_orange::: Target a unit in range in a straight line.
 May repeat once on a different hero.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"AREA"},{name:"Path of Flames",description:`::tiebreaker_blue::: Move up to 4 spaces in a straight line.
-Place a ::token_magma:: magma token in each empty
+Place a ::token_magma:: Magma token in each empty
 space you moved through, or out of.
 ---
-::tiebreaker_orange:: Place up to 4 magma tokens in radius.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:3,item:"DEFENSE"},{name:"Scorching Blaze",description:`::tiebreaker_blue::: Move a friendly hero in radius
+::tiebreaker_orange::: Place up to 4 Magma tokens in radius.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:3,item:"DEFENSE"},{name:"Scorching Blaze",description:`::tiebreaker_blue::: Move a friendly hero in radius
 2 or 3 spaces in a straight line.
 ---
-::tiebreaker_orange:: Move an enemy hero in radius
+::tiebreaker_orange::: Move an enemy hero in radius
 2 or 3 spaces in a straight line.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"MOVEMENT"},{name:"Imminent Eruption",description:`::tiebreaker_blue::: Target a unit adjacent to you.
 May repeat once on a minion.
 ---
-::tiebreaker_orange:: Target a unit at maximum range.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:6,modifier:"RANGE",modifierValue:5,secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Chaos Gate",description:`::tiebreaker_blue::: Swap with a friendly unit in radius.
+::tiebreaker_orange::: Target a unit at maximum range.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:6,modifier:"RANGE",modifierValue:5,secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Chaos Gate",description:`::tiebreaker_blue::: Swap with a friendly unit in radius.
 You may move that unit 1 space.
 ---
-::tiebreaker_orange:: Swap with an enemy unit in radius.
+::tiebreaker_orange::: Swap with an enemy unit in radius.
 You may move 1 space.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"}],yo=[{name:"Fast as Lightning",description:`Target a unit in range. After the attack:
 Apply the "After the attack" text of your
 resolved or discarded red card.
 ~(If it has radius, use that card's value.)`,color:"GOLD",initiative:13,primaryAction:"ATTACK",primaryValue:2,modifier:"RANGE",modifierValue:1,secondaryMovement:1,secondaryDefense:1},{name:"Chop Down",description:`Target a hero adjacent to you.
 After the attack: Apply the "After the attack"
-text of your resolved or discarded red card.`,color:"GOLD",handicapped:!0,initiative:12,primaryAction:"ATTACK",primaryValue:1,modifier:"RANGE",modifierValue:1,secondaryMovement:1,secondaryDefense:1},{name:"Smoke Bomb",description:`Place a ::token_smoke_bomb:: smoke bomb token in radius;
-enemy heroes cannot target another you or another
-unit if there is the Smoke Bomb on a straight
+text of your resolved or discarded red card.`,color:"GOLD",handicapped:!0,initiative:12,primaryAction:"ATTACK",primaryValue:1,modifier:"RANGE",modifierValue:1,secondaryMovement:1,secondaryDefense:1},{name:"Smoke Bomb",description:`Place the ::token_smoke_bomb:: Smoke bomb token in radius;
+enemy heroes cannot target you or another
+unit if the Smoke bomb token is on a straight
 line between that enemy hero and their target.`,color:"SILVER",initiative:12,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryDefense:1},{name:"Flurry of blows",description:`Each time after you perform an attack action,
-you may repeat it once on a different target.`,color:"PURPLE",level:4},{name:"Trip Mine",description:`Place 2 mine tokens, 1 ::token_blast:: blast and 1 ::token_dud:: dud,
+you may repeat it once on a different target.`,color:"PURPLE",level:4},{name:"Trip Mine",description:`Place 2 Mine tokens, 1 ::token_blast:: blast and 1 ::token_dud:: dud,
 facedown in radius; units may move through
 them; remove mine tokens after an enemy
 hero moves through them; for every blast
 removed, that hero discards a card, if able.`,color:"BLUE",level:1,initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:4},{name:"Crane Stance",description:`Target a unit adjacent to you.
 After the attack: Push an enemy unit
-adjacent to you up to 3 spaces.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:5,secondaryDefense:5},{name:"Poof!",description:`Swap with a ::token_smoke_bomb:: Smoke bomb in range;
-if you do, block the attack.`,color:"GREEN",level:1,initiative:2,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",modifier:"RANGE",modifierValue:3,secondaryMovement:3},{name:"Cluster Mine",description:`Place 3 mine tokens, 1 ::token_blast:: blast and 2 ::token_dud::
+adjacent to you up to 3 spaces.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:5,secondaryDefense:5},{name:"Poof!",description:`Swap with a ::token_smoke_bomb:: Smoke bomb token in range;
+if you do, block the attack.`,color:"GREEN",level:1,initiative:2,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",modifier:"RANGE",modifierValue:3,secondaryMovement:3},{name:"Cluster Mine",description:`Place 3 Mine tokens, 1 ::token_blast:: blast and 2 ::token_dud::
 duds, facedown in radius; units may move
 through them; remove mine tokens after an
 enemy hero moves through them; for every
 blast removed, that hero discards a card, if able.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"ATTACK"},{name:"Tiger Stance",description:`Target a unit adjacent to you.
 After the attack: You may move 1 space to a
 space adjacent to the target. Push an enemy
-unit adjacent to you up to 3 spaces.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:5,secondaryDefense:5,item:"INITIATIVE"},{name:"Vanish",description:`Swap with a ::token_smoke_bomb:: Smoke bomb in range;
+unit adjacent to you up to 3 spaces.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:5,secondaryDefense:5,item:"INITIATIVE"},{name:"Vanish",description:`Swap with a ::token_smoke_bomb:: Smoke bomb token in range;
 if you do, block the attack.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",modifier:"RANGE",modifierValue:4,secondaryMovement:3,item:"DEFENSE"},{name:"Death Grenade",description:`Place a ::token_grenade:: Grenade token into a space in
 radius. **End of turn:** Up to 1 enemy hero
 adjacent to that token discards a card, or is
 defeated. Remove the Grenade token.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Viper Stance",description:`Target a unit adjacent to you.
 After the attack: You may swap
-with a ::token_smoke_bomb:: Smoke bomb in radius.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:4,secondaryMovement:5,secondaryDefense:5,item:"DEFENSE"},{name:"Inner Strength",description:"**This round:** Double your item bonuses.",color:"GREEN",level:2,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:3,secondaryDefense:2,item:"ATTACK"},{name:"Minefield",description:`Place 3 mine tokens, 2 ::token_blast:: blasts and 1 ::token_dud::
+with a ::token_smoke_bomb:: Smoke bomb in radius.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:4,secondaryMovement:5,secondaryDefense:5,item:"DEFENSE"},{name:"Inner Strength",description:"**This round:** Double your item bonuses.",color:"GREEN",level:2,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:3,secondaryDefense:2,item:"ATTACK"},{name:"Minefield",description:`Place 3 Mine tokens, 2 ::token_blast:: blasts and 1 ::token_dud::
 dud, facedown in radius; units may move
-through them; remove mien tokens after an
+through them; remove mine tokens after an
 enemy hero moves through them; for every
 blast removed, that hero discards a card, if able.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:5,item:"ATTACK"},{name:"Dragon Stance",description:`Target a unit adjacent to you.
 After the attack: You may move 1 or 2 spaces
 to a space adjacent to the target. Push an
 enemy unit adjacent to you up to 3 spaces.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:5,secondaryDefense:6,item:"MOVEMENT"},{name:"Ruse",description:`Swap with a ::token_smoke_bomb:: Smoke bomb in range;
 if you do, block the attack. You may place
-the Smoke bomb into a space in range.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:1,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",modifier:"RANGE",modifierValue:4,secondaryMovement:3,item:"AREA"},{name:"Holy Death Grenade",description:`Place a ::token_grenade:: grenade token into a space in
+the Smoke bomb into a space in range.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:1,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",modifier:"RANGE",modifierValue:4,secondaryMovement:3,item:"AREA"},{name:"Holy Death Grenade",description:`Place a ::token_grenade:: Grenade token into a space in
 radius. **End of turn:** Up to 2 enemy heroes
 adjacent to that token discard a card, or are
 defeated. Remove the Grenade token.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:5,item:"INITIATIVE"},{name:"Cobra Stance",description:`Target a unit adjacent to you.
 After the attack: You may swap with
-a ::token_smoke_bomb:: Smoke bomb radius; if you do, you may
+a ::token_smoke_bomb:: Smoke bomb in radius; if you do, you may
 place the Smoke bomb into a space in radius.`,color:"RED",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:4,secondaryMovement:5,secondaryDefense:6,item:"DEFENSE"},{name:"Perfect Self",description:`**Choose one, or both —**
 >>**This round:** Double your item bonuses.
 >>Take a Tier II card from your deck and add
@@ -1571,20 +1572,20 @@ hero adjacent to you discards a card, if able.`,color:"PURPLE",level:4},{name:"S
 obstacles; you may place an enemy unit you
 moved through into a space adjacent to you.`,color:"BLUE",level:1,initiative:10,primaryAction:"SKILL",secondaryMovement:1,secondaryDefense:5},{name:"Challenge Accepted",description:`Target a unit adjacent to you. After the attack:
 **This turn:** Gain +2 ::defense_silver:: Defense.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:5,secondaryMovement:3,secondaryDefense:6},{name:"Focus",description:`**Next turn:** Before you perform a
-primary action, you may move 1 space.`,color:"GREEN",level:1,initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3},{name:"Gust of Wind",description:`Move up to 4 spaces in a straight line ignoring
+primary action, you may move 1 space.`,color:"GREEN",level:1,initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3},{name:"Gust of Wind",description:`Move up to 4 spaces in a straight line, ignoring
 obstacles; you may place an enemy unit you
 moved through into a space adjacent to you.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",secondaryMovement:1,secondaryDefense:6,item:"ATTACK"},{name:"Matter of Honor",description:`Target a unit adjacent to you. After the attack:
 **This turn:** Gain +3 ::defense_silver:: Defense.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:6,secondaryMovement:3,secondaryDefense:7,item:"INITIATIVE"},{name:"Discipline",description:`**Next turn:** Before you perform a primary
 action, move up to 2 spaces.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3,item:"INITIATIVE"},{name:"Living Tornado",description:"Swap two units at maximum radius.",color:"GREEN",level:2,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Power Shot",description:`Target a unit in range. After the attack: If the
 target was at maximum range, you may move
 it 1 space, to a space farther away from you.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Dash and Slash",description:`Move up to 4 spaces in a straight line,
-ignoring obstacles. An enemy hero you
+ignoring obstacles; an enemy hero you
 moved through discards a card, if able.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",secondaryMovement:1,secondaryDefense:6,item:"DEFENSE"},{name:"Crushing Squall",description:`Move up to 5 spaces in a straight line, ignoring
 obstacles; you may place an enemy unit you
 moved through into a space adjacent to you.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",secondaryMovement:1,secondaryDefense:6,item:"AREA"},{name:"Worthy Opponent",description:`Target a unit adjacent to you.
 After the attack:
 **This turn:** Gain +5 ::defense_silver:: Defense.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:6,secondaryMovement:3,secondaryDefense:7,item:"MOVEMENT"},{name:"Mastery",description:`**Next turn:** Before you perform a
-primary action, you may move 3 spaces.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Storm Spirit",description:`Swap two units in radius and
+primary action, move up to 3 spaces.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Storm Spirit",description:`Swap two units in radius and
 at equal distance from you.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"ATTACK"},{name:"Thunder Shot",description:`Target a unit in range. After the attack:
 If the target is not adjacent to you, you may move it
 1 space, to a space farther away from you.`,color:"RED",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Death from Above",description:`Move up to 5 spaces in a straight line,
@@ -1593,7 +1594,7 @@ moved through discards a card, if able.`,color:"BLUE",level:3,variant:{first:2,s
 Before the attack: **Choose up to three times —**
 >>Move a ::token_zombie:: Zombie token in radius 1 space.
 >>Remove a Zombie token adjacent to the
->target; if you do, gain +1 ::attack_gold:: Attack.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:3},{name:"Shallow Graves",description:`Target a unit adjacent to you.
+>target; if you do, gain +1 ::attack_gold:: Attack.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:3},{name:"Shallow Graves",description:`Target a hero adjacent to you.
 Before the attack: **Choose up to two times —**
 >>Move a ::token_zombie:: Zombie token in radius 1 space.
 >>Remove a Zombie token adjacent to the
@@ -1607,7 +1608,7 @@ After the attack: **Choose one —**
 >a Zombie token, discards a card, if able.`,color:"RED",level:1,initiative:7,primaryAction:"ATTACK",primaryValue:6,modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:7},{name:"Corpse Slam",description:`**Choose one —**
 >>Move a ::token_zombie:: Zombie token in range up to
 >1 space; that Zombie token may push a
->unit or token adjacent to it 1 space.
+>unit or a token adjacent to it 1 space.
 >>Move 1 space.`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:3,secondaryDefense:6},{name:"Stage Dive",description:`**Choose one —**
 >>Move a ::token_zombie:: Zombie token in range 1 space.
 >>Swap with a Zombie token in range.`,color:"GREEN",level:1,initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:3},{name:"Walking Dead",description:`Target a unit adjacent to you.
@@ -1631,14 +1632,14 @@ Before the attack: **Choose up to three times —**
 >a Zombie token, retrieve a discarded card.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:7,modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:8,item:"MOVEMENT"},{name:"Morbid Mosh",description:`**Choose up to two times —**
 >>Move a ::token_zombie:: Zombie token in range up to
 >1 space; that Zombie token may push a
->unit or token adjacent to it 1 space.
+>unit or a token adjacent to it 1 space.
 >>Move 1 space.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"ATTACK"},{name:"Robbing Zombies",description:`**Choose up to two times —**
 >>Move a ::token_zombie:: Zombie token in range up to
 >1 space. Gain 1 coin.
 >>Move 1 space.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"DEFENSE"},{name:"Macabre Mayhem",description:`**Choose up to three times —**
 >>Move a ::token_zombie:: Zombie token in range up to
 >1 space; that Zombie token may push a
->unit or token adjacent to it 1 space.
+>unit or a token adjacent to it 1 space.
 >>Move 1 space.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:3,secondaryDefense:7,item:"AREA"},{name:"Stalking Scalpers",description:`**Choose up to three times —**
 >>Move a ::token_zombie:: Zombie token in range up to
 >1 space. Gain 1 coin.
@@ -1673,7 +1674,7 @@ you may move up to 2 spaces in the
 direction of the push, ignoring obstacles.`,color:"BLUE",level:1,initiative:8,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:6},{name:"Treacherous Ground",description:`You may move a unit in range 1 space to a
 space adjacent to terrain, or a ::token_rock:: Rock token.`,color:"GREEN",level:1,initiative:6,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:4},{name:"Seismic Assault",description:`An enemy hero in radius adjacent
 to terrain, or to a ::token_rock:: Rock token,
-discards a card, or is defeated.`,color:"RED",level:2,variant:{first:1,second:2},initiative:7,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:8,secondaryAttack:7,item:"INITIATIVE"},{name:"Stone Carapace",description:`**This round:** if you would discard a card from
+discards a card, or is defeated.`,color:"RED",level:2,variant:{first:1,second:2},initiative:7,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:8,secondaryAttack:7,item:"INITIATIVE"},{name:"Stone Carapace",description:`**This round:** If you would discard a card from
 your hand, you may discard this card instead;
 you may discard this card to perform its
 defense action, as if it was in your hand.`,color:"RED",level:2,variant:{first:2,second:2},initiative:7,primaryAction:"MOVEMENT",primaryValue:4,secondaryDefense:6,secondaryAttack:7,item:"DEFENSE"},{name:"Rockslide",description:`You may move a unit in range 1 space to a
@@ -1689,7 +1690,7 @@ Place a Rock token in the space it occupied.`,color:"BLUE",level:2,variant:{firs
 space adjacent to terrain, or a ::token_rock:: Rock token.
 May repeat once.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:5,item:"AREA"},{name:"Strolling Stone",description:`Move any number of spaces in a straight
 line, ignoring obstacles, without moving
-through more than two empty space.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:5,item:"INITIATIVE"},{name:"Boulderdozer",description:`Push a token, or an enemy unit, adjacent to
+through more than two empty spaces.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:5,item:"INITIATIVE"},{name:"Boulderdozer",description:`Push a token, or an enemy unit, adjacent to
 you 1, 2, 3 or 4 spaces, ignoring obstacles;
 you may move up to 4 spaces in the
 direction of the push, ignoring obstacles.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:7,item:"MOVEMENT"},{name:"Ground Shaker",description:`Move a unit in radius which is adjacent
@@ -1698,7 +1699,7 @@ Place a Rock token in the space it occupied.
 May repeat once on a different target.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:7,item:"ATTACK"},{name:"Epicenter",description:`An enemy hero in radius adjacent to terrain,
 or to a ::token_rock:: Rock token, discards a card, or is
 defeated. May repeat once on a different target.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:8,secondaryAttack:7,item:"RANGE"},{name:"Rock Solid",description:`You may retrieve a discarded card.
-**This round:** if you would discard a card from
+**This round:** If you would discard a card from
 your hand, you may discard this card instead;
 you may discard this card to perform its
 defense action, as if it was in your hand.`,color:"RED",level:3,variant:{first:2,second:2},initiative:8,primaryAction:"MOVEMENT",primaryValue:4,secondaryDefense:6,secondaryAttack:7,item:"DEFENSE"},{name:"Rock and a Hard Place",description:`Once per turn, after you place one or more
@@ -1707,9 +1708,9 @@ adjacent to one or more enemy heroes,
 each of those heroes discards a card, if able.`,color:"PURPLE",level:4}],Ao=[{name:"Mind Grip",description:`**Choose one —**
 >>Perform an action on the card in the previous
 >turn slot of an enemy hero in range; if you
->would place any tokens, place ::token_illusion::
+>would place any tokens this way, place ::token_illusion::
 >Illusion tokens instead; skip giving markers.
->>Defeat a minion adjacent to you.`,color:"GOLD",initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:5,secondaryMovement:1,secondaryDefense:2},{name:"Mind Probe",description:`Perform the action on the card in the previous
+>>Defeat a minion adjacent to you.`,color:"GOLD",initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:5,secondaryMovement:1,secondaryDefense:2},{name:"Mind Probe",description:`Perform an action on the card in the previous
 turn slot of an enemy hero in range; if you
 would place any tokens this way, place ::token_illusion::
 Illusion tokens instead; do not use markers.`,color:"GOLD",handicapped:!0,initiative:8,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:1,secondaryDefense:1},{name:"Diabolical Laughter",description:`Laugh diabolically;
@@ -1778,7 +1779,7 @@ another one of you 1 space.`,color:"GREEN",level:1,initiative:2,primaryAction:"M
 Move another one of you up to 2 spaces.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:3,secondaryDefense:3,item:"ATTACK"},{name:"Hit and Gone",description:`Target a unit adjacent to you. After the attack:
 You may remove one or more of you
 in play, except the last one of you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:4,item:"DEFENSE"},{name:"High Wire",description:`After you move, move another
-one of you up to 2 spaces.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"MOVEMENT",primaryValue:2,secondaryDefense:2,item:"INITIATIVE"},{name:"Magic Trick",description:`Push an unit adjacent to you up to 2 spaces;
+one of you up to 2 spaces.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"MOVEMENT",primaryValue:2,secondaryDefense:2,item:"INITIATIVE"},{name:"Magic Trick",description:`Push a unit adjacent to you up to 2 spaces;
 for every space the target moved, move this
 one of you one space in the opposite direction.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",secondaryMovement:3,secondaryDefense:3,item:"DEFENSE"},{name:"Rummage",description:`Target a unit adjacent to you.
 After the attack: If there is another one of you
@@ -1788,7 +1789,7 @@ Move another one of you up to 3 spaces.`,color:"BLUE",level:3,variant:{first:1,s
 You may remove one or more of you
 in play, including all of you.
 ~(If all are removed, you are not defeated. Respawn as normal.)`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,secondaryMovement:4,secondaryDefense:4,item:"RANGE"},{name:"Wire Dancers",description:`After you move, move another
-one of you up to 3 spaces.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:1,primaryAction:"MOVEMENT",primaryValue:2,secondaryDefense:2,item:"INITIATIVE"},{name:"Aaaand it's gone!",description:`Push an unit adjacent to you up to 3 spaces;
+one of you up to 3 spaces.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:1,primaryAction:"MOVEMENT",primaryValue:2,secondaryDefense:2,item:"INITIATIVE"},{name:"Aaaand it's gone!",description:`Push a unit adjacent to you up to 3 spaces;
 for every space the target moved, move this
 one of you one space in the opposite direction.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",secondaryMovement:3,secondaryDefense:3,item:"DEFENSE"},{name:"Ransack",description:`Target a unit adjacent to you.
 After the attack: For each other one of you
@@ -1801,12 +1802,12 @@ retrieve a discarded card.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",pr
 Before the attack: Both you and the target
 may retrieve a discarded card.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:1,secondaryDefense:1},{name:"Throw the Gauntlet",description:`Place yourself into a space in range adjacent
 to an enemy hero in range; that hero may
-move 1 space; if they do, gain 2 coins.`,color:"SILVER",initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryDefense:3},{name:"Fabled Lance",description:`All of your attack actions gain the "Ranged"
+move 1 space; if they do, gain 2 coins.`,color:"SILVER",initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryDefense:3},{name:"Fabled Lance",description:`All your attack actions gain the "Ranged"
 subtype, target a unit in range, and count
 as having a printed ::range_purple:: Range value of 2.`,color:"PURPLE",level:4,modifier:"RANGE",modifierValue:2},{name:"Stand Guard",description:`Swap with a friendly unit in range
 which is adjacent to an enemy hero,
-or who has a card in the disacrd.`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:6},{name:"Token of Gratitude",description:`Target a unit adjacent to you. After the attack:
-A friendly hero in radius gains 1 coin.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:1,secondaryMovement:4,secondaryDefense:6},{name:"Close Quarters",description:`After movement, if yhou are adjacent to
+or who has a card in the discard.`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:6},{name:"Token of Gratitude",description:`Target a unit adjacent to you. After the attack:
+A friendly hero in radius gains 1 coin.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:1,secondaryMovement:4,secondaryDefense:6},{name:"Close Quarters",description:`After movement, if you are adjacent to
 an enemy hero, you may **Choose one —**
 >>Place a friendly minion in radius into a
 >space adjacent to that enemy hero.
@@ -1821,11 +1822,11 @@ an enemy hero, you may **Choose one —**
 >>Place an enemy minion in radius into a
 >space adjacent to you.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:11,primaryAction:"MOVEMENT",primaryValue:2,modifier:"AREA",modifierValue:3,secondaryDefense:4,item:"ATTACK"},{name:"Opening Shots",description:`If both you and an enemy hero in radius
 have no cards in the discard, that hero
-discards ac ard, if able.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Protect the Weak",description:`Swap with a friendly unit in range
+discards a card, if able.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Protect the Weak",description:`Swap with a friendly unit in range
 which is adjacent to an enemy hero,
 or who has a card in the discard.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:6,item:"ATTACK"},{name:"Accept Surrender",description:`Defeat an enemy hero adjacent to
 you with no cards in hand.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:6,item:"DEFENSE"},{name:"Grand Melee",description:`After movement, if you are adjacent to
-an enemy hero, you may **Choose one —**
+an enemy hero, **Choose up to two times —**
 >>Place a friendly minion in radius into a
 >space adjacent to that enemy hero.
 >>Place an enemy minion in radius into a
@@ -1846,7 +1847,7 @@ If the target is adjacent to you, push it 1 space.`,color:"GOLD",initiative:12,p
 After the attack: Push the target 1 space.`,color:"GOLD",handicapped:!0,initiative:11,primaryAction:"ATTACK",primaryValue:1,secondaryMovement:1,secondaryDefense:1},{name:"Back to Back",description:"Swap with a friendly minion in radius.",color:"SILVER",initiative:8,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryDefense:2},{name:"Big Sodding Gun",description:`Your basic attack has +2 ::range_gold:: Range and
 +2 ::attack_gold:: Attack. If you push an enemy hero,
 that hero discards a card, or is defeated.`,color:"PURPLE",level:4},{name:"Listen Up",description:"Swap two minions in radius.",color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:1,secondaryMovement:3,secondaryDefense:3},{name:"Quickdraw",description:`Target a unit in range. +3 ::attack_red:: Attack if the
-target played an attack card this turn.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:2,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:6},{name:"Troop Movement",description:`Move a friendly minion in radius up to 1 space,
+target played an attack card this turn.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:2,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:6},{name:"Troop Movement",description:`Move a friendly minion in radius 1 space,
 to a space in radius. May repeat once.`,color:"GREEN",level:1,initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:2},{name:"Roger Roger",description:"Swap two minions in radius.",color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"ATTACK"},{name:"Gunslinger",description:`Target a unit in range. +3 ::attack_red:: Attack if the
 target played an attack card this turn.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:6,item:"INITIATIVE"},{name:"Marching Orders",description:`Move a friendly minion in radius 1 space,
 to a space in radius. May repeat once.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Steady Advance",description:`If there are two or more friendly minions in
@@ -1854,13 +1855,13 @@ radius, you may retrieve a discarded card;
 if you do, you may move 1 space.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Shootout",description:`Target a unit in range. After the attack:
 If the target was adjacent to you, remove
 up to one enemy minion adjacent to you.
-~(You gain no coins for removing a minion, only defeating.)`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:6,item:"DEFENSE"},{name:"Close Support",description:`An enemy hero in radius adjacent to your
+~(You gain no coins for removing a minion, only for defeating.)`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:6,item:"DEFENSE"},{name:"Close Support",description:`An enemy hero in radius adjacent to your
 friendly minion discards a card, if able.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"INITIATIVE"},{name:"Ready and Waiting",description:`Swap two minions in radius,
 ignoring heavy minion immunity.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"ATTACK"},{name:"Dead Shot",description:`Target a unit in range. +4 ::attack_red:: Attack if the
 target played an attack card this turn.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:7,item:"MOVEMENT"},{name:"Path to Victory",description:`Move a friendly minion in radius 1 space, to a
 space in radius. May repeat up to two times.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"RANGE"},{name:"Unwavering Resolve",description:`If there are two or more friendly minions in
 radius, you may retrieve a discarded card;
-if you do, you may up to 2 spaces.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Bullet Hell",description:`Target a unit in range. After the attack:
+if you do, move up to 2 spaces.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Bullet Hell",description:`Target a unit in range. After the attack:
 If the target was adjacent to you, remove
 up to two enemy minions adjacent to you.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:7,item:"AREA"},{name:"Covering Fire",description:`An enemy hero in radius adjacent to your
 friendly minion discards a card, or is defeated.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"INITIATIVE"}],To=[{name:"Shoot and Scoot",description:`Target a unit at maximum range.
@@ -1876,22 +1877,22 @@ fast travel, or move more than 1 space
 with a movement action.`,color:"BLUE",level:1,initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:3},{name:"Snap Shot",description:`**Choose one —**
 >>Target a unit in range, which is not
 >adjacent to any other unit.
->>Target a hero adjacent to you.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:5,secondaryDefense:5},{name:"Disorient",description:`Move an enemy unit adjacent to you 1 space;
+>>Target a unit adjacent to you.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:5,secondaryDefense:5},{name:"Disorient",description:`Move an enemy unit adjacent to you 1 space;
 if you do, you may move 1 space.`,color:"GREEN",level:1,initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:1},{name:"Entangling Vines",description:`**This turn:** Enemy heroes in radius cannot
 fast travel, or move more than 1 space
 with a movement action.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:3,item:"DEFENSE"},{name:"Opportunity Shot",description:`**Choose one —**
 >>Target a unit in range, which is not
->>adjacent to any other unit.
->>Target a hero adjacent to you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:3,secondaryMovement:5,secondaryDefense:5,item:"DEFENSE"},{name:"Divert Attention",description:`Move an enemy unit adjacent to you up
+>adjacent to any other unit.
+>>Target a unit adjacent to you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,modifier:"RANGE",modifierValue:3,secondaryMovement:5,secondaryDefense:5,item:"DEFENSE"},{name:"Divert Attention",description:`Move an enemy unit adjacent to you up
 to 2 spaces; if you do, move up to that
 number of spaces in a straight line.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:2,item:"INITIATIVE"},{name:"Warning Shot",description:`**End of turn:** An enemy hero in radius
-discards a card, if able.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:3,item:"ATTACK"},{name:"Long Shot",description:"Target a unit at maximum range.",color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:3,secondaryMovement:5,secondaryDefense:4,item:"INITIATIVE"},{name:"Fae Healing",description:`A hero  in radius may retrieve a discarded
+discards a card, if able.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:3,item:"ATTACK"},{name:"Long Shot",description:"Target a unit at maximum range.",color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:3,secondaryMovement:5,secondaryDefense:4,item:"INITIATIVE"},{name:"Fae Healing",description:`A hero in radius may retrieve a discarded
 card; if they do, that hero gains 1 coin.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:2,item:"ATTACK"},{name:"Grappling Branches",description:`**This turn:** Enemy heroes in radius cannot
 fast travel, or move more than 1 space
 with a movement action.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:4,item:"DEFENSE"},{name:"Clear Shot",description:`**Choose one —**
 >>Target a unit in range, which is not
 >adjacent to any other unit.
->>Target a hero adjacent to you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:6,item:"AREA"},{name:"Lead Astray",description:`Move an enemy unit adjacent to you up
+>>Target a unit adjacent to you.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:5,secondaryDefense:6,item:"AREA"},{name:"Lead Astray",description:`Move an enemy unit adjacent to you up
 to 3 spaces; if you do, move up to that
 number of spaces in a straight line.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:2,item:"MOVEMENT"},{name:"Treetop Sentinel",description:`**End of turn:** An enemy hero in radius
 discards a card, or is defeated.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:4,item:"RANGE"},{name:"Rain of Arrows",description:`Target a unit at maximum range.
@@ -1899,14 +1900,12 @@ If you target a hero, repeat once on a different
 hero; if you do, may repeat once on a minion.`,color:"RED",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:3,secondaryMovement:5,secondaryDefense:5,item:"INITIATIVE"},{name:"Nature's Blessing",description:`A hero in radius may retrieve a discarded
 card; if they do, that hero gains 2 coins.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:2,item:"ATTACK"}],Do=[{name:"Rune Sigils",description:`Target a unit adjacent to you;
 if a rune is active:
-
 ::rune_bird::: You may target a minion in range instead.
-::rune_axe::: +3 ::attack_gold:: Attack
+::rune_axe::: +3 ::attack_gold:: Attack.
 ::rune_anvil::: If you target a hero, gain 3 coins.
 ::rune_horn::: Repeat once on a different hero in range.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:2,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:2,secondaryMovement:1,secondaryDefense:2},{name:"Rune Shards",description:`Target a hero adjacent to you;
 if a rune is active:
-
-::rune_axe::: +3 ::attack_gold:: Attack
+::rune_axe::: +3 ::attack_gold:: Attack.
 ::rune_anvil::: Gain 2 coins.
 ::rune_horn::: Repeat once on a different hero in range.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:1,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Inscribe the Runes",description:`Give yourself 4 ::rune_axe_marker::::rune_bird_marker::::rune_anvil_marker::::rune_horn_marker:: Rune markers
 and place one below each of your turn slots.
@@ -1915,7 +1914,7 @@ turn slot matching the current turn.
 Rune markers are not removed at the
 end of round, nor if you are defeated.`,color:"SILVER",initiative:1,primaryAction:"SKILL",secondaryDefense:3},{name:"Rune Mastery",description:`Each time you perform an action, choose
 one inactive rune; that rune counts as
-a second rune for this action.`,color:"PURPLE",level:4},{name:"Safe Passage",description:`If the ::rune_bird:: rune is active,
+a second active rune for this action.`,color:"PURPLE",level:4},{name:"Safe Passage",description:`If the ::rune_bird:: rune is active,
 **This turn:** You may ignore obstacles.`,color:"BLUE",level:1,initiative:9,primaryAction:"MOVEMENT",primaryValue:3,secondaryDefense:5},{name:"Runic Dagger",description:`Target a unit adjacent to you.
 After the attack: If the ::rune_anvil:: rune is active,
 you may retrieve a discarded card.`,color:"RED",level:1,initiative:7,primaryAction:"ATTACK",primaryValue:5,secondaryMovement:3,secondaryDefense:6},{name:"Oath of Endurance",description:`If a rune is active:
@@ -1927,7 +1926,7 @@ you may retrieve a discarded card.`,color:"RED",level:1,initiative:7,primaryActi
 actions.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"MOVEMENT",primaryValue:3,secondaryDefense:6,item:"ATTACK"},{name:"Ancestral Boon",description:`If a rune is active,
 a friendly hero in radius may:
 ::rune_axe::: Swap a resolved card with a card in hand.
-::rune_anvil::: Retrieve all their discarded cards.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"DEFENSE"},{name:"Runic Hammer",description:`Before the atack: if the ::rune_horn:: rune
+::rune_anvil::: Retrieve all their discarded cards.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"DEFENSE"},{name:"Runic Hammer",description:`Before the attack: If the ::rune_horn:: rune
 is active, you may move 1 space.
 Target a unit adjacent to you.
 After the attack: If the ::rune_anvil:: rune is active,
@@ -1951,7 +1950,7 @@ a friendly hero in radius may:
 ::rune_axe::: Swap a resolved card with a card in hand.
 ::rune_anvil::: Retrieve all their discarded cards.
 ::rune_bird::: Swap one of their items with an item on
-their card of the same tier and color.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"DEFENSE"},{name:"Runic Battleaxe",description:`Before the atack: if the ::rune_horn:: rune
+their card of the same tier and color.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"DEFENSE"},{name:"Runic Battleaxe",description:`Before the attack: If the ::rune_horn:: rune
 is active, you may move 1 space.
 Target a unit adjacent to you.
 After the attack: If a rune is active:
@@ -1984,7 +1983,7 @@ you cannot target the same enemy hero
 twice in the same turn this way.`,color:"PURPLE",level:4},{name:"Steam Jump",description:`Place yourself into a space in a straight
 line in radius. Push an enemy unit
 adjacent to you up to 1 space.`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3},{name:"Snipe",description:`Target a unit at maximum range,
-and in in a straight line.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:4,secondaryDefense:4},{name:"Suppress",description:`An enemy hero in radius who is not
+and in a straight line.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"RANGE",modifierValue:4,secondaryMovement:4,secondaryDefense:4},{name:"Suppress",description:`An enemy hero in radius who is not
 adjacent to terrain discards a card, if able.`,color:"GREEN",level:1,initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:2},{name:"Assault Jump",description:`Place yourself into a space in a straight
 line in radius. Push an enemy unit
 adjacent to you up to 2 spaces.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"ATTACK"},{name:"Prepared Shot",description:`Target a unit in range, in a straight
@@ -2027,7 +2026,7 @@ you may move up to 3 spaces.`,color:"GREEN",level:1,initiative:4,primaryAction:"
 A friendly hero in radius may swap their
 unresolved card with a card in their hand.`,color:"RED",level:2,variant:{first:1,second:2},initiative:11,primaryAction:"ATTACK",primaryValue:3,modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:2,item:"INITIATIVE"},{name:"Spinning Blade",description:`Target a unit adjacent to you. After the attack:
 **This turn:** Empty spaces adjacent to you
-count as obstacles for enemy units.`,color:"RED",level:2,variant:{first:2,second:2},initiative:11,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:1,secondaryDefense:2,item:"DEFENSE"},{name:"Hold my Sake",description:`Target a unit adjacent to you.
+count as obstacles for enemy units.`,color:"RED",level:2,variant:{first:2,second:2},initiative:11,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:1,secondaryDefense:2,item:"DEFENSE"},{name:"Hold my Saké",description:`Target a unit adjacent to you.
 After the attack: A friendly hero in radius
 may swap their unresolved card with
 a card in their hand, or in their discard.`,color:"RED",level:3,variant:{first:1,second:2},initiative:12,primaryAction:"ATTACK",primaryValue:3,modifier:"AREA",modifierValue:4,secondaryMovement:1,secondaryDefense:2,item:"MOVEMENT"},{name:"Blade Helix",description:`Target a unit adjacent to you.
@@ -2043,12 +2042,12 @@ an attack card. If that hero has a card
 in the discard, that hero may move
 up to 2 spaces, ignoring obstacles.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:2,secondaryDefense:5,item:"INITIATIVE"},{name:"Bring the Relief",description:`A friendly hero in range may discard a card.
 If that hero has a card in the discard,
-you may move up to 4 spaces.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"ATTACK"},{name:"Pledge of Allegiance",description:`A friendly hero in radius may discard a card.
+you may move up to 4 spaces.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"ATTACK"},{name:"Pledge of Allegiance",description:`A friendly hero in range may discard a card.
 If that hero has a card in the discard,
 both you and that hero gain 1 coin and
 you may retrieve a discarded card.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"DEFENSE"},{name:"Commit Reserves",description:`A friendly hero in range may discard a card.
 If that hero has a card in the discard, you may
-move up to 4 spaces, ignoring obstacles.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"AREA"},{name:"Loyal Retainer",description:`A friendly hero in radius may discard a card.
+move up to 4 spaces, ignoring obstacles.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"AREA"},{name:"Loyal Retainer",description:`A friendly hero in range may discard a card.
 If that hero has a card in the discard,
 both you and that hero gain 2 coins and
 you may retrieve a discarded card.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:4,item:"DEFENSE"},{name:"Ready for War",description:`Return your silver card to your deck and take
@@ -2061,42 +2060,42 @@ discards a card to defend, After the attack:
 Another enemy hero in radius discards a
 card of the same color, if able.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:2,modifier:"AREA",modifierValue:3,secondaryMovement:1,secondaryDefense:1},{name:"Commune with Spirits",description:`A friendly hero in play names a color;
 you may discard a card of that color.
-Perform the primary aciton on a card
+Perform the primary action on a card
 of that color in your discard.`,color:"SILVER",initiative:13,primaryAction:"SKILL",secondaryDefense:2},{name:"Reign of Winter",description:`Each time after you defeat a minion with your
 basic attack, an enemy hero in radius discards
 a card of the color of your choice, if able.`,color:"PURPLE",level:4,modifier:"AREA",modifierValue:4},{name:"Cold Snap",description:`Choose a direction. Move each enemy unit
 in radius 1 space in that direction, if able.`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:5},{name:"Winter Dagger",description:`Target a unit adjacent to you.
-+3 ::attack_red:: Attack if this card is not in the discard.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:2,primaryValueSign:"PLUS",secondaryMovement:4,secondaryDefense:6},{name:"Glacial Barrier",description:`Place an ::token_ice:: ice token in radius.
++3 ::attack_red:: Attack if this card is not in the discard.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:2,primaryValueSign:"PLUS",secondaryMovement:4,secondaryDefense:6},{name:"Glacial Barrier",description:`Place an ::token_ice:: Ice token in radius.
 Enemy heroes have -1 ::initiative:: Initiative for
 every Ice token they are adjacent to.`,color:"GREEN",level:1,initiative:4,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3},{name:"Snowstorm",description:`Choose a direction. Move each enemy unit in
-radius 1 space in that direciton, if able.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"DEFENSE"},{name:"Winter Spear",description:`Target a unit adjacent to you.
-+3 ::attack_red:: Attack if this card is not in the discard.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,primaryValueSign:"PLUS",secondaryMovement:4,secondaryDefense:6,item:"INITIATIVE"},{name:"Wall of Frost",description:`Place up to 2 ::token_ice:: ice tokens in radius.
+radius 1 space in that direction, if able.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"DEFENSE"},{name:"Winter Spear",description:`Target a unit adjacent to you.
++3 ::attack_red:: Attack if this card is not in the discard.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,primaryValueSign:"PLUS",secondaryMovement:4,secondaryDefense:6,item:"INITIATIVE"},{name:"Wall of Frost",description:`Place up to 2 ::token_ice:: Ice tokens in radius.
 Enemy heroes have -1 ::initiative:: Initiative
 for every Ice token they are adjacent to.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"INITIATIVE"},{name:"Guardian Spirit",description:`Up to 1 friendly hero in radius
 may retrieve a discarded card.
 If "Guardian Spirit" is in the discard, retrieve it.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:5,item:"ATTACK"},{name:"Spirit Wolf",description:`**Choose one —**
 >>If this card is not in the discard,
 >target a unit in range.
->>Target a hero adjacent to you.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:3,item:"DEFENSE"},{name:"Ancestral Totem",description:`Place a ::token_totem:: in range.
+>>Target a hero adjacent to you.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:3,item:"DEFENSE"},{name:"Ancestral Totem",description:`Place a ::token_totem:: Totem token in range.
 If a friendly melee minion adjacent to a Totem
-would be defeated, remove the totem instead.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:2,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Blizzard",description:`Choose a direction. Move each enemy unit
+would be defeated, remove the Totem instead.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:2,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Blizzard",description:`Choose a direction. Move each enemy unit
 in radius 1 space in that direction, if able.
 If this card is in the discard, **End of turn:**
 May repeat once.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:6,item:"MOVEMENT"},{name:"Winter Scepter",description:`Target a unit adjacent to you.
-+3 ::attack_red:: Attack if this card is not in the discard.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",secondaryMovement:4,secondaryDefense:7,item:"AREA"},{name:"Pack Ice",description:`Place up to 3 ::token_ice:: ice tokens in radius.
++3 ::attack_red:: Attack if this card is not in the discard.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",secondaryMovement:4,secondaryDefense:7,item:"AREA"},{name:"Pack Ice",description:`Place up to 3 ::token_ice:: Ice tokens in radius.
 Enemy heroes have -1 ::initiative:: Initiative for
 every Ice token they are adjacent to.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:4,item:"INITIATIVE"},{name:"Warrior Spirit",description:`Up to 1 friendly hero in radius may retrieve
 a discarded card. If "Warrior Spirit" is in the
 discard, you may retrieve a discarded card.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:6,item:"RANGE"},{name:"Spirit Bear",description:`**Choose one, or both,** on different targets —
 >>If this card is not in the discard,
 >target a unit in range.
->>Target a hero adjacent to you.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:4,item:"DEFENSE"},{name:"Venerated Totem",description:`Place a ::token_totem:: in range.
-If a friendly minion adjacent to a totem would
-be defeated, remove the totem instead.
+>>Target a hero adjacent to you.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:2,secondaryMovement:4,secondaryDefense:4,item:"DEFENSE"},{name:"Venerated Totem",description:`Place a ::token_totem:: Totem token in range.
+If a friendly minion adjacent to a Totem would
+be defeated, remove the Totem instead.
 Totem tokens are immune to enemy actions.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:2,secondaryMovement:2,secondaryDefense:4,item:"ATTACK"}],bo=[{name:"Blink Strike",description:`Before the attack: Move 2 spaces in a straight
 line through an enemy unit; target that unit.
-~(If you cannot make this move, you cannot attack).`,color:"GOLD",initiative:13,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:1,secondaryDefense:1},{name:"Nimble Strike",description:`Before the attack: Move 2 spaces in a straight
-line through an enemy hero; target that hero.`,color:"GOLD",handicapped:!0,initiative:12,primaryAction:"ATTACK",primaryValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Blend Into Shadows",description:`If adjacent to terrain, place yourself
+~(If you cannot make this move, you cannot attack.)`,color:"GOLD",initiative:13,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:1,secondaryDefense:1},{name:"Nimble Strike",description:`Before the attack: Move 2 spaces in a straight
+line through an enemy hero; target that hero.`,color:"GOLD",handicapped:!0,initiative:12,primaryAction:"ATTACK",primaryValue:2,secondaryMovement:1,secondaryDefense:1},{name:"Blend Into Shadows",description:`If you are adjacent to terrain, place yourself
 into a space in radius; if you do, **Next turn:**
 You are immune to enemy attack actions.`,color:"SILVER",initiative:6,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryDefense:2},{name:"Cloak and Daggers",description:`After you perform a basic action, you may
 repeat it once; if you repeat an attack
@@ -2112,21 +2111,21 @@ Take 1 coin from an enemy hero adjacent to
 you; if you do, you may move 1 space.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:2,primaryAction:"SKILL",secondaryMovement:3,secondaryDefense:1,item:"ATTACK"},{name:"Parry",description:`Block a non-ranged attack.
 The attacker discards a card, if able.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:11,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",secondaryMovement:3,item:"DEFENSE"},{name:"Backstab",description:`Target a unit adjacent to you; if a friendly
 unit is adjacent to the target, +2 ::attack_red:: Attack.
-~(A "friendly unit" is another hero or a minion on your team.)`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,primaryValueSign:"PLUS",secondaryMovement:5,secondaryDefense:5,item:"DEFENSE"},{name:"Poisoned Dagger",description:`Give a hero in range a ::marker_poison:: poison marker.
+~(A "friendly unit" is another hero or a minion on your team.)`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,primaryValueSign:"PLUS",secondaryMovement:5,secondaryDefense:5,item:"DEFENSE"},{name:"Poisoned Dagger",description:`Give a hero in range a ::marker_poison:: Poison marker.
 The hero with a poison marker has
--1 ::initiative:: Initiative, -1 ::attack_silver:: Attack, and -1 ::defense_silver:: Defense.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:1,item:"INITIATIVE"},{name:"Evade",description:`Block a ranged attack.
+-1 ::initiative:: Initiative, -1 ::attack_silver:: Attack and -1 ::defense_silver:: Defense.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:2,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:1,item:"INITIATIVE"},{name:"Evade",description:`Block a ranged attack.
 You may move 1 space. You may retrieve
 your resolved or discarded basic skill card.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",secondaryMovement:3,item:"ATTACK"},{name:"Leaping Strike",description:`Before the attack: You may move 1 space.
 Target a unit adjacent to you.
-After the attack: You may move 1 space.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:4,item:"AREA"},{name:"Master Thief",description:`Move up to 2 spaces.  Take 1 or 2 coins
+After the attack: You may move 1 space.`,color:"RED",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:4,secondaryDefense:4,item:"AREA"},{name:"Master Thief",description:`Move up to 2 spaces. Take 1 or 2 coins
 from an enemy hero adjacent to you;
 if you do, you may move up to 2 spaces.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:1,primaryAction:"SKILL",secondaryMovement:3,secondaryDefense:2,item:"MOVEMENT"},{name:"Riposte",description:`Block a non-ranged attack. The attacker
 discards a card, or is defeated.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:11,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",secondaryMovement:3,item:"RANGE"},{name:"Backstab with a Ballista",description:`Target a unit in range;
-if a friendly unit is adjacent to the target
+if a friendly unit is adjacent to the target,
 +2 ::attack_red:: Attack, and the target cannot
-perform a primary action to defend.`,color:"RED",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:1,secondaryMovement:5,secondaryDefense:6,item:"DEFENSE"},{name:"Poisoned Dart",description:`Give a hero in range a ::marker_poison:: poison marker.
+perform a primary action to defend.`,color:"RED",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"ATTACK",primaryValue:5,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:1,secondaryMovement:5,secondaryDefense:6,item:"DEFENSE"},{name:"Poisoned Dart",description:`Give a hero in range a ::marker_poison:: Poison marker.
 The hero with a poison marker has
--2 ::initiative:: Initiative, -2 ::attack_silver:: Attack, and -2 ::defense_silver:: Defense.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:1,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:2,item:"INITIATIVE"}],Vo=[{name:"Rapid Redeployment",description:`**Choose one —**
+-2 ::initiative:: Initiative, -2 ::attack_silver:: Attack and -2 ::defense_silver:: Defense.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:1,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:3,secondaryDefense:2,item:"INITIATIVE"}],Vo=[{name:"Rapid Redeployment",description:`**Choose one —**
 >>Move up to 3 spaces and place the
 >Turret into a space adjacent to you;
 >it counts as an obstacle.
@@ -2163,7 +2162,7 @@ of the Turret performs a primary action,
 that hero discards a card, or is defeated;
 if they discard a card, deactivate this effect.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:4,item:"MOVEMENT"},{name:"Supercharged Cannon",description:`Target a unit in range of both you and the
 Turret. If the target is in a straight line from
-you, and in a straight line from the Turret,
+you and in a straight line from the Turret,
 gain +3 ::attack_red:: Attack.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:4,primaryValueSign:"PLUS",modifier:"RANGE",modifierValue:3,secondaryMovement:4,secondaryDefense:6,item:"DEFENSE"},{name:"Perfected Design",description:`If you are in radius of the Turret,
 **Choose one —**
 >>Swap with a unit or a token in radius
@@ -2186,13 +2185,13 @@ enemy hero. Target a hero adjacent to you.
 of your active cards with an active effect.
 **This round:** You are enraged.`,color:"SILVER",initiative:7,primaryAction:"SKILL",secondaryDefense:4},{name:"Unbound Fury",description:`You are always enraged, and all your
 resolved cards count as active.`,color:"PURPLE",level:4},{name:"Prowling Brute",description:`If enraged, after movement, you may swap
-with a unit or token adjacent to you.
+with a unit or a token adjacent to you.
 **This round:** You are enraged.`,color:"BLUE",level:1,initiative:9,primaryAction:"MOVEMENT",primaryValue:1,secondaryDefense:5},{name:"Prey Drive",description:`Target a unit adjacent to you. After the attack:
-If enraged, and the target weas not removed,
+If enraged, and the target was not removed,
 remove up to 1 enemy minion in radius.
 **This round:** You are enraged.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:7},{name:"Sniff Out",description:`If enraged, an enemy hero in range
 discards a card, if able.`,color:"GREEN",level:1,initiative:4,primaryAction:"SKILL",modifier:"RANGE",modifierValue:2,secondaryMovement:2,secondaryDefense:2},{name:"Rampaging Beast",description:`If enraged, after movement, you may swap
-with a unit or token adjacent to you;
+with a unit or a token adjacent to you;
 if you do, move up to 1 additional space.
 **This round:** You are enraged.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"MOVEMENT",primaryValue:1,secondaryDefense:6,item:"DEFENSE"},{name:"Prey Abundance",description:`Target a unit adjacent to you. After the attack:
 If enraged, and the target was not removed,
@@ -2201,11 +2200,11 @@ remove up to 1 enemy minion in radius.
 discards a card, if able.`,color:"GREEN",level:2,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Cold Ire",description:`If enraged, gain +1 ::movement_blue:: Movement.
 **This round:** You are enraged.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"MOVEMENT",primaryValue:1,primaryValueSign:"PLUS",secondaryDefense:6,item:"ATTACK"},{name:"Rip",description:`Target a unit adjacent to you.
 After the attack: If enraged, gain 1 coin.
-**This round:** you are enraged.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Instinctive Reaction",description:`If enraged, **choose one —**
+**This round:** You are enraged.`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,secondaryMovement:3,secondaryDefense:6,item:"INITIATIVE"},{name:"Instinctive Reaction",description:`If enraged, **choose one —**
 >>Perform the primary action on one
 >of your discarded cards.
 >>You may retrieve a discarded card.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3,item:"INITIATIVE"},{name:"Unstoppable Force",description:`If enraged, after movement, you may swap
-with a unit or token adjacent to you;
+with a unit or a token adjacent to you;
 if you do, move up to 2 additional spaces.
 **This round:** You are enraged.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:10,primaryAction:"MOVEMENT",primaryValue:1,secondaryDefense:6,item:"RANGE"},{name:"Feeding Frenzy",description:`Target a unit adjacent to you. After the attack:
 If enraged, and the target was not removed,
@@ -2213,10 +2212,10 @@ remove up to 2 enemy minions in radius.
 **This round:** You are enraged.`,color:"RED",level:3,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:6,modifier:"AREA",modifierValue:4,secondaryMovement:3,secondaryDefense:8,item:"DEFENSE"},{name:"Apex Predator",description:`If enraged, an enemy hero in range
 discards a card, or is defeated.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Eyes of Flame",description:`If enraged, gain +2 ::movement_blue:: Movement.
 **This round:** You are enraged.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:10,primaryAction:"MOVEMENT",primaryValue:1,primaryValueSign:"PLUS",secondaryDefense:6,item:"AREA"},{name:"Tear",description:`Target a unit adjacent to you.
-After the attack: If enraged, gain 2 coins.;
+After the attack: If enraged, gain 2 coins;
 if you defeated a hero, that hero spends
 1 additional ::life_counters:: Life counter.
-**This round:** you are enraged.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,secondaryMovement:3,secondaryDefense:7,item:"INITIATIVE"},{name:"Evolutionary Response",description:`If enraged, **choose one, or both —**
+**This round:** You are enraged.`,color:"RED",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,secondaryMovement:3,secondaryDefense:7,item:"INITIATIVE"},{name:"Evolutionary Response",description:`If enraged, **choose one, or both —**
 >>Perform the primary action on one
 >of your discarded cards.
 >>You may retrieve a discarded card.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:3,item:"MOVEMENT"}],Mo=[{name:"Magnetic Dagger",description:`Target a unit adjacent to you.
@@ -2237,7 +2236,7 @@ without moving it away from you or closer to
 you. May repeat once on the same target.`,color:"BLUE",level:1,initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:5},{name:"Shock",description:`Target a unit adjacent to you.
 After the attack: An enemy hero in radius and
 not adjacent to you discards a card, if able.`,color:"RED",level:1,initiative:8,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:2,secondaryMovement:4,secondaryDefense:6},{name:"Stop Projectiles",description:"Block a ranged attack.",color:"GREEN",level:1,initiative:3,primaryAction:"DEFENSE",primaryValueSign:"EXCLAMATION",secondaryMovement:2},{name:"Control Gravity",description:`Move a unit, or a token, in radius 1 space,
-without moving it away from you, or closer to 
+without moving it away from you or closer to 
 you. May repeat once on the same target.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:5,item:"DEFENSE"},{name:"Electrocute",description:`Target a unit adjacent to you.
 After the attack: An enemy hero in radius and
 not adjacent to you discards a card, if able.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:5,modifier:"AREA",modifierValue:3,secondaryMovement:4,secondaryDefense:6,item:"INITIATIVE"},{name:"Deflect Projectiles",description:`Block a ranged attack; if you do, an enemy
@@ -2247,7 +2246,7 @@ discards a card, if able.`,color:"GREEN",level:2,variant:{first:1,second:2},init
 obstacle, that hero discards a card, if able.`,color:"BLUE",level:2,variant:{first:2,second:2},initiative:10,primaryAction:"SKILL",secondaryMovement:3,secondaryDefense:5,item:"ATTACK"},{name:"Charged Boomerang",description:`Target a unit in range and not in a straight line.
 ~(Units adjacent to you are in a straight line from you.)`,color:"RED",level:2,variant:{first:2,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"RANGE",modifierValue:3,secondaryMovement:4,secondaryDefense:3,item:"DEFENSE"},{name:"Telekinesis",description:`Place a unit or a token in range, which is not
 in a straight line, into a space adjacent to you.`,color:"GREEN",level:2,variant:{first:2,second:2},initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:3,item:"ATTACK"},{name:"Center of Mass",description:`Move a unit, or a token, in radius 1 space,
-without moving it away from you, or closer
+without moving it away from you or closer
 to you. May repeat up to two times
 on the same target.`,color:"BLUE",level:3,variant:{first:1,second:2},initiative:11,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:3,secondaryDefense:6,item:"DEFENSE"},{name:"Electroblast",description:`Target a unit adjacent to you. After the attack:
 An enemy hero in radius and not adjacent
@@ -2278,7 +2277,7 @@ to 1 space if there is an empty minion spawn
 point in radius in the battle zone.
 Target a unit adjacent to you.`,color:"RED",level:1,initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"AREA",modifierValue:2,secondaryMovement:4,secondaryDefense:4},{name:"Shadow Step",description:`Place yourself into an empty minion
 spawn point in range in the battle zone.`,color:"GREEN",level:1,initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryMovement:2,secondaryDefense:3},{name:"Sprouts of Panic",description:`Target an enemy unit in radius occupying a
-spawn point. Move that unit up to 2 spaces.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:5,item:"INITIATIVE"},{name:"Sanguine Path",description:`Before the attack: Move up to
+spawn point. Move that unit up to 2 spaces.`,color:"BLUE",level:2,variant:{first:1,second:2},initiative:10,primaryAction:"SKILL",modifier:"AREA",modifierValue:3,secondaryMovement:2,secondaryDefense:5,item:"INITIATIVE"},{name:"Sanguine Path",description:`Before the attack: You may move up to
 1 space for every empty minion spawn point
 in radius in the battle zone, up to a maximum
 of 2 spaces. Target a unit adjacent to you.`,color:"RED",level:2,variant:{first:1,second:2},initiative:9,primaryAction:"ATTACK",primaryValue:3,modifier:"AREA",modifierValue:2,secondaryMovement:4,secondaryDefense:4,item:"DEFENSE"},{name:"Shadow Walk",description:`Place yourself into an empty minion
@@ -2374,8 +2373,8 @@ defeat up to one minion you moved through.`,color:"RED",level:2,variant:{first:2
 >>Target a unit in range adjacent to
 a ::token_tree:: Tree token.`,color:"RED",level:3,variant:{first:1,second:2},initiative:8,primaryAction:"ATTACK",primaryValue:6,modifier:"RANGE",modifierValue:3,secondaryMovement:4,secondaryDefense:8,item:"INITIATIVE"},{name:"Monstrous Throw",description:`Place a token, or an enemy unit,
 adjacent to you into a space in range.
-May repeat once.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:5,item:"ATTACK"},{name:"Assert Dominance",description:`**This round:** Up to 1 enemy minion adjacent
-to you does not count towards the minion total
+May repeat once.`,color:"GREEN",level:3,variant:{first:1,second:2},initiative:5,primaryAction:"SKILL",modifier:"RANGE",modifierValue:4,secondaryMovement:2,secondaryDefense:5,item:"ATTACK"},{name:"Assert Dominance",description:`**This round:** Up to 2 enemy minions adjacent
+to you do not count towards the minion total
 during minion battle, regardless of immunity.`,color:"BLUE",level:3,variant:{first:2,second:2},initiative:9,primaryAction:"SKILL",secondaryMovement:2,secondaryDefense:6,item:"MOVEMENT"},{name:"Angry Stampede",description:`If you move in a straight line: You may ignore
 obstacles; each enemy hero you moved
 through discards a card, or is defeated;
@@ -2384,16 +2383,17 @@ defeat up to two minions you moved through.`,color:"RED",level:3,variant:{first:
 >>Swap a friendly unit in radius with
 >a Tree token in radius.`,color:"GREEN",level:3,variant:{first:2,second:2},initiative:5,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:2,secondaryDefense:5,item:"DEFENSE"}],_o=[{name:"Cleave",description:`Target a unit adjacent to you.
 After the attack: May repeat once
-on a different enemy hero.`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:1,secondaryDefense:2},{name:"Desperate Cleave",description:`Target a hero adjacent to you.
+on a different enemy hero.
+~(You may repeat even if the original target was a minion.)`,color:"GOLD",initiative:11,primaryAction:"ATTACK",primaryValue:4,secondaryMovement:1,secondaryDefense:2},{name:"Desperate Cleave",description:`Target a hero adjacent to you.
 After the attack: May repeat once
 on a different enemy hero.`,color:"GOLD",handicapped:!0,initiative:10,primaryAction:"ATTACK",primaryValue:3,secondaryMovement:1,secondaryDefense:1},{name:"Siren's Call",description:`Target an enemy unit not adjacent to you
-and in range; if able, move that unit
+and in range; if able, move the target
 up to 3 spaces to a space adjacent to you.`,color:"SILVER",initiative:3,primaryAction:"SKILL",modifier:"RANGE",modifierValue:3,secondaryDefense:3},{name:"Metamorphosis",description:`Gain +1 ::movement_silver:: Movement and +1 ::initiative:: Initiative
 for each enemy unit adjacent to you.
 You may move through obstacles.`,color:"PURPLE",level:4},{name:"Stone Gaze",description:`**Next turn:** Enemy heroes in radius count
 as both heroes and terrain, and cannot
 perform movement actions.
-~(If you move, the radius "moves" with you)`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:5},{name:"Threatening Slash",description:`Target a unit adjacent to you. +1 ::attack_red:: Attack
+~(If you move, the radius "moves" with you.)`,color:"BLUE",level:1,initiative:9,primaryAction:"SKILL",modifier:"AREA",modifierValue:2,secondaryMovement:3,secondaryDefense:5},{name:"Threatening Slash",description:`Target a unit adjacent to you. +1 ::attack_red:: Attack
 for each other enemy unit adjacent to you.
 ~(Do not count the target when calculating the attack bonus.)`,color:"RED",level:1,initiative:7,primaryAction:"ATTACK",primaryValue:5,primaryValueSign:"PLUS",secondaryMovement:5,secondaryDefense:6},{name:"Charm",description:`Before or after movement, you may
 move an enemy ranged minion
