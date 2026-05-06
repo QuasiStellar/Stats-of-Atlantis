@@ -1293,7 +1293,7 @@
               Description
               <Textarea
                 {...descriptionProps}
-                class="bg-dark-800 text-white disabled:bg-dark-900 border-gray-300 dark:border-gray-600"
+                class="bg-dark-800 !border-dark-600 text-white disabled:bg-dark-900"
                         bind:value={description} />
             </Label>
           </div>
