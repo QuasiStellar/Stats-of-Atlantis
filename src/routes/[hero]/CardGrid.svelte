@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { browser } from "$app/environment"
   import { onMount, tick } from "svelte"
   import { Color, Hero, OldHero, heroes, oldHeroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
   import { images, importCardImage, importImages, updateCanvas } from "../../card_painter"
@@ -93,6 +94,7 @@
   let extraCardsLoaded: boolean[] = []
 
   let imagesLoaded = false
+  const SHOW_NUMBERS_STORAGE_KEY = "goa-show-numbers"
 
   let goldLoaded = false
   let goldHandicapLoaded = false
@@ -492,7 +494,10 @@
     }
   }
 
-  $: showNumbers = false
+  let showNumbers = browser ? localStorage.getItem(SHOW_NUMBERS_STORAGE_KEY) === "true" : false
+  $: if (browser) {
+    localStorage.setItem(SHOW_NUMBERS_STORAGE_KEY, `${showNumbers}`)
+  }
   $: showHandicap = false
 
   const labelColor = (disabled: boolean): string => disabled ? "gray" : "white"
