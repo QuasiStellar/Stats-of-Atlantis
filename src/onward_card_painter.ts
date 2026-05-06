@@ -76,12 +76,16 @@ export function updateHeroCanvas(
 import { onwardHeavyImageNames, onwardImageNames, onwardLightImageNames } from './states';
 
 export const images: Map<string, HTMLImageElement> = new Map();
+const onwardImageModules = import.meta.glob("./lib/images/onward/*.png", { eager: true, import: "default" }) as Record<string, string>
 
 export function importImages(isLowQuality: boolean = false) {
 	const names = onwardImageNames.concat(isLowQuality ? onwardLightImageNames : onwardHeavyImageNames)
   return Promise.all(
 		names.map(async (imageName: string) => {
-      const path = (await import(`./lib/images/onward/${imageName}.png`)).default
+      const path = onwardImageModules[`./lib/images/onward/${imageName}.png`]
+      if (path == null) {
+        return
+      }
       const image = new Image()
       image.src = path
       images.set(imageName, image)

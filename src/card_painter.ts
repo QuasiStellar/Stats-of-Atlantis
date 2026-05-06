@@ -851,11 +851,16 @@ import {
 } from './states';
 
 export const images: Map<string, HTMLImageElement> = new Map();
+const baseImageModules = import.meta.glob("./lib/images/*.png", { eager: true, import: "default" }) as Record<string, string>
+const cardImageModules = import.meta.glob("./lib/images/cards/*/*.webp", { eager: true, import: "default" }) as Record<string, string>
 
 export function importImages() {
   return Promise.all(
     imageNames.map(async (imageName: string) => {
-      const path = (await import(`./lib/images/${imageName}.png`)).default
+      const path = baseImageModules[`./lib/images/${imageName}.png`]
+      if (path == null) {
+        return
+      }
       const image = new Image()
       image.src = path
       images.set(imageName, image)
@@ -867,7 +872,10 @@ export function importImages() {
 export function importCardImages(name: string) {
   return Promise.all(
     cardImageNames.map(async (imageName: string) => {
-      const path = (await import(`./lib/images/cards/${name}/${imageName}.webp`)).default
+      const path = cardImageModules[`./lib/images/cards/${name}/${imageName}.webp`]
+      if (path == null) {
+        return
+      }
       const image = new Image()
       image.src = path
       images.set(imageName, image)
@@ -877,7 +885,10 @@ export function importCardImages(name: string) {
 }
 
 export async function importCardImage(hero: string, card: string) {
-	const path = (await import(`./lib/images/cards/${hero}/${card}.webp`)).default
+	const path = cardImageModules[`./lib/images/cards/${hero}/${card}.webp`]
+	if (path == null) {
+		return
+	}
 	const image = new Image()
 	image.src = path
 	images.set(card, image)

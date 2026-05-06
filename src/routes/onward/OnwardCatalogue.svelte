@@ -5,9 +5,9 @@
   } from "flowbite-svelte"
   import { importImages, paintHero } from "../../onward_card_painter"
 
-  $: heroImages = new Map()
-  $: heroPortraitImages = new Map()
-  $: heroPortraitSelectedImages = new Map()
+  const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+  const heroPortraitModules = import.meta.glob("../../lib/images/onward/portraits/portrait_*.png", { eager: true, import: "default" }) as Record<string, string>
+  const heroPortraitSelectedModules = import.meta.glob("../../lib/images/onward/portraits/portrait_selected_*.png", { eager: true, import: "default" }) as Record<string, string>
 
   let canvas: HTMLCanvasElement
 
@@ -19,15 +19,6 @@
   });
 
   onMount(async () => {
-    for (const hero of heroes) {
-      heroPortraitImages.set(hero, (await import(`../../lib/images/onward/portraits/portrait_${hero}.png`)).default)
-    }
-    heroPortraitImages = heroPortraitImages
-    for (const hero of heroes) {
-      heroPortraitSelectedImages.set(hero, (await import(`../../lib/images/onward/portraits/portrait_selected_${hero}.png`)).default)
-    }
-    heroPortraitSelectedImages = heroPortraitSelectedImages
-
     await Promise.all([
       document.fonts.ready,
       importImages(true),
@@ -44,11 +35,12 @@
     await paintHero(hero, canvas)
   }
 
-  async function getHeroImage(hero: string) {
-    if (!heroImages.has(hero)) {
-      heroImages.set(hero, (await import(`../../lib/images/onward/heroes/${hero}.png`)).default)
-    }
-    return heroImages.get(hero)
+  function getHeroPortrait(hero: string) {
+    return heroPortraitModules[`../../lib/images/onward/portraits/portrait_${hero}.png`] ?? emptyImage
+  }
+
+  function getHeroPortraitSelected(hero: string) {
+    return heroPortraitSelectedModules[`../../lib/images/onward/portraits/portrait_selected_${hero}.png`] ?? emptyImage
   }
 
   const heroes = [
@@ -98,7 +90,7 @@
     <div class="grid grid-cols-8 lg:gap-3 px-3">
       {#each heroes as hero}
         <div class="col-span-1">
-          <img src={selectedHero === hero ? heroPortraitSelectedImages.get(hero) : heroPortraitImages.get(hero)} class="w-20" on:click={() => {selectHero(hero)}}/>
+          <img src={selectedHero === hero ? getHeroPortraitSelected(hero) : getHeroPortrait(hero)} class="w-20" on:click={() => {selectHero(hero)}}/>
         </div>
       {/each}
     </div>

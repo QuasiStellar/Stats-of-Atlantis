@@ -17,6 +17,8 @@
   import { importImages, updateCanvas } from "../../card_painter"
   import { browser } from "$app/environment"
   import { TSMap } from "typescript-map"
+  const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+  const statImageModules = import.meta.glob("../../lib/images/stat_icons/*_white.png", { eager: true, import: "default" }) as Record<string, string>
 
   let cardValues = new TSMap<string, TSMap<string, any>>([
     ["gold", new TSMap<string, any>([
@@ -762,15 +764,12 @@
   let canvas: HTMLCanvasElement
   let context: CanvasRenderingContext2D
 
-  $: statImages = new Map()
+  function getStatImage(stat: string) {
+    return statImageModules[`../../lib/images/stat_icons/${stat}_white.png`] ?? emptyImage
+  }
 
   onMount(async () => {
     context = canvas.getContext("2d")!
-
-    for (const stat of stats) {
-      statImages.set(stat, (await import(`../../lib/images/stat_icons/${stat}_white.png`)).default)
-    }
-    statImages = statImages
 
     Promise.all([
       document.fonts.ready,
@@ -1209,7 +1208,7 @@
           <div class="col-span-1 h-7 z-20 relative">
             <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
               <div class="m-1 relative h-full">
-                <Img src={statImages.get("attack")} class="absolute w-5 z-30 -top-1.25" />
+                <Img src={getStatImage("attack")} class="absolute w-5 z-30 -top-1.25" />
                 <div class="float-left w-4.5 h-full bg-transparent" />
                 {#each Array(8) as _, color_index (color_index)}
                   <div class="float-left w-1 h-1" />
@@ -1227,7 +1226,7 @@
           <div class="col-span-1 h-7 z-20 relative">
             <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
               <div class="m-1 relative h-full">
-                <Img src={statImages.get("defense")} class="absolute w-5 z-30 -top-1.25" />
+                <Img src={getStatImage("defense")} class="absolute w-5 z-30 -top-1.25" />
                 <div class="float-left w-4.5 h-full bg-transparent" />
                 {#each Array(8) as _, color_index (color_index)}
                   <div class="float-left w-1 h-1" />
@@ -1245,7 +1244,7 @@
           <div class="col-span-1 h-7 z-20 relative">
             <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
               <div class="m-1 relative h-full">
-                <Img src={statImages.get("initiative")} class="absolute w-5 z-30 -top-1.25" />
+                <Img src={getStatImage("initiative")} class="absolute w-5 z-30 -top-1.25" />
                 <div class="float-left w-4.5 h-full bg-transparent" />
                 {#each Array(8) as _, color_index (color_index)}
                   <div class="float-left w-1 h-1" />
@@ -1263,7 +1262,7 @@
           <div class="col-span-1 h-7 z-20 relative">
             <div class="h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded-xl bg-dark-900 absolute">
               <div class="m-1 relative h-full">
-                <Img src={statImages.get("movement")} class="absolute w-5 z-30 -top-1.25" />
+                <Img src={getStatImage("movement")} class="absolute w-5 z-30 -top-1.25" />
                 <div class="float-left w-4.5 h-full bg-transparent" />
                 {#each Array(8) as _, color_index (color_index)}
                   <div class="float-left w-1 h-1" />

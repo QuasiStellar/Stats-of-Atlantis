@@ -5,11 +5,10 @@
   import { images, importCardImage, importImages, updateCanvas } from "../../card_painter"
   import oldHeroInfo from "../../heroes.json"
   import newHeroInfo from "../../new_heroes.json"
-  import BiggerPicture from "bigger-picture/svelte"
-  import "bigger-picture/css"
-  import GoaCard from "./GoaCard.svelte"
-  import type { BiggerPictureInstance } from "bigger-picture"
   import { Checkbox, Img, Tooltip } from "flowbite-svelte"
+  const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+  const statImageModules = import.meta.glob("../../lib/images/stat_icons/*_white.png", { eager: true, import: "default" }) as Record<string, string>
+  const bannerImageModules = import.meta.glob("../../lib/images/avatars_full/*.webp", { eager: true, import: "default" }) as Record<string, string>
 
   export let heroName: string
   export let useNewPrinting = true
@@ -296,52 +295,57 @@
     bonuses[Item.RANGE] = 0
     bonuses[Item.MOVEMENT] = 0
 
+    const incrementBonus = (card: { item?: Item } | null | undefined) => {
+      if (!card?.item) return
+      bonuses[card.item] += 1
+    }
+
     if (blueIIselection === true) {
-      bonuses[blueIIbCard.item] += 1
+      incrementBonus(blueIIbCard)
     }
 
     if (blueIIselection === false) {
-      bonuses[blueIIaCard.item] += 1
+      incrementBonus(blueIIaCard)
     }
 
     if (redIIselection === true) {
-      bonuses[redIIbCard.item] += 1
+      incrementBonus(redIIbCard)
     }
 
     if (redIIselection === false) {
-      bonuses[redIIaCard.item] += 1
+      incrementBonus(redIIaCard)
     }
 
     if (greenIIselection === true) {
-      bonuses[greenIIbCard.item] += 1
+      incrementBonus(greenIIbCard)
     }
 
     if (greenIIselection === false) {
-      bonuses[greenIIaCard.item] += 1
+      incrementBonus(greenIIaCard)
     }
     
     if (blueIIIselection === true) {
-      bonuses[blueIIIbCard.item] += 1
+      incrementBonus(blueIIIbCard)
     }
 
     if (blueIIIselection === false) {
-      bonuses[blueIIIaCard.item] += 1
+      incrementBonus(blueIIIaCard)
     }
     
     if (redIIIselection === true) {
-      bonuses[redIIIbCard.item] += 1
+      incrementBonus(redIIIbCard)
     }
 
     if (redIIIselection === false) {
-      bonuses[redIIIaCard.item] += 1
+      incrementBonus(redIIIaCard)
     }
 
     if (greenIIIselection === true) {
-      bonuses[greenIIIbCard.item] += 1
+      incrementBonus(greenIIIbCard)
     }
 
     if (greenIIIselection === false) {
-      bonuses[greenIIIaCard.item] += 1
+      incrementBonus(greenIIIaCard)
     }
 
     initiativeBonus = bonuses[Item.INITIATIVE]
@@ -589,19 +593,18 @@
     )
   }
 
-  let bp: BiggerPictureInstance
-
   let banner: any
 
-  $: statImages = new Map()
+  function getBannerImage(hero: string) {
+    return bannerImageModules[`../../lib/images/avatars_full/${hero}.webp`] ?? emptyImage
+  }
+
+  function getStatImage(stat: string) {
+    return statImageModules[`../../lib/images/stat_icons/${stat}_white.png`] ?? emptyImage
+  }
 
   onMount(async () => {
-    banner = (await import(`../../lib/images/avatars_full/${heroName}.webp`)).default
-
-    for (const stat of stats) {
-      statImages.set(stat, (await import(`../../lib/images/stat_icons/${stat}_white.png`)).default)
-    }
-    statImages = statImages
+    banner = getBannerImage(heroName)
 
     goldCtx = gold.getContext('2d')!
     silverCtx = silver.getContext('2d')!
@@ -913,94 +916,7 @@
       purpleLoaded = true
     })
 
-    bp = BiggerPicture({
-      target: document.body
-    })
   })
-
-  function goldClick() {
-    bp.open({
-      intro: "fadeup",
-      items: [{ html: "" }],
-      onOpen: (container) => {
-        let card = new GoaCard({
-          target: container.querySelector(".bp-html") as Element,
-          props: { bp }
-        });
-        card.drawCard(document.getElementById("goldCanvas")! as HTMLCanvasElement)
-      },
-    })
-  }
-
-  function silverClick() {
-    bp.open({
-      intro: "fadeup",
-      items: [{ html: "" }],
-      onOpen: (container) => {
-        let card = new GoaCard({
-          target: container.querySelector(".bp-html") as Element,
-          props: { bp }
-        });
-        card.drawCard(document.getElementById("silverCanvas")! as HTMLCanvasElement)
-      },
-    })
-  }
-
-  function purpleClick() {
-    bp.open({
-      intro: "fadeup",
-      items: [{ html: "" }],
-      onOpen: (container) => {
-        let card = new GoaCard({
-          target: container.querySelector(".bp-html") as Element,
-          props: { bp }
-        });
-        card.drawCard(document.getElementById("purpleCanvas")! as HTMLCanvasElement)
-      },
-    })
-  }
-
-  function blueIClick() {
-    bp.open({
-      intro: "fadeup",
-      items: [{ html: "" }],
-      onOpen: (container) => {
-        let card = new GoaCard({
-          target: container.querySelector(".bp-html") as Element,
-          props: { bp }
-        });
-        card.drawCard(document.getElementById("blueICanvas")! as HTMLCanvasElement)
-      },
-    })
-  }
-
-  function redIClick() {
-    bp.open({
-      intro: "fadeup",
-      items: [{ html: "" }],
-      onOpen: (container) => {
-        let card = new GoaCard({
-          target: container.querySelector(".bp-html") as Element,
-          props: { bp }
-        });
-        card.drawCard(document.getElementById("redICanvas")! as HTMLCanvasElement)
-      },
-    })
-  }
-
-  function greenIClick() {
-    bp.open({
-      intro: "fadeup",
-      items: [{ html: "" }],
-      onOpen: (container) => {
-        let card = new GoaCard({
-          target: container.querySelector(".bp-html") as Element,
-          props: { bp }
-        });
-        card.drawCard(document.getElementById("greenICanvas")! as HTMLCanvasElement)
-      },
-    })
-  }
 
   function blueIImainPointerEnter() {
     if (blueIIalt)
@@ -1024,38 +940,12 @@
 
   function blueIImainClick() {
     hoverOverBlueII = false
-    if (blueIIalt)
-      blueIIalt = !blueIIalt
-    else
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("blueIImainCanvas")! as HTMLCanvasElement)
-        },
-      })
+    blueIIalt = !blueIIalt
   }
 
   function blueIIaltClick() {
     hoverOverBlueII = false
-    if (blueIIalt)
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("blueIIaltCanvas")! as HTMLCanvasElement)
-        },
-      })
-    else
-      blueIIalt = !blueIIalt
+    blueIIalt = !blueIIalt
   }
 
   function redIImainPointerEnter() {
@@ -1080,38 +970,12 @@
 
   function redIImainClick() {
     hoverOverRedII = false
-    if (redIIalt)
-      redIIalt = !redIIalt
-    else
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("redIImainCanvas")! as HTMLCanvasElement)
-        },
-      })
+    redIIalt = !redIIalt
   }
 
   function redIIaltClick() {
     hoverOverRedII = false
-    if (redIIalt)
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("redIIaltCanvas")! as HTMLCanvasElement)
-        },
-      })
-    else
-      redIIalt = !redIIalt
+    redIIalt = !redIIalt
   }
 
   function greenIImainPointerEnter() {
@@ -1136,38 +1000,12 @@
 
   function greenIImainClick() {
     hoverOverGreenII = false
-    if (greenIIalt)
-      greenIIalt = !greenIIalt
-    else
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("greenIImainCanvas")! as HTMLCanvasElement)
-        },
-      })
+    greenIIalt = !greenIIalt
   }
 
   function greenIIaltClick() {
     hoverOverGreenII = false
-    if (greenIIalt)
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("greenIIaltCanvas")! as HTMLCanvasElement)
-        },
-      })
-    else
-      greenIIalt = !greenIIalt
+    greenIIalt = !greenIIalt
   }
   
   function blueIIImainPointerEnter() {
@@ -1192,38 +1030,12 @@
 
   function blueIIImainClick() {
     hoverOverBlueIII = false
-    if (blueIIIalt)
-      blueIIIalt = !blueIIIalt
-    else
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("blueIIImainCanvas")! as HTMLCanvasElement)
-        },
-      })
+    blueIIIalt = !blueIIIalt
   }
 
   function blueIIIaltClick() {
     hoverOverBlueIII = false
-    if (blueIIIalt)
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("blueIIIaltCanvas")! as HTMLCanvasElement)
-        },
-      })
-    else
-      blueIIIalt = !blueIIIalt
+    blueIIIalt = !blueIIIalt
   }
   
   function redIIImainPointerEnter() {
@@ -1248,38 +1060,12 @@
 
   function redIIImainClick() {
     hoverOverRedIII = false
-    if (redIIIalt)
-      redIIIalt = !redIIIalt
-    else
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("redIIImainCanvas")! as HTMLCanvasElement)
-        },
-      })
+    redIIIalt = !redIIIalt
   }
 
   function redIIIaltClick() {
     hoverOverRedIII = false
-    if (redIIIalt)
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("redIIIaltCanvas")! as HTMLCanvasElement)
-        },
-      })
-    else
-      redIIIalt = !redIIIalt
+    redIIIalt = !redIIIalt
   }
   
   function greenIIImainPointerEnter() {
@@ -1304,38 +1090,12 @@
 
   function greenIIImainClick() {
     hoverOverGreenIII = false
-    if (greenIIIalt)
-      greenIIIalt = !greenIIIalt
-    else
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("greenIIImainCanvas")! as HTMLCanvasElement)
-        },
-      })
+    greenIIIalt = !greenIIIalt
   }
 
   function greenIIIaltClick() {
     hoverOverGreenIII = false
-    if (greenIIIalt)
-      bp.open({
-        intro: "fadeup",
-        items: [{ html: "" }],
-        onOpen: (container) => {
-          let card = new GoaCard({
-            target: container.querySelector(".bp-html") as Element,
-            props: { bp }
-          });
-          card.drawCard(document.getElementById("greenIIIaltCanvas")! as HTMLCanvasElement)
-        },
-      })
-    else
-      greenIIIalt = !greenIIIalt
+    greenIIIalt = !greenIIIalt
   }
 
   let avatarClickCounter = 0
@@ -1345,22 +1105,6 @@
     if (avatarClickCounter >= 10) disableShowNumbers = false
   }
 
-  function extraCardClick(index: number) {
-    bp.open({
-      intro: "fadeup",
-      items: [{ html: "" }],
-      onOpen: (container) => {
-        let card = new GoaCard({
-          target: container.querySelector(".bp-html") as Element,
-          props: { bp }
-        });
-        const extraCanvas = extraCardCanvases[index]
-        if (extraCanvas) {
-          card.drawCard(extraCanvas)
-        }
-      },
-    })
-  }
 </script>
 
 <div class="flex md:mt-20 mt-16 mb-52">
@@ -1381,7 +1125,7 @@
       <div id="{stat}" class="col-span-3 h-3 xs:h-4 sm:h-5.5 lg:h-7 z-20 relative">
         <div class="left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 h-2.5 xs:h-3 sm:h-4 lg:h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded sm:rounded-lg lg:rounded-xl bg-dark-900 absolute">
           <div class="m-0.5 sm:m-0.5 lg:m-1 relative h-full">
-            <Img src={statImages.get(stat)} class="absolute w-2 xs:w-2.5 sm:w-3.75 lg:w-5 z-30 -top-0.5 sm:-top-0.75 lg:-top-1.25 xs:left-0.5 sm:left-0.75 lg:left-1" />
+            <Img src={getStatImage(stat)} class="absolute w-2 xs:w-2.5 sm:w-3.75 lg:w-5 z-30 -top-0.5 sm:-top-0.75 lg:-top-1.25 xs:left-0.5 sm:left-0.75 lg:left-1" />
             <div class="float-left w-2 xs:w-3.5 sm:w-6 lg:w-7 h-full bg-transparent" />
             {#each Array(8) as _, color_index (color_index)}
               <div class="float-left w-0.5 sm:w-0.75 lg:w-1 h-1" />
@@ -1401,95 +1145,95 @@
 
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-36 xs:h-44 sm:h-73 lg:h-111 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
-        <canvas id="goldCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={gold} on:click={goldClick}/>
+        <canvas id="goldCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={gold}/>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-36 xs:h-44 sm:h-73 lg:h-111 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
-        <canvas id="silverCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={silver} on:click={silverClick}/>
+        <canvas id="silverCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={silver}/>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-36 xs:h-44 sm:h-73 lg:h-111 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
-        <canvas id="purpleCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={purple} on:click={purpleClick}/>
+        <canvas id="purpleCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={purple}/>
       </div>
     </div>
 
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
-        <canvas id="blueICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIa} on:click={blueIClick}/>
+        <canvas id="blueICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIa}/>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
-        <canvas id="redICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIa} on:click={redIClick}/>
+        <canvas id="redICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIa}/>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
-        <canvas id="greenICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIa} on:click={greenIClick}/>
+        <canvas id="greenICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIa}/>
       </div>
     </div>
 
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative z-10">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
         <canvas id="blueIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIb} on:click={blueIIaltClick} on:pointerleave={blueIIaltPointerLeave} on:pointerenter={blueIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIaltChecked} on:change={checkBlueIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={blueIIaltChecked} on:change={checkBlueIIalt}></Checkbox>
       </div>
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
         <canvas id="blueIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIa} on:click={blueIImainClick} on:pointerleave={blueIImainPointerLeave} on:pointerenter={blueIImainPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIImainChecked} on:change={checkBlueIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={blueIImainChecked} on:change={checkBlueIImain}></Checkbox>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative z-10">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
         <canvas id="redIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIb} on:click={redIIaltClick} on:pointerleave={redIIaltPointerLeave} on:pointerenter={redIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIaltChecked} on:change={checkRedIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={redIIaltChecked} on:change={checkRedIIalt}></Checkbox>
       </div>
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!redIIalt ? 'mainCardII' : hoverOverRedII ? 'downCardII' : 'altCardII'}">
         <canvas id="redIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIa} on:click={redIImainClick} on:pointerleave={redIImainPointerLeave} on:pointerenter={redIImainPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIImainChecked} on:change={checkRedIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={redIImainChecked} on:change={checkRedIImain}></Checkbox>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative z-10">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
         <canvas id="greenIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIb} on:click={greenIIaltClick} on:pointerleave={greenIIaltPointerLeave} on:pointerenter={greenIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIaltChecked} on:change={checkGreenIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={greenIIaltChecked} on:change={checkGreenIIalt}></Checkbox>
       </div>
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!greenIIalt ? 'mainCardII' : hoverOverGreenII ? 'downCardII' : 'altCardII'}">
         <canvas id="greenIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIa} on:click={greenIImainClick} on:pointerleave={greenIImainPointerLeave} on:pointerenter={greenIImainPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIImainChecked} on:change={checkGreenIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={greenIImainChecked} on:change={checkGreenIImain}></Checkbox>
       </div>
     </div>
 
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="blueIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIIb} on:click={blueIIIaltClick} on:pointerleave={blueIIIaltPointerLeave} on:pointerenter={blueIIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIIaltChecked} on:change={checkBlueIIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={blueIIIaltChecked} on:change={checkBlueIIIalt}></Checkbox>
       </div>
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="blueIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={blueIIIa} on:click={blueIIImainClick} on:pointerleave={blueIIImainPointerLeave} on:pointerenter={blueIIImainPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={blueIIImainChecked} on:change={checkBlueIIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={blueIIImainChecked} on:change={checkBlueIIImain}></Checkbox>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="redIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIIb} on:click={redIIIaltClick} on:pointerleave={redIIIaltPointerLeave} on:pointerenter={redIIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIIaltChecked} on:change={checkRedIIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={redIIIaltChecked} on:change={checkRedIIIalt}></Checkbox>
       </div>
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!redIIIalt ? 'mainCardIII' : hoverOverRedIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="redIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={redIIIa} on:click={redIIImainClick} on:pointerleave={redIIImainPointerLeave} on:pointerenter={redIIImainPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={redIIImainChecked} on:change={checkRedIIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={redIIImainChecked} on:change={checkRedIIImain}></Checkbox>
       </div>
     </div>
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="greenIIIaltCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIIb} on:click={greenIIIaltClick} on:pointerleave={greenIIIaltPointerLeave} on:pointerenter={greenIIIaltPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIIaltChecked} on:change={checkGreenIIIalt}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={greenIIIaltChecked} on:change={checkGreenIIIalt}></Checkbox>
       </div>
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {!greenIIIalt ? 'mainCardIII' : hoverOverGreenIII ? 'downCardIII' : 'altCardIII'}">
         <canvas id="greenIIImainCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIIIa} on:click={greenIIImainClick} on:pointerleave={greenIIImainPointerLeave} on:pointerenter={greenIIImainPointerEnter}/>
-        <Checkbox class="absolute top-[3px] xs:top-[4px] sm:top-[7px] lg:top-[11px] right-0 xs:right-[1px] sm:right-[5px] lg:right-[9px] w-2 sm:w-3.5 lg:w-5 h-2 sm:h-3.5 lg:h-5" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
+        <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
       </div>
     </div>
     {#if extraCards.length > 0}
@@ -1497,7 +1241,7 @@
         {#each extraCards as _, index (index)}
           <div class="w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
             <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
-              <canvas width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={extraCardCanvases[index]} on:click={() => extraCardClick(index)}/>
+              <canvas width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={extraCardCanvases[index]}/>
             </div>
           </div>
         {/each}
@@ -1593,4 +1337,5 @@
       font-family: "Modesto Poster";
       src: url("../../lib/fonts/modesto_poster.woff") format("woff");
   }
+
 </style>

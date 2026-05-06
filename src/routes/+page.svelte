@@ -10,13 +10,10 @@
 
 	import starImage from "$lib/images/star.png"
 
-	let heroImages = new Map()
-	let statImages = new Map()
-	let logoImages = new Map()
-
-	const heroImageLoadingPromises: Map<string, Promise<unknown>> = new Map()
-
 	const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+	const heroImageModules = import.meta.glob("../lib/images/avatars/*.webp", { eager: true, import: "default" }) as Record<string, string>
+	const logoImageModules = import.meta.glob("../lib/images/logos/*.png", { eager: true, import: "default" }) as Record<string, string>
+	const statImageModules = import.meta.glob("../lib/images/stat_icons/*_white.png", { eager: true, import: "default" }) as Record<string, string>
 	const traitImageModules = import.meta.glob("../lib/images/trait_*.png", { eager: true, import: "default" }) as Record<string, string>
 
 	onMount(() => {
@@ -25,38 +22,6 @@
 		}
 		updateViewportWidth()
 		window.addEventListener("resize", updateViewportWidth)
-		void (async () => {
-			const heroKeys = new Set([...Object.keys(oldHeroes), ...Object.keys(heroes)])
-
-			for (const hero of heroKeys) {
-				try {
-					const path = (await import(`../lib/images/avatars/${hero}.webp`)).default
-					heroImages.set(hero, path)
-					const image = new Image()
-					image.src = path
-					heroImageLoadingPromises.set(hero, new Promise(resolve => image.onload = (a) => {
-						return resolve(a)
-					}))
-				} catch {
-					heroImages.set(hero, emptyImage)
-				}
-			}
-			heroImages = heroImages
-
-			for (const hero of heroKeys) {
-				try {
-					logoImages.set(hero, (await import(`../lib/images/logos/${hero}.png`)).default)
-				} catch {
-					logoImages.set(hero, emptyImage)
-				}
-			}
-			logoImages = logoImages
-
-			for (const stat of stats) {
-				statImages.set(stat, (await import(`../lib/images/stat_icons/${stat}_white.png`)).default)
-			}
-			statImages = statImages
-		})()
 
 		return () => {
 			window.removeEventListener("resize", updateViewportWidth)
@@ -145,6 +110,18 @@
 
 	function getTraitImage(heroName: string, trait: Trait) {
 		return traitImageModules[`../lib/images/trait_${getTraitImageKey(heroName, trait)}.png`] ?? emptyImage
+	}
+
+	function getHeroImage(heroName: string) {
+		return heroImageModules[`../lib/images/avatars/${heroName}.webp`] ?? emptyImage
+	}
+
+	function getLogoImage(heroName: string) {
+		return logoImageModules[`../lib/images/logos/${heroName}.png`] ?? emptyImage
+	}
+
+	function getStatImage(stat: string) {
+		return statImageModules[`../lib/images/stat_icons/${stat}_white.png`] ?? emptyImage
 	}
 
 	function getTraitLabel(trait: Trait) {
@@ -308,14 +285,14 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 			<li class="px-3 py-1.5" animate:flip={{duration: 300}}>
 				<a href={useNewPrinting ? `/${name}` : `/${name}?printing=old`}>
 					<div class="border border-dark-600 rounded-lg sm:rounded-2xl relative w-[300px] xs:w-[360px] sm:w-[560px] md:w-[720px] h-[151px] xs:h-[181px] sm:h-[281px] md:h-[361px]">
-						<Img src={heroImages.get(name) ?? emptyImage} class="absolute z-0 rounded-lg sm:rounded-2xl transition-all duration-300 cursor-pointer filter md:saturate-50 hover:saturate-150" alt="" />
+						<Img src={getHeroImage(name)} class="absolute z-0 rounded-lg sm:rounded-2xl transition-all duration-300 cursor-pointer filter md:saturate-50 hover:saturate-150" alt="" />
 						<ul class="absolute top-1 sm:top-2 left-1 sm:left-2 space-y-0.5 sm:space-y-1">
 							{#each activeStats as stat, stat_index (stat_index)}
 								{@const range = getStatRange(desc, stat_index)}
 								<li>
 									<Card id="{name}_{stat}" padding="none" class="h-2.5 sm:h-5 z-20 border-dark-600 bg-dark-900">
 										<div class="m-0.5 sm:m-1 relative h-full">
-											<Img src={statImages.get(stat)} class="absolute w-3 sm:w-5 z-30 -top-1 sm:-top-1.25" />
+											<Img src={getStatImage(stat)} class="absolute w-3 sm:w-5 z-30 -top-1 sm:-top-1.25" />
 											<div class="float-left w-3 sm:w-5 h-full bg-transparent" />
 											{#each Array(8) as _, color_index (color_index)}
 												<div class="float-left w-0.5 sm:w-1 h-1" />
@@ -392,7 +369,7 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 								<Img src={starImage} size="w-4 sm:w-8"/>
 							{/each}
 						</div>
-						<Img src={logoImages.get(name) ?? emptyImage} size="w-10 sm:w-20" class="absolute bottom-[3px] left-[5px]"/>
+						<Img src={getLogoImage(name)} size="w-10 sm:w-20" class="absolute bottom-[3px] left-[5px]"/>
 						{#if getHeroPackName(name, desc) != null}
 							{@const packName = getHeroPackName(name, desc)}
 							<div class="absolute top-1 sm:top-2 right-1 sm:right-2 z-10">
@@ -435,7 +412,7 @@ bg-dark-700 hover:bg-dark-800 border-dark-600
 	<Tooltip triggeredBy="#complexity" placement="left">Complexity</Tooltip>
 	{#each activeStats as stat, index (index)}
 		<SpeedDialButton id={stat} on:click={() => sortBy(index)} class="w-10 sm:w-auto h-10 sm:h-auto bg-dark-700 hover:bg-dark-800 border-dark-600">
-			<Img src={statImages.get(stat)} class="w-10 h-10" />
+			<Img src={getStatImage(stat)} class="w-10 h-10" />
 		</SpeedDialButton>
 		<Tooltip triggeredBy="#{stat}" placement="left">{stat[0].toUpperCase() + stat.slice(1)}</Tooltip>
 	{/each}
