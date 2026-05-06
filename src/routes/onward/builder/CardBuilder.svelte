@@ -10,7 +10,6 @@
     Select,
     Textarea,
   } from "flowbite-svelte"
-  import Switch from "svelte-switch";
   import { importImages, updateCanvas, updateHeroCanvas } from "../../../onward_card_painter"
   import type { HeroColor, AttackRange, CardType, Fraction, HeroRole } from "../../../onward_card_painter"
   import { TSMap } from "typescript-map"
@@ -155,6 +154,8 @@
   let heroAbilityDescription = ""
   let heroUpgradedAbilityName = ""
   let heroUpgradedAbilityDescription = ""
+
+  $: attackRange = isRanged ? 'ranged' : 'melee'
 
   $: {
     heroRole
@@ -497,12 +498,6 @@
     document.getElementById("inputJson").click()
   }
 
-  function handleChange(e) {
-    const { checked } = e.detail;
-    isRanged = checked;
-    attackRange = isRanged ? 'ranged' : 'melee'
-  }
-
   const fractions = [
     { value: "Kurumo", name: "Kurumo" },
     { value: "Liothan", name: "Liothan" },
@@ -576,21 +571,14 @@
               </Label>
             </div>
 
-            <div class="row col-span-2" style="display: flex; justify-content: space-between; align-items: center; gap: 10px;">
-              <div style="flex: 0 1 auto; color: white; font-size: 14px;">
-                Melee
-              </div>
-              <div style="flex: 0 0 auto;">
-                <Switch on:change={handleChange} checked={isRanged} onColor="#555" offColor="#555">
-                  <div slot="unCheckedIcon">
-                  </div>
-                  <div slot="checkedIcon">
-                  </div>
-                </Switch>
-              </div>
-              <div style="flex: 0 1 auto; color: white; font-size: 14px;">
-                Ranged
-              </div>
+            <div class="row col-span-2 flex items-center gap-3">
+              <span class="text-sm text-white">Melee</span>
+              <label class="relative inline-flex cursor-pointer items-center">
+                <input type="checkbox" class="peer sr-only" bind:checked={isRanged} />
+                <span class="h-6 w-11 rounded-full bg-dark-700 transition-colors peer-checked:bg-primary-600"></span>
+                <span class="pointer-events-none absolute left-1 top-1 h-4 w-4 rounded-full bg-white transition-transform peer-checked:translate-x-5"></span>
+              </label>
+              <span class="text-sm text-white">Ranged</span>
             </div>
 
             {#if currentCard == "hero"}
@@ -605,7 +593,7 @@
               <div class="col-span-6">
                 <Label style="color: white">
                   Ability Description
-                  <Textarea {...descriptionProps} class="bg-dark-800 border-dark-600 text-white disabled:bg-dark-900"
+                  <Textarea {...descriptionProps} class="bg-dark-800 !border-dark-600 text-white disabled:bg-dark-900"
                             bind:value={heroAbilityDescription} />
                 </Label>
               </div>
@@ -621,7 +609,7 @@
               <div class="col-span-6">
                 <Label style="color: white">
                   Upgraded Ability Description
-                  <Textarea {...descriptionProps} class="bg-dark-800 border-dark-600 text-white disabled:bg-dark-900"
+                  <Textarea {...descriptionProps} class="bg-dark-800 !border-dark-600 text-white disabled:bg-dark-900"
                             bind:value={heroUpgradedAbilityDescription} />
                 </Label>
               </div>
@@ -654,14 +642,14 @@
             <div class="col-span-6">
               <Label style="color: white">
                 Description
-                <Textarea {...descriptionProps} class="bg-dark-800 border-dark-600 text-white disabled:bg-dark-900"
+                <Textarea {...descriptionProps} class="bg-dark-800 !border-dark-600 text-white disabled:bg-dark-900"
                           bind:value={description} />
               </Label>
             </div>
 
             <div class="col-span-2 flex">
               <div class="m-auto">
-                <Checkbox bind:checked={isQuick} disabled={isTimed}>
+                <Checkbox class="timing-checkbox" bind:checked={isQuick} disabled={isTimed}>
                   <div style="color: {labelColor(isTimed)}">
                     Quick
                   </div>
@@ -671,7 +659,7 @@
 
             <div class="col-span-2 flex">
               <div class="m-auto">
-                <Checkbox bind:checked={isTimed} disabled={isQuick}>
+                <Checkbox class="timing-checkbox" bind:checked={isTimed} disabled={isQuick}>
                   <div style="color: {labelColor(isQuick)}">
                     Timed
                   </div>
@@ -784,5 +772,15 @@
     @font-face {
         font-family: "ITC Charter";
         src: url("../../../lib/fonts/itc_charter_bold.woff") format("woff");
+    }
+
+    :global(.timing-checkbox input[type="checkbox"]:disabled) {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    :global(.timing-checkbox input[type="checkbox"]:not(:disabled)) {
+        opacity: 1;
+        cursor: pointer;
     }
 </style>

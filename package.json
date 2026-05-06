@@ -15,8 +15,6 @@
 		"gh-pages": "npm run build && npx gh-pages -d build --nojekyll"
 	},
 	"devDependencies": {
-		"@fontsource/fira-mono": "^4.5.10",
-		"@neoconfetti/svelte": "^1.0.0",
 		"@playwright/test": "^1.28.1",
 		"@rollup/plugin-dynamic-import-vars": "^2.1.0",
 		"@sveltejs/adapter-auto": "^7.0.1",
@@ -47,10 +45,7 @@
 	"type": "module",
 	"dependencies": {
 		"bigger-picture": "^1.1.12",
-		"canvas": "^3.1.2",
 		"flowbite-svelte-icons": "^3.1.0",
-		"material-dynamic-colors": "^1.0.5",
-		"svelte-switch": "^0.0.5",
 		"typescript-map": "^0.1.0"
 	}
 }

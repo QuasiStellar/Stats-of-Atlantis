@@ -1292,25 +1292,27 @@
           <div class="col-span-6">
             <Label style="color: white">
               Description
-              <Textarea {...descriptionProps} class="bg-dark-800 border-dark-600 text-white disabled:bg-dark-900"
+              <Textarea
+                {...descriptionProps}
+                class="bg-dark-800 text-white disabled:bg-dark-900 border-gray-300 dark:border-gray-600"
                         bind:value={description} />
             </Label>
           </div>
 
           <div class="col-span-4">
-            <Label style="color: {labelColor(disableItem)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableItem)}">
               Item
               <Select items={items}
-                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-600 disabled:bg-transparent"
                       bind:value={item} disabled={disableItem} />
             </Label>
           </div>
 
           <div class="col-span-2">
-            <Label style="color: {labelColor(disableHandicap)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableHandicap)}">
               Type
               <Select items={cardTypes}
-                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-600 disabled:bg-transparent"
                       bind:value={cardType}
                       on:change={() => applyCardTypeSelection(cardType)}
                       placeholder=""
@@ -1319,37 +1321,37 @@
           </div>
 
           <div class="col-span-6">
-            <Label style="color: {labelColor(disableInitiative)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableInitiative)}">
               Initiative
               <Input type="text"
-                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-600 disabled:bg-transparent"
                      bind:value={initiativeField} disabled={disableInitiative} />
             </Label>
           </div>
 
           <div class="col-span-2">
-            <Label style="color: {labelColor(disablePrimaryActionType)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disablePrimaryActionType)}">
               Action
               <Select items={actionTypes}
-                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-600 disabled:bg-transparent"
                       bind:value={primaryActionType} disabled={disablePrimaryActionType} />
             </Label>
           </div>
 
           <div class="col-span-2">
-            <Label style="color: {labelColor(disablePrimaryActionValue)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disablePrimaryActionValue)}">
               Action value
               <Input type="text"
-                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-600 disabled:bg-transparent"
                      bind:value={primaryActionValueField} disabled={disablePrimaryActionValue} />
             </Label>
           </div>
 
           <div class="col-span-2">
-            <Label style="color: {labelColor(disableValueSign)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableValueSign)}">
               Action sign
               <Select items={valueSigns}
-                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-600 disabled:bg-transparent"
                       bind:value={primaryActionValueSign} disabled={disableValueSign} />
             </Label>
           </div>
@@ -1363,45 +1365,49 @@
           </div>
 
           <div class="col-span-2">
-            <Label style="color: {labelColor(disableModifierValue)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableModifierValue)}">
               Modifier value
               <Input type="text"
-                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-600 disabled:bg-transparent"
                      bind:value={modifierValueField} disabled={disableModifierValue} />
             </Label>
           </div>
 
           <div class="col-span-2">
-            <Label style="color: {labelColor(disableModifierValueSign)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableModifierValueSign)}">
               Modifier sign
               <Select items={modifierValueSigns}
-                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                      class="bg-dark-800 border-dark-600 disabled:border-dark-700 text-white disabled:text-dark-600 disabled:bg-transparent"
                       bind:value={modifierValueSign} disabled={disableModifierValueSign} />
             </Label>
           </div>
 
           <div class="col-span-3">
-            <Label style="color: {labelColor(disableSecondaryDefenseValue)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableSecondaryDefenseValue)}">
               Defense value
               <Input type="text"
-                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-600 disabled:bg-transparent"
                      bind:value={secondaryDefenseValueField} disabled={disableSecondaryDefenseValue} />
             </Label>
           </div>
 
           <div class="col-span-3">
-            <Label style="color: {labelColor(disableSecondaryMovementValue)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableSecondaryMovementValue)}">
               Movement value
               <Input type="text"
-                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-600 disabled:bg-transparent"
                      bind:value={secondaryMovementValueField} disabled={disableSecondaryMovementValue} />
             </Label>
           </div>
 
           <div class="col-span-3 flex">
             <div class="m-auto">
-              <Checkbox bind:checked={secondaryAttackEnabled} disabled={disableSecondaryAttack}>
-                <div style="color: {labelColor(disableSecondaryAttack)}">
+              <Checkbox
+                class="secondary-attack-checkbox !grayscale-0 !contrast-100"
+                bind:checked={secondaryAttackEnabled}
+                disabled={disableSecondaryAttack}
+              >
+                <div class="!grayscale-0 !contrast-100" style="color: {labelColor(disableSecondaryAttack)}">
                   Secondary attack
                 </div>
               </Checkbox>
@@ -1409,10 +1415,10 @@
           </div>
 
           <div class="col-span-3">
-            <Label style="color: {labelColor(disableSecondaryAttackValue)}">
+            <Label class="!grayscale-0 !contrast-100" style="color: {labelColor(disableSecondaryAttackValue)}">
               Attack value
               <Input type="text"
-                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-500 disabled:bg-dark-900"
+                     class="bg-dark-800 border-dark-600 text-white disabled:text-dark-600 disabled:bg-transparent"
                      bind:value={secondaryAttackValueField} disabled={disableSecondaryAttackValue} />
             </Label>
           </div>
@@ -1758,5 +1764,15 @@
     @font-face {
         font-family: "Modesto Poster";
         src: url("../../lib/fonts/modesto_poster.woff") format("woff");
+    }
+
+    :global(.secondary-attack-checkbox input[type="checkbox"]:disabled) {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    :global(.secondary-attack-checkbox input[type="checkbox"]:not(:disabled)) {
+        opacity: 1;
+        cursor: pointer;
     }
 </style>
