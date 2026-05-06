@@ -2,7 +2,7 @@
   import { browser } from "$app/environment"
   import { onMount, tick } from "svelte"
   import { Color, Hero, OldHero, heroes, oldHeroes, Item, Modifier, stats, Type, ValueSign } from "../../states"
-  import { images, importCardImage, importImages, updateCanvas } from "../../card_painter"
+  import { images, importCardImage, preloadImages, updateCanvas } from "../../card_painter"
   import oldHeroInfo from "../../heroes.json"
   import newHeroInfo from "../../new_heroes.json"
   import { Checkbox, Img, Tooltip } from "flowbite-svelte"
@@ -627,7 +627,7 @@
 
     Promise.all([
       document.fonts.ready,
-      importImages(),
+      preloadImages(),
     ])
       .then(() => {
         imagesLoaded = true

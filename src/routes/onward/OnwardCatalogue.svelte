@@ -3,7 +3,7 @@
   import {
     Button,
   } from "flowbite-svelte"
-  import { importImages, paintHero } from "../../onward_card_painter"
+  import { paintHero, preloadImages } from "../../onward_card_painter"
 
   const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
   const heroPortraitModules = import.meta.glob("../../lib/images/onward/portraits/portrait_*.png", { eager: true, import: "default" }) as Record<string, string>
@@ -21,7 +21,7 @@
   onMount(async () => {
     await Promise.all([
       document.fonts.ready,
-      importImages(true),
+      preloadImages(true),
     ])
 
     resolveMount()

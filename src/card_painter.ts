@@ -838,7 +838,6 @@ export function updateCanvas(
 }
 
 import {
-	cardImageNames,
 	cardStats,
 	Color,
 	defaultEmoji,
@@ -854,25 +853,10 @@ export const images: Map<string, HTMLImageElement> = new Map();
 const baseImageModules = import.meta.glob("./lib/images/*.png", { eager: true, import: "default" }) as Record<string, string>
 const cardImageModules = import.meta.glob("./lib/images/cards/*/*.webp", { eager: true, import: "default" }) as Record<string, string>
 
-export function importImages() {
+export function preloadImages() {
   return Promise.all(
     imageNames.map(async (imageName: string) => {
       const path = baseImageModules[`./lib/images/${imageName}.png`]
-      if (path == null) {
-        return
-      }
-      const image = new Image()
-      image.src = path
-      images.set(imageName, image)
-      await new Promise(resolve => image.onload = resolve)
-    })
-  )
-}
-
-export function importCardImages(name: string) {
-  return Promise.all(
-    cardImageNames.map(async (imageName: string) => {
-      const path = cardImageModules[`./lib/images/cards/${name}/${imageName}.webp`]
       if (path == null) {
         return
       }

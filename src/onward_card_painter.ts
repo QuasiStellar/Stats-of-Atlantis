@@ -78,7 +78,7 @@ import { onwardHeavyImageNames, onwardImageNames, onwardLightImageNames } from '
 export const images: Map<string, HTMLImageElement> = new Map();
 const onwardImageModules = import.meta.glob("./lib/images/onward/*.png", { eager: true, import: "default" }) as Record<string, string>
 
-export function importImages(isLowQuality: boolean = false) {
+export function preloadImages(isLowQuality: boolean = false) {
 	const names = onwardImageNames.concat(isLowQuality ? onwardLightImageNames : onwardHeavyImageNames)
   return Promise.all(
 		names.map(async (imageName: string) => {

@@ -13,8 +13,8 @@
     Select,
     Textarea,
   } from "flowbite-svelte"
-  import { cardStats, Color, defaultEmoji, Item, Modifier, Stat, stats, Type, ValueSign } from "../../states"
-  import { importImages, updateCanvas } from "../../card_painter"
+  import { cardStats, Color, defaultEmoji, Item, Modifier, Stat, Type, ValueSign } from "../../states"
+  import { preloadImages, updateCanvas } from "../../card_painter"
   import { browser } from "$app/environment"
   import { TSMap } from "typescript-map"
   const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
@@ -773,7 +773,7 @@
 
     Promise.all([
       document.fonts.ready,
-      importImages(),
+      preloadImages(),
     ])
       .then(() => {
         imagesLoaded = true

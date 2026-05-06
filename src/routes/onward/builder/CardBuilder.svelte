@@ -10,7 +10,7 @@
     Select,
     Textarea,
   } from "flowbite-svelte"
-  import { importImages, updateCanvas, updateHeroCanvas } from "../../../onward_card_painter"
+  import { preloadImages, updateCanvas, updateHeroCanvas } from "../../../onward_card_painter"
   import type { HeroColor, AttackRange, CardType, Fraction, HeroRole } from "../../../onward_card_painter"
   import { TSMap } from "typescript-map"
 
@@ -269,7 +269,7 @@
 
     Promise.all([
       document.fonts.ready,
-      importImages(),
+      preloadImages(),
     ])
       .then(() => {
         imagesLoaded = true

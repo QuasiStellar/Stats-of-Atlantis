@@ -1,7 +1,5 @@
 <script>
   import { Img, P } from "flowbite-svelte";
-
-  import discardImage from "$lib/images/discord.png";
   import logoImage from "$lib/images/logo.png";
 </script>
 
