@@ -28,7 +28,7 @@
 		}
 	})
 
-	let useNewPrinting = true
+	let useNewPrinting = $page.url.searchParams.get("printing") !== "old"
 	let displayTraits = true
 	let showBaseGame = true
 	let showDevotedPack = true
@@ -43,12 +43,7 @@
 	const newPrintingStats = stats.slice(0, 4)
 	$: activeStats = useNewPrinting ? newPrintingStats : stats
 
-	if (browser) {
-		useNewPrinting = $page.url.searchParams.get("printing") !== "old"
-		viewportWidth = window.innerWidth
-	}
-
-	const sortParam = browser ? $page.url.searchParams.get("sort") : null
+	const sortParam = $page.url.searchParams.get("sort")
 	if (sortParam != null && stats.includes(sortParam)) {
 		sortBy(stats.indexOf(sortParam), false)
 	} else {
@@ -241,7 +236,7 @@
 	<title>Stats of Atlantis</title>
 	<meta name="description" content="Guards of Atlantis II card builder and catalogue." />
 </svelte:head>
-bg-dark-700 hover:bg-dark-800 border-dark-600
+/
 <div class="flex flex-col items-center md:mt-16 mt-16">
 	<div class="mb-4 sm:mb-6 flex flex-col gap-y-2 text-white text-sm sm:text-base xl:fixed xl:top-24 xl:left-[calc(50%+380px)] xl:z-30 xl:mb-0 xl:w-56 xl:rounded-lg xl:border xl:border-dark-600 xl:bg-dark-900/80 xl:p-4 xl:backdrop-blur-sm">
 		<label class="inline-flex items-center cursor-pointer">

@@ -509,8 +509,10 @@
   $: disableShowNumbers = true
 
   $: activeStats = useNewPrinting ? stats.slice(0, 4) : stats
-  const hero = (useNewPrinting ? heroes[heroName as keyof typeof heroes] : oldHeroes[heroName as keyof typeof oldHeroes]) as Hero | OldHero
-  const fullName = hero.name + " " + hero.title
+  let hero: Hero | OldHero | undefined
+  let fullName = ""
+  $: hero = (useNewPrinting ? heroes[heroName as keyof typeof heroes] : oldHeroes[heroName as keyof typeof oldHeroes]) as Hero | OldHero | undefined
+  $: fullName = hero ? `${hero.name} ${hero.title}` : ""
 
   function getStatRange(statValue: number | Array<number> | undefined) {
     if (statValue == null) {
@@ -523,7 +525,7 @@
   }
 
   function getPrimaryStat(statIndex: number): number {
-    const { min, max } = getStatRange(hero.stats[statIndex])
+    const { min, max } = getStatRange(hero?.stats?.[statIndex])
     return useNewPrinting ? min : max
   }
 
@@ -652,6 +654,9 @@
           secondaryAttack?: number,
           item?: Item,
         }[]
+        if (cardInfo == null) {
+          return
+        }
         goldCard = cardInfo.find((card) => card.color == Color.GOLD.toUpperCase())!
         goldHandicapCard = cardInfo.find((card) => card.color == Color.GOLD.toUpperCase() && card.handicapped)!
         silverCard = cardInfo.find((card) => card.color == Color.SILVER.toUpperCase())!
@@ -1121,7 +1126,7 @@
     </div>
 
     {#each activeStats as stat, stat_index (stat_index)}
-      {@const range = getStatRange(hero.stats[stat_index])}
+      {@const range = getStatRange(hero?.stats?.[stat_index])}
       <div id="{stat}" class="col-span-3 h-3 xs:h-4 sm:h-5.5 lg:h-7 z-20 relative">
         <div class="left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 h-2.5 xs:h-3 sm:h-4 lg:h-5 border border-dark-600 bg-transparent hover:bg-transparent rounded sm:rounded-lg lg:rounded-xl bg-dark-900 absolute">
           <div class="m-0.5 sm:m-0.5 lg:m-1 relative h-full">

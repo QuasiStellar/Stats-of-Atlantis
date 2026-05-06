@@ -10,6 +10,7 @@
   export let data: PageData;
 
   const hero = data.url.substring(1)
+  let heroName = ""
   let useNewPrinting = true;
   $: if (browser) {
     useNewPrinting = $page.url.searchParams.get("printing") !== "old";
@@ -33,4 +34,4 @@
   <meta name="description" content="Guards of Atlantis II card collection for {heroName}." />
 </svelte:head>
 
-<CardGrid heroName="{hero}" {useNewPrinting} />
+<CardGrid heroName={hero} {useNewPrinting} />
