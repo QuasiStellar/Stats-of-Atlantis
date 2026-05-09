@@ -9,6 +9,7 @@
   const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
   const statImageModules = import.meta.glob("../../lib/images/stat_icons/*_white.png", { eager: true, import: "default" }) as Record<string, string>
   const bannerImageModules = import.meta.glob("../../lib/images/avatars_full/*.webp", { eager: true, import: "default" }) as Record<string, string>
+  const spellCardImageModules = import.meta.glob("../../lib/images/spell_cards/*.webp", { eager: true, import: "default" }) as Record<string, string>
 
   export let heroName: string
   export let useNewPrinting = true
@@ -122,6 +123,8 @@
   let blueIIIalt = false
   let redIIIalt = false
   let greenIIIalt = false
+  let isGydion = false
+  let tierTwoHasAlternativeSpell = false
 
   $: hoverOverBlueII = false
   $: hoverOverRedII = false
@@ -604,6 +607,13 @@
   function getStatImage(stat: string) {
     return statImageModules[`../../lib/images/stat_icons/${stat}_white.png`] ?? emptyImage
   }
+
+  function getSpellCardImage(card: string) {
+    return spellCardImageModules[`../../lib/images/spell_cards/${card}.webp`] ?? emptyImage
+  }
+
+  $: isGydion = heroName === "gydion"
+  $: tierTwoHasAlternativeSpell = blueIIalt || redIIalt || greenIIalt
 
   onMount(async () => {
     banner = getBannerImage(heroName)
@@ -1163,6 +1173,23 @@
         <canvas id="purpleCanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={purple}/>
       </div>
     </div>
+    {#if isGydion}
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage("GoldI")} alt="Gold I spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage("GoldII")} alt="Gold II spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage("GoldIII")} alt="Gold III spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+    {/if}
 
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-35 xs:h-44 sm:h-73 lg:h-111 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute">
@@ -1179,6 +1206,23 @@
         <canvas id="greenICanvas" width="1192" height="1664" class="w-full rounded-lg sm:rounded-xl lg:rounded-3xl" bind:this={greenIa}/>
       </div>
     </div>
+    {#if isGydion}
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage("BlueIA")} alt="Blue IA spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage("RedIA")} alt="Red IA spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage("GreenIA")} alt="Green IA spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+    {/if}
 
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative z-10">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIalt ? 'mainCardII' : hoverOverBlueII ? 'downCardII' : 'altCardII'}">
@@ -1210,6 +1254,46 @@
         <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={greenIImainChecked} on:change={checkGreenIImain}></Checkbox>
       </div>
     </div>
+    {#if isGydion}
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage(blueIIalt ? "BlueIIB" : "BlueIIA")} alt="Blue tier II spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage(redIIalt ? "RedIIB" : "RedIIA")} alt="Red tier II spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage(greenIIalt ? "GreenIIB" : "GreenIIA")} alt="Green tier II spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      {#if tierTwoHasAlternativeSpell}
+        <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+          {#if blueIIalt}
+            <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+              <img src={getSpellCardImage("BlueIIB2")} alt="Blue tier II extra spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+            </div>
+          {/if}
+        </div>
+        <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+          {#if redIIalt}
+            <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+              <img src={getSpellCardImage("RedIIB2")} alt="Red tier II extra spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+            </div>
+          {/if}
+        </div>
+        <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+          {#if greenIIalt}
+            <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+              <img src={getSpellCardImage("GreenIIB2")} alt="Green tier II extra spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+            </div>
+          {/if}
+        </div>
+      {/if}
+    {/if}
 
     <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-40 xs:h-49 sm:h-81 lg:h-124 relative">
       <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 absolute duration-500 {blueIIIalt ? 'mainCardIII' : hoverOverBlueIII ? 'downCardIII' : 'altCardIII'}">
@@ -1241,6 +1325,30 @@
         <Checkbox class="absolute top-[3px] xs:top-[3.9px] sm:top-[6.5px] lg:top-[10px] right-[4px] xs:right-[4.6px] sm:right-[8px] lg:right-[12px] w-2 xs:w-2.5 sm:w-4 lg:w-6 h-2 xs:h-2.5 sm:h-4 lg:h-6 rounded-full" bind:checked={greenIIImainChecked} on:change={checkGreenIIImain}></Checkbox>
       </div>
     </div>
+    {#if isGydion}
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage(blueIIIalt ? "BlueIIIB" : "BlueIIIA")} alt="Blue tier III spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage(redIIIalt ? "RedIIIB" : "RedIIIA")} alt="Red tier III spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage(greenIIIalt ? "GreenIIIB" : "GreenIIIA")} alt="Green tier III spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative" />
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative">
+        <div class="border border-dark-600 bg-transparent hover:bg-transparent rounded-lg sm:rounded-xl lg:rounded-3xl w-25.5 xs:w-31 sm:w-51.5 lg:w-78 left-0.25 xs:left-0.5 sm:left-0.5 lg:left-1 top-0.25 xs:top-0.5 sm:top-0.5 lg:top-1 absolute overflow-hidden">
+          <img src={getSpellCardImage("Ultimate")} alt="Ultimate spell card" class="w-full h-full rounded-lg sm:rounded-xl lg:rounded-3xl object-cover" />
+        </div>
+      </div>
+      <div class="col-span-4 w-26 xs:w-32 sm:w-52 lg:w-80 h-19 xs:h-22 sm:h-37.5 lg:h-57 lg:h-152 relative" />
+    {/if}
     {#if extraCards.length > 0}
       <div class="col-span-12 mt-[3px] xs:mt-[2px] sm:mt-[2px] lg:mt-[0px] flex justify-center gap-2 xs:gap-3 sm:gap-4 lg:gap-6 relative z-0">
         {#each extraCards as _, index (index)}
