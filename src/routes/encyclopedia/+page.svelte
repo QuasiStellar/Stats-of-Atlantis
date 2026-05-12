@@ -6,7 +6,9 @@
 	import {
 		buildEncyclopediaEntries,
 		defaultEncyclopediaFilters,
+		ENCYCLOPEDIA_FILTERS_STORAGE_KEY,
 		entryMatchesFilters,
+		sanitizeEncyclopediaFilters,
 		SHOW_NUMBERS_STORAGE_KEY,
 		type EncyclopediaFilters,
 	} from "$lib/encyclopedia"
@@ -25,6 +27,7 @@
 	let filters: EncyclopediaFilters = defaultEncyclopediaFilters()
 	let showNumbers = false
 	let detailsEl: HTMLDetailsElement | undefined
+	let filtersHydrated = false
 
 	$: filteredEntries = allEntries.filter((e) => entryMatchesFilters(e, filters))
 
@@ -36,6 +39,21 @@ function resetFilters() {
 		if (!browser) {
 			return
 		}
+
+		const rawFilters = localStorage.getItem(ENCYCLOPEDIA_FILTERS_STORAGE_KEY)
+		if (rawFilters) {
+			try {
+				const parsed = JSON.parse(rawFilters)
+				const sanitized = sanitizeEncyclopediaFilters(parsed)
+				if (sanitized) {
+					filters = sanitized
+				}
+			} catch {
+				// Ignore malformed localStorage value.
+			}
+		}
+		filtersHydrated = true
+
 		const readShowNumbers = () => {
 			showNumbers = localStorage.getItem(SHOW_NUMBERS_STORAGE_KEY) === "true"
 		}
@@ -56,6 +74,10 @@ function resetFilters() {
 			mq.removeEventListener("change", syncDetails)
 		}
 	})
+
+	$: if (browser && filtersHydrated) {
+		localStorage.setItem(ENCYCLOPEDIA_FILTERS_STORAGE_KEY, JSON.stringify(filters))
+	}
 </script>
 
 <svelte:head>

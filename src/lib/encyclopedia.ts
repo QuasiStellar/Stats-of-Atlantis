@@ -3,6 +3,7 @@ import spellsInfo from "../spells.json"
 import { heroes, Item, Modifier, Pack, Type, ValueSign } from "../states"
 
 export const SHOW_NUMBERS_STORAGE_KEY = "goa-show-numbers"
+export const ENCYCLOPEDIA_FILTERS_STORAGE_KEY = "goa-encyclopedia-filters"
 
 /** Visible spell assets (Gydion); order matches CardGrid / encyclopedia tail section. */
 export const SPELL_CARD_ORDER = [
@@ -242,6 +243,10 @@ export type EncyclopediaFilters = {
 	traits: Record<CardTrait, FilterMode>
 }
 
+function isFilterMode(value: unknown): value is FilterMode {
+	return value === "ignore" || value === "include" || value === "exclude"
+}
+
 export function defaultEncyclopediaFilters(): EncyclopediaFilters {
 	const packs = {} as Record<Pack, FilterMode>
 	for (const p of Object.values(Pack)) {
@@ -288,6 +293,82 @@ export function defaultEncyclopediaFilters(): EncyclopediaFilters {
 		providesRadius: "ignore",
 		traits,
 	}
+}
+
+export function sanitizeEncyclopediaFilters(value: unknown): EncyclopediaFilters | null {
+	if (value == null || typeof value !== "object") {
+		return null
+	}
+
+	const source = value as {
+		packs?: Record<string, unknown>
+		heroes?: Record<string, unknown>
+		colors?: Record<string, unknown>
+		traits?: Record<string, unknown>
+		[key: string]: unknown
+	}
+
+	const normalized = defaultEncyclopediaFilters()
+
+	for (const pack of Object.keys(normalized.packs) as Pack[]) {
+		const maybeMode = source.packs?.[pack]
+		if (isFilterMode(maybeMode)) {
+			normalized.packs[pack] = maybeMode
+		}
+	}
+
+	for (const heroId of Object.keys(normalized.heroes)) {
+		const maybeMode = source.heroes?.[heroId]
+		if (isFilterMode(maybeMode)) {
+			normalized.heroes[heroId] = maybeMode
+		}
+	}
+
+	for (const color of Object.keys(normalized.colors)) {
+		const maybeMode = source.colors?.[color]
+		if (isFilterMode(maybeMode)) {
+			normalized.colors[color] = maybeMode
+		}
+	}
+
+	const singleModeKeys: Array<keyof EncyclopediaFilters> = [
+		"primaryAttack",
+		"primarySkill",
+		"primaryMovement",
+		"primaryDefense",
+		"skillDefense",
+		"blocks",
+		"hasRangeModifier",
+		"hasRadiusModifier",
+		"hasHandicap",
+		"hasExtra",
+		"spells",
+		"level1",
+		"level2",
+		"level3",
+		"providesInitiative",
+		"providesAttack",
+		"providesDefense",
+		"providesMovement",
+		"providesRange",
+		"providesRadius",
+	]
+
+	for (const key of singleModeKeys) {
+		const maybeMode = source[key]
+		if (isFilterMode(maybeMode)) {
+			normalized[key] = maybeMode
+		}
+	}
+
+	for (const trait of Object.keys(normalized.traits) as CardTrait[]) {
+		const maybeMode = source.traits?.[trait]
+		if (isFilterMode(maybeMode)) {
+			normalized.traits[trait] = maybeMode
+		}
+	}
+
+	return normalized
 }
 
 export function nextFilterMode(mode: FilterMode): FilterMode {

@@ -11,12 +11,48 @@
 	import starImage from "$lib/images/star.png"
 
 	const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+	const MAIN_PAGE_STATE_STORAGE_KEY = "goa-main-page-state"
 	const heroImageModules = import.meta.glob("../lib/images/avatars/*.webp", { eager: true, import: "default" }) as Record<string, string>
 	const logoImageModules = import.meta.glob("../lib/images/logos/*.png", { eager: true, import: "default" }) as Record<string, string>
 	const statImageModules = import.meta.glob("../lib/images/stat_icons/*_white.png", { eager: true, import: "default" }) as Record<string, string>
 	const traitImageModules = import.meta.glob("../lib/images/trait_*.png", { eager: true, import: "default" }) as Record<string, string>
 
+	type MainPageState = {
+		useNewPrinting: boolean
+		displayTraits: boolean
+		showBaseGame: boolean
+		showDevotedPack: boolean
+		showRenownedPack: boolean
+		showDefiantPack: boolean
+		showArcanePack: boolean
+		showWaywardPack: boolean
+	}
+
+	let mainPageStateHydrated = false
+
 	onMount(() => {
+		const readMainPageState = () => {
+			const raw = localStorage.getItem(MAIN_PAGE_STATE_STORAGE_KEY)
+			if (!raw) {
+				return
+			}
+			try {
+				const parsed = JSON.parse(raw) as Partial<MainPageState>
+				if (typeof parsed.useNewPrinting === "boolean") useNewPrinting = parsed.useNewPrinting
+				if (typeof parsed.displayTraits === "boolean") displayTraits = parsed.displayTraits
+				if (typeof parsed.showBaseGame === "boolean") showBaseGame = parsed.showBaseGame
+				if (typeof parsed.showDevotedPack === "boolean") showDevotedPack = parsed.showDevotedPack
+				if (typeof parsed.showRenownedPack === "boolean") showRenownedPack = parsed.showRenownedPack
+				if (typeof parsed.showDefiantPack === "boolean") showDefiantPack = parsed.showDefiantPack
+				if (typeof parsed.showArcanePack === "boolean") showArcanePack = parsed.showArcanePack
+				if (typeof parsed.showWaywardPack === "boolean") showWaywardPack = parsed.showWaywardPack
+			} catch {
+				// Ignore malformed localStorage value.
+			}
+		}
+		readMainPageState()
+		mainPageStateHydrated = true
+
 		const updateViewportWidth = () => {
 			viewportWidth = window.innerWidth
 		}
@@ -27,6 +63,20 @@
 			window.removeEventListener("resize", updateViewportWidth)
 		}
 	})
+
+	$: if (browser && mainPageStateHydrated) {
+		const state: MainPageState = {
+			useNewPrinting,
+			displayTraits,
+			showBaseGame,
+			showDevotedPack,
+			showRenownedPack,
+			showDefiantPack,
+			showArcanePack,
+			showWaywardPack,
+		}
+		localStorage.setItem(MAIN_PAGE_STATE_STORAGE_KEY, JSON.stringify(state))
+	}
 
 	let useNewPrinting = $page.url.searchParams.get("printing") !== "old"
 	let displayTraits = true

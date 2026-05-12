@@ -18,6 +18,7 @@
   const spellSwapOut = { y: -28, duration: SPELL_MS }
   const spellSwapIn = { y: 28, duration: SPELL_MS }
   const emptyImage = "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+  const UPGRADE_SELECTION_STORAGE_PREFIX = "goa-hero-upgrades"
   const statImageModules = import.meta.glob("../../lib/images/stat_icons/*_white.png", { eager: true, import: "default" }) as Record<string, string>
   const bannerImageModules = import.meta.glob("../../lib/images/avatars_full/*.webp", { eager: true, import: "default" }) as Record<string, string>
   const spellCardImageModules = import.meta.glob("../../lib/images/spell_cards/*.webp", { eager: true, import: "default" }) as Record<string, string>
@@ -106,6 +107,28 @@
 
   let imagesLoaded = false
   const SHOW_NUMBERS_STORAGE_KEY = "goa-show-numbers"
+  let upgradesHydrated = false
+
+  type HeroUpgradeSelectionState = {
+    blueIIalt: boolean
+    redIIalt: boolean
+    greenIIalt: boolean
+    blueIIIalt: boolean
+    redIIIalt: boolean
+    greenIIIalt: boolean
+    blueIIaltChecked: boolean
+    blueIImainChecked: boolean
+    redIIaltChecked: boolean
+    redIImainChecked: boolean
+    greenIIaltChecked: boolean
+    greenIImainChecked: boolean
+    blueIIIaltChecked: boolean
+    blueIIImainChecked: boolean
+    redIIIaltChecked: boolean
+    redIIImainChecked: boolean
+    greenIIIaltChecked: boolean
+    greenIIImainChecked: boolean
+  }
 
   let goldLoaded = false
   let goldHandicapLoaded = false
@@ -255,6 +278,43 @@
     if ((e.target as unknown as EventTarget & { checked: boolean }).checked) {
       greenIIIaltChecked = false
     }
+  }
+
+  function normalizeExclusiveCheckboxes() {
+    if (blueIIaltChecked && blueIImainChecked) blueIImainChecked = false
+    if (redIIaltChecked && redIImainChecked) redIImainChecked = false
+    if (greenIIaltChecked && greenIImainChecked) greenIImainChecked = false
+    if (blueIIIaltChecked && blueIIImainChecked) blueIIImainChecked = false
+    if (redIIIaltChecked && redIIImainChecked) redIIImainChecked = false
+    if (greenIIIaltChecked && greenIIImainChecked) greenIIImainChecked = false
+  }
+
+  function heroUpgradesStorageKey() {
+    return `${UPGRADE_SELECTION_STORAGE_PREFIX}:${useNewPrinting ? "new" : "old"}:${heroName}`
+  }
+
+  function applyPersistedSelection(value: Partial<HeroUpgradeSelectionState>) {
+    if (typeof value.blueIIalt === "boolean") blueIIalt = value.blueIIalt
+    if (typeof value.redIIalt === "boolean") redIIalt = value.redIIalt
+    if (typeof value.greenIIalt === "boolean") greenIIalt = value.greenIIalt
+    if (typeof value.blueIIIalt === "boolean") blueIIIalt = value.blueIIIalt
+    if (typeof value.redIIIalt === "boolean") redIIIalt = value.redIIIalt
+    if (typeof value.greenIIIalt === "boolean") greenIIIalt = value.greenIIIalt
+
+    if (typeof value.blueIIaltChecked === "boolean") blueIIaltChecked = value.blueIIaltChecked
+    if (typeof value.blueIImainChecked === "boolean") blueIImainChecked = value.blueIImainChecked
+    if (typeof value.redIIaltChecked === "boolean") redIIaltChecked = value.redIIaltChecked
+    if (typeof value.redIImainChecked === "boolean") redIImainChecked = value.redIImainChecked
+    if (typeof value.greenIIaltChecked === "boolean") greenIIaltChecked = value.greenIIaltChecked
+    if (typeof value.greenIImainChecked === "boolean") greenIImainChecked = value.greenIImainChecked
+    if (typeof value.blueIIIaltChecked === "boolean") blueIIIaltChecked = value.blueIIIaltChecked
+    if (typeof value.blueIIImainChecked === "boolean") blueIIImainChecked = value.blueIIImainChecked
+    if (typeof value.redIIIaltChecked === "boolean") redIIIaltChecked = value.redIIIaltChecked
+    if (typeof value.redIIImainChecked === "boolean") redIIImainChecked = value.redIIImainChecked
+    if (typeof value.greenIIIaltChecked === "boolean") greenIIIaltChecked = value.greenIIIaltChecked
+    if (typeof value.greenIIImainChecked === "boolean") greenIIImainChecked = value.greenIIImainChecked
+
+    normalizeExclusiveCheckboxes()
   }
 
   $: {
@@ -516,6 +576,29 @@
   $: if (browser) {
     localStorage.setItem(SHOW_NUMBERS_STORAGE_KEY, `${showNumbers}`)
   }
+  $: if (browser && upgradesHydrated) {
+    const state: HeroUpgradeSelectionState = {
+      blueIIalt,
+      redIIalt,
+      greenIIalt,
+      blueIIIalt,
+      redIIIalt,
+      greenIIIalt,
+      blueIIaltChecked,
+      blueIImainChecked,
+      redIIaltChecked,
+      redIImainChecked,
+      greenIIaltChecked,
+      greenIImainChecked,
+      blueIIIaltChecked,
+      blueIIImainChecked,
+      redIIIaltChecked,
+      redIIImainChecked,
+      greenIIIaltChecked,
+      greenIIImainChecked,
+    }
+    localStorage.setItem(heroUpgradesStorageKey(), JSON.stringify(state))
+  }
   $: showHandicap = false
 
   const labelColor = (disabled: boolean): string => disabled ? "gray" : "white"
@@ -627,6 +710,17 @@
   $: tierTwoHasAlternativeSpell = blueIIalt || redIIalt || greenIIalt
 
   onMount(async () => {
+    const rawUpgrades = localStorage.getItem(heroUpgradesStorageKey())
+    if (rawUpgrades) {
+      try {
+        const parsed = JSON.parse(rawUpgrades) as Partial<HeroUpgradeSelectionState>
+        applyPersistedSelection(parsed)
+      } catch {
+        // Ignore malformed localStorage value.
+      }
+    }
+    upgradesHydrated = true
+
     banner = getBannerImage(heroName)
 
     goldCtx = gold.getContext('2d')!

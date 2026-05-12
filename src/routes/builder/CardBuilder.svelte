@@ -1069,6 +1069,11 @@
     downloadCanvas(heroCanvas, "hero4print_2.png")
   }
 
+  function downloadForPrint() {
+    downloadForPrintPt1()
+    downloadForPrintPt2()
+  }
+
   function downloadCanvas(canvas: HTMLCanvasElement, filename: string) {
     let anchor = document.createElement("a"), event
     anchor.download = filename
@@ -1566,11 +1571,8 @@
             <Button class="w-40" on:click={loadFromJson}>Load from JSON</Button>
             <input id="inputJson" class="absolute w-0" type="file" on:change={event => onJsonSelected(event)}>
           </div>
-          <div class="col-span-1 flex justify-center">
-            <Button class="w-40" on:click={downloadForPrintPt1}>Download for Print (Part 1)</Button>
-          </div>
-          <div class="col-span-1 flex justify-center">
-            <Button class="w-40" on:click={downloadForPrintPt2}>Download for Print (Part 2)</Button>
+          <div class="col-span-2 flex justify-center">
+            <Button class="w-40" on:click={downloadForPrint}>Download for Print</Button>
           </div>
         </div>
       </div>
