@@ -399,7 +399,7 @@
 	</ul>
 </div>
 
-<SpeedDial pill={false} tooltip="none" textOutside>
+<SpeedDial pill={false} tooltip="none" textOutside class="z-50">
 	<SortOutline slot="icon" class="w-8 h-8" />
 	<SpeedDialButton id="complexity" on:click={() => sortByComplexity()} class="w-10 sm:w-auto h-10 sm:h-auto bg-dark-700 hover:bg-dark-800 border-dark-600">
 		<Img src={starImage} class="w-10 h-10" />

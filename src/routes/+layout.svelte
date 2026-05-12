@@ -24,6 +24,7 @@
     nonActiveClass="hover:text-white hover:bg-dark-700 font-semibold"
   >
     <NavLi class="text-dark-400" href="/">Catalogue</NavLi>
+    <NavLi class="text-dark-400" href="/encyclopedia">Encyclopedia</NavLi>
     <NavLi class="text-dark-400" href="/builder">Card Builder</NavLi>
     <NavLi class="text-dark-400" href="/onward">Onward</NavLi>
     <NavLi class="text-dark-400" href="/about">About</NavLi>
