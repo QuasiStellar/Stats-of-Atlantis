@@ -48,6 +48,9 @@ export function updateCanvas(
 
 	const descriptionLines = description.split(/\r\n|\r|\n/);
 	const descriptionHeight = descriptionLines.length;
+	const descriptionLayout = getCardDescriptionLayout(context, descriptionLines);
+	cardDescriptionIndent = descriptionLayout.indent;
+	descriptionFontSizeAdjustment = descriptionLayout.longestLineWidth >= 1000 ? -2 : 0;
 	const hasSecondaryAttack = secondaryAttackValue !== null;
 	const hasSecondaryMovement = color != Color.SILVER && secondaryMovementValue !== 0;
 	const hasSecondaryDefense = primaryActionType != Type.DEFENSE && primaryActionType != Type.DEFENSE_SKILL;
@@ -852,6 +855,8 @@ import {
 export const images: Map<string, HTMLImageElement> = new Map();
 const baseImageModules = import.meta.glob("./lib/images/*.png", { eager: true, import: "default" }) as Record<string, string>
 const cardImageModules = import.meta.glob("./lib/images/cards/*/*.webp", { eager: true, import: "default" }) as Record<string, string>
+let cardDescriptionIndent = 490
+let descriptionFontSizeAdjustment = 0
 
 export function preloadImages() {
   return Promise.all(
@@ -904,17 +909,44 @@ function addCardDescription(context: CanvasRenderingContext2D, customEmoji: Arra
     context.lineWidth = 2
     context.stroke()
   } else if (text.startsWith(">>")) {
-    addTextWithBold(context, customEmoji, "•  " + text.substring(2), x - 490, y, true)
+    addTextWithBold(context, customEmoji, "•  " + text.substring(2), x - cardDescriptionIndent, y, true)
   } else if (text.startsWith(">")) {
-    addTextWithBold(context, customEmoji, text.substring(1), x - 445, y, true)
+    addTextWithBold(context, customEmoji, text.substring(1), x - (cardDescriptionIndent - 45), y, true)
   } else
     addTextWithBold(context, customEmoji, text, x, y)
 }
 
-function addTextWithBold(context: CanvasRenderingContext2D, customEmoji: Array<[string, HTMLImageElement]>, text: string, x: number, y: number, left: boolean = false): void {
-  context.textAlign = "left"
-  type Segment = { type: "text", value: string, bold: boolean, italic: boolean } | { type: "emoji", value: string }
-  const segments: Segment[] = []
+type RichTextSegment = { type: "text", value: string, bold: boolean, italic: boolean } | { type: "emoji", value: string }
+
+function getDescriptionMaxLineWidth(context: CanvasRenderingContext2D, descriptionLines: string[], fontSizeAdjustment: number): number {
+  let longestLineWidth = 0
+
+  descriptionLines.forEach(line => {
+    if (line.startsWith(">>")) {
+      longestLineWidth = Math.max(longestLineWidth, getRichTextWidth(context, "•  " + line.substring(2), fontSizeAdjustment))
+    } else if (line.startsWith(">")) {
+      longestLineWidth = Math.max(longestLineWidth, getRichTextWidth(context, line.substring(1), fontSizeAdjustment) + 45)
+    }
+  })
+
+  return longestLineWidth
+}
+
+function getCardDescriptionLayout(context: CanvasRenderingContext2D, descriptionLines: string[]): { indent: number, longestLineWidth: number } {
+  const longestLineWidth = getDescriptionMaxLineWidth(context, descriptionLines, 0)
+  const usesSmallDescriptionFont = longestLineWidth >= 1000
+  const indentationWidth = usesSmallDescriptionFont
+    ? getDescriptionMaxLineWidth(context, descriptionLines, -2)
+    : longestLineWidth
+
+  return {
+		indent: indentationWidth > 980 ? indentationWidth / 2 : 490,
+		longestLineWidth
+	}
+}
+
+function parseRichTextSegments(text: string): RichTextSegment[] {
+  const segments: RichTextSegment[] = []
   let isBold = false
   let isItalic = false
   let index = 0
@@ -954,20 +986,39 @@ function addTextWithBold(context: CanvasRenderingContext2D, customEmoji: Array<[
   }
   flushBuffer()
 
-  const getFont = (bold: boolean, italic: boolean): string => {
-    if (bold && italic)
-      return "italic bold 36px Arial"
-    if (bold)
-      return "bold 49px Arial"
-    if (italic)
-      return "italic 36px Arial"
-    return "49px Arial"
-  }
+  return segments
+}
+
+function getRichTextSegmentFont(bold: boolean, italic: boolean, fontSizeAdjustment: number = descriptionFontSizeAdjustment): string {
+  const baseSize = Math.max(1, 49 + fontSizeAdjustment)
+  const italicSize = Math.max(1, 36 + fontSizeAdjustment)
+  if (bold && italic)
+    return `italic bold ${italicSize}px Arial`
+  if (bold)
+    return `bold ${baseSize}px Arial`
+  if (italic)
+    return `italic ${italicSize}px Arial`
+  return `${baseSize}px Arial`
+}
+
+function getRichTextWidth(context: CanvasRenderingContext2D, text: string, fontSizeAdjustment: number = descriptionFontSizeAdjustment): number {
+  const segments = parseRichTextSegments(text)
+  return segments.reduce((sum, segment) => {
+    if (segment.type == "emoji")
+      return sum + 64
+    context.font = getRichTextSegmentFont(segment.bold, segment.italic, fontSizeAdjustment)
+    return sum + context.measureText(segment.value).width
+  }, 0)
+}
+
+function addTextWithBold(context: CanvasRenderingContext2D, customEmoji: Array<[string, HTMLImageElement]>, text: string, x: number, y: number, left: boolean = false): void {
+  context.textAlign = "left"
+  const segments = parseRichTextSegments(text)
 
   const fullTextWidth = segments.reduce((sum, segment) => {
     if (segment.type == "emoji")
       return sum + 64
-    context.font = getFont(segment.bold, segment.italic)
+    context.font = getRichTextSegmentFont(segment.bold, segment.italic)
     return sum + context.measureText(segment.value).width
   }, 0)
 
@@ -980,7 +1031,7 @@ function addTextWithBold(context: CanvasRenderingContext2D, customEmoji: Array<[
         addCustomEmoji(context, customEmoji, segment.value, x - (left ? 0 : (fullTextWidth / 2)) + indent, y - 50)
       indent += 64
     } else {
-      context.font = getFont(segment.bold, segment.italic)
+      context.font = getRichTextSegmentFont(segment.bold, segment.italic)
       const partWidth = context.measureText(segment.value).width
       context.fillText(segment.value, x - (left ? 0 : (fullTextWidth / 2)) + indent, y)
       indent += partWidth
