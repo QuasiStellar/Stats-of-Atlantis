@@ -1,7 +1,6 @@
 <script lang="ts">
   import CardGrid from "./CardGrid.svelte";
   import type { PageData } from './$types';
-  import { page } from "$app/stores";
   import { browser } from "$app/environment";
   import { heroes, oldHeroes } from "../../states"
 
@@ -11,10 +10,9 @@
 
   const hero = data.url.substring(1)
   let heroName = ""
-  let useNewPrinting = true;
-  $: if (browser) {
-    useNewPrinting = $page.url.searchParams.get("printing") !== "old";
-  }
+  let useNewPrinting = browser
+    ? new URLSearchParams(window.location.search).get("printing") !== "old"
+    : true;
 
   $: if (useNewPrinting && !(hero in heroes)) {
     throw error(404)

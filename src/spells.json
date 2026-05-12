@@ -56,7 +56,7 @@
 	},
 	{
 		"name": "Fireball",
-		"description": "            Target a unit in range,\n            not adjacent to you, or\nto your friendly unit.",
+		"description": "Target a unit in range,\nnot adjacent to you, or\nto your friendly unit.",
 		"color": "RED",
 		"school": "EVOCATION",
 		"level": 2,

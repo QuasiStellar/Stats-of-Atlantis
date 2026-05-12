@@ -78,7 +78,10 @@
 		localStorage.setItem(MAIN_PAGE_STATE_STORAGE_KEY, JSON.stringify(state))
 	}
 
-	let useNewPrinting = $page.url.searchParams.get("printing") !== "old"
+	let useNewPrinting = true
+	if (browser) {
+		useNewPrinting = new URLSearchParams(window.location.search).get("printing") !== "old"
+	}
 	let displayTraits = true
 	let showBaseGame = true
 	let showDevotedPack = true
@@ -93,7 +96,7 @@
 	const newPrintingStats = stats.slice(0, 4)
 	$: activeStats = useNewPrinting ? newPrintingStats : stats
 
-	const sortParam = $page.url.searchParams.get("sort")
+	const sortParam = browser ? new URLSearchParams(window.location.search).get("sort") : null
 	if (sortParam != null && stats.includes(sortParam)) {
 		sortBy(stats.indexOf(sortParam), false)
 	} else {
