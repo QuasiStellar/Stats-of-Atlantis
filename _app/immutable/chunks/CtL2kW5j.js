@@ -1,0 +1,1 @@
+import{wt as e}from"./CS0M2_kq.js";e();
