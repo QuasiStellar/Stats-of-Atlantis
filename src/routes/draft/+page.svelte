@@ -2,7 +2,6 @@
 	import { browser } from "$app/environment"
 	import { goto } from "$app/navigation"
 	import { page } from "$app/stores"
-	import { Tooltip } from "flowbite-svelte"
 	import { onMount } from "svelte"
 	import { Pack, heroes } from "../../states"
 
@@ -11,14 +10,16 @@
 	type TeamSize = "2v2" | "3v3" | "4v4" | "5v5"
 	type DraftSystem = "all-random" | "all-pick" | "single-draft" | "random-draft" | "pick-ban"
 	type Team = "red" | "blue"
+	type StartingTeamChoice = Team | "random"
 	type DraftTurnType = "pick" | "ban"
 
 	type DraftConfig = {
 		teamSize: TeamSize
 		draftSystem: DraftSystem
+		startingTeam: StartingTeamChoice
 		enabledStars: number[]
 		enabledPacks: Pack[]
-		preBanned: Record<string, boolean>
+		enabledHeroes: Record<string, boolean>
 	}
 
 	type DraftTurn = {
@@ -30,6 +31,7 @@
 		mode: DraftSystem
 		players: number
 		playersPerTeam: number
+		startingTeam: Team
 		availableHeroIds: string[]
 		pickedRed: string[]
 		pickedBlue: string[]
@@ -55,6 +57,12 @@
 		"5v5": 10,
 	}
 	const TEAM_SIZE_ORDER: TeamSize[] = ["2v2", "3v3", "4v4", "5v5"]
+	const STARTING_TEAM_ORDER: StartingTeamChoice[] = ["red", "blue", "random"]
+	const STARTING_TEAM_LABELS: Record<StartingTeamChoice, string> = {
+		red: "Red",
+		blue: "Blue",
+		random: "Random",
+	}
 	const DRAFT_SYSTEM_ORDER: DraftSystem[] = ["all-random", "all-pick", "single-draft", "random-draft", "pick-ban"]
 	const DRAFT_SYSTEM_LABELS: Record<DraftSystem, string> = {
 		"all-random": "All Random",
@@ -81,9 +89,10 @@
 	const defaultConfig = (): DraftConfig => ({
 		teamSize: "2v2",
 		draftSystem: "pick-ban",
+		startingTeam: "random",
 		enabledStars: [1, 2, 3, 4],
 		enabledPacks: [...PACK_ORDER],
-		preBanned: {},
+		enabledHeroes: Object.fromEntries(allHeroIds.map((heroId) => [heroId, true])),
 	})
 
 	let hydrated = false
@@ -95,13 +104,17 @@
 	$: selectedPackSet = new Set(setupConfig.enabledPacks)
 	$: selectedStarSet = new Set(setupConfig.enabledStars)
 	$: players = TEAM_SIZE_PLAYERS[setupConfig.teamSize]
-	$: prebannableHeroIds = heroesSorted.filter((heroId) => selectedPackSet.has(heroes[heroId as keyof typeof heroes].pack))
+	$: configurableHeroIds = heroesSorted.filter((heroId) => {
+		const hero = heroes[heroId as keyof typeof heroes]
+		return selectedPackSet.has(hero.pack) && selectedStarSet.has(hero.stars)
+	})
 	$: eligibleHeroIds = heroesSorted.filter((heroId) => {
 		const hero = heroes[heroId as keyof typeof heroes]
-		return selectedPackSet.has(hero.pack) && selectedStarSet.has(hero.stars) && setupConfig.preBanned[heroId] !== true
+		return selectedPackSet.has(hero.pack) && selectedStarSet.has(hero.stars) && setupConfig.enabledHeroes[heroId] !== false
 	})
 	$: requiredHeroes = getRequiredHeroes(setupConfig.draftSystem, players)
 	$: startDisabled = eligibleHeroIds.length < requiredHeroes
+	$: missingHeroesCount = Math.max(requiredHeroes - eligibleHeroIds.length, 0)
 
 	$: promptText = getPromptText(session)
 	$: currentTurn = getCurrentTurn(session)
@@ -166,6 +179,9 @@
 		if (raw.draftSystem && DRAFT_SYSTEM_ORDER.includes(raw.draftSystem)) {
 			next.draftSystem = raw.draftSystem
 		}
+		if (raw.startingTeam && STARTING_TEAM_ORDER.includes(raw.startingTeam)) {
+			next.startingTeam = raw.startingTeam
+		}
 
 		if (Array.isArray(raw.enabledStars)) {
 			const stars = raw.enabledStars.filter((star) => [1, 2, 3, 4].includes(star))
@@ -175,14 +191,13 @@
 			const packs = raw.enabledPacks.filter((pack) => PACK_ORDER.includes(pack))
 			next.enabledPacks = packs.length > 0 ? [...new Set(packs)] : [...PACK_ORDER]
 		}
-		if (raw.preBanned != null && typeof raw.preBanned === "object") {
+		if (raw.enabledHeroes != null && typeof raw.enabledHeroes === "object") {
 			const sanitized: Record<string, boolean> = {}
 			for (const heroId of allHeroIds) {
-				if (raw.preBanned[heroId] === true) {
-					sanitized[heroId] = true
-				}
+				const value = raw.enabledHeroes[heroId]
+				sanitized[heroId] = typeof value === "boolean" ? value : true
 			}
-			next.preBanned = sanitized
+			next.enabledHeroes = sanitized
 		}
 		return next
 	}
@@ -209,6 +224,7 @@
 			mode: source.mode,
 			players,
 			playersPerTeam,
+			startingTeam: source.startingTeam === "blue" ? "blue" : "red",
 			availableHeroIds: sanitizeHeroIds(source.availableHeroIds),
 			pickedRed: sanitizeHeroIds(source.pickedRed).slice(0, playersPerTeam),
 			pickedBlue: sanitizeHeroIds(source.pickedBlue).slice(0, playersPerTeam),
@@ -308,14 +324,10 @@
 		)
 	}
 
-	function togglePreBan(heroId: string) {
-		const next = { ...setupConfig.preBanned }
-		if (next[heroId] === true) {
-			delete next[heroId]
-		} else {
-			next[heroId] = true
-		}
-		updateConfig("preBanned", next)
+	function toggleHeroEnabled(heroId: string) {
+		const next = { ...setupConfig.enabledHeroes }
+		next[heroId] = !(setupConfig.enabledHeroes[heroId] !== false)
+		updateConfig("enabledHeroes", next)
 	}
 
 	function shuffle<T>(list: T[]): T[] {
@@ -327,7 +339,7 @@
 		return out
 	}
 
-	function getPickBanTurnOrder(totalPlayers: number): DraftTurn[] {
+	function getPickBanTurnOrder(totalPlayers: number, startingTeam: Team): DraftTurn[] {
 		const fullSequence: DraftTurn[] = [
 			{ team: "red", type: "ban" },
 			{ team: "blue", type: "ban" },
@@ -350,7 +362,14 @@
 			{ team: "blue", type: "pick" },
 			{ team: "red", type: "pick" },
 		]
-		return fullSequence.slice(0, totalPlayers * 2)
+		const order = fullSequence.slice(0, totalPlayers * 2)
+		if (startingTeam === "red") {
+			return order
+		}
+		return order.map((turn) => ({
+			...turn,
+			team: turn.team === "red" ? "blue" : "red",
+		}))
 	}
 
 	function remainingHeroesForSession(draftSession: DraftSession): string[] {
@@ -362,6 +381,10 @@
 		const activePlayers = TEAM_SIZE_PLAYERS[setupConfig.teamSize]
 		const perTeam = activePlayers / 2
 		const eligible = [...eligibleHeroIds]
+		const resolvedStartingTeam: Team =
+			setupConfig.startingTeam === "random"
+				? (Math.random() < 0.5 ? "red" : "blue")
+				: setupConfig.startingTeam
 
 		if (eligible.length < getRequiredHeroes(setupConfig.draftSystem, activePlayers)) {
 			return null
@@ -373,9 +396,16 @@
 				mode: setupConfig.draftSystem,
 				players: activePlayers,
 				playersPerTeam: perTeam,
+				startingTeam: resolvedStartingTeam,
 				availableHeroIds: eligible,
-				pickedRed: rolled.slice(0, perTeam),
-				pickedBlue: rolled.slice(perTeam, activePlayers),
+				pickedRed:
+					resolvedStartingTeam === "red"
+						? rolled.slice(0, perTeam)
+						: rolled.slice(perTeam, activePlayers),
+				pickedBlue:
+					resolvedStartingTeam === "blue"
+						? rolled.slice(0, perTeam)
+						: rolled.slice(perTeam, activePlayers),
 				bannedHeroIds: [],
 				turnIndex: activePlayers,
 				singleChoices: [],
@@ -390,6 +420,7 @@
 				mode: setupConfig.draftSystem,
 				players: activePlayers,
 				playersPerTeam: perTeam,
+				startingTeam: resolvedStartingTeam,
 				availableHeroIds: pool,
 				pickedRed: [],
 				pickedBlue: [],
@@ -407,6 +438,7 @@
 				mode: setupConfig.draftSystem,
 				players: activePlayers,
 				playersPerTeam: perTeam,
+				startingTeam: resolvedStartingTeam,
 				availableHeroIds: eligible,
 				pickedRed: [],
 				pickedBlue: [],
@@ -422,6 +454,7 @@
 			mode: setupConfig.draftSystem,
 			players: activePlayers,
 			playersPerTeam: perTeam,
+			startingTeam: resolvedStartingTeam,
 			availableHeroIds: eligible,
 			pickedRed: [],
 			pickedBlue: [],
@@ -455,9 +488,9 @@
 			if (draftSession.pickedRed.length + draftSession.pickedBlue.length >= draftSession.players) {
 				return null
 			}
-			return { team: draftSession.turnIndex % 2 === 0 ? "red" : "blue", type: "pick" }
+			return { team: draftSession.turnIndex % 2 === 0 ? draftSession.startingTeam : draftSession.startingTeam === "red" ? "blue" : "red", type: "pick" }
 		}
-		const order = getPickBanTurnOrder(draftSession.players)
+		const order = getPickBanTurnOrder(draftSession.players, draftSession.startingTeam)
 		return order[draftSession.turnIndex] ?? null
 	}
 
@@ -609,6 +642,10 @@
 	function repeatStars(count: number): number[] {
 		return Array.from({ length: count }, (_, i) => i)
 	}
+
+	function heroLink(heroId: string): string {
+		return `/${heroId}`
+	}
 </script>
 
 <svelte:head>
@@ -657,6 +694,23 @@
 				</div>
 
 				<div>
+					<p class="font-semibold mb-2">Starting team</p>
+					<div class="flex flex-wrap gap-3">
+						{#each STARTING_TEAM_ORDER as option (option)}
+							<label class="inline-flex items-center gap-2 cursor-pointer">
+								<input
+									type="radio"
+									name="starting-team"
+									checked={setupConfig.startingTeam === option}
+									on:change={() => updateConfig("startingTeam", option)}
+								/>
+								<span>{STARTING_TEAM_LABELS[option]}</span>
+							</label>
+						{/each}
+					</div>
+				</div>
+
+				<div>
 					<p class="font-semibold mb-2">Hero complexity</p>
 					<div class="flex flex-wrap gap-4">
 						{#each [1, 2, 3, 4] as starCount (starCount)}
@@ -664,6 +718,7 @@
 								<input
 									type="checkbox"
 									checked={setupConfig.enabledStars.includes(starCount)}
+									disabled={setupConfig.enabledStars.length === 1 && setupConfig.enabledStars.includes(starCount)}
 									on:change={() => toggleStar(starCount)}
 								/>
 								<span class="inline-flex items-center gap-1">
@@ -684,6 +739,7 @@
 								<input
 									type="checkbox"
 									checked={setupConfig.enabledPacks.includes(pack)}
+									disabled={setupConfig.enabledPacks.length === 1 && setupConfig.enabledPacks.includes(pack)}
 									on:change={() => togglePack(pack)}
 								/>
 								<span>{getPackLabel(pack)}</span>
@@ -693,14 +749,14 @@
 				</div>
 
 				<div>
-					<p class="font-semibold mb-2">Pre-banned</p>
+					<p class="font-semibold mb-2">Enabled heroes</p>
 					<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 max-h-72 overflow-y-auto pr-1">
-						{#each prebannableHeroIds as heroId (heroId)}
+						{#each configurableHeroIds as heroId (heroId)}
 							<label class="inline-flex items-center gap-2 cursor-pointer">
 								<input
 									type="checkbox"
-									checked={setupConfig.preBanned[heroId] === true}
-									on:change={() => togglePreBan(heroId)}
+									checked={setupConfig.enabledHeroes[heroId] !== false}
+									on:change={() => toggleHeroEnabled(heroId)}
 								/>
 								<span>{heroes[heroId as keyof typeof heroes].name}</span>
 							</label>
@@ -708,26 +764,20 @@
 					</div>
 				</div>
 
+				{#if startDisabled}
+					<p class="text-amber-300">
+						Not enough heroes enabled! Add at least {missingHeroesCount} more to continue with the selected draft system.
+					</p>
+				{/if}
+
 				<div class="pt-1">
-					{#if startDisabled}
-						<div id="start-disabled-wrapper" class="inline-block">
-							<button
-								disabled
-								title="Not enough heroes enabled!"
-								class="px-4 py-2 rounded bg-dark-700 text-dark-300 cursor-not-allowed border border-dark-600"
-							>
-								Start
-							</button>
-						</div>
-						<Tooltip triggeredBy="#start-disabled-wrapper" placement="right">Not enough heroes enabled!</Tooltip>
-					{:else}
-						<button
-							on:click={startDraft}
-							class="px-4 py-2 rounded bg-amber-600 hover:bg-amber-700 text-white border border-amber-500"
-						>
-							Start
-						</button>
-					{/if}
+					<button
+						disabled={startDisabled}
+						on:click={startDraft}
+						class="px-4 py-2 rounded bg-amber-600 hover:bg-amber-700 text-white border border-amber-500 disabled:bg-dark-700 disabled:text-dark-300 disabled:border-dark-600 disabled:cursor-not-allowed"
+					>
+						Start
+					</button>
 				</div>
 			</div>
 		</div>
@@ -756,6 +806,13 @@
 												<p class={`font-modesto text-xl leading-none truncate ${teamColorClass("red")}`}>{heroes[session.pickedRed[idx] as keyof typeof heroes].name}</p>
 												<p class={`font-modesto text-sm leading-none truncate ${teamColorClass("red")}`}>{heroes[session.pickedRed[idx] as keyof typeof heroes].title}</p>
 											</div>
+											<a
+												href={heroLink(session.pickedRed[idx])}
+												class="info-link"
+												aria-label={`Open ${heroes[session.pickedRed[idx] as keyof typeof heroes].name} page`}
+											>
+												i
+											</a>
 										</div>
 									</div>
 								</div>
@@ -775,6 +832,13 @@
 												<p class={`font-modesto text-xl leading-none truncate ${teamColorClass("blue")}`}>{heroes[session.pickedBlue[idx] as keyof typeof heroes].name}</p>
 												<p class={`font-modesto text-sm leading-none truncate ${teamColorClass("blue")}`}>{heroes[session.pickedBlue[idx] as keyof typeof heroes].title}</p>
 											</div>
+											<a
+												href={heroLink(session.pickedBlue[idx])}
+												class="info-link"
+												aria-label={`Open ${heroes[session.pickedBlue[idx] as keyof typeof heroes].name} page`}
+											>
+												i
+											</a>
 										</div>
 									</div>
 								</div>
@@ -784,33 +848,40 @@
 				</div>
 			{:else}
 				<div class="space-y-5">
-					<div class="relative">
-						{#if session.mode === "single-draft" && session.singleRevealPending && !isDraftFinished(session)}
-							<button
-								on:click={revealSingleChoices}
-								class="absolute inset-0 z-20 rounded border border-dark-500 bg-dark-900 text-2xl font-modesto tracking-wider"
-							>
-								Show
-							</button>
-						{/if}
-						<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
-							{#each getListHeroIds(session) as heroId (heroId)}
-								<li>
-									<button
-										class="hero-button"
-										disabled={!canSelectHero(heroId)}
-										on:click={() => pickOrBan(heroId)}
-									>
-										<img src={getLogoImage(heroId)} alt="" class="w-10 h-10 shrink-0" />
-										<div class="min-w-0 text-left">
-											<p class="font-modesto text-xl leading-none truncate" style={`color: ${availableHeroTextColors[heroId] ?? "#ffffff"};`}>{heroes[heroId as keyof typeof heroes].name}</p>
-											<p class="font-modesto text-sm leading-none truncate" style={`color: ${availableHeroTextColors[heroId] ?? "#ffffff"};`}>{heroes[heroId as keyof typeof heroes].title}</p>
+					{#if !(session.mode === "single-draft" && isDraftFinished(session))}
+						<div class="relative">
+							{#if session.mode === "single-draft" && session.singleRevealPending && !isDraftFinished(session)}
+								<button
+									on:click={revealSingleChoices}
+									class="absolute inset-0 z-20 rounded border border-dark-500 bg-dark-900 text-2xl font-modesto tracking-wider"
+								>
+									Show
+								</button>
+							{/if}
+							<ul class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
+								{#each getListHeroIds(session) as heroId (heroId)}
+									<li>
+										<div class="hero-row hero-option-row">
+											<button
+												class="hero-pick-button"
+												disabled={!canSelectHero(heroId)}
+												on:click={() => pickOrBan(heroId)}
+											>
+												<img src={getLogoImage(heroId)} alt="" class="w-10 h-10 shrink-0" />
+												<div class="min-w-0 text-left">
+													<p class="font-modesto text-xl leading-none truncate" style={`color: ${availableHeroTextColors[heroId] ?? "#ffffff"};`}>{heroes[heroId as keyof typeof heroes].name}</p>
+													<p class="font-modesto text-sm leading-none truncate" style={`color: ${availableHeroTextColors[heroId] ?? "#ffffff"};`}>{heroes[heroId as keyof typeof heroes].title}</p>
+												</div>
+											</button>
+											<a href={heroLink(heroId)} class="info-link" aria-label={`Open ${heroes[heroId as keyof typeof heroes].name} page`}>
+												i
+											</a>
 										</div>
-									</button>
-								</li>
-							{/each}
-						</ul>
-					</div>
+									</li>
+								{/each}
+							</ul>
+						</div>
+					{/if}
 
 					<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
 						<div>
@@ -826,6 +897,13 @@
 												<p class={`font-modesto text-xl leading-none truncate ${teamColorClass("red")}`}>{heroes[session.pickedRed[idx] as keyof typeof heroes].name}</p>
 												<p class={`font-modesto text-sm leading-none truncate ${teamColorClass("red")}`}>{heroes[session.pickedRed[idx] as keyof typeof heroes].title}</p>
 												</div>
+												<a
+													href={heroLink(session.pickedRed[idx])}
+													class="info-link"
+													aria-label={`Open ${heroes[session.pickedRed[idx] as keyof typeof heroes].name} page`}
+												>
+													i
+												</a>
 											</div>
 										{:else}
 											<div class="text-dark-400">Waiting...</div>
@@ -848,6 +926,13 @@
 												<p class={`font-modesto text-xl leading-none truncate ${teamColorClass("blue")}`}>{heroes[session.pickedBlue[idx] as keyof typeof heroes].name}</p>
 												<p class={`font-modesto text-sm leading-none truncate ${teamColorClass("blue")}`}>{heroes[session.pickedBlue[idx] as keyof typeof heroes].title}</p>
 												</div>
+												<a
+													href={heroLink(session.pickedBlue[idx])}
+													class="info-link"
+													aria-label={`Open ${heroes[session.pickedBlue[idx] as keyof typeof heroes].name} page`}
+												>
+													i
+												</a>
 											</div>
 										{:else}
 											<div class="text-dark-400">Waiting...</div>
@@ -872,12 +957,19 @@
 												<p class="font-modesto text-xl leading-none text-dark-500 truncate">{heroes[heroId as keyof typeof heroes].name}</p>
 												<p class="font-modesto text-sm leading-none text-dark-500 truncate">{heroes[heroId as keyof typeof heroes].title}</p>
 											</div>
+											<a href={heroLink(heroId)} class="info-link" aria-label={`Open ${heroes[heroId as keyof typeof heroes].name} page`}>
+												i
+											</a>
 										</li>
 									{/each}
 								</ul>
 							{/if}
 						</div>
 					{/if}
+
+					<p class="text-dark-300">
+						You can send the link to this page to your opponent once it's their turn to make a decision. Ask them to send the new link back when they are done.
+					</p>
 				</div>
 			{/if}
 		</div>
@@ -904,6 +996,23 @@
 		background: rgb(17 24 39 / 0.75);
 	}
 
+	.hero-option-row {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+	}
+
+	.hero-pick-button {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		width: 100%;
+		padding: 0;
+		border: 0;
+		background: transparent;
+		text-align: left;
+	}
+
 	.hero-button {
 		display: flex;
 		align-items: center;
@@ -920,7 +1029,30 @@
 		background: rgb(31 41 55 / 0.85);
 	}
 
-	.hero-button:disabled {
+	.hero-button:disabled,
+	.hero-pick-button:disabled {
 		cursor: not-allowed;
+	}
+
+	.info-link {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+		width: 1.65rem;
+		height: 1.65rem;
+		margin-left: auto;
+		border: 1px solid rgb(75 85 99);
+		border-radius: 9999px;
+		background: rgb(31 41 55 / 0.8);
+		color: rgb(209 213 219);
+		font-size: 0.9rem;
+		font-weight: 700;
+		line-height: 1;
+	}
+
+	.info-link:hover {
+		background: rgb(55 65 81 / 0.9);
+		color: white;
 	}
 </style>
