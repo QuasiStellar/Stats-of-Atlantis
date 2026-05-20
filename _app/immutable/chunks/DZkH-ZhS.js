@@ -1,0 +1,1 @@
+var e=``+new URL(`../assets/star.CQ2xS3GF.png`,import.meta.url).href;export{e as t};

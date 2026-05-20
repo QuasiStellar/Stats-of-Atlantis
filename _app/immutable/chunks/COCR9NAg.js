@@ -1,0 +1,1 @@
+var e=``+new URL(`../assets/logo.DyWbHWRp.png`,import.meta.url).href;export{e as t};

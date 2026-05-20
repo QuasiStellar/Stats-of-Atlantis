@@ -1,0 +1,1 @@
+import{Tt as e}from"./BijkM3-N.js";e();
