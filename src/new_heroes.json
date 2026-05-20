@@ -9266,7 +9266,7 @@
 			"initiative": 5,
 			"primaryAction": "SKILL",
 			"modifier": "RANGE",
-			"modifierValue": 3,
+			"modifierValue": 4,
 			"secondaryMovement": 2,
 			"secondaryDefense": 4,
 			"item": "ATTACK",
