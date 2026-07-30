@@ -1,0 +1,2198 @@
+[
+  {
+    "class": "interface",
+    "typeArg": 1,
+    "name": "Acceleration Drone",
+    "description": "Your target reveals the top 3 cards of their deck. If at least 1 Flasher is revealed, they suffer 1 wound. Otherwise draw a card. Revealed Flashers are activated.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "range": [
+      0,
+      99
+    ],
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "card draw",
+      "wounds"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 2,
+    "name": "Adhesive Ammo",
+    "description": "If you inflicted a wound, each movement of your target is limited to 1 hex maximum during their next turn. Draw a card.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "mod"
+    ],
+    "traits": [
+      "card draw",
+      "wounds",
+      "movement"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 3,
+    "name": "ATX Gear",
+    "description": "+1 damage",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "mod"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 4,
+    "name": "Blaster",
+    "description": "",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 1,
+    "range": [
+      0,
+      4
+    ],
+    "damage": 2,
+    "salvos": 1,
+    "n": 18,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 5,
+    "name": "Cheetah Leap",
+    "description": "Teleport to the same hex as your target",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "range": [
+      1,
+      2
+    ],
+    "damage": 2,
+    "salvos": 1,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "teleport"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 6,
+    "name": "Cyber Hacking",
+    "description": "Your target discards a card at random",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "range": [
+      0,
+      5
+    ],
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 7,
+    "name": "Cyber Overload",
+    "description": "Create 1 shield for free",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "defense"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 8,
+    "name": "Cyberspace Shallow",
+    "description": "Spend 1 resource, then install 1 card from the top 3 cards of the interface.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 9,
+    "name": "Dark Brambles",
+    "description": "Target a player on a tile with a forest. If they are on the forest hex, they suffer 2 wounds. Otherwise, they suffer 1 wound.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "wounds"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 10,
+    "name": "Digital Cloning",
+    "description": "Collect 1 resource you already own",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 11,
+    "name": "Energy Capsule",
+    "description": "Roll 3 dice. Heal 1HP per symbol.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "dice",
+      "health"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 12,
+    "name": "Flasher",
+    "description": "If Renko uses this Flasher, he gains +1 damage against you. The Flasher is returned to Renko.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 6,
+    "ashak": true,
+    "types": [],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 13,
+    "name": "Hawk's Eye",
+    "description": "Your target rolls 1 fewer die.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "mod"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 14,
+    "name": "Hydrolysis",
+    "description": "Target a lake. Players adjacent or in the lake are wounded and are poisoned.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "range": [
+      0,
+      5
+    ],
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "poison",
+      "wounds"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 15,
+    "name": "Intuition",
+    "description": "Gain 1 anticipation token",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 4,
+    "types": [
+      "defense"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 16,
+    "name": "Psy Wave",
+    "description": "If you inflicted a wound, draw a card.",
+    "discardBonusDescription": "+1 damage",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 1,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 2,
+    "salvos": 1,
+    "n": 12,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": [
+      "card draw",
+      "wounds",
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 17,
+    "name": "Ram Kick",
+    "description": "-1 minimum and maximum range. +1 damage.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "mod"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 18,
+    "name": "Swarm of Flashers",
+    "description": "Place 2 Flashers in the deck of 2 different targets",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "range": [
+      0,
+      5
+    ],
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 19,
+    "name": "Tree Protection",
+    "description": "If you are on a tile with a forest, you can reroll each of your dice once",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 20,
+    "name": "Trishula",
+    "description": "Teleport 1 player 1 hex or teleport yourself to a lake.",
+    "expansion": "base",
+    "rarity": "basic",
+    "cost": 0,
+    "range": [
+      0,
+      3
+    ],
+    "n": 1,
+    "ashak": true,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "teleport"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 21,
+    "name": "Ammunitions Expert",
+    "description": "+1 damage on your physical attacks",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "n": 4,
+    "types": [
+      "skill",
+      "activable"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 22,
+    "name": "Backfire",
+    "description": "Whenever you receive a wound, the attacker suffers 3.",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 0,
+    "n": 3,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "wounds"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 23,
+    "name": "Bone Cracker",
+    "description": "Move 1 hex towards your target",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      0,
+      2
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 3,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "movement"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 24,
+    "name": "Chakra Inversion",
+    "description": "Roll 1 die. If you roll a symbol, upright 1 card from a player's board.",
+    "discardBonusDescription": "Heal 1HP",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      0,
+      4
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": [
+      "dice",
+      "health"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 25,
+    "name": "Cobra Fangs",
+    "description": "Ignore 1 die symbol from your target. Your target is poisoned and if they were already poisoned they suffer 1 wound.",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      0,
+      1
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 3,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "poison",
+      "wounds",
+      "dice"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 26,
+    "name": "Double Blaster",
+    "description": "If you inflicted 2 wounds, you can play 1 physical attack card of the cost of 1 for free.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      0,
+      4
+    ],
+    "damage": 2,
+    "salvos": 2,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "wounds"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 27,
+    "name": "Fallback Fire",
+    "description": "Gain 1 anticipation token",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      1,
+      4
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 3,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 28,
+    "name": "Flash Grenade",
+    "description": "If you inflicted a wound, your target loses 1 AP.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 0,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 2,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "explosive",
+      "attack"
+    ],
+    "traits": [
+      "wounds",
+      "action points",
+      "Grenade"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 29,
+    "name": "Focus",
+    "description": "+1 maximum range",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 0,
+    "n": 3,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 30,
+    "name": "Frag Grenade",
+    "description": "",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 0,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 3,
+    "types": [
+      "explosive",
+      "attack"
+    ],
+    "traits": [
+      "Grenade"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 31,
+    "name": "Fusion Magnum",
+    "description": "",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      0,
+      4
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 32,
+    "name": "Magnetic Aura",
+    "description": "Until the beginning of your next turn or the end of this round, whenever you are wounded, suffer 1 less wound.",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 0,
+    "n": 2,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "wounds"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 33,
+    "name": "Master of Echoes",
+    "description": "Draw a card at the start of the action phase.",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 2,
+    "n": 2,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 34,
+    "name": "Mastermind",
+    "description": "+1 damage on your psychic attacks",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "n": 4,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 35,
+    "name": "Molecular Drone",
+    "description": "Heal 3HP",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "n": 4,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 36,
+    "name": "Nautiblitz",
+    "description": "Move 1 hex towards your target. Move your target 1 hex towards you. Destroy shields along the way.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      3,
+      5
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "movement"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 37,
+    "name": "Neural Attack",
+    "description": "Your target discards a card at random",
+    "discardBonusDescription": "+1AP",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 2,
+    "range": [
+      1,
+      4
+    ],
+    "damage": 5,
+    "salvos": 1,
+    "n": 2,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": [
+      "action points"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 38,
+    "name": "Neural Block",
+    "description": "Your target rolls 1 die. If there is no symbol, they lose 1AP.",
+    "discardBonusDescription": "+1 damage",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      0,
+      4
+    ],
+    "damage": 2,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": [
+      "action points",
+      "dice",
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 39,
+    "name": "Neuralgic Drain",
+    "description": "Your target loses 1 Anticipation token. Gain 1 Anticipation token.",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      1,
+      3
+    ],
+    "n": 3,
+    "types": [
+      "defense"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 40,
+    "name": "One more thing!",
+    "description": "If your target has crystals, gain +1 damage. If your target has resins, gain +1 damage.",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 1,
+    "range": [
+      0,
+      1
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 2,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "resources",
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 41,
+    "name": "Parasite Grenade",
+    "description": "Your target loses 1 Anticipation token",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 0,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 2,
+    "types": [
+      "explosive",
+      "attack"
+    ],
+    "traits": [
+      "Grenade"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 42,
+    "name": "Plasma Charges",
+    "description": "Draw a card. Your attack hits the tile.",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 0,
+    "n": 2,
+    "types": [
+      "mod"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 43,
+    "name": "Plasma Speeder",
+    "description": "If you inflicted 4 wounds, your target suffers 2 extra wounds.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 2,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 3,
+    "salvos": 2,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "wounds"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 44,
+    "name": "Psychic Spike",
+    "description": "Lose 1HP",
+    "discardBonusDescription": "Heal 2HP",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      1,
+      4
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 3,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 45,
+    "name": "Schwartz",
+    "description": "",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      0,
+      4
+    ],
+    "damage": 2,
+    "salvos": 3,
+    "n": 3,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 46,
+    "name": "Server Breakdown",
+    "description": "Your target rolls 2 fewer dice. Gain 2 Ultimate points.",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 0,
+    "n": 2,
+    "types": [
+      "mod"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 47,
+    "name": "Skullwiper",
+    "description": "Roll 2 dice. If there is 1 symbol, do 2 salvos. If there are 2 symbols, do 3 salvos instead.",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 3,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 48,
+    "name": "Sniper",
+    "description": "If you spend 1AP, gain +2 damage.",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "range": [
+      3,
+      7
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 3,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "action points",
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 49,
+    "name": "Sonic Crossbow",
+    "description": "",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      2,
+      6
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "interface",
+    "typeArg": 50,
+    "name": "Steel Skin",
+    "description": "Draw a card whenever you gain an Anticipation token",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 1,
+    "n": 2,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 51,
+    "name": "Stellar Cannon",
+    "description": "+3 damage on the targeted hex",
+    "expansion": "base",
+    "rarity": "rare",
+    "cost": 2,
+    "range": [
+      0,
+      99
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 2,
+    "types": [
+      "explosive",
+      "attack"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 52,
+    "name": "Storm Waver",
+    "description": "Move your target up to 3 hexes. All shields are destroyed along the way.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      0,
+      2
+    ],
+    "damage": 2,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "movement"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 53,
+    "name": "Strategist",
+    "description": "Draw 2 cards, then discard 2.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 0,
+    "n": 4,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 54,
+    "name": "Swindle",
+    "description": "Your target suffers 1 wound. Heal 1HP.",
+    "discardBonusDescription": "This card gains 2 salvos.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      1,
+      4
+    ],
+    "damage": 2,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": [
+      "wounds",
+      "health"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 55,
+    "name": "Techno Claws",
+    "description": "Ignore 1 symbol on the dice of your target",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      0,
+      1
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 56,
+    "name": "Teleportation",
+    "description": "Teleport up to 3 hexes. Gain 1 Anticipation token.",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "n": 3,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "teleport"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 57,
+    "name": "The Billy Boy",
+    "description": "Move 1 hex after your attack.",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 4,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "movement"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 58,
+    "name": "Topographic Expert",
+    "description": "+1AP to collect, move or negotiate with a sponsor",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "n": 4,
+    "types": [
+      "skill",
+      "activable"
+    ],
+    "traits": [
+      "action points",
+      "movement"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 59,
+    "name": "Vampire Ammo",
+    "description": "At the end of the attack if you inflicted any damage, heal yourself by 3HP.",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 0,
+    "n": 3,
+    "types": [
+      "mod"
+    ],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 60,
+    "name": "Veteran",
+    "description": "+1AP to play a card",
+    "expansion": "base",
+    "rarity": "common",
+    "cost": 1,
+    "n": 4,
+    "types": [
+      "skill",
+      "activable"
+    ],
+    "traits": [
+      "action points"
+    ]
+  },
+  {
+    "class": "interface",
+    "typeArg": 61,
+    "name": "Vision",
+    "description": "Gain 2 Anticipation tokens",
+    "expansion": "base",
+    "rarity": "uncommon",
+    "cost": 1,
+    "n": 3,
+    "types": [
+      "defense"
+    ],
+    "traits": []
+  },
+  {
+    "class": "guild",
+    "typeArg": 1,
+    "name": "Atlans",
+    "description": "You are not affected by lakes. If you start your turn in a lake, heal yourself by 2HP.",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "permanent"
+    ],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 2,
+    "name": "ATX-4D Commando",
+    "description": "Roll 1 additional die",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable",
+      "utility"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 3,
+    "name": "Bear Shapeshifters",
+    "description": "Do 3 damage up to 1 space away.",
+    "expansion": "base",
+    "range": [
+      0,
+      1
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 1,
+    "types": [
+      "activable",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "guild",
+    "typeArg": 4,
+    "name": "Blood Furies",
+    "description": "Lose 1 health. Gain +1 damage during this round.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": [
+      "Plus damage",
+      "health"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 5,
+    "name": "Cult of the Great Oak",
+    "description": "From era 2 onwards, place charge tokens equal to the era. Spend 1 charge token to gain 1 Action Point.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": [
+      "action points"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 6,
+    "name": "Cyber Printers",
+    "description": "Spend 2 resins or 1 crystal to uninstall one of your cards in hand and install the top card from the interface.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 7,
+    "name": "Diplomats",
+    "description": "When you consult the interface remove 2 consulted cards and consult 2 new ones.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": []
+  },
+  {
+    "class": "guild",
+    "typeArg": 8,
+    "name": "Feline Shapeshifters",
+    "description": "Secretly look at the upcoming zones.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": []
+  },
+  {
+    "class": "guild",
+    "typeArg": 9,
+    "name": "H4ck3rz",
+    "description": "Engage in a D6 duel with the player of your choice. If you lose, lose 1HP. Otherwise, your target loses 2HP.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 10,
+    "name": "Leeches",
+    "description": "Heal yourself by 1HP each time your target suffers 2 wounds.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": [
+      "wounds",
+      "health"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 11,
+    "name": "Negotiators",
+    "description": "When you consult the interface, install 1 extra card.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": []
+  },
+  {
+    "class": "guild",
+    "typeArg": 12,
+    "name": "Scavengers",
+    "description": "Discard up to 2 cards. Roll one die for each card you discarded and heal 1HP per symbol.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": [
+      "dice",
+      "health"
+    ]
+  },
+  {
+    "class": "guild",
+    "typeArg": 13,
+    "name": "Terraformers",
+    "description": "Flip 1 yellow drought token on the green side or remove it if it was already.",
+    "expansion": "base",
+    "n": 1,
+    "types": [
+      "activable"
+    ],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 1,
+    "name": "Earthquake",
+    "description": "Remove all shields from the map",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 2,
+    "name": "Rollback",
+    "description": "Remove all yellow and green drought tokens from the map",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 3,
+    "name": "H4ck3rz Raid",
+    "description": "Cards placed on player boards have no effect. This includes guilds and skills.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 4,
+    "name": "First Snow",
+    "description": "Players are not affected by lakes and can cross them freely. Crossing a lake space does not count as a movement space.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "movement"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 5,
+    "name": "Prediction",
+    "description": "All players gain 1 Anticipation token. A free slot is required.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 6,
+    "name": "Fire",
+    "description": "Players on a forest hex lose 2HP. Forest hexes no longer provide resources and no longer offer protection.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "resources",
+      "health"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 7,
+    "name": "Eruption",
+    "description": "Players on a volcano hex lose 2HP, and players on a hex adjacent to a volcano lose 1HP.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 8,
+    "name": "404 Error",
+    "description": "Lose 2HP if you negotiate with a sponsor",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 9,
+    "name": "Déjà-vu",
+    "description": "Each player may add 1 card from their discard pile to their hand",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 10,
+    "name": "Conspiracy",
+    "description": "Rivals Points cost only 7 resources instead of 10.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 11,
+    "name": "Plasma Reload",
+    "description": "The first Anticipation token on Anticipation hexes is free.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 12,
+    "name": "Shortage",
+    "description": "Resources cannot be spent. This includes costs required to use cards such as the Cyber-Printer Guild. These cards therefore cannot be played.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 13,
+    "name": "Outcast",
+    "description": "Players with the lowest HP consult 1 Interface card and may install it.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 14,
+    "name": "Paranoia",
+    "description": "Players add or remove their Anticipation tokens so they have only one left on their board.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 15,
+    "name": "Black Market",
+    "description": "At the start of the second round, players may discard as many cards as they want and draw the same number.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 16,
+    "name": "Unexpected Gift",
+    "description": "For each resource, players who have the least gain 2 units.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 17,
+    "name": "Fog",
+    "description": "The maximum range of all players is reduced by 1 for all attacks.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": []
+  },
+  {
+    "class": "event",
+    "typeArg": 18,
+    "name": "Annihilation",
+    "description": "All players draw 2 cards from their deck and add them to their hand.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 19,
+    "name": "Guardian Angel",
+    "description": "Players with the lowest HP heal 3HP.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "event",
+    "typeArg": 20,
+    "name": "Abundance",
+    "description": "Collecting resins and crystals yields 1 additional unit.",
+    "expansion": "base",
+    "n": 1,
+    "types": [],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 1,
+    "name": "Altered Reality",
+    "description": "Your target discards a card of your choice",
+    "discardBonusDescription": "This card now has 2 salvos",
+    "expansion": "base",
+    "cost": 1,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 1,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "schema",
+    "typeArg": 2,
+    "name": "Arduino Bomberman",
+    "description": "Your Grenades gain +1 maximum range and +1 damage. Whenever you play a Grenade it is discarded instead of being uninstalled.",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 3,
+    "name": "Blue Pill or Red Pill?",
+    "description": "Gain 1 Anticipation token or +1 damage",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "defense",
+      "mod"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 4,
+    "name": "Cannon of Chaos",
+    "description": "Roll 1 die. If there is a symbol, the attack hits the tile. Otherwise the tile is drained.",
+    "expansion": "base",
+    "cost": 1,
+    "range": [
+      0,
+      4
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 1,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 5,
+    "name": "Datamining",
+    "description": "Whenever you collect resources collect 1 extra unit",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 6,
+    "name": "Divination",
+    "description": "Draw 2 cards, then discard 2 at the start of the action phase",
+    "expansion": "base",
+    "cost": 1,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 7,
+    "name": "Double Agent",
+    "description": "Copy 1 guild or skill card that you do not own",
+    "expansion": "base",
+    "cost": 1,
+    "n": 1,
+    "types": [
+      "skill",
+      "activable"
+    ],
+    "traits": []
+  },
+  {
+    "class": "schema",
+    "typeArg": 8,
+    "name": "Endless Grimoire",
+    "description": "Draw a card at the start of the action phase",
+    "expansion": "base",
+    "cost": 1,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 9,
+    "name": "Explore the Abyss",
+    "description": "If you are in or adjacent to a lake, lose 1HP then teleport to a lake or adjacent",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "teleport",
+      "health"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 10,
+    "name": "Guardian of the Peaks",
+    "description": "If you attack from a volcano gain +1 damage",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 11,
+    "name": "Inception",
+    "description": "The discard bonuses of your psychic attacks are free. The targets of your psychic attacks roll 1 fewer die.",
+    "expansion": "base",
+    "cost": 1,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "dice"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 12,
+    "name": "Magmaganda",
+    "description": "Hit a second player located within a range of 0-3 from your target",
+    "expansion": "base",
+    "cost": 1,
+    "range": [
+      3,
+      4
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 1,
+    "types": [
+      "psychic",
+      "attack"
+    ],
+    "traits": []
+  },
+  {
+    "class": "schema",
+    "typeArg": 13,
+    "name": "Magnetic Field",
+    "description": "Teleport 1 player by 1 hex, then draw a card",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "card draw",
+      "teleport"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 14,
+    "name": "Mr.X Helmet",
+    "description": "+1 maximum range. Look at 2 more cards whenever you consult the interface.",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": []
+  },
+  {
+    "class": "schema",
+    "typeArg": 15,
+    "name": "Oracle",
+    "description": "Gain an Anticipation token and draw a card",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 16,
+    "name": "Phoenix",
+    "description": "Heal yourself by 6HP then uninstall this card",
+    "expansion": "base",
+    "cost": 1,
+    "n": 1,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "health"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 17,
+    "name": "Premium Card",
+    "description": "Purchase the Rivals points with any combination of resources. Collect 4 resources once.",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "skill",
+      "permanent"
+    ],
+    "traits": [
+      "resources"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 18,
+    "name": "Recycling Rifle",
+    "description": "If you spend 2 resources gain +1 damage",
+    "expansion": "base",
+    "cost": 1,
+    "range": [
+      1,
+      3
+    ],
+    "damage": 3,
+    "salvos": 2,
+    "n": 1,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "resources",
+      "Plus damage"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 19,
+    "name": "Secret Trick",
+    "description": "Until the end of the turn, if you attack a target located within a range of 1, draw a card.",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "skill",
+      "activable"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 20,
+    "name": "Take Cover!",
+    "description": "Move up to 2 hexes, then create a shield for free",
+    "expansion": "base",
+    "cost": 0,
+    "n": 1,
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "movement"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 21,
+    "name": "The Collector",
+    "description": "Draw a card",
+    "expansion": "base",
+    "cost": 1,
+    "range": [
+      0,
+      3
+    ],
+    "damage": 3,
+    "salvos": 2,
+    "n": 1,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "card draw"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 22,
+    "name": "The Firefly",
+    "description": "Your target is poisoned. If they already were, they suffer 1 wound.",
+    "expansion": "base",
+    "cost": 1,
+    "range": [
+      1,
+      4
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 1,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "poison",
+      "wounds"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 23,
+    "name": "The Scythe",
+    "description": "Teleport 1 hex",
+    "expansion": "base",
+    "cost": 1,
+    "range": [
+      0,
+      1
+    ],
+    "damage": 6,
+    "salvos": 1,
+    "n": 1,
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "teleport"
+    ]
+  },
+  {
+    "class": "schema",
+    "typeArg": 24,
+    "name": "Toxic Cloud",
+    "description": "Players located on the targeted tile are poisoned. If they already were, they suffer 1 wound.",
+    "expansion": "base",
+    "cost": 0,
+    "range": [
+      1,
+      3
+    ],
+    "n": 1,
+    "types": [
+      "utility"
+    ],
+    "traits": [
+      "poison",
+      "wounds"
+    ]
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 1,
+    "name": "Flight of the Raptor",
+    "description": "Move up to 4 hexes, draw a card and gain 1AP.",
+    "expansion": "base",
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Atmos",
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "card draw",
+      "action points",
+      "movement"
+    ],
+    "ashak": true
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 2,
+    "name": "Natural Radiation",
+    "description": "Inflict 4 damage anywhere. Also inflict 3 damage on the adjacent tiles. Your target's Anticipation tokens cannot be activated.",
+    "expansion": "base",
+    "range": [
+      0,
+      99
+    ],
+    "damage": 4,
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Gyaleis",
+    "types": [
+      "explosive",
+      "attack"
+    ],
+    "traits": [],
+    "ashak": true
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 3,
+    "name": "Helga's Thunder",
+    "description": "Inflict 6 damage on any revealed tile",
+    "expansion": "base",
+    "range": [
+      0,
+      99
+    ],
+    "damage": 6,
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Orus",
+    "types": [
+      "explosive",
+      "attack"
+    ],
+    "traits": [],
+    "ashak": true
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 4,
+    "name": "The Wings of the Koa'e",
+    "description": "Move your target up to 3 hexes.",
+    "expansion": "base",
+    "range": [
+      0,
+      3
+    ],
+    "damage": 3,
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Phae",
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "movement"
+    ],
+    "ashak": true
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 5,
+    "name": "The Loot is mine!",
+    "description": "Uninstall up to 2 cards and gain 2 resources per card.",
+    "expansion": "base",
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Qikaa",
+    "types": [
+      "defense"
+    ],
+    "traits": [
+      "resources"
+    ],
+    "ashak": true
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 6,
+    "name": "Flashers",
+    "description": "+1 maximum range until the end of the round. Activate 1 Flasher on your target. All of their Flashers are revealed and activated. Your target shuffles their deck and discard.",
+    "expansion": "base",
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Renko",
+    "types": [
+      "utility"
+    ],
+    "traits": [],
+    "ashak": true
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 7,
+    "name": "Secret Plan",
+    "description": "Install one of the visible Schemas or consult 5 Schemas from the top of the pile and install one.",
+    "expansion": "base",
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Xhan",
+    "types": [
+      "defense"
+    ],
+    "traits": [],
+    "ashak": true
+  },
+  {
+    "class": "ultimate",
+    "typeArg": 8,
+    "name": "Purplebark Scent",
+    "description": "Spread 3 poison over the players of your choice.",
+    "expansion": "base",
+    "range": [
+      0,
+      99
+    ],
+    "damage": 0,
+    "salvos": 1,
+    "n": 1,
+    "ashakType": "Yosh",
+    "types": [
+      "physical",
+      "attack"
+    ],
+    "traits": [
+      "poison"
+    ],
+    "ashak": true
+  }
+]

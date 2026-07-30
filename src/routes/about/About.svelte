@@ -7,7 +7,7 @@
   <div class="max-w-3xl flex items-center flex-col">
     <Img src={logoImage} />
     <P align="center" color="text-white" class="text-2xl md:text-4xl mb-4">
-      Guards of Atlantis II & Onward card builder and catalogue made by
+      Guards of Atlantis II, Onward & Rivals card builder and catalogue made by
       <a href="https://quasistellar.xyz/" target="_blank" rel="noopener noreferrer" class="text-primary-500">QuasiStellar</a>
     </P>
     <P align="center" color="text-white" class="text-base md:text-2xl">
@@ -19,6 +19,11 @@
       <a href="https://gamefound.com/en/projects/skytear/onward" target="_blank" rel="noopener noreferrer" class="text-primary-500">Onward</a>
       is a board game by
       <a href="https://shop.playskytear.com/en/" target="_blank" rel="noopener noreferrer" class="text-primary-500">PvP Geeks®</a>
+    </P>
+    <P align="center" color="text-white" class="text-base md:text-2xl">
+      <a href="https://unkindgames.com/#/rivals" target="_blank" rel="noopener noreferrer" class="text-primary-500">Rivals</a>
+      is a board game by
+      <a href="https://unkindgames.com/#/ug" target="_blank" rel="noopener noreferrer" class="text-primary-500">Unkind Games®</a>
     </P>
 <!--    <a href="https://discord.gg/kYnkefHSEh" target="_blank" rel="noopener noreferrer">-->
 <!--      <div class="flex items-center flex-row my-8">-->
@@ -33,11 +38,11 @@
       If something doesn't work properly or you have a suggestion, open an issue on
       <a href="https://github.com/QuasiStellar/Stats-of-Atlantis/issues" target="_blank" rel="noopener noreferrer" class="text-primary-500">Github</a>
     </P>
-    <P size="xs" color="text-white" class="mt-14">
-      Card design and artwork belong to Wolffdesigna® and PvP Geeks® respectively
+    <P size="xs" align="center" color="text-white" class="mt-14">
+      Card design and artwork belong to Wolffdesigna®, PvP Geeks®, and Unkind Games® respectively and are shown on this website for informational purposes
     </P>
     <P size="xs" color="text-white">
-      "Stats of Atlantis" is in no way affiliated with Wolffdesigna® or PvP Geeks®
+      "Stats of Atlantis" is in no way affiliated with Wolffdesigna®, PvP Geeks® or Unkind Games®
     </P>
   </div>
 </div>
