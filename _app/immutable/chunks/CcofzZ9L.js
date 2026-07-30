@@ -1,0 +1,1 @@
+var e=``+new URL(`../assets/error.D7IpDnMQ.png`,import.meta.url).href;export{e as t};
