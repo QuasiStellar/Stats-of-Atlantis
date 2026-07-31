@@ -88,11 +88,14 @@ export type RivalsCost = 0 | 1 | 2 | "none"
 
 export const RIVALS_COSTS: RivalsCost[] = [0, 1, 2, "none"]
 
-export type ClassFilters = Record<RivalsClass, boolean>
-export type TypeFilters = Record<RivalsType, boolean>
-export type RarityFilters = Record<RivalsRarity, boolean>
-export type TraitFilters = Record<RivalsTrait, boolean>
-export type CostFilters = Record<RivalsCost, boolean>
+/** ignore → include → exclude → ignore */
+export type FilterMode = "ignore" | "include" | "exclude"
+
+export type ClassFilters = Record<RivalsClass, FilterMode>
+export type TypeFilters = Record<RivalsType, FilterMode>
+export type RarityFilters = Record<RivalsRarity, FilterMode>
+export type TraitFilters = Record<RivalsTrait, FilterMode>
+export type CostFilters = Record<RivalsCost, FilterMode>
 
 export interface RivalsFilters {
 	classes: ClassFilters
@@ -100,18 +103,42 @@ export interface RivalsFilters {
 	rarities: RarityFilters
 	traits: TraitFilters
 	costs: CostFilters
-	ashakOnly: boolean
+	ashak: FilterMode
+}
+
+function allIgnore<T extends string | number>(keys: readonly T[]): Record<T, FilterMode> {
+	return Object.fromEntries(keys.map((k) => [k, "ignore"])) as Record<T, FilterMode>
 }
 
 export function defaultRivalsFilters(): RivalsFilters {
 	return {
-		classes: Object.fromEntries(RIVALS_CLASSES.map((c) => [c, true])) as ClassFilters,
-		types: Object.fromEntries(RIVALS_TYPES.map((t) => [t, true])) as TypeFilters,
-		rarities: Object.fromEntries(RIVALS_RARITIES.map((r) => [r, true])) as RarityFilters,
-		traits: Object.fromEntries(RIVALS_TRAITS.map((t) => [t, false])) as TraitFilters,
-		costs: Object.fromEntries(RIVALS_COSTS.map((c) => [c, true])) as CostFilters,
-		ashakOnly: false,
+		classes: allIgnore(RIVALS_CLASSES),
+		types: allIgnore(RIVALS_TYPES),
+		rarities: allIgnore(RIVALS_RARITIES),
+		traits: allIgnore(RIVALS_TRAITS),
+		costs: allIgnore(RIVALS_COSTS),
+		ashak: "ignore",
 	}
+}
+
+export function nextFilterMode(mode: FilterMode): FilterMode {
+	if (mode === "ignore") {
+		return "include"
+	}
+	if (mode === "include") {
+		return "exclude"
+	}
+	return "ignore"
+}
+
+function modeMatches(mode: FilterMode, abides: boolean): boolean {
+	if (mode === "ignore") {
+		return true
+	}
+	if (mode === "include") {
+		return abides
+	}
+	return !abides
 }
 
 export function effectiveRarity(card: RivalsCard): RivalsRarity {
@@ -122,6 +149,13 @@ export function effectiveRarity(card: RivalsCard): RivalsRarity {
 		return "schema"
 	}
 	return "other"
+}
+
+export function effectiveCost(card: RivalsCard): RivalsCost {
+	if (card.cost === 0 || card.cost === 1 || card.cost === 2) {
+		return card.cost
+	}
+	return "none"
 }
 
 export function cardImageKey(card: RivalsCard): string {
@@ -142,38 +176,36 @@ export function matchesSearch(card: RivalsCard, query: string): boolean {
 }
 
 export function matchesFilters(card: RivalsCard, filters: RivalsFilters): boolean {
-	if (!filters.classes[card.class]) {
-		return false
-	}
-
-	if (filters.ashakOnly && !card.ashak) {
-		return false
-	}
-
-	if (!filters.rarities[effectiveRarity(card)]) {
-		return false
-	}
-
-	if (card.cost === 0 || card.cost === 1 || card.cost === 2) {
-		if (!filters.costs[card.cost]) {
-			return false
-		}
-	} else if (!filters.costs.none) {
-		return false
-	}
-
-	// Cards with no types (e.g. events) are not excluded by type filters.
-	if (card.types.length > 0) {
-		const typeMatch = card.types.some((t) => filters.types[t as RivalsType])
-		if (!typeMatch) {
+	for (const cls of RIVALS_CLASSES) {
+		if (!modeMatches(filters.classes[cls], card.class === cls)) {
 			return false
 		}
 	}
 
-	const anyTraitOn = RIVALS_TRAITS.some((t) => filters.traits[t])
-	if (anyTraitOn) {
-		const traitMatch = card.traits.some((t) => filters.traits[t as RivalsTrait])
-		if (!traitMatch) {
+	if (!modeMatches(filters.ashak, Boolean(card.ashak))) {
+		return false
+	}
+
+	for (const rarity of RIVALS_RARITIES) {
+		if (!modeMatches(filters.rarities[rarity], effectiveRarity(card) === rarity)) {
+			return false
+		}
+	}
+
+	for (const cost of RIVALS_COSTS) {
+		if (!modeMatches(filters.costs[cost], effectiveCost(card) === cost)) {
+			return false
+		}
+	}
+
+	for (const type of RIVALS_TYPES) {
+		if (!modeMatches(filters.types[type], card.types.includes(type))) {
+			return false
+		}
+	}
+
+	for (const trait of RIVALS_TRAITS) {
+		if (!modeMatches(filters.traits[trait], card.traits.includes(trait))) {
 			return false
 		}
 	}
@@ -188,6 +220,9 @@ export function cardSubtitle(card: RivalsCard): string {
 	}
 	if (card.ashak) {
 		parts.push("Ashak")
+		if (card.ashakType) {
+			parts.push(card.ashakType)
+		}
 	}
 	return parts.join(" · ")
 }

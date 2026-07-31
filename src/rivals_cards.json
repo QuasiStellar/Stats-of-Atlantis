@@ -1223,7 +1223,8 @@
     ],
     "traits": [
       "health"
-    ]
+    ],
+    "ashak": true
   },
   {
     "class": "guild",

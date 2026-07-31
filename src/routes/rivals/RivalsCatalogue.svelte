@@ -5,7 +5,6 @@
 	import rivalsCardsJson from "../../rivals_cards.json"
 	import {
 		RIVALS_CLASSES,
-		RIVALS_TYPES,
 		RIVALS_RARITIES,
 		RIVALS_TRAITS,
 		RIVALS_COSTS,
@@ -16,8 +15,11 @@
 		cardImageKey,
 		formatLabel,
 		cardSubtitle,
+		nextFilterMode,
 		type RivalsCard,
 		type RivalsFilters,
+		type FilterMode,
+		type RivalsType,
 	} from "$lib/rivals"
 	import RivalsCardView from "./RivalsCard.svelte"
 
@@ -61,6 +63,20 @@
 		filters = defaultRivalsFilters()
 	}
 
+	function markerClass(mode: FilterMode): string {
+		if (mode === "include") {
+			return "bg-amber-600 border-amber-500 text-white"
+		}
+		if (mode === "exclude") {
+			return "bg-red-700 border-red-500 text-white"
+		}
+		return "bg-transparent border-dark-500 text-transparent"
+	}
+
+	function cycleType(type: RivalsType) {
+		filters.types[type] = nextFilterMode(filters.types[type])
+	}
+
 	function formatRange(range: number[] | undefined): string | null {
 		if (!range || range.length < 2) {
 			return null
@@ -75,7 +91,131 @@
 	}
 </script>
 
+{#snippet triCheckbox(label: string, value: FilterMode, onToggle: () => void, tree?: string)}
+	<button type="button" on:click={onToggle} class="inline-flex items-center text-left text-sm text-dark-300 hover:text-white">
+		{#if tree}
+			<span class="mr-2 shrink-0 text-dark-500 font-mono leading-none select-none" aria-hidden="true">{tree}</span>
+		{/if}
+		<span class={`mr-2 inline-flex h-4 w-4 items-center justify-center rounded border ${markerClass(value)}`}>
+			{#if value === "include"}
+				<svg viewBox="0 0 16 16" class="h-3 w-3 fill-current" aria-hidden="true">
+					<path d="M6.2 11.5 2.8 8.1l1.2-1.2 2.2 2.2 5.8-5.8 1.2 1.2z" />
+				</svg>
+			{:else if value === "exclude"}
+				<svg viewBox="0 0 16 16" class="h-3 w-3 fill-current" aria-hidden="true">
+					<path d="M4 4.9 4.9 4 8 7.1 11.1 4l.9.9L8.9 8l3.1 3.1-.9.9L8 8.9 4.9 12l-.9-.9L7.1 8z" />
+				</svg>
+			{/if}
+		</span>
+		{#if label}
+			<span>{label}</span>
+		{/if}
+	</button>
+{/snippet}
+
 <div class="pt-18 md:pt-22 px-3 md:px-6 mb-24 max-w-[1920px] mx-auto">
+	<section class="rounded-lg border border-dark-600 bg-dark-800/60 p-4 md:p-5 mb-6">
+		<div class="flex flex-col xl:flex-row gap-6 xl:gap-8 items-start">
+			<div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+				<div>
+					<h2 class="font-semibold text-dark-200 mb-2">Class</h2>
+					<div class="flex flex-col gap-1.5">
+						{#each RIVALS_CLASSES as cls}
+							{@render triCheckbox(formatLabel(cls), filters.classes[cls], () => (filters.classes[cls] = nextFilterMode(filters.classes[cls])))}
+						{/each}
+					</div>
+
+					<h2 class="font-semibold text-dark-200 mt-5 mb-2">Ashak</h2>
+					{@render triCheckbox("", filters.ashak, () => (filters.ashak = nextFilterMode(filters.ashak)))}
+				</div>
+
+				<div>
+					<h2 class="font-semibold text-dark-200 mb-2">Type</h2>
+					<div class="flex flex-col gap-1.5">
+						{@render triCheckbox("Attack", filters.types.attack, () => cycleType("attack"))}
+						{@render triCheckbox("Physical", filters.types.physical, () => cycleType("physical"), "├──")}
+						{@render triCheckbox("Psychic", filters.types.psychic, () => cycleType("psychic"), "├──")}
+						{@render triCheckbox("Explosive", filters.types.explosive, () => cycleType("explosive"), "└──")}
+						{@render triCheckbox("Skill", filters.types.skill, () => cycleType("skill"))}
+						{@render triCheckbox("Activable", filters.types.activable, () => cycleType("activable"), "├──")}
+						{@render triCheckbox("Permanent", filters.types.permanent, () => cycleType("permanent"), "└──")}
+						{@render triCheckbox("Defense", filters.types.defense, () => cycleType("defense"))}
+						{@render triCheckbox("Mod", filters.types.mod, () => cycleType("mod"))}
+						{@render triCheckbox("Utility", filters.types.utility, () => cycleType("utility"))}
+					</div>
+				</div>
+
+				<div>
+					<h2 class="font-semibold text-dark-200 mb-2">Rarity</h2>
+					<div class="flex flex-col gap-1.5">
+						{#each RIVALS_RARITIES as rarity}
+							{@render triCheckbox(formatLabel(rarity), filters.rarities[rarity], () => (filters.rarities[rarity] = nextFilterMode(filters.rarities[rarity])))}
+						{/each}
+					</div>
+
+					<h2 class="font-semibold text-dark-200 mt-5 mb-2">Cost</h2>
+					<div class="flex flex-col gap-1.5">
+						{#each RIVALS_COSTS as cost}
+							{@render triCheckbox(cost === "none" ? "None" : String(cost), filters.costs[cost], () => (filters.costs[cost] = nextFilterMode(filters.costs[cost])))}
+						{/each}
+					</div>
+				</div>
+
+				<div>
+					<h2 class="font-semibold text-dark-200 mb-2">Traits</h2>
+					<div class="flex flex-col gap-1.5">
+						{#each RIVALS_TRAITS as trait}
+							{@render triCheckbox(formatLabel(trait), filters.traits[trait], () => (filters.traits[trait] = nextFilterMode(filters.traits[trait])))}
+						{/each}
+					</div>
+				</div>
+			</div>
+
+			<div class="flex xl:flex-col items-center gap-3 shrink-0 self-center xl:self-start xl:pt-6">
+				{#if searchOpen}
+					<button
+						type="button"
+						class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-dark-500 bg-dark-900 text-dark-200 hover:bg-dark-700 hover:text-white"
+						aria-label="Close search"
+						on:click={closeSearch}
+					>
+						<CloseOutline class="h-6 w-6" />
+					</button>
+				{:else}
+					<button
+						type="button"
+						class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-dark-500 bg-dark-900 text-dark-200 hover:bg-dark-700 hover:text-white"
+						aria-label="Open search"
+						on:click={openSearch}
+					>
+						<SearchOutline class="h-6 w-6" />
+					</button>
+				{/if}
+				<button
+					type="button"
+					class="rounded-md border border-dark-600 bg-dark-900 px-3 py-2 text-sm text-dark-300 hover:bg-dark-700 hover:text-white"
+					on:click={resetFilters}
+				>
+					Reset
+				</button>
+			</div>
+		</div>
+
+		{#if searchOpen}
+			<div class="mt-5" transition:slide={{ duration: 200 }}>
+				<label class="sr-only" for="rivals-search">Search cards</label>
+				<input
+					id="rivals-search"
+					type="search"
+					bind:this={searchInput}
+					bind:value={searchQuery}
+					placeholder="Search by name or description…"
+					class="w-full rounded-md border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder:text-dark-400 focus:border-primary-500 focus:ring-primary-500"
+				/>
+			</div>
+		{/if}
+	</section>
+
 	{#if selectedCard}
 		<section
 			class="mb-6 rounded-lg border border-dark-600 bg-dark-800/80 p-4 md:p-6"
@@ -164,143 +304,6 @@
 			</div>
 		</section>
 	{/if}
-
-	<section class="rounded-lg border border-dark-600 bg-dark-800/60 p-4 md:p-5 mb-6">
-		<div class="flex flex-col xl:flex-row gap-6 xl:gap-8 items-start">
-			<div class="flex-1 w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-				<div>
-					<h2 class="font-semibold text-dark-200 mb-2">Class</h2>
-					<div class="flex flex-col gap-1.5">
-						{#each RIVALS_CLASSES as cls}
-							<label class="inline-flex items-center gap-2 cursor-pointer text-sm text-dark-300 hover:text-white">
-								<input
-									type="checkbox"
-									class="rounded border-dark-500 bg-dark-900 text-primary-500 focus:ring-primary-500 focus:ring-offset-0"
-									bind:checked={filters.classes[cls]}
-								/>
-								{formatLabel(cls)}
-							</label>
-						{/each}
-					</div>
-
-					<h2 class="font-semibold text-dark-200 mt-5 mb-2">Ashak</h2>
-					<label class="inline-flex items-center gap-2 cursor-pointer text-sm text-dark-300 hover:text-white">
-						<input
-							type="checkbox"
-							class="rounded border-dark-500 bg-dark-900 text-primary-500 focus:ring-primary-500 focus:ring-offset-0"
-							bind:checked={filters.ashakOnly}
-							aria-label="Ashak only"
-						/>
-					</label>
-				</div>
-
-				<div>
-					<h2 class="font-semibold text-dark-200 mb-2">Type</h2>
-					<div class="flex flex-col gap-1.5">
-						{#each RIVALS_TYPES as type}
-							<label class="inline-flex items-center gap-2 cursor-pointer text-sm text-dark-300 hover:text-white">
-								<input
-									type="checkbox"
-									class="rounded border-dark-500 bg-dark-900 text-primary-500 focus:ring-primary-500 focus:ring-offset-0"
-									bind:checked={filters.types[type]}
-								/>
-								{formatLabel(type)}
-							</label>
-						{/each}
-					</div>
-				</div>
-
-				<div>
-					<h2 class="font-semibold text-dark-200 mb-2">Rarity</h2>
-					<div class="flex flex-col gap-1.5">
-						{#each RIVALS_RARITIES as rarity}
-							<label class="inline-flex items-center gap-2 cursor-pointer text-sm text-dark-300 hover:text-white">
-								<input
-									type="checkbox"
-									class="rounded border-dark-500 bg-dark-900 text-primary-500 focus:ring-primary-500 focus:ring-offset-0"
-									bind:checked={filters.rarities[rarity]}
-								/>
-								{formatLabel(rarity)}
-							</label>
-						{/each}
-					</div>
-
-					<h2 class="font-semibold text-dark-200 mt-5 mb-2">Cost</h2>
-					<div class="flex flex-col gap-1.5">
-						{#each RIVALS_COSTS as cost}
-							<label class="inline-flex items-center gap-2 cursor-pointer text-sm text-dark-300 hover:text-white">
-								<input
-									type="checkbox"
-									class="rounded border-dark-500 bg-dark-900 text-primary-500 focus:ring-primary-500 focus:ring-offset-0"
-									bind:checked={filters.costs[cost]}
-								/>
-								{cost === "none" ? "None" : cost}
-							</label>
-						{/each}
-					</div>
-				</div>
-
-				<div>
-					<h2 class="font-semibold text-dark-200 mb-2">Traits</h2>
-					<div class="flex flex-col gap-1.5">
-						{#each RIVALS_TRAITS as trait}
-							<label class="inline-flex items-center gap-2 cursor-pointer text-sm text-dark-300 hover:text-white">
-								<input
-									type="checkbox"
-									class="rounded border-dark-500 bg-dark-900 text-primary-500 focus:ring-primary-500 focus:ring-offset-0"
-									bind:checked={filters.traits[trait]}
-								/>
-								{formatLabel(trait)}
-							</label>
-						{/each}
-					</div>
-				</div>
-			</div>
-
-			<div class="flex xl:flex-col items-center gap-3 shrink-0 self-center xl:self-start xl:pt-6">
-				{#if searchOpen}
-					<button
-						type="button"
-						class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-dark-500 bg-dark-900 text-dark-200 hover:bg-dark-700 hover:text-white"
-						aria-label="Close search"
-						on:click={closeSearch}
-					>
-						<CloseOutline class="h-6 w-6" />
-					</button>
-				{:else}
-					<button
-						type="button"
-						class="inline-flex h-12 w-12 items-center justify-center rounded-full border border-dark-500 bg-dark-900 text-dark-200 hover:bg-dark-700 hover:text-white"
-						aria-label="Open search"
-						on:click={openSearch}
-					>
-						<SearchOutline class="h-6 w-6" />
-					</button>
-				{/if}
-				<button
-					type="button"
-					class="rounded-md border border-dark-600 bg-dark-900 px-3 py-2 text-sm text-dark-300 hover:bg-dark-700 hover:text-white"
-					on:click={resetFilters}
-				>
-					Reset
-				</button>
-			</div>
-		</div>
-
-		{#if searchOpen}
-			<div class="mt-5" transition:slide={{ duration: 200 }}>
-				<label class="sr-only" for="rivals-search">Search cards</label>
-				<input
-					id="rivals-search"
-					type="search"
-					bind:this={searchInput}
-					bind:value={searchQuery}
-					placeholder="Search by name or description…"
-					class="w-full rounded-md border border-dark-500 bg-dark-900 px-4 py-3 text-white placeholder:text-dark-400 focus:border-primary-500 focus:ring-primary-500"
-				/>
-			</div>
-		{/if}
-	</section>
 
 	<p class="mb-3 text-sm text-dark-400">
 		Showing {filteredCards.length} of {allCards.length} cards
