@@ -508,7 +508,18 @@
       initiativeStat = oldInitiativeStat
       movementStat = oldMovementStat
 
-      cardValues = info.get("cardValues")
+      const imported = info.get("cardValues")
+      for(const key of imported.keys()) {
+        const base = imported.get(key);
+        const background = base.get('background');
+        if(background){
+          const image = new Image()
+          image.src = base.get('background')
+          base.set('background', image)
+        }
+      }
+
+      cardValues = info.get("cardValues");
 
       getCurrentCard()
     }
@@ -1087,9 +1098,17 @@
   }
 
   function exportIntoJson() {
-
+    // Get source base64 from images to save
+    const clone = new TSMap();
+    for(const key of cardValues.keys()){
+      const base = cardValues.get(key)
+      clone.set(key, new TSMap().fromJSON(base.toJSON()))
+      const background = base.get('background')?.src
+      clone.get(key).set('background', background)
+    }
+    
     const json = new TSMap<string, any>([
-      ["cardValues", cardValues],
+      ["cardValues", clone],
       ["attackStat", attackStat],
       ["defenseStat", defenseStat],
       ["initiativeStat", initiativeStat],
@@ -1430,7 +1449,9 @@
           <div class="col-span-6">
             <Label style="color: white">
               Background (1192×1664)
-              <Fileupload class="bg-dark-800 border-dark-600 text-white" on:change={event => onBgSelected(event)} />
+              {#key currentCard}
+                <Fileupload class="bg-dark-800 border-dark-600 text-white" on:change={event => onBgSelected(event)} />
+              {/key}
             </Label>
           </div>
 
